@@ -1,14 +1,13 @@
+import IntroduceSections from "./components/introduceSections"
 
-
-
-const Landing=()=>{
-    return(
+const Landing = () => {
+    return (
         <>
-        <div>
-        <p className="text-3xl font-bold underline"> test</p>
-        </div>
+            <div>
+                <IntroduceSections />
+            </div>
         </>
     )
-};
+}
 
-export default Landing;
+export default Landing
