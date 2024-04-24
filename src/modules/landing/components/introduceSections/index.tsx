@@ -11,7 +11,7 @@ const IntroduceSections = () => {
                         width="650"
                         alt="Logo"
                     />
-                                <Image
+                    <Image
                         src="/images/rightBlur.png"
                         height="100"
                         width="300"
