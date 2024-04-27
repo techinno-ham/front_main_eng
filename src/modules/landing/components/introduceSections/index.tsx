@@ -1,6 +1,36 @@
+"use client"
 import Image from "next/image"
+import { useEffect, useState } from "react"
 
 const IntroduceSections = () => {
+    const [inputValue, setInputValue] = useState('');
+    const [inputError, setInputError] = useState('');
+
+
+    const validateInput = () => {
+        // Check if input value is empty
+        if (!inputValue.trim()) {
+          setInputError('آدرس وبسایت نمی‌تواند خالی باشد.');
+          return false;
+        }
+        // Check if input value is a valid URL
+        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+        if (!urlPattern.test(inputValue)) {
+          setInputError('آدرس وبسایت وارد شده معتبر نیست.');
+          return false;
+        }
+        return true;
+      };
+
+    const handleInputChange = (event:any) => {
+        setInputValue(event.target.value);
+      };
+
+      useEffect(() => {
+        setInputError('');
+      }, [inputValue]);
+    
+
     return (
         <>
             <div className="intro_conteiner">
@@ -48,8 +78,27 @@ const IntroduceSections = () => {
                         تا کارها را انجام دهید. 🎯
                     </p>
                 </div>
-              <input type="text" className="input-url" placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..." />
+                <input
+                    type="text"
+                    className="input-url"
+                    onChange={handleInputChange}
+                    placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
+                />
+                {inputError && <p className="">{inputError}</p>}
+                <div className="mt-[20px] flex flex-col items-center justify-center">
+                    <div>
+                        <button className="btn-demo">ساختن بات دمو</button>
+                    </div>
 
+                    <div className="mt-[75px]">
+                        <Image
+                            src="/images/phone.png"
+                            height="400"
+                            width="600"
+                            alt="Logo"
+                        />
+                    </div>
+                </div>
             </div>
         </>
     )

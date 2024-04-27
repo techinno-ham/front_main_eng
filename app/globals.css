@@ -34,6 +34,22 @@
         @apply relative top-28 h-auto  text-center;
     }
     .input-url {
-      @apply bg-[#596AF8] text-[#ffff] border-none p-[10px] rounded-xl w-1/4 mt-8;
+        @apply mt-8 w-1/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none  focus:outline-none;
+    }
+    .btn-demo {
+        @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[18px] border-none bg-[#2295FF] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
+    }
+    @keyframes pulse {
+        0% {
+            transform: scale(0.9);
+        }
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 28px rgba(34, 149, 200, 0);
+        }
+        100% {
+            transform: scale(0.9);
+            box-shadow: 0 0 0 0 rgba(34, 149, 255, 0);
+        }
     }
 }
