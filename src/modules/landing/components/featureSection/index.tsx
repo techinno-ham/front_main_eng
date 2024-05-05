@@ -14,6 +14,7 @@ const FeatureSection = () => {
                 </h2>
             </div>
             <div className="mt-[80px]">
+              
                 <Section
                     sectionName="دانش"
                     title="
@@ -56,7 +57,7 @@ const FeatureSection = () => {
       imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d71b1e1938080cef242fea_flowIcon.svg"
       >
         <IntegrationGrid />
-        </Section>
+                  </Section>
             </div>
         </div>
     )

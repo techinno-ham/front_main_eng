@@ -1,0 +1,107 @@
+.section-normal {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    position: relative;
+}
+.bg-cta {
+     background-image: url("https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp");
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.image-full-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.heading-style-h3 {
+    letter-spacing: -1.408px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2.75rem;
+    line-height: 128%;
+}
+.paragraph-x-large.weight-500 {
+    font-weight: 500;
+}
+.paragraph-x-large {
+    font-size: 22px;
+    line-height: 150%;
+}
+.image-bg-cta {
+    width: 488px;
+    height: auto;
+    opacity: .05;
+    flex: none;
+    position: absolute;
+    top: -25%;
+    transform: rotate(18deg);
+}
+
+.content-cta {
+    background-color: #000;
+    color: #f5f6f8;
+    background-image: linear-gradient(316deg, rgba(255, 255, 255, .02), #333333b5);
+    border: 1px solid #000;
+    border-radius: 12px;
+    justify-content: flex-end;
+    padding: 48px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+.wrapper-section.width-100pc {
+    width: 100%;
+}
+.content-cta-main {
+    z-index: 1;
+    grid-column-gap: 48px;
+    grid-row-gap: 48px;
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+}
+.head-section {
+    width: 100%;
+    height: auto;
+}
+.box-get-started.left {
+    align-items: flex-start;
+}
+.box-get-started {
+    grid-row-gap: 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.description-section-main.margin-top-5px {
+    margin-top: 5px;
+}
+
+.button-primary-old {
+    grid-column-gap: 12px;
+    color: #fff;
+    background-image: linear-gradient(117deg, #6f90fd, #515bf5);
+    border: 1px solid #1d4ed8;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-decoration: none;
+    transition: all 75ms;
+    display: flex;
+    box-shadow: 0 2px 6px rgba(0,133,255,.36), inset 0 1px 1px rgba(255,255,255,.5);
+}

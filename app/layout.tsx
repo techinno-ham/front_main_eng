@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import "./globals.css"
 import localFont from "next/font/local"
-import Header from "@/src/shared/components/layouts/site-layout"
+import Header from "@/src/shared/components/layouts/site-layout/header"
+import Footer from "@/src/shared/components/layouts/site-layout/footer"
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -22,6 +23,7 @@ export default function RootLayout({
             <body className={myFont.className}>
                 <Header />
                 <main>{children}</main>
+                <Footer/>
             </body>
         </html>
     )
