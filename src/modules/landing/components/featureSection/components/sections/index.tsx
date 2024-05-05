@@ -29,8 +29,8 @@ const Section = ({
     }, [isInView])
     return (
         <>
-            <div className="flex  min-h-[500px]  flex-col  gap-36 md:flex-row">
-                <div className="flex  flex-col " ref={mainRef} >
+            <div className="flex  min-h-[500px]  flex-col  gap-20 md:flex-row">
+                <div className="flex w-full" ref={mainRef}>
                     <div className="relative flex flex-col items-center pb-1">
                         <div className="inline-block">
                             <Image
@@ -51,13 +51,12 @@ const Section = ({
                             animate={animController}
                             transition={{ duration: 2 }}
                             style={{
-                              width:"2px",
-                              backgroundColor:"#607af9"
+                                width: "2px",
+                                backgroundColor: "#607af9",
                             }}
-                        
                         ></motion.div>
                     </div>
-                    {/* <div>
+                    <div>
                         <div className="h-auto w-full">
                             <motion.p
                                 variants={{
@@ -99,9 +98,9 @@ const Section = ({
                         >
                             {desc}
                         </motion.p>
-                    </div> */}
+                    </div>
                 </div>
-                <div className="w-full">{children}</div>
+                <div className={mask ? "relative  w-full h-[600px] overflow-hidden  ": "w-full flex align-center justify-center"}>{children}</div>
             </div>
         </>
     )
