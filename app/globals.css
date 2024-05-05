@@ -30,6 +30,9 @@
     .text-balance {
         text-wrap: balance;
     }
+    .text-feature {
+        @apply text-[#2563eb];
+    }
     .intro_conteiner {
         @apply relative top-28 h-auto  text-center;
     }
@@ -52,4 +55,11 @@
             box-shadow: 0 0 0 0 rgba(34, 149, 255, 0);
         }
     }
+};
+
+.connectorPath {
+    width: 2px;
+    height: 100%;
+    color: transparent;
+    border-left: 2px solid #607af9;
 }

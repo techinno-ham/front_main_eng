@@ -1,3 +1,4 @@
+import FeatureSection from "./components/featureSection"
 import IntroduceSections from "./components/introduceSections"
 import TrustBrnadSections from "./components/trustBrandSections"
 
@@ -7,6 +8,7 @@ const Landing = () => {
             <div>
                 <IntroduceSections />
                 <TrustBrnadSections />
+                <FeatureSection />
             </div>
         </>
     )
