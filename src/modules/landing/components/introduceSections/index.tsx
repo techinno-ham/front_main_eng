@@ -3,33 +3,31 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 const IntroduceSections = () => {
-    const [inputValue, setInputValue] = useState('');
-    const [inputError, setInputError] = useState('');
-
+    const [inputValue, setInputValue] = useState("")
+    const [inputError, setInputError] = useState("")
 
     const validateInput = () => {
         // Check if input value is empty
         if (!inputValue.trim()) {
-          setInputError('آدرس وبسایت نمی‌تواند خالی باشد.');
-          return false;
+            setInputError("آدرس وبسایت نمی‌تواند خالی باشد.")
+            return false
         }
         // Check if input value is a valid URL
-        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/
         if (!urlPattern.test(inputValue)) {
-          setInputError('آدرس وبسایت وارد شده معتبر نیست.');
-          return false;
+            setInputError("آدرس وبسایت وارد شده معتبر نیست.")
+            return false
         }
-        return true;
-      };
+        return true
+    }
 
-    const handleInputChange = (event:any) => {
-        setInputValue(event.target.value);
-      };
+    const handleInputChange = (event: any) => {
+        setInputValue(event.target.value)
+    }
 
-      useEffect(() => {
-        setInputError('');
-      }, [inputValue]);
-    
+    useEffect(() => {
+        setInputError("")
+    }, [inputValue])
 
     return (
         <>

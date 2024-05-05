@@ -6,7 +6,7 @@ const Landing = () => {
         <>
             <div>
                 <IntroduceSections />
-                <TrustBrnadSections/>
+                <TrustBrnadSections />
             </div>
         </>
     )
