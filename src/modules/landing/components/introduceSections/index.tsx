@@ -33,7 +33,7 @@ const IntroduceSections = () => {
         <>
             <div className="intro_conteiner">
                 <div>
-                    <div className="absolute left-[80%] top-24">
+                    <div className="absolute left-[80%] top-24 -z-50">
                         <Image
                             src="/images/rightBlur.png"
                             height="100"
@@ -41,25 +41,25 @@ const IntroduceSections = () => {
                             alt="Logo"
                         />
                     </div>
-                    <div className="absolute right-[80%] top-24">
+                    <div className="absolute right-[80%] top-24 -z-50 left-blur">
                         <Image
-                            src="/images/rightBlur.png"
-                            height="100"
-                            width="300"
+                            src="/images/letfBlur.png"
+                            height="200"
+                            width="500"
                             alt="Logo"
                         />
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <h5>
-                        <p className="text-7xl">
+                        <p className=" text-5xl md:text-7xl">
                             ساخت{" "}
                             <span className="text-blue-600">چت بات هوشمند</span>{" "}
                             شخصی
                         </p>
                     </h5>
                     <h5 className="flex gap-x-px">
-                        <p className="text-7xl">با کمترین زمان</p>
+                        <p className="text-5xl md:text-7xl">با کمترین زمان</p>
                         <div>
                             <Image
                                 src="/icons/jet.svg"
@@ -70,7 +70,7 @@ const IntroduceSections = () => {
                         </div>
                     </h5>
                 </div>
-                <div className="mt-11">
+                <div className="mt-7 text-base text-slate-400 md:mt-10 md:text-lg ">
                     <p>
                         بات های مانند chat gpt برای پروژه یا کسب کار خود بسازید
                         تا کارها را انجام دهید. 🎯
@@ -88,7 +88,7 @@ const IntroduceSections = () => {
                         <button className="btn-demo">ساختن بات دمو</button>
                     </div>
 
-                    <div className="mt-[75px]">
+                    <div className="mt-[22px] md:mt-[35px]">
                         <Image
                             src="/images/phone.svg"
                             height="400"

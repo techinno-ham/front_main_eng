@@ -5,16 +5,16 @@ import Section from "./components/sections"
 
 const FeatureSection = () => {
     return (
-        <div className="container mx-auto px-4 ">
-            <div className="mt-[100px] text-center">
-                <h2 className="text-5xl leading-[150%]">
+        <div className="container mx-auto px-4 overflow-hidden ">
+            <div className="mt-[55px] md:mt-[80px] text-center">
+                <h2 className="text-2xl md:text-5xl leading-[150%]">
                     همه چیزی که برای ساخت <br />{" "}
-                    <span className="text-feature">ربات‌های سفارشی</span> نیاز
+                    <span className=" text-2xl md:text-5xl text-feature">ربات‌های سفارشی</span> نیاز
                     دارید.
                 </h2>
             </div>
-            <div className="mt-[80px]">
-              
+            <div className="mt-[30px] md:mt-[60px]">
+
                 <Section
                     sectionName="دانش"
                     title="
