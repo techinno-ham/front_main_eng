@@ -1,7 +1,25 @@
+"use client"
+import { CloseCircle, HambergerMenu } from "iconsax-react";
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const Header = () => {
+    const [isOpen,setIsOpen] = useState(false);
+    const [scroll, setScroll] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 65;
+            setScroll(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     const links: any = [
         {
             link: "/",
@@ -27,7 +45,7 @@ const Header = () => {
 
     return (
         <>
-            <nav className="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white">
+            <nav className={`fixed top-0 z-20 w-full border-b border-gray-200 ${scroll ? 'bg-blue-700' : 'bg-white'}`} >
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
                     <Link href={"/"}>
                         <Image
@@ -42,7 +60,7 @@ const Header = () => {
                         className="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
                         id="navbar-sticky"
                     >
-                        <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse ">
+                        <ul className="mt-4 flex flex-col rounded-lg border border-gray-100  p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0  md:p-0 rtl:space-x-reverse ">
                             {links.map((link: any, index: any) => {
                                 return (
                                     <li key={index}>
@@ -70,31 +88,35 @@ const Header = () => {
                         >
                             ثبت نام
                         </button>
-                        <button
-                            data-collapse-toggle="navbar-sticky"
+                        <button 
+                        onClick={()=>{setIsOpen(!isOpen)}}
                             type="button"
                             className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                            aria-controls="navbar-sticky"
-                            aria-expanded="false"
                         >
-                            <span className="sr-only">Open main menu</span>
-                            <svg
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 17 14"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M1 1h15M1 7h15M1 13h15"
-                                />
-                            </svg>
+                            {isOpen ?<CloseCircle/> : <HambergerMenu/> }
                         </button>
                     </div>
+                </div>
+                <div>
+                    <div
+                        className=" md:hidden w-full items-center justify-between md:order-1  md:w-auto"
+                        id="navbar-sticky"
+                    >
+                        <ul className={`mt-4  flex-col rounded-lg bg-white p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse ${isOpen ? 'flex' : 'hidden'} `}>
+                            {links.map((link: any, index: any) => {
+                                return (
+                                    <li key={index}>
+                                        <Link href={link.link}>
+                                            <div className="block rounded px-3 py-2 text-black md:bg-transparent md:p-0 ">
+                                                {link.title}
+                                            </div>
+                                        </Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    
                 </div>
             </nav>
         </>

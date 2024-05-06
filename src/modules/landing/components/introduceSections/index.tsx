@@ -90,7 +90,7 @@ const IntroduceSections = () => {
 
                     <div className="mt-[75px]">
                         <Image
-                            src="/images/phone.png"
+                            src="/images/phone.svg"
                             height="400"
                             width="600"
                             alt="Logo"
