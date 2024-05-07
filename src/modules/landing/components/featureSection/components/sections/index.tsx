@@ -29,7 +29,7 @@ const Section = ({
     }, [isInView])
     return (
         <>
-            <div className="flex  min-h-[500px]  flex-col  gap-20 md:flex-row">
+            <div className="flex  min-h-[500px]  flex-col gap-12  md:flex-row md:gap-20">
                 <div className="flex w-full" ref={mainRef}>
                     <div className="relative flex flex-col items-center pb-1">
                         <div className="inline-block">
@@ -67,7 +67,7 @@ const Section = ({
                                 animate={animController}
                                 transition={{ duration: 1, delay: 0 }}
                                 style={{ color: "#5470ff" }}
-                                className="leading-[150%]"
+                                className="text-base leading-[150%] md:text-2xl"
                             >
                                 {sectionName}
                             </motion.p>
@@ -80,7 +80,7 @@ const Section = ({
                             initial="hidden"
                             animate={animController}
                             transition={{ duration: 1, delay: 0.6 }}
-                            className="big text-2xl font-bold leading-[150%] "
+                            className="big text-base font-bold leading-[150%] md:text-2xl "
                         >
                             {title}
                         </motion.h2>
@@ -94,13 +94,21 @@ const Section = ({
                             animate={animController}
                             transition={{ duration: 1, delay: 1.2 }}
                             style={{ color: "gray" }}
-                            className="text-darker-green-grey content mt-3 text-base leading-[150%]"
+                            className="text-darker-green-grey content mt-3 text-sm leading-[150%] md:text-xl"
                         >
                             {desc}
                         </motion.p>
                     </div>
                 </div>
-                <div className={mask ? "relative  w-full h-[600px] overflow-hidden  ": "w-full flex align-center justify-center"}>{children}</div>
+                <div
+                    className={
+                        mask
+                            ? "relative  h-[600px] w-full overflow-hidden  "
+                            : "align-center flex w-full justify-center"
+                    }
+                >
+                    {children}
+                </div>
             </div>
         </>
     )

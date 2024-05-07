@@ -11,8 +11,8 @@ const Landing = () => {
                 <IntroduceSections />
                 <TrustBrnadSections />
                 <FeatureSection />
-                <FeaturesCards/>
-                <TryNow/>
+                <FeaturesCards />
+                <TryNow />
             </div>
         </>
     )

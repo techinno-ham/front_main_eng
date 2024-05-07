@@ -4,7 +4,7 @@
     position: relative;
 }
 .bg-cta {
-     background-image: url("https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp");
+    background-image: url("https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp");
     position: absolute;
     top: 0%;
     bottom: 0%;
@@ -39,7 +39,7 @@ img {
 .image-bg-cta {
     width: 488px;
     height: auto;
-    opacity: .05;
+    opacity: 0.05;
     flex: none;
     position: absolute;
     top: -25%;
@@ -49,7 +49,11 @@ img {
 .content-cta {
     background-color: #000;
     color: #f5f6f8;
-    background-image: linear-gradient(316deg, rgba(255, 255, 255, .02), #333333b5);
+    background-image: linear-gradient(
+        316deg,
+        rgba(255, 255, 255, 0.02),
+        #333333b5
+    );
     border: 1px solid #000;
     border-radius: 12px;
     justify-content: flex-end;
@@ -103,5 +107,7 @@ img {
     text-decoration: none;
     transition: all 75ms;
     display: flex;
-    box-shadow: 0 2px 6px rgba(0,133,255,.36), inset 0 1px 1px rgba(255,255,255,.5);
+    box-shadow:
+        0 2px 6px rgba(0, 133, 255, 0.36),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }

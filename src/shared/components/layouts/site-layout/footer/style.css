@@ -1,7 +1,7 @@
 /* Styles for main footer container */
 .footer-main {
     padding-top: 30px;
-        background: #fff;
+    background: #fff;
 }
 
 /* Styles for medium-sized container */
@@ -25,14 +25,14 @@
     grid-column-gap: 24px;
     grid-row-gap: 16px;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr 1fr ; /* 4 columns */
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columns */
     grid-auto-columns: 1fr;
     display: grid;
 }
 @media (max-width: 600px) {
-.grid-footer {
-    grid-template-columns: repeat(1, 1fr); /* Six columns */
-}
+    .grid-footer {
+        grid-template-columns: repeat(1, 1fr); /* Six columns */
+    }
 }
 
 /* Styles for a specific element within the grid */
@@ -42,7 +42,7 @@
 
 /* Styles for small paragraphs in the footer */
 .paragraph-small-main {
-color: #194bea;
+    color: #194bea;
     margin-bottom: 0;
     font-size: 16px;
     line-height: 21px;
@@ -65,7 +65,7 @@ color: #194bea;
     font-size: 14px;
     line-height: 24px;
     text-decoration: none;
-    transition: all .2s;
+    transition: all 0.2s;
 }
 
 .text-last-footer {
@@ -81,12 +81,12 @@ color: #194bea;
     display: flex;
 }
 
-.social-container{
-display: flex;
+.social-container {
+    display: flex;
 }
 
-.social-btn{
-background: #F3F4F5;
+.social-btn {
+    background: #f3f4f5;
     margin: 5px;
     padding: 5px 7px;
     border-radius: 6px;

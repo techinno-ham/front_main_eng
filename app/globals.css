@@ -35,16 +35,16 @@
         @apply text-[#2563eb];
     }
     .intro_conteiner {
-        @apply relative top-28 h-auto  text-center overflow-hidden;
+        @apply relative top-28 h-auto  overflow-hidden text-center;
     }
     .input-url {
-        @apply mt-8 w-3/4 md:w-1/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none  focus:outline-none;
+        @apply mt-8 w-3/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none focus:outline-none  md:w-1/4;
     }
     .btn-demo {
         @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[18px] border-none bg-[#2295FF] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
     }
     .left-blur {
-        @apply animate-[leftBlur_8s_infinite]
+        @apply animate-[leftBlur_8s_infinite];
     }
     @keyframes pulse {
         0% {
@@ -72,9 +72,15 @@
     }
 }
 
-.itemsContainer{
+.itemsContainer {
     position: relative;
     height: 600px;
-    overflow:hidden;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
-    }
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 25%,
+        rgb(0, 0, 0) 75%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}

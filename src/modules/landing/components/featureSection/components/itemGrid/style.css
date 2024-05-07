@@ -9,8 +9,8 @@
     bottom: 0%;
     left: 0%;
     right: 0%;
-  }
-  .item-image-path {
+}
+.item-image-path {
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -21,54 +21,54 @@
     position: relative;
     overflow: visible;
     transform: rotate(14deg) scale(0.8);
-  }
-  .wrapper-image-path {
+}
+.wrapper-image-path {
     z-index: -1;
     grid-row-gap: 12px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     display: flex;
-  }
-  
-  .first-col-animation {
+}
+
+.first-col-animation {
     will-change: opacity, transform;
     opacity: 1;
     transform: translate3d(0px, 57.1004px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-  }
-  
-  .second-col-animation {
+}
+
+.second-col-animation {
     will-change: opacity, transform;
     opacity: 1;
     transform: translate3d(0px, 2.84732px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-  }
-  .third-col-animation {
+}
+.third-col-animation {
     will-change: opacity, transform;
     opacity: 1;
     transform: translate3d(0px, -4.01172px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-  }
-  .forth-col-animation {
+}
+.forth-col-animation {
     will-change: opacity, transform;
     opacity: 1;
     transform: translate3d(0px, -64.5777px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-  }
-  .fifth-col-animation {
+}
+.fifth-col-animation {
     will-change: opacity, transform;
     opacity: 1;
     transform: translate3d(0px, 8.56422px, 0px) scale3d(1, 1, 1) rotateX(0deg)
-      rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+        rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
-  }
-  
-  .template-image-path {
+}
+
+.template-image-path {
     width: 172px;
     background-color: #fdfdfd;
     border: 1px solid #e4e4e7;
@@ -77,96 +77,97 @@
     align-items: center;
     padding: 12px;
     display: flex;
-    box-shadow: inset 2px 2px 2px #fff, -3px -4px 4px #fff,
-      2px 2px 4px rgba(0, 0, 0, 0.08);
-  }
-  @media (max-width: 1400px) {
+    box-shadow:
+        inset 2px 2px 2px #fff,
+        -3px -4px 4px #fff,
+        2px 2px 4px rgba(0, 0, 0, 0.08);
+}
+@media (max-width: 1400px) {
     .template-image-path {
-      width: 140px;
+        width: 140px;
     }
-  }
-  
-  /* Media query for screens smaller than 576px (e.g., smartphones) */
-  @media (max-width: 575px) {
+}
+
+/* Media query for screens smaller than 576px (e.g., smartphones) */
+@media (max-width: 575px) {
     .template-image-path {
-      width: 100px; /* Adjust width for even smaller screens */
-      padding: 8px; /* Adjust padding */
+        width: 100px; /* Adjust width for even smaller screens */
+        padding: 8px; /* Adjust padding */
     }
-  }
-  
-  
-  .icon-template-path {
-      width: 100%;
-      height: 100%;
-      opacity: 1;
-      border-radius: 8px;
-      justify-content: center;
-      align-items: center;
-      padding-top: 0;
-      padding-bottom: 0;
-      display: flex;
-  }
-  .info-path {
-      width: 100%;
-      height: 45%;
-      grid-row-gap: 8px;
-      flex-direction: column;
-      flex: none;
-      padding-top: 12px;
-      padding-bottom: 0;
-      display: flex;
-  }
-  .title-info-path {
-      color: #71717a;
-      flex: none;
-      font-family: Inter, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 150%;
-  }
-  .description-info-path {
-      height: 100%;
-      font-family: Inter, sans-serif;
-      font-size: 12px;
-      line-height: 150%;
-      overflow: hidden;
-  }
-  .text-botpress-small {
-      color: #71717a;
-      flex: none;
-      font-family: Inter, sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      line-height: 150%;
-      display: block;
-  }
-  .bottom-path {
-      width: 100%;
-      height: 10%;
-      justify-content: space-between;
-      align-items: center;
-      display: flex;
-  }
-  .icon-download {
-      width: 18px;
-      height: 18px;
-  }
-  .download-path {
-      grid-column-gap: 4px;
-      display: flex;
-  }
-  .number-downloads {
-      color: #52525b;
-      font-family: Inter, sans-serif;
-      font-size: 12px;
-      line-height: 150%;
-  }
-  .install-button {
-      color: rgba(24, 24, 27, .32);
-      background-color: #f4f4f5;
-      border-radius: 4px;
-      padding: 4px 12px 5px;
-      font-family: Inter, sans-serif;
-      font-size: 12px;
-      line-height: 150%;
-  }
+}
+
+.icon-template-path {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+}
+.info-path {
+    width: 100%;
+    height: 45%;
+    grid-row-gap: 8px;
+    flex-direction: column;
+    flex: none;
+    padding-top: 12px;
+    padding-bottom: 0;
+    display: flex;
+}
+.title-info-path {
+    color: #71717a;
+    flex: none;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+}
+.description-info-path {
+    height: 100%;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    overflow: hidden;
+}
+.text-botpress-small {
+    color: #71717a;
+    flex: none;
+    font-family: Inter, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 150%;
+    display: block;
+}
+.bottom-path {
+    width: 100%;
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.icon-download {
+    width: 18px;
+    height: 18px;
+}
+.download-path {
+    grid-column-gap: 4px;
+    display: flex;
+}
+.number-downloads {
+    color: #52525b;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+}
+.install-button {
+    color: rgba(24, 24, 27, 0.32);
+    background-color: #f4f4f5;
+    border-radius: 4px;
+    padding: 4px 12px 5px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+}

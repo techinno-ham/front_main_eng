@@ -41,7 +41,7 @@ const IntroduceSections = () => {
                             alt="Logo"
                         />
                     </div>
-                    <div className="absolute right-[80%] top-24 -z-50 left-blur">
+                    <div className="left-blur absolute right-[80%] top-24 -z-50">
                         <Image
                             src="/images/letfBlur.png"
                             height="200"
