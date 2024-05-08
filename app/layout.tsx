@@ -23,7 +23,7 @@ export default function RootLayout({
             <body className={myFont.className}>
                 <Header />
                 <main>{children}</main>
-                <Footer/>
+                <Footer />
             </body>
         </html>
     )
