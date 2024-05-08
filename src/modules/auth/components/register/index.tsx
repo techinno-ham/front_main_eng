@@ -1,27 +1,38 @@
 import Image from "next/image"
 
-const Login = () => {
+const Register = () => {
     return (
         <div className="flex h-[100vh] w-full flex-col md:flex-row overflow-hidden">
             <div className="flex w-full h-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] md:rounded-l-[90px] md:rounded-r-none bg-[#5470ff]">
-                <div className="flex h-[80%]  w-[80%] md:h-[70%] md:w-[80%] flex-col  gap-10">
+                <div className="flex h-[90%]  w-[90%] md:h-[70%] md:w-[80%] flex-col  gap-10">
                     <div className="mt-8 flex flex-col gap-1 md:gap-4 items-center">
                         <div>
                             <span className=" text-3xl md:text-4xl  text-white">
-                                ورود به پنل کاربری{" "}
+                            ایجاد حساب کاربری
+{" "}
                             </span>
                         </div>
                         <div>
                             <span className="text-sm md:text-base text-white">
                                 {" "}
-                                حساب کاربری ندارید؟{" "}
+                                از قبل حساب کابری دارید؟{" "}
                                 <span className="text-xs md:text-sm text-blue-900">
-                                    ثبت نام کنید
+                                وارد شوید
                                 </span>
                             </span>
                         </div>
                     </div>
                     <div className="flex flex-col gap-6 items-center">
+                    <input
+                            type="text"
+                            placeholder="نام"
+                            className="w-[85%] md:w-[75%] rounded-xl border-2 p-[18px]"
+                        />
+                              <input
+                            type="text"
+                            placeholder="نام خانوادگی "
+                            className="w-[85%] md:w-[75%] rounded-xl border-2 p-[18px]"
+                        />
                         <input
                             type="text"
                             placeholder="ایمیل یا شماره همراه "
@@ -34,7 +45,7 @@ const Login = () => {
                         />
 
                         <button  className="bg-[#47aeff] p-[15px] w-[180px] mt-[22px] rounded-2xl text-cyan-50">
-                            ورود
+                            عضویت
                         </button>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
@@ -66,7 +77,7 @@ const Login = () => {
                 </div>
                 <div>
                     <Image
-                        src="/images/login.jpg"
+                        src="/images/register.jpg"
                         height="400"
                         width="500"
                         alt="Logo"
@@ -77,4 +88,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register;
