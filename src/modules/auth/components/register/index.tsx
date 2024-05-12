@@ -1,10 +1,10 @@
 "use client"
-import { createUser } from "@/app/auth/_actions";
+import { createUser } from "@/app/auth/_actions"
 import Image from "next/image"
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom"
 
 const Register = () => {
-    const [state, formAction] = useFormState(createUser, null);
+    const [state, formAction] = useFormState(createUser, null)
     return (
         <div className="flex h-[100vh] w-full flex-col overflow-hidden md:flex-row">
             <div className="flex h-full w-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] bg-[#5470ff] md:rounded-l-[90px] md:rounded-r-none">
@@ -25,7 +25,10 @@ const Register = () => {
                             </span>
                         </div>
                     </div>
-                    <form action={formAction} className="flex flex-col items-center gap-6">
+                    <form
+                        action={formAction}
+                        className="flex flex-col items-center gap-6"
+                    >
                         <input
                             type="text"
                             name="name"
@@ -51,10 +54,8 @@ const Register = () => {
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
                         />
 
-                     <SubmitButton/>
-                     <div>
-                            {JSON.stringify(state,null,2)}
-                        </div>
+                        <SubmitButton />
+                        <div>{JSON.stringify(state, null, 2)}</div>
                     </form>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
@@ -94,16 +95,18 @@ const Register = () => {
             </div>
         </div>
     )
-};
+}
 
-const SubmitButton=()=>{
-    const {pending}= useFormStatus();
-    return(
-        <button disabled={pending}  className="mt-[22px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50">
-            {pending ? "صبر کنید ...": "عضویت"}
-        
-    </button>
+const SubmitButton = () => {
+    const { pending } = useFormStatus()
+    return (
+        <button
+            disabled={pending}
+            className="mt-[22px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50"
+        >
+            {pending ? "صبر کنید ..." : "عضویت"}
+        </button>
     )
-};
+}
 
 export default Register
