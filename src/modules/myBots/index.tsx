@@ -28,7 +28,7 @@ const MyBots = () => {
                 {/* bot container */}
                 <div className="mt-11">
                     <div className="flex justify-center">
-                        <div className="flex w-full md:w-1/2 items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px]">
+                        <div className="flex w-full items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px] md:w-1/2">
                             <SearchNormal1 color="#8F8F8F" />
                             <div className="mr-5 w-full">
                                 <input
@@ -39,18 +39,11 @@ const MyBots = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-16 grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-                        <BotBox type="instagram"/>
-                        <BotBox type="website"/>
-                        <BotBox type="instagram"/>
-                       
-
-
-                 
-              
+                    <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                        <BotBox type="instagram" />
+                        <BotBox type="website" />
+                        <BotBox type="instagram" />
                     </div>
-
-                  
                 </div>
             </div>
         </>
