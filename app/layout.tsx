@@ -3,6 +3,7 @@ import "./globals.css"
 import localFont from "next/font/local"
 import Header from "@/src/shared/components/layouts/site-layout/header"
 import Footer from "@/src/shared/components/layouts/site-layout/footer"
+import Script from "next/script"
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,6 +25,14 @@ export default function RootLayout({
                 <Header />
                 <main>{children}</main>
                 {/* <Footer /> */}
+
+                <Script
+                    src="/scripts/bot.js"
+                    id="myScript"
+                    nonce="XUENAJFW"
+                    defer
+                    data-token=""
+                />
             </body>
         </html>
     )

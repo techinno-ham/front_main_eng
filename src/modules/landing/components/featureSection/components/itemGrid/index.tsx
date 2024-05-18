@@ -51,9 +51,9 @@ const ItemsGrid = () => {
         //       }
 
         let scrollHandler = (e: any) => {
-            console.log({ e })
+            // console.log({ e })
 
-            console.log({ topRef, bottomRef })
+            // console.log({ topRef, bottomRef })
 
             // const { top } = myElementRef.current.getBoundingClientRect();
             // console.log('Y-coordinate:', top);
