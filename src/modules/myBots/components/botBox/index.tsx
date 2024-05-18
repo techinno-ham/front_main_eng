@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { DocumentCopy, Trash } from "iconsax-react";
+import { DocumentCopy, Trash } from "iconsax-react"
 
 interface IBotBoxProps {
     type: "instagram" | "website"
@@ -38,31 +38,33 @@ const BotBox = (props: IBotBoxProps) => {
                         <div className="w-full">
                             <hr />
                         </div>
-                        <div className="flex items-center w-full justify-between p-[9px]">
-
-                        <div className="flex flex-col">
+                        <div className="flex w-full items-center justify-between p-[9px]">
+                            <div className="flex flex-col">
                                 <div>
-                                    <span className="text-[20px]">{props.botsData?.name || "هوشینو بات"}</span>
+                                    <span className="text-[20px]">
+                                        {props.botsData?.name || "هوشینو بات"}
+                                    </span>
                                 </div>
                                 <div>
-                                    <span className="text-[10px] text-[gray]">{props.botsData?.lastUpdated || "بروز رسانی مدتی قبل"}</span>
+                                    <span className="text-[10px] text-[gray]">
+                                        {props.botsData?.lastUpdated ||
+                                            "بروز رسانی مدتی قبل"}
+                                    </span>
                                 </div>
                             </div>
-                          
+
                             <div className="flex w-1/4 justify-around">
                                 <div>
                                     <button>
-                                    <DocumentCopy size={20}/>
+                                        <DocumentCopy size={20} />
                                     </button>
                                 </div>
                                 <div>
                                     <button>
-                                        <Trash size={20} color="red"/>
+                                        <Trash size={20} color="red" />
                                     </button>
                                 </div>
                             </div>
-                           
-
                         </div>
                     </div>
                 </Link>
