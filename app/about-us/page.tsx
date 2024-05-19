@@ -1,8 +1,8 @@
-import Pricing from "@/src/modules/pricing"
+import AboutUs from "@/src/modules/about-us"
 import { NextPage } from "next"
 
 const PricingPage: NextPage = () => {
-    return <Pricing />
+    return <AboutUs />
 }
 
 export default PricingPage
