@@ -1,20 +1,14 @@
-import SideBar from "@/src/shared/components/layouts/panel-layout/sidebar";
+import SideBar from "@/src/shared/components/layouts/panel-layout/sidebar"
 
+const Layout = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <>
+            <div className="flex h-[100vh] bg-[#F6F8FB]">
+                <SideBar />
 
-const Layout=({
-    children,
-  }: {
-    children: React.ReactNode
-  })=>{
-  return(
-    <>
-    <div className="flex bg-[#F6F8FB] h-[100vh]">
-        <SideBar/>
-
-          {children}
-
-    </div>
-    </>
-  )
-};
+                {children}
+            </div>
+        </>
+    )
+}
 export default Layout

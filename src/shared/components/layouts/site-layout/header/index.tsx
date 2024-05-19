@@ -53,18 +53,18 @@ const Header = () => {
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
                     <Link href={"/"}>
                         <div className="flex items-center justify-center">
-                        <Image
-                            src="/logo.svg"
-                            height="60"
-                            width="60"
-                            alt="Logo"
-                        />
-                        <span className={`text-2xl font-bold mr-2 ${scroll && "text-[#fff]"}`}>
-                            هوشینو
-                        </span>
-
+                            <Image
+                                src="/logo.svg"
+                                height="60"
+                                width="60"
+                                alt="Logo"
+                            />
+                            <span
+                                className={`mr-2 text-2xl font-bold ${scroll && "text-[#fff]"}`}
+                            >
+                                هوشینو
+                            </span>
                         </div>
-                 
                     </Link>
 
                     <div
@@ -76,7 +76,9 @@ const Header = () => {
                                 return (
                                     <li key={index}>
                                         <Link href={link.link}>
-                                            <div className={`block rounded bg-blue-700 px-3 py-2 text-black md:bg-transparent md:p-0 ${scroll && "text-[#fff]"}`}>
+                                            <div
+                                                className={`block rounded bg-blue-700 px-3 py-2 text-black md:bg-transparent md:p-0 ${scroll && "text-[#fff]"}`}
+                                            >
                                                 {link.title}
                                             </div>
                                         </Link>
@@ -90,7 +92,7 @@ const Header = () => {
                         <button
                             onClick={() => router.push("/auth/login")}
                             type="button"
-                            className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-[#fff]"}`} 
+                            className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-[#fff]"}`}
                         >
                             ورود
                         </button>
