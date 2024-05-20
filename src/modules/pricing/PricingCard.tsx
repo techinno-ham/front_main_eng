@@ -1,3 +1,5 @@
+//https://uiverse.io/G4b413l/good-crab-75
+
 const PricingCard = ({
     children,
     description,
@@ -10,7 +12,13 @@ const PricingCard = ({
     return (
         <>
             <div className="w-full px-4 md:w-1/2 lg:w-1/3">
-                <div className="border-stroke shadow-pricing dark:border-dark-3 dark:bg-dark-2 relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]">
+                <div
+                    style={{
+                        backdropFilter: "blur(10px)",
+                        boxShadow: `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`,
+                    }}
+                    className="border-stroke shadow-pricing dark:border-dark-3 dark:bg-dark-2 relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
+                >
                     <span className="text-primary mb-3 block text-lg font-semibold">
                         {type}
                     </span>
@@ -31,7 +39,7 @@ const PricingCard = ({
                         className={` ${
                             active
                                 ? "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90"
-                                : "border-stroke text-primary hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-transparent p-3 text-center text-base font-medium transition hover:text-white"
+                                : "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
                         } `}
                     >
                         {buttonText}
@@ -310,6 +318,16 @@ const PricingCard = ({
                     </div>
                 </div>
             </div>
+            <div
+                className="circle"
+                style={{
+                    width: "100px",
+                    height: "100px",
+                    background: "radial-gradient(#b0e633, #53ef7d)",
+                    borderRadius: "50%",
+                    position: "absolute",
+                }}
+            ></div>
         </>
     )
 }

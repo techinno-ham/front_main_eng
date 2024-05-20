@@ -10,15 +10,29 @@ const Pricing = () => {
                     <div className="w-full px-4">
                         <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                             <span className="text-primary mb-2 block text-lg font-semibold">
-                                Pricing Table
+                                جدول قیمت‌گذاری
                             </span>
                             <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] dark:text-white">
-                                Our Pricing Plan
+                                قیمت
+                                <span
+                                    style={{
+                                        textShadow:
+                                            "0 3px 8px rgba(77, 243, 255, 0.22)",
+                                        backgroundImage:
+                                            "linear-gradient(360deg, #5154ff, #559fff)",
+                                        backgroundClip: "text",
+                                        fontWeight: 700,
+                                        position: "relative",
+                                        color: "transparent",
+                                    }}
+                                >
+                                    &nbsp;جدید ترین&nbsp;
+                                </span>
+                                سرویس ها
                             </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
-                                There are many variations of passages of Lorem
-                                Ipsum available but the majority have suffered
-                                alteration in some form.
+                                تغییرات زیادی از بخش‌های لورم ایپسوم موجود است،
+                                اما بیشتر آن‌ها به نوعی دچار تغییر شده‌اند.
                             </p>
                         </div>
                     </div>
@@ -27,47 +41,46 @@ const Pricing = () => {
                 <div className="-mx-4 flex flex-wrap justify-center">
                     <div className="-mx-4 flex flex-wrap">
                         <PricingCard
-                            type="Personal"
-                            price="$59"
-                            subscription="year"
-                            description="Perfect for using in a personal website or a client project."
-                            buttonText="Choose Personal"
+                            type="شخصی"
+                            price="۵۹ دلار"
+                            subscription="سال"
+                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
+                            buttonText="انتخاب طرح شخصی"
                         >
-                            <List>1 User</List>
-                            <List>All UI components</List>
-                            <List>Lifetime access</List>
-                            <List>Free updates</List>
-                            <List>Use on 1 (one) project</List>
-                            <List>3 Months support</List>
+                            <List>۱ کاربر</List>
+                            <List>تمامی اجزای رابط کاربری</List>
+                            <List>دسترسی مادام‌العمر</List>
+                            <List>به‌روزرسانی‌های رایگان</List>
+                            <List>استفاده در ۱ (یک) پروژه</List>
+                            <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                            type="Business"
-                            price="$199"
-                            subscription="year"
-                            description="Perfect for using in a personal website or a client project."
-                            buttonText="Choose Business"
-                            active
+                            type="شخصی"
+                            price="۵۹ دلار"
+                            subscription="سال"
+                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
+                            buttonText="انتخاب طرح شخصی"
                         >
-                            <List>5 User</List>
-                            <List>All UI components</List>
-                            <List>Lifetime access</List>
-                            <List>Free updates</List>
-                            <List>Use on31 (Three) project</List>
-                            <List>4 Months support</List>
-                        </PricingCard>
+                            <List>۱ کاربر</List>
+                            <List>تمامی اجزای رابط کاربری</List>
+                            <List>دسترسی مادام‌العمر</List>
+                            <List>به‌روزرسانی‌های رایگان</List>
+                            <List>استفاده در ۱ (یک) پروژه</List>
+                            <List>پشتیبانی ۳ ماهه</List>
+                        </PricingCard>{" "}
                         <PricingCard
-                            type="Professional"
-                            price="$256"
-                            subscription="year"
-                            description="Perfect for using in a personal website or a client project."
-                            buttonText="Choose Professional"
+                            type="شخصی"
+                            price="۵۹ دلار"
+                            subscription="سال"
+                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
+                            buttonText="انتخاب طرح شخصی"
                         >
-                            <List>Unlimited User</List>
-                            <List>All UI components</List>
-                            <List>Lifetime access</List>
-                            <List>Free updates</List>
-                            <List>Unlimited project</List>
-                            <List>12 Months support</List>
+                            <List>۱ کاربر</List>
+                            <List>تمامی اجزای رابط کاربری</List>
+                            <List>دسترسی مادام‌العمر</List>
+                            <List>به‌روزرسانی‌های رایگان</List>
+                            <List>استفاده در ۱ (یک) پروژه</List>
+                            <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                     </div>
                 </div>
