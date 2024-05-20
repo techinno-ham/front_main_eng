@@ -31,16 +31,16 @@ const Header = () => {
             link: "/pricing",
             title: "قیمت",
         },
+        // {
+        //     link: "/",
+        //     title: "مستندات",
+        // },
+        // {
+        //     link: "/",
+        //     title: "بلاگ",
+        // },
         {
-            link: "/",
-            title: "مستندات",
-        },
-        {
-            link: "/",
-            title: "بلاگ",
-        },
-        {
-            link: "/",
+            link: "/about-us",
             title: "درباره ی ما",
         },
     ]
