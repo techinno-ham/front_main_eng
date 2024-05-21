@@ -1,7 +1,8 @@
+import Dashboard from "@/src/modules/dashboard"
 import { NextPage } from "next"
 
-const PanelPage: NextPage = () => {
-    return <>test panel route dynamic</>
+const DashboardPage: NextPage = () => {
+    return <> <Dashboard/></>
 }
 
-export default PanelPage
+export default DashboardPage

@@ -47,7 +47,7 @@
         @apply animate-[leftBlur_8s_infinite];
     }
     .create-btn {
-        @apply animate-[scaleCreate_5s_infinite] flex bg-[#2563eb] p-3 rounded-2xl text-[#fff];
+        @apply flex animate-[scaleCreate_5s_infinite] rounded-2xl bg-[#2563eb] p-3 text-[#fff];
     }
     @keyframes pulse {
         0% {

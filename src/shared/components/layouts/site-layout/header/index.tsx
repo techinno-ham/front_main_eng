@@ -48,7 +48,7 @@ const Header = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 z-20 w-full border-b border-gray-200 ${scroll ? "bg-blue-700" : "bg-white"}`}
+                className={`fixed top-0 z-20 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
             >
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
                     <Link href={"/"}>
@@ -77,7 +77,7 @@ const Header = () => {
                                     <li key={index}>
                                         <Link href={link.link}>
                                             <div
-                                                className={`block rounded bg-blue-700 px-3 py-2 text-black md:bg-transparent md:p-0 ${scroll && "text-[#fff]"}`}
+                                                className={`block rounded bg-blue-700 px-3 py-2 text-black md:bg-transparent md:p-0 ${scroll && "text-white"}`}
                                             >
                                                 {link.title}
                                             </div>
@@ -92,7 +92,7 @@ const Header = () => {
                         <button
                             onClick={() => router.push("/auth/login")}
                             type="button"
-                            className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-[#fff]"}`}
+                            className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-white"}`}
                         >
                             ورود
                         </button>
