@@ -6,7 +6,7 @@ import TotalRevenue from "./components/totalRevenue";
 const Dashboard = () =>{
     return (
         <>
-        <div className="mt-[90px] container mx-auto">
+        <div className="mt-[90px] w-[95%] mx-auto">
         <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
             <PieChart
                     title="تعداد کل پاسخ ها موفق"
@@ -36,13 +36,17 @@ const Dashboard = () =>{
             </div>
            
             <div className="mt-8 grid  grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
-           
-                <PropertyReferrals/>
+                <div>
+                 <PropertyReferrals/>
+                </div>
+                <div>
+                <TotalRevenue/>
+                </div>
               
             
-                <TotalRevenue/>
                     
             </div>
+
             <ChartDemo/>
            
            

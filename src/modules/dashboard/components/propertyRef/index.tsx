@@ -49,7 +49,7 @@ const PropertyReferrals = () => {
         },
     ];
     return (
-        <div className="p-4 min-w-[490px] flex flex-col rounded-xl bg-white">
+        <div className="p-4  flex flex-col rounded-xl bg-white w-full h-full">
             <span className="text-xl font-semibold text-gray-900">
                 استفاده در محیط های مختلف
             </span>
