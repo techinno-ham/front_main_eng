@@ -46,6 +46,9 @@
     .left-blur {
         @apply animate-[leftBlur_8s_infinite];
     }
+    .create-btn {
+        @apply animate-[scaleCreate_5s_infinite] flex bg-[#2563eb] p-3 rounded-2xl text-[#fff];
+    }
     @keyframes pulse {
         0% {
             transform: scale(0.9);
@@ -68,6 +71,23 @@
         }
         100% {
             transform: scale(1.2) rotate(360deg);
+        }
+    }
+    @keyframes scaleCreate {
+        0% {
+            transform: scale(1);
+        }
+        25% {
+            transform: scale(0.9);
+        }
+        50% {
+            transform: scale(1);
+        }
+        75% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1);
         }
     }
 }
