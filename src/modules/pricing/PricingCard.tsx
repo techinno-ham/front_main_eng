@@ -1,4 +1,5 @@
 //https://uiverse.io/G4b413l/good-crab-75
+//https://tailwindcomponents.com/component/tailwind-pricing-tables
 
 const PricingCard = ({
     children,
@@ -16,10 +17,11 @@ const PricingCard = ({
                     style={{
                         backdropFilter: "blur(10px)",
                         boxShadow: `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`,
+                        borderColor: "#3056d3",
                     }}
-                    className="border-stroke shadow-pricing dark:border-dark-3 dark:bg-dark-2 relative z-10 mb-10 overflow-hidden rounded-[10px] border-2 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
+                    className="border-primary shadow-pricing relative z-10 mb-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
                 >
-                    <span className="text-primary mb-3 block text-lg font-semibold">
+                    <span className="text-blue-700 mb-3 block text-lg font-semibold">
                         {type}
                     </span>
                     <h2 className="text-dark mb-5 text-[42px] font-bold dark:text-white">
@@ -38,14 +40,14 @@ const PricingCard = ({
                         href="/#"
                         className={` ${
                             active
-                                ? "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-white transition hover:bg-opacity-90"
-                                : "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
+                                ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
+                                : "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
                         } `}
                     >
                         {buttonText}
                     </a>
                     <div>
-                        <span className="absolute right-0 top-7 z-[-1]">
+                        <span className="absolute left-0 top-7 z-[-1]">
                             <svg
                                 width={77}
                                 height={172}
@@ -81,7 +83,7 @@ const PricingCard = ({
                                 </defs>
                             </svg>
                         </span>
-                        <span className="absolute right-4 top-4 z-[-1]">
+                        <span className="absolute left-4 top-4 z-[-1]">
                             <svg
                                 width={41}
                                 height={89}

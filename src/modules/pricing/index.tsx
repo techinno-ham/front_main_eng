@@ -46,6 +46,7 @@ const Pricing = () => {
                             subscription="سال"
                             description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
                             buttonText="انتخاب طرح شخصی"
+                            active={false}
                         >
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
@@ -60,6 +61,7 @@ const Pricing = () => {
                             subscription="سال"
                             description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
                             buttonText="انتخاب طرح شخصی"
+                            active={true}
                         >
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
@@ -74,6 +76,7 @@ const Pricing = () => {
                             subscription="سال"
                             description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
                             buttonText="انتخاب طرح شخصی"
+                            active={false}
                         >
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
