@@ -21,7 +21,7 @@ const PricingCard = ({
                     }}
                     className="border-primary shadow-pricing relative z-10 mb-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
                 >
-                    <span className="text-blue-700 mb-3 block text-lg font-semibold">
+                    <span className="mb-3 block text-lg font-semibold text-blue-700">
                         {type}
                     </span>
                     <h2 className="text-dark mb-5 text-[42px] font-bold dark:text-white">
