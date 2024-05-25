@@ -13,9 +13,12 @@ const SourceCard = () => {
                 <span>"30.597/400.000"</span>
             </div>
             <div className="mt-2 flex justify-center">
-                <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                    آموزش مجدد بات
-                </button>
+                <div className="flex justify-end bg-zinc-100 px-5 py-3">
+                    xsxs
+                </div>{" "}
+                <div className="flex justify-end bg-zinc-100 px-5 py-3">
+                    xsxs
+                </div>
             </div>
         </div>
     )
