@@ -24,10 +24,16 @@ const QandA = () => {
         <div className=" mt-4 flex justify-center">
             <div className="h-[90%] w-[90%]">
                 <div className="mb-3 flex items-center justify-between">
-                    <button className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100" onClick={() => setQAList([])}>
+                    <button
+                        className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
+                        onClick={() => setQAList([])}
+                    >
                         حذف کردن همه
                     </button>
-                    <button   className="rounded-md bg-blue-600 px-3 py-2 text-sm text-white" onClick={handleAddQA}>
+                    <button
+                        className="rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
+                        onClick={handleAddQA}
+                    >
                         اضافه کردن +
                     </button>
                 </div>
