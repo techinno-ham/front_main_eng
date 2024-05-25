@@ -17,6 +17,9 @@ const config: Config = {
             width: {
                 "calc-100vw-minus-280px": "calc(100vw - 300px)",
             },
+            colors: {
+                "custom-blue": "#1e90ffe6",
+            },
         },
     },
     plugins: [],
