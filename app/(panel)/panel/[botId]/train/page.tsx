@@ -1,13 +1,14 @@
 import Dashboard from "@/src/modules/dashboard"
+import Train from "@/src/modules/train"
 import { NextPage } from "next"
 
-const DashboardPage: NextPage = () => {
+const DashboardTrainPage: NextPage = () => {
     return (
         <>
             {" "}
-            <Dashboard />
+            <Train />
         </>
     )
 }
 
-export default DashboardPage
+export default DashboardTrainPage

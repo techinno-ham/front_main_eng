@@ -1,8 +1,7 @@
 "use client"
-import ReactApexChart from "react-apexcharts";
-import { ApexOptions } from "apexcharts";
-import { ArrowCircleUp2 } from "iconsax-react";
-
+import ReactApexChart from "react-apexcharts"
+import { ApexOptions } from "apexcharts"
+import { ArrowCircleUp2 } from "iconsax-react"
 
 const TotalRevenue = () => {
     const TotalRevenueSeries = [
@@ -14,7 +13,7 @@ const TotalRevenue = () => {
             name: "Running Month",
             data: [95, 84, 72, 44, 108, 108, 47],
         },
-    ];
+    ]
     const TotalRevenueOptions: ApexOptions = {
         chart: {
             type: "bar",
@@ -58,18 +57,18 @@ const TotalRevenue = () => {
         tooltip: {
             y: {
                 formatter(val: number) {
-                    return `$ ${val} thousands`;
+                    return `$ ${val} thousands`
                 },
             },
         },
-    };
+    }
     return (
-        <div className="p-4 flex-1 flex flex-col rounded-xl bg-white">
+        <div className="flex flex-1 flex-col rounded-xl bg-white p-4">
             <span className="text-lg font-semibold text-gray-900">
                 مجموع استفاده در ماه جاری
             </span>
 
-            <div className="my-5 flex flex-row gap-4 flex-wrap">
+            <div className="my-5 flex flex-row flex-wrap gap-4">
                 <span className="text-2xl font-bold text-gray-900">
                     2356 بار
                 </span>
@@ -93,7 +92,7 @@ const TotalRevenue = () => {
                 options={TotalRevenueOptions}
             />
         </div>
-    );
-};
+    )
+}
 
-export default TotalRevenue;
+export default TotalRevenue

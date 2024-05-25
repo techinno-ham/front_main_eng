@@ -1,5 +1,4 @@
 "use client"
-
 import {
     Add,
     Book1,
@@ -15,29 +14,29 @@ import { usePathname } from "next/navigation"
 export const sidebarLinks = [
     {
         icon: <Category2 />,
-        route: "/panel/defe",
+        route: "/panel/[id]",
         label: "داشبورد",
     },
     {
         icon: <Book1 />,
-        route: "/panel/train",
+        route: "/panel/[id]/train",
         label: "آموزش ربات",
     },
     {
         icon: <Messages1 />,
-        route: "/panel/mymessage",
+        route: "/panel/[id]/mymessage",
         label: "گفت و گو ها",
     },
     {
         icon: <Setting2 />,
-        route: "/panel/setting",
+        route: "/panel/[id]/setting",
         label: "تنظیمات",
     },
 ]
 
 const SideBar = () => {
-    const router = useRouter()
     const pathname = usePathname()
+    const pathSegments = pathname.split("/")
 
     return (
         <>
@@ -45,18 +44,24 @@ const SideBar = () => {
                 <div className="mt-24 flex flex-col gap-8">
                     <div className="flex items-center justify-center">
                         <span className="text-3xl">
-                            {sidebarLinks.find(
-                                (item) => pathname === item.route,
+                            {sidebarLinks.find((item) =>
+                                pathname.startsWith(
+                                    item.route.replace("[id]", pathSegments[2]),
+                                ),
                             )?.label || ""}
                         </span>
                     </div>
 
                     <ul className="flex w-full list-none flex-col items-center gap-2">
-                        {sidebarLinks.map((item: any) => {
-                            const isActive = pathname == item.route
+                        {sidebarLinks.map((item) => {
+                            const linkRoute = item.route.replace(
+                                "[id]",
+                                pathSegments[2],
+                            )
+                            const isActive = pathname === linkRoute
                             return (
                                 <li key={item.label} style={{ width: "80%" }}>
-                                    <Link href={item.route}>
+                                    <Link href={linkRoute}>
                                         <div
                                             className={`flex cursor-pointer items-center gap-3 rounded-md p-2.5 transition-all ${
                                                 isActive

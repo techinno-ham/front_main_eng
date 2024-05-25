@@ -15,8 +15,11 @@ const config: Config = {
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
             width: {
-                'calc-100vw-minus-280px': 'calc(100vw - 300px)',
-              },
+                "calc-100vw-minus-280px": "calc(100vw - 300px)",
+            },
+            colors: {
+                "custom-blue": "#1e90ffe6",
+            },
         },
     },
     plugins: [],
