@@ -1,5 +1,17 @@
 //https://pagedone.io/blocks/full-pages/about-us-page
 //https://www.freepik.com/free-vector/teamwork-concept-landing-page_5155714.htm#fromView=search&page=1&position=2&uuid=f77b3277-49b0-4378-81f7-8d9417bf6546
+"use client"
+
+import React, { useRef, useState } from "react"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react"
+
+// Import Swiper styles
+import "swiper/css"
+import "swiper/css/effect-creative"
+
+// import required modules
+
 
 const AboutUs = () => {
     return (
@@ -7,8 +19,8 @@ const AboutUs = () => {
             <section className="relative z-0 bg-gray-50 py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
                     <h1 className="font-manrope mx-auto mb-5 max-w-2xl text-center text-4xl  font-bold text-gray-900 md:text-5xl md:leading-normal">
-                        کنترل مالی خود را با ابزار هوشمند ما د
-                        <span className="text-indigo-600">مدیریت کنی </span>
+                        کنترل مالی خود را با ابزار هوشمند ما                         <span className="text-indigo-600">مدیریت کنید
+ </span>
                     </h1>
                     <p className="mx-auto mb-9 max-w-sm text-center text-base font-normal leading-7 text-gray-500">
                         هوشمندانه سرمایه گذاری کنید و راه بهتری برای مدیریت آسان
@@ -144,96 +156,81 @@ const AboutUs = () => {
                             کاربران خوشحال ما چه می‌گویند!
                         </h2>
                     </div>
-
-                    <div
-                        //   style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                        className="swiper mySwiper2"
-                    >
-                        <div className="swiper-wrapper">
-                            <div className="swiper-slide">
-                                <div className="relative mb-20">
-                                    <div className="mx-auto max-w-max lg:max-w-4xl">
-                                        <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                            من تا چند ماه از pagedone استفاده
-                                            می‌کنم، و باید بگویم که واقعاً
-                                            زندگی‌ام را آسان‌تر کرده است. رابط
-                                            کاربری شهودی و سادگی استفاده از این
-                                            پلتفرم به من امکان می‌دهد که مالی
-                                            خود را به صورت مؤثرتر مدیریت کنم و
-                                            تصمیمات سرمایه‌گذاری خود را با آگاهی
-                                            بیشتری بگیرم. به طور خاص، ویژگی
-                                            پیگیری خودکار محصول را بسیار دوست
-                                            دارم که به من بسیاری از زمان و زحمت
-                                            را صرفه جویی کرده است.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="relative mb-20">
-                                    <div className="mx-auto max-w-max lg:max-w-4xl">
-                                        <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                            من تا چند ماه از pagedone استفاده
-                                            می‌کنم، و باید بگویم که واقعاً
-                                            زندگی‌ام را آسان‌تر کرده است. رابط
-                                            کاربری شهودی و سادگی استفاده از این
-                                            پلتفرم به من امکان می‌دهد که مالی
-                                            خود را به صورت مؤثرتر مدیریت کنم و
-                                            تصمیمات سرمایه‌گذاری خود را با آگاهی
-                                            بیشتری بگیرم. به طور خاص، ویژگی
-                                            پیگیری خودکار محصول را بسیار دوست
-                                            دارم که به من بسیاری از زمان و زحمت
-                                            را صرفه جویی کرده است.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="swiper-slide">
-                                <div className="relative mb-20">
-                                    <div className="mx-auto max-w-max lg:max-w-4xl">
-                                        <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                            من تا چند ماه از pagedone استفاده
-                                            می‌کنم، و باید بگویم که واقعاً
-                                            زندگی‌ام را آسان‌تر کرده است. رابط
-                                            کاربری شهودی و سادگی استفاده از این
-                                            پلتفرم به من امکان می‌دهد که مالی
-                                            خود را به صورت مؤثرتر مدیریت کنم و
-                                            تصمیمات سرمایه‌گذاری خود را با آگاهی
-                                            بیشتری بگیرم. به طور خاص، ویژگی
-                                            پیگیری خودکار محصول را بسیار دوست
-                                            دارم که به من بسیاری از زمان و زحمت
-                                            را صرفه جویی کرده است.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="swiper mySwiper">
-                        <div className="swiper-wrapper">
-                            <div className="swiper-slide">
-                                <img
+                    <Swiper 
+                    slidesPerView={2}
+                    spaceBetween={30}
+                    className="mySwiper">
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                        من تا چند ماه از pagedone استفاده
+                                        می‌کنم، و باید بگویم که واقعاً زندگی‌ام
+                                        را آسان‌تر کرده است. رابط کاربری شهودی و
+                                        سادگی استفاده از این پلتفرم به من امکان
+                                        می‌دهد که مالی خود را به صورت مؤثرتر
+                                        مدیریت کنم و تصمیمات سرمایه‌گذاری خود را
+                                        با آگاهی بیشتری بگیرم. به طور خاص، ویژگی
+                                        پیگیری خودکار محصول را بسیار دوست دارم
+                                        که به من بسیاری از زمان و زحمت را صرفه
+                                        جویی کرده است.
+                                    </p>
+                                    <img
                                     src="https://pagedone.io/asset/uploads/1704349534.png"
                                     alt="Emily image"
                                     className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                 />
+                                </div>
                             </div>
-                            <div className="swiper-slide">
-                                <img
-                                    src="https://pagedone.io/asset/uploads/1704349572.png"
-                                    alt="Ethan image"
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                        من تا چند ماه از pagedone استفاده
+                                        می‌کنم، و باید بگویم که واقعاً زندگی‌ام
+                                        را آسان‌تر کرده است. رابط کاربری شهودی و
+                                        سادگی استفاده از این پلتفرم به من امکان
+                                        می‌دهد که مالی خود را به صورت مؤثرتر
+                                        مدیریت کنم و تصمیمات سرمایه‌گذاری خود را
+                                        با آگاهی بیشتری بگیرم. به طور خاص، ویژگی
+                                        پیگیری خودکار محصول را بسیار دوست دارم
+                                        که به من بسیاری از زمان و زحمت را صرفه
+                                        جویی کرده است.
+                                    </p>
+                                    <img
+                                    src="https://pagedone.io/asset/uploads/1704349534.png"
+                                    alt="Emily image"
                                     className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                 />
+                                </div>
                             </div>
-                            <div className="swiper-slide">
-                                <img
-                                    src="https://pagedone.io/asset/uploads/1704349514.png"
-                                    alt="Olivia image"
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                        من تا چند ماه از pagedone استفاده
+                                        می‌کنم، و باید بگویم که واقعاً زندگی‌ام
+                                        را آسان‌تر کرده است. رابط کاربری شهودی و
+                                        سادگی استفاده از این پلتفرم به من امکان
+                                        می‌دهد که مالی خود را به صورت مؤثرتر
+                                        مدیریت کنم و تصمیمات سرمایه‌گذاری خود را
+                                        با آگاهی بیشتری بگیرم. به طور خاص، ویژگی
+                                        پیگیری خودکار محصول را بسیار دوست دارم
+                                        که به من بسیاری از زمان و زحمت را صرفه
+                                        جویی کرده است.
+                                    </p>
+                                    <img
+                                    src="https://pagedone.io/asset/uploads/1704349534.png"
+                                    alt="Emily image"
                                     className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                 />
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </SwiperSlide>
+                    </Swiper>
+
                 </div>
             </section>
             <section className="py-14 lg:py-24 ">
@@ -249,9 +246,8 @@ const AboutUs = () => {
                         </p>
                     </div>
 
-                    <div className="swiper teamswiper pb-10">
-                        <div className="swiper-wrapper flex">
-                            <div className="swiper-slide">
+
+                                <div className="flex">
                                 <div className="group flex w-full flex-wrap items-center gap-8  p-8 transition-all duration-500  lg:flex-nowrap">
                                     <div className=" h-64 w-full lg:w-48">
                                         <img
@@ -319,8 +315,6 @@ const AboutUs = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="swiper-slide">
                                 <div className="group flex w-full flex-col flex-wrap items-center gap-8 p-8 transition-all duration-500 md:flex-row lg:flex-nowrap">
                                     <div className=" h-64 w-full max-lg:mx-auto max-lg:max-w-[204px] lg:w-48">
                                         <img
@@ -388,7 +382,7 @@ const AboutUs = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
                             {/* <div className="swiper-slide">
                         <div
                             className="group w-full flex-wrap flex items-center gap-8  transition-all duration-500 p-8  lg:flex-nowrap">
@@ -513,8 +507,8 @@ const AboutUs = () => {
 
                 <div className="swiper-pagination"></div>
                 <div className="swiper-scrollbar"></div> */}
-                    </div>
-                </div>
+       
+              
             </section>
         </>
     )

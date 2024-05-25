@@ -5,7 +5,7 @@ import Image from "next/image"
 const Footer = () => {
     return (
         <footer className="footer-main">
-            <div className="w-layout-blockcontainer container-medium w-container">
+            <div className="container mx-auto px-4" >
                 <div className="wrapper-section">
                     <div className="grid-footer">
                         <div className="column w-node">
