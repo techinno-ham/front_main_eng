@@ -25,7 +25,7 @@ const Setting = () => {
         },
         {
             id: "Apperence",
-            component: dynamic(() => import("../train/components/websiteLink")),
+            component: dynamic(() => import("../setting/components/apperence")),
         },
         {
             id: "Security",

@@ -42,10 +42,10 @@ const General = () => {
                         </label>
                         <div className="mt-2 w-96">
                             <input
-                                className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                className="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
+                                id="inline-full-name"
                                 type="text"
-                                value=" 5/25/2024, 6:00:34 PM"
-                                name="name"
+                                value="Jane Doe"
                             />
                         </div>
                     </div>
