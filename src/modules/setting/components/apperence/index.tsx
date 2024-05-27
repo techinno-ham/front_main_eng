@@ -1,6 +1,26 @@
-import { CloseCircle, Refresh } from "iconsax-react"
+"use client"
+
+import { useState } from "react";
+import ChatTemplate from "./components/chatTemplate"
+import useStoreChatConfig from "./hooks/config-mock-chat";
+
 
 const Apperence = () => {
+    const { chatConfig, updateChatConfig } = useStoreChatConfig();
+
+    const handleInputChange = (e:any) => {
+        const { name, value } = e.target;
+        console.log({ [name]: value })
+        updateChatConfig({ [name]: value });
+    };
+    const [borderIcon,SetBorderIcon]= useState("#6495ed");
+    const [chatButtonPosition, setChatButtonPosition] = useState("start");
+
+    const handlePositionChange = (event:any) => {
+        const position = event.target.value === "راست" ? "start" : "end";
+        setChatButtonPosition(position);
+      };
+
     return (
         <>
             <div>
@@ -15,19 +35,19 @@ const Apperence = () => {
                                     <label className="block text-sm font-medium text-zinc-700">
                                         پیام های شروع :
                                     </label>
-                                    <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80">
+                                    <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80"
+                                        onClick={() => updateChatConfig({ botMessages: ["سلام! در چه زمینه ای می توانم به شما کمک کنم؟"] })}>
                                         بازنشانی
                                     </button>
                                 </div>
                                 <div className="mt-1">
-                                    <textarea
-                                        name="initial_messages"
+                                <textarea
+                                        name="botMessages"
+                                        value={chatConfig.botMessages.join('\n')}
+                                        onChange={(e) => updateChatConfig({ botMessages: e.target.value.split('\n') })}
                                         placeholder="Hi! What can I help you with?"
-                                        className="w-full min-w-0  flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3   text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
-                                    >
-                                        سلام! در چه زمینه ای می توانم به شما کمک
-                                        کنم؟
-                                    </textarea>
+                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                    />
                                     <p className="mt-2 text-sm text-zinc-500">
                                         هر پیام را در یک خط جدید وارد کنید.
                                     </p>
@@ -38,11 +58,13 @@ const Apperence = () => {
                                     پیام های پیشنهادی :
                                 </label>
                                 <div className="mt-1">
-                                    <textarea
-                                        name="initial_messages"
+                                <textarea
+                                        name="suggestedMessages"
+                                        value={chatConfig.suggestedMessages.join('\n')}
+                                        onChange={(e) => updateChatConfig({ suggestedMessages: e.target.value.split('\n') })}
                                         placeholder="رایا چت چیست ؟"
-                                        className="w-full min-w-0  flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3   text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
-                                    ></textarea>
+                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                    />
                                     <p className="mt-2 text-sm text-zinc-500">
                                         هر پیام را در یک خط جدید وارد کنید.
                                     </p>
@@ -53,12 +75,13 @@ const Apperence = () => {
                                     پیام داخل ورودی :{" "}
                                 </label>
                                 <div className="mt-1">
-                                    <input
+                                <input
+                                        name="inputPlaceholder"
+                                        value={chatConfig.inputPlaceholder}
+                                        onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="سلام ...."
                                         type="text"
-                                        value=""
-                                        name="name"
                                     />
                                 </div>
                             </div>
@@ -67,30 +90,61 @@ const Apperence = () => {
                                     فوتر :{" "}
                                 </label>
                                 <div className="mt-1">
-                                    <input
+                                <input
+                                        name="footer"
+                                        value={chatConfig.footer}
+                                        onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="رایا گپ ..."
                                         type="text"
-                                        value=""
-                                        name="name"
                                     />
+                                </div>
+                            </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    نام نمایش بات :{" "}
+                                </label>
+                                <div className="mt-1">
+                                <input
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="هوشینو"
+                                        type="text"
+                                        value={chatConfig.displayName}
+                                        name="displayName"
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </div>
+                    
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    رنگ پیام کاربر :{" "}
+                                </label>
+                                <div className="mt-2">
+                                    <div className="flex items-center">
+                                        <div>
+                                        <input
+                                        name="bgUserMessage"
+                                        type="color"
+                                        value={chatConfig.bgUserMessage}
+                                        onChange={handleInputChange}
+                                        className="p-1 h-10 w-14 block bg-white border border-gray-200 cursor-pointer rounded-lg disabled:opacity-50 disabled:pointer-events-none"
+                                        title="Choose your color"
+                                    />
+                                        </div>
+
+                                    </div>
+                                
                                 </div>
                             </div>
                             <div className="flex w-full flex-row items-center gap-4 py-3">
                                 <div className="flex flex-col gap-1">
                                     <span className="mb-1 block text-sm font-medium text-zinc-700">
-                                        عکس بات :{" "}
+                                        عکس دکمه چت بات  :{" "}
                                     </span>
                                     <div className="flex flex-row items-center gap-2">
-                                        <input
-                                            id="bot_profile_picture"
-                                            accept="image/*"
-                                            className="hidden"
-                                            type="file"
-                                            name="bot_profile_picture"
-                                        />
-                                        {/* <button class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 bg-transparent shadow-sm hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 h-7 rounded-md px-3 text-xs" type="button"/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload mr-2 h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg>Upload image
-                                            </button> */}
+                                        <input id="bot_profile_picture" accept="image/*" className="hidden" type="file" name="bot_profile_picture"/>
+                                        <button className="inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 bg-transparent shadow-sm hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 h-7 rounded-md px-3 text-xs" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-upload ml-2 h-4 w-4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" x2="12" y1="3" y2="15"></line></svg>آپلود عکس</button>
                                     </div>
                                     <span className="mt-1 text-xs text-zinc-500">
                                         Supports JPG, PNG, and SVG files up to
@@ -101,38 +155,35 @@ const Apperence = () => {
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    نام نمایش بات :{" "}
+                                    رنگ دکمه چت بات :{" "}
                                 </label>
-                                <div className="mt-1">
-                                    <input
-                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="هوشینو"
-                                        type="text"
-                                        value=""
-                                        name="name"
+                                <div className="mt-2">
+                                    <div className="flex items-center">
+                                        <div>
+                                        <input
+                                        name="borderIcon"
+                                        type="color"
+                                        value={borderIcon}
+                                        onChange={(event)=>{
+                                            SetBorderIcon(event.target.value);
+                                        }}
+                                        className="p-1 h-10 w-14 block bg-white border border-gray-200 cursor-pointer rounded-lg disabled:opacity-50 disabled:pointer-events-none"
+                                        title="Choose your color"
                                     />
+                                        </div>
+
+                                    </div>
+                                
                                 </div>
                             </div>
-                            <div className="pb-8">
-                                <label className="block text-sm font-medium text-zinc-700">
-                                    نام نمایش بات :{" "}
-                                </label>
-                                <div className="mt-1">
-                                    <input
-                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="هوشینو"
-                                        type="text"
-                                        value=""
-                                        name="name"
-                                    />
-                                </div>
-                            </div>
+                       
                             <div className="pb-8">
                                 <label className="mb-1 block text-sm font-medium text-zinc-700">
                                     {" "}
                                     محل قرارگیری دکمه چت بات :
                                 </label>
                                 <select
+                                    onChange={handlePositionChange}
                                     id="countries"
                                     className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                 >
@@ -152,30 +203,12 @@ const Apperence = () => {
                             </div>
                         </div>
                         <div className="w-2/2 mr-10 flex-1 lg:w-1/2">
-                            <div className="flex h-[85vh] max-h-[824px] flex-auto shrink-0 flex-col overflow-hidden rounded-xl border border-zinc-200  bg-zinc-100">
-                                <div className="cb-light group flex h-full flex-auto shrink-0 flex-col overflow-hidden bg-white">
-                                    <div className="w-full px-3">
-                                        <div className="z-10 flex justify-between border-b py-1">
-                                            <div className="flex items-center justify-center gap-3">    
-                                            <button><CloseCircle size={32} color="#9ca3af"/></button>
-                                            <button><Refresh size={28} color="#9ca3af"/></button>
+                         <ChatTemplate config={chatConfig}/>
+                         <div className="flex mt-4 pb-12" style={{ justifyContent: chatButtonPosition }}>
+                                            <div className="full flex h-[55px] w-[55px] items-center justify-center rounded-full"   style={{ border: `3px solid ${borderIcon}` }}>
+                                            <img src="/double-wink.svg" alt=""/>
                                             </div>
-                                            <div className="flex items-center"></div>
-                                        </div>
-                                    </div>
-                                    <div className="">
-                                    sddds
-                                    </div>
-                                    <div className="bg-inherit">
-                                        <form action="">
-                                        <div className="flex gap-2 overflow-x-auto p-3"></div>
-                                        ssds
-                                        </form>
-                                    </div>
-                                </div>
-                       
-                              
-                            </div>
+                         </div>
                         </div>
                     </div>
                 </div>

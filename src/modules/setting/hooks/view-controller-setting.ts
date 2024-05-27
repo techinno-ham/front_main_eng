@@ -18,4 +18,4 @@ const useStoreViewControllerSetting = create<StoreViewControllerSetting>(
     }),
 )
 
-export default useStoreViewControllerSetting
+export default useStoreViewControllerSetting;
