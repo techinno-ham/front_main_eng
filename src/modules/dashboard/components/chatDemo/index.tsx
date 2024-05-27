@@ -1,3 +1,5 @@
+import ChatBot from "@/src/shared/components/common/chatBot"
+
 const ChartDemo = () => {
     return (
         <>
@@ -56,13 +58,7 @@ const ChartDemo = () => {
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                                <div className="h-[75vh] max-h-[824px] overflow-hidden rounded-lg border-[1px] border-zinc-200">
-                                    <div className="flex justify-center">
-                                        <div className="text-3xl">
-                                            Chat Bot Template
-                                        </div>
-                                    </div>
-                                </div>
+                                <ChatBot />
                             </div>
                         </div>
                     </div>
