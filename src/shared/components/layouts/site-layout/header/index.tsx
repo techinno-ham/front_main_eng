@@ -35,10 +35,10 @@ const Header = () => {
         //     link: "/",
         //     title: "مستندات",
         // },
-        // {
-        //     link: "/",
-        //     title: "بلاگ",
-        // },
+        {
+            link: "/blogs",
+            title: "بلاگ",
+        },
         {
             link: "/about-us",
             title: "درباره ی ما",

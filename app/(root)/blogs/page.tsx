@@ -3,7 +3,7 @@ import Pricing from "@/src/modules/pricing"
 import { NextPage } from "next"
 
 const BlogsPage: NextPage = () => {
-    return <AllBlogs/>
+    return <AllBlogs />
 }
 
 export default BlogsPage
