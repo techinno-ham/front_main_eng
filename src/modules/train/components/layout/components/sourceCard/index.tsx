@@ -14,11 +14,9 @@ const SourceCard = () => {
             </div>
             <div className="mt-2 flex justify-center">
                 <div className="flex justify-end bg-zinc-100 px-5 py-3">
-                    xsxs
-                </div>{" "}
-                <div className="flex justify-end bg-zinc-100 px-5 py-3">
-                    xsxs
+                    آموزش مجدد چت بات
                 </div>
+               
             </div>
         </div>
     )
