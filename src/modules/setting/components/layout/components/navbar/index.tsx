@@ -24,7 +24,7 @@ const menuItems = [
 const Navbar = () => {
     return (
         <div>
-            <ul className="flex gap-x-[110px]">
+            <ul className="flex md:gap-x-[70px] gap-x-[35px] overflow-auto w-[100%]">
                 {menuItems.map((item) => {
                     return (
                         <li>
