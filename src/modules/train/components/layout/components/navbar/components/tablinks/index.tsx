@@ -1,4 +1,5 @@
 import useStoreViewController from "@/src/modules/train/hooks/view-controller"
+import { FolderAdd } from "iconsax-react"
 
 const TabLink = ({ item, event }: any) => {
     const StoreViewController = useStoreViewController()
@@ -9,9 +10,15 @@ const TabLink = ({ item, event }: any) => {
     return (
         <div
             onClick={handleClick}
-            className={`cursor-pointer  p-3 ${StoreViewController.activeTab === item.store && "border-b-2 border-custom-blue"}`}
+            className={`cursor-pointer flex gap-2 items-center w-max p-3 ${StoreViewController.activeTab === item.store && "border-b-2 border-custom-blue"}`}
         >
+            <div>
+                {item.icon}
+            </div>
+
+            <span>
             {item.title}
+            </span>
         </div>
     )
 }

@@ -16,7 +16,6 @@ const SourceCard = () => {
                 <div className="flex justify-end bg-zinc-100 px-5 py-3">
                     آموزش مجدد چت بات
                 </div>
-               
             </div>
         </div>
     )
