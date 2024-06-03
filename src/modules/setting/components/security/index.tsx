@@ -9,7 +9,7 @@ const Security = () => {
                         </label>
                         <select
                             id="countries"
-                            className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                            className="block w-1/2 md:w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                         >
                             <option>عمومی</option>
                             <option>خصوصی</option>
@@ -74,7 +74,7 @@ const Security = () => {
                         <div className="my-4 text-sm text-zinc-700">
                             نشان دادن پیامی که محدودیت پر می شود:
                             <input
-                                className=" mt-2 block w-96 appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
+                                className=" mt-2 block w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                                 id="inline-full-name"
                                 type="text"
                                 value="تعداد درخواست شما زیاد تر از استاندارد بات می باشد."

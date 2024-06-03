@@ -4,7 +4,7 @@ import BotBox from "./components/botBox"
 const MyBots = () => {
     return (
         <>
-            <div className="container mx-auto mt-24 h-screen overflow-hidden bg-white px-4">
+            <div className="container mx-auto mt-24  overflow-hidden bg-white px-4">
                 <div className="flex w-full justify-between">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">

@@ -40,9 +40,9 @@ const General = () => {
                         <label className="block text-sm font-medium text-zinc-700">
                             نام چت بات :
                         </label>
-                        <div className="mt-2 w-96">
+                        <div className="mt-2 ">
                             <input
-                                className="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
+                                className=" appearance-none w-full rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                                 id="inline-full-name"
                                 type="text"
                                 value="Jane Doe"
