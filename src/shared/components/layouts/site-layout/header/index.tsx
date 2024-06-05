@@ -48,7 +48,7 @@ const Header = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 z-20 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
+                className={`sticky top-0 z-20 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
             >
                 <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
                     <Link href={"/"}>
