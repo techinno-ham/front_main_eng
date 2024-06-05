@@ -35,7 +35,7 @@ export const sidebarLinks = [
 ]
 
 const SideBar = () => {
-    const pathname = usePathname();
+    const pathname = usePathname()
     console.log(pathname)
     const pathSegments = pathname.split("/")
 
@@ -45,10 +45,10 @@ const SideBar = () => {
                 <div className="mt-24 flex flex-col gap-8">
                     <div className="flex items-center justify-center">
                         <span className="text-3xl">
-                            {sidebarLinks.find((item) =>
-                                
-                                pathname == item.route.replace("[id]", pathSegments[2]),
-                               
+                            {sidebarLinks.find(
+                                (item) =>
+                                    pathname ==
+                                    item.route.replace("[id]", pathSegments[2]),
                             )?.label || ""}
                         </span>
                     </div>

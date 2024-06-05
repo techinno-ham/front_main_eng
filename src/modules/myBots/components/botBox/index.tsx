@@ -1,6 +1,9 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { DocumentCopy, Trash } from "iconsax-react"
+import Modal from "@/src/shared/components/common/modal"
+import { useState } from "react"
 
 interface IBotBoxProps {
     type: "instagram" | "website"
@@ -17,6 +20,19 @@ const listImage = {
 }
 
 const BotBox = (props: IBotBoxProps) => {
+    const [open, setOpen] = useState(false)
+
+    const handleTrashClick = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setOpen(true)
+    }
+    const handleOnCloseModal = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setOpen(false)
+    }
+
     return (
         <>
             <div className="cursor-pointer rounded-md border border-solid border-gray-200 hover:border-[#5470ff]">
@@ -60,9 +76,51 @@ const BotBox = (props: IBotBoxProps) => {
                                     </button>
                                 </div>
                                 <div>
-                                    <button>
+                                    <button onClick={handleTrashClick}>
                                         <Trash size={20} color="red" />
                                     </button>
+                                    <Modal
+                                        open={open}
+                                        onClose={handleOnCloseModal}
+                                    >
+                                        <div className="w-80 text-center">
+                                            <div className="flex flex-col gap-2">
+                                                <div>
+                                                    <Trash
+                                                        size={50}
+                                                        className="mx-auto text-red-500"
+                                                    />
+                                                    <div className="mx-auto  w-60">
+                                                        <h3 className="text-lg font-black text-gray-800">
+                                                            حذف کردن چت بات
+                                                        </h3>
+                                                        <p className="mt-[8px] text-[12px] text-gray-500">
+                                                            آیا مطمئن هستید که
+                                                            می خواهید ربات چت
+                                                            خود را حذف کنید؟ این
+                                                            عمل قابل برگشت نیست.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="flex justify-around gap-4">
+                                                    <button
+                                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                        onClick={
+                                                            handleOnCloseModal
+                                                        }
+                                                    >
+                                                        لغو
+                                                    </button>
+                                                    <button
+                                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-red-500 px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-red-500/90 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                        type="button"
+                                                    >
+                                                        پاک کردن
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Modal>
                                 </div>
                             </div>
                         </div>

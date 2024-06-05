@@ -34,7 +34,7 @@ const Train = () => {
 
     return (
         <>
-            <div className="mx-auto mt-[90px] w-[95%]">
+            <div className="mx-auto  md:mt-[100px] w-[95%]">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

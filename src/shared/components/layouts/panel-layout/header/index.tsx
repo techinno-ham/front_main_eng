@@ -32,15 +32,17 @@ const HeaderPanel = () => {
                         <Link href={"/"}>
                             <Image
                                 src="/logo.svg"
-                                height="60"
-                                width="60"
+                                height="40"
+                                width="40"
                                 alt="Logo"
-                                className="mr-5"
+                                className="md:w-15 md:h-15 mr-2 h-12 w-12 md:mr-5"
                             />
                         </Link>
 
                         <Link href={"/"}>
-                            <span className={`mr-2 text-2xl font-bold `}>
+                            <span
+                                className={`mr-2 text-xl font-bold md:text-2xl `}
+                            >
                                 هوشینو
                             </span>
                         </Link>
