@@ -7,29 +7,29 @@ const menuItems = [
     {
         title: "عمومی",
         store: "General",
-        icon:<Setting2 size={20}/>
+        icon: <Setting2 size={20} />,
     },
     {
         title: "هسته",
         store: "Model",
-        icon:<Magicpen size={20}/>
+        icon: <Magicpen size={20} />,
     },
     {
         title: "ظاهری",
         store: "Apperence",
-        icon:<Brush size={20}/>
+        icon: <Brush size={20} />,
     },
     {
         title: "امنیت",
         store: "Security",
-        icon:<Danger size={20}/>
+        icon: <Danger size={20} />,
     },
 ]
 
 const Navbar = () => {
     return (
         <div>
-            <ul className="flex md:gap-x-[70px] gap-x-[35px] overflow-auto w-[100%]">
+            <ul className="flex w-[100%] gap-x-[35px] overflow-auto md:gap-x-[70px]">
                 {menuItems.map((item) => {
                     return (
                         <li>

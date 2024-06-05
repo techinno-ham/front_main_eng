@@ -7,7 +7,7 @@ const DashboardMyMessagePage: NextPage = () => {
     return (
         <>
             {" "}
-            <MyMessage/>
+            <MyMessage />
         </>
     )
 }

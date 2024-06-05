@@ -10,7 +10,7 @@ export default function Home() {
             <Header />
             <main>
                 <Landing />
-                <SelectModalCustom/>
+                <SelectModalCustom />
             </main>
             <Footer />
         </>

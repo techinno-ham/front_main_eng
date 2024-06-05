@@ -34,7 +34,7 @@ const Setting = () => {
     ]
     return (
         <>
-            <div className="mx-auto mt-[52px] md:mt-[90px] w-[95%]">
+            <div className="mx-auto mt-[52px] w-[95%] md:mt-[90px]">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

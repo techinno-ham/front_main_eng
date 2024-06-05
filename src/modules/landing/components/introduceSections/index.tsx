@@ -5,10 +5,10 @@ import { useEffect, useState } from "react"
 import { ClockLoader } from "react-spinners"
 
 const IntroduceSections = () => {
-    const [inputValue, setInputValue] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [inputError, setInputError] = useState("");
-    const SelectModal = useSelectModal();
+    const [inputValue, setInputValue] = useState("")
+    const [loading, setLoading] = useState(false)
+    const [inputError, setInputError] = useState("")
+    const SelectModal = useSelectModal()
 
     const validateInput = () => {
         // Check if input value is empty
@@ -31,19 +31,18 @@ const IntroduceSections = () => {
 
     useEffect(() => {
         setInputError("")
-    }, [inputValue]);
+    }, [inputValue])
 
     const handleSubmit = () => {
         if (!validateInput()) {
-          return;
+            return
         }
-        setLoading(true);
-        setTimeout(()=>{
-            setLoading(false);
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
             SelectModal.onOpen()
-        },2000)
-
-      };
+        }, 2000)
+    }
 
     return (
         <>
@@ -101,7 +100,9 @@ const IntroduceSections = () => {
                 {inputError && <p className="">{inputError}</p>}
                 <div className="mt-[20px] flex flex-col items-center justify-center">
                     <div>
-                        <button className="btn-demo" onClick={handleSubmit}>ساختن بات دمو</button>
+                        <button className="btn-demo" onClick={handleSubmit}>
+                            ساختن بات دمو
+                        </button>
                     </div>
 
                     <div className="mt-[22px] md:mt-[35px]">
@@ -116,20 +117,20 @@ const IntroduceSections = () => {
             </div>
 
             {loading && (
-        <>
-          <div className="fixed top-0 left-0 w-full h-full bg-[#ffffff80] z-50"></div>{" "}
-          {/* Semi-transparent overlay */}
-          <div className="fixed top-1/2 left-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
-            <ClockLoader
-              color={"blue"}
-              loading={loading}
-              size={150}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </div>
-        </>
-      )}
+                <>
+                    <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#ffffff80]"></div>{" "}
+                    {/* Semi-transparent overlay */}
+                    <div className="fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
+                        <ClockLoader
+                            color={"blue"}
+                            loading={loading}
+                            size={150}
+                            aria-label="Loading Spinner"
+                            data-testid="loader"
+                        />
+                    </div>
+                </>
+            )}
         </>
     )
 }

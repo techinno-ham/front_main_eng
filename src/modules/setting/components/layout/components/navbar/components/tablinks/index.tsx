@@ -9,15 +9,11 @@ const TabLink = ({ item, event }: any) => {
     return (
         <div
             onClick={handleClick}
-            className={`cursor-pointer flex gap-2 items-center w-max p-3 ${StoreViewController.activeTab === item.store && "border-b-2 border-custom-blue"}`}
+            className={`flex w-max cursor-pointer items-center gap-2 p-3 ${StoreViewController.activeTab === item.store && "border-b-2 border-custom-blue"}`}
         >
-                    <div>
-                {item.icon}
-            </div>
+            <div>{item.icon}</div>
 
-            <span>
-            {item.title}
-            </span>
+            <span>{item.title}</span>
         </div>
     )
 }

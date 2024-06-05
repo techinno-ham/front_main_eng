@@ -13,10 +13,9 @@ const SourceCard = () => {
                 <span>"30.597/400.000"</span>
             </div>
             <div className="mt-4 flex justify-center">
-              <button className="p-3 bg-[#2563eb] text-white rounded-2xl">
+                <button className="rounded-2xl bg-[#2563eb] p-3 text-white">
                     آموزش مجدد چت بات
-              </button>
-           
+                </button>
             </div>
         </div>
     )
