@@ -1,12 +1,21 @@
 "use client"
-import { loginUser } from "@/app/auth/_actions"
+
 import Image from "next/image"
-import { useActionState } from "react"
-import { useFormStatus } from "react-dom"
-import { useFormState } from "react-dom"
+import { useRouter } from "next/router"
+import {  useState } from "react"
+
+import useLogin from "../../hooks/login"
+
 
 const Login = () => {
-    const [state, formAction] = useFormState(loginUser, null)
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { login, isLoading, error } = useLogin();
+
+  const handleSubmit = async (event:any) => {
+    event.preventDefault();
+    await login({ username:email, password });
+  };
     return (
         <div className="flex h-[100vh] w-full flex-col overflow-hidden md:flex-row">
             <div className="flex h-full w-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] bg-[#5470ff] md:rounded-l-[90px] md:rounded-r-none">
@@ -28,7 +37,7 @@ const Login = () => {
                         </div>
                     </div>
                     <form
-                        action={formAction}
+                        onSubmit={handleSubmit}
                         className="flex flex-col items-center gap-6"
                     >
                         <input
@@ -36,16 +45,18 @@ const Login = () => {
                             name="email"
                             placeholder="ایمیل یا شماره همراه "
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <input
                             type="password"
                             name="password"
                             placeholder="رمز عبور"
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            onChange={(e) => setPassword(e.target.value)}
                         />
 
-                        <SubmitButton />
-                        <div>{JSON.stringify(state, null, 2)}</div>
+                        <SubmitButton loading={isLoading} />
+                        {error && <div className="text-red-500">{error}</div>}
                     </form>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
@@ -87,14 +98,14 @@ const Login = () => {
     )
 }
 
-const SubmitButton = () => {
-    const { pending } = useFormStatus()
+const SubmitButton = ({ loading }:{loading:boolean}) => {
+   
     return (
         <button
-            disabled={pending}
+            disabled={loading}
             className="mt-[22px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50"
         >
-            {pending ? "صبر کنید ..." : "ورود"}
+            {loading ? "صبر کنید ..." : "ورود"}
         </button>
     )
 }
