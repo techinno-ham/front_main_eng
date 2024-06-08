@@ -1,11 +1,12 @@
 "use client"
 
 import Image from "next/image"
-import { useRouter } from "next/router"
+
 import { useState } from "react"
 
 import useLogin from "../../hooks/login"
 import { toast } from "sonner"
+
 
 const Login = () => {
     const [email, setEmail] = useState("")
@@ -14,6 +15,10 @@ const Login = () => {
 
     const handleSubmit = async (event: any) => {
         event.preventDefault()
+        if (!email || !password) {
+            toast.error("لطفا ایمیل و رمز عبور را وارد کنید")
+            return
+        }
         await login({ username: email, password })
     }
     return (
