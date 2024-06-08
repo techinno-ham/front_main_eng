@@ -1,4 +1,5 @@
 import axios from "axios";
+import { parseCookies } from 'nookies'
 
 
 
@@ -7,7 +8,17 @@ const mainApi = axios.create({
   });
 
   mainApi.interceptors.request.use((config:any) => {
-    const token = localStorage.getItem('accessToken');
+    let token;
+  
+    if (typeof window !== 'undefined') {
+      // Client-side
+      token = localStorage.getItem('accessToken');
+    } else {
+     
+      const cookies = parseCookies();
+      token = cookies.accessToken;
+    }
+  
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

@@ -4,11 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import useUser from "@/src/shared/hooks/user"
 
 const Header = () => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [scroll, setScroll] = useState(false)
-    const router = useRouter()
+    const [isOpen, setIsOpen] = useState(false);
+    const [scroll, setScroll] = useState(false);
+    const router = useRouter();
+    const {isAuthenticated}=useUser();
+    
 
     useEffect(() => {
         const handleScroll = () => {
@@ -89,7 +92,20 @@ const Header = () => {
                     </div>
 
                     <div className="flex gap-4 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+                        {isAuthenticated ? (
+                              <>
                         <button
+                            onClick={() => router.push("/mybots")}
+                            type="button"
+                            className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                            style={{backgroundColor:"rgb(29 78 216)"}}
+                        >
+                            پنل کاربری 
+                        </button>
+                              </>
+                        ): (
+                            <>
+                            <button
                             onClick={() => router.push("/auth/login")}
                             type="button"
                             className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-white"}`}
@@ -99,10 +115,14 @@ const Header = () => {
                         <button
                             onClick={() => router.push("/auth/register")}
                             type="button"
-                            className="rounded-lg bg-blue-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                            style={{backgroundColor:"rgb(29 78 216)"}}
                         >
                             ثبت نام
                         </button>
+                            </>
+                        )}
+               
                         <button
                             onClick={() => {
                                 setIsOpen(!isOpen)

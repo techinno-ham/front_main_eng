@@ -1,10 +1,23 @@
 "use client"
-import { createUser } from "@/app/auth/_actions"
+
 import Image from "next/image"
-import { useFormState, useFormStatus } from "react-dom"
+import { useState } from "react"
+import useRegister from "../../hooks/register";
+
 
 const Register = () => {
-    const [state, formAction] = useFormState(createUser, null)
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { register, isLoading, error } = useRegister();
+
+
+    const handleSubmit = async (event:any) => {
+        event.preventDefault();
+        await register ({name,lastName,email,password})
+      };
+   
     return (
         <div className="flex h-[100vh] w-full flex-col overflow-hidden md:flex-row">
             <div className="flex h-full w-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] bg-[#5470ff] md:rounded-l-[90px] md:rounded-r-none">
@@ -26,36 +39,44 @@ const Register = () => {
                         </div>
                     </div>
                     <form
-                        action={formAction}
+                          onSubmit={handleSubmit}
                         className="flex flex-col items-center gap-6"
                     >
+                        <div className="flex w-[85%] md:w-[75%] gap-4">
                         <input
                             type="text"
                             name="name"
                             placeholder="نام"
-                            className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            className="w-[85%] rounded-xl border-2 p-[18px]  md:w-[75%]"
+                            onChange={(e) => setName(e.target.value)}
                         />
                         <input
                             type="text"
                             name="username"
                             placeholder="نام خانوادگی "
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            onChange={(e) => setLastName(e.target.value)}
                         />
+
+                        </div>
+      
                         <input
                             type="text"
                             name="email"
                             placeholder="ایمیل یا شماره همراه "
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <input
                             type="password"
                             name="password"
                             placeholder="رمز عبور"
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                            onChange={(e) => setPassword(e.target.value)}
+
                         />
 
-                        <SubmitButton />
-                        <div>{JSON.stringify(state, null, 2)}</div>
+                        <SubmitButton loading={isLoading}/>
                     </form>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
@@ -97,14 +118,14 @@ const Register = () => {
     )
 }
 
-const SubmitButton = () => {
-    const { pending } = useFormStatus()
+const SubmitButton = ({ loading }:{loading:boolean}) => {
+  
     return (
         <button
-            disabled={pending}
+            disabled={loading}
             className="mt-[22px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50"
         >
-            {pending ? "صبر کنید ..." : "عضویت"}
+            {loading ? "صبر کنید ..." : "عضویت"}
         </button>
     )
 }

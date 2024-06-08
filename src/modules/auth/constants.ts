@@ -1,5 +1,5 @@
 export const LOGIN_REGISTER_API = {
-    REGISTER: "user/signup",
+    REGISTER: "auth/register",
     LOGIN: "auth/login",
   };
   

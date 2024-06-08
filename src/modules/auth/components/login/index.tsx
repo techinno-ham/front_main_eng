@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import {  useState } from "react"
 
 import useLogin from "../../hooks/login"
+import { toast } from "sonner"
 
 
 const Login = () => {
@@ -56,7 +57,8 @@ const Login = () => {
                         />
 
                         <SubmitButton loading={isLoading} />
-                        {error && <div className="text-red-500">{error}</div>}
+
+                        
                     </form>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
