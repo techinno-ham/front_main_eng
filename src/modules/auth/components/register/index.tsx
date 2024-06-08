@@ -2,22 +2,20 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import useRegister from "../../hooks/register";
-
+import useRegister from "../../hooks/register"
 
 const Register = () => {
-    const [name, setName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const { register, isLoading, error } = useRegister();
+    const [name, setName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const { register, isLoading, error } = useRegister()
 
+    const handleSubmit = async (event: any) => {
+        event.preventDefault()
+        await register({ name, lastName, email, password })
+    }
 
-    const handleSubmit = async (event:any) => {
-        event.preventDefault();
-        await register ({name,lastName,email,password})
-      };
-   
     return (
         <div className="flex h-[100vh] w-full flex-col overflow-hidden md:flex-row">
             <div className="flex h-full w-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] bg-[#5470ff] md:rounded-l-[90px] md:rounded-r-none">
@@ -39,27 +37,26 @@ const Register = () => {
                         </div>
                     </div>
                     <form
-                          onSubmit={handleSubmit}
+                        onSubmit={handleSubmit}
                         className="flex flex-col items-center gap-6"
                     >
-                        <div className="flex w-[85%] md:w-[75%] gap-4">
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="نام"
-                            className="w-[85%] rounded-xl border-2 p-[18px]  md:w-[75%]"
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="نام خانوادگی "
-                            className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
-                            onChange={(e) => setLastName(e.target.value)}
-                        />
-
+                        <div className="flex w-[85%] gap-4 md:w-[75%]">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="نام"
+                                className="w-[85%] rounded-xl border-2 p-[18px]  md:w-[75%]"
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                            <input
+                                type="text"
+                                name="username"
+                                placeholder="نام خانوادگی "
+                                className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
                         </div>
-      
+
                         <input
                             type="text"
                             name="email"
@@ -73,10 +70,9 @@ const Register = () => {
                             placeholder="رمز عبور"
                             className="w-[85%] rounded-xl border-2 p-[18px] md:w-[75%]"
                             onChange={(e) => setPassword(e.target.value)}
-
                         />
 
-                        <SubmitButton loading={isLoading}/>
+                        <SubmitButton loading={isLoading} />
                     </form>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
@@ -118,8 +114,7 @@ const Register = () => {
     )
 }
 
-const SubmitButton = ({ loading }:{loading:boolean}) => {
-  
+const SubmitButton = ({ loading }: { loading: boolean }) => {
     return (
         <button
             disabled={loading}

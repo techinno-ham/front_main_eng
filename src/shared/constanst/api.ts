@@ -12,35 +12,35 @@ export const API = {
     // fork & duplicate
     DUPLICATE_PUBLIC_PROJECT: "/project/public/duplicate",
     DUPLICATE_SHARED_PUBLIC_PROJECT: "/share/{id}/fork",
-  
+
     // tour
     GET_TOUR: "/user/tour",
     UPDATE_TOUR: "/user/tour",
-  
+
     // blog
     BLOG_CATEGORIES: "/categories",
     BLOG_ARTICLES: "/articles?sort=id:desc",
-  
+
     GET_BLOG:
-      "/articles?sort=id:desc&populate[cover][populate]=1&populate[blocks][populate]=*&populate[category][populate]=article[$limit]=1&populate[author][populate]=avatar&filters[slug][$eq]={slug}",
+        "/articles?sort=id:desc&populate[cover][populate]=1&populate[blocks][populate]=*&populate[category][populate]=article[$limit]=1&populate[author][populate]=avatar&filters[slug][$eq]={slug}",
     INCREMENT_BLOG_VIEW: "/articles/{id}",
-  
+
     GET_PAGE_CONTENT: "/pages/{pageId}?populate=*",
-  
+
     // upload
     UPLOAD_CUSTOM_FILE: "/file",
     GET_CUSTOM_FILE: "/file",
-  
+
     // gallery
     GET_GALLERY_ITEM: "/project/public/get/{id}",
     GET_GALLERY_SHARED_ITEM: "/share/{id}",
     // email activation
     USER_ACTIVATION_EMAIL_REQUEST: "/user/verification/retry",
-  
+
     CHANGE_PROFILE: "/user/profile",
     REMOVE_AVATAR: "/user/avatar",
     CHANGE_AVATAR: "/user/avatar",
-  
+
     // pricing
     GET_SUBSCRIPTION_PLAN: "/stripe/prices/{name}",
     SUBSCRIPTION_CHECKOUT: "/stripe/checkout/{id}",
@@ -50,4 +50,4 @@ export const API = {
     NOTIFICATIONS: "/user/notifications",
     SEEN_NOTIFICATION: "/user/notifications/{id}/seen",
     SEEN_ALL_NOTIFICATIONS: "/user/notifications/all/seen",
-  };
+}

@@ -1,10 +1,8 @@
-
 import type { Metadata } from "next"
 import "./globals.css"
 import localFont from "next/font/local"
 import Script from "next/script"
-import { Toaster, toast } from 'sonner'
-
+import { Toaster, toast } from "sonner"
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -20,11 +18,10 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-
     return (
         <html lang="fa" dir="rtl">
             <body className={myFont.className}>
-            <Toaster position="top-center" richColors/>
+                <Toaster position="top-center" richColors />
                 {children}
                 <Script
                     src="/scripts/bot.js"
