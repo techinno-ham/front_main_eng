@@ -33,10 +33,10 @@ const Header = () => {
             link: "/pricing",
             title: "قیمت",
         },
-        // {
-        //     link: "/",
-        //     title: "مستندات",
-        // },
+        {
+            link: "/faq",
+            title: "سوالات متداول",
+        },
         {
             link: "/blogs",
             title: "بلاگ",
