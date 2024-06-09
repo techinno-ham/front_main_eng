@@ -3,7 +3,7 @@ import Pricing from "@/src/modules/pricing"
 import { NextPage } from "next"
 
 const FAQPage: NextPage = () => {
-    return <FAQ/>
+    return <FAQ />
 }
 
 export default FAQPage

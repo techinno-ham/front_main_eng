@@ -18,8 +18,22 @@ const useLogin = () => {
             setCookie(null, "accessToken", res.data.accessToken, {
                 maxAge: 3600,
             })
-            localStorage.setItem("accessToken", res.data.accessToken)
-            localStorage.setItem("refreshToken", res.data.refreshToken)
+
+            setCookie(null, "accessToken", res.data.accessToken, {
+                maxAge: 3600,
+                path: "/",
+                secure: true, // Use this in production
+                sameSite: "strict", // Prevent CSRF attacks
+            })
+
+            setCookie(null, "refreshToken", res.data.refreshToken, {
+                maxAge: 30 * 24 * 60 * 60, // 30 days, or according to your refresh token TTL
+                path: "/",
+                secure: true, // Use this in production
+                sameSite: "strict",
+            })
+
+            // Redirect or perform other actions here
             router.push("/mybots")
         } catch (err: any) {
             console.log(err)

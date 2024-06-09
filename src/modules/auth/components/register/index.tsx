@@ -16,6 +16,11 @@ const Register = () => {
         await register({ name, lastName, email, password })
     }
 
+    const handleGoogleLogin = (event: any) => {
+        event.preventDefault()
+        window.location.href = `http://localhost:12000/v1/auth/google`
+    }
+
     return (
         <div className="flex h-[100vh] w-full flex-col overflow-hidden md:flex-row">
             <div className="flex h-full w-full  items-center justify-center rounded-l-[30px] rounded-r-[30px] bg-[#5470ff] md:rounded-l-[90px] md:rounded-r-none">
@@ -74,6 +79,29 @@ const Register = () => {
 
                         <SubmitButton loading={isLoading} />
                     </form>
+                    <div className="flex flex-col items-center justify-center gap-3">
+                        <div className="relative flex items-center justify-center text-xs uppercase">
+                            <div className="h-[1px] w-12 bg-white"></div>
+                            <span className=" px-2 text-white">
+                                یا ادامه دادن با{" "}
+                            </span>
+                            <div className="h-[1px] w-12 bg-white"></div>
+                        </div>
+                        <div>
+                            <button
+                                onClick={handleGoogleLogin}
+                                className="flex gap-2 rounded-lg border border-slate-200 bg-black  px-4 py-2 text-white transition  duration-150 hover:border-slate-400 hover:shadow"
+                            >
+                                <img
+                                    className="h-6 w-6"
+                                    src="https://www.svgrepo.com/show/475656/google-color.svg"
+                                    loading="lazy"
+                                    alt="google logo"
+                                />
+                                <span>وارد شدن با گوگل</span>
+                            </button>
+                        </div>
+                    </div>
                     <div className="flex flex-col items-center justify-center gap-1 md:hidden">
                         <div>
                             <span className="text-4xl">
@@ -118,7 +146,7 @@ const SubmitButton = ({ loading }: { loading: boolean }) => {
     return (
         <button
             disabled={loading}
-            className="mt-[22px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50"
+            className="mt-[16px] w-[180px] rounded-2xl bg-[#47aeff] p-[15px] text-cyan-50"
         >
             {loading ? "صبر کنید ..." : "عضویت"}
         </button>

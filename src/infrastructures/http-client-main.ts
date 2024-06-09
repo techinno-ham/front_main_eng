@@ -7,15 +7,8 @@ const mainApi = axios.create({
 
 mainApi.interceptors.request.use(
     (config: any) => {
-        let token
-
-        if (typeof window !== "undefined") {
-            // Client-side
-            token = localStorage.getItem("accessToken")
-        } else {
-            const cookies = parseCookies()
-            token = cookies.accessToken
-        }
+        const cookies = parseCookies()
+        const token = cookies.accessToken
 
         if (token) {
             config.headers.Authorization = `Bearer ${token}`

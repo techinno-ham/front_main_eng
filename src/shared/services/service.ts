@@ -24,7 +24,7 @@ class Services {
             })
             return response
         } catch (error: any) {
-           return false
+            return false
             // return true
             throw new Error(
                 error.response?.data?.message || "check token failed",

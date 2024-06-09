@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import Services from "../services/service"
 import useUserStore from "../store/userStore"
+import { parseCookies } from "nookies"
 
 const useUser = () => {
     const { user, setUser, isAuthenticated, setIsAuthenticated } =
@@ -12,12 +13,14 @@ const useUser = () => {
     const checkAuthUser = async () => {
         setIsLoading(true)
         try {
-            const cookieFallback = localStorage.getItem("accessToken")
+            const cookies = parseCookies()
+            const cookieFallback = cookies.accessToken
             if (!cookieFallback) {
+                setIsAuthenticated(false)
                 return false
             }
             const res = await Services.checkToken()
-            console.log(res, "res")
+            console.log(res)
             if (res) {
                 setUser({
                     name: "mahdiyar",
@@ -27,7 +30,7 @@ const useUser = () => {
             }
             return false
         } catch (error) {
-            console.error(error)
+            setIsAuthenticated(false)
             return false
         } finally {
             setIsLoading(false)

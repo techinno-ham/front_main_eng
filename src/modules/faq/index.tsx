@@ -19,9 +19,11 @@ let qaArray = [
 ]
 
 const FAQ = () => {
-    let [activeAccordionId, setActiveAccordionId] = useState<number|null>(null)
+    let [activeAccordionId, setActiveAccordionId] = useState<number | null>(
+        null,
+    )
     return (
-        <section className="py-24 min-h-[900px]">
+        <section className="min-h-[900px] py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mb-16">
                     <h6 className="mb-2 text-center text-lg font-medium text-indigo-600">
@@ -40,7 +42,7 @@ const FAQ = () => {
                         return (
                             <div
                                 key={indx}
-                                className="my-2 accordion accordion-active:bg-indigo-50 active rounded-2xl border-b border-solid border-gray-200 px-6 py-8 transition-all duration-500 hover:bg-indigo-50"
+                                className="accordion accordion-active:bg-indigo-50 active my-2 rounded-2xl border-b border-solid border-gray-200 px-6 py-8 transition-all duration-500 hover:bg-indigo-50"
                                 id="basic-heading-one-with-arrow"
                                 style={{
                                     background:
@@ -48,8 +50,10 @@ const FAQ = () => {
                                             ? "#eef2ff"
                                             : "revert-layer",
                                 }}
-                                onClick={()=>{
-                                    setActiveAccordionId(s=>s===indx ? null : indx)
+                                onClick={() => {
+                                    setActiveAccordionId((s) =>
+                                        s === indx ? null : indx,
+                                    )
                                 }}
                             >
                                 <button
@@ -57,20 +61,22 @@ const FAQ = () => {
                                     aria-controls="basic-collapse-one-with-arrow"
                                 >
                                     <h5
-                                    style={{
-                                        color:
-                                            activeAccordionId === indx
-                                                ? "rgb(79 70 229)"
-                                                : "unset",
-                                    }}
-                                    >{qa.question}</h5>
+                                        style={{
+                                            color:
+                                                activeAccordionId === indx
+                                                    ? "rgb(79 70 229)"
+                                                    : "unset",
+                                        }}
+                                    >
+                                        {qa.question}
+                                    </h5>
                                     <svg
-                                    style={{
-                                        rotate:
-                                            activeAccordionId === indx
-                                                ? "180deg"
-                                                : "0deg",
-                                    }}
+                                        style={{
+                                            rotate:
+                                                activeAccordionId === indx
+                                                    ? "180deg"
+                                                    : "0deg",
+                                        }}
                                         className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
                                         width="22"
                                         height="22"
@@ -97,14 +103,10 @@ const FAQ = () => {
                                                 ? "250px"
                                                 : "0px",
                                         opacity:
-                                            activeAccordionId === indx
-                                                ? 1
-                                                : 0,
+                                            activeAccordionId === indx ? 1 : 0,
                                     }}
                                 >
-                                    <p className="text-base leading-6 text-gray-900"
-                                    
-                                    >
+                                    <p className="text-base leading-6 text-gray-900">
                                         {qa.answer}
                                     </p>
                                 </div>
