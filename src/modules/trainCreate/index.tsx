@@ -1,4 +1,5 @@
 import Train from "../train";
+import TrainForCreate from "./components/train";
 
 const TrainCreate =() =>{
     return (
@@ -11,7 +12,7 @@ const TrainCreate =() =>{
         </div>
 
         <div>
-            <Train/>
+            <TrainForCreate/>
         </div>
        
 

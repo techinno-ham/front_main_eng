@@ -1,23 +1,26 @@
+import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+import { Trash } from "iconsax-react"
 import { useState } from "react"
-// import { MdDelete } from "react-icons/md";
+
 
 const QandA = () => {
-    const [qaList, setQAList] = useState([{ question: "", answer: "" }])
+ const {qaList,addQAList}= useDateSource()
+  
 
     const handleAddQA = () => {
-        setQAList([...qaList, { question: "", answer: "" }])
+        addQAList([...qaList, { question: "", answer: "" }])
     }
 
     const handleDeleteQA = (index: number) => {
         const newList = [...qaList]
         newList.splice(index, 1)
-        setQAList(newList)
+        addQAList(newList)
     }
 
     const handleInputChange = (index: number, field: string, value: string) => {
-        const newList = [...qaList]
-        // newList[index][field] = value
-        setQAList(newList)
+        const newList:any = [...qaList]
+        newList[index][field] = value
+        addQAList(newList)
     }
 
     return (
@@ -26,7 +29,7 @@ const QandA = () => {
                 <div className="mb-3 flex items-center justify-between">
                     <button
                         className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
-                        onClick={() => setQAList([])}
+                        onClick={() => addQAList([])}
                     >
                         حذف کردن همه
                     </button>
@@ -37,18 +40,21 @@ const QandA = () => {
                         اضافه کردن +
                     </button>
                 </div>
-                <div>
+                <div className="mt-3 flex h-72 flex-col overflow-auto gap-10  custom-scrollbar">
                     {qaList.map((qa, index) => (
                         <div
                             key={index}
-                            className="mt-4 bg-white p-4 shadow-md"
+                            className="mt-4 bg-[#55505004] p-4 shadow-md rounded-lg"
                         >
-                            <div className="flex justify-between">
+                            <div className="flex justify-end">
                                 <button
                                     className="p-2"
                                     onClick={() => handleDeleteQA(index)}
                                 >
-                                    {/* <MdDelete color="red" size={20} /> */}
+                                    <Trash
+                                     size="26"
+                                     color="red"
+                                        />
                                 </button>
                             </div>
                             <div className="flex flex-col gap-3">
