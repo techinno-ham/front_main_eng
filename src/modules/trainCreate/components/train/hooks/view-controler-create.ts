@@ -7,12 +7,15 @@ interface StoreViewControllerCreate {
     setLoading: (loading: boolean) => void
 }
 
-const useStoreViewControllerCreate = create<StoreViewControllerCreate>((set) => ({
-    isLoading: false,
-    activeTab: "File",
-    setLoading: (loading) => set({ isLoading: loading }),
+const useStoreViewControllerCreate = create<StoreViewControllerCreate>(
+    (set) => ({
+        isLoading: false,
+        activeTab: "File",
+        setLoading: (loading) => set({ isLoading: loading }),
 
-    changeTab: (newTab: any) => set((state: any) => ({ activeTab: newTab })),
-}))
+        changeTab: (newTab: any) =>
+            set((state: any) => ({ activeTab: newTab })),
+    }),
+)
 
-export default useStoreViewControllerCreate;
+export default useStoreViewControllerCreate

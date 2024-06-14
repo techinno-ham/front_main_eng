@@ -10,7 +10,7 @@ import { toast } from "sonner"
 const Login = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const { login, isLoading } = useLogin()
+    const { login, isLoading } = useLogin();
 
     const handleSubmit = async (event: any) => {
         event.preventDefault()

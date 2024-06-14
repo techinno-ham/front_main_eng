@@ -1,14 +1,13 @@
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource";
+import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 
 const TextInput = () => {
+    const { addText, addTextNumberChar, text } = useDateSource()
 
-    const { addText, addTextNumberChar,text } = useDateSource();
-
-    const handleChange = (e:any) => {
-        const newText = e.target.value;
-        addText(newText);
-        addTextNumberChar(newText.length);
-    };
+    const handleChange = (e: any) => {
+        const newText = e.target.value
+        addText(newText)
+        addTextNumberChar(newText.length)
+    }
     return (
         <>
             <div className="flex items-center justify-center">

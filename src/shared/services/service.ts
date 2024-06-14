@@ -13,7 +13,8 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    }
+    };
+
 
     checkTokenWithCookie = async (token: string | undefined) => {
         try {
@@ -30,7 +31,23 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    }
+    };
+
+    fetchLink = async (url:string) => {
+        try {
+            const response = await mainApi.get(API.FETCH_LINKS,{
+                params:{
+                    url
+                }
+            })
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "fetch links failed",
+            )
+        }
+    };
+
 }
 
 export default new Services()

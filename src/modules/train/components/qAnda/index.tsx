@@ -2,10 +2,8 @@ import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import { Trash } from "iconsax-react"
 import { useState } from "react"
 
-
 const QandA = () => {
- const {qaList,addQAList}= useDateSource()
-  
+    const { qaList, addQAList } = useDateSource();
 
     const handleAddQA = () => {
         addQAList([...qaList, { question: "", answer: "" }])
@@ -18,7 +16,7 @@ const QandA = () => {
     }
 
     const handleInputChange = (index: number, field: string, value: string) => {
-        const newList:any = [...qaList]
+        const newList: any = [...qaList]
         newList[index][field] = value
         addQAList(newList)
     }
@@ -40,21 +38,18 @@ const QandA = () => {
                         اضافه کردن +
                     </button>
                 </div>
-                <div className="mt-3 flex h-72 flex-col overflow-auto gap-10  custom-scrollbar">
+                <div className="custom-scrollbar mt-3 flex h-72 flex-col gap-10  overflow-auto">
                     {qaList.map((qa, index) => (
                         <div
                             key={index}
-                            className="mt-4 bg-[#55505004] p-4 shadow-md rounded-lg"
+                            className="mt-4 rounded-lg bg-[#55505004] p-4 shadow-md"
                         >
                             <div className="flex justify-end">
                                 <button
                                     className="p-2"
                                     onClick={() => handleDeleteQA(index)}
                                 >
-                                    <Trash
-                                     size="26"
-                                     color="red"
-                                        />
+                                    <Trash size="26" color="red" />
                                 </button>
                             </div>
                             <div className="flex flex-col gap-3">

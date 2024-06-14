@@ -6,7 +6,7 @@ import { NextPage } from "next"
 const CreateBotsPage: NextPage = () => {
     return (
         <>
-        <TrainCreate/>
+            <TrainCreate />
         </>
     )
 }

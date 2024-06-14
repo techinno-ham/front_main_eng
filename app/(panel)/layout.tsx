@@ -4,7 +4,7 @@ const PanelLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <HeaderPanel />
-            <main className="h-screen bg-[#F6F8FB]">{children}</main>
+            <main className="bg-[#F6F8FB]">{children}</main>
         </>
     )
 }

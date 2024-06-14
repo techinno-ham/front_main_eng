@@ -4,10 +4,10 @@ import BotBox from "./components/botBox"
 import { useRouter } from "next/navigation"
 
 const MyBots = () => {
-    const router=useRouter();
+    const router = useRouter()
     return (
         <>
-            <div className="container mx-auto mt-24  overflow-hidden bg-white px-4 h-full">
+            <div className="container mx-auto mt-24  h-full overflow-hidden bg-white px-4">
                 <div className="flex w-full justify-between">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">
@@ -20,10 +20,11 @@ const MyBots = () => {
                     </div>
                     <div>
                         <button
-                        onClick={()=>{
-                            router.push("/createbot")
-                        }} 
-                        className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm">
+                            onClick={() => {
+                                router.push("/createbot")
+                            }}
+                            className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm"
+                        >
                             <div className="flex gap-2">
                                 <ElementPlus size="18" color="#FFf" />
                                 <span>ساختن چت بات </span>
