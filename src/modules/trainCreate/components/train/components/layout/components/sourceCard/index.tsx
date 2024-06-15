@@ -1,7 +1,7 @@
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 
 const SourceCard = () => {
-    const { textInputCharNumber, qaList,urlList } = useDateSource()
+    const { textInputCharNumber, qaList,urlList,fileList } = useDateSource()
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
@@ -24,6 +24,11 @@ const SourceCard = () => {
                      {urlList.length > 0 && (
                         <div className="text-sm text-zinc-700">
                         {urlList.length} عدد لینک‌
+                        </div>
+                    )}
+                      {fileList.length > 0 && (
+                        <div className="text-sm text-zinc-700">
+                        {fileList.length} عدد فایل
                         </div>
                     )}
                     {qaList.length > 0 && (

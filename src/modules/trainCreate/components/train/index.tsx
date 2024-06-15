@@ -17,22 +17,22 @@ const TrainForCreate = () => {
         {
             id: "File",
             component: dynamic(
-                () => import("../../../train/components/upload"),
+                () => import("./components/upload"),
             ),
         },
         {
             id: "Text",
-            component: dynamic(() => import("../../../train/components/text")),
+            component: dynamic(() => import("./components/text")),
         },
         {
             id: "Website",
             component: dynamic(
-                () => import("../../../train/components/websiteLink"),
+                () => import("./components/websiteLink"),
             ),
         },
         {
             id: "QandA",
-            component: dynamic(() => import("../../../train/components/qAnda")),
+            component: dynamic(() => import("./components/qAnda")),
         },
     ]
 

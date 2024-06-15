@@ -7,6 +7,8 @@ const useDateSource = () => {
         setTextCharNumber,
         textInputCharNumber,
         qaList,
+        fileList,
+        setFileList,
         setQAList,
         urlList,
         setUrlList
@@ -25,6 +27,9 @@ const useDateSource = () => {
     const addUrlList = (newUrlList:string[])=>{
         setUrlList(newUrlList)
     };
+    const addFileList = (fileList:File[])=>{
+        setFileList(fileList)
+    };
 
     return {
         text,
@@ -34,7 +39,9 @@ const useDateSource = () => {
         qaList,
         addQAList,
         addUrlList,
-        urlList
+        urlList,
+        fileList,
+        addFileList
     }
 }
 export default useDateSource

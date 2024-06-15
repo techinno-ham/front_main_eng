@@ -7,8 +7,8 @@ import SourceCard from "./components/sourceCard"
 const Layout: FC = (props: any) => {
     return (
         <>
-            <div className="mt-[55px] flex w-[100%] flex-col gap-6 md:mt-[50px] xl:flex-row">
-                <div className="h-[500px] w-[100%] rounded-xl border bg-white  p-4 xl:w-[75%]">
+            <div className="mt-[55px] flex w-[100%] flex-col gap-6 md:mt-[10px] xl:flex-row">
+                <div className="min-h-[500px] max-h-[600px] w-[100%] rounded-xl border bg-white  p-4 xl:w-[75%]">
                     <Navbar />
                     <div>{props.children}</div>
                 </div>
