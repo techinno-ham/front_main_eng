@@ -4,7 +4,7 @@ import PricingCard from "./PricingCard"
 
 const Pricing = () => {
     return (
-        <section className="dark:bg-dark relative z-10 overflow-hidden bg-white pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
+        <section className="dark:bg-dark relative z-10 bg-white pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4">
@@ -69,7 +69,7 @@ const Pricing = () => {
                             <List>به‌روزرسانی‌های رایگان</List>
                             <List>استفاده در ۱ (یک) پروژه</List>
                             <List>پشتیبانی ۳ ماهه</List>
-                        </PricingCard>{" "}
+                        </PricingCard>
                         <PricingCard
                             type="شخصی"
                             price="۵۹ دلار"
@@ -777,7 +777,11 @@ const Pricing = () => {
                 <div className="relative mt-14 w-full">
                     <section className="hidden overflow-x-clip md:block">
                         <div className="sticky top-[-1px] z-10 h-0 opacity-0"></div>
-                        <header className="z-100 sticky inset-x-0 top-14  bg-white">
+                        <header 
+                        style={{
+                            zIndex: 100
+                        }}
+                        className="sticky inset-x-0 top-14  bg-white">
                             <div className="bg-white py-4">
                                 <div className="grid grid-cols-9 gap-4 bg-white">
                                     <div className="col-span-2 flex flex-col items-start justify-end gap-3 xl:col-span-2">
