@@ -1,11 +1,17 @@
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 
 const SourceCard = () => {
-    const { textInputCharNumber, qaList,urlList,fileList } = useDateSource()
+    const { textInputCharNumber, qaList,urlList,fileList,createBot,isLoading } = useDateSource();
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
-    )
+    );
+
+    const handleCrateBot = async (event:any)=>{
+        event.preventDefault();
+
+        await createBot();
+    };
 
     return (
         <div className="mt-18  h-fit w-full  rounded-xl  border bg-white p-2">
@@ -52,7 +58,10 @@ const SourceCard = () => {
                     </span>
                 </p>
                 <div className="mt-4 flex justify-center">
-                    <button className="rounded-xl bg-[#2563eb] p-3 text-[14px] text-white">
+                    <button
+                    onClick={handleCrateBot}
+                    disabled={isLoading}
+                     className="rounded-xl bg-[#2563eb] p-3 text-[14px] text-white">
                         آموزش چت بات جدید
                     </button>
                 </div>

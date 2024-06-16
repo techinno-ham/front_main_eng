@@ -2,9 +2,15 @@
 import { ElementPlus, SearchNormal1 } from "iconsax-react"
 import BotBox from "./components/botBox"
 import { useRouter } from "next/navigation"
+import TotalBots from "./components/totalBot"
+import PremiumBot from "./components/primiumBot"
+import { getBotList } from "./utils"
 
-const MyBots = () => {
-    const router = useRouter()
+const MyBots = async () => {
+    const router = useRouter();
+    const myBots= await getBotList();
+    console.log(myBots)
+
     return (
         <>
             <div className="container mx-auto mt-24  h-full overflow-hidden bg-white px-4">
@@ -33,6 +39,11 @@ const MyBots = () => {
                     </div>
                 </div>
 
+                <div className="flex gap-6 flex-col md:flex-row mt-8">
+                    <TotalBots/>
+                    <PremiumBot/>
+                </div>
+
                 {/* bot container */}
                 <div className="mt-11">
                     <div className="flex justify-center">
@@ -47,7 +58,7 @@ const MyBots = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                    <div className="mt-8 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                         <BotBox type="instagram" />
                         <BotBox type="website" />
                         <BotBox type="instagram" />

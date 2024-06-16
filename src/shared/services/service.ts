@@ -48,6 +48,34 @@ class Services {
         }
     };
 
+
+    cretaeBots = async (body:any) =>{
+        try {
+            const response = await mainApi.post(API.CREATE_BOT,body);
+            return response;
+        }catch (error:any){
+            throw new Error(
+                error.response?.data?.message || "create Bots failed",
+            )
+        }
+
+    };
+    myBoysList = async (params:any)=>{
+        try{
+            const response = await mainApi.get(API.My_BOTS,{
+                params:{
+                    ...params
+                }
+            })
+            return response
+
+        }catch(error:any){
+            throw new Error(
+                error.response?.data?.message || "fetch links failed",
+            )
+        }
+    };
+
 }
 
 export default new Services()

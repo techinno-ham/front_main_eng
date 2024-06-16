@@ -35,7 +35,7 @@ const BotBox = (props: IBotBoxProps) => {
 
     return (
         <>
-            <div className="cursor-pointer rounded-md border border-solid border-gray-200 hover:border-[#5470ff]">
+            <div className="cursor-pointer rounded-xl border border-solid border-gray-200 hover:border-[#5470ff]">
                 <Link href={"/dashbord"}>
                     <div className="flex flex-col items-center">
                         <div>
