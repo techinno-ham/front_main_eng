@@ -16,9 +16,7 @@ const TrainForCreate = () => {
     const tabs = [
         {
             id: "File",
-            component: dynamic(
-                () => import("./components/upload"),
-            ),
+            component: dynamic(() => import("./components/upload")),
         },
         {
             id: "Text",
@@ -26,9 +24,7 @@ const TrainForCreate = () => {
         },
         {
             id: "Website",
-            component: dynamic(
-                () => import("./components/websiteLink"),
-            ),
+            component: dynamic(() => import("./components/websiteLink")),
         },
         {
             id: "QandA",

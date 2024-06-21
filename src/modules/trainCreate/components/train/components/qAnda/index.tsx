@@ -3,7 +3,7 @@ import { Trash } from "iconsax-react"
 import { useState } from "react"
 
 const QandA = () => {
-    const { qaList, addQAList } = useDateSource();
+    const { qaList, addQAList } = useDateSource()
 
     const handleAddQA = () => {
         addQAList([...qaList, { question: "", answer: "" }])

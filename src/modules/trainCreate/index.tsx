@@ -1,10 +1,9 @@
-import Train from "../train"
 import TrainForCreate from "./components/train"
 
 const TrainCreate = () => {
     return (
         <>
-            <div className="container mx-auto mt-20  h-full  overflow-hidden px-4">
+            <div className="container mx-auto mb-36  mt-20  h-full overflow-hidden px-4">
                 <div className="border-t py-8">
                     <h1 className="mb-2 text-center text-3xl font-bold">
                         منابع آموزش

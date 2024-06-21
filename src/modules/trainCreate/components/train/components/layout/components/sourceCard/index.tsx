@@ -1,17 +1,24 @@
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 
 const SourceCard = () => {
-    const { textInputCharNumber, qaList,urlList,fileList,createBot,isLoading } = useDateSource();
+    const {
+        textInputCharNumber,
+        qaList,
+        urlList,
+        fileList,
+        createBot,
+        isLoading,
+    } = useDateSource()
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
-    );
+    )
 
-    const handleCrateBot = async (event:any)=>{
-        event.preventDefault();
+    const handleCrateBot = async (event: any) => {
+        event.preventDefault()
 
-        await createBot();
-    };
+        await createBot()
+    }
 
     return (
         <div className="mt-18  h-fit w-full  rounded-xl  border bg-white p-2">
@@ -27,14 +34,14 @@ const SourceCard = () => {
                             {textInputCharNumber} عدد کارکتر متن{" "}
                         </div>
                     )}
-                     {urlList.length > 0 && (
+                    {urlList.length > 0 && (
                         <div className="text-sm text-zinc-700">
-                        {urlList.length} عدد لینک‌
+                            {urlList.length} عدد لینک‌
                         </div>
                     )}
-                      {fileList.length > 0 && (
+                    {fileList.length > 0 && (
                         <div className="text-sm text-zinc-700">
-                        {fileList.length} عدد فایل
+                            {fileList.length} عدد فایل
                         </div>
                     )}
                     {qaList.length > 0 && (
@@ -59,10 +66,22 @@ const SourceCard = () => {
                 </p>
                 <div className="mt-4 flex justify-center">
                     <button
-                    onClick={handleCrateBot}
-                    disabled={isLoading}
-                     className="rounded-xl bg-[#2563eb] p-3 text-[14px] text-white">
-                        آموزش چت بات جدید
+                        onClick={handleCrateBot}
+                        disabled={isLoading}
+                        className="flex items-center rounded-xl bg-[#2563eb] p-3 text-[14px] text-white"
+                    >
+                        {isLoading ? (
+                            <>
+                                <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                <span className="mr-3">
+                                    مقداری صبر کنید ...
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <span>آموزش چت بات جدید</span>
+                            </>
+                        )}
                     </button>
                 </div>
             </div>

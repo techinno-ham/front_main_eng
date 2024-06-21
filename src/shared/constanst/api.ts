@@ -1,8 +1,10 @@
 export const API = {
     CHECK_TOKEN: "/auth/auth-check",
-    FETCH_LINKS:"/crawler/links",
-    CREATE_BOT:"/mybots/create",
-    My_BOTS:"/mybots/list",
+    FETCH_LINKS: "/crawler/links",
+    CREATE_BOT: "/mybots/create",
+    My_BOTS: "/mybots/list",
+    DELETE_BOTS: "/mybots/delete",
+
     // reset password
     RESET_PASSWORD_REQUEST: "/user/reset-password-request",
     RESET_PASSWORD: "/user/reset-password",

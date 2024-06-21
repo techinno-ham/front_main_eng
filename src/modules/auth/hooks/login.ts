@@ -20,14 +20,14 @@ const useLogin = () => {
             })
 
             setCookie(null, "accessToken", res.data.accessToken, {
-                maxAge: 3600,
+                maxAge:1 * 24 * 60 * 60,
                 path: "/",
                 secure: true, // Use this in production
                 sameSite: "strict", // Prevent CSRF attacks
             })
 
             setCookie(null, "refreshToken", res.data.refreshToken, {
-                maxAge: 30 * 24 * 60 * 60, // 30 days, or according to your refresh token TTL
+                maxAge: 3 * 24 * 60 * 60, // 3 days, or according to your refresh token TTL
                 path: "/",
                 secure: true, // Use this in production
                 sameSite: "strict",

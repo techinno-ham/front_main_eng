@@ -1,32 +1,28 @@
-import { useState } from "react";
-import { toast } from "sonner";
+import { useState } from "react"
+import { toast } from "sonner"
 import Services from "../services/service"
 
-const useFetchLinks = ()=>{
-    const [isLoading,setIsLoading]=useState(false);
+const useFetchLinks = () => {
+    const [isLoading, setIsLoading] = useState(false)
 
-    const fetchLink = async(link:string)=>{
+    const fetchLink = async (link: string) => {
         setIsLoading(true)
-        try{
+        try {
             const res = await Services.fetchLink(link)
             toast.success("")
             return res
-            
-
-        }catch(error){
+        } catch (error) {
             console.log(error)
             toast.error("نام کاربری یا رمز شما اشتباه می باشد.")
-
-        }finally {
+        } finally {
             setIsLoading(false)
         }
-    };
+    }
 
     return {
         fetchLink,
-        isLoading
+        isLoading,
     }
+}
 
-};
-
-export default useFetchLinks;
+export default useFetchLinks

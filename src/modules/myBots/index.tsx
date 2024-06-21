@@ -5,21 +5,49 @@ import { useRouter } from "next/navigation"
 import TotalBots from "./components/totalBot"
 import PremiumBot from "./components/primiumBot"
 import { getBotList } from "./utils"
+import { useEffect, useState } from "react"
+import service from "@/src/shared/services/service"
+import { toast } from "sonner"
 
-const MyBots = async () => {
-    const router = useRouter();
-    const myBots= await getBotList();
-    console.log(myBots)
+const MyBots = () => {
+    const [myBotsArry, setMyBots] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const router = useRouter()
+
+    useEffect(() => {
+        const fetchBotList = async () => {
+            setIsLoading(true)
+            try {
+                const response: any = await getBotList()
+                setMyBots(response.data.bots)
+            } catch (err) {
+                console.log(err)
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        fetchBotList()
+    }, []);
+
+    const handleDeleteBot = async (botId: string) => {
+        try {
+            await service.deleteBot(botId);
+            setMyBots((prevBots) => prevBots.filter((bot: any) => bot.bot_id !== botId))
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return (
         <>
-            <div className="container mx-auto mt-24  h-full overflow-hidden bg-white px-4">
-                <div className="flex w-full justify-between">
+            <div className="container mx-auto mb-40  mt-24 h-full px-4">
+                <div className="flex w-full justify-between items-center">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">
                             چت بات های من
                         </p>
-                        <p className="text-[12px]  text-slate-500 md:mt-1 md:text-sm">
+                        <p className="text-[10px]  text-slate-500 md:mt-1 md:text-sm">
                             در اینجا، می توانید بات های خود را ببینید و بات های
                             جدید بسازید.
                         </p>
@@ -27,21 +55,25 @@ const MyBots = async () => {
                     <div>
                         <button
                             onClick={() => {
-                                router.push("/createbot")
+                                if(myBotsArry.length<2){
+                                    router.push("/createbot")
+                                }else{
+                                    toast.error("شما بیش از 2 بات نمیتوانید بسازید...")
+                                }
                             }}
                             className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm"
                         >
                             <div className="flex gap-2">
                                 <ElementPlus size="18" color="#FFf" />
-                                <span>ساختن چت بات </span>
+                                <span> چت بات جدید</span>
                             </div>
                         </button>
                     </div>
                 </div>
 
-                <div className="flex gap-6 flex-col md:flex-row mt-8">
-                    <TotalBots/>
-                    <PremiumBot/>
+                <div className="mt-8 flex flex-col gap-6 md:flex-row">
+                    <TotalBots totalNumber={myBotsArry.length} />
+                    <PremiumBot />
                 </div>
 
                 {/* bot container */}
@@ -58,10 +90,35 @@ const MyBots = async () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-8 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-                        <BotBox type="instagram" />
-                        <BotBox type="website" />
-                        <BotBox type="instagram" />
+
+                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        {isLoading ? (
+                            <>
+                                <div className="col-span-full flex items-center justify-center">
+                                    <div className="h-12 w-12 animate-spin rounded-full border-8 border-gray-300 border-t-blue-600"></div>
+                                    <span className="mr-3">
+                                        مقداری صبر کنید ...
+                                    </span>
+                                </div>
+                            </>
+                        ) : myBotsArry.length > 0 ? (
+                            myBotsArry.map((bot: any, index) => (
+                                <BotBox
+                                    key={index}
+                                    type={bot.type}
+                                    botsData={bot}
+                                    onDelete={handleDeleteBot}
+                                    
+                                />
+                            ))
+                        ) : (
+                            <div className="col-span-full flex items-center justify-center h-full flex-col text-center">
+                                <span>در حال حاظر چت باتی  وجود ندارد ....</span>
+                                <span>شما میتوانید برای ساختن آن روی دکمه ی "چت بات جدید "بزنید و اولین چت بات خود را بسازید.</span>
+
+                          
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

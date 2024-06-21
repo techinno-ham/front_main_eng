@@ -13,14 +13,14 @@ const useUser = () => {
     const checkAuthUser = async () => {
         setIsLoading(true)
         try {
-            const cookies = parseCookies()
+            const cookies = parseCookies();
             const cookieFallback = cookies.accessToken
             if (!cookieFallback) {
                 setIsAuthenticated(false)
                 return false
             }
             const res = await Services.checkToken()
-            console.log(res)
+
             if (res) {
                 setUser({
                     name: "mahdiyar",

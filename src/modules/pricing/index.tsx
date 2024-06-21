@@ -738,9 +738,7 @@ const Pricing = () => {
                                                 <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </p>
-                                        <span>
-                                            Remove Powered by Chatbase
-                                        </span>
+                                        <span>Remove Powered by Chatbase</span>
                                     </li>
                                     <li className="flex flex-row items-start gap-3">
                                         <p className="size-5 text-zinc-700">
@@ -777,11 +775,12 @@ const Pricing = () => {
                 <div className="relative mt-14 w-full">
                     <section className="hidden overflow-x-clip md:block">
                         <div className="sticky top-[-1px] z-10 h-0 opacity-0"></div>
-                        <header 
-                        style={{
-                            zIndex: 100
-                        }}
-                        className="sticky inset-x-0 top-14  bg-white">
+                        <header
+                            style={{
+                                zIndex: 100,
+                            }}
+                            className="sticky inset-x-0 top-14  bg-white"
+                        >
                             <div className="bg-white py-4">
                                 <div className="grid grid-cols-9 gap-4 bg-white">
                                     <div className="col-span-2 flex flex-col items-start justify-end gap-3 xl:col-span-2">
@@ -2083,7 +2082,9 @@ const Pricing = () => {
                                 data-state="closed"
                                 className="border-b-1 z-100 sticky top-14 -mx-8 flex h-10 w-full min-w-[calc(100%+4rem)] items-center justify-between rounded-md border border-zinc-900/10 border-t-zinc-200 bg-zinc-50 px-10 py-7 text-base font-medium text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-0 focus:ring-violet-500/10 focus:ring-offset-0 disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:placeholder:text-zinc-400 dark:focus:ring-zinc-300"
                             >
-                                <span style={{pointerEvents: "none"}}>Free</span>
+                                <span style={{ pointerEvents: "none" }}>
+                                    Free
+                                </span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"

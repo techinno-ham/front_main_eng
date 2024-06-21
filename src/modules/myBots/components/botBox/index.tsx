@@ -8,7 +8,7 @@ import { useState } from "react"
 interface IBotBoxProps {
     type: "instagram" | "website"
     botsData?: any
-    onDelete?: (projectId: number) => any
+    onDelete?: (botId: string) => any
     onDuplicate?: (projectId: number) => any
 }
 
@@ -20,7 +20,8 @@ const listImage = {
 }
 
 const BotBox = (props: IBotBoxProps) => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [loading,setLoading]=useState(false);
 
     const handleTrashClick = (e: React.MouseEvent) => {
         e.stopPropagation()
@@ -32,11 +33,26 @@ const BotBox = (props: IBotBoxProps) => {
         e.preventDefault()
         setOpen(false)
     }
+    const handleDelete = async (e: any) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setLoading(true); 
+        try {
+            if (props.onDelete && props.botsData.bot_id) {
+                await props.onDelete(props.botsData.bot_id);
+                setOpen(false);
+            }
+        } catch (error) {
+            console.error("Error deleting bot:", error);
+        } finally {
+            setLoading(false); 
+        }
+    }
 
     return (
         <>
             <div className="cursor-pointer rounded-xl border border-solid border-gray-200 hover:border-[#5470ff]">
-                <Link href={"/dashbord"}>
+                <Link href={`/panel/${props.botsData.bot_id}`}>
                     <div className="flex flex-col items-center">
                         <div>
                             <Image
@@ -112,10 +128,23 @@ const BotBox = (props: IBotBoxProps) => {
                                                         لغو
                                                     </button>
                                                     <button
-                                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-red-500 px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-red-500/90 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                        style={{backgroundColor:"red"}}
+                                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md  px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-red-500/90 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                                                         type="button"
+                                                        onClick={handleDelete}
                                                     >
-                                                        پاک کردن
+                                                                   {loading ? (
+                            <>
+                                <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                <span className="mr-3">
+                                     صبر کنید ...
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <span>حذف کردن</span>
+                            </>
+                        )}
                                                     </button>
                                                 </div>
                                             </div>

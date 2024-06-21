@@ -13,8 +13,7 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    };
-
+    }
 
     checkTokenWithCookie = async (token: string | undefined) => {
         try {
@@ -31,14 +30,14 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    };
+    }
 
-    fetchLink = async (url:string) => {
+    fetchLink = async (url: string) => {
         try {
-            const response = await mainApi.get(API.FETCH_LINKS,{
-                params:{
-                    url
-                }
+            const response = await mainApi.get(API.FETCH_LINKS, {
+                params: {
+                    url,
+                },
             })
             return response
         } catch (error: any) {
@@ -46,36 +45,43 @@ class Services {
                 error.response?.data?.message || "fetch links failed",
             )
         }
-    };
+    }
 
-
-    cretaeBots = async (body:any) =>{
+    cretaeBots = async (body: any) => {
         try {
-            const response = await mainApi.post(API.CREATE_BOT,body);
-            return response;
-        }catch (error:any){
+            const response = await mainApi.post(API.CREATE_BOT, body)
+            return response
+        } catch (error: any) {
             throw new Error(
                 error.response?.data?.message || "create Bots failed",
             )
         }
-
-    };
-    myBoysList = async (params:any)=>{
-        try{
-            const response = await mainApi.get(API.My_BOTS,{
-                params:{
-                    ...params
-                }
+    }
+    myBoysList = async (params: any) => {
+        try {
+            const response = await mainApi.get(API.My_BOTS, {
+                params: {
+                    ...params,
+                },
             })
             return response
-
-        }catch(error:any){
+        } catch (error: any) {
             throw new Error(
                 error.response?.data?.message || "fetch links failed",
             )
         }
-    };
+    }
+    deleteBot= async (botId :string)=>{
+        try {
+            const response = await mainApi.delete(`${API.DELETE_BOTS}/${botId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "delete bot failed",
+            )
+        }
 
+    }
 }
 
 export default new Services()
