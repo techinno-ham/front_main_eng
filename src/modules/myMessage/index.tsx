@@ -1,19 +1,18 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
 
 const MyMessage = () => {
-
-    const [messages , setMessages] = useState();
+    const [messages, setMessages] = useState()
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchHistoryList = async () => {
             setIsLoading(true)
             try {
-                const response: any = await getHistoryMessages();
-                console.log({response});
+                const response: any = await getHistoryMessages()
+                console.log({ response })
                 setMessages(response.data.bots)
             } catch (err) {
                 console.log(err)
@@ -22,8 +21,38 @@ const MyMessage = () => {
             }
         }
         fetchHistoryList()
-    }, []);
-    
+    }, [])
+
+    const handleDownload = async () => {
+        try {
+            const apiUrl = "https://jsonplaceholder.typicode.com/todos/1" // Replace with your API endpoint
+            const response = await fetch(apiUrl)
+
+            if (!response.ok) {
+                throw new Error(
+                    "Network response was not ok " + response.statusText,
+                )
+            }
+
+            const data = await response.json()
+            const jsonString = JSON.stringify(data, null, 2)
+            const blob = new Blob([jsonString], { type: "application/json" })
+            const url = URL.createObjectURL(blob)
+
+            const link = document.createElement("a")
+            link.href = url
+            link.download = "data.json"
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+            URL.revokeObjectURL(url) // Clean up the URL object
+        } catch (error) {
+            console.error(
+                "There was a problem with the fetch operation:",
+                error,
+            )
+        }
+    }
 
     return (
         <>
@@ -39,12 +68,20 @@ const MyMessage = () => {
                         <span>به زودی در دسترس قرار خواهد گرفت ....</span>
                     </div> */}
 
+                    <button
+                        onClick={handleDownload}
+                        className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                    >
+                        Download JSON
+                    </button>
+
                     <div className="flex overflow-hidden">
-                        <div className="w-1/4 border-l border-gray-300 bg-white"
-                        style={{
-                            maxHeight: "80vh",
-                            overflow: "scroll",
-                        }}
+                        <div
+                            className="w-1/4 border-l border-gray-300 bg-white"
+                            style={{
+                                maxHeight: "80vh",
+                                overflow: "scroll",
+                            }}
                         >
                             <div className="mb-9 overflow-y-auto p-3">
                                 <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
