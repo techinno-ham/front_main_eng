@@ -14,6 +14,7 @@ const useUser = () => {
         setIsLoading(true)
         try {
             const cookies = parseCookies();
+            console.log(cookies)
             const cookieFallback = cookies.accessToken
             if (!cookieFallback) {
                 setIsAuthenticated(false)

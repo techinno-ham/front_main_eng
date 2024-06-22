@@ -1,9 +1,48 @@
+"use client"
+import { useEffect, useState } from "react";
 import ChartDemo from "./components/chatDemo"
 import PieChart from "./components/piechart"
 import PropertyReferrals from "./components/propertyRef"
-import TotalRevenue from "./components/totalRevenue"
+import TotalRevenue from "./components/totalRevenue";
+import service from "@/src/shared/services/service";
 
-const Dashboard = () => {
+interface DashboardProps {
+    botId: string;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({botId}) => {
+    const [botData, setBotData] = useState<any>(null);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+    console.log(botData)
+
+    useEffect(() => {
+        const fetchBotData = async () => {
+            setLoading(true);
+            try {
+                const response = await service.getBot(botId);
+                setBotData(response.data);
+            } catch (error: any) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchBotData();
+    }, [botId]);
+    if (loading) return (
+        <>
+            <div className="mx-auto w-[95%] md:mt-[90px] h-screen flex items-center justify-center"> 
+                <div className="flex gap-3 items-center">
+                <span>در حال بارگزاری اطلاعات ...</span>
+                  <div className="h-10 w-10 animate-spin rounded-full border-8 border-white border-t-blue-600"></div>
+                </div>
+            </div>
+        </>
+    );
+
+
     return (
         <>
             <div className="mx-auto w-[95%] md:mt-[90px]">
@@ -43,7 +82,7 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <ChartDemo />
+                <ChartDemo  botData={botData}/>
             </div>
         </>
     )

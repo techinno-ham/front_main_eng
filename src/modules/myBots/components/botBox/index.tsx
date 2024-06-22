@@ -4,6 +4,8 @@ import Link from "next/link"
 import { DocumentCopy, Trash } from "iconsax-react"
 import Modal from "@/src/shared/components/common/modal"
 import { useState } from "react"
+import { formatDistanceToNow } from 'date-fns-jalali';
+import { faIR } from 'date-fns/locale';
 
 interface IBotBoxProps {
     type: "instagram" | "website"
@@ -22,6 +24,12 @@ const listImage = {
 const BotBox = (props: IBotBoxProps) => {
     const [open, setOpen] = useState(false);
     const [loading,setLoading]=useState(false);
+    console.log(props.botsData);
+    const formatRelativeTime = (dateString:any) => {
+        const date = new Date(dateString);
+        return formatDistanceToNow(date, { locale: faIR });
+    };
+
 
     const handleTrashClick = (e: React.MouseEvent) => {
         e.stopPropagation()
@@ -79,8 +87,10 @@ const BotBox = (props: IBotBoxProps) => {
                                 </div>
                                 <div>
                                     <span className="text-[10px] text-[gray]">
-                                        {props.botsData?.lastUpdated ||
-                                            "بروز رسانی مدتی قبل"}
+                                        آخرین بروزرسانی :
+                                    {props.botsData?.updated_at
+                            ? formatRelativeTime(props.botsData.updated_at)
+                            : " مدتی قبل"}
                                     </span>
                                 </div>
                             </div>

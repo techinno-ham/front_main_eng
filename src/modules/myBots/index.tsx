@@ -12,8 +12,7 @@ import { toast } from "sonner"
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const router = useRouter()
-
+    const router = useRouter();
     useEffect(() => {
         const fetchBotList = async () => {
             setIsLoading(true)
@@ -62,6 +61,7 @@ const MyBots = () => {
                                 }
                             }}
                             className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm"
+                            disabled={isLoading}
                         >
                             <div className="flex gap-2">
                                 <ElementPlus size="18" color="#FFf" />

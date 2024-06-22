@@ -1,13 +1,19 @@
-import ChatBot from "@/src/shared/components/common/chatBot"
+import ChatBot from "@/src/shared/components/common/chatBot";
 
-const ChartDemo = () => {
+interface chartDemoProps {
+    botData: any;
+}
+
+
+const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
+    console.log(botData)
     return (
         <>
             <div className="mx-auto mt-10 flex max-w-5xl flex-col px-3 pb-12 md:mt-10">
                 <div className="rounded border bg-white">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
-                            دیجی بات
+                        {botData?.name || "هوشینو بات"}
                         </span>
                     </div>
                     <div className="p-5">
@@ -18,7 +24,8 @@ const ChartDemo = () => {
                                         چت بات آیدی :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                        sG-EAaBK-R4AbfET4AhmP
+                                      {botData?.bot_id || "sG-EAaBK-R4AbfET4AhmP"}
+                                        
                                     </span>
                                 </div>
                                 <div className="flex gap-32">
@@ -26,17 +33,27 @@ const ChartDemo = () => {
                                         <span className="text-zinc-5 block text-sm font-medium">
                                             وضعیت :
                                         </span>
-                                        <span className="text-sm font-semibold text-zinc-700">
-                                            <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
-                                            فعال
+                                        {botData?.security_configs?.status_bot=="enable"?(
+                                              <span className="text-sm font-semibold text-zinc-700">
+                                              <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
+                                              فعال
+                                          </span>
+
+                                        ):(
+                                            <span className="text-sm font-semibold text-zinc-700">
+                                            <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-red-500"></span>{" "}
+                                             غیر فعال
                                         </span>
+                                        )}
+                                      
                                     </div>
                                     <div>
                                         <span className="text-zinc-5 block text-sm font-medium">
                                             مدل :
                                         </span>
                                         <span className="text-sm font-semibold text-zinc-700">
-                                            gpt-3.5-turbo
+                                            {botData?.model_configs?.model_name || "gpt-3.5-turbo"}
+                                            
                                         </span>
                                     </div>
                                 </div>

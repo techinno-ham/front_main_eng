@@ -82,6 +82,17 @@ class Services {
         }
 
     }
+    getBot= async (botId :string)=>{
+        try {
+            const response = await mainApi.get(`${API.My_BOTS}/${botId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "get bot failed",
+            )
+        }
+
+    }
 }
 
 export default new Services()
