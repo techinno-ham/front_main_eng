@@ -4,6 +4,7 @@ export const API = {
     CREATE_BOT: "/mybots/create",
     My_BOTS: "/mybots/list",
     DELETE_BOTS: "/mybots/delete",
+    //History
 
     // reset password
     RESET_PASSWORD_REQUEST: "/user/reset-password-request",
