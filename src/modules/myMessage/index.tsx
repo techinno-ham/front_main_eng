@@ -4,7 +4,8 @@ import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
 
 const MyMessage = () => {
-    const [messages, setMessages] = useState()
+    const [conversations, setConversations] = useState()
+    const [activeConversation , setActiveConversation] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -13,7 +14,7 @@ const MyMessage = () => {
             try {
                 const response: any = await getHistoryMessages()
                 console.log({ response })
-                setMessages(response.data.bots)
+                setConversations(response.data)
             } catch (err) {
                 console.log(err)
             } finally {
@@ -23,19 +24,27 @@ const MyMessage = () => {
         fetchHistoryList()
     }, [])
 
-    const handleDownload = async () => {
-        try {
-            const apiUrl = "https://jsonplaceholder.typicode.com/todos/1" // Replace with your API endpoint
-            const response = await fetch(apiUrl)
+    useEffect(() => {
+        console.log({activeConversation});
+        
+    }, [activeConversation])
 
-            if (!response.ok) {
+    const handleDownload = async () => {
+        console.log("here");
+        
+        try {
+            const response: any = await getHistoryMessages();
+
+            if (!response) {
                 throw new Error(
                     "Network response was not ok " + response.statusText,
                 )
             }
 
-            const data = await response.json()
-            const jsonString = JSON.stringify(data, null, 2)
+            const data = response.data;
+            
+            const jsonString = JSON.stringify(data, null, 2);
+            
             const blob = new Blob([jsonString], { type: "application/json" })
             const url = URL.createObjectURL(blob)
 
@@ -77,14 +86,23 @@ const MyMessage = () => {
 
                     <div className="flex overflow-hidden">
                         <div
-                            className="w-1/4 border-l border-gray-300 bg-white"
+                            className="w-1/4 border-l overflow-y-auto border-gray-300 bg-white"
                             style={{
-                                maxHeight: "80vh",
-                                overflow: "scroll",
+                                minHeight: "80vh",
                             }}
                         >
                             <div className="mb-9 overflow-y-auto p-3">
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
+                                {conversations && conversations?.length &&
+                                    conversations?.map((conversation: any,index: any)=>{
+                                        console.log({conversation});
+                                        
+                                        return <div 
+                                        key={index}
+                                        onClick={()=>{
+                                            setActiveConversation(index)
+                                        }}
+                                        >
+                                        <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
                                     <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
                                         <img
                                             src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
@@ -93,162 +111,18 @@ const MyMessage = () => {
                                         />
                                     </div>
                                     <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Alice
+                                        <h2 className="text-xs font-semibold">
+                                            {conversation?.conversationId}
                                         </h2>
                                         <p className="text-gray-600">
                                             Hoorayy!!
                                         </p>
                                     </div>
                                 </div>
+                                        </div>
+                                    })
+                                }
 
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/ad922e/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Martin
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            That pizza place was amazing! We
-                                            should go again sometime. 🍕
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/2e83ad/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Charlie
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Hey, do you have any recommendations
-                                            for a good movie to watch?
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/c2ebff/0f0b14.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            David
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            I just finished reading a great
-                                            book! It was so captivating.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Ella
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Whats the plan for this weekend?
-                                            Anything fun?
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Ella
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Whats the plan for this weekend?
-                                            Anything fun?
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Ella
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Whats the plan for this weekend?
-                                            Anything fun?
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Ella
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Whats the plan for this weekend?
-                                            Anything fun?
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                    <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                        <img
-                                            src="https://placehold.co/200x/e7c2ff/7315d1.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-12 w-12 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h2 className="text-lg font-semibold">
-                                            Ella
-                                        </h2>
-                                        <p className="text-gray-600">
-                                            Whats the plan for this weekend?
-                                            Anything fun?
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -263,9 +137,15 @@ const MyMessage = () => {
                                 className="overflow-y-auto p-4 pb-36"
                                 style={{
                                     background: "aliceblue",
+                                    height: "100%"
                                 }}
                             >
-                                <div className="mb-4 flex cursor-pointer">
+                                {
+                                    conversations?.[activeConversation]?.records?.map((record:any,index:any)=>{
+                                        return(<>
+                                        <div 
+                                        
+                                        className="mb-4 flex cursor-pointer">
                                     <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
                                         <img
                                             src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
@@ -275,7 +155,7 @@ const MyMessage = () => {
                                     </div>
                                     <div className="flex max-w-96 gap-3 rounded-lg bg-white p-3">
                                         <p className="text-gray-700">
-                                            Hey Bob, hows it going?
+                                            {record?.userMessage}
                                         </p>
                                     </div>
                                 </div>
@@ -283,8 +163,7 @@ const MyMessage = () => {
                                 <div className="mb-4 flex cursor-pointer justify-end">
                                     <div className="flex max-w-96 gap-3 rounded-lg bg-indigo-500 p-3 text-white">
                                         <p>
-                                            Hi Alice! Im good, just finished a
-                                            great book. How about you?
+                                            {record?.llmResponse}
                                         </p>
                                     </div>
                                     <div className="ml-2 flex h-9 w-9 items-center justify-center rounded-full">
@@ -295,86 +174,11 @@ const MyMessage = () => {
                                         />
                                     </div>
                                 </div>
+                                        </>)
+                                    })
+                                }
 
-                                <div className="mb-4 flex cursor-pointer">
-                                    <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                        <img
-                                            src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex max-w-96 gap-3 rounded-lg bg-white p-3">
-                                        <p className="text-gray-700">
-                                            That book sounds interesting! Whats
-                                            it about?
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer justify-end">
-                                    <div className="flex max-w-96 gap-3 rounded-lg bg-indigo-500 p-3 text-white">
-                                        <p>
-                                            Its about an astronaut stranded on
-                                            Mars, trying to survive. Gripping
-                                            stuff!
-                                        </p>
-                                    </div>
-                                    <div className="ml-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                        <img
-                                            src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="My Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer">
-                                    <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                        <img
-                                            src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex max-w-96 gap-3 rounded-lg bg-white p-3">
-                                        <p className="text-gray-700">
-                                            Im intrigued! Maybe Ill borrow it
-                                            from you when you done?
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer justify-end">
-                                    <div className="flex max-w-96 gap-3 rounded-lg bg-indigo-500 p-3 text-white">
-                                        <p>
-                                            Of course! Ill drop it off at your
-                                            place tomorrow.
-                                        </p>
-                                    </div>
-                                    <div className="ml-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                        <img
-                                            src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="My Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="mb-4 flex cursor-pointer">
-                                    <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                        <img
-                                            src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                            alt="User Avatar"
-                                            className="h-8 w-8 rounded-full"
-                                        />
-                                    </div>
-                                    <div className="flex max-w-96 gap-3 rounded-lg bg-white p-3">
-                                        <p className="text-gray-700">
-                                            Hoorayy!!
-                                        </p>
-                                    </div>
-                                </div>
+                                
                             </div>
 
                             <footer className="absolute bottom-0 w-3/4 border-t border-gray-300 bg-white p-4">
