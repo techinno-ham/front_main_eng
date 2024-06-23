@@ -4,11 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import UserAccount from "./components/account"
+import useUserStore from "@/src/shared/store/userStore"
 
 const HeaderPanel = () => {
     const pathname = usePathname()
-    const router = useRouter()
-
+    const router = useRouter();
+    
+    
+   
     const useBackPanel = pathname.includes("panel")
 
     return (

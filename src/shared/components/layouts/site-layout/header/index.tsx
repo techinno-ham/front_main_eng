@@ -10,8 +10,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [scroll, setScroll] = useState(false)
     const router = useRouter()
-    const { isAuthenticated } = useUser()
-    console.log(isAuthenticated, "auth")
+    const { isAuthenticated } = useUser();
 
     useEffect(() => {
         const handleScroll = () => {

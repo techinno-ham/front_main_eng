@@ -23,9 +23,7 @@ const useUser = () => {
             const res = await Services.checkToken()
 
             if (res) {
-                setUser({
-                    name: "mahdiyar",
-                })
+                setUser(res.data)
                 setIsAuthenticated(true)
                 return true
             }

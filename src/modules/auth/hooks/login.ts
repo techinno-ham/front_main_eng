@@ -3,17 +3,22 @@ import { useState } from "react"
 import services from "../services"
 import { setCookie } from "nookies"
 import { toast } from "sonner"
+import useUserStore from "@/src/shared/store/userStore"
 
 const useLogin = () => {
     const [isLoading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-    const router = useRouter()
+    const router = useRouter();
+    const { user, setUser, isAuthenticated, setIsAuthenticated } =
+    useUserStore()
+
 
     const login = async (user: any) => {
         setLoading(true)
         setError(null)
         try {
-            const res = await services.login(user)
+            const res = await services.login(user);
+            setUser(res.data);
             toast.success("ورود شما موفق آمیز بود.")
             setCookie(null, "accessToken", res.data.accessToken, {
                 maxAge: 3600,

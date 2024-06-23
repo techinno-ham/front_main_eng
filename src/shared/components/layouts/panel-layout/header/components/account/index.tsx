@@ -1,23 +1,142 @@
+"use client"
+import useUserStore from "@/src/shared/store/userStore";
+import { I3Dcube, LogoutCurve, Profile, Send2 } from "iconsax-react"
 import Link from "next/link"
+import { useEffect, useRef, useState } from "react";
+
+export const sidebarLinks = [
+    {
+        icon: <Profile/>,
+        route: "/account",
+        label: "پروفایل",
+    },
+    {
+        icon: <I3Dcube/>,
+        route: "/account",
+        label: " بات های من",
+    },
+    {
+        icon: <Send2/>,
+        route: "/account",
+        label: "دعوت دوستان",
+    },
+];
 
 const UserAccount = () => {
+    const [open,setOpen]=useState(false);
+    const menuRef = useRef<HTMLImageElement>(null);
+    const imgRef = useRef<HTMLImageElement>(null);
+    const { user } = useUserStore();
+    const isUserEmpty = !user || Object.keys(user).length === 0;
+    if(isUserEmpty){
+        // fetch user
+    }
+
+    
+   
+
+    const handleClickImage= ()=>{
+        setOpen(prevStata=>!prevStata)
+    };
+    const handleItemClick = () => {
+        setOpen(false);
+    };
+
+    const handleClickOutside = (event: any) => {
+        if (menuRef.current && imgRef.current) {
+            const targetNode = event.target as Node;
+            if (!menuRef.current.contains(targetNode) && !imgRef.current.contains(targetNode)) {
+                setOpen(false);
+            }
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+ 
+
+ 
     return (
         <>
-            <div className="flex items-end gap-3">
-                <div className="flex flex-col items-center">
-                    <span className="text-[13px]">Mahdiyar@gmail.com</span>
-                    <span className="text-[11px] text-gray-400">
-                        مشاهده پروفایل
-                    </span>
+            <div className="flex items-center gap-3">
+                <div>
+                    <span className="text-[13px]">{user?.email|| "hoshino@gmail.com"}</span>
                 </div>
-                <Link href={"/panel/profile"}>
+                <div onClick={handleClickImage}>
                     <img
-                        className="h-10 w-10 rounded-full p-1 ring-2 ring-gray-300 "
+                        ref={imgRef}
+                        className="h-10 w-10 rounded-full p-1 ring-2 ring-gray-300 cursor-pointer"
                         src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
                         alt="Bordered avatar"
                     />
-                </Link>
+                      </div>
+                
             </div>
+            {
+                open && (
+                    <div
+                    ref={menuRef}
+                     className="top-16 border-blue-gray-50 text-blue-gray-500 shadow-blue-gray-500/10 absolute left-1 z-10  min-w-[160px] flex-col gap-2 overflow-auto rounded-md border bg-white p-1 font-sans text-sm font-normal shadow-lg focus:outline-none">
+                    <div className="px-4 py-3 ">
+                          <span className="block text-sm text-gray-900">
+                            {user?.name || "مهدیار"}
+                            <span className="ml-1">
+                            {user?.lastName || "جعفری"}
+                            </span>
+                          </span>
+                         <span className="block text-sm  text-gray-500">
+                         {user?.email|| "hoshino@gmail.com"}
+                         </span>
+              
+                    </div>
+                      <hr
+                                  className="border-blue-gray-50 "
+                       />
+                       <ul className="py-1">
+                          {sidebarLinks.map((item)=>{
+                              return (
+                                  <li key={item.label} style={{ width: "100%" }} onClick={handleItemClick} >
+                                  <Link href={item.route}>
+                                      <div
+                                          className="flex cursor-pointer items-center gap-1 rounded-md p-2 hover:bg-blue-200"
+                                      >
+                                          {item.icon}
+                                          <span>{item.label}</span>
+                                      </div>
+                                  </Link>
+                              </li>
+                              )
+      
+                          })}
+                                      <hr
+                                  className="border-blue-gray-50 my-1"
+                                  role="menuitem"
+                              />
+                              <li key={"خروج"} style={{ width: "100%" }}>
+                                  <div
+                                   className="flex cursor-pointer items-center gap-1 rounded-md p-2 hover:bg-blue-200"
+                                  >
+                                      <LogoutCurve className="text-red-600" />
+                                      <span className=" text-red-600"> خروج</span>
+                                  </div>
+                              </li>
+      
+                       </ul>
+      
+      
+      
+      
+                  </div>
+                )
+            }
+                        
+           
+
         </>
     )
 }

@@ -1,7 +1,7 @@
 import { create } from "zustand"
 
 interface UserState {
-    user: { name?: string }
+    user: any
     isAuthenticated: boolean
     setUser: (user: { name?: string }) => void
     setIsAuthenticated: (isAuthenticated: boolean) => void
