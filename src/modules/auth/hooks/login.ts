@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import services from "../services"
-import { setCookie } from "nookies"
+import { setCookie,destroyCookie } from "nookies"
 import { toast } from "sonner"
 import useUserStore from "@/src/shared/store/userStore"
 
@@ -47,12 +47,27 @@ const useLogin = () => {
         } finally {
             setLoading(false)
         }
-    }
+    };
+    const logout = () => {
+    
+        destroyCookie(null, "accessToken");
+        destroyCookie(null, "refreshToken");
+
+        
+        setUser({});
+        setIsAuthenticated(false);
+
+       
+        toast.success("شما با موفقیت خارج شدید.");
+        router.replace("/auth/login");
+        
+    };
 
     return {
         login,
         isLoading,
         error,
+        logout
     }
 }
 export default useLogin

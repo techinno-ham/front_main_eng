@@ -3,35 +3,55 @@ import useUserStore from "@/src/shared/store/userStore";
 import { I3Dcube, LogoutCurve, Profile, Send2 } from "iconsax-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react";
+import Services from "../../../../../../services/service"
+import useLogin from "@/src/modules/auth/hooks/login";
 
 export const sidebarLinks = [
     {
         icon: <Profile/>,
-        route: "/account",
+        route: "/profile",
         label: "پروفایل",
     },
     {
         icon: <I3Dcube/>,
-        route: "/account",
+        route: "/mybots",
         label: " بات های من",
     },
     {
         icon: <Send2/>,
-        route: "/account",
+        route: "/invite",
         label: "دعوت دوستان",
     },
 ];
 
 const UserAccount = () => {
     const [open,setOpen]=useState(false);
+    const [loading,setLoading]=useState(true);
+    const {logout}=useLogin();
+
     const menuRef = useRef<HTMLImageElement>(null);
     const imgRef = useRef<HTMLImageElement>(null);
-    const { user } = useUserStore();
+    const { user,setUser } = useUserStore();
     const isUserEmpty = !user || Object.keys(user).length === 0;
-    if(isUserEmpty){
-        // fetch user
-    }
+  
+    useEffect(() => {
+        if (isUserEmpty) {
+            const fetchUser = async () => {
+                try {
+                    const res = await Services.checkToken()
+                    setUser(res.data)
+                } catch (error) {
+                    console.error("Error fetching user:", error);
+                }finally {
+                    setLoading(false);
+                }
+            };
 
+            fetchUser();
+        }else{
+            setLoading(false)
+        }
+    }, [user]);
     
    
 
@@ -58,14 +78,20 @@ const UserAccount = () => {
         };
     }, []);
 
- 
+
 
  
     return (
         <>
-            <div className="flex items-center gap-3">
+        {loading ? (
+            <>
+                <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+            </>
+        ):(
+            <>
+                 <div className="flex items-center gap-2">
                 <div>
-                    <span className="text-[13px]">{user?.email|| "hoshino@gmail.com"}</span>
+                    <span className="text-[13px] font-semibold">{user?.email|| "hoshino@gmail.com"}</span>
                 </div>
                 <div onClick={handleClickImage}>
                     <img
@@ -117,7 +143,7 @@ const UserAccount = () => {
                                   className="border-blue-gray-50 my-1"
                                   role="menuitem"
                               />
-                              <li key={"خروج"} style={{ width: "100%" }}>
+                              <li key={"خروج"} style={{ width: "100%" }} onClick={logout}>
                                   <div
                                    className="flex cursor-pointer items-center gap-1 rounded-md p-2 hover:bg-blue-200"
                                   >
@@ -134,7 +160,11 @@ const UserAccount = () => {
                   </div>
                 )
             }
-                        
+                 
+
+            </>
+        )}
+              
            
 
         </>

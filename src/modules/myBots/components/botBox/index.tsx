@@ -24,7 +24,6 @@ const listImage = {
 const BotBox = (props: IBotBoxProps) => {
     const [open, setOpen] = useState(false);
     const [loading,setLoading]=useState(false);
-    console.log(props.botsData);
     const formatRelativeTime = (dateString:any) => {
         const date = new Date(dateString);
         return formatDistanceToNow(date, { locale: faIR });
