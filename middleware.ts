@@ -19,23 +19,29 @@ export default async function middleware(req: NextRequest) {
     //     }
     // }
 
-    if (req.nextUrl.pathname == "/oauth") {
-        const token = req.nextUrl.searchParams.get("token")
-        if (token) {
-            const cookie = serialize("accessToken", token, {
-                maxAge: 3600,
-                path: "/",
-            })
+    // if (req.nextUrl.pathname == "/oauth") {
+    //     const token = req.nextUrl.searchParams.get("token")
+    //     if (token) {
+    //         const cookie = serialize("accessToken", token, {
+    //             maxAge: 3600,
+    //             path: "/",
+    //         })
 
-            const absoluteUrl = new URL("/mybots", req.nextUrl.origin)
-            const response = NextResponse.redirect(absoluteUrl.toString())
-            response.headers.append("Set-Cookie", cookie)
-            return response
-        } else {
-            const absoluteUrl = new URL("/auth/login", req.nextUrl.origin)
-            return NextResponse.redirect(absoluteUrl.toString())
-        }
-    }
+    //         const absoluteUrl = new URL("/mybots", req.nextUrl.origin)
+    //         const response = NextResponse.redirect(absoluteUrl.toString())
+    //         response.headers.set("Origin", "localhost:3000");
+    //         response.headers.set("Referer", "http://localhost:3000/mybots");
+    //         response.headers.append("Set-Cookie", cookie)
+    //         response.headers.set("Access-Control-Allow-Origin", req.nextUrl.origin);
+    //         response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    //         response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    //         return response
+    //     } else {
+    //         const absoluteUrl = new URL("/auth/login", req.nextUrl.origin)
+    //         return NextResponse.redirect(absoluteUrl.toString())
+    //     }
+    // }
 
     return NextResponse.next()
 }

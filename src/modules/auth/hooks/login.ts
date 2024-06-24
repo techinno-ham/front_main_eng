@@ -1,4 +1,4 @@
-import { useRouter } from "next/navigation"
+import { redirect, useRouter } from "next/navigation"
 import { useState } from "react"
 import services from "../services"
 import { setCookie,destroyCookie } from "nookies"
@@ -20,9 +20,7 @@ const useLogin = () => {
             const res = await services.login(user);
             setUser(res.data);
             toast.success("ورود شما موفق آمیز بود.")
-            setCookie(null, "accessToken", res.data.accessToken, {
-                maxAge: 3600,
-            })
+       
 
             setCookie(null, "accessToken", res.data.accessToken, {
                 maxAge:1 * 24 * 60 * 60,
@@ -37,6 +35,7 @@ const useLogin = () => {
                 secure: true, // Use this in production
                 sameSite: "strict",
             })
+         
 
             // Redirect or perform other actions here
             router.push("/mybots")
@@ -48,19 +47,20 @@ const useLogin = () => {
             setLoading(false)
         }
     };
-    const logout = () => {
+    const logout = async () => {
     
-        destroyCookie(null, "accessToken");
-        destroyCookie(null, "refreshToken");
-
-        
-        setUser({});
-        setIsAuthenticated(false);
-
-       
-        toast.success("شما با موفقیت خارج شدید.");
-        router.replace("/auth/login");
-        
+        try {
+             router.replace("/auth/login"); // Wait for navigation to complete
+            destroyCookie(null, "accessToken");
+            destroyCookie(null, "refreshToken");
+    
+            toast.success("شما با موفقیت خارج شدید.");
+            setUser({});
+            setIsAuthenticated(false);
+        } catch (error) {
+            console.error("Logout error:", error);
+            toast.error("خطایی در خروج رخ داده است.");
+        }
     };
 
     return {

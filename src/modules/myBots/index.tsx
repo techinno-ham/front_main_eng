@@ -14,10 +14,12 @@ const MyBots = () => {
     const [isLoading, setIsLoading] = useState(true)
     const router = useRouter();
     useEffect(() => {
+      
         const fetchBotList = async () => {
             setIsLoading(true)
             try {
                 const response: any = await getBotList()
+                console.log(response)
                 setMyBots(response.data.bots)
             } catch (err) {
                 console.log(err)

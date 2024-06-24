@@ -2,6 +2,7 @@ import mainApi from "@/src/infrastructures/http-client-main"
 import { API } from "../constanst/api"
 import axios from "axios"
 import withoutTokenApi from "@/src/infrastructures/http-client-without-token"
+import { parseCookies } from "nookies"
 
 class Services {
     checkToken = async () => {
@@ -58,16 +59,18 @@ class Services {
         }
     }
     myBoysList = async (params: any) => {
+    
         try {
             const response = await mainApi.get(API.My_BOTS, {
                 params: {
                     ...params,
-                },
+                }
             })
             return response
         } catch (error: any) {
+            console.log(error)
             throw new Error(
-                error.response?.data?.message || "fetch links failed",
+                error.response?.data?.message ,
             )
         }
     }
