@@ -11,6 +11,6 @@ export async function getBotList() {
         })
         return response
     } catch (err) {
-        console.log(err)
+        console.log(err,"test")
     }
 }

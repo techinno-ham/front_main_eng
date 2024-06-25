@@ -19,7 +19,6 @@ const MyBots = () => {
             setIsLoading(true)
             try {
                 const response: any = await getBotList()
-                console.log(response)
                 setMyBots(response.data.bots)
             } catch (err) {
                 console.log(err)

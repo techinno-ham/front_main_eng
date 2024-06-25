@@ -1,4 +1,8 @@
 import ChatBot from "@/src/shared/components/common/chatBot";
+import service from "@/src/shared/services/service";
+import { formatDistanceToNow } from 'date-fns-jalali';
+import { faIR } from 'date-fns/locale';
+import { useEffect, useState } from "react";
 
 interface chartDemoProps {
     botData: any;
@@ -6,7 +10,43 @@ interface chartDemoProps {
 
 
 const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
-    console.log(botData)
+    const formatRelativeTime = (dateString:any) => {
+        const date = new Date(dateString);
+        return formatDistanceToNow(date, { locale: faIR });
+    };
+    const state=botData?.security_configs?.status_bot=="enable" ? true: false
+    const [botActive, setBotActive] = useState<boolean>(state);
+
+    useEffect(() => {
+        const fetchBotData = async () => {
+            try {
+                const response = await service.getBot(botData?.bot_id);
+                const status =response.data.security_configs?.status_bot;
+                    if (status === "enable") {
+                        setBotActive(true)
+                    }else{
+                        setBotActive(false)
+                    }
+                
+            } catch (error: any) {
+                
+            } 
+        };
+        const checkBotStatus = async () => {
+            if (!botActive) {
+                await fetchBotData();
+                const interval = setInterval(async () => {
+                    await fetchBotData();
+                }, 5000);
+
+                return () => clearInterval(interval);
+            }
+        };
+
+        checkBotStatus();
+    }, [botActive, botData]); 
+    
+
     return (
         <>
             <div className="mx-auto mt-10 flex max-w-5xl flex-col px-3 pb-12 md:mt-10">
@@ -62,7 +102,7 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         دسترسی :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                        عمومی{" "}
+                                    {botData?.security_configs?.access_bot =="private" ?"خصوصی":"عمومی"}
                                     </span>
                                 </div>
                                 <div>
@@ -70,12 +110,16 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         آخرین آموزش :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                        3 روز پیش{" "}
+                                    {botData?.updated_at
+                                 ? formatRelativeTime(botData.updated_at)
+                            : " مدتی قبل"}
                                     </span>
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                                <ChatBot />
+                              
+                                    <ChatBot chatBotActive={botActive}/>
+                            
                             </div>
                         </div>
                     </div>
