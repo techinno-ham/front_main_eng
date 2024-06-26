@@ -97,6 +97,17 @@ class Services {
         }
 
     }
+    getDataSource= async (botId :string)=>{
+        try {
+            const response = await mainApi.get(`${API.MY_DATASOURCE_WITH_ID}/${botId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "get DataSource failed",
+            )
+        }
+
+    }
     getHistoryMessages= async (botId :string = "b8d8154c-99e5-49ab-89ed-806088932781")=>{
         try {
             const response = await mainApi.get(`${"/mybots"}/${botId}/conversations`)

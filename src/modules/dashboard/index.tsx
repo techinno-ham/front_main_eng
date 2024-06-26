@@ -14,7 +14,6 @@ const Dashboard: React.FC<DashboardProps> = ({botId}) => {
     const [botData, setBotData] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    console.log(botData)
 
     useEffect(() => {
         const fetchBotData = async () => {
@@ -33,7 +32,7 @@ const Dashboard: React.FC<DashboardProps> = ({botId}) => {
     }, [botId]);
     if (loading) return (
         <>
-            <div className="mx-auto w-[95%] md:mt-[90px] h-screen flex items-center justify-center"> 
+            <div className="mx-auto w-[95%] md:mt-[90px] h-screen flex items-center justify-center "> 
                 <div className="flex gap-3 items-center">
                 <span>در حال بارگزاری اطلاعات ...</span>
                   <div className="h-10 w-10 animate-spin rounded-full border-8 border-white border-t-blue-600"></div>
@@ -45,7 +44,8 @@ const Dashboard: React.FC<DashboardProps> = ({botId}) => {
 
     return (
         <>
-            <div className="mx-auto w-[95%] md:mt-[90px]">
+        <div className="bg-[#F6F8FB]">
+           <div className="mx-auto w-[95%] md:mt-[90px] ">
                 <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
                     <PieChart
                         title="تعداد کل پاسخ ها موفق"
@@ -83,7 +83,10 @@ const Dashboard: React.FC<DashboardProps> = ({botId}) => {
                 </div>
 
                 <ChartDemo  botData={botData}/>
-            </div>
+           </div>
+
+        </div>
+            
         </>
     )
 }

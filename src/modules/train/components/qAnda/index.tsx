@@ -1,9 +1,9 @@
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+
 import { Trash } from "iconsax-react"
-import { useState } from "react"
+import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 
 const QandA = () => {
-    const { qaList, addQAList } = useDateSource()
+    const { qaList, addQAList } = useDateSourceUpdate()
 
     const handleAddQA = () => {
         addQAList([...qaList, { question: "", answer: "" }])

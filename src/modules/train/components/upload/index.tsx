@@ -1,25 +1,36 @@
 "use client"
-import { DocumentUpload } from "iconsax-react"
+import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
+import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 
 const UploadFlie = () => {
-    const [files, setFiles] = useState<File[]>([])
+    const { fileList, addFileList } = useDateSourceUpdate()
 
     const onDrop = useCallback((acceptedFiles: any) => {
-        // Do something with the files (this function needs to be implemented)
-        // For example, you can log the file names
-        console.log(acceptedFiles)
+        addFileList([...fileList, ...acceptedFiles])
     }, [])
+
+    const removeFile = (fileName: string) => {
+        addFileList(fileList.filter((file) => file.name !== fileName))
+    }
 
     // Get the necessary props from the useDropzone hook
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
+        accept: {
+            "application/pdf": [".pdf"],
+            "application/msword": [".doc", ".dot"],
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                [".docx"],
+            "text/plain": [".txt"],
+        },
     })
 
     return (
         <>
-            <form className="flex h-72 flex-col items-center justify-center">
+            <form className="flex h-64 flex-col items-center justify-center">
                 <div
                     {...getRootProps()}
                     className="flex h-3/4 w-3/4 cursor-pointer items-center justify-center border-2 border-dashed"
@@ -52,6 +63,47 @@ const UploadFlie = () => {
                     </span>
                 </div>
             </form>
+            {fileList.length > 0 && (
+                <div>
+                    <div className="my-6 flex items-center">
+                        <hr className="w-full border-t border-zinc-300" />
+                        <span className="whitespace-nowrap px-2 text-zinc-600">
+                            فایل های پیوست شده
+                        </span>
+                        <hr className="w-full border-t border-zinc-300" />
+                    </div>
+                    <div>
+                        <div className="mx-auto mt-4 w-3/4">
+                            {fileList.length > 0 && (
+                                <ul>
+                                    {fileList.map((file, index) => (
+                                        <li
+                                            key={index}
+                                            className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
+                                        >
+                                            <span className="max-w-[80%] truncate">
+                                                {file.name}
+                                            </span>
+                                            <button
+                                                onClick={() =>
+                                                    removeFile(file.name)
+                                                }
+                                                className="ml-2"
+                                            >
+                                                <Trash
+                                                    size="16"
+                                                    color="#e3342f"
+                                                />
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            )}
         </>
     )
 }

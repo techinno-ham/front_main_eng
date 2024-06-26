@@ -3,6 +3,7 @@ export const API = {
     FETCH_LINKS: "/crawler/links",
     CREATE_BOT: "/mybots/create",
     My_BOTS: "/mybots/list",
+    MY_DATASOURCE_WITH_ID:"/mybots/dataSource",
     DELETE_BOTS: "/mybots/delete",
     //History
 

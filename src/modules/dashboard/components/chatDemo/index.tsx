@@ -14,28 +14,25 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
         const date = new Date(dateString);
         return formatDistanceToNow(date, { locale: faIR });
     };
-    const state=botData?.security_configs?.status_bot=="enable" ? true: false
+    console.log(botData,"testt")
+    const state=botData?.status=="active" ? true : false
     const [botActive, setBotActive] = useState<boolean>(state);
 
     useEffect(() => {
         const fetchBotData = async () => {
             try {
                 const response = await service.getBot(botData?.bot_id);
-                const status =response.data.security_configs?.status_bot;
-                    if (status === "enable") {
-                        setBotActive(true)
-                    }else{
-                        setBotActive(false)
-                    }
-                
+                const status =response.data.status;
+                setBotActive(status === "active");
             } catch (error: any) {
-                
+                console.error(error);
             } 
         };
         const checkBotStatus = async () => {
             if (!botActive) {
                 await fetchBotData();
                 const interval = setInterval(async () => {
+                    console.log("calll")
                     await fetchBotData();
                 }, 5000);
 

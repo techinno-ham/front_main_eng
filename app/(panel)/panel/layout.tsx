@@ -7,7 +7,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <>
             <div className="flex">
                 <SideBar />
-                <div className=" w-full bg-[#F6F8FB] md:mr-[300px] md:w-calc-100vw-minus-280px  ">
+                <div className=" w-full  md:mr-[300px] md:w-calc-100vw-minus-280px  ">
                     {/* <div className="mt-[90px] flex justify-between px-5">
                         <div>
                             <span>داشبورد</span>
