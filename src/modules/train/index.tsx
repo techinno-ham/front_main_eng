@@ -6,7 +6,12 @@ import ActiveTab from "@/src/shared/components/common/activeTab"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
 import service from "@/src/shared/services/service"
-import useDateSourceUpdate from "./hooks/useDataSourceUpdate"
+import FileUpload from "../train/components/upload";
+import TextInput from "../train/components/text";
+import WebsiteLink from "../train/components/websiteLink";
+import QAnda from "../train/components/qAnda";
+import useStoreLoadData from "./hooks/loadDataSource"
+
 
 const Train = () => {
     const viewController = useStoreViewController();
@@ -14,7 +19,8 @@ const Train = () => {
     const botId = pathname.split("/")[2];
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const {addText}=useDateSourceUpdate();
+    const {setData}= useStoreLoadData();
+  
 
 
 
@@ -26,12 +32,8 @@ const Train = () => {
             try {
                 const response = await service.getDataSource(botId);
                 const dataSource=response.data;
-                console.log(dataSource)
-                addText(dataSource.text_input)
-                
-
-
-                
+                setData(dataSource);
+                          
             } catch (error: any) {
                 setError(error.message);
             } finally {
@@ -48,24 +50,21 @@ const Train = () => {
         QandA: "پرسش و پاسخ ها",
     }
 
-    const tabs = [
-        {
-            id: "File",
-            component: dynamic(() => import("../train/components/upload")),
-        },
-        {
-            id: "Text",
-            component: dynamic(() => import("../train/components/text")),
-        },
-        {
-            id: "Website",
-            component: dynamic(() => import("../train/components/websiteLink")),
-        },
-        {
-            id: "QandA",
-            component: dynamic(() => import("../train/components/qAnda")),
-        },
-    ];
+    
+    const renderTabContent = () => {
+        switch (viewController.activeTab) {
+            case "File":
+                return <FileUpload />;
+            case "Text":
+                return <TextInput />;
+            case "Website":
+                return <WebsiteLink />;
+            case "QandA":
+                return <QAnda />;
+            default:
+                return null;
+        }
+    };
 
     if (loading) return (
         <>
@@ -88,10 +87,7 @@ const Train = () => {
                             {tabsInfo[viewController.activeTab]}
                         </span>
                         <div>
-                            <ActiveTab
-                                tabs={tabs}
-                                activeTabId={viewController.activeTab}
-                            />
+                            {renderTabContent()}
                         </div>
                     </div>
                 </Layout>

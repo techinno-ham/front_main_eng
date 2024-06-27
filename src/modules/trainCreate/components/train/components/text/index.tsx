@@ -1,10 +1,11 @@
+import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSource"
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 
 const TextInput = () => {
-    const { addText, addTextNumberChar, text } = useDateSource()
-
+    const { addText, addTextNumberChar, text } = useDateSourceNew()
     const handleChange = (e: any) => {
         const newText = e.target.value
+        console.log(newText)
         addText(newText)
         addTextNumberChar(newText.length)
     }

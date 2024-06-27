@@ -6,6 +6,7 @@ interface IActiveTab {
 }
 
 const ActiveTab: React.FC<IActiveTab> = (props) => {
+    console.log("active")
     const activeTab = props.tabs.find(
         (tab: any) => tab.id === props.activeTabId,
     )

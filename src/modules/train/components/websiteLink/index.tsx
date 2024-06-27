@@ -1,14 +1,25 @@
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import { Trash } from "iconsax-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "sonner"
+import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
+import useStoreLoadData from "../../hooks/loadDataSource"
 // import { MdDelete } from "react-icons/md";
 
 const WebsiteLink = () => {
-    const { urlList, addUrlList } = useDateSource()
+    const { urlList, addUrlList,isURLInitialized,addURLInitialized } = useDateSourceUpdate()
     const [inputUrl, setInputUrl] = useState("")
-    const { isLoading, fetchLink } = useFetchLinks()
+    const { isLoading, fetchLink } = useFetchLinks();
+    const {data}= useStoreLoadData();
+
+    useEffect(() => {
+        if (!isURLInitialized) {
+           const initQa=JSON.parse(data?.urls);
+           addUrlList(initQa);
+           addURLInitialized(true); 
+        }
+    }, [isURLInitialized, addUrlList,addURLInitialized ]);
 
     const handleFetchUrl = async (event: any) => {
         event.preventDefault()

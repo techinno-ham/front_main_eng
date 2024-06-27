@@ -4,7 +4,7 @@ import { toast } from "sonner"
 import Services from "../../../shared/services/service"
 import { useRouter } from "next/navigation"
 
-const useDateSource = () => {
+const useDateSourceNew = () => {
     const [isLoading, setLoading] = useState(false)
     const router = useRouter()
     const {
@@ -81,4 +81,4 @@ const useDateSource = () => {
         createBot,
     }
 }
-export default useDateSource
+export default useDateSourceNew;

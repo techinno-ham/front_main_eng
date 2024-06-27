@@ -5,7 +5,7 @@ import ActiveTab from "@/src/shared/components/common/activeTab"
 import useStoreViewControllerCreate from "./hooks/view-controler-create"
 
 const TrainForCreate = () => {
-    const viewController = useStoreViewControllerCreate()
+    const viewController = useStoreViewControllerCreate();
     const tabsInfo = {
         File: "فایل ها",
         Text: "متن ",

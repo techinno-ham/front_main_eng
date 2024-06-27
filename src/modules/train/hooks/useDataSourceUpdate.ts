@@ -19,10 +19,25 @@ const useDateSourceUpdate = () => {
         setQAList,
         urlList,
         setUrlList,
+        isTextInitialized,
+        setTextInitialized,
+        isQAInitialized,
+        setQAInitialized,
+        isURLInitialized,
+        setURLInitialized
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
         setText(text)
+    }
+    const addTextInitialized = (flag: boolean) => {
+        setTextInitialized(flag)
+    };
+    const addQAInitialized = (flag: boolean) => {
+        setQAInitialized(flag)
+    };
+    const addURLInitialized = (flag: boolean) => {
+        setURLInitialized(flag)
     }
     const addTextNumberChar = (charNumber: number) => {
         setTextCharNumber(charNumber)
@@ -80,6 +95,12 @@ const useDateSourceUpdate = () => {
         addFileList,
         isLoading,
         createBot,
+        isTextInitialized,
+        addTextInitialized,
+        isQAInitialized,
+        addQAInitialized,
+        isURLInitialized,
+        addURLInitialized
     }
 }
 export default useDateSourceUpdate

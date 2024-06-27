@@ -1,9 +1,20 @@
 
 import { Trash } from "iconsax-react"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
+import useStoreLoadData from "../../hooks/loadDataSource";
+import { useEffect } from "react";
 
 const QandA = () => {
-    const { qaList, addQAList } = useDateSourceUpdate()
+    const { qaList, addQAList,isQAInitialized,addQAInitialized } = useDateSourceUpdate();
+    const {data}= useStoreLoadData();
+
+    useEffect(() => {
+        if (!isQAInitialized) {
+           const initQa=JSON.parse(data.qANDa_input);
+           addQAList(initQa);
+           addQAInitialized(true); 
+        }
+    }, [isQAInitialized, addQAList, addQAInitialized]);
 
     const handleAddQA = () => {
         addQAList([...qaList, { question: "", answer: "" }])
