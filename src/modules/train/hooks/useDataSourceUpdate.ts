@@ -24,7 +24,10 @@ const useDateSourceUpdate = () => {
         isQAInitialized,
         setQAInitialized,
         isURLInitialized,
-        setURLInitialized
+        setURLInitialized,
+        uploadedFile,
+        setUploadedFile
+        
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
@@ -51,6 +54,9 @@ const useDateSourceUpdate = () => {
     }
     const addFileList = (fileList: File[]) => {
         setFileList(fileList)
+    }
+    const addUploadedFile = (fileList: []) => {
+        setUploadedFile(fileList)
     }
     const createBot = async () => {
         setLoading(true)
@@ -100,7 +106,9 @@ const useDateSourceUpdate = () => {
         isQAInitialized,
         addQAInitialized,
         isURLInitialized,
-        addURLInitialized
+        addURLInitialized,
+        uploadedFile,
+        addUploadedFile
     }
 }
 export default useDateSourceUpdate

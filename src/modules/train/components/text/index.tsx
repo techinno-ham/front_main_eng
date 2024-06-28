@@ -14,9 +14,9 @@ const TextInput = () => {
            const initText=data.text_input;
             addText(initText);
             addTextInitialized(true); 
-        }
+        };
     }, [isTextInitialized, addText, addTextInitialized]);
-    
+
     const handleChange = (e: any) => {
         const newText = e.target.value;
         addText(newText)

@@ -11,6 +11,8 @@ import TextInput from "../train/components/text";
 import WebsiteLink from "../train/components/websiteLink";
 import QAnda from "../train/components/qAnda";
 import useStoreLoadData from "./hooks/loadDataSource"
+import useDateSourceNew from "../trainCreate/hooks/useDataSource"
+import useDateSourceUpdate from "./hooks/useDataSourceUpdate"
 
 
 const Train = () => {
@@ -20,6 +22,7 @@ const Train = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const {setData}= useStoreLoadData();
+    const {addTextInitialized,addQAInitialized,addURLInitialized}=useDateSourceUpdate()
   
 
 
@@ -32,7 +35,11 @@ const Train = () => {
             try {
                 const response = await service.getDataSource(botId);
                 const dataSource=response.data;
+                addTextInitialized(false);
+                addQAInitialized(false);
+                addURLInitialized(false);
                 setData(dataSource);
+
                           
             } catch (error: any) {
                 setError(error.message);
@@ -40,7 +47,7 @@ const Train = () => {
                 setLoading(false);
             }
         };
-
+   
         fetchDataSource();
     }, [botId]);
     const tabsInfo = {

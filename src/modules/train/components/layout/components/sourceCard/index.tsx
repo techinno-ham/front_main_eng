@@ -13,6 +13,7 @@ const SourceCard = () => {
         text
     } = useDateSourceUpdate();
     const {data}=useStoreLoadData();
+    console.log(data)
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
@@ -32,10 +33,12 @@ const SourceCard = () => {
                 </div>
                 <div className="mb-4 flex flex-col space-y-2">
                     {text.length == 0 ? (
-                        <div className="text-sm text-zinc-700">
+                        data?.text_input.length > 0 && (
+                            <div className="text-sm text-zinc-700">
                             {" "}
                             {data?.text_input.length} عدد کارکتر متن{" "}
                         </div>
+                        )    
                     ):(
                        
                         <>
@@ -47,12 +50,19 @@ const SourceCard = () => {
                         </>
                        
                     )}
-                    {urlList.length == 0 && data?.urls > 0 ?(
-                        <div className="text-sm text-zinc-700">
-                            {data?.urls.length} عدد لینک‌
+                    {urlList.length == 0?(
+                        
+                        JSON.parse(data?.urls).length> 0 && (
+                            <div className="text-sm text-zinc-700">
+                            { JSON.parse(data?.urls).length} عدد لینک‌
                         </div>
+                        )
+                        
                     ):(
                         <>
+                        <div className="text-sm text-zinc-700">
+                            {urlList.length} عدد لینک‌
+                        </div>
                         </>
                     )}
                     {fileList.length > 0 && (
@@ -60,12 +70,26 @@ const SourceCard = () => {
                             {fileList.length} عدد فایل
                         </div>
                     )}
-                    {qaList.length > 0 && (
+                    {qaList.length == 0 &&  data?.qANDa_input? (
+                       JSON.parse(data?.qANDa_input).length > 0 && (
                         <div className="text-sm text-zinc-700">
-                            {" "}
-                            {qaList.length} عدد پرسش و پاسخ ({QandACharCount}{" "}
-                            کارکتر)
-                        </div>
+                        {" "}
+                        {JSON.parse(data?.qANDa_input).length} عدد پرسش و پاسخ ({QandACharCount}{" "}
+                        کارکتر)
+                    </div>
+                       )
+                     
+                    ):(
+                        qaList.length > 0 && (
+                            <>
+                            <div className="text-sm text-zinc-700">
+                             {" "}
+                             {qaList.length} عدد پرسش و پاسخ ({QandACharCount}{" "}
+                             کارکتر)
+                         </div>
+                         </>
+                        )
+                      
                     )}
                 </div>
                 <p className="flex flex-col text-sm">

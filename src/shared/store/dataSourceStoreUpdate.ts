@@ -14,11 +14,13 @@ interface DataSourceType {
     qaList: QandAType[]
     urlList: string[]
     fileList: File[]
+    uploadedFile:[]
     setText: (text: string) => void
     setTextCharNumber: (charNumber: number) => void
     setQAList: (qaList: QandAType[]) => void
     setUrlList: (urlList: string[]) => void
     setFileList: (fileList: File[]) => void
+    setUploadedFile: (uploadedFile: []) => void
     setTextInitialized: (initialized: boolean) => void
     setQAInitialized: (initialized: boolean) => void
     setURLInitialized: (initialized: boolean) => void  // Add this setter function
@@ -33,11 +35,13 @@ const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     qaList: [],
     urlList: [],
     fileList: [],
+    uploadedFile:[],
     setText: (text) => set({ text }),
     setTextCharNumber: (textInputCharNumber) => set({ textInputCharNumber }),
     setQAList: (qaList) => set({ qaList }),
     setUrlList: (urlList) => set({ urlList }),
     setFileList: (fileList) => set({ fileList }),
+    setUploadedFile:(uploadedFile)=>set({uploadedFile}),
     setTextInitialized: (initialized) => set({ isTextInitialized: initialized }), 
     setQAInitialized: (initialized) => set({ isQAInitialized: initialized }),  
     setURLInitialized: (initialized) => set({ isURLInitialized: initialized }),  // Implement setter

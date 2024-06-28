@@ -1,20 +1,31 @@
 "use client"
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import { DocumentUpload, Trash } from "iconsax-react"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
-import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
+import useDateSourceUpdate from "../../hooks/useDataSourceUpdate";
+import useStoreLoadData from "../../hooks/loadDataSource"
+
 
 const UploadFlie = () => {
-    const { fileList, addFileList } = useDateSourceUpdate()
+    const { fileList, addFileList,uploadedFile,addUploadedFile } = useDateSourceUpdate();
+    const {data}= useStoreLoadData();
+
 
     const onDrop = useCallback((acceptedFiles: any) => {
-        addFileList([...fileList, ...acceptedFiles])
+        addFileList([...fileList, ...acceptedFiles]);
     }, [])
 
     const removeFile = (fileName: string) => {
         addFileList(fileList.filter((file) => file.name !== fileName))
     }
+    
+    useEffect(() => {
+        console.log(data.static_files);
+        
+        addUploadedFile(data.static_files);
+    }, []);
+    
 
     // Get the necessary props from the useDropzone hook
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -63,6 +74,47 @@ const UploadFlie = () => {
                     </span>
                 </div>
             </form>
+            {JSON.parse.length > 0 && (
+                <div>
+                    <div className="my-6 flex items-center">
+                        <hr className="w-full border-t border-zinc-300" />
+                        <span className="whitespace-nowrap px-2 text-zinc-600">
+                            فایل های اپلود شده 
+                        </span>
+                        <hr className="w-full border-t border-zinc-300" />
+                    </div>
+                    <div>
+                        <div className="mx-auto mt-4 w-3/4">
+                            {uploadedFile.length > 0 && (
+                                <ul>
+                                    {uploadedFile.map((file, index) => (
+                                        <li
+                                            key={index}
+                                            className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
+                                        >
+                                            <span className="max-w-[80%] truncate">
+                                                {file}
+                                            </span>
+                                            <button
+                                                // onClick={() =>
+                                                //     removeFile(file.name)
+                                                // }
+                                                className="ml-2"
+                                            >
+                                                <Trash
+                                                    size="16"
+                                                    color="#e3342f"
+                                                />
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            )}
             {fileList.length > 0 && (
                 <div>
                     <div className="my-6 flex items-center">
@@ -104,6 +156,7 @@ const UploadFlie = () => {
                     <div></div>
                 </div>
             )}
+
         </>
     )
 }
