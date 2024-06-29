@@ -19,6 +19,7 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
     const [botActive, setBotActive] = useState<boolean>(state);
 
     useEffect(() => {
+        let fetchIntervalId: string | number | NodeJS.Timeout | undefined;
         const fetchBotData = async () => {
             try {
                 const response = await service.getBot(botData?.bot_id);
@@ -31,16 +32,17 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
         const checkBotStatus = async () => {
             if (!botActive) {
                 await fetchBotData();
-                const interval = setInterval(async () => {
+                fetchIntervalId = setInterval(async () => {
                     console.log("calll")
                     await fetchBotData();
                 }, 5000);
 
-                return () => clearInterval(interval);
             }
+            
         };
 
         checkBotStatus();
+        return () => clearInterval(fetchIntervalId);
     }, [botActive, botData]); 
     
 
