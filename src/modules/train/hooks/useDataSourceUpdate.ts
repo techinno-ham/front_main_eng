@@ -26,7 +26,9 @@ const useDateSourceUpdate = () => {
         isURLInitialized,
         setURLInitialized,
         uploadedFile,
-        setUploadedFile
+        setUploadedFile,
+        setFileInitialized,
+        isFileInitialized
         
     } = useDataSourceStoreUpdate()
 
@@ -41,6 +43,9 @@ const useDateSourceUpdate = () => {
     };
     const addURLInitialized = (flag: boolean) => {
         setURLInitialized(flag)
+    }
+    const addFileInitialized=(flag:boolean)=>{
+        setFileInitialized(flag)
     }
     const addTextNumberChar = (charNumber: number) => {
         setTextCharNumber(charNumber)
@@ -108,7 +113,10 @@ const useDateSourceUpdate = () => {
         isURLInitialized,
         addURLInitialized,
         uploadedFile,
-        addUploadedFile
+        addUploadedFile,
+        addFileInitialized,
+        isFileInitialized
+        
     }
 }
 export default useDateSourceUpdate

@@ -8,7 +8,7 @@ import useStoreLoadData from "../../hooks/loadDataSource"
 
 
 const UploadFlie = () => {
-    const { fileList, addFileList,uploadedFile,addUploadedFile } = useDateSourceUpdate();
+    const { fileList, addFileList,uploadedFile,addUploadedFile,isFileInitialized,addFileInitialized } = useDateSourceUpdate();
     const {data}= useStoreLoadData();
 
 
@@ -21,10 +21,42 @@ const UploadFlie = () => {
     }
     
     useEffect(() => {
-        console.log(data.static_files);
+        const transformUrlsToDataObjects = (inputString:any) => {
+            // Remove surrounding square brackets if present and split by commas
+            const urls = inputString.replace(/^\[|\]$/g, '').split(',').map((url:any) => url.trim());
         
-        addUploadedFile(data.static_files);
-    }, []);
+            // Remove empty strings (if any) after splitting
+            const cleanedUrls = urls.filter((url:any) => url.length > 0);
+        
+            // Transform each URL into a data object
+            const dataObjects = cleanedUrls.map((url:any) => {
+                let cleanedUrl = url.replace(/^\[|\]$/g, ''); // Clean surrounding brackets again if any
+        
+                // Extract the fileName from the URL
+                let fileName = cleanedUrl.substring(cleanedUrl.lastIndexOf('/') + 1);
+        
+                return {
+                    url: cleanedUrl,
+                    fileName: fileName,
+                    remove: false
+                };
+            });
+        
+            return dataObjects;
+        };
+        if(!isFileInitialized){
+            addUploadedFile(transformUrlsToDataObjects(data.static_files)) 
+            addFileInitialized(true)
+        }   
+    }, [isFileInitialized,addFileInitialized]);
+ 
+
+    const removeUploadedFile = (fileName: string) => {
+       const newUploadedFile:any= uploadedFile.map((file:any)=>{
+        return file.fileName === fileName ? { ...file, remove: true } : file
+        });
+        addUploadedFile(newUploadedFile);
+    }
     
 
     // Get the necessary props from the useDropzone hook
@@ -37,7 +69,9 @@ const UploadFlie = () => {
                 [".docx"],
             "text/plain": [".txt"],
         },
-    })
+    });
+
+    const hasActiveUploadedFiles = uploadedFile.some((file:any) => !file.remove);
 
     return (
         <>
@@ -74,7 +108,7 @@ const UploadFlie = () => {
                     </span>
                 </div>
             </form>
-            {JSON.parse.length > 0 && (
+            {uploadedFile.length > 0 && hasActiveUploadedFiles && (
                 <div>
                     <div className="my-6 flex items-center">
                         <hr className="w-full border-t border-zinc-300" />
@@ -85,20 +119,22 @@ const UploadFlie = () => {
                     </div>
                     <div>
                         <div className="mx-auto mt-4 w-3/4">
-                            {uploadedFile.length > 0 && (
+                            
                                 <ul>
-                                    {uploadedFile.map((file, index) => (
-                                        <li
+                                    {uploadedFile.map((file:any, index) => (
+                                        !file.remove && (
+                                            <>
+                                                    <li
                                             key={index}
                                             className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
                                         >
                                             <span className="max-w-[80%] truncate">
-                                                {file}
+                                                {file?.fileName}
                                             </span>
                                             <button
-                                                // onClick={() =>
-                                                //     removeFile(file.name)
-                                                // }
+                                                onClick={() =>
+                                                    removeUploadedFile(file?.fileName)
+                                                }
                                                 className="ml-2"
                                             >
                                                 <Trash
@@ -107,9 +143,14 @@ const UploadFlie = () => {
                                                 />
                                             </button>
                                         </li>
+                                            </>
+                                            
+                                        )
+                                  
+                                
                                     ))}
                                 </ul>
-                            )}
+                         
                         </div>
                     </div>
                     <div></div>

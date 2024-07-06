@@ -9,7 +9,8 @@ interface DataSourceType {
     text: string
     isTextInitialized: boolean 
     isQAInitialized: boolean
-    isURLInitialized: boolean  // Add this state
+    isURLInitialized: boolean  
+    isFileInitialized: boolean  
     textInputCharNumber: number
     qaList: QandAType[]
     urlList: string[]
@@ -23,14 +24,16 @@ interface DataSourceType {
     setUploadedFile: (uploadedFile: []) => void
     setTextInitialized: (initialized: boolean) => void
     setQAInitialized: (initialized: boolean) => void
-    setURLInitialized: (initialized: boolean) => void  // Add this setter function
+    setURLInitialized: (initialized: boolean) => void  
+    setFileInitialized: (initialized: boolean) => void
 }
 
 const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     text: "",
     isTextInitialized: false,
     isQAInitialized: false,
-    isURLInitialized: false,  // Initialize as false
+    isURLInitialized: false,  
+    isFileInitialized: false, 
     textInputCharNumber: 0,
     qaList: [],
     urlList: [],
@@ -44,7 +47,8 @@ const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     setUploadedFile:(uploadedFile)=>set({uploadedFile}),
     setTextInitialized: (initialized) => set({ isTextInitialized: initialized }), 
     setQAInitialized: (initialized) => set({ isQAInitialized: initialized }),  
-    setURLInitialized: (initialized) => set({ isURLInitialized: initialized }),  // Implement setter
+    setURLInitialized: (initialized) => set({ isURLInitialized: initialized }), 
+    setFileInitialized: (initialized) => set({ isFileInitialized: initialized }),
 }))
 
 export default useDataSourceStoreUpdate;
