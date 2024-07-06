@@ -39,7 +39,7 @@ const Train = () => {
                 addQAInitialized(false);
                 addURLInitialized(false);
                 addFileInitialized(false)
-        
+                console.log(dataSource)
                 setData(dataSource);
 
                           

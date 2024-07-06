@@ -12,10 +12,10 @@ const UploadFlie = () => {
     const {data}= useStoreLoadData();
 
 
-    const onDrop = useCallback((acceptedFiles: any) => {
+    const onDrop = useCallback((acceptedFiles:any) => {
         addFileList([...fileList, ...acceptedFiles]);
-    }, [])
-
+    }, [fileList, addFileList]);
+    
     const removeFile = (fileName: string) => {
         addFileList(fileList.filter((file) => file.name !== fileName))
     }
@@ -45,7 +45,8 @@ const UploadFlie = () => {
             return dataObjects;
         };
         if(!isFileInitialized){
-            addUploadedFile(transformUrlsToDataObjects(data.static_files)) 
+            addUploadedFile(transformUrlsToDataObjects(data.static_files));
+            addFileList([]);
             addFileInitialized(true)
         }   
     }, [isFileInitialized,addFileInitialized]);
