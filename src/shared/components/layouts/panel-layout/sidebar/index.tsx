@@ -5,6 +5,7 @@ import {
     Category2,
     LogoutCurve,
     Messages1,
+    ProgrammingArrows,
     Setting2,
 } from "iconsax-react"
 import Link from "next/link"
@@ -26,6 +27,11 @@ export const sidebarLinks = [
         icon: <Messages1 />,
         route: "/panel/[id]/mymessage",
         label: "گفت و گو ها",
+    },
+    {
+        icon: <ProgrammingArrows/>,
+        route: "/panel/[id]/deploy",
+        label: "خروجی",
     },
     {
         icon: <Setting2 />,

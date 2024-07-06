@@ -1,50 +1,48 @@
-import ChatBot from "@/src/shared/components/common/chatBot";
-import service from "@/src/shared/services/service";
-import { formatDistanceToNow } from 'date-fns-jalali';
-import { faIR } from 'date-fns/locale';
-import { useEffect, useState } from "react";
+import ChatBot from "@/src/shared/components/common/chatBot"
+import service from "@/src/shared/services/service"
+import { formatDistanceToNow } from "date-fns-jalali"
+import { faIR } from "date-fns/locale"
+import { useEffect, useState } from "react"
 
 interface chartDemoProps {
-    botData: any;
+    botData: any
 }
 
-
-const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
-    const formatRelativeTime = (dateString:any) => {
-        const date = new Date(dateString);
-        return formatDistanceToNow(date, { locale: faIR });
-    };
-    console.log(botData,"testt")
-    const state=botData?.status=="active" ? true : false
-    const [botActive, setBotActive] = useState<boolean>(state);
+const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
+    const formatRelativeTime = (dateString: any) => {
+        const date = new Date(dateString)
+        return formatDistanceToNow(date, { locale: faIR })
+    }
+    console.log(botData, "testt")
+    const state = botData?.status == "active" ? true : false
+    const [botActive, setBotActive] = useState<boolean>(state)
 
     useEffect(() => {
-        let fetchIntervalId: string | number | NodeJS.Timeout | undefined;
+        let fetchIntervalId: string | number | NodeJS.Timeout | undefined
         const fetchBotData = async () => {
             try {
-                const response = await service.getBot(botData?.bot_id);
-                const status =response.data.status;
-                setBotActive(status === "active");
+                const response = await service.getBot(botData?.bot_id)
+                const status = response.data.status
+                setBotActive(status === "active")
             } catch (error: any) {
-                console.error(error);
-            } 
-        };
+                console.error(error)
+            }
+        }
         const checkBotStatus = async () => {
-            if (!botActive) {
-                await fetchBotData();
+            if (!botActive && !fetchIntervalId) {
+                await fetchBotData()
                 fetchIntervalId = setInterval(async () => {
                     console.log("calll")
-                    await fetchBotData();
-                }, 5000);
-
+                    await fetchBotData()
+                }, 5000)
             }
-            
-        };
+        }
 
-        checkBotStatus();
-        return () => clearInterval(fetchIntervalId);
-    }, [botActive, botData]); 
-    
+        checkBotStatus()
+        return () => {
+            clearInterval(fetchIntervalId)
+        }
+    }, [botActive, botData])
 
     return (
         <>
@@ -52,7 +50,7 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                 <div className="rounded border bg-white">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
-                        {botData?.name || "هوشینو بات"}
+                            {botData?.name || "هوشینو بات"}
                         </span>
                     </div>
                     <div className="p-5">
@@ -63,8 +61,8 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         چت بات آیدی :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                      {botData?.bot_id || "sG-EAaBK-R4AbfET4AhmP"}
-                                        
+                                        {botData?.bot_id ||
+                                            "sG-EAaBK-R4AbfET4AhmP"}
                                     </span>
                                 </div>
                                 <div className="flex gap-32">
@@ -72,27 +70,26 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         <span className="text-zinc-5 block text-sm font-medium">
                                             وضعیت :
                                         </span>
-                                        {botData?.security_configs?.status_bot=="enable"?(
-                                              <span className="text-sm font-semibold text-zinc-700">
-                                              <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
-                                              فعال
-                                          </span>
-
-                                        ):(
+                                        {botData?.security_configs
+                                            ?.status_bot == "enable" ? (
                                             <span className="text-sm font-semibold text-zinc-700">
-                                            <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-red-500"></span>{" "}
-                                             غیر فعال
-                                        </span>
+                                                <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
+                                                فعال
+                                            </span>
+                                        ) : (
+                                            <span className="text-sm font-semibold text-zinc-700">
+                                                <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-red-500"></span>{" "}
+                                                غیر فعال
+                                            </span>
                                         )}
-                                      
                                     </div>
                                     <div>
                                         <span className="text-zinc-5 block text-sm font-medium">
                                             مدل :
                                         </span>
                                         <span className="text-sm font-semibold text-zinc-700">
-                                            {botData?.model_configs?.model_name || "gpt-3.5-turbo"}
-                                            
+                                            {botData?.model_configs
+                                                ?.model_name || "gpt-3.5-turbo"}
                                         </span>
                                     </div>
                                 </div>
@@ -101,7 +98,10 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         دسترسی :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                    {botData?.security_configs?.access_bot =="private" ?"خصوصی":"عمومی"}
+                                        {botData?.security_configs
+                                            ?.access_bot == "private"
+                                            ? "خصوصی"
+                                            : "عمومی"}
                                     </span>
                                 </div>
                                 <div>
@@ -109,16 +109,16 @@ const ChartDemo : React.FC<chartDemoProps> = ({botData}) => {
                                         آخرین آموزش :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
-                                    {botData?.updated_at
-                                 ? formatRelativeTime(botData.updated_at)
-                            : " مدتی قبل"}
+                                        {botData?.updated_at
+                                            ? formatRelativeTime(
+                                                  botData.updated_at,
+                                              )
+                                            : " مدتی قبل"}
                                     </span>
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                              
-                                    <ChatBot chatBotActive={botActive}/>
-                            
+                                <ChatBot chatBotActive={botActive} />
                             </div>
                         </div>
                     </div>
