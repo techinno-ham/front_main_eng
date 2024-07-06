@@ -13,7 +13,7 @@ const SourceCard = () => {
         text
     } = useDateSourceUpdate();
     const {data}=useStoreLoadData();
-    console.log(data)
+    
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
