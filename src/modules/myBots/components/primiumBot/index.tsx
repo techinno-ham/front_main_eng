@@ -3,7 +3,7 @@ import Link from "next/link"
 const PremiumBot = () => {
     return (
         <>
-            <div className="h-full w-full rounded-2xl border bg-white p-3">
+            <div className="h-full w-full rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] bg-white p-3">
                 <div className="flex h-full w-full items-center justify-between ">
                     <div className="flex items-center gap-3">
                         <div className="flex items-center justify-center">

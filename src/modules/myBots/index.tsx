@@ -8,6 +8,7 @@ import { getBotList } from "./utils"
 import { useEffect, useState } from "react"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import Head from "next/head"
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
@@ -29,6 +30,7 @@ const MyBots = () => {
 
         fetchBotList()
     }, []);
+   
 
     const handleDeleteBot = async (botId: string) => {
         try {
@@ -41,6 +43,7 @@ const MyBots = () => {
 
     return (
         <>
+    
             <div className="container mx-auto mb-40  mt-24 h-full px-4">
                 <div className="flex w-full justify-between items-center">
                     <div className="w-[60%]">
@@ -78,7 +81,7 @@ const MyBots = () => {
                 </div>
 
                 {/* bot container */}
-                <div className="mt-11">
+                <div className="mt-8 bg-white rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] p-10">
                     <div className="flex justify-center">
                         <div className="flex w-full items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px] md:w-1/2">
                             <SearchNormal1 color="#8F8F8F" />
@@ -92,7 +95,7 @@ const MyBots = () => {
                         </div>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
                         {isLoading ? (
                             <>
                                 <div className="col-span-full flex items-center justify-center">

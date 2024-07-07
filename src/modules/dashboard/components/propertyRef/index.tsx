@@ -50,7 +50,7 @@ const PropertyReferrals = () => {
         },
     ]
     return (
-        <div className="flex  h-full w-full flex-col rounded-xl bg-white p-4">
+        <div className="flex  h-full w-full flex-col  rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] bg-white p-4">
             <span className="text-xl font-semibold text-gray-900">
                 استفاده در محیط های مختلف
             </span>

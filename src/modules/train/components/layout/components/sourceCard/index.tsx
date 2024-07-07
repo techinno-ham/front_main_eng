@@ -1,14 +1,18 @@
+
 import useStoreLoadData from "@/src/modules/train/hooks/loadDataSource";
 import useDateSourceUpdate from "@/src/modules/train/hooks/useDataSourceUpdate"
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+import { usePathname } from "next/navigation";
 
 const SourceCard = () => {
+    const pathname = usePathname()
+    const pathSegments = pathname.split("/")
     const {
         textInputCharNumber,
         qaList,
         urlList,
         fileList,
-        createBot,
+        updateDataSource,
         isLoading,
         text
     } = useDateSourceUpdate();
@@ -21,12 +25,12 @@ const SourceCard = () => {
 
     const handleCrateBot = async (event: any) => {
         event.preventDefault()
-        await createBot()
+        await updateDataSource(pathSegments[2])
     };
 
 
     return (
-        <div className="mt-18  h-fit w-full  rounded-xl  border bg-white p-2">
+        <div className="mt-18  h-fit w-full  rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] bg-white p-2">
             <div className="p-4">
                 <div className="text-center text-xl font-semibold lg:mb-2">
                     منابع اطلاعات

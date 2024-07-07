@@ -47,7 +47,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
     return (
         <>
             <div className="mx-auto mt-10 flex max-w-5xl flex-col px-3 pb-12 md:mt-10">
-                <div className="rounded border bg-white">
+                <div className=" rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] bg-white">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
                             {botData?.name || "هوشینو بات"}

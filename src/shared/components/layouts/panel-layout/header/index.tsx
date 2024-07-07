@@ -17,7 +17,7 @@ const HeaderPanel = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 z-20 w-full border-b border-gray-200 bg-white`}
+                className={`fixed top-0 z-20 w-full shadow-[0_4px_48.3px_-14px_rgba(0,0,0,0.15)] bg-white`}
             >
                 <div className=" flex w-full flex-wrap items-center justify-between p-4">
                     <div className="flex items-center justify-center">

@@ -7,7 +7,9 @@ import useDateSourceUpdate from "../../hooks/useDataSourceUpdate";
 import useStoreLoadData from "../../hooks/loadDataSource"
 
 
+
 const UploadFlie = () => {
+   
     const { fileList, addFileList,uploadedFile,addUploadedFile,isFileInitialized,addFileInitialized } = useDateSourceUpdate();
     const {data}= useStoreLoadData();
 
@@ -21,34 +23,26 @@ const UploadFlie = () => {
     }
     
     useEffect(() => {
-        const transformUrlsToDataObjects = (inputString:any) => {
-            // Remove surrounding square brackets if present and split by commas
-            const urls = inputString.replace(/^\[|\]$/g, '').split(',').map((url:any) => url.trim());
-        
-            // Remove empty strings (if any) after splitting
-            const cleanedUrls = urls.filter((url:any) => url.length > 0);
-        
-            // Transform each URL into a data object
-            const dataObjects = cleanedUrls.map((url:any) => {
-                let cleanedUrl = url.replace(/^\[|\]$/g, ''); // Clean surrounding brackets again if any
-        
-                // Extract the fileName from the URL
-                let fileName = cleanedUrl.substring(cleanedUrl.lastIndexOf('/') + 1);
-        
+        const transformUrlsToDataObjects = (links:any) => {
+
+         let newStructuresLinks= links.map((link:string)=>{
+            const fileName = link.split('/').pop();
                 return {
-                    url: cleanedUrl,
+                    url: link,
                     fileName: fileName,
                     remove: false
-                };
-            });
-        
-            return dataObjects;
+                }
+        });
+
+        return newStructuresLinks
+            
         };
         if(!isFileInitialized){
             addUploadedFile(transformUrlsToDataObjects(data.static_files));
             addFileList([]);
             addFileInitialized(true)
         }   
+
     }, [isFileInitialized,addFileInitialized]);
  
 

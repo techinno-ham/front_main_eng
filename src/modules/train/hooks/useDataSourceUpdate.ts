@@ -4,6 +4,8 @@ import { toast } from "sonner"
 import Services from "../../../shared/services/service"
 import { useRouter } from "next/navigation"
 import useDataSourceStoreUpdate from "@/src/shared/store/dataSourceStoreUpdate"
+import { date } from "zod"
+import { Convert3DCube } from "iconsax-react"
 
 const useDateSourceUpdate = () => {
     const [isLoading, setLoading] = useState(false)
@@ -63,7 +65,7 @@ const useDateSourceUpdate = () => {
     const addUploadedFile = (fileList: []) => {
         setUploadedFile(fileList)
     }
-    const createBot = async () => {
+    const updateDataSource = async (botId:string) => {
         setLoading(true)
         try {
             const formData = new FormData()
@@ -81,10 +83,15 @@ const useDateSourceUpdate = () => {
                     formData.append("files", file, file.name)
                 }
             }
+            if (uploadedFile.length > 0){
+                formData.append("uploadedFile", JSON.stringify(uploadedFile))
+            }
 
-            const response = await Services.cretaeBots(formData)
+            const response = await Services.updateDataSource(formData,botId);
             router.push(`/panel/${response.data.bot_id}`)
-            return response
+            return response;
+           
+
         } catch (err: any) {
             console.log(err)
             toast.error("مشکلی پیش امده است ..")
@@ -105,7 +112,7 @@ const useDateSourceUpdate = () => {
         fileList,
         addFileList,
         isLoading,
-        createBot,
+        updateDataSource,
         isTextInitialized,
         addTextInitialized,
         isQAInitialized,

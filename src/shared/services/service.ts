@@ -59,6 +59,17 @@ class Services {
             )
         }
     }
+
+    updateDataSource = async (body: any,botId:string) => {
+        try {
+            const response = await mainApi.post(`${API.UPDATE_DATASOURCE}/${botId}`, body)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update dataSource failed",
+            )
+        }
+    };
     myBoysList = async (params: any) => {
     
         try {
