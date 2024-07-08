@@ -40,7 +40,6 @@ const UserAccount = () => {
             const fetchUser = async () => {
                 try {
                     const res = await Services.checkToken()
-                    console.log(res)
                     setUser(res.data)
                 } catch (error) {
                     console.error("Error fetching user:", error);

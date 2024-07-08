@@ -13,7 +13,6 @@ const MyMessage = () => {
             setIsLoading(true)
             try {
                 const response: any = await getHistoryMessages()
-                console.log({ response })
                 setConversations(response.data)
             } catch (err) {
                 console.log(err)
@@ -25,12 +24,11 @@ const MyMessage = () => {
     }, [])
 
     useEffect(() => {
-        console.log({activeConversation});
+       
         
     }, [activeConversation])
 
     const handleDownload = async () => {
-        console.log("here");
         
         try {
             const response: any = await getHistoryMessages();
@@ -65,38 +63,33 @@ const MyMessage = () => {
 
     return (
         <>
-            <div className="mx-auto mt-[90px] w-[95%]">
-                <div className=" relative w-[100%] rounded-xl  border bg-white p-4">
-                    {/* <p>تاریخچه ی گفت و گو ها</p>
-                    <div className=" absolute left-0 top-0 h-[500px] w-full bg-slate-300 blur-sm"></div>
-                    <div className="absolute  left-[33%] top-1/2 flex flex-col">
-                        <span>
-                            تاریخچه گفت و گو ها در حال حاظر در حال توسعه می
-                            باشد.
-                        </span>
-                        <span>به زودی در دسترس قرار خواهد گرفت ....</span>
-                    </div> */}
-
+            <div className="mx-auto mt-[100px] w-[95%]">
+                <div className=" relative w-[100%] rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]  bg-white p-4">
+                    <div className="flex justify-end">
                     <button
                         onClick={handleDownload}
                         className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
                     >
-                        Download JSON
+                      خروجی json
                     </button>
 
+
+                    </div>
+            
+                 
                     <div className="flex overflow-hidden">
                         <div
                             className="w-1/4 border-l overflow-y-auto border-gray-300 bg-white"
                             style={{
-                                minHeight: "80vh",
+                                minHeight: "75vh",
                             }}
                         >
                             <div className="mb-9 overflow-y-auto p-3">
                                 {conversations && conversations?.length &&
                                     conversations?.map((conversation: any,index: any)=>{
-                                        console.log({conversation});
                                         
-                                        return <div 
+                                        return (
+                                            <div 
                                         key={index}
                                         onClick={()=>{
                                             setActiveConversation(index)
@@ -120,6 +113,8 @@ const MyMessage = () => {
                                     </div>
                                 </div>
                                         </div>
+                                        )
+                                        
                                     })
                                 }
 

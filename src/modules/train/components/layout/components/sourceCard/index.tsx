@@ -21,7 +21,6 @@ const SourceCard = () => {
         isURLListChanged
     } = useDateSourceUpdate();
     const {data}=useStoreLoadData();
-    console.log(data)
     
     const QandACharCount = qaList.reduce(
         (total:any, qa:any) => total + qa.question.length + qa.answer.length,
