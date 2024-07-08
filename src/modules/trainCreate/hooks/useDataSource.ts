@@ -54,7 +54,6 @@ const useDateSourceNew = () => {
                     formData.append("files", file, file.name)
                 }
             }
-
             const response = await Services.cretaeBots(formData)
             router.push(`/panel/${response.data.bot_id}`);
               // Reset all state variables

@@ -30,7 +30,13 @@ const useDateSourceUpdate = () => {
         uploadedFile,
         setUploadedFile,
         setFileInitialized,
-        isFileInitialized
+        isFileInitialized,
+        isTextChanged,
+        setTextChanged,
+        isQAListChanged,
+        setQAListChanged,
+        isURLListChanged,
+        setURLListChanged
         
     } = useDataSourceStoreUpdate()
 
@@ -39,6 +45,15 @@ const useDateSourceUpdate = () => {
     }
     const addTextInitialized = (flag: boolean) => {
         setTextInitialized(flag)
+    };
+    const addTextChanged = (flag: boolean) => {
+        setTextChanged(flag)
+    };
+    const addQAListChanged = (flag: boolean) => {
+        setQAListChanged(flag)
+    };
+    const addURLListChanged = (flag: boolean) => {
+        setURLListChanged(flag)
     };
     const addQAInitialized = (flag: boolean) => {
         setQAInitialized(flag)
@@ -69,13 +84,13 @@ const useDateSourceUpdate = () => {
         setLoading(true)
         try {
             const formData = new FormData()
-            if (text != "") {
+            if (isTextChanged) {
                 formData.append("text_input", text)
             }
-            if (qaList.length > 0) {
+            if (isQAListChanged) {
                 formData.append("qANDa_input", JSON.stringify(qaList))
             }
-            if (urlList.length > 0) {
+            if (isURLListChanged) {
                 formData.append("urls", JSON.stringify(urlList))
             }
             if (fileList.length > 0) {
@@ -85,7 +100,9 @@ const useDateSourceUpdate = () => {
             }
             if (uploadedFile.length > 0){
                 formData.append("uploadedFile", JSON.stringify(uploadedFile))
-            }
+            };
+
+
 
             const response = await Services.updateDataSource(formData,botId);
             router.push(`/panel/${response.data.bot_id}`)
@@ -122,8 +139,14 @@ const useDateSourceUpdate = () => {
         uploadedFile,
         addUploadedFile,
         addFileInitialized,
-        isFileInitialized
-        
+        isFileInitialized,
+        isTextChanged,
+        addTextChanged,
+        isQAListChanged,
+        addQAListChanged,
+        isURLListChanged,
+        addURLListChanged
+
     }
 }
 export default useDateSourceUpdate

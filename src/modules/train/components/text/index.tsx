@@ -6,7 +6,7 @@ import useStoreLoadData from "../../hooks/loadDataSource";
 
 
 const TextInput = () => {
-    const { addText, text,addTextInitialized,isTextInitialized } = useDateSourceUpdate();
+    const { addText, text,addTextInitialized,isTextInitialized,isTextChanged,addTextChanged } = useDateSourceUpdate();
     const {data}= useStoreLoadData();
 
     useEffect(() => {
@@ -18,6 +18,9 @@ const TextInput = () => {
     }, [isTextInitialized, addText, addTextInitialized]);
 
     const handleChange = (e: any) => {
+        if(!isTextChanged){
+            addTextChanged(true)
+        }
         const newText = e.target.value;
         addText(newText)
        

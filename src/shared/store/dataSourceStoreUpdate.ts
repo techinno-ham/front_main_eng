@@ -8,8 +8,11 @@ interface QandAType {
 interface DataSourceType {
     text: string
     isTextInitialized: boolean 
+    isTextChanged:boolean
     isQAInitialized: boolean
+    isQAListChanged:boolean
     isURLInitialized: boolean  
+    isURLListChanged:boolean
     isFileInitialized: boolean  
     textInputCharNumber: number
     qaList: QandAType[]
@@ -23,6 +26,9 @@ interface DataSourceType {
     setFileList: (fileList: File[]) => void
     setUploadedFile: (uploadedFile: []) => void
     setTextInitialized: (initialized: boolean) => void
+    setTextChanged:(initialized: boolean) => void
+    setQAListChanged:(initialized: boolean) => void
+    setURLListChanged:(initialized: boolean) => void
     setQAInitialized: (initialized: boolean) => void
     setURLInitialized: (initialized: boolean) => void  
     setFileInitialized: (initialized: boolean) => void
@@ -31,8 +37,11 @@ interface DataSourceType {
 const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     text: "",
     isTextInitialized: false,
+    isTextChanged:false,
     isQAInitialized: false,
+    isQAListChanged:false,
     isURLInitialized: false,  
+    isURLListChanged:false,
     isFileInitialized: false, 
     textInputCharNumber: 0,
     qaList: [],
@@ -46,6 +55,9 @@ const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     setFileList: (fileList) => set({ fileList }),
     setUploadedFile:(uploadedFile)=>set({uploadedFile}),
     setTextInitialized: (initialized) => set({ isTextInitialized: initialized }), 
+    setTextChanged: (initialized) => set({ isTextChanged: initialized }), 
+    setQAListChanged: (initialized) => set({ isQAListChanged: initialized }), 
+    setURLListChanged: (initialized) => set({ isURLListChanged: initialized }), 
     setQAInitialized: (initialized) => set({ isQAInitialized: initialized }),  
     setURLInitialized: (initialized) => set({ isURLInitialized: initialized }), 
     setFileInitialized: (initialized) => set({ isFileInitialized: initialized }),

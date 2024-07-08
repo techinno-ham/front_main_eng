@@ -14,12 +14,17 @@ const SourceCard = () => {
         fileList,
         updateDataSource,
         isLoading,
-        text
+        text,
+        uploadedFile,
+        isTextChanged,
+        isQAListChanged,
+        isURLListChanged
     } = useDateSourceUpdate();
     const {data}=useStoreLoadData();
+    console.log(data)
     
     const QandACharCount = qaList.reduce(
-        (total, qa) => total + qa.question.length + qa.answer.length,
+        (total:any, qa:any) => total + qa.question.length + qa.answer.length,
         0,
     )
 
@@ -36,7 +41,7 @@ const SourceCard = () => {
                     منابع اطلاعات
                 </div>
                 <div className="mb-4 flex flex-col space-y-2">
-                    {text.length == 0 ? (
+                    {!isTextChanged ? (
                         data?.text_input.length > 0 && (
                             <div className="text-sm text-zinc-700">
                             {" "}
@@ -54,31 +59,36 @@ const SourceCard = () => {
                         </>
                        
                     )}
-                    {urlList.length == 0?(
+                    {!isURLListChanged?(
                         
-                        JSON.parse(data?.urls).length> 0 && (
+                        data?.urls.length> 0 && (
                             <div className="text-sm text-zinc-700">
-                            { JSON.parse(data?.urls).length} عدد لینک‌
+                            {data?.urls.length} عدد لینک‌
                         </div>
                         )
                         
                     ):(
-                        <>
+                        urlList.length>0 && (
+                            <>
+                                  
                         <div className="text-sm text-zinc-700">
                             {urlList.length} عدد لینک‌
                         </div>
-                        </>
+                        
+                            </>
+                        )
+                 
                     )}
-                    {fileList.length > 0 && (
+                    {(fileList.length > 0 || uploadedFile.length > 0) && (
                         <div className="text-sm text-zinc-700">
-                            {fileList.length} عدد فایل
+                            {fileList.length + uploadedFile.length} عدد فایل
                         </div>
                     )}
-                    {qaList.length == 0 &&  data?.qANDa_input? (
-                       JSON.parse(data?.qANDa_input).length > 0 && (
+                    {!isQAListChanged? (
+                         data?.qANDa_input.length > 0 && (
                         <div className="text-sm text-zinc-700">
                         {" "}
-                        {JSON.parse(data?.qANDa_input).length} عدد پرسش و پاسخ ({QandACharCount}{" "}
+                        {data?.qANDa_input.length} عدد پرسش و پاسخ ({QandACharCount}{" "}
                         کارکتر)
                     </div>
                        )
@@ -111,8 +121,11 @@ const SourceCard = () => {
                 <div className="mt-4 flex justify-center">
                     <button
                         onClick={handleCrateBot}
-                        disabled={isLoading}
-                        className="flex items-center rounded-xl bg-[#2563eb] p-3 text-[14px] text-white"
+                        disabled={isLoading  || (!isQAListChanged && !isTextChanged && !isURLListChanged)}
+                        className={`flex items-center rounded-xl p-3 text-[14px] text-white
+                            ${isLoading || (!isQAListChanged && !isTextChanged && !isURLListChanged) ? 
+                            'bg-[#2563eb] bg-opacity-50 cursor-not-allowed' : 
+                            'bg-[#2563eb] cursor-pointer'}`}
                     >
                         {isLoading ? (
                             <>

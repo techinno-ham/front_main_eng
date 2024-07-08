@@ -5,28 +5,37 @@ import useStoreLoadData from "../../hooks/loadDataSource";
 import { useEffect } from "react";
 
 const QandA = () => {
-    const { qaList, addQAList,isQAInitialized,addQAInitialized } = useDateSourceUpdate();
-    const {data}= useStoreLoadData();
+    const { qaList, addQAList,isQAInitialized,addQAInitialized,isQAListChanged,addQAListChanged } = useDateSourceUpdate();
+    const {data,setData}= useStoreLoadData();
 
     useEffect(() => {
         if (!isQAInitialized) {
-           const initQa=JSON.parse(data.qANDa_input);
+           const initQa=data.qANDa_input;
            addQAList(initQa);
            addQAInitialized(true); 
         }
     }, [isQAInitialized, addQAList, addQAInitialized]);
 
     const handleAddQA = () => {
+        if(!isQAListChanged){
+            addQAListChanged(true)
+        }
         addQAList([...qaList, { question: "", answer: "" }])
     }
 
     const handleDeleteQA = (index: number) => {
+        if(!isQAListChanged){
+            addQAListChanged(true)
+        }
         const newList = [...qaList]
         newList.splice(index, 1)
         addQAList(newList)
     }
 
     const handleInputChange = (index: number, field: string, value: string) => {
+        if(!isQAListChanged){
+            addQAListChanged(true)
+        }
         const newList: any = [...qaList]
         newList[index][field] = value
         addQAList(newList)
@@ -38,7 +47,13 @@ const QandA = () => {
                 <div className="mb-3 flex items-center justify-between">
                     <button
                         className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
-                        onClick={() => addQAList([])}
+                        onClick={() => {
+                            addQAList([])
+                            setData({
+                                ...data,
+                                qANDa_input:[]
+                            });
+                        }}
                     >
                         حذف کردن همه
                     </button>

@@ -22,7 +22,7 @@ const Train = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const {setData}= useStoreLoadData();
-    const {addTextInitialized,addQAInitialized,addURLInitialized,addFileInitialized}=useDateSourceUpdate()
+    const {addTextInitialized,addQAInitialized,addURLInitialized,addFileInitialized,addTextChanged,addQAListChanged,addURLListChanged}=useDateSourceUpdate()
   
 
 
@@ -38,8 +38,10 @@ const Train = () => {
                 addTextInitialized(false);
                 addQAInitialized(false);
                 addURLInitialized(false);
-                addFileInitialized(false)
-                console.log(dataSource)
+                addFileInitialized(false);
+                addTextChanged(false);
+                addQAListChanged(false);
+                addURLListChanged(false)
                 setData(dataSource);
 
                           
