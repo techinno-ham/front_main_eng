@@ -3,11 +3,24 @@
 import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
 import { ExportCurve } from "iconsax-react"
+import { formatDistanceToNow } from "date-fns-jalali"
+import { format } from "date-fns-jalali";
+import { faIR } from "date-fns/locale"
+import LoaderLottie from "@/src/shared/components/common/loader"
 
 const MyMessage = () => {
-    const [conversations, setConversations] = useState<[]>()
+    const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
     const [isLoading, setIsLoading] = useState(true)
+    const formatRelativeTime = (dateString: any) => {
+        const date = new Date(dateString)
+        return formatDistanceToNow(date, { locale: faIR })
+    }
+    const formatRelativeTimeChat = (dateString:any) => {
+        const date = new Date(dateString);
+        const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", { locale: faIR });
+        return formattedDate;
+    };
 
     useEffect(() => {
         const fetchHistoryList = async () => {
@@ -56,6 +69,18 @@ const MyMessage = () => {
             )
         }
     }
+    if (isLoading)
+        return (
+            <>
+                <div className="mx-auto flex h-[90vh] w-[95%] items-center justify-center md:mt-[90px] ">
+                    <div className="flex items-center gap-3">
+                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <LoaderLottie/>
+                      
+                    </div>
+                </div>
+            </>
+        )
 
     return (
         <>
@@ -105,10 +130,28 @@ const MyMessage = () => {
                                         conversations?.length &&
                                         conversations?.map(
                                             (conversation: any, index: any) => {
+                                                const isActive =
+                                                    activeConversation === index
+                                                const lastRecordIndex =
+                                                    conversation.records
+                                                        .length - 1
+                                                const lastMsgUser =
+                                                    conversation.records[
+                                                        lastRecordIndex
+                                                    ].userMessage
+                                                const lastMsgBot =
+                                                    conversation.records[
+                                                        lastRecordIndex
+                                                    ].llmResponse
+                                                const lastTimeConversations =
+                                                    conversation.records[
+                                                        lastRecordIndex
+                                                    ].llmResponseTime
+
                                                 return (
                                                     <li
                                                         key={index}
-                                                        className="relative bg-white px-4 py-5 hover:bg-zinc-100 "
+                                                        className={`relative px-4 py-5 hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
                                                         onClick={() => {
                                                             setActiveConversation(
                                                                 index,
@@ -118,21 +161,21 @@ const MyMessage = () => {
                                                         <div className="flex justify-between space-x-3">
                                                             <div className="min-w-0 flex-1 cursor-pointer">
                                                                 <p className="truncate text-sm text-zinc-500">
-                                                                    کاربر : سلام
-                                                                    خوبی !
+                                                                    {`کاربر : ${lastMsgUser}`}
                                                                 </p>
                                                             </div>
-                                                            <div className="shrink-0 whitespace-nowrap text-sm text-zinc-500">
+                                                            <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
                                                                 <span>
-                                                                    2 روز قبل
+                                                                    {formatRelativeTime(
+                                                                        lastTimeConversations,
+                                                                    )}{" "}
+                                                                    پیش
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <div className="mt-1">
+                                                        <div className="mt-1 cursor-pointer">
                                                             <p className="line-clamp-2 text-sm text-black">
-                                                                ربات : چطور
-                                                                می‌توانم امروز
-                                                                به شما کمک کنم؟
+                                                                {`ربات: ${lastMsgBot}`}
                                                             </p>
                                                         </div>
                                                     </li>
@@ -147,141 +190,83 @@ const MyMessage = () => {
                                 <p className="my-2 ml-1 text-sm font-bold lg:mt-3">
                                     بازه زمانی : ۳ روز قبل
                                 </p>
-                                <div className="mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-[#F0F8FF] p-2">
+                                <div className="mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-[#F0F8FF] px-3 py-5">
                                     <div>
-                                        <div className="mr-8 flex justify-end">
-                                            <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
-                                                <div className="flex flex-col items-start gap-4 break-words">
-                                                    <div className=" w-full break-words text-right text-inherit ">
-                                                        <p>
-                                                            سلام ! امروز چطور
-                                                            می‌توانم به شما کمک
-                                                            کنم؟ 😊
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {conversations?.[
+                                            activeConversation
+                                        ]?.records?.map(
+                                            (record: any, index: any) => {
+                                                return (
+                                                    <>
+                                                        <div className="mb-3 ml-8 flex flex-col">
+                                                            <div className="flex items-center justify-start">
+                                                            <div
+                                                                className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
+                                                                style={{
+                                                                    border: `1.5px solid #3b82f6`,
+                                                                }}
+                                                            >
+                                                                <img
+                                                                    src="/images/profile.png"
+                                                                    alt=""
+                                                                    className="h-8 w-8 rounded-full"
+                                                                />
+                                                            </div>
+                                                            <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
+                                                                <div className="flex flex-col items-start gap-4 break-words">
+                                                                    <div className=" w-full break-words text-right text-inherit ">
+                                                                        <p>
+                                                                            {
+                                                                                record?.userMessage
+                                                                            }
+                                                                        </p>{" "}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                           
+                                                            </div>
+                                                            <span className="truncate text-[12px] text-zinc-500 mt-2">
+                                                                {formatRelativeTimeChat(record?.userMessageTime)}
+                                                            </span>
+                                                         
+                                                        </div>
+                                                        <div className="mb-3 mr-8 flex flex-col">
+                                                            <div className="flex items-center justify-end">
+                                                            <div className=" max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                <div className="flex flex-col items-start gap-4 break-words">
+                                                                    <div className=" w-full break-words text-right text-inherit ">
+                                                                        <p>
+                                                                            {
+                                                                                record?.llmResponse
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
+                                                                style={{
+                                                                    border: `1.5px solid #3b82f6`,
+                                                                }}
+                                                            >
+                                                                <img
+                                                                    src="/double-wink.svg"
+                                                                    alt=""
+                                                                />
+                                                            </div>
 
-                                        <div className="ml-8 flex justify-start">
-                                            <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
-                                                <div className="flex flex-col items-start gap-4 break-words">
-                                                    <div className=" w-full break-words text-right text-inherit ">
-                                                        <p>سلام !</p>{" "}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                                            </div>
+                                                            <span className="truncate text-[12px] text-zinc-500 mt-2 mr-auto">
+                                                                {formatRelativeTimeChat(record?.userMessageTime)}
+                                                            </span>
+                                                        </div>
+                                                    </>
+                                                )
+                                            },
+                                        )}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="flex overflow-hidden">
-                        <div
-                            className="w-1/4 overflow-y-auto border-l border-gray-300 bg-white"
-                            style={{
-                                minHeight: "75vh",
-                            }}
-                        >
-                            <div className="mb-9 overflow-y-auto p-3">
-                                {conversations &&
-                                    conversations?.length &&
-                                    conversations?.map(
-                                        (conversation: any, index: any) => {
-                                            return (
-                                                <div
-                                                    key={index}
-                                                    onClick={() => {
-                                                        setActiveConversation(
-                                                            index,
-                                                        )
-                                                    }}
-                                                >
-                                                    <div className="mb-4 flex cursor-pointer items-center rounded-md p-2 hover:bg-gray-100">
-                                                        <div className="ml-3 h-12 w-12 rounded-full bg-gray-300">
-                                                            <img
-                                                                src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                                                alt="User Avatar"
-                                                                className="h-12 w-12 rounded-full"
-                                                            />
-                                                        </div>
-                                                        <div className="flex-1">
-                                                            <h2 className="text-xs font-semibold">
-                                                                {
-                                                                    conversation?.conversationId
-                                                                }
-                                                            </h2>
-                                                            <p className="text-gray-600">
-                                                                Hoorayy!!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )
-                                        },
-                                    )}
-                            </div>
-                        </div>
-
-                        <div className="flex-1">
-                            <div
-                                className="overflow-y-auto p-4 pb-36"
-                                style={{
-                                    background: "aliceblue",
-                                    height: "100%",
-                                }}
-                            >
-                                {conversations?.[
-                                    activeConversation
-                                ]?.records?.map((record: any, index: any) => {
-                                    return (
-                                        <>
-                                            <div className="mb-4 flex cursor-pointer">
-                                                <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                                    <img
-                                                        src="https://placehold.co/200x/ffa8e4/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                                        alt="User Avatar"
-                                                        className="h-8 w-8 rounded-full"
-                                                    />
-                                                </div>
-                                                <div className="flex max-w-96 gap-3 rounded-lg bg-white p-3">
-                                                    <p className="text-gray-700">
-                                                        {record?.userMessage}
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <div className="mb-4 flex cursor-pointer justify-end">
-                                                <div className="flex max-w-96 gap-3 rounded-lg bg-indigo-500 p-3 text-white">
-                                                    <p>{record?.llmResponse}</p>
-                                                </div>
-                                                <div className="ml-2 flex h-9 w-9 items-center justify-center rounded-full">
-                                                    <img
-                                                        src="https://placehold.co/200x/b7a8ff/ffffff.svg?text=ʕ•́ᴥ•̀ʔ&font=Lato"
-                                                        alt="My Avatar"
-                                                        className="h-8 w-8 rounded-full"
-                                                    />
-                                                </div>
-                                            </div>
-                                        </>
-                                    )
-                                })}
-                            </div>
-
-                            <footer className="absolute bottom-0 w-3/4 border-t border-gray-300 bg-white p-4">
-                                <div className="flex items-center">
-                                    <input
-                                        type="text"
-                                        placeholder="Type a message..."
-                                        className="w-full rounded-md border border-gray-400 p-2 focus:border-blue-500 focus:outline-none"
-                                    />
-                                    <button className="ml-2 rounded-md bg-indigo-500 px-4 py-2 text-white">
-                                        Send
-                                    </button>
-                                </div>
-                            </footer>
                         </div>
                     </div>
                 </div>

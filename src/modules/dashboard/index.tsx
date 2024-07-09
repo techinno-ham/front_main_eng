@@ -5,6 +5,7 @@ import PieChart from "./components/piechart"
 import PropertyReferrals from "./components/propertyRef"
 import TotalRevenue from "./components/totalRevenue"
 import service from "@/src/shared/services/service"
+import LoaderLottie from "@/src/shared/components/common/loader"
 
 interface DashboardProps {
     botId: string
@@ -36,7 +37,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                 <div className="mx-auto flex h-screen w-[95%] items-center justify-center md:mt-[90px] ">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <div className="h-10 w-10 animate-spin rounded-full border-8 border-white border-t-blue-600"></div>
+                        <LoaderLottie/>
                     </div>
                 </div>
             </>
@@ -81,7 +82,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                     </div>
                 </div>
 
-                {/* <ChartDemo  botData={botData}/> */}
+                <ChartDemo  botData={botData}/>
             </div>
         </>
     )

@@ -13,6 +13,7 @@ import QAnda from "../train/components/qAnda"
 import useStoreLoadData from "./hooks/loadDataSource"
 import useDateSourceNew from "../trainCreate/hooks/useDataSource"
 import useDateSourceUpdate from "./hooks/useDataSourceUpdate"
+import LoaderLottie from "@/src/shared/components/common/loader"
 
 const Train = () => {
     const viewController = useStoreViewController()
@@ -82,7 +83,8 @@ const Train = () => {
                 <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <div className="h-10 w-10 animate-spin rounded-full border-8 border-white border-t-blue-600"></div>
+                        <LoaderLottie/>
+                        
                     </div>
                 </div>
             </>

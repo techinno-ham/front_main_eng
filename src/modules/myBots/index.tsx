@@ -9,6 +9,8 @@ import { useEffect, useState } from "react"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import Head from "next/head"
+import EmptyBot from "@/src/shared/components/common/emptyBotLoader"
+import LoaderLottie from "@/src/shared/components/common/loader"
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
@@ -82,7 +84,7 @@ const MyBots = () => {
                 </div>
 
                 {/* bot container */}
-                <div className="mt-8 rounded-2xl bg-white p-10 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
+                <div className="mt-8 rounded-2xl bg-white p-10 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] md:min-h-[450px]">
                     <div className="flex justify-center">
                         <div className="flex w-full items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px] md:w-1/2">
                             <SearchNormal1 color="#8F8F8F" />
@@ -100,10 +102,10 @@ const MyBots = () => {
                         {isLoading ? (
                             <>
                                 <div className="col-span-full flex items-center justify-center">
-                                    <div className="h-12 w-12 animate-spin rounded-full border-8 border-gray-300 border-t-blue-600"></div>
                                     <span className="mr-3">
                                         مقداری صبر کنید ...
                                     </span>
+                                <LoaderLottie/>
                                 </div>
                             </>
                         ) : myBotsArry.length > 0 ? (
@@ -117,6 +119,7 @@ const MyBots = () => {
                             ))
                         ) : (
                             <div className="col-span-full flex h-full flex-col items-center justify-center text-center">
+                                <EmptyBot/>
                                 <span>در حال حاظر چت باتی وجود ندارد ....</span>
                                 <span>
                                     شما میتوانید برای ساختن آن روی دکمه ی "چت
