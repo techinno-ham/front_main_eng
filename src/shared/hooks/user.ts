@@ -13,7 +13,7 @@ const useUser = () => {
     const checkAuthUser = async () => {
         setIsLoading(true)
         try {
-            const cookies = parseCookies();
+            const cookies = parseCookies()
             const cookieFallback = cookies.accessToken
             if (!cookieFallback) {
                 setIsAuthenticated(false)

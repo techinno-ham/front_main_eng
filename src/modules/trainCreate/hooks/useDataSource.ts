@@ -55,14 +55,14 @@ const useDateSourceNew = () => {
                 }
             }
             const response = await Services.cretaeBots(formData)
-            router.push(`/panel/${response.data.bot_id}`);
-              // Reset all state variables
-              setText("");
-              setTextCharNumber(0);
-              setQAList([]);
-              setUrlList([]);
-              setFileList([]);
-              
+            router.push(`/panel/${response.data.bot_id}`)
+            // Reset all state variables
+            setText("")
+            setTextCharNumber(0)
+            setQAList([])
+            setUrlList([])
+            setFileList([])
+
             return response
         } catch (err: any) {
             console.log(err)
@@ -87,4 +87,4 @@ const useDateSourceNew = () => {
         createBot,
     }
 }
-export default useDateSourceNew;
+export default useDateSourceNew

@@ -1,29 +1,34 @@
 "use client"
 import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
-import { useEffect, useState } from "react";
-import useStoreLoadData from "../../hooks/loadDataSource";
-
+import { useEffect, useState } from "react"
+import useStoreLoadData from "../../hooks/loadDataSource"
 
 const TextInput = () => {
-    const { addText, text,addTextInitialized,isTextInitialized,isTextChanged,addTextChanged } = useDateSourceUpdate();
-    const {data}= useStoreLoadData();
+    const {
+        addText,
+        text,
+        addTextInitialized,
+        isTextInitialized,
+        isTextChanged,
+        addTextChanged,
+    } = useDateSourceUpdate()
+    const { data } = useStoreLoadData()
 
     useEffect(() => {
         if (!isTextInitialized) {
-           const initText=data.text_input;
-            addText(initText);
-            addTextInitialized(true); 
-        };
-    }, [isTextInitialized, addText, addTextInitialized]);
+            const initText = data.text_input
+            addText(initText)
+            addTextInitialized(true)
+        }
+    }, [isTextInitialized, addText, addTextInitialized])
 
     const handleChange = (e: any) => {
-        if(!isTextChanged){
+        if (!isTextChanged) {
             addTextChanged(true)
         }
-        const newText = e.target.value;
+        const newText = e.target.value
         addText(newText)
-       
     }
     return (
         <>

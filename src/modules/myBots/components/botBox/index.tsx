@@ -4,8 +4,8 @@ import Link from "next/link"
 import { DocumentCopy, Trash } from "iconsax-react"
 import Modal from "@/src/shared/components/common/modal"
 import { useState } from "react"
-import { formatDistanceToNow } from 'date-fns-jalali';
-import { faIR } from 'date-fns/locale';
+import { formatDistanceToNow } from "date-fns-jalali"
+import { faIR } from "date-fns/locale"
 
 interface IBotBoxProps {
     type: "instagram" | "website"
@@ -22,13 +22,12 @@ const listImage = {
 }
 
 const BotBox = (props: IBotBoxProps) => {
-    const [open, setOpen] = useState(false);
-    const [loading,setLoading]=useState(false);
-    const formatRelativeTime = (dateString:any) => {
-        const date = new Date(dateString);
-        return formatDistanceToNow(date, { locale: faIR });
-    };
-
+    const [open, setOpen] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const formatRelativeTime = (dateString: any) => {
+        const date = new Date(dateString)
+        return formatDistanceToNow(date, { locale: faIR })
+    }
 
     const handleTrashClick = (e: React.MouseEvent) => {
         e.stopPropagation()
@@ -43,16 +42,16 @@ const BotBox = (props: IBotBoxProps) => {
     const handleDelete = async (e: any) => {
         e.stopPropagation()
         e.preventDefault()
-        setLoading(true); 
+        setLoading(true)
         try {
             if (props.onDelete && props.botsData.bot_id) {
-                await props.onDelete(props.botsData.bot_id);
-                setOpen(false);
+                await props.onDelete(props.botsData.bot_id)
+                setOpen(false)
             }
         } catch (error) {
-            console.error("Error deleting bot:", error);
+            console.error("Error deleting bot:", error)
         } finally {
-            setLoading(false); 
+            setLoading(false)
         }
     }
 
@@ -87,9 +86,11 @@ const BotBox = (props: IBotBoxProps) => {
                                 <div>
                                     <span className="text-[10px] text-[gray]">
                                         آخرین بروزرسانی :
-                                    {props.botsData?.updated_at
-                            ? formatRelativeTime(props.botsData.updated_at)
-                            : " مدتی قبل"}
+                                        {props.botsData?.updated_at
+                                            ? formatRelativeTime(
+                                                  props.botsData.updated_at,
+                                              )
+                                            : " مدتی قبل"}
                                     </span>
                                 </div>
                             </div>
@@ -137,23 +138,28 @@ const BotBox = (props: IBotBoxProps) => {
                                                         لغو
                                                     </button>
                                                     <button
-                                                        style={{backgroundColor:"red"}}
+                                                        style={{
+                                                            backgroundColor:
+                                                                "red",
+                                                        }}
                                                         className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md  px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-red-500/90 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                                                         type="button"
                                                         onClick={handleDelete}
                                                     >
-                                                                   {loading ? (
-                            <>
-                                <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                <span className="mr-3">
-                                     صبر کنید ...
-                                </span>
-                            </>
-                        ) : (
-                            <>
-                                <span>حذف کردن</span>
-                            </>
-                        )}
+                                                        {loading ? (
+                                                            <>
+                                                                <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                                                <span className="mr-3">
+                                                                    صبر کنید ...
+                                                                </span>
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <span>
+                                                                    حذف کردن
+                                                                </span>
+                                                            </>
+                                                        )}
                                                     </button>
                                                 </div>
                                             </div>

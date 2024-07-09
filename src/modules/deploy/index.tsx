@@ -10,7 +10,7 @@ const Deploy = () => {
     const tabsInfo = {
         CDN: "اسکریپت",
         Iframe: "وب ",
-        NPM: "پکیج جاوا اسکریپت"
+        NPM: "پکیج جاوا اسکریپت",
     }
 
     const tabs = [

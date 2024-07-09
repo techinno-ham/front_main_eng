@@ -13,9 +13,8 @@ import Head from "next/head"
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const router = useRouter();
+    const router = useRouter()
     useEffect(() => {
-      
         const fetchBotList = async () => {
             setIsLoading(true)
             try {
@@ -29,13 +28,14 @@ const MyBots = () => {
         }
 
         fetchBotList()
-    }, []);
-   
+    }, [])
 
     const handleDeleteBot = async (botId: string) => {
         try {
-            await service.deleteBot(botId);
-            setMyBots((prevBots) => prevBots.filter((bot: any) => bot.bot_id !== botId))
+            await service.deleteBot(botId)
+            setMyBots((prevBots) =>
+                prevBots.filter((bot: any) => bot.bot_id !== botId),
+            )
         } catch (error) {
             console.log(error)
         }
@@ -43,9 +43,8 @@ const MyBots = () => {
 
     return (
         <>
-    
             <div className="container mx-auto mb-40  mt-24 h-full px-4">
-                <div className="flex w-full justify-between items-center">
+                <div className="flex w-full items-center justify-between">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">
                             چت بات های من
@@ -58,10 +57,12 @@ const MyBots = () => {
                     <div>
                         <button
                             onClick={() => {
-                                if(myBotsArry.length<2){
+                                if (myBotsArry.length < 2) {
                                     router.push("/createbot")
-                                }else{
-                                    toast.error("شما بیش از 2 بات نمیتوانید بسازید...")
+                                } else {
+                                    toast.error(
+                                        "شما بیش از 2 بات نمیتوانید بسازید...",
+                                    )
                                 }
                             }}
                             className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm"
@@ -81,7 +82,7 @@ const MyBots = () => {
                 </div>
 
                 {/* bot container */}
-                <div className="mt-8 bg-white rounded-2xl shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] p-10">
+                <div className="mt-8 rounded-2xl bg-white p-10 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                     <div className="flex justify-center">
                         <div className="flex w-full items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px] md:w-1/2">
                             <SearchNormal1 color="#8F8F8F" />
@@ -95,7 +96,7 @@ const MyBots = () => {
                         </div>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
+                    <div className="mb-12 mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                         {isLoading ? (
                             <>
                                 <div className="col-span-full flex items-center justify-center">
@@ -112,15 +113,16 @@ const MyBots = () => {
                                     type={bot.type}
                                     botsData={bot}
                                     onDelete={handleDeleteBot}
-                                    
                                 />
                             ))
                         ) : (
-                            <div className="col-span-full flex items-center justify-center h-full flex-col text-center">
-                                <span>در حال حاظر چت باتی  وجود ندارد ....</span>
-                                <span>شما میتوانید برای ساختن آن روی دکمه ی "چت بات جدید "بزنید و اولین چت بات خود را بسازید.</span>
-
-                          
+                            <div className="col-span-full flex h-full flex-col items-center justify-center text-center">
+                                <span>در حال حاظر چت باتی وجود ندارد ....</span>
+                                <span>
+                                    شما میتوانید برای ساختن آن روی دکمه ی "چت
+                                    بات جدید "بزنید و اولین چت بات خود را
+                                    بسازید.
+                                </span>
                             </div>
                         )}
                     </div>

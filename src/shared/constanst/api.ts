@@ -2,9 +2,9 @@ export const API = {
     CHECK_TOKEN: "/auth/auth-check",
     FETCH_LINKS: "/crawler/links",
     CREATE_BOT: "/mybots/create",
-    UPDATE_DATASOURCE:"/mybots/dataSource/update",
+    UPDATE_DATASOURCE: "/mybots/dataSource/update",
     My_BOTS: "/mybots/list",
-    MY_DATASOURCE_WITH_ID:"/mybots/dataSource",
+    MY_DATASOURCE_WITH_ID: "/mybots/dataSource",
     DELETE_BOTS: "/mybots/delete",
     //History
 

@@ -1,29 +1,27 @@
 import { redirect, useRouter } from "next/navigation"
 import { useState } from "react"
 import services from "../services"
-import { setCookie,destroyCookie } from "nookies"
+import { setCookie, destroyCookie } from "nookies"
 import { toast } from "sonner"
 import useUserStore from "@/src/shared/store/userStore"
 
 const useLogin = () => {
     const [isLoading, setLoading] = useState(false)
     const [error, setError] = useState(null)
-    const router = useRouter();
+    const router = useRouter()
     const { user, setUser, isAuthenticated, setIsAuthenticated } =
-    useUserStore()
-
+        useUserStore()
 
     const login = async (user: any) => {
         setLoading(true)
         setError(null)
         try {
-            const res = await services.login(user);
-            setUser(res.data);
+            const res = await services.login(user)
+            setUser(res.data)
             toast.success("ورود شما موفق آمیز بود.")
-       
 
             setCookie(null, "accessToken", res.data.accessToken, {
-                maxAge:1 * 24 * 60 * 60,
+                maxAge: 1 * 24 * 60 * 60,
                 path: "/",
                 secure: true, // Use this in production
                 sameSite: "strict", // Prevent CSRF attacks
@@ -35,7 +33,6 @@ const useLogin = () => {
                 secure: true, // Use this in production
                 sameSite: "strict",
             })
-         
 
             // Redirect or perform other actions here
             router.push("/mybots")
@@ -46,28 +43,27 @@ const useLogin = () => {
         } finally {
             setLoading(false)
         }
-    };
+    }
     const logout = async () => {
-    
         try {
-             router.replace("/auth/login"); // Wait for navigation to complete
-            destroyCookie(null, "accessToken");
-            destroyCookie(null, "refreshToken");
-    
-            toast.success("شما با موفقیت خارج شدید.");
-            setUser({});
-            setIsAuthenticated(false);
+            router.replace("/auth/login") // Wait for navigation to complete
+            destroyCookie(null, "accessToken")
+            destroyCookie(null, "refreshToken")
+
+            toast.success("شما با موفقیت خارج شدید.")
+            setUser({})
+            setIsAuthenticated(false)
         } catch (error) {
-            console.error("Logout error:", error);
-            toast.error("خطایی در خروج رخ داده است.");
+            console.error("Logout error:", error)
+            toast.error("خطایی در خروج رخ داده است.")
         }
-    };
+    }
 
     return {
         login,
         isLoading,
         error,
-        logout
+        logout,
     }
 }
 export default useLogin

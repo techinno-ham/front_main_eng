@@ -36,8 +36,7 @@ const useDateSourceUpdate = () => {
         isQAListChanged,
         setQAListChanged,
         isURLListChanged,
-        setURLListChanged
-        
+        setURLListChanged,
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
@@ -45,23 +44,23 @@ const useDateSourceUpdate = () => {
     }
     const addTextInitialized = (flag: boolean) => {
         setTextInitialized(flag)
-    };
+    }
     const addTextChanged = (flag: boolean) => {
         setTextChanged(flag)
-    };
+    }
     const addQAListChanged = (flag: boolean) => {
         setQAListChanged(flag)
-    };
+    }
     const addURLListChanged = (flag: boolean) => {
         setURLListChanged(flag)
-    };
+    }
     const addQAInitialized = (flag: boolean) => {
         setQAInitialized(flag)
-    };
+    }
     const addURLInitialized = (flag: boolean) => {
         setURLInitialized(flag)
     }
-    const addFileInitialized=(flag:boolean)=>{
+    const addFileInitialized = (flag: boolean) => {
         setFileInitialized(flag)
     }
     const addTextNumberChar = (charNumber: number) => {
@@ -80,7 +79,7 @@ const useDateSourceUpdate = () => {
     const addUploadedFile = (fileList: []) => {
         setUploadedFile(fileList)
     }
-    const updateDataSource = async (botId:string) => {
+    const updateDataSource = async (botId: string) => {
         setLoading(true)
         try {
             const formData = new FormData()
@@ -98,17 +97,13 @@ const useDateSourceUpdate = () => {
                     formData.append("files", file, file.name)
                 }
             }
-            if (uploadedFile.length > 0){
+            if (uploadedFile.length > 0) {
                 formData.append("uploadedFile", JSON.stringify(uploadedFile))
-            };
+            }
 
-
-
-            const response = await Services.updateDataSource(formData,botId);
+            const response = await Services.updateDataSource(formData, botId)
             router.push(`/panel/${response.data.bot_id}`)
-            return response;
-           
-
+            return response
         } catch (err: any) {
             console.log(err)
             toast.error("مشکلی پیش امده است ..")
@@ -145,8 +140,7 @@ const useDateSourceUpdate = () => {
         isQAListChanged,
         addQAListChanged,
         isURLListChanged,
-        addURLListChanged
-
+        addURLListChanged,
     }
 }
 export default useDateSourceUpdate

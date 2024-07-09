@@ -3,56 +3,57 @@ import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useEffect, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
-import useDateSourceUpdate from "../../hooks/useDataSourceUpdate";
+import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 import useStoreLoadData from "../../hooks/loadDataSource"
 
-
-
 const UploadFlie = () => {
-   
-    const { fileList, addFileList,uploadedFile,addUploadedFile,isFileInitialized,addFileInitialized } = useDateSourceUpdate();
-    const {data}= useStoreLoadData();
+    const {
+        fileList,
+        addFileList,
+        uploadedFile,
+        addUploadedFile,
+        isFileInitialized,
+        addFileInitialized,
+    } = useDateSourceUpdate()
+    const { data } = useStoreLoadData()
 
+    const onDrop = useCallback(
+        (acceptedFiles: any) => {
+            addFileList([...fileList, ...acceptedFiles])
+        },
+        [fileList, addFileList],
+    )
 
-    const onDrop = useCallback((acceptedFiles:any) => {
-        addFileList([...fileList, ...acceptedFiles]);
-    }, [fileList, addFileList]);
-    
     const removeFile = (fileName: string) => {
         addFileList(fileList.filter((file) => file.name !== fileName))
     }
-    
-    useEffect(() => {
-        const transformUrlsToDataObjects = (links:any) => {
 
-         let newStructuresLinks= links.map((link:string)=>{
-            const fileName = link.split('/').pop();
+    useEffect(() => {
+        const transformUrlsToDataObjects = (links: any) => {
+            let newStructuresLinks = links.map((link: string) => {
+                const fileName = link.split("/").pop()
                 return {
                     url: link,
                     fileName: fileName,
-                    remove: false
+                    remove: false,
                 }
-        });
+            })
 
-        return newStructuresLinks
-            
-        };
-        if(!isFileInitialized){
-            addUploadedFile(transformUrlsToDataObjects(data.static_files));
-            addFileList([]);
+            return newStructuresLinks
+        }
+        if (!isFileInitialized) {
+            addUploadedFile(transformUrlsToDataObjects(data.static_files))
+            addFileList([])
             addFileInitialized(true)
-        }   
-
-    }, [isFileInitialized,addFileInitialized]);
- 
+        }
+    }, [isFileInitialized, addFileInitialized])
 
     const removeUploadedFile = (fileName: string) => {
-       const newUploadedFile:any= uploadedFile.map((file:any)=>{
-        return file.fileName === fileName ? { ...file, remove: true } : file
-        });
-        addUploadedFile(newUploadedFile);
+        const newUploadedFile: any = uploadedFile.map((file: any) => {
+            return file.fileName === fileName ? { ...file, remove: true } : file
+        })
+        addUploadedFile(newUploadedFile)
     }
-    
 
     // Get the necessary props from the useDropzone hook
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -64,9 +65,11 @@ const UploadFlie = () => {
                 [".docx"],
             "text/plain": [".txt"],
         },
-    });
+    })
 
-    const hasActiveUploadedFiles = uploadedFile.some((file:any) => !file.remove);
+    const hasActiveUploadedFiles = uploadedFile.some(
+        (file: any) => !file.remove,
+    )
 
     return (
         <>
@@ -108,44 +111,42 @@ const UploadFlie = () => {
                     <div className="my-6 flex items-center">
                         <hr className="w-full border-t border-zinc-300" />
                         <span className="whitespace-nowrap px-2 text-zinc-600">
-                            فایل های اپلود شده 
+                            فایل های اپلود شده
                         </span>
                         <hr className="w-full border-t border-zinc-300" />
                     </div>
                     <div>
                         <div className="mx-auto mt-4 w-3/4">
-                            
-                                <ul>
-                                    {uploadedFile.map((file:any, index) => (
+                            <ul>
+                                {uploadedFile.map(
+                                    (file: any, index) =>
                                         !file.remove && (
                                             <>
-                                                    <li
-                                            key={index}
-                                            className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
-                                        >
-                                            <span className="max-w-[80%] truncate">
-                                                {file?.fileName}
-                                            </span>
-                                            <button
-                                                onClick={() =>
-                                                    removeUploadedFile(file?.fileName)
-                                                }
-                                                className="ml-2"
-                                            >
-                                                <Trash
-                                                    size="16"
-                                                    color="#e3342f"
-                                                />
-                                            </button>
-                                        </li>
+                                                <li
+                                                    key={index}
+                                                    className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
+                                                >
+                                                    <span className="max-w-[80%] truncate">
+                                                        {file?.fileName}
+                                                    </span>
+                                                    <button
+                                                        onClick={() =>
+                                                            removeUploadedFile(
+                                                                file?.fileName,
+                                                            )
+                                                        }
+                                                        className="ml-2"
+                                                    >
+                                                        <Trash
+                                                            size="16"
+                                                            color="#e3342f"
+                                                        />
+                                                    </button>
+                                                </li>
                                             </>
-                                            
-                                        )
-                                  
-                                
-                                    ))}
-                                </ul>
-                         
+                                        ),
+                                )}
+                            </ul>
                         </div>
                     </div>
                     <div></div>
@@ -192,7 +193,6 @@ const UploadFlie = () => {
                     <div></div>
                 </div>
             )}
-
         </>
     )
 }

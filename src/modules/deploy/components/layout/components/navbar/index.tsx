@@ -1,6 +1,14 @@
 "use client"
 
-import { Box, Brush, Danger, DocumentCode, Global, Magicpen, Setting2 } from "iconsax-react"
+import {
+    Box,
+    Brush,
+    Danger,
+    DocumentCode,
+    Global,
+    Magicpen,
+    Setting2,
+} from "iconsax-react"
 import TabLink from "./components/tablinks"
 
 const menuItems = [
@@ -21,9 +29,7 @@ const menuItems = [
         store: "NPM",
         icon: <Box size={20} />,
         isActive: false,
-
     },
-    
 ]
 
 const Navbar = () => {
@@ -33,12 +39,15 @@ const Navbar = () => {
                 {menuItems.map((item) => {
                     return (
                         <li
-                        
-                        style={{
-                            filter: item?.isActive ? "blur(0px)" : "blur(1px)",
-                            pointerEvents: item?.isActive ? "pointer" : "none",
-                            
-                        }}>
+                            style={{
+                                filter: item?.isActive
+                                    ? "blur(0px)"
+                                    : "blur(1px)",
+                                pointerEvents: item?.isActive
+                                    ? "pointer"
+                                    : "none",
+                            }}
+                        >
                             <TabLink item={item} />
                         </li>
                     )

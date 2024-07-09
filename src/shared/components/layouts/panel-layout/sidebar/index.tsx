@@ -29,7 +29,7 @@ export const sidebarLinks = [
         label: "گفت و گو ها",
     },
     {
-        icon: <ProgrammingArrows/>,
+        icon: <ProgrammingArrows />,
         route: "/panel/[id]/deploy",
         label: "خروجی",
     },
@@ -46,7 +46,7 @@ const SideBar = () => {
 
     return (
         <>
-            <div className="fixed hidden h-[100vh] w-[300px] shadow-[0_4px_49px_-14px_rgba(0,0,0,0.16)] bg-white md:block">
+            <div className="fixed hidden h-[100vh] w-[300px] bg-white shadow-[0_4px_49px_-14px_rgba(0,0,0,0.16)] md:block">
                 <div className="mt-24 flex flex-col gap-8">
                     <div className="flex items-center justify-center">
                         <span className="text-3xl">

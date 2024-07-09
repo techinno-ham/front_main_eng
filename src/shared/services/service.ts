@@ -60,33 +60,33 @@ class Services {
         }
     }
 
-    updateDataSource = async (body: any,botId:string) => {
+    updateDataSource = async (body: any, botId: string) => {
         try {
-            const response = await mainApi.post(`${API.UPDATE_DATASOURCE}/${botId}`, body)
+            const response = await mainApi.post(
+                `${API.UPDATE_DATASOURCE}/${botId}`,
+                body,
+            )
             return response
         } catch (error: any) {
             throw new Error(
                 error.response?.data?.message || "update dataSource failed",
             )
         }
-    };
+    }
     myBoysList = async (params: any) => {
-    
         try {
             const response = await mainApi.get(API.My_BOTS, {
                 params: {
                     ...params,
-                }
+                },
             })
             return response
         } catch (error: any) {
             console.log(error)
-            throw new Error(
-                error.response?.data?.message ,
-            )
+            throw new Error(error.response?.data?.message)
         }
     }
-    deleteBot= async (botId :string)=>{
+    deleteBot = async (botId: string) => {
         try {
             const response = await mainApi.delete(`${API.DELETE_BOTS}/${botId}`)
             return response
@@ -95,40 +95,40 @@ class Services {
                 error.response?.data?.message || "delete bot failed",
             )
         }
-
     }
-    getBot= async (botId :string)=>{
+    getBot = async (botId: string) => {
         try {
             const response = await mainApi.get(`${API.My_BOTS}/${botId}`)
             return response
         } catch (error: any) {
-            throw new Error(
-                error.response?.data?.message || "get bot failed",
-            )
+            throw new Error(error.response?.data?.message || "get bot failed")
         }
-
     }
-    getDataSource= async (botId :string)=>{
+    getDataSource = async (botId: string) => {
         try {
-            const response = await mainApi.get(`${API.MY_DATASOURCE_WITH_ID}/${botId}`)
+            const response = await mainApi.get(
+                `${API.MY_DATASOURCE_WITH_ID}/${botId}`,
+            )
             return response
         } catch (error: any) {
             throw new Error(
                 error.response?.data?.message || "get DataSource failed",
             )
         }
-
     }
-    getHistoryMessages= async (botId :string = "b8d8154c-99e5-49ab-89ed-806088932781")=>{
+    getHistoryMessages = async (
+        botId: string = "b8d8154c-99e5-49ab-89ed-806088932781",
+    ) => {
         try {
-            const response = await mainApi.get(`${"/mybots"}/${botId}/conversations`)
+            const response = await mainApi.get(
+                `${"/mybots"}/${botId}/conversations`,
+            )
             return response
         } catch (error: any) {
             throw new Error(
                 error.response?.data?.message || "get history failed",
             )
         }
-
     }
 }
 

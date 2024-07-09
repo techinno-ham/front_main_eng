@@ -25133,7 +25133,7 @@
                         (0, o.useEffect)(() => {
                             const e = (e) => {
                                 if (!e.origin.includes("hubspot")) return
-                                
+
                                 let t =
                                     "string" === typeof e.data
                                         ? JSON.parse(e.data)

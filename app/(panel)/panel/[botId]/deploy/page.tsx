@@ -8,7 +8,7 @@ const DashboardDeployPage: NextPage = () => {
     return (
         <>
             {" "}
-            <Deploy/>
+            <Deploy />
         </>
     )
 }

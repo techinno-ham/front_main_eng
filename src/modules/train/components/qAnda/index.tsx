@@ -1,30 +1,36 @@
-
 import { Trash } from "iconsax-react"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
-import useStoreLoadData from "../../hooks/loadDataSource";
-import { useEffect } from "react";
+import useStoreLoadData from "../../hooks/loadDataSource"
+import { useEffect } from "react"
 
 const QandA = () => {
-    const { qaList, addQAList,isQAInitialized,addQAInitialized,isQAListChanged,addQAListChanged } = useDateSourceUpdate();
-    const {data,setData}= useStoreLoadData();
+    const {
+        qaList,
+        addQAList,
+        isQAInitialized,
+        addQAInitialized,
+        isQAListChanged,
+        addQAListChanged,
+    } = useDateSourceUpdate()
+    const { data, setData } = useStoreLoadData()
 
     useEffect(() => {
         if (!isQAInitialized) {
-           const initQa=data.qANDa_input;
-           addQAList(initQa);
-           addQAInitialized(true); 
+            const initQa = data.qANDa_input
+            addQAList(initQa)
+            addQAInitialized(true)
         }
-    }, [isQAInitialized, addQAList, addQAInitialized]);
+    }, [isQAInitialized, addQAList, addQAInitialized])
 
     const handleAddQA = () => {
-        if(!isQAListChanged){
+        if (!isQAListChanged) {
             addQAListChanged(true)
         }
         addQAList([...qaList, { question: "", answer: "" }])
     }
 
     const handleDeleteQA = (index: number) => {
-        if(!isQAListChanged){
+        if (!isQAListChanged) {
             addQAListChanged(true)
         }
         const newList = [...qaList]
@@ -33,7 +39,7 @@ const QandA = () => {
     }
 
     const handleInputChange = (index: number, field: string, value: string) => {
-        if(!isQAListChanged){
+        if (!isQAListChanged) {
             addQAListChanged(true)
         }
         const newList: any = [...qaList]
@@ -51,8 +57,8 @@ const QandA = () => {
                             addQAList([])
                             setData({
                                 ...data,
-                                qANDa_input:[]
-                            });
+                                qANDa_input: [],
+                            })
                         }}
                     >
                         حذف کردن همه

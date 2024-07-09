@@ -28,7 +28,6 @@ const CDN = () => {
                             وب‌سایت شما بتوانند از آن استفاده کنند.
                         </p>
                     </div>
-                    
                 </div>
                 <div className="mx-auto mt-24 max-w-sm overflow-hidden rounded-lg bg-gray-900">
                     <div className="p-4">

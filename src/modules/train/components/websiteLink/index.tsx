@@ -8,17 +8,24 @@ import useStoreLoadData from "../../hooks/loadDataSource"
 // import { MdDelete } from "react-icons/md";
 
 const WebsiteLink = () => {
-    const { urlList, addUrlList,isURLInitialized,addURLInitialized,addURLListChanged,isURLListChanged } = useDateSourceUpdate()
+    const {
+        urlList,
+        addUrlList,
+        isURLInitialized,
+        addURLInitialized,
+        addURLListChanged,
+        isURLListChanged,
+    } = useDateSourceUpdate()
     const [inputUrl, setInputUrl] = useState("")
-    const { isLoading, fetchLink } = useFetchLinks();
-    const {data,setData}= useStoreLoadData();
+    const { isLoading, fetchLink } = useFetchLinks()
+    const { data, setData } = useStoreLoadData()
 
     useEffect(() => {
         if (!isURLInitialized) {
-           addUrlList(data?.urls);
-           addURLInitialized(true); 
+            addUrlList(data?.urls)
+            addURLInitialized(true)
         }
-    }, [isURLInitialized, addUrlList,addURLInitialized ]);
+    }, [isURLInitialized, addUrlList, addURLInitialized])
 
     const handleFetchUrl = async (event: any) => {
         event.preventDefault()
@@ -27,32 +34,32 @@ const WebsiteLink = () => {
             return
         }
         const res = await fetchLink(inputUrl)
-        if(!isURLListChanged){
+        if (!isURLListChanged) {
             addURLListChanged(true)
         }
         addUrlList([...urlList, ...res?.data])
     }
 
     const handleAddInput = () => {
-        if(!isURLListChanged){
+        if (!isURLListChanged) {
             addURLListChanged(true)
         }
         addUrlList([...urlList, ""])
     }
 
     const handleDeleteAllInputs = () => {
-        if(!isURLListChanged){
+        if (!isURLListChanged) {
             addURLListChanged(true)
         }
         addUrlList([])
         setData({
             ...data,
-            urls:[]
-        });
+            urls: [],
+        })
     }
 
     const handleInputChange = (index: number, value: string) => {
-        if(!isURLListChanged){
+        if (!isURLListChanged) {
             addURLListChanged(true)
         }
         const newInputs = [...urlList]
@@ -61,7 +68,7 @@ const WebsiteLink = () => {
     }
 
     const handleDeleteInput = (index: number) => {
-        if(!isURLListChanged){
+        if (!isURLListChanged) {
             addURLListChanged(true)
         }
         const newInputs = [...urlList]
