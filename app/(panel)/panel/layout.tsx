@@ -1,3 +1,4 @@
+import Appbar from "@/src/shared/components/layouts/panel-layout/appbar"
 import SideBar from "@/src/shared/components/layouts/panel-layout/sidebar"
 import SideBarMobile from "@/src/shared/components/layouts/panel-layout/sidebar-mobile"
 import { HambergerMenu } from "iconsax-react"
@@ -11,6 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <SideBarMobile />
                     {children}
                 </div>
+                    <Appbar/>
             </div>
         </>
     )
