@@ -37,7 +37,7 @@ const Appbar = ()=>{
     const pathSegments = pathname.split("/")
     return (
         <>
-        <div className="fixed bottom-0 z-20 w-full bg-white shadow-[0_4px_48.3px_-14px_rgba(0,0,0,0.15)] h-20 px-4 ">
+        <div className="fixed bottom-0 z-20 w-full bg-white shadow-[0_4px_48.3px_-14px_rgba(0,0,0,0.15)] h-20 px-4 md:hidden">
             <div className="flex w-full h-full items-center justify-between">
                 {sidebarLinks.map(item=>{
                            const linkRoute = item.route.replace(

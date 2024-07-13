@@ -5,6 +5,8 @@ export const API = {
     UPDATE_DATASOURCE: "/mybots/dataSource/update",
     My_BOTS: "/mybots/list",
     MY_DATASOURCE_WITH_ID: "/mybots/dataSource",
+    MY_CONFIGS_WITH_ID: "/mybots/configs",
+
     DELETE_BOTS: "/mybots/delete",
     //History
 

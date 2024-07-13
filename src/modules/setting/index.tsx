@@ -3,9 +3,16 @@ import dynamic from "next/dynamic"
 import Layout from "./components/layout"
 import useStoreViewControllerSetting from "./hooks/view-controller-setting"
 import ActiveTab from "@/src/shared/components/common/activeTab"
+import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
+import service from "@/src/shared/services/service"
 
 const Setting = () => {
-    const viewController = useStoreViewControllerSetting()
+    const viewController = useStoreViewControllerSetting();
+    const pathname = usePathname()
+    const botId = pathname.split("/")[2];
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<string | null>(null)
 
     const tabsInfo = {
         General: "عمومی",
@@ -13,6 +20,21 @@ const Setting = () => {
         Apperence: "ظاهری",
         Security: "امنیت",
     }
+    useEffect(()=>{
+        const fetchConfigs = async () => {
+            setLoading(true)
+            try {
+                const response = await service.getConfigs(botId);
+                console.log(response)
+            } catch (error: any) {
+                setError(error.message)
+            } finally {
+                setLoading(false)
+            }
+        };
+        fetchConfigs();
+
+    },[botId])
 
     const tabs = [
         {
@@ -34,7 +56,7 @@ const Setting = () => {
     ]
     return (
         <>
-            <div className="mx-auto mt-[52px] w-[95%] md:mt-[90px]">
+            <div className="mx-auto  w-[95%] md:mt-[100px] mt-[120px] mb-28 md:mb-4">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

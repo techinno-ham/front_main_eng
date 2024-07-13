@@ -45,7 +45,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
 
     return (
         <>
-            <div className="mx-auto w-[95%] md:mt-[100px] ">
+            <div className="mx-auto w-[95%] md:mt-[100px] mt-[120px] mb-16 md:mb-2">
                 <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
                     <PieChart
                         title="تعداد کل پاسخ ها موفق"

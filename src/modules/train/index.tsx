@@ -92,7 +92,7 @@ const Train = () => {
 
     return (
         <>
-            <div className="mx-auto  w-[95%] md:mt-[100px]">
+            <div className="mx-auto  w-[95%] md:mt-[100px] mt-[120px] mb-28 md:mb-2">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

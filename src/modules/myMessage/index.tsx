@@ -84,7 +84,7 @@ const MyMessage = () => {
 
     return (
         <>
-            <div className="mx-auto mt-[100px] w-[95%]">
+            <div className="mx-auto md:mt-[100px] mt-[120px] w-[95%] mb-28 md:mb-4">
                 <div className=" relative w-[100%] rounded-2xl bg-white  shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] ">
                     <div className="flex flex-col space-y-1.5 p-6">
                         <h3 className="text-2xl font-semibold leading-none tracking-tight">
