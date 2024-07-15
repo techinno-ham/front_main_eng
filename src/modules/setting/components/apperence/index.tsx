@@ -1,24 +1,72 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ChatTemplate from "./components/chatTemplate"
 import useStoreChatConfig from "./hooks/config-mock-chat"
+import useStoreConfig from "../../hooks/loadConfig"
+import service from "@/src/shared/services/service"
+import { toast } from "sonner"
 
 const Apperence = () => {
-    const { chatConfig, updateChatConfig } = useStoreChatConfig()
+    const { chatConfig, updateChatConfig } = useStoreChatConfig();
+    const {data,setData}=useStoreConfig();
+    const [isLoading, setIsLoading] = useState(false);
+
 
     const handleInputChange = (e: any) => {
         const { name, value } = e.target
+        updateChatConfig({ [name]: value })
+    };
+
+    const handleChangePosition = (e: any) => {
+        let { name, value } = e.target;
+        value=value=="راست"?"start":"left";
         console.log({ [name]: value })
         updateChatConfig({ [name]: value })
-    }
-    const [borderIcon, SetBorderIcon] = useState("#6495ed")
-    const [chatButtonPosition, setChatButtonPosition] = useState("start")
+    };
+    const onSubmit = async () => {
+        setIsLoading(true);
+        try {
+            const formData={
+                greet_msgs:chatConfig?.botMessages,
+                action_btns:chatConfig?.suggestedMessages,
+                placeholder_msg:chatConfig?.inputPlaceholder,
+                footer_msg:chatConfig?.footer,
+                bot_name:chatConfig?.displayName,
+                user_msg_bg_color:chatConfig?.bgUserMessage,
+                bot_widget_border_color:chatConfig?.borderIcon,
+                bot_widget_position:chatConfig?.chatButtonPosition,
+                init_msg_delay:chatConfig?.initMsgDelay,
+                bot_image: "https://test.png",
+            }
+            const response = await service.updateUiConfig(data.bot_id, formData);
+            toast.success("تغیرات شما موفق آمیز ذخیره شد");
+            setData(response.data);
+        } catch (error) {
+            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            console.error("Update failed:", error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
-    const handlePositionChange = (event: any) => {
-        const position = event.target.value === "راست" ? "start" : "end"
-        setChatButtonPosition(position)
-    }
+
+    useEffect(() => {
+        if (data) {
+            const loadConfig={
+                botMessages:data?.ui_configs?.greet_msgs,
+                suggestedMessages:data?.ui_configs?.action_btns,
+                inputPlaceholder:data?.ui_configs?.placeholder_msg,
+                footer:data?.ui_configs?.footer_msg,
+                displayName:data?.ui_configs?.bot_name,
+                bgUserMessage:data?.ui_configs?.user_msg_bg_color,
+                borderIcon:data?.ui_configs?.bot_widget_border_color,
+                chatButtonPosition:data?.ui_configs?.bot_widget_position,
+                initMsgDelay:data?.ui_configs?.init_msg_delay
+            };
+            updateChatConfig(loadConfig)
+        }
+    }, [data]);
 
     return (
         <>
@@ -214,12 +262,8 @@ const Apperence = () => {
                                             <input
                                                 name="borderIcon"
                                                 type="color"
-                                                value={borderIcon}
-                                                onChange={(event) => {
-                                                    SetBorderIcon(
-                                                        event.target.value,
-                                                    )
-                                                }}
+                                                value={chatConfig.borderIcon}
+                                                onChange={handleInputChange}
                                                 className="block h-10 w-14 cursor-pointer rounded-lg border border-gray-200 bg-white p-1 disabled:pointer-events-none disabled:opacity-50"
                                                 title="Choose your color"
                                             />
@@ -234,8 +278,9 @@ const Apperence = () => {
                                     محل قرارگیری دکمه چت بات :
                                 </label>
                                 <select
-                                    onChange={handlePositionChange}
-                                    id="countries"
+                                    onChange={handleChangePosition}
+                                    value={chatConfig.chatButtonPosition =="start"? "راست":"چپ"}
+                                    name="chatButtonPosition"
                                     className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                 >
                                     <option>راست</option>
@@ -248,7 +293,9 @@ const Apperence = () => {
                                 <input
                                     className=" border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring mt-1 flex h-9 w-48 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                     type="number"
-                                    name="auto_open_chat_window_after"
+                                    name="initMsgDelay"
+                                    onChange={handleInputChange}
+                                    value={chatConfig.initMsgDelay}
                                 />
                                 ثانیه (منفی برای غیرفعال کردن)
                             </div>
@@ -257,12 +304,12 @@ const Apperence = () => {
                             <ChatTemplate config={chatConfig} />
                             <div
                                 className="mt-4 flex pb-12"
-                                style={{ justifyContent: chatButtonPosition }}
+                                style={{ justifyContent: chatConfig.chatButtonPosition }}
                             >
                                 <div
                                     className="full flex h-[55px] w-[55px] items-center justify-center rounded-full"
                                     style={{
-                                        border: `3px solid ${borderIcon}`,
+                                        border: `3px solid ${chatConfig.borderIcon}`,
                                     }}
                                 >
                                     <img src="/double-wink.svg" alt="" />
@@ -273,8 +320,15 @@ const Apperence = () => {
                 </div>
 
                 <div className="flex justify-end  px-5 py-3">
-                    <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                    <button onClick={onSubmit} className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white flex items-center gap-2">
+                    {isLoading ? (
+                        <>
+                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                            <span className="ml-3"> بروزرسانی ...</span>
+                        </>
+                    ) : (
+                        <span>ذخیره</span>
+                    )}
                     </button>
                 </div>
             </div>

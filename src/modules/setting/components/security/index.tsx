@@ -1,13 +1,56 @@
+import { useForm } from "react-hook-form";
+import useStoreConfig from "../../hooks/loadConfig";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+import service from "@/src/shared/services/service";
+
 const Security = () => {
+    const { register, handleSubmit, setValue } = useForm();
+    const {data,setData}=useStoreConfig();
+    const [isLoading, setIsLoading] = useState(false);
+
+
+    const onSubmit = async (formData: any) => {
+        setIsLoading(true);
+        formData={
+            ...formData,
+            status_bot:formData.status_bot==true?"disable":"enable",
+            access_bot:formData.access_bot == "خصوصی" ? "private":"general"
+        }
+        console.log(formData)
+        try {
+            const response = await service.updateSecurityConfig(data.bot_id, formData)
+            console.log(response.data);
+            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            setData(response.data);
+        } catch (error) {
+            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            console.error("Update failed:", error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+
+    useEffect(() => {
+        if (data) {
+            setValue('access_bot', data?.security_configs?.access_bot == "private"?"خصوصی":"عمومی");
+            setValue('status_bot', data?.security_configs?.status_bot == "enable"? false :true);
+            setValue('rate_limit_msg', data?.security_configs?.rate_limit_msg);
+            setValue('rate_limit_time', data?.security_configs?.rate_limit_time);
+            setValue('rate_limit_msg_show', data?.security_configs?.rate_limit_msg_show);
+        }
+    }, [data, setValue]);
     return (
         <>
-            <div>
+             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="mb-1 block text-sm font-medium text-zinc-700">
                             میزان دسترسی :
                         </label>
                         <select
+                           {...register('access_bot')}
                             id="countries"
                             className="block w-1/2 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 md:w-1/4"
                         >
@@ -29,14 +72,15 @@ const Security = () => {
                     <div className="pb-8">
                         <div>
                             <label className="block pb-2 text-sm font-medium text-zinc-700">
-                                غیر فعال کردن چت بات{" "}
+                                غیر فعال کردن چت بات :{" "}
                             </label>
-                            <input
-                                type="checkbox"
-                                value=""
-                                className="peer sr-only"
-                            />
-                            <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            <label className="inline-flex items-center cursor-pointer/">
+  <input 
+                           {...register('status_bot')}
+
+   type="checkbox" value="" className="sr-only peer"/>
+  <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+</label>
                         </div>
                     </div>
                     <div>
@@ -57,37 +101,45 @@ const Security = () => {
                         <div className="mt-1 text-sm text-zinc-700">
                             محدود به تنها{" "}
                             <input
+                              {...register('rate_limit_msg')}
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
-                                value="20"
-                                name="ip_limit"
+                                name="rate_limit_msg"
                             />{" "}
                             پیام هر{" "}
                             <input
+                              {...register('rate_limit_time')}
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
-                                value="240"
-                                name="ip_limit_timeframe"
+                                name="rate_limit_time"
                             />{" "}
                             ثانیه.
                         </div>
                         <div className="my-4 text-sm text-zinc-700">
                             نشان دادن پیامی که محدودیت پر می شود:
                             <input
+                                {...register('rate_limit_msg_show')}
                                 className=" mt-2 block w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                                 id="inline-full-name"
                                 type="text"
-                                value="تعداد درخواست شما زیاد تر از استاندارد بات می باشد."
+                                
                             />
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-end  px-5 py-3">
-                    <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                    <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white flex items-center gap-2">
+                    {isLoading ? (
+                        <>
+                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                            <span className="ml-3"> بروزرسانی ...</span>
+                        </>
+                    ) : (
+                        <span>ذخیره</span>
+                    )}
                     </button>
                 </div>
-            </div>
+            </form>
         </>
     )
 }

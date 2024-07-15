@@ -73,6 +73,58 @@ class Services {
             )
         }
     }
+    updateGeneralConfig = async ( botId: string,body: any) => {
+        try {
+            const response = await mainApi.post(
+                `${API.UPDATE_GENERAL}/${botId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update general failed",
+            )
+        }
+    }
+    updateModelConfig = async ( botId: string,body: any) => {
+        try {
+            const response = await mainApi.post(
+                `${API.UPDATE_MODEL}/${botId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update general failed",
+            )
+        }
+    }
+    updateUiConfig = async ( botId: string,body: any) => {
+        try {
+            const response = await mainApi.post(
+                `${API.UPDATE_UI}/${botId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update general failed",
+            )
+        }
+    }
+    updateSecurityConfig = async ( botId: string,body: any) => {
+        try {
+            const response = await mainApi.post(
+                `${API.UPDATE_SECURITY}/${botId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update general failed",
+            )
+        }
+    }
     myBoysList = async (params: any) => {
         try {
             const response = await mainApi.get(API.My_BOTS, {
