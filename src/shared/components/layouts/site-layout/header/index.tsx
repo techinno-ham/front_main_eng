@@ -64,7 +64,7 @@ const Header = () => {
                             <span
                                 className={`mr-2 text-2xl font-bold ${scroll && "text-[#fff]"}`}
                             >
-                                هوشینو
+                              همیار چت
                             </span>
                         </div>
                     </Link>
@@ -145,13 +145,13 @@ const Header = () => {
                         id="navbar-sticky"
                     >
                         <ul
-                            className={`mt-4  flex-col rounded-lg bg-white p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse ${isOpen ? "flex" : "hidden"} `}
+                            className={`mt-4  flex-col rounded-lg  p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse ${isOpen ? "flex" : "hidden"} ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
                         >
                             {links.map((link: any, index: any) => {
                                 return (
                                     <li key={index}>
                                         <Link href={link.link}>
-                                            <div className="block rounded px-3 py-2 text-black md:bg-transparent md:p-0 ">
+                                            <div className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"}  md:bg-transparent md:p-0`}>
                                                 {link.title}
                                             </div>
                                         </Link>

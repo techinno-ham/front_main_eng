@@ -54,7 +54,7 @@
         @apply text-[#2563eb];
     }
     .intro_conteiner {
-        @apply relative top-28 h-auto  overflow-hidden text-center;
+        @apply relative md:top-16 top-10 h-auto  overflow-hidden text-center;
     }
     .input-url {
         @apply mt-8 w-3/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none focus:outline-none  md:w-1/4;
@@ -62,9 +62,9 @@
     .btn-demo {
         @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[18px] border-none bg-[#2295FF] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
     }
-    .left-blur {
-        @apply animate-[leftBlur_8s_infinite];
-    }
+    /* .left-blur {
+        @apply ;
+    } */
     .create-btn {
         @apply flex animate-[scaleCreate_5s_infinite] rounded-2xl bg-[#2563eb] p-3 text-[#fff];
     }

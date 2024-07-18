@@ -67,14 +67,14 @@ const IntroduceSections = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <h5>
-                        <p className=" text-5xl md:text-7xl">
+                        <p className=" text-4xl md:text-7xl">
                             ساخت{" "}
                             <span className="text-blue-600">چت بات هوشمند</span>{" "}
                             شخصی
                         </p>
                     </h5>
                     <h5 className="flex gap-x-px">
-                        <p className="text-5xl md:text-7xl">با کمترین زمان</p>
+                        <p className="text-4xl md:text-7xl">با کمترین زمان</p>
                         <div>
                             <Image
                                 src="/icons/jet.svg"
@@ -88,7 +88,7 @@ const IntroduceSections = () => {
                 <div className="mt-7 text-base text-slate-400 md:mt-10 md:text-lg ">
                     <p>
                         بات های مانند chat gpt برای پروژه یا کسب کار خود بسازید
-                        تا کارها را انجام دهید. 🎯
+                        تا کارها را با سرعت  انجام دهید. 🎯
                     </p>
                 </div>
                 <input
