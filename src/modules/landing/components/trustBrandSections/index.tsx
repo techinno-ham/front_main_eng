@@ -5,7 +5,7 @@ const TrustBrnadSections = () => {
         <div className="mt-[150px] h-max overflow-hidden text-center">
             <div>
                 <p className="text-xl md:text-3xl">
-                    بیش از هزاران کسب و کار آنلاین به ما اعتماد کردند.
+                همکاران و مشتریان ما
                 </p>
             </div>
             <div className="mt-[20px] flex justify-around">

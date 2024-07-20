@@ -66,15 +66,21 @@ const IntroduceSections = () => {
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                    <h5>
+                    <h1>
                         <p className=" text-4xl md:text-7xl">
-                            ساخت{" "}
-                            <span className="text-blue-600">چت بات هوشمند</span>{" "}
-                            شخصی
+                            <span className="text-blue-600">همیارچت</span>{" "}
+                            ، هوش
+                            مصنوعی در خدمت {" "}
+                            <span className="text-blue-600">رضایت
+                                 </span>{" "}
+                                 مشتریان
+                            و<span className="text-blue-600">پیشرفت</span>{" "}
+                            کسب‌وکارها
+                            
                         </p>
-                    </h5>
+                    </h1>
                     <h5 className="flex gap-x-px">
-                        <p className="text-4xl md:text-7xl">با کمترین زمان</p>
+                        <p className="text-4xl md:text-7xl"></p>
                         <div>
                             <Image
                                 src="/icons/jet.svg"
@@ -87,8 +93,7 @@ const IntroduceSections = () => {
                 </div>
                 <div className="mt-7 text-base text-slate-400 md:mt-10 md:text-lg ">
                     <p>
-                        بات های مانند chat gpt برای پروژه یا کسب کار خود بسازید
-                        تا کارها را با سرعت  انجام دهید. 🎯
+                        {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                     </p>
                 </div>
                 <input
