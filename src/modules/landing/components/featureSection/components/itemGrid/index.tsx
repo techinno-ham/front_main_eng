@@ -144,16 +144,16 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Shopping Companion
+                                    همراه خرید
                                 </div>
                                 <div className="description-info-path">
-                                    Sales chatbot designed to help cu...
+                                    چت‌بات فروش طراحی شده برای کمک به مشتریان...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -170,7 +170,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </animated.div>
                     <animated.div
@@ -207,16 +207,16 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Health Bot
+                                    ربات سلامت
                                 </div>
                                 <div className="description-info-path">
-                                    Template to assist with health appointm...
+                                    الگو برای کمک به تنظیم قرارهای سلامت...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -233,7 +233,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="template-image-path">
                             <div className="icon-template-path">
@@ -259,16 +259,17 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Banking Support
+                                    پشتیبانی بانکی
                                 </div>
                                 <div className="description-info-path">
-                                    Banking chatbot that provides customers...
+                                    چت‌بات بانکی که به مشتریان خدمات ارائه
+                                    می‌دهد...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -285,7 +286,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </animated.div>
                     <animated.div
@@ -322,18 +323,16 @@ const ItemsGrid = () => {
                                 </div>
                             </div>
                             <div className="info-path">
-                                <div className="title-info-path">
-                                    IT Assistant
-                                </div>
+                                <div className="title-info-path">دستیار IT</div>
                                 <div className="description-info-path">
-                                    digital assistant that helps IT teams
-                                    with...
+                                    دستیار دیجیتال که به تیم‌های IT در زمینه‌های
+                                    مختلف کمک می‌کند...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -350,7 +349,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="template-image-path">
                             <div className="icon-template-path">
@@ -380,16 +379,17 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Telco Billing Advisor
+                                    مشاور صورت‌حساب
                                 </div>
                                 <div className="description-info-path">
-                                    A customer support chatbot that assists...
+                                    چت‌بات پشتیبانی مشتری که به مشتریان در
+                                    زمینه‌های مختلف کمک می‌کند...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -408,7 +408,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="template-image-path">
                             <div className="icon-template-path">
@@ -434,16 +434,17 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Fitness Friend
+                                    دوست تناسب اندام
                                 </div>
                                 <div className="description-info-path">
-                                    provides personalized guidance and suppor...
+                                    راهنمایی و پشتیبانی شخصی‌سازی شده ارائه
+                                    می‌دهد...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -460,7 +461,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </animated.div>
                     <animated.div
@@ -497,15 +498,17 @@ const ItemsGrid = () => {
                                 </div>
                             </div>
                             <div className="info-path">
-                                <div className="title-info-path">HR Helper</div>
+                                <div className="title-info-path">
+                                    دستیار منابع انسانی
+                                </div>
                                 <div className="description-info-path">
-                                    Helps manage personnel related tas...
+                                    کمک به مدیریت وظایف مرتبط با پرسنل...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -522,7 +525,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="template-image-path">
                             <div className="icon-template-path">
@@ -552,17 +555,16 @@ const ItemsGrid = () => {
                             </div>
                             <div className="info-path">
                                 <div className="title-info-path">
-                                    Personal Assistant
+                                    دستیار شخصی
                                 </div>
                                 <div className="description-info-path">
-                                    Helps users with their daily tasks, such
-                                    as...
+                                    به کاربران در انجام وظایف روزمره، مانند...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -579,7 +581,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </animated.div>
                     <animated.div
@@ -618,17 +620,16 @@ const ItemsGrid = () => {
                                 </div>
                             </div>
                             <div className="info-path">
-                                <div className="title-info-path">
-                                    Language Tutor
-                                </div>
+                                <div className="title-info-path">معلم زبان</div>
                                 <div className="description-info-path">
-                                    Tutoring chatbot to help foreign languag...
+                                    چت‌بات آموزشی برای کمک به یادگیری زبان‌های
+                                    خارجی...
                                 </div>
                                 <div className="text-botpress-small">
-                                    Botpress
+                                    همیارچت
                                 </div>
                             </div>
-                            <div className="bottom-path">
+                            {/* <div className="bottom-path">
                                 <div className="download-path">
                                     <img
                                         src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d816b85f590ee749338a27_Downloads.svg"
@@ -645,7 +646,7 @@ const ItemsGrid = () => {
                                 >
                                     Install
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </animated.div>
                 </div>
