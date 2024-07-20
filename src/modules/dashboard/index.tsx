@@ -34,7 +34,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
     if (loading)
         return (
             <>
-                <div className="mx-auto flex h-screen w-[95%] items-center justify-center md:mt-[90px] ">
+                   <div className="fixed left-1/2 md:left-[44%] top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
                         <LoaderLottie/>

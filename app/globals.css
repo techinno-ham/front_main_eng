@@ -54,7 +54,7 @@
         @apply text-[#2563eb];
     }
     .intro_conteiner {
-        @apply relative md:top-16 top-10 h-auto  overflow-hidden text-center;
+        @apply container mx-auto relative md:top-16 top-10 h-auto  overflow-hidden text-center ;
     }
     .input-url {
         @apply mt-8 w-3/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none focus:outline-none  md:w-1/4;

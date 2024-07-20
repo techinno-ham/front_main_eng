@@ -9,7 +9,6 @@ const useFetchLinks = () => {
         setIsLoading(true)
         try {
             const res = await Services.fetchLink(link)
-            toast.success("")
             return res
         } catch (error) {
             console.log(error)

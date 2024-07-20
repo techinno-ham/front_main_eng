@@ -1,25 +1,28 @@
 "use client"
 import useSelectModal from "@/src/shared/components/common/selectModal/hooks/useSelectModal.ts"
+import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { ClockLoader } from "react-spinners"
+import { ClockLoader } from "react-spinners";
+import Services from "../../../../../src/shared/services/service"
+import LoaderLottie from "@/src/shared/components/common/loader"
+import { toast } from "sonner"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
-    const [loading, setLoading] = useState(false)
-    const [inputError, setInputError] = useState("")
+    const [loading, setLoading] = useState(false);
     const SelectModal = useSelectModal()
 
     const validateInput = () => {
         // Check if input value is empty
         if (!inputValue.trim()) {
-            setInputError("آدرس وبسایت نمی‌تواند خالی باشد.")
+            toast.error("آدرس وبسایت نمی‌تواند خالی باشد.")
             return false
         }
         // Check if input value is a valid URL
         const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/
         if (!urlPattern.test(inputValue)) {
-            setInputError("آدرس وبسایت وارد شده معتبر نیست.")
+            toast.error("آدرس وبسایت وارد شده معتبر نیست.")
             return false
         }
         return true
@@ -29,20 +32,30 @@ const IntroduceSections = () => {
         setInputValue(event.target.value)
     }
 
-    useEffect(() => {
-        setInputError("")
-    }, [inputValue])
 
-    const handleSubmit = () => {
+
+    const handleSubmit = async () => {
         if (!validateInput()) {
-            return
+          return;
         }
-        setLoading(true)
-        setTimeout(() => {
-            setLoading(false)
+
+        try {
+          setLoading(true);
+          const response = await Services.fetchLink(inputValue);
+          const linkArray=response.data;
+          console.log(linkArray.length)
+          if(linkArray.length > 2){
+            SelectModal.setUrls(linkArray);
             SelectModal.onOpen()
-        }, 2000)
-    }
+          }else{
+            toast.error("لینک های سایت شما کافی نمی باشد.")
+          }     
+        } catch (error) {
+         toast.error("بررسی سایت مشکل پیش امده است.")
+        } finally {
+          setLoading(false);
+        }
+      };
 
     return (
         <>
@@ -97,7 +110,6 @@ const IntroduceSections = () => {
                     onChange={handleInputChange}
                     placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
                 />
-                {inputError && <p className="">{inputError}</p>}
                 <div className="mt-[20px] flex flex-col items-center justify-center">
                     <div>
                         <button className="btn-demo" onClick={handleSubmit}>
@@ -119,16 +131,14 @@ const IntroduceSections = () => {
             {loading && (
                 <>
                     <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#ffffff80]"></div>{" "}
-                    {/* Semi-transparent overlay */}
-                    <div className="fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
-                        <ClockLoader
-                            color={"blue"}
-                            loading={loading}
-                            size={150}
-                            aria-label="Loading Spinner"
-                            data-testid="loader"
-                        />
+                    <>
+                   <div className="fixed left-1/2  top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
+                    <div className="flex items-center gap-3">
+                        <span>در حال دریافت اطلاعات ...</span>
+                        <LoaderLottie/>
                     </div>
+                </div>
+            </>
                 </>
             )}
         </>

@@ -5,6 +5,7 @@ import "./Modal.css"
 import { useEffect, useState } from "react"
 import useSelectModal from "./hooks/useSelectModal.ts"
 import { CloseSquare } from "iconsax-react"
+import { toast } from "sonner"
 
 const SelectModalCustom = () => {
     const SelectModal = useSelectModal()
@@ -20,10 +21,14 @@ const SelectModalCustom = () => {
             setSelectedUrls([...selectedUrls, url])
         }
     }
-    const handleClsoeModal = () => {}
+    const handleClsoeModal = () => {
+        SelectModal.onClose()
+        SelectModal.resetUrls()
+        setSelectedUrls([])
+    }
     const handleSubmit = () => {
-        if (selectedUrls.length == 0) {
-            setSelectError("لطفا حداقل یک لینک را انتخاب کنید")
+        if (selectedUrls.length <3) {
+            toast.error("لطفا حداقل سه لینک را انتخاب کنید.")
             return
         }
 
@@ -49,13 +54,28 @@ const SelectModalCustom = () => {
         >
             <div className="modal-background">
                 <div className="modal">
-                    <button className="closeBtn" onClick={handleClsoeModal}>
+                    <div className="header">
+                       <div className="buttonHeader">
+                       <button  onClick={handleClsoeModal}>
                         <CloseSquare size={22} />
-                    </button>
-                    <h2>بررسی صفحات</h2>
-                    <hr className="custom-hr" />
-                    <p>صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟</p>
-                    <div className="urlBox">
+                      </button>
+                      </div>
+                       <div className="titleHeader">
+                       <span>انتخاب صفحات</span>
+                       </div>
+                       <div style={{marginTop:"auto"}}>
+                          <hr className="custom-hr" />
+                       </div>
+                    </div>
+                   
+                    <span style={{
+                        marginTop:"10px",
+                        marginBottom:"10px",
+                        fontSize:"16px",
+                        color:"gray"
+
+                    }}>صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟</span>
+                        <div className="body">
                         {SelectModal.urls.map((url, index) => (
                             <div key={index}>
                                 <input
@@ -73,13 +93,19 @@ const SelectModalCustom = () => {
                                 </label>
                             </div>
                         ))}
+                     
+                       
+                   
+
                     </div>
-                    {selectError && (
-                        <p style={{ fontSize: "12px" }}>{selectError}</p>
-                    )}
+                    <div className="footer">
                     <button className="sumbitBtn" onClick={handleSubmit}>
                         بررسی اطلاعات
                     </button>
+
+                    </div>
+                
+                   
                 </div>
             </div>
         </div>

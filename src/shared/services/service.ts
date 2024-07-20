@@ -47,7 +47,8 @@ class Services {
                 error.response?.data?.message || "fetch links failed",
             )
         }
-    }
+    };
+    
 
     cretaeBots = async (body: any) => {
         try {
