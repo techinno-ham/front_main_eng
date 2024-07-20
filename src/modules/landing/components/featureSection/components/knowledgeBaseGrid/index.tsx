@@ -28,7 +28,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>وبسایت</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
@@ -55,7 +55,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>محتوامتنی و سایر</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
@@ -82,7 +82,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>pdf</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
@@ -109,7 +109,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>word</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
@@ -136,7 +136,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>QA</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
@@ -163,7 +163,7 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-gray-300 p-2"
             >
                 <div>
-                    <h3>افزودن وبسایت</h3>
+                    <h3>google drive</h3>
                     <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
                 </div>
                 <div
