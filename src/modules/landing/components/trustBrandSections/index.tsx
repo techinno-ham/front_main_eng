@@ -1,78 +1,126 @@
+"use client"
 import Image from "next/image"
+import "keen-slider/keen-slider.min.css"
+import { useKeenSlider } from "keen-slider/react"
+
+let brands = [
+    { link: "", image: "jabama.png" },
+    { link: "", image: "digipay.png" },
+    { link: "", image: "basalam.png" },
+    { link: "", image: "snappmarket.png" },
+    { link: "", image: "banksaman.png" },
+    { link: "", image: "shatel.png" },
+    { link: "", image: "ofoghkorosh.png" },
+    { link: "", image: "rahshahrsazi.png" },
+    { link: "", image: "raja.png" },
+]
 
 const TrustBrnadSections = () => {
+    const animation = { duration: 15000, easing: (t:any) => t }
+    const [sliderRef, instanceRef] = useKeenSlider({
+        initial: 0,
+        loop: true,
+        mode: "free",
+        rtl: true,
+        renderMode: "performance",
+        slides: { perView: 8, spacing: 5 },
+        created(s) {
+            s.moveToIdx(5, true, animation)
+          },
+          updated(s) {
+            s.moveToIdx(s.track.details.abs + 5, true, animation)
+          },
+          animationEnded(s) {
+            s.moveToIdx(s.track.details.abs + 5, true, animation)
+          },
+    })
     return (
         <div className="mt-[150px] h-max overflow-hidden text-center">
             <div>
-                <p className="text-xl md:text-3xl">
-                همکاران و مشتریان ما
-                </p>
+                <p className="text-xl md:text-3xl">همکاران و مشتریان ما</p>
             </div>
-            <div className="mt-[20px] flex justify-around">
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/jabama.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/digipay.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/basalam.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/snappmarket.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
+            <div className="navigation-wrapper px-6">
+                <div ref={sliderRef} className="keen-slider">
+                    {brands?.length &&
+                        brands.map((brand, indx) => (
+                            <div
+                                key={indx}
+                                className={`keen-slider__slide number-slide${++indx}`}
+                            >
+                                <Image
+                                    //    onClick={() => router.push('/')}
+                                    src={`/images/brands/${brand.image}`}
+                                    height="70"
+                                    width="100"
+                                    alt="Logo"
+                                />
+                            </div>
+                        ))}
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/jabama.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/digipay.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/basalam.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/snappmarket.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
 
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/banksaman.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/shatel.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/ofoghkorosh.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/rahshahrsazi.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
-                <Image
-                    //    onClick={() => router.push('/')}
-                    src="/images/brands/raja.png"
-                    height="70"
-                    width="100"
-                    alt="Logo"
-                />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/banksaman.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/shatel.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/ofoghkorosh.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/rahshahrsazi.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                    <Image
+                        //    onClick={() => router.push('/')}
+                        src="/images/brands/raja.png"
+                        height="70"
+                        width="100"
+                        alt="Logo"
+                    />
+                </div>
             </div>
         </div>
     )
