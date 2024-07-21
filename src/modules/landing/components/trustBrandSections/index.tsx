@@ -35,11 +35,11 @@ const TrustBrnadSections = () => {
           },
     })
     return (
-        <div className="mt-[150px] h-max overflow-hidden text-center">
+        <div className="mt-[150px] h-max container overflow-hidden container-medium w-container mx-auto text-center">
             <div>
                 <p className="text-xl md:text-3xl">همکاران و مشتریان ما</p>
             </div>
-            <div className="navigation-wrapper px-6">
+            <div className="navigation-wrapper">
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&
                         brands.map((brand, indx) => (

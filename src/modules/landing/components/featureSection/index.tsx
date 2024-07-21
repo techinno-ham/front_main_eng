@@ -5,7 +5,7 @@ import Section from "./components/sections"
 
 const FeatureSection = () => {
     return (
-        <div className="container mx-auto overflow-hidden px-4 ">
+        <div className="container-medium w-container mx-auto overflow-hidden">
             <div className="mt-[55px] text-center md:mt-[80px]">
                 <h2 className="text-3xl leading-[150%] md:text-5xl">
                 تمام آنچه برای ساخت <br />{" "}

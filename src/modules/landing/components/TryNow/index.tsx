@@ -20,7 +20,7 @@ const TryNow = () => {
     return (
         <section
             ref={mainRef}
-            className="section-normal container mx-auto overflow-hidden"
+            className="section-normal container overflow-hidden container-medium w-container mx-auto"
         >
             <div className="bg-cta">
                 <img
@@ -46,13 +46,17 @@ const TryNow = () => {
                         <div className="head-section">
                             <div className="title-section-footer">
                                 <h3 className="heading-style-h3 is-rtl-center-mb">
-                                    با چت بات بهترین بسازید.
+                                همین امروز دوره رایگان خود را شروع کنید!
                                 </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">
-                                <p className="paragraph-x-large weight-500 is-rtl-center-mb">
-                                    همین الان شروع کنید!
-                                </p>
+                                <p className="paragraph-x-large weight-500 is-rtl-center-mb text-zinc-400">
+                                به سادگی مکالمات خود را به فرصت‌های 
+                                <span className="notice-text"> طلایی </span>
+                                 فروش و مشتریان 
+                                 <span className="notice-text"> وفادار </span>
+                                  تبدیل کنید.  
+                                                              </p>
                             </div>
                         </div>
                         <div className="box-get-started left">
@@ -66,7 +70,7 @@ const TryNow = () => {
                                 </a>
                             </div>
                             <div className="botton-section margin-top-5px">
-                                <p className="paragraph-small-main color-gray-2">
+                                <p className="text-xs mt-2 text-zinc-400">
                                     بدون هیچ هزینه ای !
                                 </p>
                             </div>

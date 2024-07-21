@@ -3,14 +3,14 @@ import useSelectModal from "@/src/shared/components/common/selectModal/hooks/use
 import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { ClockLoader } from "react-spinners";
+import { ClockLoader } from "react-spinners"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
     const SelectModal = useSelectModal()
 
     const validateInput = () => {
@@ -32,30 +32,28 @@ const IntroduceSections = () => {
         setInputValue(event.target.value)
     }
 
-
-
     const handleSubmit = async () => {
         if (!validateInput()) {
-          return;
+            return
         }
 
         try {
-          setLoading(true);
-          const response = await Services.fetchLink(inputValue);
-          const linkArray=response.data;
-          console.log(linkArray.length)
-          if(linkArray.length > 2){
-            SelectModal.setUrls(linkArray);
-            SelectModal.onOpen()
-          }else{
-            toast.error("لینک های سایت شما کافی نمی باشد.")
-          }     
+            setLoading(true)
+            const response = await Services.fetchLink(inputValue)
+            const linkArray = response.data
+            console.log(linkArray.length)
+            if (linkArray.length > 2) {
+                SelectModal.setUrls(linkArray)
+                SelectModal.onOpen()
+            } else {
+                toast.error("لینک های سایت شما کافی نمی باشد.")
+            }
         } catch (error) {
-         toast.error("بررسی سایت مشکل پیش امده است.")
+            toast.error("بررسی سایت مشکل پیش امده است.")
         } finally {
-          setLoading(false);
+            setLoading(false)
         }
-      };
+    }
 
     return (
         <>
@@ -79,17 +77,37 @@ const IntroduceSections = () => {
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center">
+                    {/* <a
+                        href="#"
+                        className="mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 px-1 py-1 pl-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+                        role="alert"
+                    >
+                        <span className="bg-blue-600 ml-3 rounded-full px-4 py-1.5 text-xs text-white">
+                            New
+                        </span>{" "}
+                        <span className="text-sm font-medium">
+                            Flowbite is out! See whats new
+                        </span>
+                        <svg
+                            className="-rotate-180 mr-2 h-5 w-5"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </a> */}
                     <h1>
                         <p className=" text-4xl md:text-7xl">
-                            <span className="text-blue-600">همیارچت</span>{" "}
-                            ، هوش
-                            مصنوعی در خدمت {" "}
-                            <span className="text-blue-600">رضایت
-                                 </span>{" "}
-                                 مشتریان
+                            <span className="text-blue-600">همیارچت</span> ، هوش
+                            مصنوعی در خدمت{" "}
+                            <span className="text-blue-600">رضایت</span> مشتریان
                             و<span className="text-blue-600">پیشرفت</span>{" "}
                             کسب‌وکارها
-                            
                         </p>
                     </h1>
                     <h5 className="flex gap-x-px">
@@ -137,13 +155,13 @@ const IntroduceSections = () => {
                 <>
                     <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#ffffff80]"></div>{" "}
                     <>
-                   <div className="fixed left-1/2  top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
-                    <div className="flex items-center gap-3">
-                        <span>در حال دریافت اطلاعات ...</span>
-                        <LoaderLottie/>
-                    </div>
-                </div>
-            </>
+                        <div className="fixed left-1/2  top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
+                            <div className="flex items-center gap-3">
+                                <span>در حال دریافت اطلاعات ...</span>
+                                <LoaderLottie />
+                            </div>
+                        </div>
+                    </>
                 </>
             )}
         </>
