@@ -35,11 +35,11 @@ const TrustBrnadSections = () => {
           },
     })
     return (
-        <div className="mt-[150px] h-max overflow-hidden text-center">
+        <div className=" md:mt-[80px] mt-[40px] h-max overflow-hidden text-center">
             <div>
                 <p className="text-xl md:text-3xl">همکاران و مشتریان ما</p>
             </div>
-            <div className="navigation-wrapper px-6">
+            <div className="navigation-wrapper px-2 mt-8">
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&
                         brands.map((brand, indx) => (
@@ -47,13 +47,16 @@ const TrustBrnadSections = () => {
                                 key={indx}
                                 className={`keen-slider__slide number-slide${++indx}`}
                             >
-                                <Image
-                                    //    onClick={() => router.push('/')}
+                                <div className="w-[55px] md:w-[110px]">
+                                   <Image
                                     src={`/images/brands/${brand.image}`}
                                     height="70"
                                     width="100"
                                     alt="Logo"
-                                />
+                                  />
+
+                                </div>
+                              
                             </div>
                         ))}
                     <Image
