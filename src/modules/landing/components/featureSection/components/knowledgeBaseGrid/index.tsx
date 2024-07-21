@@ -3,6 +3,7 @@
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
 import { DocumentText1, Global, SearchNormal1, Text } from "iconsax-react"
+import Image from "next/image"
 
 const KnowledgeBaseGrid = () => {
     const mainRef = useRef(null)
@@ -25,23 +26,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>وبسایت</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">وب‌سایت</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(58, 96, 221, .1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <Global
-                        size="32"
-                        color="rgba(58, 96, 221, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/web4.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
             <motion.div
@@ -52,23 +50,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>محتوامتنی و سایر</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">سؤالات متداول</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(255, 199, 67, .1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <DocumentText1
-                        size="32"
-                        color="rgba(255, 199, 67, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/qa.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
             <motion.div
@@ -79,23 +74,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>pdf</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">اسناد پی‌دی‌اف</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(37, 158, 99, 0.1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <SearchNormal1
-                        size="32"
-                        color="rgba(37, 158, 99, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/pdf.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
             <motion.div
@@ -106,23 +98,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>word</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">اسناد ورد</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(136, 70, 195, 0.1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <Text
-                        size="32"
-                        color="rgba(136, 70, 195, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/word.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
             <motion.div
@@ -133,23 +122,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>QA</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">گوگل درایو</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(136, 70, 195, 0.1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <Text
-                        size="32"
-                        color="rgba(136, 70, 195, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/drive.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
             <motion.div
@@ -160,23 +146,20 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-2"
+                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
             >
                 <div>
-                    <h3>google drive</h3>
-                    <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
+                    <h3 className="text-lg ">سایر اسناد متنی</h3>
+                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
                 </div>
                 <div
                     style={{
-                        background: "rgba(136, 70, 195, 0.1)",
+                        //background: "rgba(136, 70, 195, 0.1)",
+                        position: "relative",
                     }}
-                    className="flex h-[50px] w-[50px] items-center justify-center rounded-md border border-gray-300"
+                    className="flex h-[50px] w-[50px] items-center justify-center "
                 >
-                    <Text
-                        size="32"
-                        color="rgba(136, 70, 195, 1)"
-                        variant="Outline"
-                    />
+                    <Image src={"/logos/txt.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const PowerfulFeaturesSection = () => {
     return (
-        <div className="mt-[150px] h-max overflow-hidden text-center">
+        <div className="mt-5 h-max overflow-hidden text-center">
             <div>
                 <p className="text-xl md:text-3xl">ویژگی‌های قدرتمند</p>
                 <p className="text-xl md:text-3xl">
