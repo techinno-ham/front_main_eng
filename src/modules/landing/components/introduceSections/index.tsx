@@ -7,6 +7,7 @@ import { ClockLoader } from "react-spinners"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
+import { Calendar } from "iconsax-react"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -30,7 +31,10 @@ const IntroduceSections = () => {
 
     const handleInputChange = (event: any) => {
         setInputValue(event.target.value)
-    }
+    };
+    const handleMeetRequest = () => {
+        window.open("https://calendly.com/mahdiyarjfr/demo-request", "_blank");
+    };
 
     const handleSubmit = async () => {
         if (!validateInput()) {
@@ -67,87 +71,73 @@ const IntroduceSections = () => {
                             alt="Logo"
                         />
                     </div>
-                    <div className="left-blur absolute right-[80%] top-24 -z-50">
+                    <div className="left-blur absolute right-[70%] top-24 -z-50 w-[400px]">
                         <Image
-                            src="/images/letfBlur.png"
+                            src="/images/rightBlur.png"
                             height="200"
                             width="500"
                             alt="Logo"
                         />
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                    {/* <a
-                        href="#"
-                        className="mb-7 inline-flex items-center justify-between rounded-full bg-gray-100 px-1 py-1 pl-4 text-sm text-gray-700 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
-                        role="alert"
-                    >
-                        <span className="bg-blue-600 ml-3 rounded-full px-4 py-1.5 text-xs text-white">
-                            New
-                        </span>{" "}
-                        <span className="text-sm font-medium">
-                            Flowbite is out! See whats new
-                        </span>
-                        <svg
-                            className="-rotate-180 mr-2 h-5 w-5"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"
-                            ></path>
-                        </svg>
-                    </a> */}
+                <div className="flex flex-col items-center justify-center text-center md:mt-9 mt-7">
                     <h1>
-                        <p className=" text-4xl md:text-7xl">
-                            <span className="text-blue-600">همیارچت</span> ، هوش
-                            مصنوعی در خدمت{" "}
-                            <span className="text-blue-600">رضایت</span> مشتریان
-                            و<span className="text-blue-600">پیشرفت</span>{" "}
-                            کسب‌وکارها
+                        <p className="text-4xl md:text-7xl">
+                        <span className="text-blue-600">همیارچت</span>
+                        <span> ، پلتفرم هوش مصنوعی </span>
                         </p>
-                    </h1>
-                    <h5 className="flex gap-x-px">
-                        <p className="text-4xl md:text-7xl"></p>
-                        <div>
+                        <p className="text-xl md:text-3xl md:mt-5 mt-3">
+                            <span>در خدمت </span>
+                            <span className="text-blue-600">رضایت </span>
+                            <span>مشتریان و </span>
+                            <span className="text-blue-600">پیشرفت </span>
+                            <span>کسب و کار ها</span>
+                            <span>
                             <Image
                                 src="/icons/jet.svg"
-                                height="70"
-                                width="70"
+                                height="40"
+                                width="40"
                                 alt="Logo"
                             />
-                        </div>
-                    </h5>
+                            </span>
+                        </p>
+                    </h1>
+                  
+                    
                 </div>
-                <div className="mt-7 text-base text-slate-400 md:mt-10 md:text-lg ">
+                <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
                     <p>
                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                     </p>
                 </div>
-                <input
+                <div className="flex justify-center items-center flex-col mt-[32px] gap-4">
+                    <input
                     type="text"
                     className="input-url"
                     onChange={handleInputChange}
                     placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
-                />
-                <div className="mt-[20px] flex flex-col items-center justify-center">
-                    <div>
-                        <button className="btn-demo" onClick={handleSubmit}>
+                    />
+                    
+                    <div className="flex md:flex-row flex-col-reverse md:gap-3 gap-2">
+                       <button className="btn-meet" onClick={handleMeetRequest}>
+                       <Calendar size="24" color="#fff" />
+                       <span>
+                        درخواست گفت و گو
+                       </span>
+                       </button>
+                      <button className="btn-demo" onClick={handleSubmit}>
                             ساختن بات دمو
-                        </button>
-                    </div>
+                       </button>
 
-                    <div className="mt-[22px] md:mt-[35px]">
+                    </div>
+                </div>
+                <div className="mt-[22px] md:mt-[35px]">
                         <Image
                             src="/images/phone.svg"
                             height="400"
                             width="600"
                             alt="Logo"
                         />
-                    </div>
                 </div>
             </div>
 

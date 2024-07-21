@@ -54,13 +54,16 @@
         @apply text-[#2563eb];
     }
     .intro_conteiner {
-        @apply container mx-auto relative md:top-16 top-10 h-auto  overflow-hidden text-center ;
+        @apply container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden text-center ;
     }
     .input-url {
-        @apply mt-8 w-3/4 rounded-xl border-none bg-[#596AF8] p-[10px] text-[#ffff] placeholder-white placeholder:text-center focus:border-none focus:outline-none  md:w-1/4;
+        @apply  w-[90%] rounded-[10px] border-none text-left bg-[#00000294] p-[10px] text-[#ffff] placeholder-slate-100 placeholder:text-center focus:border-none focus:outline-none  md:w-1/2;
     }
     .btn-demo {
-        @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[18px] border-none bg-[#2295FF] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
+        @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[10px] border-none bg-[#1d4ed8] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
+    }
+    .btn-meet {
+        @apply  cursor-pointer flex gap-3 rounded-[10px] border-none bg-[#1d4ed8b3] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]   hover:bg-[#1d4ed8];
     }
     /* .left-blur {
         @apply ;

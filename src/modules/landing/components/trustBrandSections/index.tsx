@@ -47,13 +47,16 @@ const TrustBrnadSections = () => {
                                 key={indx}
                                 className={`keen-slider__slide number-slide${++indx}`}
                             >
-                                <Image
-                                    //    onClick={() => router.push('/')}
+                                <div className="w-[55px] md:w-[110px]">
+                                   <Image
                                     src={`/images/brands/${brand.image}`}
                                     height="70"
                                     width="100"
                                     alt="Logo"
-                                />
+                                  />
+
+                                </div>
+                              
                             </div>
                         ))}
                 </div>
