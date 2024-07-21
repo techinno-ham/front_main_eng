@@ -67,7 +67,7 @@ const Section = ({
                                 animate={animController}
                                 transition={{ duration: 1, delay: 0 }}
                                 style={{ color: "#5470ff" }}
-                                className="text-base leading-[150%] md:text-2xl"
+                                className="text-base leading-[150%] md:text-md"
                             >
                                 {sectionName}
                             </motion.p>
@@ -80,7 +80,7 @@ const Section = ({
                             initial="hidden"
                             animate={animController}
                             transition={{ duration: 1, delay: 0.6 }}
-                            className="big text-base font-bold leading-[150%] md:text-2xl "
+                            className="mt-2 text-base font-bold leading-[150%] md:text-2xl "
                         >
                             {title}
                         </motion.h2>
@@ -93,8 +93,7 @@ const Section = ({
                             initial="hidden"
                             animate={animController}
                             transition={{ duration: 1, delay: 1.2 }}
-                            style={{ color: "gray" }}
-                            className="text-darker-green-grey content mt-3 text-sm leading-[150%] md:text-xl"
+                            className="text-darker-green-grey content mt-6 text-sm leading-[200%] md:text-lg text-zinc-400"
                         >
                             {desc}
                         </motion.p>

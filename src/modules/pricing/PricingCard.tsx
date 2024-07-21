@@ -1,7 +1,10 @@
 //https://uiverse.io/G4b413l/good-crab-75
 //https://tailwindcomponents.com/component/tailwind-pricing-tables
 
+import React from "react";
+
 const PricingCard = ({
+    order,
     children,
     description,
     price,
@@ -10,13 +13,19 @@ const PricingCard = ({
     buttonText,
     active,
 }: any) => {
+    const dynamicShadowGenerator = (order:number) =>{
+        let fullString = `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`
+        let splittedString = fullString.split(",");
+        let splicedArray = splittedString.slice(0,order)
+        return splicedArray
+    }
     return (
         <>
-            <div className="w-full px-4 md:w-1/2 lg:w-1/3">
+            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
                 <div
                     style={{
                         backdropFilter: "blur(10px)",
-                        boxShadow: `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`,
+                        boxShadow: `${dynamicShadowGenerator(order)}`,
                         borderColor: "#3056d3",
                     }}
                     className="border-primary shadow-pricing relative z-10 mb-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
@@ -26,15 +35,52 @@ const PricingCard = ({
                     </span>
                     <h2 className="text-dark mb-5 text-[42px] font-bold dark:text-white">
                         {price}
-                        <span className="text-body-color dark:text-dark-6 text-base font-medium">
+                        <span 
+                        style={{
+                            color: "#637381"
+                        }}
+                        className="dark:text-dark-6 text-base font-medium">
                             / {subscription}
                         </span>
                     </h2>
-                    <p className="border-stroke text-body-color dark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8 text-base">
+                    <p 
+                    style={{
+                        color: "#637381"
+                    }}
+                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
                         {description}
                     </p>
-                    <div className="mb-9 flex flex-col gap-[14px]">
-                        {children}
+                    <div className="flex flex-row gap-1">
+                                        <span className="text-sm font-semibold">
+                                        همه چیز در رایگان، به علاوه...
+                                        </span>
+                                    </div>
+                    <div 
+                    style={{
+                        color: "#637381"
+                    }}
+                    className="mb-9 flex flex-col gap-[14px]">
+                        {React.Children.map(children, (child) => (
+                <div className="flex flex-row items-start gap-3">
+                    <p className="size-5 text-zinc-700">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="#30a46c"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-check size-5"
+                        >
+                            <path d="M20 6 9 17l-5-5"></path>
+                        </svg>
+                    </p>
+                    {child}
+                </div>
+            ))}
                     </div>
                     <a
                         href="/#"
@@ -320,16 +366,6 @@ const PricingCard = ({
                     </div>
                 </div>
             </div>
-            <div
-                className="circle"
-                style={{
-                    width: "100px",
-                    height: "100px",
-                    background: "radial-gradient(#b0e633, #53ef7d)",
-                    borderRadius: "50%",
-                    position: "absolute",
-                }}
-            ></div>
         </>
     )
 }

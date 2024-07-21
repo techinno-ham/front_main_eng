@@ -39,13 +39,42 @@ const Pricing = () => {
                 </div>
 
                 <div className="-mx-4 flex flex-wrap justify-center">
-                    <div className="-mx-4 flex flex-wrap">
+                    <div className="mx-4 flex flex-wrap">
                         <PricingCard
-                            type="شخصی"
+                            order={0}
+                            type="پایه"
                             price="۵۹ دلار"
                             subscription="سال"
-                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
-                            buttonText="انتخاب طرح شخصی"
+                            description="مناسب برای:
+
+کسب‌وکارهای کوچک یا افرادی که به قابلیت‌های پایه‌ای دستیار هوش مصنوعی نیاز دارند.
+کاربرانی که تازه شروع به استفاده از دستیار هوش مصنوعی کرده‌اند.."
+                            buttonText="انتخاب طرح پایه"
+                            active={false}
+                        >
+                            <List>
+                                ۱ کاربر</List>
+                            <List>
+                                تمامی اجزای رابط کاربری</List>
+                            <List>
+                                دسترسی مادام‌العمر</List>
+                            <List>
+                                به‌روزرسانی‌های رایگان</List>
+                            <List>
+                                استفاده در ۱ (یک) پروژه</List>
+                            <List>
+                                پشتیبانی ۳ ماهه</List>
+                        </PricingCard>
+                        <PricingCard
+                        order={1}
+                            type="استاندارد"
+                            price="۵۹ دلار"
+                            subscription="سال"
+                            description="مناسب برای:
+
+کسب‌وکارهای متوسط که به دستیار هوش مصنوعی قوی‌تری نیاز دارند.
+کاربرانی که به قابلیت‌های ادغام بیشتر و پشتیبانی سریع‌تر نیاز دارند.."
+                            buttonText="انتخاب طرح استاندارد"
                             active={false}
                         >
                             <List>۱ کاربر</List>
@@ -56,11 +85,15 @@ const Pricing = () => {
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                            type="شخصی"
+                        order={2}
+                            type="حرفه‌ای"
                             price="۵۹ دلار"
                             subscription="سال"
-                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
-                            buttonText="انتخاب طرح شخصی"
+                            description="مناسب برای:
+
+کسب‌وکارهای بزرگ یا سازمان‌هایی که نیازهای گسترده‌تری در زمینه دستیار هوش مصنوعی دارند.
+کاربرانی که نیاز به سفارشی‌سازی بالا و تحلیل‌های دقیق دارند.."
+                            buttonText="انتخاب طرح حرفه‌ای"
                             active={true}
                         >
                             <List>۱ کاربر</List>
@@ -71,12 +104,16 @@ const Pricing = () => {
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                            type="شخصی"
+                        order={3}
+                            type="سازمانی"
                             price="۵۹ دلار"
                             subscription="سال"
-                            description="مناسب برای استفاده در یک وب‌سایت شخصی یا پروژه مشتری."
-                            buttonText="انتخاب طرح شخصی"
-                            active={false}
+                            description="مناسب برای:
+
+سازمان‌های بزرگ با نیازهای پیچیده در زمینه دستیار هوش مصنوعی.
+سازمان‌هایی که به راه‌حل‌های سفارشی و پشتیبانی اختصاصی نیاز دارند."
+                            buttonText="انتخاب طرح سازمانی"
+                            active={true}
                         >
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
@@ -124,8 +161,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -143,8 +180,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -162,8 +199,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -181,8 +218,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -200,8 +237,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -221,8 +258,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -240,8 +277,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -259,8 +296,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -278,8 +315,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -348,8 +385,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -367,8 +404,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -386,8 +423,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -407,8 +444,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -426,8 +463,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -446,8 +483,8 @@ const Pricing = () => {
                                                     height="24"
                                                     viewBox="0 0 24 24"
                                                     fill="none"
-                                                    stroke="currentColor"
-                                                    stroke-width="2"
+                                                    stroke="#30a46c"
+                                                    stroke-width="3"
                                                     stroke-linecap="round"
                                                     stroke-linejoin="round"
                                                     className="lucide lucide-check size-5"
@@ -544,8 +581,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -565,8 +602,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -584,8 +621,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -603,8 +640,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -668,8 +705,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -691,8 +728,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -710,8 +747,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -729,8 +766,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -748,8 +785,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -797,7 +834,7 @@ const Pricing = () => {
                                         </div>
                                     </div>
                                     <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
-                                        <div className="flex flex-col items-start justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
+                                        <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
                                             <span className="text-2xl font-medium">
                                                 Free
                                             </span>
@@ -812,7 +849,7 @@ const Pricing = () => {
                                                 </button>
                                             </a>
                                         </div>
-                                        <div className="flex flex-col items-start justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
+                                        <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
                                             <span className="text-2xl font-medium">
                                                 Hobby
                                             </span>
@@ -827,7 +864,7 @@ const Pricing = () => {
                                                 </button>
                                             </a>
                                         </div>
-                                        <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-zinc-50 px-3 py-2 xl:px-6">
+                                        <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-zinc-50 px-3 py-2 xl:px-6">
                                             <span className="text-2xl font-medium">
                                                 Standard
                                             </span>
@@ -842,7 +879,7 @@ const Pricing = () => {
                                                 </button>
                                             </a>
                                         </div>
-                                        <div className="flex flex-col items-start justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
+                                        <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
                                             <span className="text-2xl font-medium">
                                                 Unlimited
                                             </span>
@@ -981,8 +1018,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1004,8 +1041,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1020,8 +1057,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1142,8 +1179,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1158,8 +1195,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1260,8 +1297,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1283,8 +1320,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1299,8 +1336,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1315,90 +1352,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1415,8 +1370,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1431,8 +1386,90 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div className="mt-16 flex w-full flex-col">
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1533,8 +1570,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1556,8 +1593,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1572,8 +1609,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1588,90 +1625,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1688,8 +1643,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1704,8 +1659,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1720,8 +1675,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1736,8 +1691,90 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div className="mt-16 flex w-full flex-col">
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1805,8 +1842,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1828,8 +1865,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1844,8 +1881,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1860,90 +1897,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1960,8 +1915,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1976,8 +1931,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -1992,8 +1947,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2008,8 +1963,24 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2026,8 +1997,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2042,8 +2013,74 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div className="mt-16 flex w-full flex-col">
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2170,8 +2207,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2209,8 +2246,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2230,8 +2267,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2393,8 +2430,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
@@ -2415,8 +2452,8 @@ const Pricing = () => {
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
                                                 className="lucide lucide-check size-5"
