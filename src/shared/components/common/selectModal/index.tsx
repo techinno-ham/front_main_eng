@@ -6,9 +6,11 @@ import { useEffect, useState } from "react"
 import useSelectModal from "./hooks/useSelectModal.ts"
 import { CloseSquare } from "iconsax-react"
 import { toast } from "sonner"
+import useChatModal from "../chatModal/hooks/useChatModal"
 
 const SelectModalCustom = () => {
     const SelectModal = useSelectModal()
+    const SelectModalChat = useChatModal()
     const [selectedUrls, setSelectedUrls] = useState([])
     const [selectError, setSelectError] = useState("")
 
@@ -23,6 +25,9 @@ const SelectModalCustom = () => {
     }
     const handleClsoeModal = () => {
         SelectModal.onClose()
+        setTimeout(() => {
+            SelectModal.onInit();
+        }, 2000);
         SelectModal.resetUrls()
         setSelectedUrls([])
     }
@@ -33,6 +38,10 @@ const SelectModalCustom = () => {
         }
 
         SelectModal.onClose()
+        setTimeout(() => {
+            SelectModal.onInit();
+            SelectModalChat.onOpen();
+        }, 2000);
         SelectModal.resetUrls()
         setSelectedUrls([])
     }

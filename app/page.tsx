@@ -4,6 +4,7 @@ import Header from "@/src/shared/components/layouts/site-layout/header"
 import Footer from "@/src/shared/components/layouts/site-layout/footer"
 import SelectModalCustom from "@/src/shared/components/common/selectModal"
 import { Metadata } from "next"
+import SelectModalChat from "@/src/shared/components/common/chatModal"
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <main>
                 <Landing />
                 <SelectModalCustom />
+                <SelectModalChat/>
             </main>
             <Footer />
         </>
