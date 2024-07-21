@@ -1,0 +1,8 @@
+.pricing-header{
+text-shadow: 0 3px 8px rgba(77, 243, 255, 0.22);
+    background-image: linear-gradient(360deg, #5154ff, #559fff);
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+    color: transparent;
+}

@@ -33,7 +33,7 @@ const PricingCard = ({
                     <span className="mb-3 block text-lg font-semibold text-blue-700">
                         {type}
                     </span>
-                    <h2 className="text-dark mb-5 text-[42px] font-bold dark:text-white">
+                    <h2 className="text-dark mb-5 text-[42px] font-bold">
                         {price}
                         <span 
                         style={{

@@ -1,6 +1,7 @@
 //https://tailgrids.com/components/pricing-tables
 
 import PricingCard from "./PricingCard"
+import "./style.css"
 
 const Pricing = () => {
     return (
@@ -835,8 +836,9 @@ const Pricing = () => {
                                     </div>
                                     <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span className="text-2xl font-medium">
-                                                Free
+                                            <span 
+                                            className="text-2xl font-medium ">
+                                            پایه
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -850,8 +852,9 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span className="text-2xl font-medium">
-                                                Hobby
+                                            <span 
+                                            className="text-2xl font-medium ">
+                                            استاندارد
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -865,8 +868,9 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-zinc-50 px-3 py-2 xl:px-6">
-                                            <span className="text-2xl font-medium">
-                                                Standard
+                                            <span 
+                                            className="text-2xl font-medium pricing-header">
+                                            حرفه‌ای
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -880,8 +884,9 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span className="text-2xl font-medium">
-                                                Unlimited
+                                            <span 
+                                            className="text-2xl font-medium pricing-header">
+                                            سازمانی
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -905,8 +910,11 @@ const Pricing = () => {
                         <div className="mt-5 grid grid-cols-9 gap-4 bg-white">
                             <div className="col-span-2 flex flex-col items-start gap-6">
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Configuration
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        تنظیمات
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Message credits (monthly)
@@ -925,35 +933,44 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Training
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        آموزش
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Links to train on
+                                        لینک ها
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Activity
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        فعالیت
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Chat History
+                                    تاریخچه چت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Capture Leads
+                                    فرم اطلاعات (به زودی)
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Analytics
+                                    آنالیز
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Integrations &amp; API
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        یکپارچه‌سازی‌ها و API
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        API access
+                                    دسترسی به API (به زودی)
                                     </span>
-                                    <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
+                                    {/* <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Zapier
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -964,18 +981,20 @@ const Pricing = () => {
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Messenger (Coming soon)
-                                    </span>
+                                    </span> */}
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Model
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        مدل هوش مصنوعی
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         GPT-3.5
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        GPT-4o (most advanced and efficient
-                                        model)
+                                        GPT-4o (پیشرفته‌ترین و کارآمدترین مدل)
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         GPT-4-Turbo
@@ -985,14 +1004,17 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold text-zinc-950">
-                                        Branding
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                        برندسازی
+
+                                        </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Remove Powered by Chatbase
+                                    حذف لوگوی همیارچت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        Choose your own custom domain
+                                    دامنه یا لوگوی سفارشی شما
                                     </span>
                                 </div>
                             </div>

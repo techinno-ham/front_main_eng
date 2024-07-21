@@ -39,7 +39,11 @@ const TrustBrnadSections = () => {
             <div>
                 <p className="text-2xl md:text-4xl">همکاران و مشتریان ما</p>
             </div>
-            <div className="navigation-wrapper mt-4">
+            <div 
+            style={{
+                maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
+            }}
+            className="navigation-wrapper">
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&
                         brands.map((brand, indx) => (
