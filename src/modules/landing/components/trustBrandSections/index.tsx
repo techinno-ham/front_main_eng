@@ -16,7 +16,7 @@ let brands = [
 ]
 
 const TrustBrnadSections = () => {
-    const animation = { duration: 15000, easing: (t:any) => t }
+    const animation = { duration: 20000, easing: (t:any) => t }
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
         loop: true,
@@ -35,11 +35,11 @@ const TrustBrnadSections = () => {
           },
     })
     return (
-        <div className="mt-[150px] h-max container overflow-hidden container-medium w-container mx-auto text-center">
+        <div className="mt-[80px] h-max container overflow-hidden container-medium w-container mx-auto text-center">
             <div>
-                <p className="text-xl md:text-3xl">همکاران و مشتریان ما</p>
+                <p className="text-2xl md:text-4xl">همکاران و مشتریان ما</p>
             </div>
-            <div className="navigation-wrapper">
+            <div className="navigation-wrapper mt-4">
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&
                         brands.map((brand, indx) => (

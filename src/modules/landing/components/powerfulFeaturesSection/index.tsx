@@ -2,18 +2,24 @@ import Image from "next/image"
 
 const PowerfulFeaturesSection = () => {
     return (
-        <div className="mt-5 h-max overflow-hidden text-center">
-            <div>
-                <p className="text-xl md:text-3xl">ویژگی‌های قدرتمند</p>
-                <p className="text-xl md:text-3xl">
-                    همه چیزهایی که برای چت‌بات هوش مصنوعی بدون کدنویسی نیاز
+        <div className="container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden text-center">
+            <div className="mt-10 md:mt-4">
+                <p className="text-2xl md:text-4xl"> 
+                <span>
+                        ویژگی‌های قدرتمند 
+                </span>
+                <span className="text-blue-600 mr-1">
+                     همیارچت 
+                </span>
+                </p>
+                <p className="text-base md:text-xl mt-1">
+                    همه چیزهایی که برای چت‌ بات هوش مصنوعی بدون کدنویسی نیاز
                     دارید.
                 </p>
             </div>
-            <div className="mt-[20px] flex justify-around">
-                <div className="container-medium w-container mx-auto">
+            <div className="mt-[40px] flex justify-around">
                     <div className="grid grid-cols-2 gap-16 md:grid-cols-3 lg:grid-cols-4">
-                        <div className="flex flex-col items-start gap-1">
+                    <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500" style={{ boxShadow: '1px 4px 10px 0px #3b82f6bd' }}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -33,12 +39,13 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                                 منابع داده متعدد
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                                 وارد کردن داده از منابع متعدد برای آموزش چت‌بات
                                 شما.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                    <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                        
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -58,13 +65,13 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                                 سفارشی‌سازی
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                                 ظاهر و حس چت‌بات خود را مطابق با سبک و طراحی
                                 وب‌سایت برند خود سفارشی کنید.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
-                            <svg
+                        <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                        <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -85,14 +92,14 @@ const PowerfulFeaturesSection = () => {
                                     d="M6 6h.008v.008H6V6z"
                                 ></path>
                             </svg>
-                            <h5 className="pt-1 text-lg font-medium ">
-                                وایت‌لیبل
+                            <h5 className=" pt-1 text-lg font-medium ">
+                                وایت‌ لیبل
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                                 حذف برند همیارچت و استفاده از دامنه سفارشی.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                    <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -112,12 +119,13 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                                 حریم خصوصی و امنیت
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                                 داده‌های شما بر روی سرورهای امن با رمزگذاری قوی
                                 و کنترل دسترسی میزبانی می‌شوند.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                        <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                      
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -137,12 +145,13 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                                 آموزش مجدد خودکار
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                                 چت‌بات خود را به طور خودکار آموزش دهید و همیشه
                                 با داده‌های خود همگام باشید.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                        <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                        
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -162,10 +171,11 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                             یکپارچه‌سازی‌ها
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                             چت‌بات خود را به ابزارهای مورد علاقه‌تان مانند اسلک، واتساپ، زپی‌یر و بیشتر متصل کنید.</p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                        <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                       
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -185,11 +195,12 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                             مدل‌های قدرتمند هوش مصنوعی
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                             از میان مدل‌های مختلف هوش مصنوعی، از جمله GPT-3.5-turbo و GPT-4، انتخاب کنید.
                             </p>
                         </div>
-                        <div className="flex flex-col items-start gap-1">
+                        <div className="flex flex-col items-start border  px-[13px] py-[18px] rounded-[10px] border-b-4 border-blue-500">
+                        
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -209,12 +220,12 @@ const PowerfulFeaturesSection = () => {
                             <h5 className="pt-1 text-lg font-medium ">
                             بیش از ۸۰ زبان
                             </h5>
-                            <p className="text-sm font-normal text-right text-zinc-400">
+                            <p className="text-sm font-normal text-right text-zinc-400 mt-2">
                             به مشتریان خود به زبان مادری‌شان دسترسی پیدا کنید حتی اگر داده‌های شما به زبان دیگری باشد.
                             </p>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     )
