@@ -70,7 +70,7 @@ const PricingCard = ({
                     style={{
                         color: "#637381"
                     }}
-                    className="mb-9 flex flex-col gap-[14px]">
+                    className="mt-2 mb-9 flex flex-col gap-[14px]">
                         {React.Children.map(children, (child) => (
                             <div className="flex flex-row items-start gap-3">
                                 <p className="size-5 text-zinc-700">
