@@ -14,7 +14,7 @@ const useSelectModal = create<SelectModaltore>((set) => ({
     isOpen: null,
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
-    onInit:() => set({ isOpen: null }),
+    onInit: () => set({ isOpen: null }),
     urls: [""],
     setUrls: (urls) => set({ urls }),
     resetUrls: () => set({ urls: [""] }),

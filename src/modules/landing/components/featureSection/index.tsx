@@ -5,10 +5,10 @@ import Section from "./components/sections"
 
 const FeatureSection = () => {
     return (
-        <div className="container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden">
+        <div className="container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
             <div className="mt-[55px] text-center md:mt-[80px]">
                 <h2 className="text-2xl leading-[150%] md:text-4xl">
-                تمام آنچه برای ساخت <br />{" "}
+                    تمام آنچه برای ساخت <br />{" "}
                     <span className=" text-feature text-2xl md:text-4xl">
                         ربات‌های سفارشی
                     </span>{" "}

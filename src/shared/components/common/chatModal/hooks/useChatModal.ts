@@ -5,15 +5,13 @@ interface ChatModaltore {
     onOpen: () => void
     onClose: () => void
     onInit: () => void
- 
 }
 
 const useChatModal = create<ChatModaltore>((set) => ({
     isOpen: null,
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
-    onInit:() => set({ isOpen: null }),
-    
+    onInit: () => set({ isOpen: null }),
 }))
 
-export default useChatModal;
+export default useChatModal

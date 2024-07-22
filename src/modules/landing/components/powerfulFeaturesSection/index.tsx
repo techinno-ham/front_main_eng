@@ -213,19 +213,18 @@ const PowerfulFeaturesSection = () => {
         let intervalId = setInterval(() => {
             setActiveIndex(startValue % cardCount)
             startValue++
-            console.log(startValue);
-            
+            console.log(startValue)
         }, 2000)
         return () => clearInterval(intervalId)
-    } , [])
+    }, [])
     return (
         <div className="container relative mx-auto h-auto overflow-hidden  px-4 py-4 text-center 2xl:px-20">
             <div className="mt-10 md:mt-4">
-                <p className="text-2xl md:text-4xl">
-                    <span>ویژگی‌های قدرتمند</span>
-                    <span className="mr-1 text-blue-600">همیارچت</span>
+                <p className="text-3xl md:text-6xl">
+                    <span>ویژگی‌های قدرتمند </span>
+                    <span className="gradient-h2 is-v2">همیارچت&nbsp;</span>
                 </p>
-                <p className="mt-1 text-base md:text-xl">
+                <p className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                     همه چیزهایی که برای چت‌ بات هوش مصنوعی بدون کدنویسی نیاز
                     دارید.
                 </p>
@@ -238,20 +237,22 @@ const PowerfulFeaturesSection = () => {
                                 key={indx}
                                 className="flex flex-col items-start rounded-[10px]  border border-b-4 border-blue-500 px-[13px] py-[18px]"
                                 style={{
-                                    boxShadow: (indx === activeIndex) ? "1px 4px 10px 0px #3b82f6bd" : "unset",
-                                    transition: 'box-shadow 0.5s ease-in-out'
+                                    boxShadow:
+                                        indx === activeIndex
+                                            ? "1px 4px 10px 0px #3b82f6bd"
+                                            : "unset",
+                                    transition: "box-shadow 0.5s ease-in-out",
                                 }}
                             >
                                 {card.Icon}
                                 <h5 className="pt-1 text-lg font-medium ">
-                                {card.title}
+                                    {card.title}
                                 </h5>
                                 <p className="mt-2 text-right text-sm font-normal text-zinc-400">
-                                {card.subTitle}
+                                    {card.subTitle}
                                 </p>
                             </div>
                         ))}
-                    
                 </div>
             </div>
         </div>

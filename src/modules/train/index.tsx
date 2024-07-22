@@ -83,8 +83,7 @@ const Train = () => {
                 <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <LoaderLottie/>
-                        
+                        <LoaderLottie />
                     </div>
                 </div>
             </>
@@ -92,7 +91,7 @@ const Train = () => {
 
     return (
         <>
-            <div className="mx-auto  w-[95%] md:mt-[100px] mt-[120px] mb-28 md:mb-2">
+            <div className="mx-auto  mb-28 mt-[120px] w-[95%] md:mb-2 md:mt-[100px]">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

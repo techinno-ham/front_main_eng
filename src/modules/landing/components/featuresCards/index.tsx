@@ -4,6 +4,8 @@ import Image from "next/image"
 import "./style.css"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
+import Link from "next/link"
+import { Link1, Link2 } from "iconsax-react"
 
 const FeaturesCards = () => {
     const mainRef = useRef(null)
@@ -18,9 +20,9 @@ const FeaturesCards = () => {
     }, [isInView])
 
     return (
-        <section className="section-large ">
+        <section className="section-large">
             <div className="bg-global"></div>
-            <div className="container-medium w-container mx-auto">
+            <div className="container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
                 <div className="wrapper-section position-relative">
                     <div
                         data-w-id="6549d020-2168-6fe0-4ebd-d77ea25fb3bd"
@@ -36,12 +38,12 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0 }}
                             className="title-section-footer"
                         >
-                            <h2 className="heading-2">
-                                مکالمات در{" "}
+                            <p className="text-3xl md:text-6xl">
+                                <span>مکالمات در </span>
                                 <span className="gradient-h2 is-v2">
                                     مقیاس جهانی&nbsp;
                                 </span>
-                            </h2>
+                            </p>
                         </motion.div>
                         <motion.div
                             variants={{
@@ -53,7 +55,7 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="description-section-main margin-top-24px max-w-85"
                         >
-                            <p className="paragraph-size-medium">
+                            <p className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                                 یک بار ساخته شود. در هر کانال و در هر زبان مقیاس
                                 داده شود.
                             </p>
@@ -96,13 +98,13 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="paragraph-x-large weight-500">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     داده ها را جمع‌آوری کرده و
-                                                    به طور پیوسته بهبود بخشید
+                                                    به طور پیوسته بهبود بخشید.
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="paragraph-normal weight-400 color-gray">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     با استفاده از بینش‌ها از
                                                     تجزیه و تحلیل، سوءتفاهم و
                                                     تجزیه و تحلیل احساسات ما، به
@@ -113,19 +115,15 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                        <a
-                                            href="/features/conversation-studio"
-                                            className="link-card-main w-inline-block"
-                                        >
-                                            <div className="content-card-link">
-                                                <div>مشاهده</div>
-                                                <div className="box-rotate-rtl">
-                                                    <div className="arrow-primary">
-                                                        
-                                                    </div>
-                                                </div>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="box-image-global">
@@ -171,14 +169,14 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="paragraph-x-large weight-500">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     <span>
-                                                        در هر زبانی چت کنید
+                                                        در هر زبانی چت کنید.
                                                     </span>
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="paragraph-normal weight-400 color-gray">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     موتور ما به طور خودکار به
                                                     بیش از 100 زبان ترجمه
                                                     می‌کند، بنابراین شما
@@ -191,19 +189,15 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                        <a
-                                            href="/features/conversation-studio"
-                                            className="link-card-main w-inline-block"
-                                        >
-                                            <div className="content-card-link">
-                                                <div>مشاهده</div>
-                                                <div className="box-rotate-rtl">
-                                                    <div className="arrow-primary">
-                                                        
-                                                    </div>
-                                                </div>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="box-image-global flex-center">
@@ -249,7 +243,7 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="paragraph-x-large weight-500">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     <span>
                                                         راه‌اندازی با یک کلیک بر
                                                         روی هر کانال
@@ -257,7 +251,7 @@ const FeaturesCards = () => {
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="paragraph-normal weight-400 color-gray">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     در یک کانال متوقف نشوید. با
                                                     یک کلیک به تمام کانال‌های ما
                                                     راه‌اندازی کنید تا با
@@ -268,20 +262,15 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                        <a
-                                            href="https://botpress.com/docs/cloud/channels/overview/"
-                                            target="_blank"
-                                            className="link-card-main w-inline-block"
-                                        >
-                                            <div className="content-card-link">
-                                                <div>مشاهده</div>
-                                                <div className="box-rotate-rtl">
-                                                    <div className="arrow-primary">
-                                                        
-                                                    </div>
-                                                </div>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
                                             </div>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="box-image-global">

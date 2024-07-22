@@ -21,11 +21,11 @@ const SelectModalChat = () => {
         >
             <div className="modal-background">
                 <div className="modal">
-                   <ChatDemo/>
+                    <ChatDemo />
                 </div>
             </div>
         </div>
     )
 }
 
-export default SelectModalChat;
+export default SelectModalChat

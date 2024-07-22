@@ -34,10 +34,10 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
     if (loading)
         return (
             <>
-                   <div className="fixed left-1/2 md:left-[44%] top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2">
+                <div className="fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2 md:left-[44%]">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <LoaderLottie/>
+                        <LoaderLottie />
                     </div>
                 </div>
             </>
@@ -45,7 +45,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
 
     return (
         <>
-            <div className="mx-auto w-[95%] md:mt-[100px] mt-[120px] mb-16 md:mb-2">
+            <div className="mx-auto mb-16 mt-[120px] w-[95%] md:mb-2 md:mt-[100px]">
                 <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
                     <PieChart
                         title="تعداد کل پاسخ ها موفق"
@@ -82,7 +82,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                     </div>
                 </div>
 
-                <ChartDemo  botData={botData}/>
+                <ChartDemo botData={botData} />
             </div>
         </>
     )

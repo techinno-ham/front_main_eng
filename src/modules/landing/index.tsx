@@ -12,7 +12,7 @@ const Landing = () => {
                 <IntroduceSections />
                 <TrustBrnadSections />
                 <FeatureSection />
-                <PowerfulFeaturesSection/>
+                <PowerfulFeaturesSection />
                 <FeaturesCards />
                 <TryNow />
             </div>

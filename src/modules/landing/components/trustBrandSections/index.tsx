@@ -16,7 +16,7 @@ let brands = [
 ]
 
 const TrustBrnadSections = () => {
-    const animation = { duration: 20000, easing: (t:any) => t }
+    const animation = { duration: 20000, easing: (t: any) => t }
     const [sliderRef, instanceRef] = useKeenSlider({
         initial: 0,
         loop: true,
@@ -26,24 +26,26 @@ const TrustBrnadSections = () => {
         slides: { perView: 8, spacing: 5 },
         created(s) {
             s.moveToIdx(5, true, animation)
-          },
-          updated(s) {
+        },
+        updated(s) {
             s.moveToIdx(s.track.details.abs + 5, true, animation)
-          },
-          animationEnded(s) {
+        },
+        animationEnded(s) {
             s.moveToIdx(s.track.details.abs + 5, true, animation)
-          },
+        },
     })
     return (
-        <div className="mt-[80px] h-max container overflow-hidden container-medium w-container mx-auto text-center">
+        <div className="container-medium w-container container mx-auto mt-[80px] h-max overflow-hidden text-center">
             <div>
                 <p className="text-2xl md:text-4xl">همکاران و مشتریان ما</p>
             </div>
-            <div 
-            style={{
-                maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
-            }}
-            className="navigation-wrapper">
+            <div
+                style={{
+                    maskImage:
+                        "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
+                }}
+                className="navigation-wrapper"
+            >
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&
                         brands.map((brand, indx) => (
@@ -52,15 +54,13 @@ const TrustBrnadSections = () => {
                                 className={`keen-slider__slide number-slide${++indx}`}
                             >
                                 <div className="w-[55px] md:w-[110px]">
-                                   <Image
-                                    src={`/images/brands/${brand.image}`}
-                                    height="70"
-                                    width="100"
-                                    alt="Logo"
-                                  />
-
+                                    <Image
+                                        src={`/images/brands/${brand.image}`}
+                                        height="70"
+                                        width="100"
+                                        alt="Logo"
+                                    />
                                 </div>
-                              
                             </div>
                         ))}
                 </div>

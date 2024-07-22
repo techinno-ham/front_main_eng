@@ -9,7 +9,13 @@
     bottom: 0%;
     left: 0%;
     right: 0%;
-    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%);
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 25%,
+        rgb(0, 0, 0) 75%,
+        rgba(0, 0, 0, 0) 105%
+    );
 }
 .item-image-path {
     z-index: 0;

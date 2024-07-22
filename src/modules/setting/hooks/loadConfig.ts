@@ -10,4 +10,4 @@ const useStoreConfig = create<StoreViewController>((set) => ({
     setData: (data: any) => set({ data: data }),
 }))
 
-export default useStoreConfig;
+export default useStoreConfig

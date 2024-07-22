@@ -3,7 +3,7 @@ import TrainForCreate from "./components/train"
 const TrainCreate = () => {
     return (
         <>
-            <div className="container mx-auto mb-28 md:mb-4  mt-20  h-full overflow-hidden px-4">
+            <div className="container mx-auto mb-28 mt-20  h-full  overflow-hidden px-4 md:mb-4">
                 <div className="border-t py-8">
                     <h1 className="mb-2 text-center text-3xl font-bold">
                         منابع آموزش

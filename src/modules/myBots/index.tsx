@@ -105,7 +105,7 @@ const MyBots = () => {
                                     <span className="mr-3">
                                         مقداری صبر کنید ...
                                     </span>
-                                <LoaderLottie/>
+                                    <LoaderLottie />
                                 </div>
                             </>
                         ) : myBotsArry.length > 0 ? (
@@ -119,7 +119,7 @@ const MyBots = () => {
                             ))
                         ) : (
                             <div className="col-span-full flex h-full flex-col items-center justify-center text-center">
-                                <EmptyBot/>
+                                <EmptyBot />
                                 <span>در حال حاظر چت باتی وجود ندارد ....</span>
                                 <span>
                                     شما میتوانید برای ساختن آن روی دکمه ی "چت

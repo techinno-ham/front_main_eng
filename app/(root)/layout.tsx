@@ -7,7 +7,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <>
             <Header />
             <main>{children}</main>
-            <TryNow/>
+            <TryNow />
             <Footer />
         </>
     )
