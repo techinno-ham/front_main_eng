@@ -20,7 +20,7 @@ const TryNow = () => {
     return (
         <section
             ref={mainRef}
-            className="section-normal container overflow-hidden container-medium w-container mx-auto"
+            className="section-normal container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden"
         >
             <div className="bg-cta">
                 <img
@@ -45,12 +45,12 @@ const TryNow = () => {
                     <div className="content-cta-main">
                         <div className="head-section">
                             <div className="title-section-footer">
-                                <h3 className="heading-style-h3 is-rtl-center-mb">
+                                <h3 className="text-3xl md:text-5xl">
                                 همین امروز دوره رایگان خود را شروع کنید!
                                 </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">
-                                <p className="paragraph-x-large weight-500 is-rtl-center-mb text-zinc-400">
+                                <p className="text-[12px] mt-3 md:text-[16px] is-rtl-center-mb text-zinc-400">
                                 به سادگی مکالمات خود را به فرصت‌های 
                                 <span className="notice-text"> طلایی </span>
                                  فروش و مشتریان 
@@ -59,21 +59,14 @@ const TryNow = () => {
                                                               </p>
                             </div>
                         </div>
-                        <div className="box-get-started left">
-                            <div className="head-get-started">
-                                <a
-                                    href="https://sso.botpress.cloud/registration"
-                                    className="button-primary-old button-cta-1 w-inline-block"
-                                >
-                                    <div>ساختن چت بات</div>
-                                    <div className="box-rotate-rtl"></div>
-                                </a>
-                            </div>
-                            <div className="botton-section margin-top-5px">
-                                <p className="text-xs mt-2 text-zinc-400">
-                                    بدون هیچ هزینه ای !
-                                </p>
-                            </div>
+                        <div className="w-full flex">
+                            <button className=" hover:white  bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 rounded-[10px] font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2  focus-visible:outline-white">
+                                همین الان رایگان شروع کنید !
+                            </button>
+                            
+                           
+                           
+                            
                         </div>
                     </div>
                 </div>
