@@ -321,7 +321,7 @@ const Footer = () => {
                     <div className="w-full flex-col gap-4 md:hidden">
                     <div
                                 
-                                className="accordion accordion-active:bg-indigo-50 active my-2 rounded-2xl border-b border-solid border-gray-200 px-6 py-8 transition-all duration-500 hover:bg-indigo-50"
+                                className="my-2  border-b border-zinc-500/30  transition-all duration-500 p-4"
                                 id="basic-heading-one-with-arrow"
                                 style={{
                                     background:
@@ -336,7 +336,7 @@ const Footer = () => {
                                 }}
                             >
                                            <button
-                                    className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500 hover:text-indigo-600"
+                                    className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
                                     aria-controls="basic-collapse-one-with-arrow"
                                 >
                                     <h5
@@ -347,7 +347,8 @@ const Footer = () => {
                                                     : "unset",
                                         }}
                                     >
-                                       ttt
+                                     
+راهنمایی و پشتیبانی
                                     </h5>
                                     <svg
                                         style={{
@@ -372,25 +373,35 @@ const Footer = () => {
                                         ></path>
                                     </svg>
                                 </button>
-                              </div>
-                              <div
+                                <div
                                     id="basic-collapse-one-with-arrow"
-                                    className="accordion-content w-full overflow-hidden px-0 transition-all duration-500"
+                                    className="accordion-content w-full overflow-hidden transition-all duration-500 pb-4 pt-4"
                                     aria-labelledby="basic-heading-one-with-arrow"
                                     style={{
                                         maxHeight:
                                             activeAccordionId === 0
                                                 ? "250px"
                                                 : "0px",
-                                        opacity:
-                                            activeAccordionId === 0 ? 1 : 0,
+                                        display:
+                                            activeAccordionId === 0 ? "block" : "none",
                                     }}
                                 >
-                                    <p className="text-base leading-6 text-gray-900">
-                                        ttt
-                                    </p>
+                                    <div className="flex flex-col gap-2">
+                                    <Link href={"/"} className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700">
+                                      سوالات متداول
+                                  </Link>
+                                  <Link href={"/"} className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700">
+                                      سوالات متداول
+                                  </Link>
+                                  <Link href={"/"} className="font-medium text-sm text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700">
+                                      سوالات متداول
+                                  </Link>
+
+                                    </div>
                                 </div>
 
+                    </div>
+                             
 
                     </div>
 
