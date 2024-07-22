@@ -4,15 +4,15 @@ const PowerfulFeaturesSection = () => {
     return (
         <div className="container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden text-center">
             <div className="mt-10 md:mt-4">
-                <p className="text-2xl md:text-4xl"> 
+                <p className="text-3xl md:text-6xl"> 
                 <span>
-                        ویژگی‌های قدرتمند 
+                        ویژگی‌های قدرتمند {" "}
                 </span>
-                <span className="text-blue-600 mr-1">
-                     همیارچت 
+                <span className="gradient-h2 is-v2">
+                     همیارچت&nbsp;
                 </span>
                 </p>
-                <p className="text-base md:text-xl mt-1">
+                <p className="text-[12px] mt-1 md:text-[16px] md:mt-3">
                     همه چیزهایی که برای چت‌ بات هوش مصنوعی بدون کدنویسی نیاز
                     دارید.
                 </p>

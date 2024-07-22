@@ -122,7 +122,7 @@ const IntroduceSections = () => {
                        <button className="btn-meet" onClick={handleMeetRequest}>
                        <Calendar size="24" color="#fff" />
                        <span>
-                        درخواست گفت و گو
+                        درخواست جلسه 
                        </span>
                        </button>
                       <button className="btn-demo" onClick={handleSubmit}>
