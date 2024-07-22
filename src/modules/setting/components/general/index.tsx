@@ -1,35 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import useStoreConfig from '../../hooks/loadConfig';
-import service from '@/src/shared/services/service';
-import { toast } from 'sonner';
+import React, { useEffect, useState } from "react"
+import { useForm } from "react-hook-form"
+import useStoreConfig from "../../hooks/loadConfig"
+import service from "@/src/shared/services/service"
+import { toast } from "sonner"
 
 const General = () => {
-    const { register, handleSubmit, setValue } = useForm();
-    const {data,setData}=useStoreConfig();
-    const [isLoading, setIsLoading] = useState(false);
-  
+    const { register, handleSubmit, setValue } = useForm()
+    const { data, setData } = useStoreConfig()
+    const [isLoading, setIsLoading] = useState(false)
 
     const onSubmit = async (formData: any) => {
-        setIsLoading(true);
+        setIsLoading(true)
         try {
-            const response = await service.updateGeneralConfig(data.bot_id, formData);
+            const response = await service.updateGeneralConfig(
+                data.bot_id,
+                formData,
+            )
             toast.success("تغیرات شما موفق آمیز ذخیره شد")
-            setData(response.data);
+            setData(response.data)
         } catch (error) {
             toast.error("در بروز رسانی مشکلی پیش امده است !")
-            console.error("Update failed:", error);
+            console.error("Update failed:", error)
         } finally {
-            setIsLoading(false);
+            setIsLoading(false)
         }
-    };
+    }
 
     useEffect(() => {
         if (data) {
-            setValue('name', data.name);
+            setValue("name", data.name)
         }
-    }, [data, setValue]);
-
+    }, [data, setValue])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,10 +40,11 @@ const General = () => {
                         چت بات آیدی :
                     </label>
                     <div className="mt-1 flex items-center gap-2 space-x-4">
-                        <div className="font-semibold">
-                        {data?.bot_id}
-                        </div>
-                        <button type="button" className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                        <div className="font-semibold">{data?.bot_id}</div>
+                        <button
+                            type="button"
+                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                        >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
@@ -73,7 +75,7 @@ const General = () => {
                     </label>
                     <div className="mt-2 ">
                         <input
-                            {...register('name')}
+                            {...register("name")}
                             className=" w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                             id="inline-full-name"
                             type="text"
@@ -85,9 +87,9 @@ const General = () => {
             <div className="flex justify-end  px-5 py-3">
                 <button
                     type="submit"
-                    className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white flex items-center gap-2"
+                    className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
                 >
-                               {isLoading ? (
+                    {isLoading ? (
                         <>
                             <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                             <span className="ml-3"> بروزرسانی ...</span>
@@ -98,7 +100,7 @@ const General = () => {
                 </button>
             </div>
         </form>
-    );
-};
+    )
+}
 
-export default General;
+export default General

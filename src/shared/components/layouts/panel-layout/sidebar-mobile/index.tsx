@@ -43,7 +43,7 @@ export const sidebarLinks = [
 
 const SideBarMobile = () => {
     const pathname = usePathname()
-    const pathSegments = pathname.split("/");
+    const pathSegments = pathname.split("/")
     return (
         <>
             <div className=" relative top-[100px] px-5 md:hidden">
@@ -56,7 +56,6 @@ const SideBarMobile = () => {
                         )?.label || ""}
                     </span>
                 </div>
-               
             </div>
         </>
     )

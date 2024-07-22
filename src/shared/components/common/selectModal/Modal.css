@@ -45,8 +45,6 @@
     display: flex;
     flex-direction: column;
     height: 85px;
-  
-
 }
 #modal-container .modal-background .modal .buttonHeader {
     display: flex;
@@ -61,7 +59,6 @@
     justify-content: center;
     height: 85px;
     align-items: center;
-  
 }
 #modal-container .modal-background .modal .labelUrl {
     color: #0e22db;
@@ -82,7 +79,6 @@
     row-gap: 10px;
     height: 100%;
     overflow: auto;
- 
 }
 #modal-container .modal-background .modal .inputCheck {
     margin-left: 12px;

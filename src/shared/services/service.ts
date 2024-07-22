@@ -47,8 +47,7 @@ class Services {
                 error.response?.data?.message || "fetch links failed",
             )
         }
-    };
-    
+    }
 
     cretaeBots = async (body: any) => {
         try {
@@ -74,7 +73,7 @@ class Services {
             )
         }
     }
-    updateGeneralConfig = async ( botId: string,body: any) => {
+    updateGeneralConfig = async (botId: string, body: any) => {
         try {
             const response = await mainApi.post(
                 `${API.UPDATE_GENERAL}/${botId}`,
@@ -87,7 +86,7 @@ class Services {
             )
         }
     }
-    updateModelConfig = async ( botId: string,body: any) => {
+    updateModelConfig = async (botId: string, body: any) => {
         try {
             const response = await mainApi.post(
                 `${API.UPDATE_MODEL}/${botId}`,
@@ -100,7 +99,7 @@ class Services {
             )
         }
     }
-    updateUiConfig = async ( botId: string,body: any) => {
+    updateUiConfig = async (botId: string, body: any) => {
         try {
             const response = await mainApi.post(
                 `${API.UPDATE_UI}/${botId}`,
@@ -113,7 +112,7 @@ class Services {
             )
         }
     }
-    updateSecurityConfig = async ( botId: string,body: any) => {
+    updateSecurityConfig = async (botId: string, body: any) => {
         try {
             const response = await mainApi.post(
                 `${API.UPDATE_SECURITY}/${botId}`,

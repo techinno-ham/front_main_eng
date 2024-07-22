@@ -53,21 +53,15 @@ const Pricing = () => {
                             buttonText="انتخاب طرح پایه"
                             active={false}
                         >
-                            <List>
-                                ۱ کاربر</List>
-                            <List>
-                                تمامی اجزای رابط کاربری</List>
-                            <List>
-                                دسترسی مادام‌العمر</List>
-                            <List>
-                                به‌روزرسانی‌های رایگان</List>
-                            <List>
-                                استفاده در ۱ (یک) پروژه</List>
-                            <List>
-                                پشتیبانی ۳ ماهه</List>
+                            <List>۱ کاربر</List>
+                            <List>تمامی اجزای رابط کاربری</List>
+                            <List>دسترسی مادام‌العمر</List>
+                            <List>به‌روزرسانی‌های رایگان</List>
+                            <List>استفاده در ۱ (یک) پروژه</List>
+                            <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                        order={1}
+                            order={1}
                             type="استاندارد"
                             price="۵۹ دلار"
                             subscription="سال"
@@ -86,7 +80,7 @@ const Pricing = () => {
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                        order={2}
+                            order={2}
                             type="حرفه‌ای"
                             price="۵۹ دلار"
                             subscription="سال"
@@ -105,7 +99,7 @@ const Pricing = () => {
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                        order={3}
+                            order={3}
                             type="سازمانی"
                             price="۵۹ دلار"
                             subscription="سال"
@@ -836,9 +830,8 @@ const Pricing = () => {
                                     </div>
                                     <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium ">
-                                            پایه
+                                            <span className="text-2xl font-medium ">
+                                                پایه
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -852,9 +845,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium ">
-                                            استاندارد
+                                            <span className="text-2xl font-medium ">
+                                                استاندارد
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -868,9 +860,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-zinc-50 px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium pricing-header">
-                                            حرفه‌ای
+                                            <span className="pricing-header text-2xl font-medium">
+                                                حرفه‌ای
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -884,9 +875,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium pricing-header">
-                                            سازمانی
+                                            <span className="pricing-header text-2xl font-medium">
+                                                سازمانی
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -912,8 +902,7 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        تنظیمات
-
+                                            تنظیمات
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -935,8 +924,7 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        آموزش
-
+                                            آموزش
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -946,29 +934,27 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        فعالیت
-
+                                            فعالیت
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    تاریخچه چت
+                                        تاریخچه چت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    فرم اطلاعات (به زودی)
+                                        فرم اطلاعات (به زودی)
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    آنالیز
+                                        آنالیز
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        یکپارچه‌سازی‌ها و API
-
+                                            یکپارچه‌سازی‌ها و API
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    دسترسی به API (به زودی)
+                                        دسترسی به API (به زودی)
                                     </span>
                                     {/* <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Zapier
@@ -986,8 +972,7 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        مدل هوش مصنوعی
-
+                                            مدل هوش مصنوعی
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -1006,15 +991,14 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        برندسازی
-
+                                            برندسازی
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    حذف لوگوی همیارچت
+                                        حذف لوگوی همیارچت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    دامنه یا لوگوی سفارشی شما
+                                        دامنه یا لوگوی سفارشی شما
                                     </span>
                                 </div>
                             </div>

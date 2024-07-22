@@ -64,7 +64,7 @@ const Header = () => {
                             <span
                                 className={`mr-2 text-2xl font-bold ${scroll && "text-[#fff]"}`}
                             >
-                              همیار چت
+                                همیار چت
                             </span>
                         </div>
                     </Link>
@@ -151,7 +151,9 @@ const Header = () => {
                                 return (
                                     <li key={index}>
                                         <Link href={link.link}>
-                                            <div className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"}  md:bg-transparent md:p-0`}>
+                                            <div
+                                                className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"}  md:bg-transparent md:p-0`}
+                                            >
                                                 {link.title}
                                             </div>
                                         </Link>

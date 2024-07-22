@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
 import { ExportCurve } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { format } from "date-fns-jalali";
+import { format } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
 import LoaderLottie from "@/src/shared/components/common/loader"
 
@@ -16,11 +16,13 @@ const MyMessage = () => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
     }
-    const formatRelativeTimeChat = (dateString:any) => {
-        const date = new Date(dateString);
-        const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", { locale: faIR });
-        return formattedDate;
-    };
+    const formatRelativeTimeChat = (dateString: any) => {
+        const date = new Date(dateString)
+        const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", {
+            locale: faIR,
+        })
+        return formattedDate
+    }
 
     useEffect(() => {
         const fetchHistoryList = async () => {
@@ -75,8 +77,7 @@ const MyMessage = () => {
                 <div className="mx-auto flex h-[90vh] w-[95%] items-center justify-center md:mt-[90px] ">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <LoaderLottie/>
-                      
+                        <LoaderLottie />
                     </div>
                 </div>
             </>
@@ -84,7 +85,7 @@ const MyMessage = () => {
 
     return (
         <>
-            <div className="mx-auto md:mt-[100px] mt-[120px] w-[95%] mb-28 md:mb-4">
+            <div className="mx-auto mb-28 mt-[120px] w-[95%] md:mb-4 md:mt-[100px]">
                 <div className=" relative w-[100%] rounded-2xl bg-white  shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] ">
                     <div className="flex flex-col space-y-1.5 p-6">
                         <h3 className="text-2xl font-semibold leading-none tracking-tight">
@@ -200,64 +201,65 @@ const MyMessage = () => {
                                                     <>
                                                         <div className="mb-3 ml-8 flex flex-col">
                                                             <div className="flex items-center justify-start">
-                                                            <div
-                                                                className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
-                                                                style={{
-                                                                    border: `1.5px solid #3b82f6`,
-                                                                }}
-                                                            >
-                                                                <img
-                                                                    src="/images/profile.png"
-                                                                    alt=""
-                                                                    className="h-8 w-8 rounded-full"
-                                                                />
-                                                            </div>
-                                                            <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
-                                                                <div className="flex flex-col items-start gap-4 break-words">
-                                                                    <div className=" w-full break-words text-right text-inherit ">
-                                                                        <p>
-                                                                            {
-                                                                                record?.userMessage
-                                                                            }
-                                                                        </p>{" "}
+                                                                <div
+                                                                    className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
+                                                                    style={{
+                                                                        border: `1.5px solid #3b82f6`,
+                                                                    }}
+                                                                >
+                                                                    <img
+                                                                        src="/images/profile.png"
+                                                                        alt=""
+                                                                        className="h-8 w-8 rounded-full"
+                                                                    />
+                                                                </div>
+                                                                <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
+                                                                    <div className="flex flex-col items-start gap-4 break-words">
+                                                                        <div className=" w-full break-words text-right text-inherit ">
+                                                                            <p>
+                                                                                {
+                                                                                    record?.userMessage
+                                                                                }
+                                                                            </p>{" "}
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                           
-                                                            </div>
-                                                            <span className="truncate text-[12px] text-zinc-500 mt-2">
-                                                                {formatRelativeTimeChat(record?.userMessageTime)}
+                                                            <span className="mt-2 truncate text-[12px] text-zinc-500">
+                                                                {formatRelativeTimeChat(
+                                                                    record?.userMessageTime,
+                                                                )}
                                                             </span>
-                                                         
                                                         </div>
                                                         <div className="mb-3 mr-8 flex flex-col">
                                                             <div className="flex items-center justify-end">
-                                                            <div className=" max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
-                                                                <div className="flex flex-col items-start gap-4 break-words">
-                                                                    <div className=" w-full break-words text-right text-inherit ">
-                                                                        <p>
-                                                                            {
-                                                                                record?.llmResponse
-                                                                            }
-                                                                        </p>
+                                                                <div className=" max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                    <div className="flex flex-col items-start gap-4 break-words">
+                                                                        <div className=" w-full break-words text-right text-inherit ">
+                                                                            <p>
+                                                                                {
+                                                                                    record?.llmResponse
+                                                                                }
+                                                                            </p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                                <div
+                                                                    className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
+                                                                    style={{
+                                                                        border: `1.5px solid #3b82f6`,
+                                                                    }}
+                                                                >
+                                                                    <img
+                                                                        src="/double-wink.svg"
+                                                                        alt=""
+                                                                    />
+                                                                </div>
                                                             </div>
-                                                            <div
-                                                                className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
-                                                                style={{
-                                                                    border: `1.5px solid #3b82f6`,
-                                                                }}
-                                                            >
-                                                                <img
-                                                                    src="/double-wink.svg"
-                                                                    alt=""
-                                                                />
-                                                            </div>
-
-                                                            </div>
-                                                            <span className="truncate text-[12px] text-zinc-500 mt-2 mr-auto">
-                                                                {formatRelativeTimeChat(record?.userMessageTime)}
+                                                            <span className="mr-auto mt-2 truncate text-[12px] text-zinc-500">
+                                                                {formatRelativeTimeChat(
+                                                                    record?.userMessageTime,
+                                                                )}
                                                             </span>
                                                         </div>
                                                     </>

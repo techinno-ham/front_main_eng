@@ -31,10 +31,10 @@ const IntroduceSections = () => {
 
     const handleInputChange = (event: any) => {
         setInputValue(event.target.value)
-    };
+    }
     const handleMeetRequest = () => {
-        window.open("https://calendly.com/mahdiyarjfr/demo-request", "_blank");
-    };
+        window.open("https://calendly.com/mahdiyarjfr/demo-request", "_blank")
+    }
 
     const handleSubmit = async () => {
         if (!validateInput()) {
@@ -80,64 +80,62 @@ const IntroduceSections = () => {
                         />
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center text-center md:mt-9 mt-7">
+                <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
                     <h1>
                         <p className="text-4xl md:text-7xl">
-                        <span className="text-blue-600">همیارچت</span>
-                        <span> ، پلتفرم هوش مصنوعی </span>
+                            <span className="text-blue-600">همیارچت</span>
+                            <span> ، پلتفرم هوش مصنوعی </span>
                         </p>
-                        <p className="text-xl md:text-3xl md:mt-5 mt-3">
+                        <p className="mt-3 text-xl md:mt-5 md:text-3xl">
                             <span>در خدمت </span>
                             <span className="text-blue-600">رضایت </span>
                             <span>مشتریان و </span>
                             <span className="text-blue-600">پیشرفت </span>
                             <span>کسب و کار ها</span>
                             <span>
-                            <Image
-                                src="/icons/jet.svg"
-                                height="40"
-                                width="40"
-                                alt="Logo"
-                            />
+                                <Image
+                                    src="/icons/jet.svg"
+                                    height="40"
+                                    width="40"
+                                    alt="Logo"
+                                />
                             </span>
                         </p>
                     </h1>
-                  
-                    
                 </div>
                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
                     <p>
                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                     </p>
                 </div>
-                <div className="flex justify-center items-center flex-col mt-[32px] gap-4">
+                <div className="mt-[32px] flex flex-col items-center justify-center gap-4">
                     <input
-                    type="text"
-                    className="input-url"
-                    onChange={handleInputChange}
-                    placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
+                        type="text"
+                        className="input-url"
+                        onChange={handleInputChange}
+                        placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
                     />
-                    
-                    <div className="flex md:flex-row flex-col-reverse md:gap-3 gap-2">
-                       <button className="btn-meet" onClick={handleMeetRequest}>
-                       <Calendar size="24" color="#fff" />
-                       <span>
-                        درخواست جلسه 
-                       </span>
-                       </button>
-                      <button className="btn-demo" onClick={handleSubmit}>
-                            ساختن بات دمو
-                       </button>
 
+                    <div className="flex flex-col-reverse gap-2 md:flex-row md:gap-3">
+                        <button
+                            className="btn-meet"
+                            onClick={handleMeetRequest}
+                        >
+                            <Calendar size="24" color="#fff" />
+                            <span>درخواست جلسه</span>
+                        </button>
+                        <button className="btn-demo" onClick={handleSubmit}>
+                            ساختن بات دمو
+                        </button>
                     </div>
                 </div>
                 <div className="mt-[22px] md:mt-[35px]">
-                        <Image
-                            src="/images/phone.svg"
-                            height="400"
-                            width="600"
-                            alt="Logo"
-                        />
+                    <Image
+                        src="/images/phone.svg"
+                        height="400"
+                        width="600"
+                        alt="Logo"
+                    />
                 </div>
             </div>
 

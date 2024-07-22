@@ -26,22 +26,22 @@ const SelectModalCustom = () => {
     const handleClsoeModal = () => {
         SelectModal.onClose()
         setTimeout(() => {
-            SelectModal.onInit();
-        }, 2000);
+            SelectModal.onInit()
+        }, 2000)
         SelectModal.resetUrls()
         setSelectedUrls([])
     }
     const handleSubmit = () => {
-        if (selectedUrls.length <3) {
+        if (selectedUrls.length < 3) {
             toast.error("لطفا حداقل سه لینک را انتخاب کنید.")
             return
         }
 
         SelectModal.onClose()
         setTimeout(() => {
-            SelectModal.onInit();
-            SelectModalChat.onOpen();
-        }, 2000);
+            SelectModal.onInit()
+            SelectModalChat.onOpen()
+        }, 2000)
         SelectModal.resetUrls()
         setSelectedUrls([])
     }
@@ -64,27 +64,30 @@ const SelectModalCustom = () => {
             <div className="modal-background">
                 <div className="modal">
                     <div className="header">
-                       <div className="buttonHeader">
-                       <button  onClick={handleClsoeModal}>
-                        <CloseSquare size={22} />
-                      </button>
-                      </div>
-                       <div className="titleHeader">
-                       <span>انتخاب صفحات</span>
-                       </div>
-                       <div style={{marginTop:"auto"}}>
-                          <hr className="custom-hr" />
-                       </div>
+                        <div className="buttonHeader">
+                            <button onClick={handleClsoeModal}>
+                                <CloseSquare size={22} />
+                            </button>
+                        </div>
+                        <div className="titleHeader">
+                            <span>انتخاب صفحات</span>
+                        </div>
+                        <div style={{ marginTop: "auto" }}>
+                            <hr className="custom-hr" />
+                        </div>
                     </div>
-                   
-                    <span style={{
-                        marginTop:"10px",
-                        marginBottom:"10px",
-                        fontSize:"16px",
-                        color:"gray"
 
-                    }}>صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟</span>
-                        <div className="body">
+                    <span
+                        style={{
+                            marginTop: "10px",
+                            marginBottom: "10px",
+                            fontSize: "16px",
+                            color: "gray",
+                        }}
+                    >
+                        صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟
+                    </span>
+                    <div className="body">
                         {SelectModal.urls.map((url, index) => (
                             <div key={index}>
                                 <input
@@ -102,19 +105,12 @@ const SelectModalCustom = () => {
                                 </label>
                             </div>
                         ))}
-                     
-                       
-                   
-
                     </div>
                     <div className="footer">
-                    <button className="sumbitBtn" onClick={handleSubmit}>
-                        بررسی اطلاعات
-                    </button>
-
+                        <button className="sumbitBtn" onClick={handleSubmit}>
+                            بررسی اطلاعات
+                        </button>
                     </div>
-                
-                   
                 </div>
             </div>
         </div>

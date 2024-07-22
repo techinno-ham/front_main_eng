@@ -22,7 +22,7 @@ const FeaturesCards = () => {
     return (
         <section className="section-large">
             <div className="bg-global"></div>
-            <div className="container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden">
+            <div className="container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
                 <div className="wrapper-section position-relative">
                     <div
                         data-w-id="6549d020-2168-6fe0-4ebd-d77ea25fb3bd"
@@ -39,11 +39,9 @@ const FeaturesCards = () => {
                             className="title-section-footer"
                         >
                             <p className="text-3xl md:text-6xl">
-                                <span>
-                                مکالمات در{" "}
-                                </span>
+                                <span>مکالمات در </span>
                                 <span className="gradient-h2 is-v2">
-                                مقیاس جهانی&nbsp;
+                                    مقیاس جهانی&nbsp;
                                 </span>
                             </p>
                         </motion.div>
@@ -57,7 +55,7 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="description-section-main margin-top-24px max-w-85"
                         >
-                            <p className="text-[12px] mt-1 md:text-[16px] md:mt-3">
+                            <p className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                                 یک بار ساخته شود. در هر کانال و در هر زبان مقیاس
                                 داده شود.
                             </p>
@@ -100,13 +98,13 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="pt-1 text-lg md:text-xl font-medium">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     داده ها را جمع‌آوری کرده و
                                                     به طور پیوسته بهبود بخشید.
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="text-sm font-normal text-right text-zinc-400 mt-2">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     با استفاده از بینش‌ها از
                                                     تجزیه و تحلیل، سوءتفاهم و
                                                     تجزیه و تحلیل احساسات ما، به
@@ -117,18 +115,15 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                       <Link href={"/auth/register"}>
-                                       <div className="flex items-center gap-1 text-[#6172fc]">
-                                        <span>
-                                           ساخت چت بات رایگان
-                                        </span>
-                                        <Link2
-                                           size="30"
-                                           color="#6172fc"
-                                            />
-
-                                       </div>
-                                       </Link>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="box-image-global">
@@ -174,14 +169,14 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="pt-1 text-lg md:text-xl font-medium">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     <span>
                                                         در هر زبانی چت کنید.
                                                     </span>
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="text-sm font-normal text-right text-zinc-400 mt-2">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     موتور ما به طور خودکار به
                                                     بیش از 100 زبان ترجمه
                                                     می‌کند، بنابراین شما
@@ -194,20 +189,16 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                       <Link href={"/auth/register"}>
-                                       <div className="flex items-center gap-1 text-[#6172fc]">
-                                        <span>
-                                           ساخت چت بات رایگان
-                                        </span>
-                                        <Link2
-                                           size="30"
-                                           color="#6172fc"
-                                            />
-
-                                       </div>
-                                       </Link>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
+                                            </div>
+                                        </Link>
                                     </div>
-                                   
                                 </div>
                                 <div className="box-image-global flex-center">
                                     <Image
@@ -252,7 +243,7 @@ const FeaturesCards = () => {
                                         </div>
                                         <div className="content-card-global">
                                             <div className="title-section-footer">
-                                                <p className="pt-1 text-lg md:text-xl font-medium">
+                                                <p className="pt-1 text-lg font-medium md:text-xl">
                                                     <span>
                                                         راه‌اندازی با یک کلیک بر
                                                         روی هر کانال
@@ -260,7 +251,7 @@ const FeaturesCards = () => {
                                                 </p>
                                             </div>
                                             <div className="description-section-main">
-                                                <p className="text-sm font-normal text-right text-zinc-400 mt-2">
+                                                <p className="mt-2 text-right text-sm font-normal text-zinc-400">
                                                     در یک کانال متوقف نشوید. با
                                                     یک کلیک به تمام کانال‌های ما
                                                     راه‌اندازی کنید تا با
@@ -271,18 +262,15 @@ const FeaturesCards = () => {
                                         </div>
                                     </div>
                                     <div className="button-section">
-                                       <Link href={"/auth/register"}>
-                                       <div className="flex items-center gap-1 text-[#6172fc]">
-                                        <span>
-                                           ساخت چت بات رایگان
-                                        </span>
-                                        <Link2
-                                           size="30"
-                                           color="#6172fc"
-                                            />
-
-                                       </div>
-                                       </Link>
+                                        <Link href={"/auth/register"}>
+                                            <div className="flex items-center gap-1 text-[#6172fc]">
+                                                <span>ساخت چت بات رایگان</span>
+                                                <Link2
+                                                    size="30"
+                                                    color="#6172fc"
+                                                />
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="box-image-global">

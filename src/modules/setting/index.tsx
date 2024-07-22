@@ -14,10 +14,10 @@ import Apperence from "../setting/components/apperence"
 import Security from "../setting/components/security"
 
 const Setting = () => {
-    const viewController = useStoreViewControllerSetting();
-    const pathname = usePathname();
-    const {setData}=useStoreConfig();
-    const botId = pathname.split("/")[2];
+    const viewController = useStoreViewControllerSetting()
+    const pathname = usePathname()
+    const { setData } = useStoreConfig()
+    const botId = pathname.split("/")[2]
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -27,22 +27,21 @@ const Setting = () => {
         Apperence: "ظاهری",
         Security: "امنیت",
     }
-    useEffect(()=>{
+    useEffect(() => {
         const fetchConfigs = async () => {
             setLoading(true)
             try {
-                const response = await service.getConfigs(botId);
-                setData(response.data);
-                console.log(response);
+                const response = await service.getConfigs(botId)
+                setData(response.data)
+                console.log(response)
             } catch (error: any) {
                 setError(error.message)
             } finally {
                 setLoading(false)
             }
-        };
-        fetchConfigs();
-
-    },[botId])
+        }
+        fetchConfigs()
+    }, [botId])
     const renderTabContent = () => {
         switch (viewController.activeTab) {
             case "General":
@@ -58,23 +57,20 @@ const Setting = () => {
         }
     }
 
-  
-
     if (loading)
         return (
             <>
                 <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
                         <span>در حال بارگزاری اطلاعات ...</span>
-                        <LoaderLottie/>
-                        
+                        <LoaderLottie />
                     </div>
                 </div>
             </>
         )
     return (
         <>
-            <div className="mx-auto  w-[95%] md:mt-[100px] mt-[120px] mb-28 md:mb-4">
+            <div className="mx-auto  mb-28 mt-[120px] w-[95%] md:mb-4 md:mt-[100px]">
                 <Layout>
                     <div className="mt-[15px]">
                         <span className="text-xl text-gray-400 ">

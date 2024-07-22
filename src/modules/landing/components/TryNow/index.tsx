@@ -20,7 +20,7 @@ const TryNow = () => {
     return (
         <section
             ref={mainRef}
-            className="section-normal container mx-auto px-4 2xl:px-20 relative  h-auto  overflow-hidden"
+            className="section-normal container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20"
         >
             <div className="bg-cta">
                 <img
@@ -46,27 +46,26 @@ const TryNow = () => {
                         <div className="head-section">
                             <div className="title-section-footer">
                                 <h3 className="text-3xl md:text-5xl">
-                                همین امروز دوره رایگان خود را شروع کنید!
+                                    همین امروز دوره رایگان خود را شروع کنید!
                                 </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">
-                                <p className="text-[12px] mt-3 md:text-[16px] is-rtl-center-mb text-zinc-400">
-                                به سادگی مکالمات خود را به فرصت‌های 
-                                <span className="notice-text"> طلایی </span>
-                                 فروش و مشتریان 
-                                 <span className="notice-text"> وفادار </span>
-                                  تبدیل کنید.  
-                                                              </p>
+                                <p className="is-rtl-center-mb mt-3 text-[12px] text-zinc-400 md:text-[16px]">
+                                    به سادگی مکالمات خود را به فرصت‌های
+                                    <span className="notice-text"> طلایی </span>
+                                    فروش و مشتریان
+                                    <span className="notice-text">
+                                        {" "}
+                                        وفادار{" "}
+                                    </span>
+                                    تبدیل کنید.
+                                </p>
                             </div>
                         </div>
-                        <div className="w-full flex">
-                            <button className=" hover:white  bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 rounded-[10px] font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2  focus-visible:outline-white">
+                        <div className="flex w-full">
+                            <button className=" hover:white  rounded-[10px] bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2  focus-visible:outline-white">
                                 همین الان رایگان شروع کنید !
                             </button>
-                            
-                           
-                           
-                            
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                     <SideBarMobile />
                     {children}
                 </div>
-                    <Appbar/>
+                <Appbar />
             </div>
         </>
     )

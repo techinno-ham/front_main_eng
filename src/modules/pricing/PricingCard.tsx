@@ -1,7 +1,7 @@
 //https://uiverse.io/G4b413l/good-crab-75
 //https://tailwindcomponents.com/component/tailwind-pricing-tables
 
-import React from "react";
+import React from "react"
 
 const PricingCard = ({
     order,
@@ -13,10 +13,10 @@ const PricingCard = ({
     buttonText,
     active,
 }: any) => {
-    const dynamicShadowGenerator = (order:number) =>{
+    const dynamicShadowGenerator = (order: number) => {
         let fullString = `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`
-        let splittedString = fullString.split(",");
-        let splicedArray = splittedString.slice(0,order)
+        let splittedString = fullString.split(",")
+        let splicedArray = splittedString.slice(0, order)
         return splicedArray
     }
     return (
@@ -35,52 +35,55 @@ const PricingCard = ({
                     </span>
                     <h2 className="text-dark mb-5 text-[42px] font-bold">
                         {price}
-                        <span 
-                        style={{
-                            color: "#637381"
-                        }}
-                        className="dark:text-dark-6 text-base font-medium">
+                        <span
+                            style={{
+                                color: "#637381",
+                            }}
+                            className="dark:text-dark-6 text-base font-medium"
+                        >
                             / {subscription}
                         </span>
                     </h2>
-                    <p 
-                    style={{
-                        color: "#637381"
-                    }}
-                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
+                    <p
+                        style={{
+                            color: "#637381",
+                        }}
+                        className="border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8 text-sm"
+                    >
                         {description}
                     </p>
                     <div className="flex flex-row gap-1">
-                                        <span className="text-sm font-semibold">
-                                        همه چیز در رایگان، به علاوه...
-                                        </span>
-                                    </div>
-                    <div 
-                    style={{
-                        color: "#637381"
-                    }}
-                    className="mb-9 flex flex-col gap-[14px]">
+                        <span className="text-sm font-semibold">
+                            همه چیز در رایگان، به علاوه...
+                        </span>
+                    </div>
+                    <div
+                        style={{
+                            color: "#637381",
+                        }}
+                        className="mb-9 flex flex-col gap-[14px]"
+                    >
                         {React.Children.map(children, (child) => (
-                <div className="flex flex-row items-start gap-3">
-                    <p className="size-5 text-zinc-700">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#30a46c"
-                            strokeWidth="3"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="lucide lucide-check size-5"
-                        >
-                            <path d="M20 6 9 17l-5-5"></path>
-                        </svg>
-                    </p>
-                    {child}
-                </div>
-            ))}
+                            <div className="flex flex-row items-start gap-3">
+                                <p className="size-5 text-zinc-700">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="#30a46c"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="lucide lucide-check size-5"
+                                    >
+                                        <path d="M20 6 9 17l-5-5"></path>
+                                    </svg>
+                                </p>
+                                {child}
+                            </div>
+                        ))}
                     </div>
                     <a
                         href="/#"
