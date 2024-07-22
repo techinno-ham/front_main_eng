@@ -45,32 +45,29 @@ const Pricing = () => {
                             order={0}
                             type="پایه"
                             price="۵۹ دلار"
-                            subscription="سال"
+                            subscription="ماه"
                             description="مناسب برای:
 
 کسب‌وکارهای کوچک یا افرادی که به قابلیت‌های پایه‌ای دستیار هوش مصنوعی نیاز دارند.
 کاربرانی که تازه شروع به استفاده از دستیار هوش مصنوعی کرده‌اند.."
                             buttonText="انتخاب طرح پایه"
                             active={false}
+                            //use full for N count of users
                         >
-                            <List>
-                                ۱ کاربر</List>
-                            <List>
-                                تمامی اجزای رابط کاربری</List>
-                            <List>
-                                دسترسی مادام‌العمر</List>
-                            <List>
-                                به‌روزرسانی‌های رایگان</List>
-                            <List>
-                                استفاده در ۱ (یک) پروژه</List>
-                            <List>
-                                پشتیبانی ۳ ماهه</List>
+                            <List>100 پیام و پاسخ</List>
+                            <List>۱ دستیار هوش مصنوعی</List>
+                            <List>۱۰ لینک برای آموزش</List>
+                            <List>ذخیره کلمات و آپلود فایل نامحدود😍</List>
+                            <List>شخصی‌سازی رابط کاربری</List>
+                            <List>استفاده در وبسایت</List>
+                            <List>مشاهده تاریخچه چت</List>
+                            <List>پشتیبانی ۲۴/۷</List>
                         </PricingCard>
                         <PricingCard
-                        order={1}
+                            order={1}
                             type="استاندارد"
                             price="۵۹ دلار"
-                            subscription="سال"
+                            subscription="ماه"
                             description="مناسب برای:
 
 کسب‌وکارهای متوسط که به دستیار هوش مصنوعی قوی‌تری نیاز دارند.
@@ -78,18 +75,17 @@ const Pricing = () => {
                             buttonText="انتخاب طرح استاندارد"
                             active={false}
                         >
-                            <List>۱ کاربر</List>
-                            <List>تمامی اجزای رابط کاربری</List>
-                            <List>دسترسی مادام‌العمر</List>
-                            <List>به‌روزرسانی‌های رایگان</List>
-                            <List>استفاده در ۱ (یک) پروژه</List>
-                            <List>پشتیبانی ۳ ماهه</List>
+                            
+                            <List>۴۰۰,۰۰۰ کاراکتر</List>
+                            <List>۱ دستیار هوش مصنوعی</List>
+                            <List>۱۰ لینک برای آموزش</List>
+                        
                         </PricingCard>
                         <PricingCard
-                        order={2}
+                            order={2}
                             type="حرفه‌ای"
                             price="۵۹ دلار"
-                            subscription="سال"
+                            subscription="ماه"
                             description="مناسب برای:
 
 کسب‌وکارهای بزرگ یا سازمان‌هایی که نیازهای گسترده‌تری در زمینه دستیار هوش مصنوعی دارند.
@@ -105,10 +101,10 @@ const Pricing = () => {
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
                         <PricingCard
-                        order={3}
+                            order={3}
                             type="سازمانی"
                             price="۵۹ دلار"
-                            subscription="سال"
+                            subscription="ماه"
                             description="مناسب برای:
 
 سازمان‌های بزرگ با نیازهای پیچیده در زمینه دستیار هوش مصنوعی.
@@ -123,690 +119,6 @@ const Pricing = () => {
                             <List>استفاده در ۱ (یک) پروژه</List>
                             <List>پشتیبانی ۳ ماهه</List>
                         </PricingCard>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 2xl:mt-5">
-                    <div className="relative flex flex-col justify-between rounded-xl border border-zinc-200 bg-white p-6 text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
-                        <div className="flex flex-col gap-3">
-                            <div className="flex flex-col space-y-1.5 p-0">
-                                <h3 className="text-2xl font-medium leading-none tracking-tight">
-                                    Free
-                                </h3>
-                            </div>
-                            <div className="flex flex-col gap-3 p-0">
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-5xl font-semibold">
-                                        <p className="inline-block text-3xl font-normal">
-                                            $
-                                        </p>
-                                        0
-                                    </span>
-                                    <div className="flex h-10 flex-row items-end justify-between">
-                                        <span className="text-zinc-500">
-                                            Forever
-                                        </span>
-                                    </div>
-                                </div>
-                                <div
-                                    data-orientation="horizontal"
-                                    role="none"
-                                    className="h-[1px] w-full shrink-0 bg-zinc-300 dark:bg-zinc-500"
-                                ></div>
-                                <ul className="mt-4 flex flex-col gap-4 text-sm font-medium">
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>20 message credits/month</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>1 chatbot</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>400,000 characters/chatbot</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>1 team member</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            Limit to 10 links to train on
-                                        </span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>Embed on unlimited websites</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>Capture leads</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>View chat history</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            GPT-4o (most advanced and efficient
-                                            model)
-                                        </span>
-                                    </li>
-                                    <p className="text-xs text-zinc-500">
-                                        {" "}
-                                        Chatbots get deleted after 14 days of
-                                        inactivity on the free plan.
-                                    </p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <a href="/dashboard?next=/settings/plans">
-                                <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-3 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                    Get started
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col justify-between rounded-xl border border-zinc-200 bg-white p-6 text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
-                        <div className="flex flex-col gap-3">
-                            <div className="flex flex-col space-y-1.5 p-0">
-                                <h3 className="text-2xl font-medium leading-none tracking-tight">
-                                    Hobby
-                                </h3>
-                            </div>
-                            <div className="flex flex-col gap-3 p-0">
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-5xl font-semibold">
-                                        <p className="inline-block text-3xl font-normal">
-                                            $
-                                        </p>
-                                        19
-                                    </span>
-                                    <div className="flex h-10 flex-row items-end justify-between">
-                                        <span className="text-zinc-500">
-                                            Per Month
-                                        </span>
-                                    </div>
-                                </div>
-                                <div
-                                    data-orientation="horizontal"
-                                    role="none"
-                                    className="h-[1px] w-full shrink-0 bg-zinc-300 dark:bg-zinc-500"
-                                ></div>
-                                <ul className="mt-4 flex flex-col gap-4 text-sm font-medium">
-                                    <div className="flex flex-row gap-1">
-                                        <span className="text-sm font-semibold">
-                                            Everything in Free, plus...
-                                        </span>
-                                    </div>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>2,000 message credits/month</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>2 chatbots</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            11,000,000 characters/chatbot
-                                        </span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>Unlimited links to train on</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>API access</span>
-                                    </li>
-                                    <div className="flex flex-row items-center gap-1">
-                                        <li className="flex flex-row items-start gap-3">
-                                            <p className="size-5 text-zinc-700">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    fill="none"
-                                                    stroke="#30a46c"
-                                                    stroke-width="3"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                    className="lucide lucide-check size-5"
-                                                >
-                                                    <path d="M20 6 9 17l-5-5"></path>
-                                                </svg>
-                                            </p>
-                                            <span>Integrations</span>
-                                        </li>
-                                        <button
-                                            data-state="closed"
-                                            className="hidden lg:block"
-                                        >
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-circle-alert h-5 w-5 text-zinc-700"
-                                            >
-                                                <circle
-                                                    cx="12"
-                                                    cy="12"
-                                                    r="10"
-                                                ></circle>
-                                                <line
-                                                    x1="12"
-                                                    x2="12"
-                                                    y1="8"
-                                                    y2="12"
-                                                ></line>
-                                                <line
-                                                    x1="12"
-                                                    x2="12.01"
-                                                    y1="16"
-                                                    y2="16"
-                                                ></line>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <a href="/dashboard?next=/settings/plans">
-                                <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-3 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                    Subscribe
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col justify-between rounded-xl border border-zinc-200 bg-white p-6 text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
-                        <div className="flex flex-col gap-3">
-                            <div className="flex flex-col space-y-1.5 p-0">
-                                <h3 className="text-2xl font-medium leading-none tracking-tight">
-                                    Standard
-                                </h3>
-                            </div>
-                            <div className="flex flex-col gap-3 p-0">
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-5xl font-semibold">
-                                        <p className="inline-block text-3xl font-normal">
-                                            $
-                                        </p>
-                                        99
-                                    </span>
-                                    <div className="flex h-10 flex-row items-end justify-between">
-                                        <span className="text-zinc-500">
-                                            Per Month
-                                        </span>
-                                    </div>
-                                </div>
-                                <div
-                                    data-orientation="horizontal"
-                                    role="none"
-                                    className="h-[1px] w-full shrink-0 bg-zinc-300 dark:bg-zinc-500"
-                                ></div>
-                                <ul className="mt-4 flex flex-col gap-4 text-sm font-medium">
-                                    <div className="flex flex-row gap-1">
-                                        <span className="text-sm font-semibold">
-                                            Everything in Hobby, plus...
-                                        </span>
-                                    </div>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            10,000 message credits/month
-                                        </span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>5 chatbots</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>3 team members</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            Option to choose GPT-4 and
-                                            GPT-4-Turbo
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <a href="/dashboard?next=/settings/plans">
-                                <button className="bg-black-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl px-4 py-3 text-sm font-medium text-zinc-50 transition-all duration-100 ease-in-out hover:opacity-85 active:opacity-80 active:saturate-150 disabled:cursor-not-allowed disabled:opacity-60">
-                                    Subscribe
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="relative flex flex-col justify-between rounded-xl border border-zinc-200 bg-white p-6 text-zinc-950 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
-                        <div className="flex flex-col gap-3">
-                            <div className="flex flex-col space-y-1.5 p-0">
-                                <h3 className="text-2xl font-medium leading-none tracking-tight">
-                                    Unlimited
-                                </h3>
-                            </div>
-                            <div className="flex flex-col gap-3 p-0">
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-5xl font-semibold">
-                                        <p className="inline-block text-3xl font-normal">
-                                            $
-                                        </p>
-                                        399
-                                    </span>
-                                    <div className="flex h-10 flex-row items-end justify-between">
-                                        <span className="text-zinc-500">
-                                            Per Month
-                                        </span>
-                                    </div>
-                                </div>
-                                <div
-                                    data-orientation="horizontal"
-                                    role="none"
-                                    className="h-[1px] w-full shrink-0 bg-zinc-300 dark:bg-zinc-500"
-                                ></div>
-                                <ul className="mt-4 flex flex-col gap-4 text-sm font-medium">
-                                    <div className="flex flex-row gap-1">
-                                        <span className="text-sm font-semibold">
-                                            Everything in Standard, plus...
-                                        </span>
-                                    </div>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>
-                                            40,000 message credits/month
-                                            included (Messages over the limit
-                                            will use your OpenAI API Key)
-                                        </span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>10 chatbots</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>5 team members</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>Remove Powered by Chatbase</span>
-                                    </li>
-                                    <li className="flex flex-row items-start gap-3">
-                                        <p className="size-5 text-zinc-700">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </p>
-                                        <span>Use your own custom domains</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="mt-6">
-                            <a href="/dashboard?next=/settings/plans">
-                                <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-3 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                    Subscribe
-                                </button>
-                            </a>
-                        </div>
                     </div>
                 </div>
 
@@ -836,9 +148,8 @@ const Pricing = () => {
                                     </div>
                                     <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium ">
-                                            پایه
+                                            <span className="text-2xl font-medium ">
+                                                پایه
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -852,9 +163,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium ">
-                                            استاندارد
+                                            <span className="text-2xl font-medium ">
+                                                استاندارد
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -868,9 +178,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl bg-zinc-50 px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium pricing-header">
-                                            حرفه‌ای
+                                            <span className="pricing-header text-2xl font-medium">
+                                                حرفه‌ای
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -884,9 +193,8 @@ const Pricing = () => {
                                             </a>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
-                                            <span 
-                                            className="text-2xl font-medium pricing-header">
-                                            سازمانی
+                                            <span className="pricing-header text-2xl font-medium">
+                                                سازمانی
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
@@ -908,12 +216,14 @@ const Pricing = () => {
                             ></span>
                         </header>
                         <div className="mt-5 grid grid-cols-9 gap-4 bg-white">
-                            <div className="col-span-2 flex flex-col items-start gap-6">
+                            <div
+                                id="col-main"
+                                className="col-span-2 flex flex-col items-start gap-6"
+                            >
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        تنظیمات
-
+                                            تنظیمات
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -935,8 +245,7 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        آموزش
-
+                                            آموزش
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -946,29 +255,27 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        فعالیت
-
+                                            فعالیت
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    تاریخچه چت
+                                        تاریخچه چت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    فرم اطلاعات (به زودی)
+                                        فرم اطلاعات (به زودی)
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    آنالیز
+                                        آنالیز
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        یکپارچه‌سازی‌ها و API
-
+                                            یکپارچه‌سازی‌ها و API
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    دسترسی به API (به زودی)
+                                        دسترسی به API (به زودی)
                                     </span>
                                     {/* <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Zapier
@@ -986,8 +293,7 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        مدل هوش مصنوعی
-
+                                            مدل هوش مصنوعی
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
@@ -1006,21 +312,39 @@ const Pricing = () => {
                                 <div className="relative flex w-full flex-col">
                                     <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
-                                        برندسازی
-
+                                            برندسازی
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    حذف لوگوی همیارچت
+                                        حذف لوگوی همیارچت
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    دامنه یا لوگوی سفارشی شما
+                                        دامنه یا لوگوی سفارشی شما
+                                    </span>
+                                </div>
+                                <div className="relative flex w-full flex-col">
+                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                        <span className="pricing-header">
+                                            پشتیبانی
+                                        </span>
+                                    </span>
+                                    <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
+                                    پشتیبانی ۲۴/۷      
+                                                                  </span>
+                                    <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
+                                        مشاوره اختصاصی
                                     </span>
                                 </div>
                             </div>
                             <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
-                                <div className="flex w-full flex-col gap-6">
-                                    <div className="mt-16 flex w-full flex-col">
+                                <div
+                                    id="col0"
+                                    className="flex w-full flex-col gap-6"
+                                >
+                                    <div
+                                        id="col0-row0"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             20
                                         </span>
@@ -1050,12 +374,18 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col0-row1"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             10 Links
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col0-row2"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1106,8 +436,28 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col0-row3"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-x size-5"
+                                            >
+                                                <path d="M18 6 6 18"></path>
+                                                <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </span>
+                                        {/* <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
@@ -1174,26 +524,12 @@ const Pricing = () => {
                                                 <path d="M18 6 6 18"></path>
                                                 <path d="m6 6 12 12"></path>
                                             </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
-                                        </span>
+                                        </span> */}
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col0-row4"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1261,7 +597,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col0-row5"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1277,6 +616,44 @@ const Pricing = () => {
                                             >
                                                 <path d="M18 6 6 18"></path>
                                                 <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-x size-5"
+                                            >
+                                                <path d="M18 6 6 18"></path>
+                                                <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div
+                                        id="col0-row6"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
+                                        <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
@@ -1298,8 +675,14 @@ const Pricing = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="flex w-full flex-col gap-6">
-                                    <div className="mt-16 flex w-full flex-col">
+                                <div
+                                    id="col1"
+                                    className="flex w-full flex-col gap-6"
+                                >
+                                    <div
+                                        id="col1-row0"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             2000
                                         </span>
@@ -1329,12 +712,18 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col1-row1"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             Unlimited links
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col1-row2"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1384,71 +773,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
+                                    <div
+                                        id="col1-row3"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1466,7 +794,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col1-row4"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1534,7 +865,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col1-row5"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1550,6 +884,44 @@ const Pricing = () => {
                                             >
                                                 <path d="M18 6 6 18"></path>
                                                 <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-x size-5"
+                                            >
+                                                <path d="M18 6 6 18"></path>
+                                                <path d="m6 6 12 12"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div
+                                        id="col1-row6"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
+                                        <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
@@ -1571,8 +943,14 @@ const Pricing = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <div className="flex w-full flex-col gap-6">
-                                    <div className="mt-16 flex w-full flex-col">
+                                <div
+                                    id="col2"
+                                    className="flex w-full flex-col gap-6"
+                                >
+                                    <div
+                                        id="col2-row0"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
                                             10,000
                                         </span>
@@ -1602,12 +980,18 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col2-row1"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
                                             Unlimited links
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col2-row2"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1657,71 +1041,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
+                                    <div
+                                        id="col2-row3"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1739,7 +1062,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col2-row4"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1805,45 +1131,89 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col2-row5"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
+                                        <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
+                                                className="lucide lucide-check size-5"
                                             >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
+                                                <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
+                                        <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
                                                 viewBox="0 0 24 24"
                                                 fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
                                                 stroke-linecap="round"
                                                 stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
+                                                className="lucide lucide-check size-5"
                                             >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div
+                                        id="col2-row6"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
+                                        <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
+                                        <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
                                             </svg>
                                         </span>
                                     </div>
                                 </div>
-                                <div className="flex w-full flex-col gap-6">
-                                    <div className="mt-16 flex w-full flex-col">
+                                <div
+                                    id="col3"
+                                    className="flex w-full flex-col gap-6"
+                                >
+                                    <div
+                                        id="col3-row0"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             40,000 + Unlimited with your OpenAI
                                             key
@@ -1874,12 +1244,18 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col3-row1"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             Unlimited links
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col3-row2"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -1929,71 +1305,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
-                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
-                                        </span>
+                                    <div
+                                        id="col3-row3"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -2011,7 +1326,10 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col3-row4"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -2077,7 +1395,47 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                     </div>
-                                    <div className="mt-16 flex w-full flex-col">
+                                    <div
+                                        id="col3-row5"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                        <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div
+                                        id="col3-row6"
+                                        className="mt-16 flex w-full flex-col"
+                                    >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"

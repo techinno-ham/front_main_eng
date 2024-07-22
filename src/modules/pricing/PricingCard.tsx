@@ -21,14 +21,14 @@ const PricingCard = ({
     }
     return (
         <>
-            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+            <div className="w-full px-4 pb-10 md:w-1/2 lg:w-1/4">
                 <div
                     style={{
                         backdropFilter: "blur(10px)",
                         boxShadow: `${dynamicShadowGenerator(order)}`,
                         borderColor: "#3056d3",
                     }}
-                    className="border-primary shadow-pricing relative z-10 mb-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-8 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[50px]"
+                    className=" h-full border-primary shadow-pricing relative z-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-4 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[32px]"
                 >
                     <span className="mb-3 block text-lg font-semibold text-blue-700">
                         {type}
@@ -48,13 +48,23 @@ const PricingCard = ({
                         color: "#637381"
                     }}
                     className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
+                        {"مناسب برای 100 کاربر"}
+                    </p>
+                    <p 
+                    style={{
+                        color: "#637381"
+                    }}
+                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
                         {description}
                     </p>
-                    <div className="flex flex-row gap-1">
-                                        <span className="text-sm font-semibold">
-                                        همه چیز در رایگان، به علاوه...
-                                        </span>
-                                    </div>
+                    
+                    {
+                        order !== 0 && <div className="flex flex-row gap-1">
+                        <span className="text-sm font-semibold">
+                        همه چیز در رایگان، به علاوه...
+                        </span>
+                    </div>
+                    }
                     <div 
                     style={{
                         color: "#637381"
