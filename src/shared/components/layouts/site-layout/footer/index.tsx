@@ -506,28 +506,233 @@ const Footer = () => {
                                 </div>
                             </div>
                         </div>
+                        <div
+                            className="my-2  border-b border-zinc-500/30  p-4 transition-all duration-500"
+                            id="basic-heading-one-with-arrow"
+                            style={{
+                                background:
+                                    activeAccordionId === 1
+                                        ? "#eef2ff"
+                                        : "revert-layer",
+                            }}
+                            onClick={() => {
+                                setActiveAccordionId((s) =>
+                                    s === 1 ? null : 1,
+                                )
+                            }}
+                        >
+                            <button
+                                className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
+                                aria-controls="basic-collapse-one-with-arrow"
+                            >
+                                <h5
+                                    style={{
+                                        color:
+                                            activeAccordionId === 1
+                                                ? "rgb(79 70 229)"
+                                                : "unset",
+                                    }}
+                                >
+راه کار ها
+                                </h5>
+                                <svg
+                                    style={{
+                                        rotate:
+                                            activeAccordionId === 1
+                                                ? "180deg"
+                                                : "0deg",
+                                    }}
+                                    className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <div
+                                id="basic-collapse-one-with-arrow"
+                                className="accordion-content w-full overflow-hidden pb-4 pt-4 transition-all duration-500"
+                                aria-labelledby="basic-heading-one-with-arrow"
+                                style={{
+                                    maxHeight:
+                                        activeAccordionId === 1
+                                            ? "250px"
+                                            : "0px",
+                                    display:
+                                        activeAccordionId === 1
+                                            ? "block"
+                                            : "none",
+                                }}
+                            >
+                                <div className="flex flex-col gap-2">
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            className="my-2  border-b border-zinc-500/30  p-4 transition-all duration-500"
+                            id="basic-heading-one-with-arrow"
+                            style={{
+                                background:
+                                    activeAccordionId === 2
+                                        ? "#eef2ff"
+                                        : "revert-layer",
+                            }}
+                            onClick={() => {
+                                setActiveAccordionId((s) =>
+                                    s === 2 ? null : 2,
+                                )
+                            }}
+                        >
+                            <button
+                                className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
+                                aria-controls="basic-collapse-one-with-arrow"
+                            >
+                                <h5
+                                    style={{
+                                        color:
+                                            activeAccordionId === 2
+                                                ? "rgb(79 70 229)"
+                                                : "unset",
+                                    }}
+                                >
+محصول                                </h5>
+                                <svg
+                                    style={{
+                                        rotate:
+                                            activeAccordionId === 2
+                                                ? "180deg"
+                                                : "0deg",
+                                    }}
+                                    className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
+                                    width="22"
+                                    height="22"
+                                    viewBox="0 0 22 22"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25"
+                                        stroke="currentColor"
+                                        stroke-width="1.6"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+                            </button>
+                            <div
+                                id="basic-collapse-one-with-arrow"
+                                className="accordion-content w-full overflow-hidden pb-4 pt-4 transition-all duration-500"
+                                aria-labelledby="basic-heading-one-with-arrow"
+                                style={{
+                                    maxHeight:
+                                        activeAccordionId === 2
+                                            ? "250px"
+                                            : "0px",
+                                    display:
+                                        activeAccordionId === 2
+                                            ? "block"
+                                            : "none",
+                                }}
+                            >
+                                <div className="flex flex-col gap-2">
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                        سوالات متداول
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
             <div>
                 <div className="relative p-8">
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "center",
-                            maxWidth: "72rem",
-                            width: "100%",
-                            height: "2rem",
-                            borderRadius: "12.1rem",
-                            background:
-                                "linear-gradient(91deg, ##b23aed8f 0%, #002ff9 100%)",
-                            filter: "blur(60px)",
-                            position: "absolute",
-                            bottom: "1rem",
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                        }}
-                    ></div>
+                <div style={{ 
+        display: 'flex',
+        justifyContent: 'center',
+        maxWidth: '72rem',
+        width: '100%',
+        height: '2rem',
+        borderRadius: '12.1rem',
+        background: 'linear-gradient(91deg, #b23aed8f 0%, #002ff9 100%)',
+        filter: 'blur(60px)',
+        position: 'absolute',
+        bottom: '1rem',
+        left: '50%',
+        transform: 'translateX(-50%)'
+    }}>
+    </div>
                     <section className="container mx-auto px-4 2xl:px-20 ">
                         <div className="flex justify-center">
                             <span className=" text-center text-sm text-zinc-400 md:text-start">
