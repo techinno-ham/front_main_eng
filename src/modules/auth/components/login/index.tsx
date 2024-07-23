@@ -55,14 +55,14 @@ const Login = () => {
 
             </div>
             <div className="px-4 h-full min-h-screen w-full flex justify-center items-center relative z-10">
-            <div className="grid justify-center max-w-md mx-auto md:mt-6 mt-3">
-               <div>
-              <img src="https://readymadeui.com/login-image.webp" className="w-full object-cover rounded-2xl" alt="login-image" />
-                 </div>
+            <div className="md:mt-6 mt-3 flex flex-col max-w-md">
+                <div>
+                   <img src="/images/login-image.webp" className="w-full object-cover rounded-2xl" alt="login-image" />
+                </div>
   
-          <form className="bg-white rounded-2xl p-6 -mt-24 relative z-10 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]">
-            <div className="mb-12">
-              <h3 className="text-3xl font-extrabold text-blue-600">Sign in</h3>
+                <form className="bg-white rounded-2xl p-6  relative z-10 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]">
+                 <div className="mb-12">
+                    <span className="text-3xl font-extrabold text-blue-600">ورود</span>
             </div>
   
             <div className="relative flex items-center">
@@ -149,7 +149,7 @@ const Login = () => {
                 </svg>
               </button>
             </div>
-          </form>
+                </form>
             </div>
 
             </div>
