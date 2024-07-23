@@ -30,32 +30,32 @@ const PricingCard = ({
                     }}
                     className=" h-full border-primary shadow-pricing relative z-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-4 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[32px]"
                 >
-                    <span className="mb-3 block text-lg font-semibold text-blue-700">
+                    <span className="pricing-header mb-3 block text-3xl font-bold">
                         {type}
                     </span>
-                    <h2 className="text-dark mb-5 text-[42px] font-bold">
+                    <h2 className="text-dark mb-5 text-2xl">
                         {price}
                         <span
                             style={{
                                 color: "#637381",
                             }}
-                            className="dark:text-dark-6 text-base font-medium"
+                            className="block dark:text-dark-6 text-base font-medium"
                         >
                             / {subscription}
                         </span>
                     </h2>
-                    <p 
+                    {/* <p 
                     style={{
                         color: "#637381"
                     }}
                     className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
                         {"مناسب برای 100 کاربر"}
-                    </p>
+                    </p> */}
                     <p 
                     style={{
                         color: "#637381"
                     }}
-                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
+                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8">
                         {description}
                     </p>
                     
@@ -70,7 +70,7 @@ const PricingCard = ({
                     style={{
                         color: "#637381"
                     }}
-                    className="mt-2 mb-9 flex flex-col gap-[14px]">
+                    className="mt-2 mb-9 flex flex-col gap-[14px] pb-8 border-b">
                         {React.Children.map(children, (child) => (
                             <div className="flex flex-row items-start gap-3">
                                 <p className="size-5 text-zinc-700">
