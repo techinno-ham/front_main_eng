@@ -12,9 +12,10 @@ const PricingCard = ({
     subscription,
     buttonText,
     active,
+    beforeListText
 }: any) => {
     const dynamicShadowGenerator = (order: number) => {
-        let fullString = `rgb(46 49 240 / 40%) 5px 5px, rgb(46 88 240 / 30%) 10px 10px, rgb(46 158 240 / 20%) 15px 15px, rgb(46 91 240 / 10%) 20px 20px`
+        let fullString = `rgb(46 49 240 / 40%) 0px 0px 20px, rgb(46 88 240 / 30%) 0px 5px, rgb(46 158 240 / 20%) 0px 10px, rgb(46 91 240 / 10%) 0px 15px`
         let splittedString = fullString.split(",")
         let splicedArray = splittedString.slice(0, order)
         return splicedArray
@@ -41,7 +42,7 @@ const PricingCard = ({
                             }}
                             className="block dark:text-dark-6 text-base font-medium"
                         >
-                            / {subscription}
+                            {subscription && "/"} {subscription}
                         </span>
                     </h2>
                     {/* <p 
@@ -60,9 +61,9 @@ const PricingCard = ({
                     </p>
                     
                     {
-                        order !== 0 && <div className="flex flex-row gap-1">
+                        beforeListText && <div className="flex flex-row gap-1">
                         <span className="text-sm font-semibold">
-                        همه چیز در رایگان، به علاوه...
+                        {beforeListText}
                         </span>
                     </div>
                     }
