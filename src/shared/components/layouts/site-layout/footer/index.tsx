@@ -725,7 +725,7 @@ const Footer = () => {
         width: '100%',
         height: '2rem',
         borderRadius: '12.1rem',
-        background: 'linear-gradient(91deg, #b23aed8f 0%, #002ff9 100%)',
+        background: 'linear-gradient(91deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)',
         filter: 'blur(60px)',
         position: 'absolute',
         bottom: '1rem',

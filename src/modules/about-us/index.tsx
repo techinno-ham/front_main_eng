@@ -15,24 +15,37 @@ import "swiper/css/effect-creative"
 const AboutUs = () => {
     return (
         <>
-            <section className="relative z-0 bg-gray-50 py-14 lg:py-24">
-                <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-                    <h1 className="font-manrope mx-auto mb-5 max-w-2xl text-center text-4xl  font-bold text-gray-900 md:text-5xl md:leading-normal">
-                        کنترل مالی خود را با ابزار هوشمند ما{" "}
-                        <span className="text-indigo-600">مدیریت کنید</span>
-                    </h1>
-                    <p className="mx-auto mb-9 max-w-sm text-center text-base font-normal leading-7 text-gray-500">
-                        هوشمندانه سرمایه گذاری کنید و راه بهتری برای مدیریت آسان
-                        تمام دارایی های خود را کشف کنید.
-                    </p>
-                </div>
-            </section>
+            <div className="w-full px-4">
+                        <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+                            <span className="text-primary mb-2 block text-lg font-semibold">
+                            درباره ما
+                            </span>
+                            <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+                            با تیم
+                                <span
+                                    style={{
+                                        textShadow:
+                                            "0 3px 8px rgba(77, 243, 255, 0.22)",
+                                        backgroundImage:
+                                            "linear-gradient(360deg, #5154ff, #559fff)",
+                                        backgroundClip: "text",
+                                        fontWeight: 700,
+                                        position: "relative",
+                                        color: "transparent",
+                                    }}
+                                >
+                                    &nbsp;همیارچت&nbsp;
+                                </span>
+                                آشنا شوید
+                            </h1>
+                        </div>
+                    </div>
             <section className="relative py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                         <div className="img-box">
                             <img
-                                src="https://pagedone.io/asset/uploads/1702034769.png"
+                                src="/aboutus/1.jpg"
                                 alt="About Us tailwind page"
                                 className="max-lg:mx-auto"
                             />
@@ -62,7 +75,7 @@ const AboutUs = () => {
                         <div className="flex items-center lg:pr-24">
                             <div className="data w-full">
                                 <img
-                                    src="https://pagedone.io/asset/uploads/1702034785.png"
+                                    src="/aboutus/2.jpg"
                                     alt="About Us tailwind page"
                                     className="mx-auto mb-9 block lg:hidden"
                                 />
@@ -82,7 +95,7 @@ const AboutUs = () => {
                         </div>
                         <div className="img-box ">
                             <img
-                                src="https://pagedone.io/asset/uploads/1702034785.png"
+                                src="/aboutus/2.jpg"
                                 alt="About Us tailwind page"
                                 className="hidden lg:block "
                             />
