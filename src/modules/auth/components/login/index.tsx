@@ -29,8 +29,8 @@ const Login = () => {
 
     return (
         <div className=" bg-[#F6F8FB]font-[sans-serif] h-full min-h-screen ">
-            <div className="w-full h-[25vh] bg-[#001fbf] flex text-center flex-col fixed top-0">
-                <div className="md:mt-6 md:mb-5 mt-3 mb-2">
+            <div className="w-full h-[25vh] bg-[#001fbf] flex text-center flex-col ">
+                <div className="md:mt-6 md:mb-3 mt-3 mb-2">
                    <Link href={"/"}>
                         <div className="flex items-center justify-center">
                             <Image
@@ -54,9 +54,9 @@ const Login = () => {
              </div>
 
             </div>
-            <div className="px-4 h-full min-h-screen w-full flex justify-center items-center relative z-10">
-            <div className="md:mt-6 mt-3 flex flex-col max-w-md">
-                <div>
+            <div className="flex justify-center">
+            <div className="flex flex-col max-w-md absolute z-10 top-[110px]">
+                <div className="h-56">
                    <img src="/images/login-image.webp" className="w-full object-cover rounded-2xl" alt="login-image" />
                 </div>
   
