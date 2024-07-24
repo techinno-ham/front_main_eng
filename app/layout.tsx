@@ -28,13 +28,13 @@ export default function RootLayout({
             >
                 <Toaster position="top-center" richColors />
                 {children}
-                <Script
+                {/* <Script
                     src="/scripts/bot.js"
                     id="myScript"
                     nonce="XUENAJFW"
                     defer
                     data-token=""
-                />
+                /> */}
             </body>
         </html>
     )

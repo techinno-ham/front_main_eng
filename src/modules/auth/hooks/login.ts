@@ -38,7 +38,7 @@ const useLogin = () => {
             router.push("/mybots")
         } catch (err: any) {
             console.log(err)
-            toast.error("نام کاربری یا رمز شما اشتباه می باشد.")
+            toast.error("نام کاربری یا رمز عبور شما اشتباه می باشد.")
             setError(err.message)
         } finally {
             setLoading(false)

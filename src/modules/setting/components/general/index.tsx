@@ -7,7 +7,8 @@ import { toast } from "sonner"
 const General = () => {
     const { register, handleSubmit, setValue } = useForm()
     const { data, setData } = useStoreConfig()
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    
 
     const onSubmit = async (formData: any) => {
         setIsLoading(true)
