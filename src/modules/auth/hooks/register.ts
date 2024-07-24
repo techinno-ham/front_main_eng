@@ -9,7 +9,7 @@ const useRegister = () => {
     const [error, setError] = useState(null)
     const router = useRouter()
 
-    const register = async (user: any) => {
+    const registerAuth = async (user: any) => {
         setLoading(true)
         setError(null)
         try {
@@ -26,7 +26,7 @@ const useRegister = () => {
     }
 
     return {
-        register,
+        registerAuth,
         isLoading,
         error,
     }
