@@ -83,28 +83,28 @@ const IntroduceSections = () => {
                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
                     <h1>
                         <p className="text-4xl md:text-7xl">
-                            <span className="text-blue-600">همیارچت</span>
+                            <span className="gradient-h2 is-v2">همیارچت</span>
                             <span> ، پلتفرم هوش مصنوعی </span>
                         </p>
                         <p className="mt-3 text-xl md:mt-5 md:text-3xl">
                             <span>در خدمت </span>
-                            <span className="text-blue-600">رضایت </span>
+                            <span className="gradient-h2 is-v2">رضایت </span>
                             <span>مشتریان و </span>
-                            <span className="text-blue-600">پیشرفت </span>
+                            <span className="gradient-h2 is-v2">پیشرفت </span>
                             <span>کسب و کار ها</span>
-                            <span>
+                            {/* <span>
                                 <Image
                                     src="/icons/jet.svg"
                                     height="40"
                                     width="40"
                                     alt="Logo"
                                 />
-                            </span>
+                            </span> */}
                         </p>
                     </h1>
                 </div>
                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                    <p>
+                    <p className="md:text-[16px] text-[13px]">
                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                     </p>
                 </div>
@@ -129,7 +129,7 @@ const IntroduceSections = () => {
                         </button>
                     </div>
                 </div>
-                <div className="mt-[22px] md:mt-[35px]">
+                <div className="mt-[25px] md:mt-[45px] flex justify-center">
                     <Image
                         src="/images/phone.svg"
                         height="400"
