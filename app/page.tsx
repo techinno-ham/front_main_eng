@@ -26,4 +26,7 @@ export const metadata: Metadata = {
     // openGraph: {
     //   title: 'Blog',
     // },
+    icons: {
+        icon: "/logo.svg", // /public path
+      },
 }
