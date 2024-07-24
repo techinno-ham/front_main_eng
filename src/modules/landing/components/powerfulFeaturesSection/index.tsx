@@ -208,15 +208,15 @@ let cards = [
 const PowerfulFeaturesSection = () => {
     let cardCount = 8
     const [activeIndex, setActiveIndex] = useState(0)
-    useEffect(() => {
-        let startValue = 0
-        let intervalId = setInterval(() => {
-            setActiveIndex(startValue % cardCount)
-            startValue++
-            console.log(startValue)
-        }, 2000)
-        return () => clearInterval(intervalId)
-    }, [])
+    // useEffect(() => {
+    //     let startValue = 0
+    //     let intervalId = setInterval(() => {
+    //         setActiveIndex(startValue % cardCount)
+    //         startValue++
+    //         console.log(activeIndex)
+    //     }, 2000)
+    //     return () => clearInterval(intervalId)
+    // }, [])
     return (
         <div className="container relative mx-auto h-auto overflow-hidden  px-4 py-4 text-center 2xl:px-20">
             <div className="mt-10 md:mt-4">
@@ -235,13 +235,13 @@ const PowerfulFeaturesSection = () => {
                         cards.map((card, indx) => (
                             <div
                                 key={indx}
-                                className="flex flex-col items-start rounded-[10px]  border border-b-4 border-blue-500 px-[13px] py-[18px]"
+                                className="flex flex-col items-start rounded-[10px]  border border-blue-500 px-[13px] py-[18px]"
                                 style={{
                                     boxShadow:
                                         indx === activeIndex
-                                            ? "1px 4px 10px 0px #3b82f6bd"
+                                            ? "rgba(59, 130, 246, 0.74) 1px 4px 10px 0px, rgb(46 88 240 / 63%) 0px 2px"
                                             : "unset",
-                                    transition: "box-shadow 0.5s ease-in-out",
+                                    transition: "all 0.5s ease-in-out",
                                 }}
                             >
                                 {card.Icon}
