@@ -63,7 +63,7 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="استاندارد"
-                            price="۶۰۰٬۰۰۰"
+                            price="۱،۰۰۰،۰۰۰"
                             subscription="ماه"
                             description="مناسب برای کسب‌وکارهای متوسط و کاربران با نیازهای پیشرفته"
                             buttonText="انتخاب طرح استاندارد"
@@ -80,7 +80,7 @@ const Pricing = () => {
                         <PricingCard
                             order={4}
                             type="حرفه‌ای"
-                            price="۲٬۰۰۰٬۰۰۰"
+                            price="۱،۰۰۰،۰۰۰"
                             subscription="ماه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
@@ -98,7 +98,7 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="سازمانی"
-                            price="۴٬۰۰۰٬۰۰۰"
+                            price="۱،۰۰۰،۰۰۰"
                             subscription="ماه"
                             description="مناسب برای سازمان‌های بزرگ با نیازهای پیچیده، راه‌حل‌های سفارشی، و پشتیبانی اختصاصی."
                             buttonText="انتخاب طرح سازمانی"

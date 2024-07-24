@@ -15,24 +15,24 @@ const AllBlogs = () => {
                     </p>
                 </div>
                 <div className="grid gap-6 lg:grid-cols-2">
-                    <BlogCard
-                        title={"AI in Customer Support: Threat or Savior"}
-                        subTitle={
-                            "Explore the transformative journey of AI in customer support - unveiling challenges, potentials, and the future ahead."
-                        }
-                        linkTo={"/blog/123"}
-                        img={"/blog/image.png"}
-                    />
-                    <BlogCard
-                        title={
-                            "8 Ways AI Customer Support Assistants Can Help Your Business"
-                        }
-                        subTitle={
-                            "Explore the transformative journey of AI in customer support - unveiling challenges, potentials, and the future ahead."
-                        }
-                        linkTo={"/blog/321"}
-                        img={"/blog/image1.png"}
-                    />
+                <BlogCard
+    title={"هوش مصنوعی در پشتیبانی مشتری: تهدید یا ناجی"}
+    subTitle={
+        "سفر تحولی هوش مصنوعی در پشتیبانی مشتری را کشف کنید - چالش‌ها، پتانسیل‌ها و آینده پیش رو را بررسی کنید."
+    }
+    linkTo={"/blog/123"}
+    img={"/blog/image.png"}
+/>
+<BlogCard
+    title={
+        "۸ راهی که دستیاران پشتیبانی مشتری هوش مصنوعی می‌توانند به کسب‌وکار شما کمک کنند"
+    }
+    subTitle={
+        "موفقیت کسب‌وکار را با پشتیبانی هوش مصنوعی ارتقا دهید: حفظ مشتریان را افزایش دهید، شهرت را تقویت کنید، عملیات را گسترش دهید و هزینه‌ها را برای رشد بهینه کاهش دهید."
+    }
+    linkTo={"/blog/321"}
+    img={"/blog/image1.png"}
+/>
                 </div>
             </div>
         </>
