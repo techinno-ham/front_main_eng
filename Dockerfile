@@ -14,20 +14,20 @@ RUN npm run build
 #CMD ["npm", "start"]
 
 #######
-FROM node:20-alpine3.17 as runner 
+# FROM node:20-alpine3.17 as runner 
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY --from=builder /app/package.json .
-COPY --from=builder /app/package-lock.json .
+# COPY --from=builder /app/package.json .
+# COPY --from=builder /app/package-lock.json .
 
-#RUN npm install --only=prod
-COPY --from=builder /app/.env ./
-COPY --from=builder /app/node_modules ./node_modules
+# #RUN npm install --only=prod
+# COPY --from=builder /app/.env ./
+# COPY --from=builder /app/node_modules ./node_modules
 
-COPY --from=builder /app/next.config.js ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
+# COPY --from=builder /app/next.config.js ./
+# COPY --from=builder /app/public ./public
+# COPY --from=builder /app/.next ./.next
 
 #RUN npm run build
 
