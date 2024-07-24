@@ -44,7 +44,7 @@ const TrustBrnadSections = () => {
                     maskImage:
                         "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
                 }}
-                className="navigation-wrapper"
+                className="navigation-wrapper md:mt-5 mt-2"
             >
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&

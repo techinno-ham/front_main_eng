@@ -9,7 +9,7 @@ const FeatureSection = () => {
             <div className="mt-[55px] text-center md:mt-[80px]">
                 <h2 className="text-2xl leading-[150%] md:text-4xl">
                     تمام آنچه برای ساخت <br />{" "}
-                    <span className=" text-feature text-2xl md:text-4xl">
+                    <span className=" text-feature text-2xl md:text-4xl gradient-h2 is-v2">
                         ربات‌های سفارشی
                     </span>{" "}
                     نیاز دارید.
