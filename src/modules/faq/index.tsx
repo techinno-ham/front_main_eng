@@ -43,16 +43,36 @@ const FAQ = () => {
         null,
     )
     return (
-        <section className="min-h-[900px] py-24">
+        <section className="min-h-[900px] pt-10 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-16">
-                    <h6 className="mb-2 text-center text-lg font-medium text-indigo-600">
-                        FAQs
-                    </h6>
-                    <h2 className="font-manrope text-center text-4xl font-bold leading-[3.25rem] text-gray-900">
-                        Frequently asked questions
-                    </h2>
-                </div>
+            <div className="w-full px-4">
+                        <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+                            <span className="text-primary mb-2 block text-lg font-semibold">
+                            سوالات متداول
+                            </span>
+                            <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+                            پاسخ به 
+                                <span
+                                    style={{
+                                        textShadow:
+                                            "0 3px 8px rgba(77, 243, 255, 0.22)",
+                                        backgroundImage:
+                                            "linear-gradient(360deg, #5154ff, #559fff)",
+                                        backgroundClip: "text",
+                                        fontWeight: 700,
+                                        position: "relative",
+                                        color: "transparent",
+                                    }}
+                                >
+                                    &nbsp;سولات&nbsp;
+                                </span>
+                            شما
+                            </h2>
+                            <p className="text-body-color dark:text-dark-6 text-base">
+                            پاسخ سوالات متداول کاربران درباره همیارچت را اینجا بیابید.
+                        </p>
+                        </div>
+                    </div>
 
                 <div
                     className="accordion-group"

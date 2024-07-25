@@ -208,17 +208,17 @@ let cards = [
 const PowerfulFeaturesSection = () => {
     let cardCount = 8
     const [activeIndex, setActiveIndex] = useState(0)
-    // useEffect(() => {
-    //     let startValue = 0
-    //     let intervalId = setInterval(() => {
-    //         setActiveIndex(startValue % cardCount)
-    //         startValue++
-    //         console.log(activeIndex)
-    //     }, 2000)
-    //     return () => clearInterval(intervalId)
-    // }, [])
+    useEffect(() => {
+        let startValue = 0
+        let intervalId = setInterval(() => {
+            setActiveIndex(startValue % cardCount)
+            startValue++
+            console.log(activeIndex)
+        }, 2000)
+        return () => clearInterval(intervalId)
+    }, [])
     return (
-        <div className="container relative mx-auto h-auto overflow-hidden  px-4 py-4 text-center 2xl:px-20">
+        <div id="hamyar-features" className="container relative mx-auto h-auto overflow-hidden  px-4 py-4 text-center 2xl:px-20">
             <div className="mt-10 md:mt-4">
                 <p className="text-3xl md:text-6xl">
                     <span>ویژگی‌های قدرتمند </span>
@@ -230,7 +230,7 @@ const PowerfulFeaturesSection = () => {
                 </p>
             </div>
             <div className="mt-[40px] flex justify-around">
-                <div className="grid grid-cols-2 gap-16 md:grid-cols-3 lg:grid-cols-4">
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
                     {cards.length &&
                         cards.map((card, indx) => (
                             <div

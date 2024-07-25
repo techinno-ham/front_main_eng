@@ -1,7 +1,7 @@
 import AboutUs from "@/src/modules/about-us"
 import { Metadata, NextPage } from "next"
 
-const PricingPage: NextPage = () => {
+const AboutUsPage: NextPage = () => {
     return <AboutUs />
 };
 export const metadata: Metadata = {
@@ -11,4 +11,4 @@ export const metadata: Metadata = {
       },
 }
 
-export default PricingPage
+export default AboutUsPage

@@ -15,7 +15,7 @@ import "swiper/css/effect-creative"
 const AboutUs = () => {
     return (
         <>
-            <div className="w-full px-4">
+            <div className="w-full px-4 pt-10">
                         <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                             <span className="text-primary mb-2 block text-lg font-semibold">
                             درباره ما
@@ -53,7 +53,7 @@ const AboutUs = () => {
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
                                 <h2 className="font-manrope relative mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
-                                معرفی شرکت{" "}
+                                آشنایی با ما{" "}
                                 </h2>
                                 <p className="mx-auto max-w-2xl text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                 ما در همیارچت با افتخار اعلام می‌کنیم که اولین استارتاپ ایرانی هستیم که در زمینه ارائه دستیارهای هوش مصنوعی برای خدمات مشتریان فعالیت می‌کند. هدف اصلی ما ایجاد تجربه‌ای بهتر، سریع‌تر و کارآمدتر برای مشتریان شماست. با بهره‌گیری از آخرین تکنولوژی‌های هوش مصنوعی و پردازش زبان طبیعی، ما به کسب‌وکارها کمک می‌کنیم تا ارتباط بهتری با مشتریان خود برقرار کرده و نیازهای آنها را به بهترین شکل ممکن پاسخ دهند.
@@ -210,7 +210,7 @@ const AboutUs = () => {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-24">
                         <h2 className="font-manrope mb-6 text-center text-4xl font-bold text-gray-900">
-                            با ما آشنا شوید
+                            اعضای تیم
                         </h2>
                         {/* <p className="text-center text-lg text-gray-500">
                             ما همه مزایایی را فراهم می‌کنیم که می‌تواند تمام

@@ -5,7 +5,7 @@ import "./style.css"
 
 const Pricing = () => {
     return (
-        <section className="dark:bg-dark relative z-10 bg-white pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
+        <section className="dark:bg-dark relative bg-white pb-12 pt-10 lg:pb-[90px]">
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4">
