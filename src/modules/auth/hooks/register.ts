@@ -17,9 +17,14 @@ const useRegister = () => {
             toast.success("ثبت نام  شما موفق آمیز بود.")
             router.push("/auth/login")
         } catch (err: any) {
-            console.log(err)
-            toast.error("بعضی از اطلاعات شما اشتباه می باشد .")
-            setError(err.message)
+            console.log(err.response.status)
+            if (err.response && err.response.status === 401) {
+                toast.error("ایمیل شما قبلا ثبت شده است");
+    
+            } else {
+                toast.error("مشکلی در ثبت نام وجود دارد");
+            }
+          
         } finally {
             setLoading(false)
         }

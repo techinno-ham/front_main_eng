@@ -158,7 +158,7 @@ const Login = () => {
                         <hr className="my-6 border-gray-300" />
 
                         <div className="flex justify-center ">
-                            <div className="flex w-20 justify-between">
+                            <div className="flex w-20 justify-center">
                                 <button
                                     type="button"
                                     className="border-none outline-none"
@@ -203,7 +203,7 @@ const Login = () => {
                                     </svg>
                                 </button>
 
-                                <button
+                                {/* <button
                                     type="button"
                                     className="border-none outline-none"
                                 >
@@ -218,7 +218,7 @@ const Login = () => {
                                             data-original="#010002"
                                         ></path>
                                     </svg>
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </form>

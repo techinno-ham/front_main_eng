@@ -10,6 +10,8 @@ import Link from "next/link"
 import { Eye, EyeSlash, Lock1, Sms, User } from "iconsax-react"
 import { useForm } from "react-hook-form"
 import useRegister from "../../hooks/register"
+import { RegisterFormSchema } from "../../validation"
+import { z } from "zod"
 
 const Register = () => {
     const { registerAuth, isLoading, error } = useRegister()
@@ -22,14 +24,26 @@ const Register = () => {
     const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
     const onSubmit = async (data: any) => {
-        console.log(data)
-        
-        if (!data.email || !data.password ) {
-            toast.error("لطفا اطلاغات را کامل وارد کنید.")
-            return
+        try {
+          const validatedData = RegisterFormSchema.parse(data); // Validate input against schema
+          console.log(validatedData); // Valid data to proceed with registration
+          
+          // Call your registration function here
+          await registerAuth(validatedData);
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            // Handle validation errors
+            console.log(error.errors);
+            // Example: Display errors using toast or other UI components
+            error.errors.forEach((err) => {
+              toast.error(err.message);
+            });
+          } else {
+            // Handle other errors (if any)
+            console.error('Validation failed with unknown error:', error);
+          }
         }
-        await registerAuth(data)
-    }
+      };
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()
@@ -179,7 +193,7 @@ const Register = () => {
                         <hr className="my-6 border-gray-300" />
 
                         <div className="flex justify-center ">
-                            <div className="flex w-20 justify-between">
+                            <div className="flex w-20 justify-center">
                                 <button
                                     type="button"
                                     className="border-none outline-none"
@@ -223,7 +237,7 @@ const Register = () => {
                                     </svg>
                                 </button>
 
-                                <button
+                                {/* <button
                                     type="button"
                                     className="border-none outline-none"
                                 >
@@ -238,7 +252,7 @@ const Register = () => {
                                             data-original="#010002"
                                         ></path>
                                     </svg>
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </form>
