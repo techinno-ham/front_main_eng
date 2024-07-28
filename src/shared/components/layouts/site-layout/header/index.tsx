@@ -109,11 +109,16 @@ const Header = () => {
                                 <button
                                     onClick={() => router.push("/auth/login")}
                                     type="button"
-                                    className={`hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-black focus:outline-none  focus:ring-4 md:flex ${scroll && "text-white"}`}
+                                    className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    style={{
+                                        backgroundColor: "rgb(29 78 216)",
+                                    }}
                                 >
-                                    ورود
+                                     ورود
+                                     /
+                                    ثبت نام
                                 </button>
-                                <button
+                                {/* <button
                                     onClick={() =>
                                         router.push("/auth/register")
                                     }
@@ -123,8 +128,7 @@ const Header = () => {
                                         backgroundColor: "rgb(29 78 216)",
                                     }}
                                 >
-                                    ثبت نام
-                                </button>
+                                </button> */}
                             </>
                         )}
 
