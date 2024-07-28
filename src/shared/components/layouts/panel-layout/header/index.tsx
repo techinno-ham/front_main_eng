@@ -44,7 +44,7 @@ const HeaderPanel = () => {
                             <span
                                 className={`mr-2 text-xl font-bold md:text-2xl `}
                             >
-                                هوشینو
+                                همیار چت
                             </span>
                         </Link>
                     </div>

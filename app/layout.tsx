@@ -19,7 +19,10 @@ export default function RootLayout({
     const isMyBotsPath =
         pathname.startsWith("/mybots") ||
         pathname.startsWith("/panel") ||
-        pathname.startsWith("/createbot")
+        pathname.startsWith("/createbot") ||
+        pathname.startsWith("/profile") ||
+        pathname.startsWith("/invite") 
+
 
     return (
         <html lang="fa" dir="rtl">

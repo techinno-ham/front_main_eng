@@ -1,10 +1,11 @@
+import Invite from "@/src/modules/invite"
 import MyBots from "@/src/modules/myBots"
 import { Metadata, NextPage } from "next"
 
 const InvitePage: NextPage = () => {
     return (
         <>
-            <span>invite page</span>
+           <Invite/>
         </>
     )
 }

@@ -55,7 +55,9 @@ const useLogin = () => {
             destroyCookie(null, "refreshToken")
 
             toast.success("شما با موفقیت خارج شدید.")
-            setUser({})
+            setTimeout(() => {
+              setUser({})
+            }, 2000);
             setIsAuthenticated(false)
         } catch (error) {
             console.error("Logout error:", error)

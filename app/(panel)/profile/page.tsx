@@ -1,10 +1,11 @@
 import MyBots from "@/src/modules/myBots"
+import Profile from "@/src/modules/profile"
 import { Metadata, NextPage } from "next"
 
 const ProfilePage: NextPage = () => {
     return (
         <>
-            <span>proflie page</span>
+            <Profile/>
         </>
     )
 }

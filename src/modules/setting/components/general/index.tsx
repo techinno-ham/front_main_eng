@@ -5,7 +5,7 @@ import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 
 const General = () => {
-    const { register, handleSubmit, setValue } = useForm()
+    const { register, handleSubmit, setValue } = useForm();
     const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false);
     

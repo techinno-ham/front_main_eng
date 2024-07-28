@@ -14,7 +14,7 @@ import LoaderLottie from "@/src/shared/components/common/loader"
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter()
     useEffect(() => {
         const fetchBotList = async () => {
