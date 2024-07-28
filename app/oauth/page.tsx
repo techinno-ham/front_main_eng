@@ -34,6 +34,6 @@ const OAuthPage = () => {
         handleOAuth()
     }, [])
 
-    return <div>Handling OAuth...</div>
+    return <div>در حال انتقال به پنل کاربری ...</div>
 }
 export default OAuthPage
