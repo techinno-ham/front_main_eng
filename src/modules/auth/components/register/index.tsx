@@ -41,6 +41,7 @@ const Register = () => {
           } else {
             // Handle other errors (if any)
             console.error('Validation failed with unknown error:', error);
+            toast.error('مشکلی در ثبت نام وجود دارد');
           }
         }
       };

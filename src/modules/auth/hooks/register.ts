@@ -10,23 +10,21 @@ const useRegister = () => {
     const router = useRouter()
 
     const registerAuth = async (user: any) => {
-        setLoading(true)
-        setError(null)
+        setLoading(true);
+        setError(null);
         try {
-            await services.register(user)
-            toast.success("ثبت نام  شما موفق آمیز بود.")
-            router.push("/auth/login")
+            await services.register(user);
+            toast.success("ثبت نام  شما موفق آمیز بود.");
+            router.push("/auth/login");
         } catch (err: any) {
-            console.log(err.response.status)
-            if (err.response && err.response.status === 401) {
+            
+            if (err.message === 'Email already registered') {
                 toast.error("ایمیل شما قبلا ثبت شده است");
-    
             } else {
                 toast.error("مشکلی در ثبت نام وجود دارد");
             }
-          
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     }
 
