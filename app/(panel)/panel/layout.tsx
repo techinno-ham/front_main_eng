@@ -2,6 +2,7 @@ import Appbar from "@/src/shared/components/layouts/panel-layout/appbar"
 import SideBar from "@/src/shared/components/layouts/panel-layout/sidebar"
 import SideBarMobile from "@/src/shared/components/layouts/panel-layout/sidebar-mobile"
 import { HambergerMenu } from "iconsax-react"
+import { Metadata } from "next"
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -16,5 +17,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             </div>
         </>
     )
+}
+export const metadata: Metadata = {
+    title: "پنل کاربری | همیارچت",
+    description: "مدیریت تنظیمات و اطلاعات کاربری در پنل کاربری همیارچت.",
+    icons: {
+        icon: "/logo.svg", // /public path
+    },
 }
 export default Layout

@@ -1,6 +1,6 @@
 import Dashboard from "@/src/modules/dashboard"
 import Train from "@/src/modules/train"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 
 const DashboardTrainPage: NextPage = () => {
     return (
@@ -9,6 +9,13 @@ const DashboardTrainPage: NextPage = () => {
             <Train />
         </>
     )
+}
+export const metadata: Metadata = {
+    title: "آموزش دستیار هوش مصنوعی | همیارچت",
+    description: "آموزش و بهینه‌سازی دستیار هوش مصنوعی در همیارچت.",
+    icons: {
+        icon: "/logo.svg", // /public path
+    },
 }
 
 export default DashboardTrainPage

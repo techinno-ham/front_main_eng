@@ -40,7 +40,7 @@ const AboutUs = () => {
                             </h1>
                         </div>
                     </div>
-            <section className="relative py-14 lg:py-24">
+            <section className="relative pb-14 lg:pb-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                         <div className="img-box">
@@ -63,7 +63,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-            <section className="relative py-14 lg:py-24">
+            <section className="relative pb-14 lg:pb-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-9 ">
                         <div className="flex items-center lg:pr-24">
@@ -99,7 +99,7 @@ const AboutUs = () => {
                     <div className="flex flex-col gap-5 lg:flex-row lg:justify-between xl:gap-8">
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-indigo-600">
+                                <div className="font-manrope text-2xl font-bold text-blue-600">
                                     ۲۴۰٪
                                 </div>
                                 <div className="flex-1">
@@ -115,7 +115,7 @@ const AboutUs = () => {
                         </div>
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-indigo-600">
+                                <div className="font-manrope text-2xl font-bold text-blue-600">
                                     ۱۷۵+
                                 </div>
                                 <div className="flex-1">
@@ -131,7 +131,7 @@ const AboutUs = () => {
                         </div>
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-indigo-600">
+                                <div className="font-manrope text-2xl font-bold text-blue-600">
                                     ۶۲۵+
                                 </div>
                                 <div className="flex-1">
@@ -170,7 +170,7 @@ const AboutUs = () => {
                                     <img
                                         src="https://pagedone.io/asset/uploads/1704349534.png"
                                         alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                     />
                                 </div>
                             </div>
@@ -184,7 +184,7 @@ const AboutUs = () => {
                                     <img
                                         src="https://pagedone.io/asset/uploads/1704349534.png"
                                         alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                     />
                                 </div>
                             </div>
@@ -198,7 +198,7 @@ const AboutUs = () => {
                                     <img
                                         src="https://pagedone.io/asset/uploads/1704349534.png"
                                         alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-indigo-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
                                     />
                                 </div>
                             </div>
@@ -233,7 +233,7 @@ const AboutUs = () => {
                                     <h6 className="mb-1 text-lg font-semibold text-gray-900">
                                         Harsh Patel
                                     </h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-indigo-600">
+                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">
                                         Co-Founder & CEO
                                     </span>
                                 </div>
@@ -243,7 +243,7 @@ const AboutUs = () => {
                                     successful.
                                 </p>
                                 <div className="flex items-center justify-center gap-4 lg:justify-start">
-                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5"
                                             width="32"
@@ -258,7 +258,7 @@ const AboutUs = () => {
                                             />
                                         </svg>
                                     </p>
-                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5"
                                             viewBox="0 0 24 24"
@@ -271,7 +271,7 @@ const AboutUs = () => {
                                             />
                                         </svg>
                                     </p>
-                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5"
                                             viewBox="0 0 20 19"
@@ -300,7 +300,7 @@ const AboutUs = () => {
                                     <h6 className="mb-1 text-lg font-semibold text-gray-900">
                                         Alexa Kimberly
                                     </h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-indigo-600">
+                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">
                                         Lead Designer
                                     </span>
                                 </div>
@@ -309,7 +309,7 @@ const AboutUs = () => {
                                     the beginning of it and enjoyed every bit.
                                 </p>
                                 <div className="relative flex items-center justify-center gap-4 max-sm:bottom-0 lg:justify-start">
-                                    <p className="group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5 "
                                             width="32"
@@ -324,7 +324,7 @@ const AboutUs = () => {
                                             />
                                         </svg>
                                     </p>
-                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5"
                                             viewBox="0 0 24 24"
@@ -337,7 +337,7 @@ const AboutUs = () => {
                                             />
                                         </svg>
                                     </p>
-                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-indigo-600 hover:text-white">
+                                    <p className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white">
                                         <svg
                                             className="h-5 w-5"
                                             viewBox="0 0 20 19"
@@ -364,7 +364,7 @@ const AboutUs = () => {
                             <div className="text-center lg:text-left lg:max-w-xs flex-1">
                                 <div className="mb-5 pb-5 border-b border-solid border-gray-300">
                                     <h6 className="text-lg text-gray-900 font-semibold mb-1">Harsh Patel</h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-indigo-600">Co-Founder &
+                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">Co-Founder &
                                         CEO</span>
                                 </div>
                                 <p className="text-gray-500 leading-6 mb-7">
@@ -373,7 +373,7 @@ const AboutUs = () => {
                                 </p>
                                 <div className="flex items-center gap-4 justify-center lg:justify-start">
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -382,7 +382,7 @@ const AboutUs = () => {
                                         </svg>
                                     </p>
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -391,7 +391,7 @@ const AboutUs = () => {
                                         </svg>
                                     </p>
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" viewBox="0 0 20 19" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -414,7 +414,7 @@ const AboutUs = () => {
                             <div className="text-center lg:text-left lg:max-w-xs flex-1 flex flex-col justify-between">
                                 <div className="mb-5 pb-5 border-b border-solid border-gray-300">
                                     <h6 className="text-lg text-gray-900 font-semibold mb-1">Alexa Kimberly</h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-indigo-600">Lead Designer</span>
+                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">Lead Designer</span>
                                 </div>
                                 <p className="text-gray-500 leading-6 mb-7">
                                     I’ve been lead designer for pagedone since the beginning of it and enjoyed every
@@ -423,7 +423,7 @@ const AboutUs = () => {
                                 <div
                                     className="flex items-center gap-4 justify-center lg:justify-start max-sm:bottom-0 relative">
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" width="32" height="32" viewBox="0 0 32 32" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -432,7 +432,7 @@ const AboutUs = () => {
                                         </svg>
                                     </p>
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -441,7 +441,7 @@ const AboutUs = () => {
                                         </svg>
                                     </p>
                                     <p
-                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-indigo-600">
+                                        className="cursor-pointer  text-gray-900 hover:text-white group w-12 h-12 rounded-full flex justify-center items-center bg-gray-100 transition-all duration-500 hover:bg-blue-600">
                                         <svg className="w-5 h-5" viewBox="0 0 20 19" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -456,7 +456,7 @@ const AboutUs = () => {
                     </div> */}
                 </div>
                 {/* <button id="slider-button-left"
-                    className="swiper-button-prev p-2.5 group flex justify-center items-center text-gray-900 w-12 h-12 transition-all duration-500 rounded-full hover:text-indigo-600"
+                    className="swiper-button-prev p-2.5 group flex justify-center items-center text-gray-900 w-12 h-12 transition-all duration-500 rounded-full hover:text-blue-600"
                     data-carousel-prev>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
@@ -466,7 +466,7 @@ const AboutUs = () => {
 
                 </button>
                 <button id="slider-button-right"
-                    className="swiper-button-next p-2.5 group flex justify-center items-center text-gray-900 w-12 h-12 transition-all duration-500 rounded-full hover:text-indigo-600"
+                    className="swiper-button-next p-2.5 group flex justify-center items-center text-gray-900 w-12 h-12 transition-all duration-500 rounded-full hover:text-blue-600"
                     data-carousel-next>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path

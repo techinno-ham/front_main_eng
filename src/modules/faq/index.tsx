@@ -82,12 +82,12 @@ const FAQ = () => {
                         return (
                             <div
                                 key={indx}
-                                className="accordion accordion-active:bg-indigo-50 active my-2 rounded-2xl border-b border-solid border-gray-200 px-6 py-8 transition-all duration-500 hover:bg-indigo-50"
+                                className="accordion accordion-active:bg-indigo-50 active my-2 rounded-2xl border-b border-solid border-blue-200 px-6 py-8 transition-all duration-500 hover:bg-blue-50"
                                 id="basic-heading-one-with-arrow"
                                 style={{
                                     background:
                                         activeAccordionId === indx
-                                            ? "#eef2ff"
+                                            ? "#eff6ff"
                                             : "revert-layer",
                                 }}
                                 onClick={() => {
@@ -97,14 +97,14 @@ const FAQ = () => {
                                 }}
                             >
                                 <button
-                                    className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500 hover:text-indigo-600"
+                                    className="accordion-toggle accordion-active:font-medium accordion-active:text-blue-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500 hover:text-blue-600"
                                     aria-controls="basic-collapse-one-with-arrow"
                                 >
                                     <h5
                                         style={{
                                             color:
                                                 activeAccordionId === indx
-                                                    ? "rgb(79 70 229)"
+                                                    ? "#2563eb"
                                                     : "unset",
                                         }}
                                     >

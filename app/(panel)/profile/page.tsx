@@ -1,5 +1,5 @@
 import MyBots from "@/src/modules/myBots"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 
 const ProfilePage: NextPage = () => {
     return (
@@ -8,5 +8,11 @@ const ProfilePage: NextPage = () => {
         </>
     )
 }
-
+export const metadata: Metadata = {
+    title: "پروفایل | همیارچت",
+    description: "مدیریت پروفایل کاربری در همیارچت.",
+    icons: {
+        icon: "/logo.svg", // /public path
+    },
+}
 export default ProfilePage
