@@ -9,6 +9,8 @@ import { toast } from "sonner"
 import Link from "next/link"
 import { Eye, EyeSlash, Lock1, User } from "iconsax-react"
 import { useForm } from "react-hook-form"
+import { LoginFormSchema } from "../../validation"
+import { z } from "zod"
 
 const Login = () => {
     const { login, isLoading } = useLogin()
@@ -21,13 +23,20 @@ const Login = () => {
     const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
     const onSubmit = async (data: any) => {
-        console.log(data)
-        if (!data.email || !data.password) {
-            toast.error("لطفا ایمیل و رمز عبور را وارد کنید")
-            return
+        try {
+          const validatedData = LoginFormSchema.parse(data); // Validate input against schema
+          await login(validatedData);
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            error.errors.forEach((err) => {
+              toast.error(err.message);
+            });
+          } else {
+            console.error('Validation failed with unknown error:', error);
+            toast.error('مشکلی در ورود وجود دارد');
+          }
         }
-        await login(data)
-    }
+      }
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()

@@ -32,13 +32,17 @@ const useLogin = () => {
                 path: "/",
                 secure: true, // Use this in production
                 sameSite: "strict",
-            })
-
-            // Redirect or perform other actions here
+            });
             router.push("/mybots")
         } catch (err: any) {
-            console.log(err)
-            toast.error("نام کاربری یا رمز عبور شما اشتباه می باشد.")
+            console.log(err.message)
+            if (err.message === 'Email not found') {
+                toast.error("ایمیل شما قبلا ثبت نشده است");
+            } else if(err.message === 'Incorrect password') {
+                toast.error("رمز عبور شما اشتباه می باشد");
+            }else {
+                toast.error("مشکلی در ورود وجود دارد");
+            }
             setError(err.message)
         } finally {
             setLoading(false)
