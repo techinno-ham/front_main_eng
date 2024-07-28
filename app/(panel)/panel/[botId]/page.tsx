@@ -1,5 +1,5 @@
 import Dashboard from "@/src/modules/dashboard"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 import { useRouter } from "next/router"
 
 const DashboardPage: NextPage = ({ params }: any) => {
@@ -11,6 +11,13 @@ const DashboardPage: NextPage = ({ params }: any) => {
             <Dashboard botId={botId as string} />
         </>
     )
+}
+export const metadata: Metadata = {
+    title: "داشبورد دستیار هوش مصنوعی | همیارچت",
+    description: "مشاهده و مدیریت داشبورد دستیار هوش مصنوعی در همیارچت.",
+    icons: {
+        icon: "/logo.svg", // /public path
+    },
 }
 
 export default DashboardPage

@@ -84,7 +84,7 @@ const IntroduceSections = () => {
                     <h1>
                         <p className="text-4xl md:text-7xl">
                             <span className="gradient-h2 is-v2">همیارچت</span>
-                            <span> ، پلتفرم هوش مصنوعی </span>
+                            <span> ، دستیار هوش مصنوعی </span>
                         </p>
                         <p className="mt-3 text-xl md:mt-5 md:text-3xl">
                             <span>در خدمت </span>
