@@ -45,9 +45,8 @@ const TryNow = () => {
                     <div className="content-cta-main">
                         <div className="head-section">
                             <div className="title-section-footer">
-                                <h3 className="text-3xl md:text-5xl">
-                                    همین امروز دوره رایگان خود را شروع کنید!
-                                </h3>
+                                <h3 className="text-3xl md:text-4xl">
+                                همین حالا دستیار هوش مصنوعی خود را بسازید !                                  </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">
                                 <p className="is-rtl-center-mb mt-3 text-[12px] text-zinc-400 md:text-[16px]">
@@ -64,7 +63,8 @@ const TryNow = () => {
                         </div>
                         <div className="flex w-full">
                             <button className=" hover:white  rounded-[10px] bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2  focus-visible:outline-white">
-                                همین الان رایگان شروع کنید !
+                                رایگان شروع کنید
+                                <span aria-hidden="true"></span>
                             </button>
                         </div>
                     </div>

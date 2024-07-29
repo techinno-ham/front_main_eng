@@ -38,12 +38,13 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0 }}
                             className="title-section-footer"
                         >
-                            <p className="text-3xl md:text-6xl">
-                                <span>مکالمات در </span>
+                            <h2 className="text-3xl md:text-5xl">
+                            <span>پشتیبانی مشتریان در </span>
+                                {/* <span>مکالمات در </span> */}
                                 <span className="gradient-h2 is-v2">
                                     مقیاس جهانی&nbsp;
                                 </span>
-                            </p>
+                            </h2>
                         </motion.div>
                         <motion.div
                             variants={{
@@ -55,10 +56,8 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0.3 }}
                             className="description-section-main margin-top-24px max-w-85"
                         >
-                            <p className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                                یک بار ساخته شود. در هر کانال و در هر زبان مقیاس
-                                داده شود.
-                            </p>
+                            <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                            چت‌بات‌های خود را یک‌بار آموزش دهید و به‌طور مقیاس‌پذیر در محیط‌های مختلف مانند وب‌سایت‌ها استفاده کنید.                            </h3>
                         </motion.div>
                     </div>
                     <div
