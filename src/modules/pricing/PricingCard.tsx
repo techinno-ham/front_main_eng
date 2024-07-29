@@ -12,7 +12,7 @@ const PricingCard = ({
     subscription,
     buttonText,
     active,
-    beforeListText
+    beforeListText,
 }: any) => {
     const dynamicShadowGenerator = (order: number) => {
         let fullString = `rgb(46 49 240 / 40%) 0px 0px 20px, rgb(46 88 240 / 30%) 0px 5px, rgb(46 158 240 / 20%) 0px 10px, rgb(46 91 240 / 10%) 0px 15px`
@@ -22,88 +22,103 @@ const PricingCard = ({
     }
     return (
         <>
-            <div className="w-full px-4 pb-10 md:w-1/2 lg:w-1/4">
+            <div className="relative w-full px-4 pb-10 md:w-1/2 lg:w-1/4">
+                {active && (
+                    <span className="absolute -top-4 left-1/2 z-10 inline-flex h-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#38BDF8] px-4 text-sm font-semibold tracking-[0.2px] text-white">
+                        محبوب ترین
+                    </span>
+                )}
                 <div
                     style={{
                         backdropFilter: "blur(10px)",
                         boxShadow: `${dynamicShadowGenerator(order)}`,
-                        borderColor: "#3056d3",
+                        borderColor: active ? "#3056d3" : "#e5e5e5",
                     }}
-                    className=" h-full border-primary shadow-pricing relative z-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-4 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[32px]"
+                    className=" border-primary shadow-pricing relative h-full overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-4 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[32px]"
                 >
-                    <span className="pricing-header mb-3 block text-3xl font-bold">
-                        {type}
-                    </span>
-                    <h2 className="text-dark mb-5 text-2xl">
-                        {price}
-                        <span
-                            style={{
-                                color: "#637381",
-                            }}
-                            className="block dark:text-dark-6 text-base font-medium"
-                        >
-                            {subscription && "/"} {subscription}
-                        </span>
-                    </h2>
-                    {/* <p 
+                    <div className="flex h-full flex-col justify-between">
+                        <div>
+                            <span className="pricing-header mb-3 block text-3xl font-bold">
+                                {type}
+                            </span>
+                            <h2 className="text-dark mb-5 text-2xl">
+                                {price}
+                                <span
+                                    style={{
+                                        color: "#637381",
+                                    }}
+                                    className="dark:text-dark-6 block text-base font-medium"
+                                >
+                                    {subscription && "/"} {subscription}
+                                </span>
+                            </h2>
+                            {/* <p 
                     style={{
                         color: "#637381"
                     }}
                     className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
                         {"مناسب برای 100 کاربر"}
                     </p> */}
-                    <p 
-                    style={{
-                        color: "#637381"
-                    }}
-                    className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8">
-                        {description}
-                    </p>
-                    
-                    {
-                        beforeListText && <div className="flex flex-row gap-1">
-                        <span className="text-sm font-semibold">
-                        {beforeListText}
-                        </span>
-                    </div>
-                    }
-                    <div 
-                    style={{
-                        color: "#637381"
-                    }}
-                    className="mt-2 mb-9 flex flex-col gap-[14px] pb-8 border-b">
-                        {React.Children.map(children, (child) => (
-                            <div className="flex flex-row items-start gap-3">
-                                <p className="size-5 text-zinc-700">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="#30a46c"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="lucide lucide-check size-5"
-                                    >
-                                        <path d="M20 6 9 17l-5-5"></path>
-                                    </svg>
-                                </p>
-                                {child}
+                            <p
+                                style={{
+                                    color: "#637381",
+                                }}
+                                className="border-strokedark:border-dark-3 dark:text-dark-6 mb-8 text-sm"
+                            >
+                                {description}
+                            </p>
+
+                            {beforeListText && (
+                                <div className="flex flex-row gap-1">
+                                    <span className="text-sm font-semibold">
+                                        {beforeListText}
+                                    </span>
+                                </div>
+                            )}
+                            <div
+                                style={{
+                                    color: "#637381",
+                                }}
+                                className="mb-9 mt-2 flex flex-col gap-[14px] pb-8"
+                            >
+                                {React.Children.map(children, (child) => (
+                                    <div className="flex flex-row items-start gap-3">
+                                        <p className="size-5 text-zinc-700">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="#30a46c"
+                                                strokeWidth="3"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                className="lucide lucide-check size-5"
+                                            >
+                                                <path d="M20 6 9 17l-5-5"></path>
+                                            </svg>
+                                        </p>
+                                        {child}
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+                        <div>
+                            <hr className="mx-auto my-4 h-0.5 w-60 rounded border-0 bg-blue-100 md:my-10 dark:bg-gray-700" />
+                            <a
+                                href="/#"
+                                className={` ${
+                                    active
+                                        ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
+                                        : "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
+                                } `}
+                            >
+                                {buttonText}
+                            </a>
+                        </div>
                     </div>
-                    <a
-                        href="/#"
-                        className={` ${
-                            active
-                                ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
-                                : "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
-                        } `}
-                    >
-                        {buttonText}
-                    </a>
+
                     <div>
                         <span className="absolute left-0 top-7 z-[-1]">
                             <svg
