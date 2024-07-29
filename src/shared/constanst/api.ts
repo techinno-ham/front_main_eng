@@ -9,6 +9,7 @@ export const API = {
     UPDATE_UI: "/mybots/configs/updateUi",
     UPDATE_SECURITY: "/mybots/configs/updateSecurity",
     My_BOTS: "/mybots/list",
+    My_BOTS_COUNT: "/mybots/count",
     MY_DATASOURCE_WITH_ID: "/mybots/dataSource",
     MY_CONFIGS_WITH_ID: "/mybots/configs",
 

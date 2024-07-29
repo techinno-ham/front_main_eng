@@ -10,7 +10,7 @@ const InviteFriends = () => {
                 height={200}
                 width={200}
                 loop={true}
-                style={{ height: "400px",width:"400px" }}
+                style={{ height: "350px",width:"350px" }}
                 autoPlay={true}
                 rendererSettings={{
                     preserveAspectRatio: "xMidYMid slice",
