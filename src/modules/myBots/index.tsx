@@ -1,5 +1,5 @@
 "use client"
-import { ElementPlus, SearchNormal1 } from "iconsax-react"
+import { Danger, ElementPlus, SearchNormal1, Star } from "iconsax-react"
 import BotBox from "./components/botBox"
 import { useRouter } from "next/navigation"
 import TotalBots from "./components/totalBot"
@@ -11,17 +11,33 @@ import { toast } from "sonner"
 import Head from "next/head"
 import EmptyBot from "@/src/shared/components/common/emptyBotLoader"
 import LoaderLottie from "@/src/shared/components/common/loader"
+import Modal from "@/src/shared/components/common/modal"
+import Image from "next/image"
+import useDebounce from "@/src/shared/hooks/Debounce"
+import Pagination from "./components/pagination"
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
     const [isLoading, setIsLoading] = useState(true);
-    const router = useRouter()
+    const [open, setOpen] = useState(false)
+    const router = useRouter();
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [searchText, setSearchText] = useState("");
+    const debouncedSearchText = useDebounce(searchText, 500);
+   
     useEffect(() => {
         const fetchBotList = async () => {
             setIsLoading(true)
             try {
-                const response: any = await getBotList()
+                const response: any = await getBotList({
+                    type: "website",
+                    itemsPerPage: 10,
+                    page: currentPage,
+                    search: debouncedSearchText,  
+                })
                 setMyBots(response.data.bots)
+                setTotalPages(response.data.totalPages);
             } catch (err) {
                 console.log(err)
             } finally {
@@ -30,8 +46,26 @@ const MyBots = () => {
         }
 
         fetchBotList()
-    }, [])
+    }, [debouncedSearchText,currentPage]);
 
+    const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
+
+    const handleOnCloseModal = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setOpen(false)
+    };
+    const handlePrimiumRoute = ()=>{
+        setOpen(false);
+        router.push("/pricing")
+    }
+    const handleLimitModal = () => {
+        setOpen(true)
+    }
     const handleDeleteBot = async (botId: string) => {
         try {
             await service.deleteBot(botId)
@@ -65,6 +99,7 @@ const MyBots = () => {
                                     toast.error(
                                         "شما بیش از 2 بات نمیتوانید بسازید...",
                                     )
+                                    handleLimitModal();
                                 }
                             }}
                             className="rounded-2xl bg-[#1D4ED8] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm"
@@ -79,8 +114,8 @@ const MyBots = () => {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-6 md:flex-row">
-                    <TotalBots totalNumber={myBotsArry.length} />
-                    <PremiumBot />
+                    <TotalBots totalNumber={myBotsArry.length}  isLoading={isLoading}/>
+                    <PremiumBot  totalPerimium={0} isLoading={isLoading} />
                 </div>
 
                 {/* bot container */}
@@ -93,6 +128,9 @@ const MyBots = () => {
                                     className="w-full border-none placeholder-gray-300 focus:outline-none"
                                     type="text"
                                     placeholder="جستوجو کردن ..."
+                                    onChange={(e) =>
+                                        setSearchText(e.target.value.toLowerCase())
+                                      }
                                 />
                             </div>
                         </div>
@@ -129,7 +167,62 @@ const MyBots = () => {
                             </div>
                         )}
                     </div>
+                    <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+                />
                 </div>
+                 <Modal
+                                        open={open}
+                                        onClose={handleOnCloseModal}
+                                    >
+                                        <div className="w-80 mt-4"> 
+                                            <div className="flex justify-center items-center">
+                                            <div className="flex items-center justify-center">
+                            <Image
+                                src="/logo.svg"
+                                height="60"
+                                width="60"
+                                alt="Logo"
+                            />
+                            <span
+                                className={`mr-2 text-2xl font-bold `}
+                            >
+                                همیار چت
+                            </span>
+                                             </div>
+
+                                            </div>
+                                            <div className="flex justify-center mt-8">
+                                            <Danger
+                                              size="40"
+                                              color="#ef4444"
+                                                />
+                                            </div>
+                                            <div className="text-center">
+                                                <p className="text-red-500"> حد استفاده به پایان رسیده است.</p>
+                                                <span className="text-[12px] text-gray-400">پلن خود را ارتقا دهید تا استفاده بیشتری داشته باشید</span>
+                                            </div>
+                                            <div className="flex flex-col mt-8">
+                                            <div>
+                                                   <button
+                                                       onClick={handlePrimiumRoute}
+                                                       className="rounded-2xl bg-[#ed8307] p-3 text-[12px]  text-slate-50 md:p-3 md:text-sm w-full flex justify-center"
+                                                      >
+                                                     <div className="flex gap-2">
+                                                        <Star size="18" color="#FFf" />
+                                                        <span> ارتقا حساب </span>
+                                                     </div>
+                                                  </button>
+                                            </div>
+                                            
+
+                                            </div>
+
+                                          
+                                        </div>
+                                    </Modal>
             </div>
         </>
     )

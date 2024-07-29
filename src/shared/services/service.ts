@@ -23,7 +23,6 @@ class Services {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            console.log(response.data)
             return response
         } catch (error: any) {
             return false
@@ -32,7 +31,24 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    }
+    };
+    checkNumberBots = async (token: string | undefined) => {
+        try {
+            const response = await withoutTokenApi.get(API.My_BOTS_COUNT, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            return response.data;
+        } catch (error: any) {
+            // return false
+            // return true
+            throw new Error(
+                error.response?.data?.message || "check token failed",
+            )
+        }
+    };
+
 
     fetchLink = async (url: string) => {
         try {
