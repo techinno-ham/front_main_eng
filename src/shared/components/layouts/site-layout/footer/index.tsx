@@ -330,36 +330,43 @@ const Footer = () => {
                     <div className="hidden md:flex md:gap-10 lg:gap-24 xl:gap-32">
                         <div className="flex flex-col gap-4">
                             <h5 className="text-sm font-semibold text-black">
-                                راهنمایی و پشتیبانی
+                            محصول
+                                
                             </h5>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
+                                آموزش
                             </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
+                                امکانات
                             </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
+                                قیمت
                             </Link>
                         </div>
                         <div className="flex flex-col gap-4">
                             <h5 className="text-sm font-semibold text-black">
-                                راه کارها
+                                منابع
                             </h5>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
+                                بلاگ
+                            </Link>
+                            <Link
+                                href={"/"}
+                                className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                            >
+                                درباره ما
                             </Link>
                             <Link
                                 href={"/"}
@@ -367,22 +374,17 @@ const Footer = () => {
                             >
                                 سوالات متداول
                             </Link>
-                            <Link
+                            
+                            {/* <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 سوالات متداول
-                            </Link>
-                            <Link
-                                href={"/"}
-                                className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                            >
-                                سوالات متداول
-                            </Link>
+                            </Link> */}
                         </div>
                         <div className="flex flex-col gap-4">
                             <h5 className="text-sm font-semibold text-black">
-                                محصول
+                            راهنمایی و پشتیبانی
                             </h5>
                             <Link
                                 href={"/"}
