@@ -104,7 +104,7 @@ const IntroduceSections = () => {
                     </h1>
                 </div>
                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                    <p className="md:text-[16px] text-[13px]">
+                    <p className="text-center w-[55%] mx-auto md:text-[16px] text-[13px]">
                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                     </p>
                 </div>

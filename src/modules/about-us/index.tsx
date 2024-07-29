@@ -149,63 +149,6 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-            <section className=" bg-gray-50 py-14 lg:py-24">
-                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="mb-16 rounded-full">
-                        <h2 className="font-manrope text-center text-4xl font-bold text-gray-900">
-                        بازخورد کاربران ما            
-                                    </h2>
-                    </div>
-                    <Swiper
-                        slidesPerView={2}
-                        spaceBetween={30}
-                        className="mySwiper"
-                    >
-                        <SwiperSlide>
-                            <div className="relative mb-20">
-                                <div className="mx-auto max-w-max lg:max-w-4xl">
-                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                    چند ماه است که از خدمات مشتریان هوش مصنوعی همیارچت استفاده می‌کنم و باید بگویم که واقعاً تجربه‌ی کاریم را بهبود بخشیده است. تعاملات با مشتریان بسیار سریع‌تر و مؤثرتر از گذشته شده و رابط کاربری آسان این پلتفرم به ما این امکان را داده که به راحتی مدیریت کنیم. به‌ویژه، ویژگی پاسخگویی خودکار به سوالات متداول که زمان زیادی را برای تیم پشتیبانی ما صرفه‌جویی کرده، واقعاً مفید بوده است.
-                                    </p>
-                                    <img
-                                        src="https://pagedone.io/asset/uploads/1704349534.png"
-                                        alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="relative mb-20">
-                                <div className="mx-auto max-w-max lg:max-w-4xl">
-                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                    خدمات مشتریان هوش مصنوعی همیارچت به‌طور قابل توجهی کیفیت ارتباطات ما با مشتریان را ارتقا داده است. سیستم هوش مصنوعی آنها به سرعت و دقت به نیازهای مشتریان پاسخ می‌دهد و ما توانسته‌ایم با صرف زمان کمتر، رضایت بیشتری را جلب کنیم. ویژگی تحلیل و گزارش‌گیری دقیق که اطلاعات ارزشمندی درباره تعاملات با مشتریان ارائه می‌دهد، یکی از بخش‌های مورد علاقه من است.
-                                    </p>
-                                    <img
-                                        src="https://pagedone.io/asset/uploads/1704349534.png"
-                                        alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="relative mb-20">
-                                <div className="mx-auto max-w-max lg:max-w-4xl">
-                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
-                                    استفاده از همیارچت به طور قابل توجهی کارایی تیم پشتیبانی ما را افزایش داده است. سیستم هوش مصنوعی پیشرفته آنها به ما کمک کرده تا به سرعت به درخواست‌های مشتریان پاسخ دهیم و مشکلات را در کمترین زمان حل کنیم. ویژگی شخصی‌سازی پاسخ‌ها و تحلیل دقیق داده‌های مشتریان، به ما این امکان را داده تا خدمات بهتری ارائه دهیم و تجربه کاربری بهتری ایجاد کنیم. این پلتفرم واقعاً به بهبود عملکرد ما کمک کرده است.
-                                    </p>
-                                    <img
-                                        src="https://pagedone.io/asset/uploads/1704349534.png"
-                                        alt="Emily image"
-                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>
-                </div>
-            </section>
             <section className="py-14 lg:py-24 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-24">
@@ -479,6 +422,64 @@ const AboutUs = () => {
                 <div className="swiper-pagination"></div>
                 <div className="swiper-scrollbar"></div> */}
             </section>
+            <section className=" bg-gray-50 py-14 lg:py-24">
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="mb-16 rounded-full">
+                        <h2 className="font-manrope text-center text-4xl font-bold text-gray-900">
+                        بازخورد کاربران ما            
+                                    </h2>
+                    </div>
+                    <Swiper
+                        slidesPerView={2}
+                        spaceBetween={30}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                    چند ماه است که از خدمات مشتریان هوش مصنوعی همیارچت استفاده می‌کنم و باید بگویم که واقعاً تجربه‌ی کاریم را بهبود بخشیده است. تعاملات با مشتریان بسیار سریع‌تر و مؤثرتر از گذشته شده و رابط کاربری آسان این پلتفرم به ما این امکان را داده که به راحتی مدیریت کنیم. به‌ویژه، ویژگی پاسخگویی خودکار به سوالات متداول که زمان زیادی را برای تیم پشتیبانی ما صرفه‌جویی کرده، واقعاً مفید بوده است.
+                                    </p>
+                                    <img
+                                        src="https://pagedone.io/asset/uploads/1704349534.png"
+                                        alt="Emily image"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                    />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                    خدمات مشتریان هوش مصنوعی همیارچت به‌طور قابل توجهی کیفیت ارتباطات ما با مشتریان را ارتقا داده است. سیستم هوش مصنوعی آنها به سرعت و دقت به نیازهای مشتریان پاسخ می‌دهد و ما توانسته‌ایم با صرف زمان کمتر، رضایت بیشتری را جلب کنیم. ویژگی تحلیل و گزارش‌گیری دقیق که اطلاعات ارزشمندی درباره تعاملات با مشتریان ارائه می‌دهد، یکی از بخش‌های مورد علاقه من است.
+                                    </p>
+                                    <img
+                                        src="https://pagedone.io/asset/uploads/1704349534.png"
+                                        alt="Emily image"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                    />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="relative mb-20">
+                                <div className="mx-auto max-w-max lg:max-w-4xl">
+                                    <p className="mb-8 text-center text-lg leading-8 text-gray-500">
+                                    استفاده از همیارچت به طور قابل توجهی کارایی تیم پشتیبانی ما را افزایش داده است. سیستم هوش مصنوعی پیشرفته آنها به ما کمک کرده تا به سرعت به درخواست‌های مشتریان پاسخ دهیم و مشکلات را در کمترین زمان حل کنیم. ویژگی شخصی‌سازی پاسخ‌ها و تحلیل دقیق داده‌های مشتریان، به ما این امکان را داده تا خدمات بهتری ارائه دهیم و تجربه کاربری بهتری ایجاد کنیم. این پلتفرم واقعاً به بهبود عملکرد ما کمک کرده است.
+                                    </p>
+                                    <img
+                                        src="https://pagedone.io/asset/uploads/1704349534.png"
+                                        alt="Emily image"
+                                        className="swiper-slide:w-16 swiper-slide:border-blue-600 mx-auto scale-90 rounded-full border transition-all duration-300"
+                                    />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+            </section>
+            
         </>
     )
 }

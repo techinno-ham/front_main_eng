@@ -32,8 +32,7 @@ const Pricing = () => {
                                 سرویس ها
                             </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
-                                تغییرات زیادی از بخش‌های لورم ایپسوم موجود است،
-                                اما بیشتر آن‌ها به نوعی دچار تغییر شده‌اند.
+                            اطلاعات ارائه‌شده شامل جزئیات مربوط به هر سرویس و هزینه‌های مرتبط با آن می‌باشد تا بتوانید بهترین تصمیم را برای نیازهای خود بگیرید.
                             </p>
                         </div>
                     </div>
@@ -120,7 +119,7 @@ const Pricing = () => {
                         <div className="sticky top-[-1px] z-10 h-0 opacity-0"></div>
                         <header
                             style={{
-                                zIndex: 100,
+                                zIndex: 20,
                             }}
                             className="sticky inset-x-0 top-[68px]  bg-white"
                         >
@@ -190,7 +189,7 @@ const Pricing = () => {
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
-                                                <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
+                                                <button className="bg-blue-700 text-white bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                                                 تماس بگیرید
                                                 </button>
                                             </a>
