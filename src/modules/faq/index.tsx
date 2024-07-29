@@ -146,7 +146,7 @@ const FAQ = () => {
                                             activeAccordionId === indx ? 1 : 0,
                                     }}
                                 >
-                                    <p className="text-base leading-6 text-gray-900">
+                                    <p className="text-base leading-6 text-gray-900 pointer-events-none">
                                         {qa.answer}
                                     </p>
                                 </div>

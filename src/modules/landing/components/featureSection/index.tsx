@@ -5,15 +5,27 @@ import Section from "./components/sections"
 
 const FeatureSection = () => {
     return (
-        <div className="container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
+        <div className="section-large container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
             <div className="mt-[55px] text-center md:mt-[80px]">
-                <h2 className="text-2xl leading-[150%] md:text-4xl">
-                    تمام آنچه برای ساخت <br />{" "}
-                    <span className=" text-feature text-2xl md:text-4xl gradient-h2 is-v2">
+                <h2 className="text-2xl leading-[150%] md:text-5xl">
+                    {/* تمام آنچه برای ساخت <br />{" "}
+                    <span className=" text-feature gradient-h2 is-v2">
                         ربات‌های سفارشی
                     </span>{" "}
-                    نیاز دارید.
+                    نیاز دارید. */}
+                    خلق{" "}
+                     
+                     دستیاران هوش مصنوعی
+                     {/* <br/> */}
+                     {" "}با{" "}
+                     <br/>
+                    <span className=" text-feature gradient-h2 is-v2">
+                       سرعت و سهولت
+                    </span>{" "}
                 </h2>
+                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                تمام ابزارها و منابع مورد نیاز برای چت‌ بات های سفارشی در پلتفرم همیارچت در دسترس شماست
+                </h3>
             </div>
             <div className="mt-[30px] md:mt-[60px]">
                 <Section

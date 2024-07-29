@@ -218,16 +218,15 @@ const PowerfulFeaturesSection = () => {
         return () => clearInterval(intervalId)
     }, [])
     return (
-        <div id="hamyar-features" className="container relative mx-auto h-auto overflow-hidden  px-4 py-4 text-center 2xl:px-20">
+        <div id="hamyar-features" className="section-large container relative mx-auto h-auto overflow-hidden  px-4 text-center 2xl:px-20">
             <div className="mt-10 md:mt-4">
-                <p className="text-3xl md:text-6xl">
-                    <span>ویژگی‌های قدرتمند </span>
+                <h2 className="text-3xl md:text-5xl">
+                    <span>ویژگی‌های برجسته   </span>
                     <span className="gradient-h2 is-v2">همیارچت&nbsp;</span>
-                </p>
-                <p className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                    همه چیزهایی که برای چت‌ بات هوش مصنوعی بدون کدنویسی نیاز
-                    دارید.
-                </p>
+                </h2>
+                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                امکانات پیشرفته پلتفرم همیار چت به شما این امکان را می‌دهد که به‌طور کامل چت‌بات‌ها را مطابق نیاز خود شخصی‌سازی کنید.
+                </h3>
             </div>
             <div className="mt-[40px] flex justify-around">
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-16 lg:grid-cols-4">
