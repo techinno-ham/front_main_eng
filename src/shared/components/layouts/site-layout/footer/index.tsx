@@ -247,8 +247,10 @@ const Footer = () => {
                                     </div>
                                 </Link>
                             </div>
-                            <p className="text-center font-medium leading-5 text-zinc-400">
-                                چت بات سفارشی برای کسب و کار شما
+                            <p className="text-right font-medium leading-5 text-zinc-400">
+                            دستیارهای شخصی‌سازی شده هوش مصنوعی
+                            <br/>
+                             در خدمت رضایت مشتریان و پیشرفت کسب و کار شما                            
                             </p>
                         </div>
                         <div className="grid w-full grid-cols-4 gap-4 md:w-auto md:grid-cols-6">
@@ -740,7 +742,7 @@ const Footer = () => {
                             <span className=" text-center text-sm text-zinc-400 md:text-start">
                                 <span className="font-bold ">1403</span>
                                 <span className="mr-2">
-                                    تمامی حقوق مادی و معنوی این سایت متعلق به
+                                    تمامی حقوق مادی و معنوی این وبسایت متعلق به
                                     همیار چت می‌باشد.
                                 </span>
                             </span>

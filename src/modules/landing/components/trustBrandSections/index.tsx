@@ -35,16 +35,28 @@ const TrustBrnadSections = () => {
         },
     })
     return (
-        <div className="container-medium w-container container mx-auto mt-[80px] h-max overflow-hidden text-center">
-            <div>
-                <p className="text-2xl md:text-4xl">همکاران و مشتریان ما</p>
+        <div className="container-medium w-container container mx-auto mt-16 h-max overflow-hidden text-center">
+            <div className="mt-10 md:mt-4">
+                <h2 className="text-3xl md:text-5xl">
+              مشتریان
+             و
+                    <span className="gradient-h2 is-v2">
+                    {" "}
+            همکاران
+            {" "}
+                    </span>
+               ما
+                </h2>
+                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                لیست شرکت‌ها و کسب‌وکارهایی که به خدمات هوش مصنوعی ما اعتماد کرده‌اند.
+                </h3>
             </div>
             <div
                 style={{
                     maskImage:
                         "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
                 }}
-                className="navigation-wrapper md:mt-5 mt-2"
+                className="navigation-wrapper md:mt-10 mt-2"
             >
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&

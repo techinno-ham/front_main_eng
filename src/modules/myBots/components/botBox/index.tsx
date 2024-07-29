@@ -6,6 +6,7 @@ import Modal from "@/src/shared/components/common/modal"
 import { useState } from "react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
+import { toast } from "sonner"
 
 interface IBotBoxProps {
     type: "instagram" | "website"
@@ -47,12 +48,20 @@ const BotBox = (props: IBotBoxProps) => {
             if (props.onDelete && props.botsData.bot_id) {
                 await props.onDelete(props.botsData.bot_id)
                 setOpen(false)
+                toast.success("چت بات شما با موفقیت حذف شد")
             }
         } catch (error) {
             console.error("Error deleting bot:", error)
         } finally {
             setLoading(false)
         }
+    };
+
+    const handleCopyBot = (e: React.MouseEvent)=>{
+        e.stopPropagation()
+        e.preventDefault()
+        toast.error("در حال حاظر کپی کردن چت بات مورد نظر امکان پذیر نمی باشد.")
+
     }
 
     return (
@@ -97,7 +106,9 @@ const BotBox = (props: IBotBoxProps) => {
 
                             <div className="flex w-1/4 justify-around">
                                 <div>
-                                    <button>
+                                    <button
+                                    onClick={handleCopyBot}
+                                      >
                                         <DocumentCopy size={20} />
                                     </button>
                                 </div>

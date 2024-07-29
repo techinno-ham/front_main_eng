@@ -55,7 +55,7 @@ const AboutUs = () => {
                                 <h2 className="font-manrope relative mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
                                 آشنایی با ما{" "}
                                 </h2>
-                                <p className="mx-auto max-w-2xl text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
+                                <p className="text-justify mx-auto max-w-2xl text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                 ما در همیارچت با افتخار اعلام می‌کنیم که اولین استارتاپ ایرانی هستیم که در زمینه ارائه دستیارهای هوش مصنوعی برای خدمات مشتریان فعالیت می‌کند. هدف اصلی ما ایجاد تجربه‌ای بهتر، سریع‌تر و کارآمدتر برای مشتریان شماست. با بهره‌گیری از آخرین تکنولوژی‌های هوش مصنوعی و پردازش زبان طبیعی، ما به کسب‌وکارها کمک می‌کنیم تا ارتباط بهتری با مشتریان خود برقرار کرده و نیازهای آنها را به بهترین شکل ممکن پاسخ دهند.
                                 </p>
                             </div>
@@ -76,7 +76,7 @@ const AboutUs = () => {
                                 <h2 className="font-manrope mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
                                 مأموریت و ارزش‌ها
                                 </h2>
-                                <p className="mx-auto max-w-2xl text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
+                                <p className="text-justify mx-auto max-w-2xl text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                 مأموریت ما در همیارچت تسهیل فرآیند ارتباط با مشتریان و ارتقاء سطح رضایتمندی آنهاست. ما بر این باوریم که تکنولوژی باید در خدمت انسان باشد و به همین دلیل همواره در تلاشیم تا راه‌حل‌هایی ارائه دهیم که هم کاربرپسند و هم مؤثر باشند. ارزش‌های ما شامل نوآوری، مشتری‌مداری، کیفیت و شفافیت است. تیم ما متعهد به ارائه بهترین خدمات و پشتیبانی به مشتریان عزیزمان است و همیشه آماده‌ایم تا با شما همکاری کنیم و نیازهای شما را برآورده کنیم.
                                 </p>
                             </div>
@@ -230,11 +230,11 @@ const AboutUs = () => {
                             </div>
                             <div className="flex-1 text-center lg:max-w-xs lg:text-left">
                                 <div className="mb-5 border-b border-solid border-gray-300 pb-5">
-                                    <h6 className="mb-1 text-lg font-semibold text-gray-900">
-                                        Harsh Patel
+                                    <h6 className="text-right mb-1 text-lg font-semibold text-gray-900">
+                                        معین
                                     </h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">
-                                        Co-Founder & CEO
+                                    <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
+                                        Co-Founder
                                     </span>
                                 </div>
                                 <p className="mb-7 leading-6 text-gray-500">
@@ -297,11 +297,11 @@ const AboutUs = () => {
                             </div>
                             <div className="flex flex-1 flex-col justify-between text-center lg:max-w-xs lg:text-left">
                                 <div className="mb-5 border-b border-solid border-gray-300 pb-5">
-                                    <h6 className="mb-1 text-lg font-semibold text-gray-900">
-                                        Alexa Kimberly
+                                    <h6 className="text-right mb-1 text-lg font-semibold text-gray-900">
+                                        مهدیار
                                     </h6>
-                                    <span className="text-sm text-gray-500 group-hover:text-blue-600">
-                                        Lead Designer
+                                    <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
+                                    Co-Founder
                                     </span>
                                 </div>
                                 <p className="mb-7 leading-6 text-gray-500">
