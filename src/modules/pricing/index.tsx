@@ -1,5 +1,5 @@
 //https://tailgrids.com/components/pricing-tables
-
+//https://tailgrids.com/pricing
 import PricingCard from "./PricingCard"
 import "./style.css"
 
