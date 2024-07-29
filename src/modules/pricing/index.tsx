@@ -1499,7 +1499,20 @@ const Pricing = () => {
                                 aria-autocomplete="none"
                                 dir="ltr"
                                 data-state="closed"
-                                className="border-b-1 z-100 sticky top-14 -mx-8 flex h-10 w-full min-w-[calc(100%+4rem)] items-center justify-between rounded-md border border-zinc-900/10 border-t-zinc-200 bg-zinc-50 px-10 py-7 text-base font-medium text-zinc-900 placeholder:text-zinc-400 focus:border-violet-500 focus:outline-none focus:ring-0 focus:ring-violet-500/10 focus:ring-offset-0 disabled:opacity-50 dark:border-zinc-800 dark:bg-zinc-950 dark:ring-offset-zinc-950 dark:placeholder:text-zinc-400 dark:focus:ring-zinc-300"
+                                className="border-b-1 z-100 
+                                sticky 
+                                top-[74px] -mx-8
+                                 flex h-10 w-full
+                                  min-w-[calc(100%+4rem)]
+                                   items-center justify-between 
+                                   rounded-md border border-zinc-900/10
+                                    border-t-zinc-200 bg-zinc-50 px-10 
+                                    py-7 text-base font-medium 
+                                    text-zinc-900 placeholder:text-zinc-400
+                                     focus:border-violet-500 focus:outline-none 
+                                     focus:ring-0 focus:ring-violet-500/10
+                                      focus:ring-offset-0 disabled:opacity-50 
+                                      "
                             >
                                 <span style={{ pointerEvents: "none" }}>
                                     Free
