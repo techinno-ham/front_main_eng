@@ -122,7 +122,7 @@ const Pricing = () => {
                             style={{
                                 zIndex: 100,
                             }}
-                            className="sticky inset-x-0 top-14  bg-white"
+                            className="sticky inset-x-0 top-[68px]  bg-white"
                         >
                             <div className="bg-white py-4">
                                 <div className="grid grid-cols-9 gap-4 bg-white">

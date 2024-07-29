@@ -27,11 +27,13 @@ const PricingCard = ({
                     style={{
                         backdropFilter: "blur(10px)",
                         boxShadow: `${dynamicShadowGenerator(order)}`,
-                        borderColor: "#3056d3",
+                        borderColor: active ? "#3056d3" : "#e5e5e5",
                     }}
                     className=" h-full border-primary shadow-pricing relative z-10 overflow-hidden rounded-[10px] border border-opacity-20 bg-white px-4 py-10 sm:p-12 lg:px-6 lg:py-10 xl:p-[32px]"
                 >
-                    <span className="pricing-header mb-3 block text-3xl font-bold">
+                    <div className="flex flex-col h-full justify-between">
+                        <div>
+                        <span className="pricing-header mb-3 block text-3xl font-bold">
                         {type}
                     </span>
                     <h2 className="text-dark mb-5 text-2xl">
@@ -71,7 +73,7 @@ const PricingCard = ({
                     style={{
                         color: "#637381"
                     }}
-                    className="mt-2 mb-9 flex flex-col gap-[14px] pb-8 border-b">
+                    className="mt-2 mb-9 flex flex-col gap-[14px] pb-8">
                         {React.Children.map(children, (child) => (
                             <div className="flex flex-row items-start gap-3">
                                 <p className="size-5 text-zinc-700">
@@ -94,7 +96,10 @@ const PricingCard = ({
                             </div>
                         ))}
                     </div>
-                    <a
+                        </div>
+                        <div>
+                        <hr className="w-60 h-0.5 mx-auto my-4 bg-blue-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+                        <a
                         href="/#"
                         className={` ${
                             active
@@ -104,6 +109,10 @@ const PricingCard = ({
                     >
                         {buttonText}
                     </a>
+                        </div>
+                        
+                    </div>
+                    
                     <div>
                         <span className="absolute left-0 top-7 z-[-1]">
                             <svg
