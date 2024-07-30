@@ -1,4 +1,4 @@
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 
 const SourceCard = () => {
     const {
@@ -8,7 +8,7 @@ const SourceCard = () => {
         fileList,
         createBot,
         isLoading,
-    } = useDateSource()
+    } = useDateSourceNew()
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
@@ -16,7 +16,6 @@ const SourceCard = () => {
 
     const handleCrateBot = async (event: any) => {
         event.preventDefault()
-
         await createBot()
     }
 

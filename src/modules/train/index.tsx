@@ -11,7 +11,7 @@ import TextInput from "../train/components/text"
 import WebsiteLink from "../train/components/websiteLink"
 import QAnda from "../train/components/qAnda"
 import useStoreLoadData from "./hooks/loadDataSource"
-import useDateSourceNew from "../trainCreate/hooks/useDataSource"
+import useDateSourceNew from "../trainCreate/hooks/useDataSourceNew"
 import useDateSourceUpdate from "./hooks/useDataSourceUpdate"
 import LoaderLottie from "@/src/shared/components/common/loader"
 
