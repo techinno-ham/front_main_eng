@@ -24,6 +24,17 @@ const Header = () => {
             window.removeEventListener("scroll", handleScroll)
         }
     }, [])
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("no-scroll")
+        } else {
+            document.body.classList.remove("no-scroll")
+        }
+    }, [isOpen])
+    const handleLinkClick = (href: string) => {
+        setIsOpen(false)
+        router.push(href)
+    }
     const links: any = [
         {
             link: "/#hamyar-features",
@@ -50,9 +61,9 @@ const Header = () => {
     return (
         <>
             <nav
-                className={`sticky top-0 z-20 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
+                className={`sticky top-0 z-50 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
             >
-                <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
+                <div className="flex flex-wrap items-center justify-between p-4 container relative mx-auto h-auto overflow-hidden  px-4   2xl:px-20">
                     <Link href={"/"}>
                         <div className="flex items-center justify-center">
                             <Image
@@ -62,7 +73,7 @@ const Header = () => {
                                 alt="Logo"
                             />
                             <span
-                                className={`mr-2 text-2xl font-bold ${scroll && "text-[#fff]"}`}
+                                className={`mr-2 text-xl md:text-2xl font-bold ${scroll && "text-[#fff]"}`}
                             >
                                 همیار چت
                             </span>
@@ -90,7 +101,7 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <div className="flex gap-4 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+                      <div className="flex gap-4 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
                         {isAuthenticated ? (
                             <>
                                 <button
@@ -141,32 +152,34 @@ const Header = () => {
                         >
                             {isOpen ? <CloseCircle /> : <HambergerMenu />}
                         </button>
-                    </div>
-                </div>
-                <div>
+                      </div>
+                      </div>
+                       <div>
+                    
                     <div
-                        className=" w-full items-center justify-between md:order-1 md:hidden  md:w-auto"
+                        className={`absolute w-full items-center justify-between md:hidden navbar-menu ${isOpen ? "menu-open" : "menu-closing"}`}
                         id="navbar-sticky"
                     >
                         <ul
-                            className={`mt-4  flex-col rounded-lg  p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse ${isOpen ? "flex" : "hidden"} ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
+                            className={`flex-col   p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse  ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
                         >
-                            {links.map((link: any, index: any) => {
-                                return (
-                                    <li key={index}>
-                                        <Link href={link.link}>
-                                            <div
-                                                className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"}  md:bg-transparent md:p-0`}
-                                            >
-                                                {link.title}
-                                            </div>
-                                        </Link>
-                                    </li>
-                                )
-                            })}
+                    {links.map((link:any, index:any) => (
+                            <li key={index}>
+                                <div
+                                    
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        handleLinkClick(link.link)
+                                    }}
+                                    className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"} md:bg-transparent md:p-0`}
+                                >
+                                    {link.title}
+                                </div>
+                            </li>
+                        ))}
                         </ul>
                     </div>
-                </div>
+                       </div>
             </nav>
         </>
     )

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import TotalBots from "./components/totalBot"
 import PremiumBot from "./components/primiumBot"
 import { getBotList } from "./utils"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import Head from "next/head"
@@ -19,10 +19,12 @@ import Pagination from "./components/pagination"
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
     const [isLoading, setIsLoading] = useState(true);
+    const isInitialLoad = useRef(true); 
     const [open, setOpen] = useState(false)
     const router = useRouter();
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [totalBots, setTotalBots] = useState(0);
     const [searchText, setSearchText] = useState("");
     const debouncedSearchText = useDebounce(searchText, 500);
    
@@ -38,10 +40,16 @@ const MyBots = () => {
                 })
                 setMyBots(response.data.bots)
                 setTotalPages(response.data.totalPages);
+                if (isInitialLoad.current) {
+                    setTotalBots(response.data.bots.length)
+                }
             } catch (err) {
                 console.log(err)
             } finally {
                 setIsLoading(false)
+                if (isInitialLoad.current) {
+                    isInitialLoad.current = false;
+                }
             }
         }
 
@@ -114,12 +122,12 @@ const MyBots = () => {
                 </div>
 
                 <div className="mt-8 flex flex-col gap-6 md:flex-row">
-                    <TotalBots totalNumber={myBotsArry.length}  isLoading={isLoading}/>
-                    <PremiumBot  totalPerimium={0} isLoading={isLoading} />
+                    <TotalBots totalNumber={totalBots}  isLoading={isInitialLoad.current}/>
+                    <PremiumBot  totalPerimium={0} isLoading={isInitialLoad.current} />
                 </div>
 
                 {/* bot container */}
-                <div className="mt-8 rounded-2xl bg-white px-10 pt-10 py-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] md:min-h-[450px]">
+                <div className="mt-8 rounded-2xl bg-white px-10 pt-10 py-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] min-h-[450px] md:min-h-[600px]">
                     <div className="flex justify-center">
                         <div className="flex w-full items-center rounded-lg border border-solid border-gray-200 p-2 text-[14px] md:w-1/2">
                             <SearchNormal1 color="#8F8F8F" />
@@ -135,11 +143,12 @@ const MyBots = () => {
                             </div>
                         </div>
                     </div>
+             
 
-                    <div className="mb-12 mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        {isLoading ? (
+                   
+                    {isLoading ? (
                             <>
-                                <div className="col-span-full flex items-center justify-center">
+                                <div className="h-full flex items-center justify-center  top-2/3 z-[1000]  translate-y-full ">
                                     <span className="mr-3">
                                         مقداری صبر کنید ...
                                     </span>
@@ -147,17 +156,23 @@ const MyBots = () => {
                                 </div>
                             </>
                         ) : myBotsArry.length > 0 ? (
-                            myBotsArry.map((bot: any, index) => (
-                                <BotBox
-                                    key={index}
-                                    type={bot.type}
-                                    botsData={bot}
-                                    onDelete={handleDeleteBot}
-                                />
-                            ))
+                            <div className="mb-12 mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                {
+                                         myBotsArry.map((bot: any, index) => (
+                                            <BotBox
+                                                key={index}
+                                                type={bot.type}
+                                                botsData={bot}
+                                                onDelete={handleDeleteBot}
+                                            />
+                                        ))
+                                }
+
+                            </div>
+                       
                             
                         ) : (
-                            <div className="col-span-full flex h-full flex-col items-center justify-center text-center">
+                            <div className="flex h-full flex-col items-center justify-center text-center">
                                 <EmptyBot />
                                 <span>در حال حاظر چت باتی وجود ندارد ....</span>
                                 <span>
@@ -167,7 +182,7 @@ const MyBots = () => {
                                 </span>
                             </div>
                         )}
-                    </div>
+                  
                     {!isLoading &&  myBotsArry.length > 0 && (
                         <>
                                <Pagination
@@ -229,7 +244,7 @@ const MyBots = () => {
 
                                           
                                         </div>
-                                    </Modal>
+                </Modal>
             </div>
         </>
     )
