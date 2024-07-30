@@ -1,3 +1,6 @@
+import CheckSVG from "../../shared/CheckSVG"
+import CrossSVG from "../../shared/CrossSVG"
+
 const EnterprisePricingMobile = () => {
     return(
         <>
@@ -63,20 +66,7 @@ const EnterprisePricingMobile = () => {
                                         استفاده در وبسایت
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                 </div>
@@ -100,61 +90,21 @@ const EnterprisePricingMobile = () => {
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         تاریخچه چت                                        </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         فرم اطلاعات (به زودی)                                        </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         آنالیز                                        </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                 </div>
@@ -166,21 +116,7 @@ const EnterprisePricingMobile = () => {
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         دسترسی به API (به زودی)                                        </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     {/* <div className="flex w-full flex-row items-center justify-start gap-2">
@@ -188,21 +124,7 @@ const EnterprisePricingMobile = () => {
                                             Zapier
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossSVG/>
                                         </span>
                                     </div>*/}
                                     
@@ -216,20 +138,7 @@ const EnterprisePricingMobile = () => {
                                             GPT-3.5
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
@@ -237,20 +146,7 @@ const EnterprisePricingMobile = () => {
                                         GPT-4o (پیشرفته‌ترین و کارآمدترین مدل)
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
@@ -258,21 +154,7 @@ const EnterprisePricingMobile = () => {
                                             GPT-4-Turbo
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
@@ -280,21 +162,7 @@ const EnterprisePricingMobile = () => {
                                             GPT-4
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                 </div>
@@ -307,42 +175,14 @@ const EnterprisePricingMobile = () => {
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         حذف لوگوی همیارچت                                        </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
                                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                                         دامنه یا لوگوی سفارشی شما                                                      </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                 </div>
@@ -355,21 +195,7 @@ const EnterprisePricingMobile = () => {
                                         پشتیبانی ۲۴/۷      
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                     <div className="flex w-full flex-row items-center justify-start gap-2">
@@ -377,21 +203,7 @@ const EnterprisePricingMobile = () => {
                                         مشاوره اختصاصی
                                         </span>
                                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CheckSVG/>
                                         </span>
                                     </div>
                                 </div>

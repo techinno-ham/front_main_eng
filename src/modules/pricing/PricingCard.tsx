@@ -105,7 +105,7 @@ const PricingCard = ({
                             </div>
                         </div>
                         <div>
-                            <hr className="mx-auto my-4 h-0.5 w-60 rounded border-0 bg-blue-100 md:my-10 dark:bg-gray-700" />
+                            <hr className="mx-auto my-4 h-0.5 w-60 rounded border-0 bg-blue-100 md:my-10 " />
                             <a
                                 href="/#"
                                 className={` ${
