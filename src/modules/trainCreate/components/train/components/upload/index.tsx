@@ -1,13 +1,14 @@
 "use client"
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
 
 const UploadFlie = () => {
-    const { fileList, addFileList } = useDateSource()
-
+    const { fileList, addFileList } = useDateSourceNew()
+    console.log("render...")
     const onDrop = useCallback((acceptedFiles: any) => {
+       
         addFileList([...fileList, ...acceptedFiles])
     }, [])
 

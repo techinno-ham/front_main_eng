@@ -1,4 +1,5 @@
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+
+import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import { Trash } from "iconsax-react"
 import { useState } from "react"
@@ -6,7 +7,7 @@ import { toast } from "sonner"
 // import { MdDelete } from "react-icons/md";
 
 const WebsiteLink = () => {
-    const { urlList, addUrlList } = useDateSource()
+    const { urlList, addUrlList } = useDateSourceNew()
     const [inputUrl, setInputUrl] = useState("")
     const { isLoading, fetchLink } = useFetchLinks()
 

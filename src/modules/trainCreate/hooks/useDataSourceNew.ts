@@ -33,8 +33,8 @@ const useDateSourceNew = () => {
     const addUrlList = (newUrlList: string[]) => {
         setUrlList(newUrlList)
     }
-    const addFileList = (fileList: File[]) => {
-        setFileList(fileList)
+    const addFileList = (file: File[]) => {
+        setFileList(file)
     }
     const createBot = async () => {
         setLoading(true)
@@ -53,9 +53,11 @@ const useDateSourceNew = () => {
                 for (const file of fileList) {
                     formData.append("files", file, file.name)
                 }
-            }
-            const response = await Services.cretaeBots(formData)
-            router.push(`/panel/${response.data.bot_id}`)
+            };
+
+
+            // const response = await Services.cretaeBots(formData)
+            // router.push(`/panel/${response.data.bot_id}`)
             // Reset all state variables
             setText("")
             setTextCharNumber(0)
@@ -63,7 +65,7 @@ const useDateSourceNew = () => {
             setUrlList([])
             setFileList([])
 
-            return response
+            // return response
         } catch (err: any) {
             console.log(err)
             toast.error("مشکلی پیش امده است ..")
@@ -87,4 +89,4 @@ const useDateSourceNew = () => {
         createBot,
     }
 }
-export default useDateSourceNew
+export default useDateSourceNew;

@@ -1,9 +1,11 @@
 "use client"
 import dynamic from "next/dynamic"
 import Layout from "./components/layout"
-import ActiveTab from "@/src/shared/components/common/activeTab"
 import useStoreViewControllerCreate from "./hooks/view-controler-create"
-
+import FileUpload from "./components/upload"
+import TextInput from "./components/text"
+import WebsiteLink from "./components/websiteLink"
+import QAnda from "./components/qAnda"
 const TrainForCreate = () => {
     const viewController = useStoreViewControllerCreate()
     const tabsInfo = {
@@ -13,24 +15,21 @@ const TrainForCreate = () => {
         QandA: "پرسش و پاسخ ها",
     }
 
-    const tabs = [
-        {
-            id: "File",
-            component: dynamic(() => import("./components/upload")),
-        },
-        {
-            id: "Text",
-            component: dynamic(() => import("./components/text")),
-        },
-        {
-            id: "Website",
-            component: dynamic(() => import("./components/websiteLink")),
-        },
-        {
-            id: "QandA",
-            component: dynamic(() => import("./components/qAnda")),
-        },
-    ]
+   
+    const renderTabContent = () => {
+        switch (viewController.activeTab) {
+            case "File":
+                return <FileUpload />
+            case "Text":
+                return <TextInput />
+            case "Website":
+                return <WebsiteLink />
+            case "QandA":
+                return <QAnda />
+            default:
+                return null
+        }
+    }
 
     return (
         <>
@@ -40,12 +39,8 @@ const TrainForCreate = () => {
                         <span className="text-xl text-gray-400 ">
                             {tabsInfo[viewController.activeTab]}
                         </span>
-                        <div>
-                            <ActiveTab
-                                tabs={tabs}
-                                activeTabId={viewController.activeTab}
-                            />
-                        </div>
+                        <div>{renderTabContent()}</div>
+                    
                     </div>
                 </Layout>
             </div>
