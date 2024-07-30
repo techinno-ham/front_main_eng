@@ -174,11 +174,12 @@ const AboutUs = () => {
                             <div className="flex-1 text-center lg:max-w-xs lg:text-left">
                                 <div className="mb-5 border-b border-solid border-gray-300 pb-5">
                                     <h6 className="text-right mb-1 text-lg font-semibold text-gray-900">
-                                        معین
+                                     معین معین نیا
                                     </h6>
                                     <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
-                                        Co-Founder
-                                    </span>
+                                    هم‌بنیان‌گذار&nbsp;&nbsp;(Co-Founder)
+                                    
+                                                                        </span>
                                 </div>
                                 <p className="mb-7 leading-6 text-gray-500">
                                     I am the co founder of pagedone and we’ve
@@ -241,11 +242,11 @@ const AboutUs = () => {
                             <div className="flex flex-1 flex-col justify-between text-center lg:max-w-xs lg:text-left">
                                 <div className="mb-5 border-b border-solid border-gray-300 pb-5">
                                     <h6 className="text-right mb-1 text-lg font-semibold text-gray-900">
-                                        مهدیار
+                                        مهدیار جعفری
                                     </h6>
                                     <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
-                                    Co-Founder
-                                    </span>
+                                    هم‌بنیان‌گذار&nbsp;&nbsp;(Co-Founder)
+                                                                        </span>
                                 </div>
                                 <p className="mb-7 leading-6 text-gray-500">
                                     I’ve been lead designer for pagedone since

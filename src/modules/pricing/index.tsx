@@ -238,7 +238,7 @@ const Pricing = () => {
                                 className="col-span-2 flex flex-col items-start gap-6"
                             >
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             تنظیمات
                                         </span>
@@ -260,7 +260,7 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             آموزش
                                         </span>
@@ -270,7 +270,7 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             فعالیت
                                         </span>
@@ -286,7 +286,7 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             یکپارچه‌سازی‌ها و API
                                         </span>
@@ -308,7 +308,7 @@ const Pricing = () => {
                                     </span> */}
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             مدل هوش مصنوعی
                                         </span>
@@ -327,7 +327,7 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             برندسازی
                                         </span>
@@ -340,7 +340,7 @@ const Pricing = () => {
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
-                                    <span className="sticky top-[12.5rem] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
+                                    <span className="sticky top-[217px] flex h-16 w-dvw items-center border-b border-b-zinc-200 bg-white text-xl font-semibold ">
                                         <span className="pricing-header">
                                             پشتیبانی
                                         </span>
