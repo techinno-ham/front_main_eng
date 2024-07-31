@@ -2,15 +2,38 @@
 import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useState } from "react"
-import { useDropzone, FileRejection } from "react-dropzone"
+import { useDropzone, FileRejection } from "react-dropzone";
+import { toast } from "sonner";
 
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_COUNT = 6;
 const UploadFlie = () => {
     const { fileList, addFileList } = useDateSourceNew()
-    console.log("render...")
-    const onDrop = useCallback((acceptedFiles: any) => {
-       
-        addFileList([...fileList, ...acceptedFiles])
-    }, [])
+    const onDrop = useCallback(
+        (acceptedFiles: any, fileRejections: FileRejection[]) => {
+            let totalSize = fileList.reduce((acc, file) => acc + file.size, 0)
+            let newFiles = []
+
+            if (fileList.length + acceptedFiles.length > MAX_FILE_COUNT) {
+                toast.error("شما نمی توانید بیش از 6 فایل آپلود کنید")
+                return
+            }
+
+            for (let file of acceptedFiles) {
+                totalSize += file.size
+                if (totalSize > MAX_FILE_SIZE) {
+                    toast.error("مجموع حجم فایل های شما بیشتر از 10 MB میباشد")
+                    return
+                }
+                newFiles.push(file)
+            }
+
+            // setErrorMessage("")
+            addFileList([...fileList, ...newFiles])
+        },
+        [fileList, addFileList],
+    )
 
     const removeFile = (fileName: string) => {
         addFileList(fileList.filter((file) => file.name !== fileName))
@@ -101,7 +124,7 @@ const UploadFlie = () => {
                             )}
                         </div>
                     </div>
-                    <div></div>
+                  
                 </div>
             )}
         </>
