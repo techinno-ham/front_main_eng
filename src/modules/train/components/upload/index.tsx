@@ -1,11 +1,20 @@
 "use client"
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useEffect, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 import useStoreLoadData from "../../hooks/loadDataSource"
+import { toast } from "sonner";
 
+interface UploadedFile {
+    url: string;
+    fileName: string;
+    remove: boolean;
+    size?:any
+}
+
+const MAX_FILE_COUNT = 6;
+const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 const UploadFlie = () => {
     const {
         fileList,
@@ -19,7 +28,33 @@ const UploadFlie = () => {
 
     const onDrop = useCallback(
         (acceptedFiles: any) => {
-            addFileList([...fileList, ...acceptedFiles])
+
+            let totalSize = fileList.reduce((acc, file) => acc + file.size, 0);
+            let newFiles = []
+
+
+            // Add sizes from uploadedFile where remove is false
+            totalSize += (uploadedFile as UploadedFile[])
+                .filter((file: UploadedFile) => !file.remove)
+                .reduce((acc, file) => acc + file.size, 0);
+
+            const uploadedFileCount = (uploadedFile as UploadedFile[]).filter((item) => !item.remove).length;
+            if (fileList.length + acceptedFiles.length + uploadedFileCount > MAX_FILE_COUNT) {
+                toast.error("شما نمی توانید بیش از 6 فایل آپلود کنید")
+                return
+            };
+            for (let file of acceptedFiles) {
+                totalSize += file.size
+                if (totalSize > MAX_FILE_SIZE) {
+                    toast.error("مجموع حجم فایل های شما بیشتر از 10 MB میباشد")
+                    return
+                }
+                newFiles.push(file)
+            }
+
+
+            addFileList([...fileList, ...newFiles])
+           
         },
         [fileList, addFileList],
     )
@@ -31,11 +66,13 @@ const UploadFlie = () => {
     useEffect(() => {
         const transformUrlsToDataObjects = (links: any) => {
             let newStructuresLinks = links.map((link: string) => {
+                const file = data.files_info.find((item:any) => item.link === link);
                 const fileName = link.split("/").pop()
                 return {
                     url: link,
                     fileName: fileName,
                     remove: false,
+                    size:file.size
                 }
             })
 
