@@ -20,7 +20,7 @@ import MobilePricingFeatures from "./components/Mobile/Table"
 
 const Pricing = () => {
     return (
-        <section className="dark:bg-dark relative bg-white pb-12 pt-10 lg:pb-[90px]">
+        <section className="relative bg-white pb-12 pt-10 lg:pb-[90px]">
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4">
@@ -303,7 +303,7 @@ const Pricing = () => {
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         WhatsApp
                                     </span>
-                                    <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
+                                    <span className="flzex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Messenger (Coming soon)
                                     </span> */}
                                 </div>

@@ -20,9 +20,9 @@ const FreePricingMobile = () => {
             <div
                 data-orientation="horizontal"
                 role="none"
-                className="-mx-8 h-0.5 w-full min-w-[calc(100%+4rem)] shrink-0 bg-zinc-200 drop-shadow-lg dark:bg-zinc-500"
+                className="h-0.5 w-full shrink-0 bg-zinc-200 drop-shadow-lg "
             ></div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-3">
                 <div className="flex w-full flex-col">
                     <span className="pricing-header text-xl font-semibold">
                         تنظیمات
