@@ -58,8 +58,7 @@ const Login = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیار چت
-                            </span>
+همیارچت                            </span>
                         </div>
                     </Link>
                 </div>
@@ -150,7 +149,7 @@ const Login = () => {
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>ورود به همیار چت</>
+                                    <>ورود به همیارچت</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">

@@ -44,8 +44,7 @@ const HeaderPanel = () => {
                             <span
                                 className={`mr-2 text-xl font-bold md:text-2xl `}
                             >
-                                همیار چت
-                            </span>
+همیارچت                            </span>
                         </Link>
                     </div>
 

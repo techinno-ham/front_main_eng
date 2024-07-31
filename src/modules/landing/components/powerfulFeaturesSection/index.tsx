@@ -225,7 +225,7 @@ const PowerfulFeaturesSection = () => {
                     <span className="gradient-h2 is-v2">همیارچت&nbsp;</span>
                 </h2>
                 <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                امکانات پیشرفته پلتفرم همیار چت به شما این امکان را می‌دهد که به‌طور کامل چت‌بات‌ها را مطابق نیاز خود شخصی‌سازی کنید.
+                امکانات پیشرفته پلتفرم همیارچت به شما این امکان را می‌دهد که به‌طور کامل چت‌بات‌ها را مطابق نیاز خود شخصی‌سازی کنید.
                 </h3>
             </div>
             <div className="mt-[40px] flex justify-around">

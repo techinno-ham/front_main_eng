@@ -44,8 +44,7 @@ const ForgetPassword = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیار چت
-                            </span>
+همیارچت                            </span>
                         </div>
                     </Link>
                 </div>

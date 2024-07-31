@@ -211,8 +211,7 @@ const MyBots = () => {
                             <span
                                 className={`mr-2 text-2xl font-bold `}
                             >
-                                همیار چت
-                            </span>
+همیارچت                            </span>
                                              </div>
 
                                             </div>
