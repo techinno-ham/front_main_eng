@@ -5,11 +5,16 @@ import { Trash } from "iconsax-react"
 import { useState } from "react"
 import { toast } from "sonner"
 // import { MdDelete } from "react-icons/md";
+const MAX_LINK_COUNT = 40; // Maximum number of links
 
 const WebsiteLink = () => {
     const { urlList, addUrlList } = useDateSourceNew()
     const [inputUrl, setInputUrl] = useState("")
     const { isLoading, fetchLink } = useFetchLinks()
+    const isValidUrl = (url:string) => {
+        const regex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/
+        return regex.test(url)
+    }
 
     const handleFetchUrl = async (event: any) => {
         event.preventDefault()
@@ -17,11 +22,26 @@ const WebsiteLink = () => {
             toast.error("لطفا لینک مورد نظر خود را وارد کنید ...")
             return
         }
+        if (!isValidUrl(inputUrl)) {
+            toast.error("لینک وارد شده معتبر نمی‌باشد.")
+            return
+        }
         const res = await fetchLink(inputUrl)
+        const remainingLinks = MAX_LINK_COUNT - urlList.length
+
+        if (res?.data.length > remainingLinks) {
+            toast.error(`شما نمی توانید بیش از 40 لینک اضافه کنید. فقط ${remainingLinks} لینک اضافه شد.`)
+            addUrlList([...urlList, ...res?.data.slice(0, remainingLinks)])
+            return
+        }
         addUrlList([...urlList, ...res?.data])
     }
 
     const handleAddInput = () => {
+        if (urlList.length >= MAX_LINK_COUNT) {
+            toast.error("شما نمی توانید بیش از 40 لینک اضافه کنید")
+            return
+        }
         addUrlList([...urlList, ""])
     }
 
