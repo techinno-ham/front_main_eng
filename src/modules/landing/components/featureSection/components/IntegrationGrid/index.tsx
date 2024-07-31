@@ -397,7 +397,7 @@ const IntegrationGrid = () => {
                     width={38}
                     height={38}
                     alt="White botpress Emblem"
-                    src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d76f6d32dbbf24052effa2_BPRecess.svg"
+                    src="/logo-light.svg"
                     className="integration-Image /bp"
                 />
             </motion.div>

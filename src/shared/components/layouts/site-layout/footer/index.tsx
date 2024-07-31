@@ -242,8 +242,7 @@ const Footer = () => {
                                         <span
                                             className={`mr-2 text-2xl font-bold `}
                                         >
-                                            همیار چت
-                                        </span>
+همیارچت                                        </span>
                                     </div>
                                 </Link>
                             </div>
@@ -743,7 +742,7 @@ const Footer = () => {
                                 <span className="font-bold ">1403</span>
                                 <span className="mr-2">
                                     تمامی حقوق مادی و معنوی این وبسایت متعلق به
-                                    همیار چت می‌باشد.
+                                    همیارچت می‌باشد.
                                 </span>
                             </span>
                         </div>

@@ -66,7 +66,7 @@ const Register = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیار چت
+                                همیارچت
                             </span>
                         </div>
                     </Link>
@@ -177,7 +177,7 @@ const Register = () => {
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>ثبت نام همیار چت</>
+                                    <>ثبت نام همیارچت</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">

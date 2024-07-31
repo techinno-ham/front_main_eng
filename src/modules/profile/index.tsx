@@ -160,7 +160,7 @@ const Profile = () =>{
                                     <input
                                         {...register("organisation")}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="همیار چت "
+                                        placeholder="همیارچت"
                                         type="text"
                                     />
                                 </div>

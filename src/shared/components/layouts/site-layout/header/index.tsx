@@ -54,7 +54,7 @@ const Header = () => {
         },
         {
             link: "/about-us",
-            title: "درباره ی ما",
+            title: "درباره‌ی ما",
         },
     ]
 
@@ -75,8 +75,7 @@ const Header = () => {
                             <span
                                 className={`mr-2 text-xl md:text-2xl font-bold ${scroll && "text-[#fff]"}`}
                             >
-                                همیار چت
-                            </span>
+همیارچت                            </span>
                         </div>
                     </Link>
 
