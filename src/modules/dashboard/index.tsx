@@ -82,7 +82,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                     </div>
                 </div>
 
-                <ChartDemo botData={botData} />
+                {/* <ChartDemo botData={botData} /> */}
             </div>
         </>
     )

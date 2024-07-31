@@ -1,7 +1,13 @@
 import useStoreLoadData from "@/src/modules/train/hooks/loadDataSource"
 import useDateSourceUpdate from "@/src/modules/train/hooks/useDataSourceUpdate"
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
 import { usePathname } from "next/navigation"
+
+interface UploadedFile {
+    url: string;
+    fileName: string;
+    remove: boolean;
+    size?:any
+}
 
 const SourceCard = () => {
     const pathname = usePathname()
@@ -24,7 +30,19 @@ const SourceCard = () => {
     const QandACharCount = qaList.reduce(
         (total: any, qa: any) => total + qa.question.length + qa.answer.length,
         0,
-    )
+    );
+    console.log(uploadedFile)
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+        // Calculate total size from fileList
+        let totalSize = fileList.reduce((acc, file) => acc + file.size, 0);
+
+        // Add sizes from uploadedFile where remove is false
+        totalSize += (uploadedFile as UploadedFile[])
+            .filter((file: UploadedFile) => !file.remove)
+            .reduce((acc, file) => acc + file.size, 0);
+    
+    let totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2);
+    const uploadedFileCount = (uploadedFile as UploadedFile[]).filter((item) => !item.remove).length;
 
     const handleCrateBot = async (event: any) => {
         event.preventDefault()
@@ -66,9 +84,9 @@ const SourceCard = () => {
                                   </div>
                               </>
                           )}
-                    {(fileList.length > 0 || uploadedFile.length > 0) && (
+                    {(fileList.length > 0 || uploadedFileCount > 0) && (
                         <div className="text-sm text-zinc-700">
-                            {fileList.length + uploadedFile.length} عدد فایل
+                            {fileList.length + uploadedFileCount} عدد فایل
                         </div>
                     )}
                     {!isQAListChanged
@@ -89,6 +107,17 @@ const SourceCard = () => {
                               </>
                           )}
                 </div>
+                <div className="text-sm ">
+                                مجموع حجم فایل‌ها:  {totalSizeMB} MB 
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1 ">
+                                <div
+                                    className="bg-blue-600 h-2.5 rounded-full"
+                                    style={{
+                                        width: `${(totalSize / MAX_FILE_SIZE) * 100}%`
+                                    }}
+                                ></div>
+                            </div>
                 <p className="flex flex-col text-sm">
                     <span className="font-semibold">
                         {" "}
