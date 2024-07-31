@@ -391,31 +391,27 @@ const Footer = () => {
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
-                            </Link>
+پشتیبانی تلگرام                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
-                            </Link>
+پشتیبانی واتساپ                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
-                            </Link>
+کانال تلگرام                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
-                            </Link>
+hello@hamyar.chat                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                سوالات متداول
+                                0912123123
                             </Link>
                         </div>
                     </div>

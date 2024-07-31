@@ -42,10 +42,10 @@ const Pricing = () => {
                                         color: "transparent",
                                     }}
                                 >
-                                    &nbsp;جدید ترین&nbsp;
+                                    &nbsp;جدیدترین&nbsp;
                                 </span>
-                                سرویس ها
-                            </h2>
+                                سرویس‌ها      
+                                                      </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
                             اطلاعات ارائه‌شده شامل جزئیات مربوط به هر سرویس و هزینه‌های مرتبط با آن می‌باشد تا بتوانید بهترین تصمیم را برای نیازهای خود بگیرید.
                             </p>
