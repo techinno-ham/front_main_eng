@@ -10,7 +10,7 @@ const HeaderPanel = () => {
     const pathname = usePathname()
     const router = useRouter()
 
-    const useBackPanel = pathname.includes("panel")
+    const useBackPanel = pathname.includes("panel") || pathname.includes("createbot") 
 
     return (
         <>

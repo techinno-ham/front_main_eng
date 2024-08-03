@@ -26,7 +26,9 @@ const SourceCard = () => {
         isQAListChanged,
         isURLListChanged,
     } = useDateSourceUpdate()
-    const { data } = useStoreLoadData()
+    const { data } = useStoreLoadData();
+
+    
 
     const QandACharCount =
     isQAListChanged ?
@@ -57,14 +59,22 @@ const SourceCard = () => {
         const hasMinimumFiles = fileList.length + uploadedFileCount>= 2;
         const hasMinimumChars = allChar >= 100;
 
+        if (data.bot.update_datasource >= 2 ) {
+            toast.error("تعداد درخواست های شما بیش از حد مجاز است .")
+            return;
+        }
+
         if (!hasMinimumFiles || !hasMinimumChars) {
             toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
             return;
         }
+
+    
         await updateDataSource(pathSegments[2])
     }
 
     return (
+        <>
         <div className="mt-18  h-fit w-full  rounded-2xl bg-white p-2 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
             <div className="p-4">
                 <div className="text-center text-xl font-semibold lg:mb-2">
@@ -78,11 +88,10 @@ const SourceCard = () => {
                                 {data?.text_input.length} عدد کارکتر متن{" "}
                             </div>
                         )
-                    ) : (
+                    ) : text.length > 0 && (
                         <>
                             <div className="text-sm text-zinc-700">
-                                {" "}
-                                {text.length} عدد کارکتر متن{" "}
+                                 {text.length} عدد کارکتر متن{" "}
                             </div>
                         </>
                     )}
@@ -157,6 +166,10 @@ const SourceCard = () => {
                         </span>
                     </span>
                 </p>
+                <div className="text-sm text-red-600 mt-4">
+                                   تعداد درخواست های آموزش مجدد:  {data.bot.update_datasource} / 2  
+                            </div>
+                           
                 <div className="mt-4 flex justify-center">
                     <button
                         onClick={handleUpdateBot}
@@ -192,6 +205,9 @@ const SourceCard = () => {
                 </div>
             </div>
         </div>
+        
+        </>
+        
     )
 }
 

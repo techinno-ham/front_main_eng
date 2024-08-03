@@ -11,6 +11,7 @@ import LoaderLottie from "@/src/shared/components/common/loader"
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
+    const [filter, setFilter] = useState<'3_days' | '7_days' | '1_month' | 'all'>('all');
     const [isLoading, setIsLoading] = useState(true)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
@@ -23,6 +24,9 @@ const MyMessage = () => {
         })
         return formattedDate
     }
+    const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setFilter(event.target.value as '3_days' | '7_days' | '1_month' | 'all');
+      };
 
     useEffect(() => {
         const fetchHistoryList = async () => {
@@ -96,22 +100,24 @@ const MyMessage = () => {
                         <label className="text-md mb-2 block font-medium text-zinc-700">
                             {" "}
                             فیلتر :
+                            <span className="text-[12px] mr-1 text-gray-600">
+                             (بر اساس زمان شروع گفت و گو)
+                             </span>
                         </label>
                         <div className="flex justify-between">
                             <div>
                                 <div>
-                                    <select
-                                        id="countries"
-                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
-                                    >
-                                        <option selected>
-                                            انتخاب بازه زمانی
-                                        </option>
-                                        <option value="US">3 روز قبل</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
-                                    </select>
+                                <select
+                                     id="filter"
+                                     value={filter}
+                                       onChange={handleFilterChange}
+                                        className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                                          >
+                                             <option value="all">بدون فیلتر</option>
+                <option value="3_days">3 روز گذشته</option>
+                <option value="7_days">7 روز گذشته</option>
+                <option value="1_month">1 ماه گذشته</option>
+              </select>
                                 </div>
                             </div>
                             <button
@@ -189,7 +195,7 @@ const MyMessage = () => {
                         <div className="flex grow items-center justify-center ">
                             <div className="w-full">
                                 <p className="my-2 ml-1 text-sm font-bold lg:mt-3">
-                                    بازه زمانی : ۳ روز قبل
+                                    بازه زمانی : ۳ روز گذشته
                                 </p>
                                 <div className="mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-[#F0F8FF] px-3 py-5">
                                     <div>
