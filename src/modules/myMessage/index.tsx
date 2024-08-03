@@ -7,11 +7,16 @@ import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
 import LoaderLottie from "@/src/shared/components/common/loader"
+import EmptyChat from "@/src/shared/components/common/emptyChatLoader"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
-    const [filter, setFilter] = useState<'3_days' | '7_days' | '1_month' | 'all'>('all');
+    const [message, setMessage] = useState<string | null>(null)
+
+    const [filter, setFilter] = useState<
+        "3_days" | "7_days" | "1_month" | "all"
+    >("all")
     const [isLoading, setIsLoading] = useState(true)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
@@ -24,17 +29,27 @@ const MyMessage = () => {
         })
         return formattedDate
     }
-    const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setFilter(event.target.value as '3_days' | '7_days' | '1_month' | 'all');
-      };
+    const handleFilterChange = (
+        event: React.ChangeEvent<HTMLSelectElement>,
+    ) => {
+        setFilter(event.target.value as "3_days" | "7_days" | "1_month" | "all")
+    }
 
     useEffect(() => {
         const fetchHistoryList = async () => {
             setIsLoading(true)
             try {
-                const response: any = await getHistoryMessages()
-                console.log(response.data)
-                setConversations(response.data)
+                const response: any = await getHistoryMessages(
+                    "b8d8154c-99e5-49ab-89ed-806088932781",
+                    filter,
+                )
+                if (response.data.message) {
+                    setMessage(response.data.message)
+                    setConversations([])
+                } else {
+                    setMessage(null)
+                    setConversations(response.data)
+                }
             } catch (err) {
                 console.log(err)
             } finally {
@@ -42,11 +57,14 @@ const MyMessage = () => {
             }
         }
         fetchHistoryList()
-    }, [])
+    }, [filter])
 
     const handleDownload = async () => {
         try {
-            const response: any = await getHistoryMessages()
+            const response: any = await getHistoryMessages(
+                "b8d8154c-99e5-49ab-89ed-806088932781",
+                filter,
+            )
 
             if (!response) {
                 throw new Error(
@@ -100,24 +118,30 @@ const MyMessage = () => {
                         <label className="text-md mb-2 block font-medium text-zinc-700">
                             {" "}
                             فیلتر :
-                            <span className="text-[12px] mr-1 text-gray-600">
-                             (بر اساس زمان شروع گفت و گو)
-                             </span>
+                            <span className="mr-1 text-[12px] text-gray-600">
+                                (بر اساس زمان شروع گفت و گو)
+                            </span>
                         </label>
                         <div className="flex justify-between">
                             <div>
                                 <div>
-                                <select
-                                     id="filter"
-                                     value={filter}
-                                       onChange={handleFilterChange}
+                                    <select
+                                        id="filter"
+                                        value={filter}
+                                        onChange={handleFilterChange}
                                         className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                                          >
-                                             <option value="all">بدون فیلتر</option>
-                <option value="3_days">3 روز گذشته</option>
-                <option value="7_days">7 روز گذشته</option>
-                <option value="1_month">1 ماه گذشته</option>
-              </select>
+                                    >
+                                        <option value="all">بدون فیلتر</option>
+                                        <option value="3_days">
+                                            3 روز گذشته
+                                        </option>
+                                        <option value="7_days">
+                                            7 روز گذشته
+                                        </option>
+                                        <option value="1_month">
+                                            1 ماه گذشته
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
                             <button
@@ -130,6 +154,15 @@ const MyMessage = () => {
                         </div>
                     </div>
                     <div className="flex w-full flex-col  gap-3 pl-6 pr-6 lg:flex-row">
+                        {message ? (
+                                   <div className="w-full min-h-[38rem] text-center text-gray-500 flex justify-center items-center flex-col gap-4">
+                                   <EmptyChat/>
+                                   <div>
+                                      <p>در این بازه زمانی انتخاب شده تاریخچه ای وجود ندارد.</p>
+                                   </div>
+                               </div>
+                        ) :(
+                             <>
                         <div className="w-full lg:max-w-xs xl:max-w-sm ">
                             <div className="mt-4 max-h-[38rem] overflow-auto rounded border ">
                                 <ul className="w-full divide-y divide-zinc-200">
@@ -276,6 +309,10 @@ const MyMessage = () => {
                                 </div>
                             </div>
                         </div>
+                        </>
+                        )}
+                       
+                      
                     </div>
                 </div>
             </div>

@@ -209,17 +209,18 @@ class Services {
         }
     }
     getHistoryMessages = async (
-        botId: string = "b8d8154c-99e5-49ab-89ed-806088932781",
+        botId: string ,
+        filter?:string
     ) => {
         try {
             const response = await mainApi.get(
-                `${"/mybots"}/${botId}/conversations`,
-            )
-            return response
+                `/mybots/${botId}/conversations?filter=${filter}`
+            );
+            return response;
         } catch (error: any) {
             throw new Error(
-                error.response?.data?.message || "get history failed",
-            )
+                error.response?.data?.message || "get history failed"
+            );
         }
     }
 }
