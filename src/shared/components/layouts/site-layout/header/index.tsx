@@ -61,10 +61,10 @@ const Header = () => {
     return (
         <>
             <nav
-                className={`sticky top-0 z-50 w-full border-b border-blue-500 
+                className={`sticky top-0 z-50 w-full 
                     transition-all
                     
-                    ${scroll ? "bg-[#0c1026] shadow-md border-blue-500 " : "bg-white shadow-none border-gray-200"}
+                    ${scroll ? "bg-[#0c1026] shadow-md border-blue-500 border-b-2" : "bg-white shadow-none border-gray-200 border-b"}
                     
                     `}
             >
