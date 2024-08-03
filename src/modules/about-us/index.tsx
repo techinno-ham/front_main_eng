@@ -197,7 +197,7 @@ const AboutUs = () => {
                                         معین معین نیا
                                     </h6>
                                     <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
-                                        هم‌بنیان‌گذار&nbsp;&nbsp;(Co-Founder)
+                                        هم‌بنیان‌گذار&nbsp;&nbsp;|&nbsp;&nbsp;Co-Founder
                                     </span>
                                 </div>
                                 <p className="mb-7 text-right leading-6 text-gray-500">
@@ -291,7 +291,7 @@ const AboutUs = () => {
                                     <Link
                                         target="_blank"
                                         href={
-                                            "https://telegram.me/moein_moeinnia"
+                                            "mailto:moeinnia@protonmail.com"
                                         }
                                         className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white"
                                     >
@@ -348,7 +348,7 @@ const AboutUs = () => {
                                         مهدیار جعفری
                                     </h6>
                                     <span className="float-right text-sm text-gray-500 group-hover:text-blue-600">
-                                        هم‌بنیان‌گذار&nbsp;&nbsp;(Co-Founder)
+                                        هم‌بنیان‌گذار&nbsp;&nbsp;|&nbsp;&nbsp;Co-Founder
                                     </span>
                                 </div>
                                 <p className="mb-7 text-right leading-6 text-gray-500">
@@ -442,7 +442,7 @@ const AboutUs = () => {
                                     <Link
                                         target="_blank"
                                         href={
-                                            "https://telegram.me/moein_moeinnia"
+                                            "mailto:mahdiyarjfr@gmail.com"
                                         }
                                         className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white"
                                     >

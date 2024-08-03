@@ -61,7 +61,12 @@ const Header = () => {
     return (
         <>
             <nav
-                className={`sticky top-0 z-50 w-full border-b border-gray-200 ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
+                className={`sticky top-0 z-50 w-full border-b border-blue-500 
+                    transition-all
+                    
+                    ${scroll ? "bg-[#0c1026] shadow-md border-blue-500 " : "bg-white shadow-none border-gray-200"}
+                    
+                    `}
             >
                 <div className="flex flex-wrap items-center justify-between p-4 container relative mx-auto h-auto overflow-hidden  px-4   2xl:px-20">
                     <Link href={"/"}>
@@ -119,14 +124,25 @@ const Header = () => {
                                 <button
                                     onClick={() => router.push("/auth/login")}
                                     type="button"
-                                    className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    className="hidden md:block rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
                                     style={{
                                         backgroundColor: "rgb(29 78 216)",
                                     }}
                                 >
                                      ورود
-                                     /
+                                     |
                                     ثبت نام
+                                </button>
+                                <button
+                                    onClick={() => router.push("/auth/login")}
+                                    type="button"
+                                    className="md:hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    style={{
+                                        backgroundColor: "rgb(29 78 216)",
+                                    }}
+                                >
+                                     ورود
+                                     
                                 </button>
                                 {/* <button
                                     onClick={() =>
@@ -160,7 +176,7 @@ const Header = () => {
                         id="navbar-sticky"
                     >
                         <ul
-                            className={`flex-col   p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse  ${scroll ? "bg-[#001fbf]" : "bg-white"}`}
+                            className={`flex-col   p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse  ${scroll ? "bg-[#0c1026]" : "bg-white"}`}
                         >
                     {links.map((link:any, index:any) => (
                             <li key={index}>

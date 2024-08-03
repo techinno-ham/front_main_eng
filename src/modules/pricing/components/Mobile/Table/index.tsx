@@ -16,7 +16,7 @@ const MobilePricingFeatures = () => {
     }
     return (
         <section className=" md:hidden">
-            <div className="mx-auto mb-14 flex h-auto max-w-fit flex-row gap-2 rounded-full bg-zinc-100 p-2">
+            {/* <div className="mx-auto mb-14 flex h-auto max-w-fit flex-row gap-2 rounded-full bg-zinc-100 p-2"> */}
                 {/* <button
                     className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-white px-5 py-6 text-sm font-medium text-zinc-950 transition-colors duration-300 ease-in-out hover:bg-white hover:text-zinc-900 hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
                     value="month"
@@ -29,7 +29,7 @@ const MobilePricingFeatures = () => {
                             >
                                 Yearly
                             </button> */}
-            </div>
+            {/* </div> */}
             <div className="flex w-full flex-col gap-6">
                 {/* <button
                     type="button"

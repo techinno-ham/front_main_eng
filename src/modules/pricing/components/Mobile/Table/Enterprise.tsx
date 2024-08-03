@@ -14,7 +14,7 @@ const EnterprisePricingMobile = () => {
                                     </span>
                                 </div>
                                 <a href="/dashboard?next=/settings/plans">
-                                    <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-12 w-1/2 items-center justify-center whitespace-nowrap rounded-xl border px-4 py-3 text-base font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
+                                    <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-12 w-1/2 items-center justify-center whitespace-nowrap rounded-xl border py-3 text-base font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                                         Subscribe
                                     </button>
                                 </a>
@@ -22,9 +22,9 @@ const EnterprisePricingMobile = () => {
                             <div
                                 data-orientation="horizontal"
                                 role="none"
-                                className="-mx-8 h-0.5 w-full min-w-[calc(100%+4rem)] shrink-0 bg-zinc-200 drop-shadow-lg dark:bg-zinc-500"
+                                className="h-0.5 w-full shrink-0 bg-zinc-200 drop-shadow-lg dark:bg-zinc-500"
                             ></div>
-                            <div className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-4 px-3">
                                 <div className="flex w-full flex-col">
                                 <span className="text-xl font-semibold pricing-header">
                                             تنظیمات
