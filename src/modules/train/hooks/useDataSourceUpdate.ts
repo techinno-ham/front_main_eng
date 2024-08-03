@@ -102,7 +102,8 @@ const useDateSourceUpdate = () => {
             }
 
             const response = await Services.updateDataSource(formData, botId)
-            router.push(`/panel/${response.data.bot_id}`)
+            router.push(`/panel/${response.data.bot_id}`);
+            toast.success("بات شما با در حال آموزش مجدد می باشد.")
             return response
         } catch (err: any) {
             console.log(err)

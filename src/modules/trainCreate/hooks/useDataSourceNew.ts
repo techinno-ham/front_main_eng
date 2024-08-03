@@ -58,12 +58,16 @@ const useDateSourceNew = () => {
 
             const response = await Services.cretaeBots(formData)
             router.push(`/panel/${response.data.bot_id}`)
-            // Reset all state variables
-            setText("")
-            setTextCharNumber(0)
-            setQAList([])
-            setUrlList([])
-            setFileList([])
+            toast.success("بات شما با در حال آموزش  می باشد.")            // Reset all state variables
+            setTimeout(() => {
+                setText("")
+                setTextCharNumber(0)
+                setQAList([])
+                setUrlList([])
+                setFileList([])
+                
+            }, 1500);
+           
 
             // return response
         } catch (err: any) {

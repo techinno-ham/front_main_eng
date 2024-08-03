@@ -1,4 +1,4 @@
-import useDateSource from "@/src/modules/trainCreate/hooks/useDataSource"
+
 import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import { Trash } from "iconsax-react"
 import { useEffect, useState } from "react"
@@ -6,6 +6,7 @@ import { toast } from "sonner"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 import useStoreLoadData from "../../hooks/loadDataSource"
 // import { MdDelete } from "react-icons/md";
+const MAX_LINK_COUNT = 40; // Maximum number of links
 
 const WebsiteLink = () => {
     const {
@@ -18,7 +19,12 @@ const WebsiteLink = () => {
     } = useDateSourceUpdate()
     const [inputUrl, setInputUrl] = useState("")
     const { isLoading, fetchLink } = useFetchLinks()
-    const { data, setData } = useStoreLoadData()
+    const { data, setData } = useStoreLoadData();
+    const isValidUrl = (url:string) => {
+        const regex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/
+        return regex.test(url)
+    }
+
 
     useEffect(() => {
         if (!isURLInitialized) {
@@ -32,10 +38,20 @@ const WebsiteLink = () => {
         if (!inputUrl) {
             toast.error("لطفا لینک مورد نظر خود را وارد کنید ...")
             return
+        };
+        if (!isValidUrl(inputUrl)) {
+            toast.error("لینک وارد شده معتبر نمی‌باشد.")
+            return
         }
         const res = await fetchLink(inputUrl)
         if (!isURLListChanged) {
             addURLListChanged(true)
+        }
+        const remainingLinks = MAX_LINK_COUNT - urlList.length
+        if (res?.data.length > remainingLinks) {
+            toast.error(`شما نمی توانید بیش از 40 لینک اضافه کنید. فقط ${remainingLinks} لینک اضافه شد.`)
+            addUrlList([...urlList, ...res?.data.slice(0, remainingLinks)])
+            return
         }
         addUrlList([...urlList, ...res?.data])
     }
@@ -43,6 +59,10 @@ const WebsiteLink = () => {
     const handleAddInput = () => {
         if (!isURLListChanged) {
             addURLListChanged(true)
+        };
+        if (urlList.length >= MAX_LINK_COUNT) {
+            toast.error("شما نمی توانید بیش از 40 لینک اضافه کنید")
+            return
         }
         addUrlList([...urlList, ""])
     }
