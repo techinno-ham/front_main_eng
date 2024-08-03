@@ -1,6 +1,7 @@
 import useStoreLoadData from "@/src/modules/train/hooks/loadDataSource"
 import useDateSourceUpdate from "@/src/modules/train/hooks/useDataSourceUpdate"
 import { usePathname } from "next/navigation"
+import { toast } from "sonner";
 
 interface UploadedFile {
     url: string;
@@ -27,11 +28,18 @@ const SourceCard = () => {
     } = useDateSourceUpdate()
     const { data } = useStoreLoadData()
 
-    const QandACharCount = qaList.reduce(
+    const QandACharCount =
+    isQAListChanged ?
+     qaList.reduce(
+        (total: any, qa: any) => total + qa.question.length + qa.answer.length,
+        0,
+    ):   data?.qANDa_input.reduce(
         (total: any, qa: any) => total + qa.question.length + qa.answer.length,
         0,
     );
-    console.log(uploadedFile)
+    const linkNumber=isURLListChanged?urlList.length:data?.urls.length
+    const textChar=isTextChanged? text.length:data?.text_input.length;
+    const allChar=textChar+QandACharCount;
     const MAX_FILE_SIZE = 10 * 1024 * 1024;
         // Calculate total size from fileList
         let totalSize = fileList.reduce((acc, file) => acc + file.size, 0);
@@ -44,8 +52,15 @@ const SourceCard = () => {
     let totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2);
     const uploadedFileCount = (uploadedFile as UploadedFile[]).filter((item) => !item.remove).length;
 
-    const handleCrateBot = async (event: any) => {
-        event.preventDefault()
+    const handleUpdateBot = async (event: any) => {
+        event.preventDefault();
+        const hasMinimumFiles = fileList.length + uploadedFileCount>= 2;
+        const hasMinimumChars = allChar >= 100;
+
+        if (!hasMinimumFiles || !hasMinimumChars) {
+            toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
+            return;
+        }
         await updateDataSource(pathSegments[2])
     }
 
@@ -118,21 +133,33 @@ const SourceCard = () => {
                                     }}
                                 ></div>
                             </div>
+                            <p className="flex flex-col text-sm mt-2">
+                    <span className="font-semibold">
+                        {" "}
+                        مجموع   تعداد لینک های استفاده شده:
+                    </span>
+                    <span className="flex justify-center gap-1">
+                        <span className=" text-zinc-500"> 40 / </span>
+                        <span className="font-bold">
+                            {linkNumber}
+                        </span>
+                    </span>
+                            </p>
                 <p className="flex flex-col text-sm">
                     <span className="font-semibold">
                         {" "}
                         مجموع کارکترهای استفاده شده:
                     </span>
                     <span className="flex justify-center gap-1">
-                        <span className=" text-zinc-500"> 400,000 / </span>
+                        <span className=" text-zinc-500"> 200,000 / </span>
                         <span className="font-bold">
-                            {textInputCharNumber + QandACharCount}
+                            {allChar}
                         </span>
                     </span>
                 </p>
                 <div className="mt-4 flex justify-center">
                     <button
-                        onClick={handleCrateBot}
+                        onClick={handleUpdateBot}
                         disabled={
                             isLoading ||
                             (!isQAListChanged &&

@@ -24,7 +24,6 @@ const SourceCard = () => {
          const totalCharCount = textInputCharNumber + QandACharCount;
          const hasMinimumFiles = fileList.length >= 2;
          const hasMinimumChars = totalCharCount >= 100;
-         console.log(hasMinimumFiles)
  
          if (!hasMinimumFiles || !hasMinimumChars) {
              toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
