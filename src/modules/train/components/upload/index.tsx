@@ -23,6 +23,10 @@ const UploadFlie = () => {
         addUploadedFile,
         isFileInitialized,
         addFileInitialized,
+        addFileChanged,
+        isFileChanged,
+        addUploadedChanged,
+        isUploadedChanged
     } = useDateSourceUpdate()
     const { data } = useStoreLoadData()
 
@@ -51,8 +55,9 @@ const UploadFlie = () => {
                 }
                 newFiles.push(file)
             }
-
-
+            if(!isFileChanged){
+                addFileChanged(true)
+            }
             addFileList([...fileList, ...newFiles])
            
         },
@@ -89,6 +94,9 @@ const UploadFlie = () => {
         const newUploadedFile: any = uploadedFile.map((file: any) => {
             return file.fileName === fileName ? { ...file, remove: true } : file
         })
+        if(!isUploadedChanged){
+            addUploadedChanged(true)
+        }
         addUploadedFile(newUploadedFile)
     }
 

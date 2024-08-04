@@ -25,8 +25,11 @@ const SourceCard = () => {
         isTextChanged,
         isQAListChanged,
         isURLListChanged,
+        isFileChanged,
+        isUploadedChanged
     } = useDateSourceUpdate()
     const { data } = useStoreLoadData();
+    console.log(data.bot.status)
 
     
 
@@ -58,6 +61,12 @@ const SourceCard = () => {
         event.preventDefault();
         const hasMinimumFiles = fileList.length + uploadedFileCount>= 2;
         const hasMinimumChars = allChar >= 100;
+
+        if(data.bot.status == "notActive"){
+            toast.error("چت بات شما در حال آموزش می باشد و امکان آموزش مجدد وجود ندارد .")
+            return;
+        }
+        
 
         if (data.bot.update_datasource >= 2 ) {
             toast.error("تعداد درخواست های شما بیش از حد مجاز است .")
@@ -177,14 +186,14 @@ const SourceCard = () => {
                             isLoading ||
                             (!isQAListChanged &&
                                 !isTextChanged &&
-                                !isURLListChanged)
+                                !isURLListChanged &&!isFileChanged && !isUploadedChanged)
                         }
                         className={`flex items-center rounded-xl p-3 text-[14px] text-white
                             ${
                                 isLoading ||
                                 (!isQAListChanged &&
                                     !isTextChanged &&
-                                    !isURLListChanged)
+                                    !isURLListChanged && !isFileChanged && !isUploadedChanged)
                                     ? "cursor-not-allowed bg-[#2563eb] bg-opacity-50"
                                     : "cursor-pointer bg-[#2563eb]"
                             }`}

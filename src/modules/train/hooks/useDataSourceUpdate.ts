@@ -37,6 +37,10 @@ const useDateSourceUpdate = () => {
         setQAListChanged,
         isURLListChanged,
         setURLListChanged,
+        isFileChanged,
+        setFileChanged,
+        isUploadedChanged,
+        setUploadedChanged
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
@@ -53,6 +57,12 @@ const useDateSourceUpdate = () => {
     }
     const addURLListChanged = (flag: boolean) => {
         setURLListChanged(flag)
+    }
+    const addFileChanged = (flag: boolean) => {
+        setFileChanged(flag)
+    }
+    const addUploadedChanged = (flag: boolean) => {
+        setUploadedChanged(flag)
     }
     const addQAInitialized = (flag: boolean) => {
         setQAInitialized(flag)
@@ -104,6 +114,12 @@ const useDateSourceUpdate = () => {
             const response = await Services.updateDataSource(formData, botId)
             router.push(`/panel/${response.data.bot_id}`);
             toast.success("بات شما با در حال آموزش مجدد می باشد.")
+            setTimeout(() => {
+                window.scrollTo({
+                    top: document.getElementById('chart-demo')?.offsetTop || 0,
+                    behavior: 'smooth'
+                });
+            }, 1000); 
             return response
         } catch (err: any) {
             console.log(err)
@@ -142,6 +158,10 @@ const useDateSourceUpdate = () => {
         addQAListChanged,
         isURLListChanged,
         addURLListChanged,
+        addFileChanged,
+        isFileChanged,
+        addUploadedChanged,
+        isUploadedChanged
     }
 }
-export default useDateSourceUpdate
+export default useDateSourceUpdate;
