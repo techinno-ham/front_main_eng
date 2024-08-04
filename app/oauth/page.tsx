@@ -1,11 +1,11 @@
 "use client"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { toast } from "sonner"
 import { setCookie } from "nookies"
 
-const OAuthPage = () => {
+const OAuthContent = () => {
     const router = useRouter()
     const searchParams = useSearchParams()
 
@@ -32,8 +32,17 @@ const OAuthPage = () => {
         }
 
         handleOAuth()
-    }, [])
+    }, [router, searchParams])
 
     return <div>در حال انتقال به پنل کاربری ...</div>
 }
+
+const OAuthPage = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <OAuthContent />
+        </Suspense>
+    )
+}
+
 export default OAuthPage
