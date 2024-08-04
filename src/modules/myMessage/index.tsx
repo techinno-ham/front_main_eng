@@ -8,11 +8,14 @@ import { format } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import EmptyChat from "@/src/shared/components/common/emptyChatLoader"
+import { usePathname } from "next/navigation"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
     const [message, setMessage] = useState<string | null>(null)
+    const pathname = usePathname()
+    const botId = pathname.split("/")[2]
 
     const [filter, setFilter] = useState<
         "3_days" | "7_days" | "1_month" | "all"
@@ -21,6 +24,12 @@ const MyMessage = () => {
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
+    };
+    const dicTime={
+        "all":"بدون فیلتر",
+        "3_days":"3 روز گذشته",
+        "7_days":"7روز گذشته ",
+        "1_month":"1 ماه قبل"
     }
     const formatRelativeTimeChat = (dateString: any) => {
         const date = new Date(dateString)
@@ -40,7 +49,7 @@ const MyMessage = () => {
             setIsLoading(true)
             try {
                 const response: any = await getHistoryMessages(
-                    "b8d8154c-99e5-49ab-89ed-806088932781",
+                    botId,
                     filter,
                 )
                 if (response.data.message) {
@@ -114,7 +123,18 @@ const MyMessage = () => {
                             تاریخچه گفت و گو ها
                         </h3>
                     </div>
-                    <div className="pl-6 pr-6">
+                    {message == 'Your bot has never had a conversation' ? (
+                        <>
+                               <div className="w-full min-h-[38rem] text-center text-gray-500 flex justify-center items-center flex-col gap-4">
+                                   <EmptyChat/>
+                                   <div>
+                                      <p>در حال حاظر چت بات شما دارای تاریخچه گفت و گو نمی باشد.</p>
+                                   </div>
+                               </div>
+                        </>
+                    ):(
+                     <>
+                      <div className="pl-6 pr-6">
                         <label className="text-md mb-2 block font-medium text-zinc-700">
                             {" "}
                             فیلتر :
@@ -154,7 +174,7 @@ const MyMessage = () => {
                         </div>
                     </div>
                     <div className="flex w-full flex-col  gap-3 pl-6 pr-6 lg:flex-row">
-                        {message ? (
+                        {message == "Your bot has conversations, but none within the selected filter" ? (
                                    <div className="w-full min-h-[38rem] text-center text-gray-500 flex justify-center items-center flex-col gap-4">
                                    <EmptyChat/>
                                    <div>
@@ -228,7 +248,7 @@ const MyMessage = () => {
                         <div className="flex grow items-center justify-center ">
                             <div className="w-full">
                                 <p className="my-2 ml-1 text-sm font-bold lg:mt-3">
-                                    بازه زمانی : ۳ روز گذشته
+                                    بازه زمانی : {dicTime[filter]}
                                 </p>
                                 <div className="mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-[#F0F8FF] px-3 py-5">
                                     <div>
@@ -314,6 +334,9 @@ const MyMessage = () => {
                        
                       
                     </div>
+                     </>
+                    )}
+                   
                 </div>
             </div>
         </>

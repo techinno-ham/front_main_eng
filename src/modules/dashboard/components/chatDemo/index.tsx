@@ -15,7 +15,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
     }
     console.log(botData, "testt")
     const state = botData?.status == "active" ? true : false
-    const [botActive, setBotActive] = useState<boolean>(state)
+    const [botActive, setBotActive] = useState<boolean>(true)
 
     useEffect(() => {
         let fetchIntervalId: string | number | NodeJS.Timeout | undefined
