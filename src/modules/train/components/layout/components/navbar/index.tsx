@@ -36,9 +36,9 @@ const Navbar = () => {
     return (
         <div>
             <ul className="flex w-[100%] gap-x-[35px] overflow-auto md:gap-x-[70px]">
-                {menuItems.map((item) => {
+                {menuItems.map((item,index) => {
                     return (
-                        <li>
+                        <li key={index}>
                             <TabLink item={item} />
                         </li>
                     )

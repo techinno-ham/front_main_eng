@@ -1,8 +1,12 @@
 "use client"
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import Navbar from "./components/navbar"
+interface LayoutProps {
+    children: ReactNode; // This allows any valid React node to be passed as children
+}
 
-const Layout: FC = (props: any) => {
+
+const Layout: FC<LayoutProps> = (props) => {
     return (
         <>
             <div>
@@ -14,4 +18,4 @@ const Layout: FC = (props: any) => {
         </>
     )
 }
-export default Layout
+export default Layout;

@@ -1,10 +1,14 @@
 "use client"
 
-import { FC } from "react"
+import { FC, ReactNode } from "react"
 import Navbar from "./components/navbar"
 import SourceCard from "./components/sourceCard"
 
-const Layout: FC = (props: any) => {
+interface LayoutProps {
+    children: ReactNode; // This allows any valid React node to be passed as children
+}
+
+const Layout: FC<LayoutProps> = (props) => {
     return (
         <>
             <div className="mt-[20px] flex w-[100%] flex-col gap-6 md:mt-[10px] xl:flex-row md:mb-5">

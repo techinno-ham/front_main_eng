@@ -1,7 +1,8 @@
 import { create } from "zustand"
+type Tab = 'File' | 'Text' | 'Website' | 'QandA';
 
 interface StoreViewController {
-    activeTab: any
+    activeTab: Tab
     changeTab: (newTab: any) => void
     isLoading: boolean
     setLoading: (loading: boolean) => void

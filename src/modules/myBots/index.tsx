@@ -174,12 +174,9 @@ const MyBots = () => {
                         ) : (
                             <div className="flex h-full flex-col items-center justify-center text-center">
                                 <EmptyBot />
-                                <span>در حال حاظر چت باتی وجود ندارد ....</span>
                                 <span>
-                                    شما میتوانید برای ساختن آن روی دکمه ی "چت
-                                    بات جدید "بزنید و اولین چت بات خود را
-                                    بسازید.
-                                </span>
+                                     شما میتوانید برای ساختن آن روی دکمه ی &quot;چت بات جدید&quot; بزنید و اولین چت بات خود را بسازید.
+                                 </span>
                             </div>
                         )}
                   

@@ -5,7 +5,7 @@ import "./style.css"
 import { useSpring, animated } from "react-spring"
 
 const ItemsGrid = () => {
-    const myElementRef = useRef<Element>(null)
+    const myElementRef = useRef<HTMLDivElement>(null)
 
     const [{ scrollY }, setScrollY] = useSpring(() => ({ scrollY: 300 }))
 

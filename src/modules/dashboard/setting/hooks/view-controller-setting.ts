@@ -1,7 +1,8 @@
 import { create } from "zustand"
+type TabKey = 'General' | 'Model' | 'Apperence' | 'Security';
 
 interface StoreViewControllerSetting {
-    activeTab: any
+    activeTab: TabKey
     changeTab: (newTab: any) => void
     isLoading: boolean
     setLoading: (loading: boolean) => void

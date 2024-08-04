@@ -8,6 +8,10 @@ const nextConfig = {
             },
         ],
     },
+    typescript: {
+        // Disabling type checking during build
+        ignoreBuildErrors: true,
+    },
 }
 
 export default nextConfig

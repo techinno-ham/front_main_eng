@@ -44,14 +44,14 @@ const Appbar = () => {
         <>
             <div className="fixed bottom-0 z-20 h-20 w-full bg-white px-4 shadow-[0_4px_48.3px_-14px_rgba(0,0,0,0.15)] md:hidden">
                 <div className="flex h-full w-full items-center justify-between">
-                    {sidebarLinks.map((item) => {
+                    {sidebarLinks.map((item,index) => {
                         const linkRoute = item.route.replace(
                             "[id]",
                             pathSegments[2],
                         )
                         const isActive = pathname === linkRoute
                         return (
-                            <Link href={linkRoute}>
+                            <Link key={index} href={linkRoute}>
                                 <div className="flex flex-col items-center ">
                                     <div
                                         className={

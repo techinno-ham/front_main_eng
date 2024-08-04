@@ -28,9 +28,9 @@ const ChatTemplate = ({ config }: any) => {
                             <div className="h-full w-full overflow-y-auto">
                                 <div className="px-3 pt-4">
                                     <div>
-                                        {config.botMessages.map((msg: any) => {
+                                        {config.botMessages.map((msg: any,index:number) => {
                                             return (
-                                                <div className="mr-8 flex justify-end">
+                                                <div key={index} className="mr-8 flex justify-end">
                                                     <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
                                                         <div className="flex flex-col items-start gap-4 break-words">
                                                             <div className=" w-full break-words text-right text-inherit ">
@@ -64,9 +64,10 @@ const ChatTemplate = ({ config }: any) => {
                     <div className="bg-inherit">
                         <form action="">
                             <div className="flex gap-2 overflow-x-auto p-3">
-                                {config.suggestedMessages.map((sgm: any) => {
+                                {config.suggestedMessages.map((sgm: any,index:number) => {
                                     return (
                                         <button
+                                            key={index}
                                             className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
                                             type="button"
                                             aria-label="لبلب "

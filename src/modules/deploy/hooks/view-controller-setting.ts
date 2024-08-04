@@ -1,7 +1,8 @@
 import { create } from "zustand"
 
+type DeployTab = 'CDN' | 'Iframe' | 'NPM';
 interface StoreViewControllerDeploy {
-    activeTab: any
+    activeTab: DeployTab
     changeTab: (newTab: any) => void
     isLoading: boolean
     setLoading: (loading: boolean) => void
