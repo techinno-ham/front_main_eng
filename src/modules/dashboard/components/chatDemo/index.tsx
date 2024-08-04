@@ -3,6 +3,7 @@ import service from "@/src/shared/services/service"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
 import { useEffect, useState } from "react"
+import { toast } from "sonner"
 
 interface chartDemoProps {
     botData: any
@@ -19,26 +20,36 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
 
     useEffect(() => {
         let fetchIntervalId: string | number | NodeJS.Timeout | undefined
+
         const fetchBotData = async () => {
             try {
                 const response = await service.getBot(botData?.bot_id)
                 const status = response.data.status
-                setBotActive(status === "active")
+                if (status === "active" && !botActive) {
+                    toast.success("چت بات شما اکنون آماده می باشد.")
+                    toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
+                    setBotActive(true)
+                    clearInterval(fetchIntervalId)
+                } else if (status !== "active") {
+                    setBotActive(false)
+                }
             } catch (error: any) {
                 console.error(error)
             }
         }
+
         const checkBotStatus = async () => {
             if (!botActive && !fetchIntervalId) {
                 await fetchBotData()
                 fetchIntervalId = setInterval(async () => {
-                    console.log("calll")
+                    console.log("Polling bot status...")
                     await fetchBotData()
                 }, 5000)
             }
         }
 
         checkBotStatus()
+
         return () => {
             clearInterval(fetchIntervalId)
         }
