@@ -14,9 +14,8 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
     }
-    console.log(botData, "testt")
     const state = botData?.status == "active" ? true : false
-    const [botActive, setBotActive] = useState<boolean>(true)
+    const [botActive, setBotActive] = useState<boolean>(state)
 
     useEffect(() => {
         let fetchIntervalId: string | number | NodeJS.Timeout | undefined

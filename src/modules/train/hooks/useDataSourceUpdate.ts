@@ -37,6 +37,10 @@ const useDateSourceUpdate = () => {
         setQAListChanged,
         isURLListChanged,
         setURLListChanged,
+        isFileChanged,
+        setFileChanged,
+        isUploadedChanged,
+        setUploadedChanged
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
@@ -53,6 +57,12 @@ const useDateSourceUpdate = () => {
     }
     const addURLListChanged = (flag: boolean) => {
         setURLListChanged(flag)
+    }
+    const addFileChanged = (flag: boolean) => {
+        setFileChanged(flag)
+    }
+    const addUploadedChanged = (flag: boolean) => {
+        setUploadedChanged(flag)
     }
     const addQAInitialized = (flag: boolean) => {
         setQAInitialized(flag)
@@ -148,6 +158,10 @@ const useDateSourceUpdate = () => {
         addQAListChanged,
         isURLListChanged,
         addURLListChanged,
+        addFileChanged,
+        isFileChanged,
+        addUploadedChanged,
+        isUploadedChanged
     }
 }
-export default useDateSourceUpdate
+export default useDateSourceUpdate;
