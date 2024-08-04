@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ChartDemo from "./components/chatDemo"
 import PieChart from "./components/piechart"
 import PropertyReferrals from "./components/propertyRef"
@@ -15,6 +15,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
     const [botData, setBotData] = useState<any>(null)
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
+    const chartDemoRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         const fetchBotData = async () => {
@@ -82,7 +83,9 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                     </div>
                 </div>
 
-                <ChartDemo botData={botData} />
+                <div id="chart-demo" ref={chartDemoRef}>
+                   <ChartDemo botData={botData} />
+                </div>
             </div>
         </>
     )

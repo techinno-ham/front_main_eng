@@ -60,6 +60,10 @@ const useDateSourceNew = () => {
             router.push(`/panel/${response.data.bot_id}`)
             toast.success("بات شما با در حال آموزش  می باشد.")            // Reset all state variables
             setTimeout(() => {
+                window.scrollTo({
+                    top: document.getElementById('chart-demo')?.offsetTop || 0,
+                    behavior: 'smooth'
+                });
                 setText("")
                 setTextCharNumber(0)
                 setQAList([])
