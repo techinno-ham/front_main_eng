@@ -403,10 +403,10 @@ const Footer = () => {
                             >
 کانال تلگرام                            </Link>
                             <Link
-                                href={"/"}
+                                href={"mailto:hamyarchat@gmail.com"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-hello@hamyar.chat                            </Link>
+hamyarchat@gmail.com                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
