@@ -32,6 +32,9 @@ jobs:
         context: .
         push: true
         # tags: hamyarchat/front:${{ env.TAG }}
+        # tags: |
+        #   hamyarchat/front:${{ env.TAG }}
+        #   hamyarchat/front:latest
         tags: hamyarchat/front:latest
 
     - name: Log out from Docker Hub
