@@ -30,7 +30,7 @@ const PricingCard = ({
                 )}
                 <div
                     style={{
-                        backdropFilter: "blur(10px)",
+                        //backdropFilter: "blur(10px)",
                         boxShadow: `${dynamicShadowGenerator(order)}`,
                         borderColor: active ? "#3056d3" : "#e5e5e5",
                     }}
@@ -120,7 +120,7 @@ const PricingCard = ({
                     </div>
 
                     <div>
-                        <span className="absolute left-0 top-7 z-[-1]">
+                        <span className="absolute left-0 top-7">
                             <svg
                                 width={77}
                                 height={172}
@@ -156,7 +156,7 @@ const PricingCard = ({
                                 </defs>
                             </svg>
                         </span>
-                        <span className="absolute left-4 top-4 z-[-1]">
+                        <span className="absolute left-4 top-4">
                             <svg
                                 width={41}
                                 height={89}

@@ -101,6 +101,7 @@ const FAQ = () => {
                                     aria-controls="basic-collapse-one-with-arrow"
                                 >
                                     <h5
+                                    className="text-right"
                                         style={{
                                             color:
                                                 activeAccordionId === indx
@@ -146,7 +147,7 @@ const FAQ = () => {
                                             activeAccordionId === indx ? 1 : 0,
                                     }}
                                 >
-                                    <p className="text-base leading-6 text-gray-900 pointer-events-none">
+                                    <p className="text-justify leading-6 text-gray-900 pointer-events-none">
                                         {qa.answer}
                                     </p>
                                 </div>
