@@ -35,7 +35,7 @@ jobs:
         # tags: |
         #   hamyarchat/front:${{ env.TAG }}
         #   hamyarchat/front:latest
-        tags: hamyarchat/test:latest
+        tags: hamyarchat/front:latest
 
     - name: Log out from Docker Hub
       run: docker logout
