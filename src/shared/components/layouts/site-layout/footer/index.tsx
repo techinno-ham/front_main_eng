@@ -242,21 +242,22 @@ const Footer = () => {
                                         <span
                                             className={`mr-2 text-2xl font-bold `}
                                         >
-همیارچت                                        </span>
+                                            همیارچت{" "}
+                                        </span>
                                     </div>
                                 </Link>
                             </div>
                             <p className="text-right font-medium leading-5 text-zinc-400">
-                            دستیارهای شخصی‌سازی شده هوش مصنوعی
-                            <br/>
-                             در خدمت رضایت مشتریان و پیشرفت کسب و کار شما                            
+                                دستیارهای شخصی‌سازی شده هوش مصنوعی
+                                <br />
+                                در خدمت رضایت مشتریان و پیشرفت کسب و کار شما
                             </p>
                         </div>
                         <div className="grid w-full grid-cols-4 gap-4 md:w-auto md:grid-cols-6">
-                            <button className="focus-visible:ring-ring col-span-4 inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-base font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 md:col-span-2 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80">
+                            <button className="focus-visible:ring-ring col-span-4 inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-base font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 md:col-span-2 ">
                                 پشتیبانی
                             </button>
-                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-800 bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-zinc-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     width="24"
                                     height="24"
@@ -273,7 +274,7 @@ const Footer = () => {
                                     ></path>
                                 </svg>
                             </button>
-                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-800 bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-zinc-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -303,7 +304,7 @@ const Footer = () => {
                                     ></line>
                                 </svg>
                             </button>
-                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-800 bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-zinc-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
@@ -315,7 +316,7 @@ const Footer = () => {
                                     </g>
                                 </svg>
                             </button>
-                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-800 bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-zinc-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                            <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
@@ -331,8 +332,7 @@ const Footer = () => {
                     <div className="hidden md:flex md:gap-10 lg:gap-24 xl:gap-32">
                         <div className="flex flex-col gap-4">
                             <h5 className="text-sm font-semibold text-black">
-                            محصول
-                                
+                                محصول
                             </h5>
                             <Link
                                 href={"/"}
@@ -375,7 +375,7 @@ const Footer = () => {
                             >
                                 سوالات متداول
                             </Link>
-                            
+
                             {/* <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
@@ -385,28 +385,32 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col gap-4">
                             <h5 className="text-sm font-semibold text-black">
-                            راهنمایی و پشتیبانی
+                                راهنمایی و پشتیبانی
                             </h5>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-پشتیبانی تلگرام                            </Link>
+                                پشتیبانی تلگرام{" "}
+                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-پشتیبانی واتساپ                            </Link>
+                                پشتیبانی واتساپ{" "}
+                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-کانال تلگرام                            </Link>
+                                کانال تلگرام{" "}
+                            </Link>
                             <Link
                                 href={"mailto:hamyarchat@gmail.com"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-hamyarchat@gmail.com                            </Link>
+                                hamyarchat@gmail.com{" "}
+                            </Link>
                             <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
@@ -422,7 +426,7 @@ hamyarchat@gmail.com                            </Link>
                             style={{
                                 background:
                                     activeAccordionId === 0
-                                        ? "#eef2ff"
+                                        ? "rgb(239, 246, 255)"
                                         : "revert-layer",
                             }}
                             onClick={() => {
@@ -432,18 +436,18 @@ hamyarchat@gmail.com                            </Link>
                             }}
                         >
                             <button
-                                className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
+                                className="accordion-toggle accordion-active:font-medium accordion-active:text-blue-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
                                 aria-controls="basic-collapse-one-with-arrow"
                             >
                                 <h5
                                     style={{
                                         color:
                                             activeAccordionId === 0
-                                                ? "rgb(79 70 229)"
+                                                ? "rgb(37, 99, 235)"
                                                 : "unset",
                                     }}
                                 >
-                                    راهنمایی و پشتیبانی
+                                محصول
                                 </h5>
                                 <svg
                                     style={{
@@ -452,7 +456,7 @@ hamyarchat@gmail.com                            </Link>
                                                 ? "180deg"
                                                 : "0deg",
                                     }}
-                                    className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
+                                    className="accordion-active:text-blue-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-blue-600"
                                     width="22"
                                     height="22"
                                     viewBox="0 0 22 22"
@@ -488,20 +492,20 @@ hamyarchat@gmail.com                            </Link>
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                آموزش
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                امکانات
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                قیمت
+                                </Link>
                                 </div>
                             </div>
                         </div>
@@ -511,7 +515,7 @@ hamyarchat@gmail.com                            </Link>
                             style={{
                                 background:
                                     activeAccordionId === 1
-                                        ? "#eef2ff"
+                                        ? "rgb(239, 246, 255)"
                                         : "revert-layer",
                             }}
                             onClick={() => {
@@ -521,18 +525,18 @@ hamyarchat@gmail.com                            </Link>
                             }}
                         >
                             <button
-                                className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
+                                className="accordion-toggle accordion-active:font-medium accordion-active:text-blue-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
                                 aria-controls="basic-collapse-one-with-arrow"
                             >
                                 <h5
                                     style={{
                                         color:
                                             activeAccordionId === 1
-                                                ? "rgb(79 70 229)"
+                                                ? "rgb(37, 99, 235)"
                                                 : "unset",
                                     }}
                                 >
-راه کار ها
+                                منابع
                                 </h5>
                                 <svg
                                     style={{
@@ -541,7 +545,7 @@ hamyarchat@gmail.com                            </Link>
                                                 ? "180deg"
                                                 : "0deg",
                                     }}
-                                    className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
+                                    className="accordion-active:text-blue-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-blue-600"
                                     width="22"
                                     height="22"
                                     viewBox="0 0 22 22"
@@ -577,32 +581,21 @@ hamyarchat@gmail.com                            </Link>
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                بلاگ
+                                </Link>
+                                    <Link
+                                        href={"/"}
+                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                    >
+                                درباره ما
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
                                         سوالات متداول
                                     </Link>
-                                    <Link
-                                        href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        سوالات متداول
-                                    </Link>
-                                    <Link
-                                        href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        سوالات متداول
-                                    </Link>
-                                    <Link
-                                        href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        سوالات متداول
-                                    </Link>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -612,7 +605,7 @@ hamyarchat@gmail.com                            </Link>
                             style={{
                                 background:
                                     activeAccordionId === 2
-                                        ? "#eef2ff"
+                                        ? "rgb(239, 246, 255)"
                                         : "revert-layer",
                             }}
                             onClick={() => {
@@ -622,18 +615,19 @@ hamyarchat@gmail.com                            </Link>
                             }}
                         >
                             <button
-                                className="accordion-toggle accordion-active:font-medium accordion-active:text-indigo-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
+                                className="accordion-toggle accordion-active:font-medium accordion-active:text-blue-600 group inline-flex w-full items-center justify-between text-left leading-8 text-gray-900 transition duration-500"
                                 aria-controls="basic-collapse-one-with-arrow"
                             >
                                 <h5
                                     style={{
                                         color:
                                             activeAccordionId === 2
-                                                ? "rgb(79 70 229)"
+                                                ? "rgb(37, 99, 235)"
                                                 : "unset",
                                     }}
                                 >
-محصول                                </h5>
+                                راهنمایی و پشتیبانی
+                                </h5>
                                 <svg
                                     style={{
                                         rotate:
@@ -641,7 +635,7 @@ hamyarchat@gmail.com                            </Link>
                                                 ? "180deg"
                                                 : "0deg",
                                     }}
-                                    className="accordion-active:text-indigo-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-indigo-600"
+                                    className="accordion-active:text-blue-600 accordion-active:rotate-180 text-gray-500 transition duration-500 group-hover:text-blue-600"
                                     width="22"
                                     height="22"
                                     viewBox="0 0 22 22"
@@ -677,38 +671,33 @@ hamyarchat@gmail.com                            </Link>
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                پشتیبانی تلگرام{" "}
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                پشتیبانی واتساپ{" "}
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                کانال تلگرام{" "}
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
+                                hamyarchat@gmail.com{" "}
+                                </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        سوالات متداول
-                                    </Link>
-                                    <Link
-                                        href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        سوالات متداول
-                                    </Link>
+                                0912123123
+                                </Link>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -717,21 +706,23 @@ hamyarchat@gmail.com                            </Link>
             </div>
             <div>
                 <div className="relative p-8">
-                <div style={{ 
-        display: 'flex',
-        justifyContent: 'center',
-        maxWidth: '72rem',
-        width: '100%',
-        height: '2rem',
-        borderRadius: '12.1rem',
-        background: 'linear-gradient(91deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)',
-        filter: 'blur(60px)',
-        position: 'absolute',
-        bottom: '1rem',
-        left: '50%',
-        transform: 'translateX(-50%)'
-    }}>
-    </div>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            maxWidth: "72rem",
+                            width: "100%",
+                            height: "2rem",
+                            borderRadius: "12.1rem",
+                            background:
+                                "linear-gradient(91deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)",
+                            filter: "blur(60px)",
+                            position: "absolute",
+                            bottom: "1rem",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                        }}
+                    ></div>
                     <section className="container mx-auto px-4 2xl:px-20 ">
                         <div className="flex justify-center">
                             <span className=" text-center text-sm text-zinc-400 md:text-start">
