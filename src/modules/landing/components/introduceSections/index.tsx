@@ -33,7 +33,7 @@ const IntroduceSections = () => {
         setInputValue(event.target.value)
     }
     const handleMeetRequest = () => {
-        window.open("https://calendly.com/mahdiyarjfr/demo-request", "_blank")
+        window.open("https://calendly.com/hamyarchat/hamyarchat-demo", "_blank")
     }
 
     const handleSubmit = async () => {
