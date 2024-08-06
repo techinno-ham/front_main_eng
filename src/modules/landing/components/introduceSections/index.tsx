@@ -8,6 +8,7 @@ import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
 import { Calendar, DocumentText1, DollarCircle, Messages1, Messages3, Timer1 } from "iconsax-react"
+import "./style.css"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -109,13 +110,14 @@ const IntroduceSections = () => {
                     </p>
                 </div>
                 <div className="mt-[32px] flex flex-col items-center justify-center gap-4">
+                <div className="webflow-style-input">
                     <input
                         type="text"
                         className="input-url"
                         onChange={handleInputChange}
                         placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
                     />
-
+</div>
                     <div className="flex flex-col-reverse gap-2 md:flex-row md:gap-3">
                         <button
                             className="btn-meet"
