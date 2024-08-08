@@ -35,8 +35,8 @@ const TrustBrnadSections = () => {
         },
     })
     return (
-        <div className="container-medium w-container container mx-auto mt-16 h-max overflow-hidden text-center">
-            <div className="mt-10 md:mt-4">
+        <div className="container-medium w-container container mx-auto  h-max overflow-hidden text-center">
+            {/* <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
               مشتریان
              و
@@ -50,7 +50,7 @@ const TrustBrnadSections = () => {
                 <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                 لیست شرکت‌ها و کسب‌وکارهایی که به خدمات هوش مصنوعی ما اعتماد کرده‌اند.
                 </h3>
-            </div>
+            </div> */}
             <div
                 style={{
                     maskImage:

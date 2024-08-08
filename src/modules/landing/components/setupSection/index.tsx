@@ -2,7 +2,7 @@ const SetupSection = ()=>{
     return (
         <>
             <div className="container relative mx-auto h-auto overflow-hidden  px-4  text-center 2xl:px-20 mt-14">
-            <div className="my-10 md:mt-4">
+            <div className="my-10 md:mt-10">
                 <h2 className="text-3xl md:text-5xl">
                  چت بات بدون کد
                 </h2>
@@ -16,23 +16,21 @@ const SetupSection = ()=>{
                     <div className="p-6">
                         <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">مرحله 1</h5>
                         <p className="block antialiased font-sans text-inherit text-base font-normal leading-7 !text-gray-600 mb-4">لینک وب سایت یا فایل های خود را اضافه کنید.</p>
-                        <img className="w-72" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"/>
                         </div>
 
                     </div>
                     <div className="relative flex flex-col bg-clip-border rounded-xl text-gray-700 bg-gray-50">
                     <div className="p-6">
-                        <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">مرحله 1</h5>
-                        <p className="block antialiased font-sans text-inherit text-base font-normal leading-7 !text-gray-600 mb-4">لینک وب سایت یا فایل های خود را اضافه کنید.</p>
-                        <img className="w-72" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"/>
+                        <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">مرحله 2</h5>
+                        <p className="block antialiased font-sans text-inherit text-base font-normal leading-7 !text-gray-600 mb-4">آموزش چت بات شما با دیتای شخصی شما.</p>
+                       
                         </div>
 
                     </div>
                     <div className="relative flex flex-col bg-clip-border rounded-xl text-gray-700 bg-gray-50">
                     <div className="p-6">
-                        <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">مرحله 1</h5>
-                        <p className="block antialiased font-sans text-inherit text-base font-normal leading-7 !text-gray-600 mb-4">لینک وب سایت یا فایل های خود را اضافه کنید.</p>
-                        <img className="w-72" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"/>
+                        <h5 className="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-blue-gray-900">مرحله 3</h5>
+                        <p className="block antialiased font-sans text-inherit text-base font-normal leading-7 !text-gray-600 mb-4">آن را در وب سایت خود مستقر کنید. چت بات آماده است!</p>
                         </div>
 
                     </div>

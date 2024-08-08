@@ -6,6 +6,7 @@ import useStoreChatConfig from "./hooks/config-mock-chat"
 import useStoreConfig from "../../hooks/loadConfig"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import CustomColorPicker from "./components/customColorPicker"
 
 const Apperence = () => {
     const { chatConfig, updateChatConfig } = useStoreChatConfig()
@@ -23,6 +24,15 @@ const Apperence = () => {
         console.log({ [name]: value })
         updateChatConfig({ [name]: value })
     }
+
+    const handleThemeChange = (e: any) => {
+        const value = e.target.value
+        const themeBot = value === "حالت روز" ? "light" : "dark"
+        updateChatConfig({ themeBot })
+    }
+    const handleBgChange = (name:any,value:any) => {
+        updateChatConfig({ [name]: value })
+    }
     const onSubmit = async () => {
         setIsLoading(true)
         try {
@@ -32,6 +42,7 @@ const Apperence = () => {
                 placeholder_msg: chatConfig?.inputPlaceholder,
                 footer_msg: chatConfig?.footer,
                 bot_name: chatConfig?.displayName,
+                theme_bot:chatConfig?.themeBot,
                 user_msg_bg_color: chatConfig?.bgUserMessage,
                 bot_widget_border_color: chatConfig?.borderIcon,
                 bot_widget_position: chatConfig?.chatButtonPosition,
@@ -57,6 +68,7 @@ const Apperence = () => {
                 inputPlaceholder: data?.ui_configs?.placeholder_msg,
                 footer: data?.ui_configs?.footer_msg,
                 displayName: data?.ui_configs?.bot_name,
+                themeBot:data?.ui_configs?.theme_bot,
                 bgUserMessage: data?.ui_configs?.user_msg_bg_color,
                 borderIcon: data?.ui_configs?.bot_widget_border_color,
                 chatButtonPosition: data?.ui_configs?.bot_widget_position,
@@ -183,6 +195,28 @@ const Apperence = () => {
                                 </div>
                             </div>
 
+          
+                        <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    تم پیش فرض :{" "}
+                                </label>
+                                <div className="mt-2">
+                                    <div className="flex items-center">
+                                        <div>
+                                        <select
+                                        value={chatConfig.themeBot === "light" ? "حالت روز" : "حالت شب"}
+                                        onChange={handleThemeChange}
+                            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
+                        >
+                           <option value="حالت روز"> حالت روز</option>
+                           <option value="حالت شب">حالت شب</option>
+                            
+                        </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
                                     رنگ پیام کاربر :{" "}
@@ -190,18 +224,16 @@ const Apperence = () => {
                                 <div className="mt-2">
                                     <div className="flex items-center">
                                         <div>
-                                            <input
-                                                name="bgUserMessage"
-                                                type="color"
-                                                value={chatConfig.bgUserMessage}
-                                                onChange={handleInputChange}
-                                                className="block h-10 w-14 cursor-pointer rounded-lg border border-gray-200 bg-white p-1 disabled:pointer-events-none disabled:opacity-50"
-                                                title="Choose your color"
-                                            />
+                                          <CustomColorPicker
+                                            name="bgUserMessage"
+                                            value={chatConfig.bgUserMessage}
+                                            onChange={handleBgChange}
+                                          />
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                           
                             <div className="flex w-full flex-row items-center gap-4 py-3">
                                 <div className="flex flex-col gap-1">
                                     <span className="mb-1 block text-sm font-medium text-zinc-700">

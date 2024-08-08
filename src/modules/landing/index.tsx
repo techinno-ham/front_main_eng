@@ -1,4 +1,5 @@
 import TryNow from "./components/TryNow"
+import CostSection from "./components/costSection"
 import FeatureSection from "./components/featureSection"
 import FeaturesCards from "./components/featuresCards"
 import IntroduceSections from "./components/introduceSections"
@@ -12,6 +13,7 @@ const Landing = () => {
             <div>
                 <IntroduceSections />
                 <TrustBrnadSections />
+                <CostSection/>
                 <SetupSection/>
                 <FeatureSection />
                 <PowerfulFeaturesSection />
