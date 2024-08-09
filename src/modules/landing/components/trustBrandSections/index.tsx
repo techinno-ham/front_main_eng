@@ -35,7 +35,7 @@ const TrustBrnadSections = () => {
         },
     })
     return (
-        <div className="container-medium w-container container mx-auto  h-max overflow-hidden text-center">
+        <div className="container-medium w-container container mx-auto  h-max overflow-hidden text-center mt-8 md:mt-0">
             {/* <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
               مشتریان
