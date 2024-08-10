@@ -8,7 +8,7 @@ const Partners=()=>{
         <>
          <div className="relative min-h-full h-full w-full bg-[url('/header-bg.jpg')] bg-contain lg:bg-cover bg-no-repeat">
            <div className="relative z-10 grid min-h-full w-full">
-             <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36  h-auto overflow-hidden  px-4  text-center 2xl:px-20">
+             <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36  h-auto overflow-hidden  px-4  text-center 2xl:px-20 mx-auto">
                  <h1 className="block antialiased tracking-normal text-4xl md:text-5xl  leading-tight text-blue-gray-900 font-extrabold">دریافت تخفیف  شگفت انگیز. 30% به ازای هر دعوت <br/><span className="font-medium md:text-4xl text-xl">همین امروز مشتری ما شوید.</span></h1>
                  <p className="block antialiased  text-sm md:text-xl leading-relaxed mt-7 md:px-32 lg:px-52 text-gray-600 font-medium">چت بات هوش مصنوعی ما به مخاطبان یا مشتریان خود پیشنهاد دهید و <span className="font-bold text-black">تخفیف  کسب کنید.</span>.</p>
                  <div className="mt-8 flex justify-center">
@@ -32,7 +32,7 @@ const Partners=()=>{
          </div>
          <div className="relative min-h-full w-full">
             <div className="relative z-10 grid min-h-full w-full">
-               <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36  h-auto overflow-hidden  px-4  text-center 2xl:px-20">
+               <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36  h-auto overflow-hidden  px-4  text-center 2xl:px-20 mx-auto">
                   <h3 className="block antialiased tracking-normal  text-3xl leading-snug text-blue-gray-900 font-bold"> دریافت تخفیف با همیار چت به ما بپیوندید .</h3>
                   <p className="block antialiased  text-xl leading-relaxed mt-7 md:px-32 lg:px-52 text-gray-600 font-medium">دستیار هوش مصنوعی ما قابل سفارشی‌سازی برای هر کسب و کار است <br/> فقط در 3 دقیقه!</p>
                   <div className="w-full overflow-hidden mt-20">
@@ -148,7 +148,7 @@ const Partners=()=>{
          </div>
          <div className="relative min-h-full w-full">
            <div className="relative z-10 grid min-h-full w-full">
-              <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36 h-auto overflow-hidden  px-4  text-center 2xl:px-20">
+              <div className="container relative pt-20 pb-16 md:pt-28 md:pb-36 h-auto overflow-hidden  px-4  text-center 2xl:px-20 mx-auto">
               <h3 className="block antialiased tracking-normal  text-3xl leading-snug text-blue-gray-900 font-bold">در 3 مرحله آسان شروع کنید .</h3>
               <div className="lg:w-[60rem] grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 mt-20  mx-auto ">
                     <div className="relative flex flex-col bg-clip-border rounded-xl text-gray-700 bg-zinc-100">

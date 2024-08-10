@@ -1,13 +1,42 @@
 "use client"
 
 import { CloseCircle, Refresh, Send } from "iconsax-react"
-import { FC } from "react"
+import { FC, useState } from "react"
+import useAIChat from "./hooks/useAIChat"
 
 interface chatbotProps {
     chatBotActive: boolean
 }
 
 const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
+    const [valueInput, setValueInput] = useState("");
+    const {messages,addMessages}= useAIChat();
+
+   const sendRequest = (_valueInput?: string) => {
+    const text = _valueInput || valueInput;
+
+    addMessages({
+        sender: "user",
+        type: "text",
+        error: false,
+        content: text,
+        id: `message-id-${messages.length}`,
+    })
+    setValueInput("");
+    setTimeout(() => {
+        addMessages({
+            sender: "AI",
+            type: "text",
+            error: false,
+            content: text,
+            id: `message-id-${messages.length}`,
+        })
+    
+        
+    }, 2000);
+
+   }
+   console.log(messages,"messages")
     return (
         <>
             {!chatBotActive ? (
@@ -162,7 +191,7 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
                                     </div>
                                     <div className="flex items-center">
                                         <h1 className="text-lg font-bold text-black ">
-                                            رایاچت
+                                            همیار چت
                                         </h1>
                                     </div>
                                 </div>
@@ -171,39 +200,40 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
                                 <div className="relative">
                                     <div className="h-full w-full overflow-y-auto">
                                         <div className="px-3 pt-4">
-                                            <div>
-                                                <div className="mr-8 flex justify-end">
-                                                    <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
-                                                        <div className="flex flex-col items-start gap-4 break-words">
-                                                            <div className=" w-full break-words text-right text-inherit ">
-                                                                <p>
-                                                                    سلام ! امروز
-                                                                    چطور
-                                                                    می‌توانم به
-                                                                    شما کمک کنم؟
-                                                                    😊
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div className="ml-8 flex justify-start">
-                                                    <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
-                                                        <div className="flex flex-col items-start gap-4 break-words">
-                                                            <div className=" w-full break-words text-right text-inherit ">
-                                                                <p>سلام !</p>{" "}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <div>
+                    {messages.map((message, index) => {
+                        if (message.sender === "AI") {
+                            return (
+                                <div key={index} className="mr-8 flex justify-end">
+                                    <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
+                                        <div className="flex flex-col items-start gap-4 break-words">
+                                            <div className="w-full break-words text-right text-inherit">
+                                                <p>{message.content}</p>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        } else {
+                            return (
+                                <div key={index} className="ml-8 flex justify-start">
+                                    <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4 py-3 text-white">
+                                        <div className="flex flex-col items-start gap-4 break-words">
+                                            <div className="w-full break-words text-right text-inherit">
+                                                <p>{message.content}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        }
+                    })}
+                </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="bg-inherit">
-                                <form action="">
                                     <div className="flex gap-2 overflow-x-auto p-3">
                                         <button
                                             className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
@@ -217,19 +247,25 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
                                     </div>
                                     <div className="flex border-t border-[#e4e4e7] px-4  py-3">
                                         <div className="flex w-full items-center leading-none">
-                                            <textarea
+                                            <input
                                                 required
-                                                className="mr-3 max-h-36 w-full cursor-not-allowed resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
+                                                className="mr-3 max-h-36 w-full  resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
                                                 placeholder={"پیام شما"}
                                                 aria-label="Write a Message"
                                                 title="Write a Message"
                                                 style={{
                                                     height: "24px",
                                                 }}
+                                                onChange={(e) => {
+                                                    setValueInput(e.target.value);
+                                                  }}
+                                                  value={valueInput}
                                             />
                                         </div>
                                         <div className="flex items-end leading-none">
-                                            <button>
+                                            <button
+                                               onClick={()=>{sendRequest();}}
+                                            >
                                                 <Send />
                                             </button>
                                         </div>
@@ -248,7 +284,7 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
                                             </p>
                                         </div>
                                     </div>
-                                </form>
+                                
                             </div>
                         </div>
                     </div>

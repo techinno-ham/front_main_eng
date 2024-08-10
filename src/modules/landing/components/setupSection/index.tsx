@@ -6,7 +6,7 @@ const SetupSection = ()=>{
             <div className="container relative mx-auto h-auto overflow-hidden  px-4  text-center 2xl:px-20 mt-14">
             <div className="my-10 md:mt-10">
                 <h2 className="text-3xl md:text-5xl">
-                 چت بات بدون کد
+                   چت بات بدون کد و دانش برنامه نویسی
                 </h2>
                 <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                 راه اندازی فقط در کمتر از 2 دقیقه
