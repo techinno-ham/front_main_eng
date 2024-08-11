@@ -16,7 +16,7 @@ const SetupSection = ()=>{
                 </h3>
             </div>
 
-            <div className="lg:w-[60rem] grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 mt-4  mx-auto ">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 mt-4  mx-auto ">
                     <div className="relative flex flex-col bg-clip-border rounded-xl text-gray-700 bg-zinc-100">
                         <div className="absolute left-4 top-3">
                         <Box2
