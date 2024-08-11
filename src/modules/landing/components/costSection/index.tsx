@@ -31,7 +31,7 @@ const CostSection = () => {
                             size="28"
                             color="#3b82f6"
                            />
-                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">50%-</h2>
+                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">۵۰٪-</h2>
                            <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-normal ">هزینه های پشتیبانی مشتری</h5>
                            <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-zinc-400"> تا 50 درصد از هزینه های پشتیبانی مشتری خود را به ازای هر نماینده کاهش دهید.</h6>
                     </div>
@@ -40,7 +40,7 @@ const CostSection = () => {
                             size="28"
                             color="#3b82f6"
                            />
-                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">3x</h2>
+                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">۳x</h2>
                            <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-normal ">پاسخ سریعتر</h5>
                            <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-zinc-400"> چت بات ما 3 برابر سریعتر از یک انسان پاسخ می دهد.</h6>
                     </div>
@@ -49,16 +49,16 @@ const CostSection = () => {
                             size="28"
                             color="#3b82f6"
                            />
-                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">100%</h2>
+                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">۱۰۰٪</h2>
                            <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-normal ">دقت</h5>
-                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-zinc-400">چت بات ما در پاسخ به سوالات دقت 100% دارد.</h6>
+                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-zinc-400">چت بات ما در پاسخ به سوالات دقت ۱۰۰٪ دارد.</h6>
                     </div>
                     <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
                          <Messages3
                             size="28"
                             color="#3b82f6"
                            />
-                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">24/7</h2>
+                           <h2 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">۲۴/۷</h2>
                            <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-normal ">دستیار پشتیبانی</h5>
                            <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-zinc-400">در مقایسه با پشتیبانی استاندارد، چت بات 24/7 برای مشتریان شما در دسترس است.</h6>
                     </div>
