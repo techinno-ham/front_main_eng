@@ -22,7 +22,7 @@ const SetupSection = ()=>{
                          />
                         </div>
                        <div className="p-6">
-                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-blue-gray-900">مرحله 1</h5>
+                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-blue-gray-900 text-right">مرحله 1</h5>
                            <p className="text-right mb-1 mt-2 font-semibold  text-zinc-900">وارد کردن منابع داده چندگانه</p>
                            <p className="text-sm  text-zinc-500 text-right">
                            لینک وب سایت یا فایل های خود یا متن ها خود را وارد میکنید.
@@ -39,7 +39,7 @@ const SetupSection = ()=>{
                          />
                         </div>
                        <div className="p-6">
-                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-white">مرحله 2</h5>
+                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-white text-right">مرحله 2</h5>
                            <p className="text-right mb-1 mt-2 font-semibold  text-white">آموزش چت بات</p>
                            <p className="text-sm  text-gray-300 text-right">
                            چت بات را با داده های خود آموزش دهید.
@@ -56,7 +56,7 @@ const SetupSection = ()=>{
                          />
                         </div>
                        <div className="p-6">
-                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-blue-gray-900">مرحله 3</h5>
+                           <h5 className="block antialiased tracking-normal text-xl font-semibold leading-snug text-blue-gray-900 text-right">مرحله 3</h5>
                            <p className="text-right mb-1 mt-2 font-semibold  text-zinc-900">نصب و استفاده</p>
                            <p className="text-sm  text-zinc-500 text-right">
                            بدون هیچ دانشی از همیار چت در سایت و یا جاهای مختلفی استفاده کنید.
