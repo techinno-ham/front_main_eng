@@ -15,44 +15,44 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
         return formatDistanceToNow(date, { locale: faIR })
     }
     const state = botData?.status == "active" ? true : false
-    const [botActive, setBotActive] = useState<boolean>(state)
+    const [botActive, setBotActive] = useState<boolean>(true)
 
-    useEffect(() => {
-        let fetchIntervalId: string | number | NodeJS.Timeout | undefined
+    // useEffect(() => {
+    //     let fetchIntervalId: string | number | NodeJS.Timeout | undefined
 
-        const fetchBotData = async () => {
-            try {
-                const response = await service.getBot(botData?.bot_id)
-                const status = response.data.status
-                if (status === "active" && !botActive) {
-                    toast.success("چت بات شما اکنون آماده می باشد.")
-                    toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
-                    setBotActive(true)
-                    clearInterval(fetchIntervalId)
-                } else if (status !== "active") {
-                    setBotActive(false)
-                }
-            } catch (error: any) {
-                console.error(error)
-            }
-        }
+    //     const fetchBotData = async () => {
+    //         try {
+    //             const response = await service.getBot(botData?.bot_id)
+    //             const status = response.data.status
+    //             if (status === "active" && !botActive) {
+    //                 toast.success("چت بات شما اکنون آماده می باشد.")
+    //                 toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
+    //                 setBotActive(true)
+    //                 clearInterval(fetchIntervalId)
+    //             } else if (status !== "active") {
+    //                 setBotActive(false)
+    //             }
+    //         } catch (error: any) {
+    //             console.error(error)
+    //         }
+    //     }
 
-        const checkBotStatus = async () => {
-            if (!botActive && !fetchIntervalId) {
-                await fetchBotData()
-                fetchIntervalId = setInterval(async () => {
-                    console.log("Polling bot status...")
-                    await fetchBotData()
-                }, 5000)
-            }
-        }
+    //     const checkBotStatus = async () => {
+    //         if (!botActive && !fetchIntervalId) {
+    //             await fetchBotData()
+    //             fetchIntervalId = setInterval(async () => {
+    //                 console.log("Polling bot status...")
+    //                 await fetchBotData()
+    //             }, 5000)
+    //         }
+    //     }
 
-        checkBotStatus()
+    //     checkBotStatus()
 
-        return () => {
-            clearInterval(fetchIntervalId)
-        }
-    }, [botActive, botData])
+    //     return () => {
+    //         clearInterval(fetchIntervalId)
+    //     }
+    // }, [botActive, botData])
 
     return (
         <>

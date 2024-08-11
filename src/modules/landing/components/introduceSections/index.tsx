@@ -62,18 +62,19 @@ const IntroduceSections = () => {
 
     return (
         <>
-            <div className="intro_conteiner">
-                <div>
-                    <div className="absolute left-[80%] top-24 -z-50">
+               <div className="relative min-h-full h-full w-full bg-contain lg:bg-cover bg-no-repeat overflow-hidden">
+               <div className="absolute left-[80%] top-24 -z-50 w-[300px]">
                         <Image
+                         className="blur-2xl"
                             src="/images/rightBlur.png"
                             height="100"
                             width="650"
                             alt="Logo"
                         />
                     </div>
-                    <div className="left-blur absolute right-[70%] top-24 -z-50 w-[400px]">
+                    <div className="left-blur absolute right-[70%] -z-50 w-[1000px]">
                         <Image
+                             className="blur-3xl"
                             src="/images/rightBlur.png"
                             height="200"
                             width="500"
@@ -139,7 +140,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="grid gap-y-10 gap-x-10 md:grid-cols-2 lg:grid-cols-4 mt-16">
+                {/* <div className="grid gap-y-10 gap-x-10 md:grid-cols-2 lg:grid-cols-4 mt-16">
                     <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
                          <Messages3
                             size="28"
@@ -177,9 +178,14 @@ const IntroduceSections = () => {
                            <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-gray-600"> تا 50 درصد از هزینه های پشتیبانی مشتری خود را به ازای هر نماینده کاهش دهید.</h6>
                     </div>
                     
-                </div>
+                </div> */}
 
-            </div>
+               
+
+               
+               
+
+          
 
             {loading && (
                 <>
