@@ -1,8 +1,8 @@
-import AllBlogs from "@/src/modules/AllBlogs"
+import Affiliate from "@/src/modules/Affiliate";
 import { Metadata, NextPage } from "next"
 
-const BlogsPage: NextPage = () => {
-    return <AllBlogs />
+const AffiliatePage: NextPage = () => {
+    return <Affiliate/>
 };
 
 export const metadata: Metadata = {
@@ -18,4 +18,4 @@ export const metadata: Metadata = {
 }
 
 
-export default BlogsPage
+export default AffiliatePage

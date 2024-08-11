@@ -8,6 +8,7 @@ import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
 import { Calendar, DocumentText1, DollarCircle, Messages1, Messages3, Timer1 } from "iconsax-react"
+import "./style.css"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -80,75 +81,109 @@ const IntroduceSections = () => {
                             alt="Logo"
                         />
                     </div>
-               <div className="relative z-10 grid min-h-full w-full">
-          
-        
-        
-               <div className="intro_conteiner">
-              
-              <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
-                  <h1>
-                      <p className="text-4xl md:text-7xl">
-                          <span className="gradient-h2 is-v2">همیارچت</span>
-                          <span>، دستیار هوش مصنوعی </span>
-                      </p>
-                      <p className="mt-3 text-xl md:mt-5 md:text-3xl">
-                          <span>در خدمت </span>
-                          <span className="gradient-h2 is-v2">رضایت </span>
-                          <span>مشتریان و </span>
-                          <span className="gradient-h2 is-v2">پیشرفت </span>
-                          <span>کسب و کارها</span>
-                          {/* <span>
-                              <Image
-                                  src="/icons/jet.svg"
-                                  height="40"
-                                  width="40"
-                                  alt="Logo"
-                              />
-                          </span> */}
-                      </p>
-                  </h1>
-              </div>
-              <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                  <p className="text-center w-[55%] mx-auto md:text-[16px] text-[13px]">
-                      {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
-                  </p>
-              </div>
-              <div className="mt-[32px] flex flex-col items-center justify-center gap-4">
-                  <input
-                      type="text"
-                      className="input-url"
-                      onChange={handleInputChange}
-                      placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
-                  />
+                </div>
+                <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
+                    <h1>
+                        <p className="text-4xl md:text-7xl">
+                            <span className="gradient-h2 is-v2">همیارچت</span>
+                            <span>، دستیار هوش مصنوعی </span>
+                        </p>
+                        <p className="mt-3 text-xl md:mt-5 md:text-3xl">
+                            <span>در خدمت </span>
+                            <span className="gradient-h2 is-v2">رضایت </span>
+                            <span>مشتریان و </span>
+                            <span className="gradient-h2 is-v2">پیشرفت </span>
+                            <span>کسب و کارها</span>
+                            {/* <span>
+                                <Image
+                                    src="/icons/jet.svg"
+                                    height="40"
+                                    width="40"
+                                    alt="Logo"
+                                />
+                            </span> */}
+                        </p>
+                    </h1>
+                </div>
+                <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
+                    <p className="text-center w-[55%] mx-auto md:text-[16px] text-[13px]">
+                        {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
+                    </p>
+                </div>
+                <div className="mt-[32px] flex flex-col items-center justify-center gap-4">
+                <div className="webflow-style-input">
+                    <input
+                        type="text"
+                        className="input-url"
+                        onChange={handleInputChange}
+                        placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
+                    />
+</div>
+                    <div className="flex flex-col-reverse gap-2 md:flex-row md:gap-3">
+                        <button
+                            className="btn-meet"
+                            onClick={handleMeetRequest}
+                        >
+                            <Calendar size="24" color="#fff" />
+                            <span>درخواست جلسه</span>
+                        </button>
+                        <button className="btn-demo" onClick={handleSubmit}>
+                            ساختن بات دمو
+                        </button>
+                    </div>
+                </div>
+                <div className="mt-[25px] md:mt-[45px] flex justify-center">
+                    <Image
+                        src="/images/phone.svg"
+                        height="400"
+                        width="600"
+                        alt="Logo"
+                    />
+                </div>
+                {/* <div className="grid gap-y-10 gap-x-10 md:grid-cols-2 lg:grid-cols-4 mt-16">
+                    <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
+                         <Messages3
+                            size="28"
+                            color="#212121"
+                           />
+                           <h1 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">24/7</h1>
+                           <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-semibold text-gray-600">دستیار پشتیبانی</h5>
+                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-gray-600">در مقایسه با پشتیبانی استاندارد، چت بات 24/7 برای مشتریان شما در دسترس است.</h6>
+                    </div>
+                    <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
+                          <DocumentText1
+                            size="28"
+                            color="#212121"
+                           />
+                           <h1 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">100%</h1>
+                           <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-semibold text-gray-600">دقت</h5>
+                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-gray-600">چت بات ما در پاسخ به سوالات دقت 100% دارد.</h6>
+                    </div>
+                    <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
+                          <Timer1
+                            size="28"
+                            color="#212121"
+                           />
+                           <h1 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">3x</h1>
+                           <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-semibold text-gray-600">پاسخ سریعتر</h5>
+                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-gray-600"> چت بات ما 3 برابر سریعتر از یک انسان پاسخ می دهد.</h6>
+                    </div>
+                    <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
+                          <DollarCircle
+                            size="28"
+                            color="#212121"
+                           />
+                           <h1 className="block antialiased tracking-normal mb-2 mt-4 text-5xl text-gray-900 font-bold">50%-</h1>
+                           <h5 className="block antialiased tracking-normal text-xl leading-snug mb-2 font-semibold text-gray-600">هزینه های پشتیبانی مشتری</h5>
+                           <h6 className="block antialiased tracking-normal text-base leading-relaxed mb-2 font font-normal text-gray-600"> تا 50 درصد از هزینه های پشتیبانی مشتری خود را به ازای هر نماینده کاهش دهید.</h6>
+                    </div>
+                    
+                </div> */}
 
-                  <div className="flex flex-col-reverse gap-2 md:flex-row md:gap-3">
-                      <button
-                          className="btn-meet"
-                          onClick={handleMeetRequest}
-                      >
-                          <Calendar size="24" color="#fff" />
-                          <span>درخواست جلسه</span>
-                      </button>
-                      <button className="btn-demo" onClick={handleSubmit}>
-                          ساختن بات دمو
-                      </button>
-                  </div>
-              </div>
-              <div className="mt-[25px] md:mt-[45px] flex justify-center">
-                  <Image
-                      src="/images/phone.svg"
-                      height="400"
-                      width="600"
-                      alt="Logo"
-                  />
-              </div>
-            
+               
 
-               </div>
-
-               </div>
-               </div>
+               
+               
 
           
 
