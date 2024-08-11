@@ -3,7 +3,28 @@ import { DocumentText1, DollarCircle, Messages3, Timer1 } from "iconsax-react";
 const CostSection = () => {
      return (
         <>
-           <div className="container relative mx-auto h-auto overflow-hidden mt-12  px-4  text-center 2xl:px-20">
+           <div className="container relative mx-auto h-auto overflow-hidden mt-12  px-4  text-center 2xl:px-20 pt-[100px]">
+           <div className="my-10 md:mt-10">
+                <h2 className="text-3xl md:text-5xl">
+                دستیار
+                <span className="gradient-h2 is-v2">
+                {" "}
+                 هوشمند
+                 {" "}
+                    </span>
+                  برای
+                   <span className="gradient-h2 is-v2">
+                   {" "}
+                   تحول
+                   {" "}
+                   
+                    </span>
+                    کسب‌وکار شما
+                </h2>
+                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                راه اندازی فقط در کمتر از 2 دقیقه
+                </h3>
+            </div>
            <div className="grid gap-y-10 gap-x-10 md:grid-cols-2 lg:grid-cols-4 mt-16">
            <div className="relative flex flex-col bg-clip-border rounded-xl bg-transparent text-gray-700 shadow-none items-center">
                           <DollarCircle
