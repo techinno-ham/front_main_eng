@@ -17,6 +17,8 @@ const useAIChatStore = create<AIChatState>((set) => ({
             error: false,
             content: "سلام چطور می‌تونم کمکتون کنم؟",
             id: `message-id-0`,
+            time: Date.now(), 
+    
         }
     ],
     isLoading: false,

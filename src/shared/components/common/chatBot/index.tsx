@@ -206,13 +206,27 @@ useEffect(() => {
                         if (message.sender === "AI") {
                             return (
                                 <div key={index} className="mr-16 flex justify-end ">
-                                    <div className="mb-5 max-w-prose overflow-auto  bg-[#f1f1f0] px-4 py-3 text-black rounded-[20px] rounded-bl-none">
+                                <div className="flex flex-col">
+                                <div className="max-w-prose overflow-auto  bg-[#f1f1f0] px-4 py-3 text-black rounded-[20px] rounded-bl-none">
                                         <div className="flex flex-col items-start gap-4 break-words">
                                             <div className="w-full break-words text-right text-inherit text-sm">
                                                 <p>{message.content}</p>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="mb-5 mr-auto ml-2">
+                                    <span className="text-xs text-gray-500" dir="ltr">
+                            {new Intl.DateTimeFormat('en-US', {
+                                dateStyle: 'short',
+                                timeStyle: 'short',
+                            }).format(new Date(message.time))}
+                        </span>
+
+                                    </div>
+
+
+                                </div>
+                                    
                                     {/* <div>
                                     <span className="text-xs text-gray-500">
                                       {new Date(message.time).toLocaleTimeString()}  
@@ -223,13 +237,26 @@ useEffect(() => {
                         } else {
                             return (
                                 <div key={index} className="ml-16 flex justify-start">
-                                    <div className="mb-5 max-w-prose overflow-auto  bg-[#3b81f6] px-4 py-3 text-white rounded-[20px] rounded-br-none">
+                                <div className="flex flex-col"> 
+                                <div className="max-w-prose overflow-auto  bg-[#3b81f6] px-4 py-3 text-white rounded-[20px] rounded-br-none">
                                         <div className="flex flex-col items-start gap-4 break-words">
                                             <div className="w-full break-words text-right text-inherit text-sm">
                                                 <p>{message.content}</p>
                                             </div>
                                         </div>
+                                </div>
+                                <div className="mb-5 ml-auto mr-2">
+                                    <span className="text-xs text-gray-500" dir="ltr">
+                            {new Intl.DateTimeFormat('en-US', {
+                                dateStyle: 'short',
+                                timeStyle: 'short',
+                            }).format(new Date(message.time))}
+                        </span>
+
                                     </div>
+
+                                </div>
+                                    
                                 </div>
                             );
                         }
