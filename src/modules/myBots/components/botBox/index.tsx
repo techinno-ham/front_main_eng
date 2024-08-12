@@ -107,6 +107,10 @@ const BotBox = (props: IBotBoxProps) => {
                                               )
                                             : " مدتی قبل"}
                                     </span>
+                                    <span className="text-[10px] text-[gray] block">
+                                        چت بات آیدی  :
+                                        {props.botsData?.bot_id}
+                                    </span>
                                 </div>
                             </div>
 
