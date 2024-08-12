@@ -1,6 +1,6 @@
 import useAIChatStore from "@/src/shared/store/AIChatStore";
 
-const useAIChat = () => {
+const useAIChat = (conversationId: string, botId: string) => {
     const { messages, setMessages, isLoading, setIsLoading,resetChat } = useAIChatStore();
 
     const addMessages = (newMessage: any) => {
@@ -19,7 +19,7 @@ const useAIChat = () => {
                 },
                 body: JSON.stringify({
                     input: {
-                        conversation_id: "666",  // Fixed conversation ID
+                        conversation_id: conversationId,  // Fixed conversation ID
                         init_question: message,  // The message from the user
                         collection_name: "plotset1"  // Fixed collection name
                     },

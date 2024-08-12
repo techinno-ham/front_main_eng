@@ -4,16 +4,24 @@ import { CloseCircle, Refresh, Send } from "iconsax-react"
 import { FC, useEffect, useRef, useState } from "react"
 import useAIChat from "./hooks/useAIChat"
 import CahtBotLoader from "../chatBotLoader"
+import { toast } from "sonner"
+import { v4 as uuidv4 } from 'uuid';
+
+
 
 
 interface chatbotProps {
     chatBotActive: boolean
+    conversationId:string
+    botId:string
 }
 
-const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
+const ChatBot: FC<chatbotProps> = ({ chatBotActive,conversationId , botId }) => {
     const [valueInput, setValueInput] = useState("");
-    const {messages,addMessages,sendMessageToServer,resetChat,isLoading}= useAIChat();
+    const [conversationIdState,setConversationIdState]=useState(conversationId)
+    const {messages,addMessages,sendMessageToServer,resetChat,isLoading}= useAIChat(conversationIdState , botId);
     const chatContainerRef = useRef<HTMLDivElement>(null);
+    
 
    const sendRequest = (_valueInput?: string) => {
     const text = _valueInput || valueInput;
@@ -30,6 +38,16 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
     sendMessageToServer(text);
 
    };
+   const handleResetChat=()=>{
+    if(isLoading){
+        toast.error("چت بات در حال پاسخ دادن می باشد صبر کنید پاسخ گویی تمام شود سپس بازنشانی کنید.")
+        return
+    }
+    const newUuid = uuidv4();
+    resetChat();
+    setConversationIdState(newUuid);
+
+   }
 
    const scrollToBottom = () => {
     chatContainerRef?.current?.scroll({
@@ -182,7 +200,7 @@ useEffect(() => {
                                     <div className="flex items-center justify-center gap-3">
                                     
                                         <button
-                                          onClick={resetChat}
+                                          onClick={handleResetChat}
                                         >
                                             <Refresh
                                                 size={28}

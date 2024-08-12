@@ -6,10 +6,12 @@ import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 interface chartDemoProps {
-    botData: any
+    botData: any,
+    botId:any,
+    conversationId:any
 }
 
-const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
+const ChartDemo: React.FC<chartDemoProps> = ({ botData,botId,conversationId }) => {
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
@@ -128,7 +130,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData }) => {
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                                <ChatBot chatBotActive={botActive} />
+                                <ChatBot chatBotActive={botActive} conversationId={conversationId} botId={botId} />
                             </div>
                         </div>
                     </div>
