@@ -31,7 +31,7 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive,conversationId , botId }) => 
         type: "text",
         error: false,
         content: text,
-        id: `message-id-${messages.length}`,
+        id: `message-user-id-${messages.length}`,
         time:Date.now()
     })
     setValueInput("");

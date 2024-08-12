@@ -1,7 +1,7 @@
 import useAIChatStore from "@/src/shared/store/AIChatStore";
 
 const useAIChat = (conversationId: string, botId: string) => {
-    const { messages, setMessages, isLoading, setIsLoading,resetChat } = useAIChatStore();
+    const { messages, setMessages, isLoading, setIsLoading,resetChat,updateMessage } = useAIChatStore();
 
     const addMessages = (newMessage: any) => {
         setMessages(newMessage);
@@ -31,15 +31,25 @@ const useAIChat = (conversationId: string, botId: string) => {
         if (response.ok) {
             const data = await response.json(); // Parse the JSON response
             const aiResponse = data.output; // Extract the output message
-
-            addMessages({
+            const chunks = aiResponse.match(/.{1,15}/g) || []; // Adjust the chunk size as needed
+            const newMessageId = `message-id-AI-${messages.length}`;
+            
+            setMessages({
                 sender: "AI",
                 type: "text",
                 error: false,
-                content: aiResponse, // Use the AI's response
-                id: `message-id-${messages.length}`,
+                content: "", 
+                id: newMessageId,
                 time: Date.now(), 
             });
+        
+            chunks.forEach((chunk:any, index:any) => {
+                setTimeout(() => {
+                    updateMessage(newMessageId, chunk);
+                }, index * 100); 
+            });
+        
+          
         } else {
             // Handle any errors returned by the server
             addMessages({
