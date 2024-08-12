@@ -3,6 +3,7 @@
 import { CloseCircle, Refresh, Send } from "iconsax-react"
 import { FC, useEffect, useRef, useState } from "react"
 import useAIChat from "./hooks/useAIChat"
+import CahtBotLoader from "../chatBotLoader"
 
 
 interface chatbotProps {
@@ -11,7 +12,7 @@ interface chatbotProps {
 
 const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
     const [valueInput, setValueInput] = useState("");
-    const {messages,addMessages,sendMessageToServer,resetChat}= useAIChat();
+    const {messages,addMessages,sendMessageToServer,resetChat,isLoading}= useAIChat();
     const chatContainerRef = useRef<HTMLDivElement>(null);
 
    const sendRequest = (_valueInput?: string) => {
@@ -23,6 +24,7 @@ const ChatBot: FC<chatbotProps> = ({ chatBotActive }) => {
         error: false,
         content: text,
         id: `message-id-${messages.length}`,
+        time:Date.now()
     })
     setValueInput("");
     sendMessageToServer(text);
@@ -203,7 +205,7 @@ useEffect(() => {
                     {messages.map((message, index) => {
                         if (message.sender === "AI") {
                             return (
-                                <div key={index} className="mr-16 flex justify-end">
+                                <div key={index} className="mr-16 flex justify-end ">
                                     <div className="mb-5 max-w-prose overflow-auto  bg-[#f1f1f0] px-4 py-3 text-black rounded-[20px] rounded-bl-none">
                                         <div className="flex flex-col items-start gap-4 break-words">
                                             <div className="w-full break-words text-right text-inherit text-sm">
@@ -211,6 +213,11 @@ useEffect(() => {
                                             </div>
                                         </div>
                                     </div>
+                                    {/* <div>
+                                    <span className="text-xs text-gray-500">
+                                      {new Date(message.time).toLocaleTimeString()}  
+                                    </span>
+                                    </div> */}
                                 </div>
                             );
                         } else {
@@ -227,6 +234,19 @@ useEffect(() => {
                             );
                         }
                     })}
+                    {isLoading && (
+                        <>
+                        <div  className="mr-16 flex justify-end">
+                                    <div className="mb-5 max-w-prose overflow-auto  bg-[#f1f1f0] px-2  text-black rounded-[20px] rounded-bl-none">
+                                        <div className="flex flex-col items-start gap-4 break-words">
+                                          <CahtBotLoader/>
+                                        </div>
+                                    </div>
+                                </div>
+                        </>
+                    )}
+
+                     
                 </div>
                                         </div>
                                     </div>
@@ -259,11 +279,16 @@ useEffect(() => {
                                         <div className="flex w-full items-center leading-none">
                                             <input
                                                 onKeyDown={(e) => {
-                                                if (e.key === 'Enter'&& valueInput) {
-                                                    e.preventDefault(); 
-                                                    sendRequest(); 
-                                                }
-                                            }}
+                                                    if (isLoading) {
+                                                      e.preventDefault(); // Prevent the default behavior when loading
+                                                      return;
+                                                    }
+                                            
+                                                    if (e.key === 'Enter' && valueInput) {
+                                                      e.preventDefault(); // Prevents the form from submitting on Enter
+                                                      sendRequest(); // Sends the request
+                                                    }
+                                                  }}
                                                 className="mr-3 max-h-36 w-full  resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
                                                 placeholder={"پیام شما"}
                                                 aria-label="Write a Message"
@@ -282,8 +307,18 @@ useEffect(() => {
                                         <div className="flex items-end leading-none">
                                             <button
                                                onClick={()=>{sendRequest()}}
+                                               disabled={isLoading}
                                             >
-                                                <Send />
+                                                {isLoading ? (
+                                                    <>
+                                                     <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                                    </>
+                                                ):(
+                                                <>
+                                                 <Send/>
+                                                </>
+                                               )}
+                                               
                                             </button>
                                         </div>
                                     </div>

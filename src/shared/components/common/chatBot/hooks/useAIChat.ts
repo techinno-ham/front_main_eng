@@ -12,10 +12,10 @@ const useAIChat = () => {
         setIsLoading(true);
 
         try {
-            const response = await fetch("http://161.97.98.162:8000/hamyarchat/stream", {
+            const response = await fetch("http://161.97.98.162:8000/hamyarchat/invoke", {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "text/plain",
                 },
                 body: JSON.stringify({
                     input: {
@@ -27,29 +27,32 @@ const useAIChat = () => {
                     kwargs: {}  // Empty kwargs object
                 }),
             });
-                console.log(response)
-            if (response.body) {
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder("utf-8");
-                let result = "";
-                let done = false;
 
-                while (!done) {
-                    const { value, done: doneReading } = await reader.read();
-                    done = doneReading;
-                    const chunk = decoder.decode(value, { stream: true });
-                    result += chunk;
+        if (response.ok) {
+            const data = await response.json(); // Parse the JSON response
+            const aiResponse = data.output; // Extract the output message
 
-                    // Update the AI response message with the streaming data
-                    addMessages({
-                        sender: "AI",
-                        type: "text",
-                        error: false,
-                        content: result,
-                        id: `message-id-${messages.length}`,
-                    });
-                }
-            }
+            addMessages({
+                sender: "AI",
+                type: "text",
+                error: false,
+                content: aiResponse, // Use the AI's response
+                id: `message-id-${messages.length}`,
+                time: Date.now(), 
+            });
+        } else {
+            // Handle any errors returned by the server
+            addMessages({
+                sender: "AI",
+                type: "text",
+                error: true,
+                content: "در حال حاضر با مشکلات فنی روبرو هستم. 😕 لطفا بعدا دوباره امتحان کنید یا یک چت زنده با تیم ما شروع کنید. 🛠️",
+                id: `message-id-${messages.length}`,
+                time: Date.now(), 
+            });
+        }
+        
+            
         } catch (error) {
             console.error("Error fetching AI response:", error);
             addMessages({
@@ -58,6 +61,7 @@ const useAIChat = () => {
                 error: true,
                 content: "در حال حاضر با مشکلات فنی روبرو هستم. 😕 لطفا بعدا دوباره امتحان کنید یا یک چت زنده با تیم ما شروع کنید. 🛠️",
                 id: `message-id-${messages.length}`,
+                time: Date.now(), 
             });
         } finally {
             setIsLoading(false);
