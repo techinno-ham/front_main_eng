@@ -69,22 +69,19 @@ const UploadFlie = () => {
     }
 
     useEffect(() => {
-        const transformUrlsToDataObjects = (links: any) => {
-            let newStructuresLinks = links.map((link: string) => {
-                const file = data.files_info.find((item:any) => item.link === link);
-                const fileName = link.split("/").pop()
+        const transformUrlsToDataObjects = (files: any) => {
+            let newStructuresLinks = files.map((file: any) => {
                 return {
-                    url: link,
-                    fileName: fileName,
+                   ...file,
                     remove: false,
-                    size:file.size
+               
                 }
             })
 
             return newStructuresLinks
         }
         if (!isFileInitialized) {
-            addUploadedFile(transformUrlsToDataObjects(data.static_files))
+            addUploadedFile(transformUrlsToDataObjects(data.files_info))
             addFileList([])
             addFileInitialized(true)
         }
@@ -92,7 +89,7 @@ const UploadFlie = () => {
 
     const removeUploadedFile = (fileName: string) => {
         const newUploadedFile: any = uploadedFile.map((file: any) => {
-            return file.fileName === fileName ? { ...file, remove: true } : file
+            return file.name === fileName ? { ...file, remove: true } : file
         })
         if(!isUploadedChanged){
             addUploadedChanged(true)
@@ -172,12 +169,12 @@ const UploadFlie = () => {
                                                     className="my-2 flex items-center justify-between rounded-md border p-2 shadow-sm"
                                                 >
                                                     <span className="max-w-[80%] truncate">
-                                                        {file?.fileName}
+                                                        {file?.name}
                                                     </span>
                                                     <button
                                                         onClick={() =>
                                                             removeUploadedFile(
-                                                                file?.fileName,
+                                                                file?.name,
                                                             )
                                                         }
                                                         className="ml-2"

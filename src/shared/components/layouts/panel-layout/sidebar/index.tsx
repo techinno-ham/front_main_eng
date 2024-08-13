@@ -6,6 +6,7 @@ import {
     LogoutCurve,
     Messages1,
     ProgrammingArrows,
+    Send2,
     Setting2,
 } from "iconsax-react"
 import Link from "next/link"
@@ -43,6 +44,7 @@ export const sidebarLinks = [
 const SideBar = () => {
     const pathname = usePathname()
     const pathSegments = pathname.split("/")
+    const router=useRouter()
 
     return (
         <>
@@ -84,17 +86,26 @@ const SideBar = () => {
                         })}
                     </ul>
                     <div className="mt-5 flex items-center justify-center">
-                        <button className="create-btn">
-                            <Add />
-                            ساختن چت بات جدید
-                        </button>
+                        <button className="create-btn flex gap-2" onClick={()=>{router.push("/partners")}}>
+                            <Send2 />
+                            دعوت از دوستان
+                         </button>
                     </div>
 
                     <div className="mt-auto flex items-center justify-center">
-                        <button className="flex">
-                            <LogoutCurve className="text-red-600" />
-                            <span className="ml-2 text-red-600"> خروج</span>
-                        </button>
+                        <div className="w-[80%] ">
+                            <hr className="w-full"/>
+                            <div className="flex justify-center items-center mt-2">
+                              <div className="bg-slate-400 rounded-xl p-2">
+                                <span>
+                                0.1.1 V
+                                </span>
+                               </div>
+                            </div>
+                            
+
+                        </div>
+
                     </div>
                 </div>
             </div>
