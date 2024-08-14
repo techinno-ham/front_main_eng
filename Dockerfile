@@ -1,42 +1,17 @@
-FROM node:20-alpine3.17 
+# Stage 1: Builder
+FROM node:18-alpine as builder
 
-WORKDIR /app
+WORKDIR /my-space
 
 ARG NEXT_PUBLIC_BASE_API
-
-
 ENV NEXT_PUBLIC_BASE_API=$NEXT_PUBLIC_BASE_API
 
-
-
-COPY package*.json .
-
-RUN npm i 
-
+COPY package.json package-lock.json ./
+RUN  npm ci
 COPY . .
+RUN npm run build
 
-#RUN npm run build
-
-#EXPOSE 3000
-#CMD ["npm", "start"]
-
-#######
-# FROM node:20-alpine3.17 as runner 
-
-# WORKDIR /app
-
-# COPY --from=builder /app/package.json .
-# COPY --from=builder /app/package-lock.json .
-
-# #RUN npm install --only=prod
-# COPY --from=builder /app/.env ./
-# COPY --from=builder /app/node_modules ./node_modules
-
-# COPY --from=builder /app/next.config.js ./
-# COPY --from=builder /app/public ./public
-# COPY --from=builder /app/.next ./.next
-
-#RUN npm run build
 
 EXPOSE 3000
-CMD ["npm", "run" , "dev"]
+
+ENTRYPOINT ["npm", "start"]
