@@ -40,7 +40,7 @@ const Login = () => {
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()
-        window.location.href = `http://localhost:12000/v1/auth/google`
+        window.location.href = `${process.env.NEXT_PUBLIC_BASE_API}/auth/google`
     }
 
     return (

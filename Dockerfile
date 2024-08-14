@@ -2,6 +2,13 @@ FROM node:20-alpine3.17
 
 WORKDIR /app
 
+ARG NEXT_PUBLIC_BASE_API
+
+
+ENV NEXT_PUBLIC_BASE_API=$NEXT_PUBLIC_BASE_API
+
+
+
 COPY package*.json .
 
 RUN npm i 

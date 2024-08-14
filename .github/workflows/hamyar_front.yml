@@ -9,6 +9,11 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
+
+    env:
+      CALLBACK_URL: ${{ secrets.NEXT_PUBLIC_BASE_API }}
+
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -36,6 +41,8 @@ jobs:
         #   hamyarchat/front:${{ env.TAG }}
         #   hamyarchat/front:latest
         tags: hamyarchat/front:latest
+        build-args: |
+          NEXT_PUBLIC_BASE_API=${{ secrets.NEXT_PUBLIC_BASE_API }}
 
     - name: Log out from Docker Hub
       run: docker logout
