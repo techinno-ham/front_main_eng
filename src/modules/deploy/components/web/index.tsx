@@ -1,10 +1,14 @@
 import { Copy } from "iconsax-react";
 import { toast } from "sonner";
 import useStoreActive from "../../hooks/activeStore";
+import service from "@/src/shared/services/service";
+import { usePathname } from "next/navigation";
 
 const Web = () => {
+     const pathname = usePathname();
+    const botId = pathname.split("/")[2];
 
-    const {active,isLoding}=useStoreActive();
+    const {active,isLoding,setLoading,setActive}=useStoreActive();
 
 
     const iframeCode = `<iframe
@@ -38,6 +42,28 @@ const Web = () => {
                 
             });
         };
+
+        const handlePublic = async () => {
+            setLoading(true)
+           let formData = {
+                access_bot: "general",
+            }
+            console.log(formData)
+            try {
+                const response = await service.updateSecurityConfig(
+                    botId,
+                    formData,
+                )
+                console.log(response.data)
+                toast.success("تغیرات شما موفق آمیز ذخیره شد")
+                setActive(true)
+            } catch (error) {
+                toast.error("در بروز رسانی مشکلی پیش امده است !")
+                console.error("Update failed:", error)
+            } finally {
+                setLoading(false)
+            }
+        }
     return (
         <>
             <div>
@@ -144,7 +170,7 @@ const Web = () => {
                                 </div>
                                 <div className="flex flex-row mt-5 justify-end">
                                 <button
-                    type="submit"
+                    onClick={handlePublic}
                     className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
                 >
                     {isLoding ? (
