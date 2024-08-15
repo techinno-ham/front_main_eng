@@ -42,12 +42,12 @@ async function postData() {
 
     var cssLink = document.createElement("link")
     cssLink.rel = "stylesheet"
-    cssLink.href = "http://localhost:3000/scripts/main.1267c309.css"
+    cssLink.href = `${window.location.protocol}//${window.location.host}/scripts/main.1267c309.css`
     document.head.appendChild(cssLink)
 
     // Load JS
     var jsScript = document.createElement("script")
-    jsScript.src = "http://localhost:3000/scripts/main.b4c5a894.js"
+    jsScript.src = `${window.location.protocol}//${window.location.host}/scripts/main.b4c5a894.js`
     document.body.appendChild(jsScript)
 }
 
