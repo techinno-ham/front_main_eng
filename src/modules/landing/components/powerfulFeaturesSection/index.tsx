@@ -213,7 +213,6 @@ const PowerfulFeaturesSection = () => {
         let intervalId = setInterval(() => {
             setActiveIndex(startValue % cardCount)
             startValue++
-            console.log(activeIndex)
         }, 2000)
         return () => clearInterval(intervalId)
     }, [])
