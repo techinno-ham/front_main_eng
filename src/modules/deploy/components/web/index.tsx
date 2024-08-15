@@ -1,8 +1,11 @@
 import { Copy } from "iconsax-react";
-import { CodeBlock, dracula } from "react-code-blocks"
 import { toast } from "sonner";
+import useStoreActive from "../../hooks/activeStore";
 
 const Web = () => {
+
+    const {active,isLoding}=useStoreActive();
+
 
     const iframeCode = `<iframe
     src="https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW"
@@ -38,7 +41,9 @@ const Web = () => {
     return (
         <>
             <div>
-                <div className="p-6 pt-0 flex flex-col gap-2">
+                {active? (
+                    <>
+                     <div className="p-6 pt-0 flex flex-col gap-2">
                     <div className="w-full z-10">
                         <div>
                                <div className="mt-3">
@@ -129,6 +134,37 @@ const Web = () => {
                     </div>
                    
                 </div>
+                    </>
+                ):(
+                    <>
+                          <div className="p-6 pt-3 flex flex-col gap-2">
+                              <div className="w-full items-center justify-between gap-5">
+                                <div>
+                                  <span className="font-medium text-zinc-950"> میزان دسترسی چت بات شما  خصوصی است، برای استقرار و  اشتراک گذاری چت بات ، میزان دسترسی   را به عمومی تغییر دهید.</span>
+                                </div>
+                                <div className="flex flex-row mt-5 justify-end">
+                                <button
+                    type="submit"
+                    className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
+                >
+                    {isLoding ? (
+                        <>
+                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                            <span className="ml-3"> بروزرسانی ...</span>
+                        </>
+                    ) : (
+                        <span>عمومی کردن</span>
+                    )}
+                </button>
+
+                                </div>
+                  
+                              </div>
+                        </div>
+                    </>
+                )}
+      
+               
              
             </div>
         </>

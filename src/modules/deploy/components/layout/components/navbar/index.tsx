@@ -17,7 +17,7 @@ const menuItems = [
         isActive: true,
     },
     {
-        title: "اشتراک گذازی",
+        title: "اشتراک گذاری",
         store: "Share",
         icon: <Share size={20} />,
         isActive: true,
@@ -39,7 +39,7 @@ const menuItems = [
 const Navbar = () => {
     return (
         <div>
-            <ul className="flex w-[100%] gap-x-[35px] overflow-auto md:gap-x-[70px]">
+            <ul className="flex w-[100%] gap-x-[35px] overflow-auto scrollable-container-navbar md:gap-x-[70px]">
                 {menuItems.map((item, index) => (
                     <li
                         key={index}
