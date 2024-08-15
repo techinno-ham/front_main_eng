@@ -11,23 +11,16 @@ import { Eye, EyeSlash, Lock1, Sms, User } from "iconsax-react"
 import { useForm } from "react-hook-form"
 
 const ForgetPassword = () => {
- 
     const [showPassword, setShowPassword] = useState(false)
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm()
- 
 
     const onSubmit = async (data: any) => {
-       
-      
         toast.error("در حال حاظر سرویس مورد نظر در دسترس نمی باشد.")
-
-      
     }
-
 
     return (
         <div className=" bg-[#F6F8FB]font-[sans-serif] h-full min-h-screen ">
@@ -44,7 +37,8 @@ const ForgetPassword = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-همیارچت                            </span>
+                                همیارچت{" "}
+                            </span>
                         </div>
                     </Link>
                 </div>
@@ -72,12 +66,12 @@ const ForgetPassword = () => {
                         </div>
                         <div className="relative w-full">
                             <span className="text-sm text-gray-400">
-                               اگر رمز عبور خود را فراموش کرده اید، ایمیل خود را برای ما ارسال کنید.
+                                اگر رمز عبور خود را فراموش کرده اید، ایمیل خود
+                                را برای ما ارسال کنید.
                             </span>
-
                         </div>
 
-                        <div className="relative w-full mt-8">
+                        <div className="relative mt-8 w-full">
                             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
                                 <Sms size="25" color="#bbb" />
                             </div>
@@ -91,8 +85,6 @@ const ForgetPassword = () => {
                                 })}
                             />
                         </div>
-
-                    
 
                         <div className="mt-8">
                             <button
@@ -111,17 +103,15 @@ const ForgetPassword = () => {
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">
-                                آیا رمز عبورتان را به یاد آوردید   ؟{" "}
+                                آیا رمز عبورتان را به یاد آوردید ؟{" "}
                                 <Link
                                     href={"/auth/login"}
                                     className=" whitespace-nowrapfont-semibold ml-1 text-blue-600 hover:underline"
                                 >
-                                     ورود
+                                    ورود
                                 </Link>
                             </p>
                         </div>
-
-                        
                     </form>
                 </div>
             </div>
@@ -129,4 +119,4 @@ const ForgetPassword = () => {
     )
 }
 
-export default ForgetPassword;
+export default ForgetPassword

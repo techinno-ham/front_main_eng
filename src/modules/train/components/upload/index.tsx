@@ -4,17 +4,17 @@ import { useCallback, useEffect, useState } from "react"
 import { useDropzone, FileRejection } from "react-dropzone"
 import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 import useStoreLoadData from "../../hooks/loadDataSource"
-import { toast } from "sonner";
+import { toast } from "sonner"
 
 interface UploadedFile {
-    url: string;
-    fileName: string;
-    remove: boolean;
-    size?:any
+    url: string
+    fileName: string
+    remove: boolean
+    size?: any
 }
 
-const MAX_FILE_COUNT = 6;
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_FILE_COUNT = 6
+const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
 const UploadFlie = () => {
     const {
         fileList,
@@ -26,27 +26,30 @@ const UploadFlie = () => {
         addFileChanged,
         isFileChanged,
         addUploadedChanged,
-        isUploadedChanged
+        isUploadedChanged,
     } = useDateSourceUpdate()
     const { data } = useStoreLoadData()
 
     const onDrop = useCallback(
         (acceptedFiles: any) => {
-
-            let totalSize = fileList.reduce((acc, file) => acc + file.size, 0);
+            let totalSize = fileList.reduce((acc, file) => acc + file.size, 0)
             let newFiles = []
-
 
             // Add sizes from uploadedFile where remove is false
             totalSize += (uploadedFile as UploadedFile[])
                 .filter((file: UploadedFile) => !file.remove)
-                .reduce((acc, file) => acc + file.size, 0);
+                .reduce((acc, file) => acc + file.size, 0)
 
-            const uploadedFileCount = (uploadedFile as UploadedFile[]).filter((item) => !item.remove).length;
-            if (fileList.length + acceptedFiles.length + uploadedFileCount > MAX_FILE_COUNT) {
+            const uploadedFileCount = (uploadedFile as UploadedFile[]).filter(
+                (item) => !item.remove,
+            ).length
+            if (
+                fileList.length + acceptedFiles.length + uploadedFileCount >
+                MAX_FILE_COUNT
+            ) {
                 toast.error("شما نمی توانید بیش از 6 فایل آپلود کنید")
                 return
-            };
+            }
             for (let file of acceptedFiles) {
                 totalSize += file.size
                 if (totalSize > MAX_FILE_SIZE) {
@@ -55,11 +58,10 @@ const UploadFlie = () => {
                 }
                 newFiles.push(file)
             }
-            if(!isFileChanged){
+            if (!isFileChanged) {
                 addFileChanged(true)
             }
             addFileList([...fileList, ...newFiles])
-           
         },
         [fileList, addFileList],
     )
@@ -72,9 +74,8 @@ const UploadFlie = () => {
         const transformUrlsToDataObjects = (files: any) => {
             let newStructuresLinks = files.map((file: any) => {
                 return {
-                   ...file,
+                    ...file,
                     remove: false,
-               
                 }
             })
 
@@ -91,7 +92,7 @@ const UploadFlie = () => {
         const newUploadedFile: any = uploadedFile.map((file: any) => {
             return file.name === fileName ? { ...file, remove: true } : file
         })
-        if(!isUploadedChanged){
+        if (!isUploadedChanged) {
             addUploadedChanged(true)
         }
         addUploadedFile(newUploadedFile)

@@ -13,7 +13,8 @@ const DashboardMyMessagePage: NextPage = () => {
 }
 export const metadata: Metadata = {
     title: "تاریخچه پیام‌ها | همیارچت",
-    description: "مشاهده و بررسی تاریخچه پیام‌های دستیار هوش مصنوعی در همیارچت.",
+    description:
+        "مشاهده و بررسی تاریخچه پیام‌های دستیار هوش مصنوعی در همیارچت.",
     icons: {
         icon: "/logo.svg", // /public path
     },

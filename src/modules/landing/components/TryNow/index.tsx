@@ -46,7 +46,8 @@ const TryNow = () => {
                         <div className="head-section">
                             <div className="title-section-footer">
                                 <h3 className="text-3xl md:text-4xl">
-                                همین حالا دستیار هوش مصنوعی خود را بسازید !                                  </h3>
+                                    همین حالا دستیار هوش مصنوعی خود را بسازید !{" "}
+                                </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">
                                 <p className="is-rtl-center-mb mt-3 text-[12px] text-zinc-400 md:text-[16px]">

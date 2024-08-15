@@ -55,40 +55,33 @@ const BotBox = (props: IBotBoxProps) => {
         } finally {
             setLoading(false)
         }
-    };
+    }
 
-    const handleCopyBot = (e: React.MouseEvent)=>{
+    const handleCopyBot = (e: React.MouseEvent) => {
         e.stopPropagation()
         e.preventDefault()
         toast.error("در حال حاظر کپی کردن چت بات مورد نظر امکان پذیر نمی باشد.")
-
     }
 
     return (
         <>
             <div className="cursor-pointer rounded-xl border border-solid border-gray-200 hover:border-[#5470ff]">
                 <Link href={`/panel/${props.botsData.bot_id}`}>
-                    <div className="flex flex-col items-center relative">
+                    <div className="relative flex flex-col items-center">
                         <div className="absolute left-4 top-4">
-                          <div className="flex border w-9 h-9 rounded-xl bg-blue-600 justify-center items-center">
-                            <Global
-                            size="28"
-                            color="#Fff"
-                               />
-                          </div>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-xl border bg-blue-600">
+                                <Global size="28" color="#Fff" />
+                            </div>
                         </div>
                         <div>
                             <Image
                                 width={190}
                                 height={120}
                                 alt="axs"
-                                src={
-                                   "/double-wink.svg"
-                                }
+                                src={"/double-wink.svg"}
                             />
-
                         </div>
-                        <div className="w-full mt-3">
+                        <div className="mt-3 w-full">
                             <hr />
                         </div>
                         <div className="flex w-full items-center justify-between p-[9px]">
@@ -107,18 +100,15 @@ const BotBox = (props: IBotBoxProps) => {
                                               )
                                             : " مدتی قبل"}
                                     </span>
-                                    <span className="text-[10px] text-[gray] block">
-                                        چت بات آیدی  :
-                                        {props.botsData?.bot_id}
+                                    <span className="block text-[10px] text-[gray]">
+                                        چت بات آیدی :{props.botsData?.bot_id}
                                     </span>
                                 </div>
                             </div>
 
                             <div className="flex w-1/4 justify-around">
                                 <div>
-                                    <button
-                                    onClick={handleCopyBot}
-                                      >
+                                    <button onClick={handleCopyBot}>
                                         <DocumentCopy size={20} />
                                     </button>
                                 </div>

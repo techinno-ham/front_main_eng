@@ -32,16 +32,16 @@ const useLogin = () => {
                 path: "/",
                 secure: true, // Use this in production
                 sameSite: "strict",
-            });
+            })
             router.push("/mybots")
         } catch (err: any) {
             console.log(err.message)
-            if (err.message === 'Email not found') {
-                toast.error("ایمیل شما قبلا ثبت نشده است");
-            } else if(err.message === 'Incorrect password') {
-                toast.error("رمز عبور شما اشتباه می باشد");
-            }else {
-                toast.error("مشکلی در ورود وجود دارد");
+            if (err.message === "Email not found") {
+                toast.error("ایمیل شما قبلا ثبت نشده است")
+            } else if (err.message === "Incorrect password") {
+                toast.error("رمز عبور شما اشتباه می باشد")
+            } else {
+                toast.error("مشکلی در ورود وجود دارد")
             }
             setError(err.message)
         } finally {
@@ -56,8 +56,8 @@ const useLogin = () => {
 
             toast.success("شما با موفقیت خارج شدید.")
             setTimeout(() => {
-              setUser({})
-            }, 2000);
+                setUser({})
+            }, 2000)
             setIsAuthenticated(false)
         } catch (error) {
             console.error("Logout error:", error)

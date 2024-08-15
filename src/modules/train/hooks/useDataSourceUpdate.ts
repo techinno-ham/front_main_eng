@@ -40,7 +40,7 @@ const useDateSourceUpdate = () => {
         isFileChanged,
         setFileChanged,
         isUploadedChanged,
-        setUploadedChanged
+        setUploadedChanged,
     } = useDataSourceStoreUpdate()
 
     const addText = (text: string) => {
@@ -112,14 +112,14 @@ const useDateSourceUpdate = () => {
             }
 
             const response = await Services.updateDataSource(formData, botId)
-            router.push(`/panel/${response.data.bot_id}`);
+            router.push(`/panel/${response.data.bot_id}`)
             toast.success("بات شما با در حال آموزش مجدد می باشد.")
             setTimeout(() => {
                 window.scrollTo({
-                    top: document.getElementById('chart-demo')?.offsetTop || 0,
-                    behavior: 'smooth'
-                });
-            }, 1000); 
+                    top: document.getElementById("chart-demo")?.offsetTop || 0,
+                    behavior: "smooth",
+                })
+            }, 1000)
             return response
         } catch (err: any) {
             console.log(err)
@@ -161,7 +161,7 @@ const useDateSourceUpdate = () => {
         addFileChanged,
         isFileChanged,
         addUploadedChanged,
-        isUploadedChanged
+        isUploadedChanged,
     }
 }
-export default useDateSourceUpdate;
+export default useDateSourceUpdate

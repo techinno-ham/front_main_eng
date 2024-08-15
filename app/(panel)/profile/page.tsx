@@ -5,7 +5,7 @@ import { Metadata, NextPage } from "next"
 const ProfilePage: NextPage = () => {
     return (
         <>
-            <Profile/>
+            <Profile />
         </>
     )
 }

@@ -217,14 +217,18 @@ const PowerfulFeaturesSection = () => {
         return () => clearInterval(intervalId)
     }, [])
     return (
-        <div id="hamyar-features" className="section-large container relative mx-auto h-auto overflow-hidden  px-4 text-center 2xl:px-20">
+        <div
+            id="hamyar-features"
+            className="section-large container relative mx-auto h-auto overflow-hidden  px-4 text-center 2xl:px-20"
+        >
             <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
-                    <span>ویژگی‌های برجسته   </span>
+                    <span>ویژگی‌های برجسته </span>
                     <span className="gradient-h2 is-v2">همیارچت&nbsp;</span>
                 </h2>
                 <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                امکانات پیشرفته پلتفرم همیارچت به شما این امکان را می‌دهد که به‌طور کامل چت‌بات‌ها را مطابق نیاز خود شخصی‌سازی کنید.
+                    امکانات پیشرفته پلتفرم همیارچت به شما این امکان را می‌دهد که
+                    به‌طور کامل چت‌بات‌ها را مطابق نیاز خود شخصی‌سازی کنید.
                 </h3>
             </div>
             <div className="mt-[40px] flex justify-around">
@@ -240,7 +244,8 @@ const PowerfulFeaturesSection = () => {
                                             ? "rgba(59, 130, 246, 0.74) 1px 4px 10px 0px, rgb(46 88 240 / 63%) 0px 2px"
                                             : "unset",
                                     transition: "all 0.5s ease-in-out",
-                                    background:"linear-gradient(#fff,#fafafa) padding-box,linear-gradient(120deg,#d4d4d8,#f4f4f5,#d4d4d8) border-box"
+                                    background:
+                                        "linear-gradient(#fff,#fafafa) padding-box,linear-gradient(120deg,#d4d4d8,#f4f4f5,#d4d4d8) border-box",
                                 }}
                             >
                                 {card.Icon}

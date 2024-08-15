@@ -5,10 +5,9 @@ import PieChart from "./components/piechart"
 import PropertyReferrals from "./components/propertyRef"
 import TotalRevenue from "./components/totalRevenue"
 import service from "@/src/shared/services/service"
-import LoaderLottie from "@/src/shared/components/common/loader";
-import { v4 as uuidv4 } from 'uuid';
+import LoaderLottie from "@/src/shared/components/common/loader"
+import { v4 as uuidv4 } from "uuid"
 import useAIChatStore from "@/src/shared/store/AIChatStore"
-
 
 interface DashboardProps {
     botId: string
@@ -19,9 +18,8 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
     const chartDemoRef = useRef<HTMLDivElement | null>(null)
-    const [uuid, setUuid] = useState('');
-    const { resetChat } = useAIChatStore();
-
+    const [uuid, setUuid] = useState("")
+    const { resetChat } = useAIChatStore()
 
     useEffect(() => {
         const fetchBotData = async () => {
@@ -37,14 +35,13 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
         }
 
         fetchBotData()
-    }, [botId]);
-
+    }, [botId])
 
     useEffect(() => {
-        const newUuid = uuidv4();
-        setUuid(newUuid);
-        resetChat();
-      }, []);
+        const newUuid = uuidv4()
+        setUuid(newUuid)
+        resetChat()
+    }, [])
     if (loading)
         return (
             <>
@@ -97,7 +94,11 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                 </div>
 
                 <div id="chart-demo" ref={chartDemoRef}>
-                   <ChartDemo botData={botData} botId={botId} conversationId={uuid} />
+                    <ChartDemo
+                        botData={botData}
+                        botId={botId}
+                        conversationId={uuid}
+                    />
                 </div>
             </div>
         </>

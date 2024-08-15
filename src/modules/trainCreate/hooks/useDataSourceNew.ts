@@ -53,26 +53,23 @@ const useDateSourceNew = () => {
                 for (const file of fileList) {
                     formData.append("files", file, file.name)
                 }
-            };
-
+            }
 
             const response = await Services.cretaeBots(formData)
             // console.log(response)
             router.push(`/panel/${response.data.bot_id}`)
-            toast.success("بات شما با در حال آموزش  می باشد.")            // Reset all state variables
+            toast.success("بات شما با در حال آموزش  می باشد.") // Reset all state variables
             setTimeout(() => {
                 window.scrollTo({
-                    top: document.getElementById('chart-demo')?.offsetTop || 0,
-                    behavior: 'smooth'
-                });
+                    top: document.getElementById("chart-demo")?.offsetTop || 0,
+                    behavior: "smooth",
+                })
                 setText("")
                 setTextCharNumber(0)
                 setQAList([])
                 setUrlList([])
                 setFileList([])
-                
-            }, 1500);
-           
+            }, 1500)
 
             // return response
         } catch (err: any) {
@@ -98,4 +95,4 @@ const useDateSourceNew = () => {
         createBot,
     }
 }
-export default useDateSourceNew;
+export default useDateSourceNew

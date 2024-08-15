@@ -1,5 +1,5 @@
 import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
-import { toast } from "sonner";
+import { toast } from "sonner"
 
 const SourceCard = () => {
     const {
@@ -13,22 +13,22 @@ const SourceCard = () => {
     const QandACharCount = qaList.reduce(
         (total, qa) => total + qa.question.length + qa.answer.length,
         0,
-    );
-    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+    )
+    const MAX_FILE_SIZE = 10 * 1024 * 1024
     let totalSize = fileList.reduce((acc, file) => acc + file.size, 0)
-    let totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2);
+    let totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2)
 
     const handleCrateBot = async (event: any) => {
         event.preventDefault()
-         // Check if conditions are met
-         const totalCharCount = textInputCharNumber + QandACharCount;
-         const hasMinimumFiles = fileList.length >= 2;
-         const hasMinimumChars = totalCharCount >= 100;
- 
-         if (!hasMinimumFiles || !hasMinimumChars) {
-             toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
-             return;
-         }
+        // Check if conditions are met
+        const totalCharCount = textInputCharNumber + QandACharCount
+        const hasMinimumFiles = fileList.length >= 2
+        const hasMinimumChars = totalCharCount >= 100
+
+        if (!hasMinimumFiles || !hasMinimumChars) {
+            toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
+            return
+        }
         await createBot()
     }
 
@@ -51,12 +51,11 @@ const SourceCard = () => {
                             {urlList.length} عدد لینک‌
                         </div>
                     )}
-                        {fileList.length > 0 && (
+                    {fileList.length > 0 && (
                         <>
                             <div className="text-sm text-zinc-700">
                                 {fileList.length} عدد فایل
                             </div>
-                    
                         </>
                     )}
                     {qaList.length > 0 && (
@@ -67,30 +66,28 @@ const SourceCard = () => {
                         </div>
                     )}
                 </div>
-                           <div className="text-sm ">
-                                مجموع حجم فایل‌ها:  {totalSizeMB} MB 
-                            </div>
-                            <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-1 ">
-                                <div
-                                    className="bg-blue-600 h-2.5 rounded-full"
-                                    style={{
-                                        width: `${(totalSize / MAX_FILE_SIZE) * 100}%`
-                                    }}
-                                ></div>
-                            </div>
-                            <p className="flex flex-col text-sm mt-2">
+                <div className="text-sm ">
+                    مجموع حجم فایل‌ها: {totalSizeMB} MB
+                </div>
+                <div className="mt-1 h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 ">
+                    <div
+                        className="h-2.5 rounded-full bg-blue-600"
+                        style={{
+                            width: `${(totalSize / MAX_FILE_SIZE) * 100}%`,
+                        }}
+                    ></div>
+                </div>
+                <p className="mt-2 flex flex-col text-sm">
                     <span className="font-semibold">
                         {" "}
-                        مجموع   تعداد لینک های استفاده شده:
+                        مجموع تعداد لینک های استفاده شده:
                     </span>
                     <span className="flex justify-center gap-1">
                         <span className=" text-zinc-500"> 40 / </span>
-                        <span className="font-bold">
-                            {urlList.length}
-                        </span>
+                        <span className="font-bold">{urlList.length}</span>
                     </span>
-                            </p>
-                             <p className="flex flex-col text-sm">
+                </p>
+                <p className="flex flex-col text-sm">
                     <span className="font-semibold">
                         {" "}
                         مجموع کارکترهای متن های استفاده شده:
@@ -101,8 +98,8 @@ const SourceCard = () => {
                             {textInputCharNumber + QandACharCount}
                         </span>
                     </span>
-                            </p>
-                
+                </p>
+
                 <div className="mt-4 flex justify-center">
                     <button
                         onClick={handleCrateBot}

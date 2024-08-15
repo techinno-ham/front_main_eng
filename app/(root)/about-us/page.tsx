@@ -3,7 +3,7 @@ import { Metadata, NextPage } from "next"
 
 const AboutUsPage: NextPage = () => {
     return <AboutUs />
-};
+}
 export const metadata: Metadata = {
     title: "درباره ما | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
     description:
@@ -15,7 +15,5 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
-
-
 
 export default AboutUsPage

@@ -39,7 +39,7 @@ const FeaturesCards = () => {
                             className="title-section-footer"
                         >
                             <h2 className="text-3xl md:text-5xl">
-                            <span>پشتیبانی مشتریان در </span>
+                                <span>پشتیبانی مشتریان در </span>
                                 {/* <span>مکالمات در </span> */}
                                 <span className="gradient-h2 is-v2">
                                     مقیاس جهانی&nbsp;
@@ -57,7 +57,10 @@ const FeaturesCards = () => {
                             className="description-section-main margin-top-24px max-w-85"
                         >
                             <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                            چت‌بات‌های خود را یک‌بار آموزش دهید و به‌طور مقیاس‌پذیر در محیط‌های مختلف مانند وب‌سایت‌ها استفاده کنید.                            </h3>
+                                چت‌بات‌های خود را یک‌بار آموزش دهید و به‌طور
+                                مقیاس‌پذیر در محیط‌های مختلف مانند وب‌سایت‌ها
+                                استفاده کنید.{" "}
+                            </h3>
                         </motion.div>
                     </div>
                     <div

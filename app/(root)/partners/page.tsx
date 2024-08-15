@@ -1,10 +1,10 @@
 import AboutUs from "@/src/modules/about-us"
-import Partners from "@/src/modules/partners";
+import Partners from "@/src/modules/partners"
 import { Metadata, NextPage } from "next"
 
 const PrtnersPage: NextPage = () => {
-    return <Partners/>
-};
+    return <Partners />
+}
 export const metadata: Metadata = {
     title: "دعوت دوستان  | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
     description:
@@ -17,6 +17,4 @@ export const metadata: Metadata = {
     },
 }
 
-
-
-export default PrtnersPage;
+export default PrtnersPage

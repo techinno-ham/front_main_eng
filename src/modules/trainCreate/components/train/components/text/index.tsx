@@ -1,6 +1,5 @@
 import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 
-
 const TextInput = () => {
     const { addText, addTextNumberChar, text } = useDateSourceNew()
     const handleChange = (e: any) => {

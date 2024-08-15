@@ -1,5 +1,5 @@
 import { create } from "zustand"
-type Tab = 'File' | 'Text' | 'Website' | 'QandA';
+type Tab = "File" | "Text" | "Website" | "QandA"
 
 interface StoreViewController {
     activeTab: Tab

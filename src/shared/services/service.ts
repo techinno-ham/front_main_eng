@@ -31,7 +31,7 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    };
+    }
     checkNumberBots = async (token: string | undefined) => {
         try {
             const response = await withoutTokenApi.get(API.My_BOTS_COUNT, {
@@ -39,7 +39,7 @@ class Services {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            return response.data;
+            return response.data
         } catch (error: any) {
             // return false
             // return true
@@ -47,8 +47,7 @@ class Services {
                 error.response?.data?.message || "check token failed",
             )
         }
-    };
-
+    }
 
     fetchLink = async (url: string) => {
         try {
@@ -77,10 +76,7 @@ class Services {
     }
     updateUser = async (body: any) => {
         try {
-            const response = await mainApi.post(
-                API.UPDATE_PROFILE,
-                body,
-            )
+            const response = await mainApi.post(API.UPDATE_PROFILE, body)
             return response
         } catch (error: any) {
             throw new Error(
@@ -208,19 +204,16 @@ class Services {
             )
         }
     }
-    getHistoryMessages = async (
-        botId: string ,
-        filter?:string
-    ) => {
+    getHistoryMessages = async (botId: string, filter?: string) => {
         try {
             const response = await mainApi.get(
-                `/mybots/${botId}/conversations?filter=${filter}`
-            );
-            return response;
+                `/mybots/${botId}/conversations?filter=${filter}`,
+            )
+            return response
         } catch (error: any) {
             throw new Error(
-                error.response?.data?.message || "get history failed"
-            );
+                error.response?.data?.message || "get history failed",
+            )
         }
     }
 }

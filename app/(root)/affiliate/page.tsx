@@ -1,9 +1,9 @@
-import Affiliate from "@/src/modules/Affiliate";
+import Affiliate from "@/src/modules/Affiliate"
 import { Metadata, NextPage } from "next"
 
 const AffiliatePage: NextPage = () => {
-    return <Affiliate/>
-};
+    return <Affiliate />
+}
 
 export const metadata: Metadata = {
     title: "بلاگ‌ها | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
@@ -16,6 +16,5 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
-
 
 export default AffiliatePage

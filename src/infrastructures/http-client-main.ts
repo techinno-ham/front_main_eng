@@ -4,7 +4,7 @@ import { parseCookies } from "nookies"
 const mainApi = axios.create({
     baseURL: process.env.NEXT_PUBLIC_BASE_API,
 })
-console.log(process.env.NEXT_PUBLIC_BASE_API,"ss")
+console.log(process.env.NEXT_PUBLIC_BASE_API, "ss")
 
 mainApi.interceptors.request.use(
     (config: any) => {

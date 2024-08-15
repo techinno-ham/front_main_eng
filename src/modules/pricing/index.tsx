@@ -44,10 +44,12 @@ const Pricing = () => {
                                 >
                                     &nbsp;جدیدترین&nbsp;
                                 </span>
-                                سرویس‌ها      
-                                                      </h2>
+                                سرویس‌ها
+                            </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
-                            اطلاعات ارائه‌شده شامل جزئیات مربوط به هر سرویس و هزینه‌های مرتبط با آن می‌باشد تا بتوانید بهترین تصمیم را برای نیازهای خود بگیرید.
+                                اطلاعات ارائه‌شده شامل جزئیات مربوط به هر سرویس
+                                و هزینه‌های مرتبط با آن می‌باشد تا بتوانید
+                                بهترین تصمیم را برای نیازهای خود بگیرید.
                             </p>
                         </div>
                     </div>
@@ -84,12 +86,10 @@ const Pricing = () => {
                             beforeListText={"همه چیز در رایگان، به علاوه..."}
                             active={false}
                         >
-                            
                             <List>۱۰۰۰ پیام و پاسخ</List>
                             <List>3 دستیار هوش مصنوعی</List>
                             <List>لینک‌های نامحدود</List>
                             <List>10,۰۰,۰۰۰ ذخیره کلمات / دستیار</List>
-                        
                         </PricingCard>
                         <PricingCard
                             order={4}
@@ -101,7 +101,7 @@ const Pricing = () => {
                             beforeListText={"همه چیز در استاندارد، به علاوه..."}
                             active={true}
                         >
-                             <List>ذخیره کلمات و آپلود فایل نامحدود😍</List>
+                            <List>ذخیره کلمات و آپلود فایل نامحدود😍</List>
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
                             <List>دسترسی مادام‌العمر</List>
@@ -164,7 +164,8 @@ const Pricing = () => {
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
-                                                <button className="
+                                                <button
+                                                    className="
                                                 bg-white-gradient shadow-button 
                                                 hover:shadow-button-hover 
                                                 hover:bg-white-gradient-hover
@@ -174,7 +175,8 @@ const Pricing = () => {
                                                   inline-flex h-auto w-full items-center
                                                   justify-center whitespace-nowrap 
                                                   rounded-xl border px-4 py-2 
-                                                  text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
+                                                  text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950"
+                                                >
                                                     شروع کنید
                                                 </button>
                                             </a>
@@ -185,12 +187,12 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
                                                 <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                                تماس بگیرید
+                                                    تماس بگیرید
                                                 </button>
                                             </a>
                                         </div>
@@ -200,12 +202,12 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
-                                                <button className="bg-blue-700 text-white bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                                تماس بگیرید
+                                                <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
+                                                    تماس بگیرید
                                                 </button>
                                             </a>
                                         </div>
@@ -215,12 +217,12 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
                                                 <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
-                                                تماس بگیرید
+                                                    تماس بگیرید
                                                 </button>
                                             </a>
                                         </div>
@@ -244,19 +246,19 @@ const Pricing = () => {
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    پیام و پاسخ
+                                        پیام و پاسخ
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    دستیار هوش مصنوعی
+                                        دستیار هوش مصنوعی
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    ذخیره کلمات / دستیار
+                                        ذخیره کلمات / دستیار
                                     </span>
                                     {/* <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Team members
                                     </span> */}
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    استفاده در وبسایت
+                                        استفاده در وبسایت
                                     </span>
                                 </div>
                                 <div className="relative flex w-full flex-col">
@@ -346,8 +348,8 @@ const Pricing = () => {
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                    پشتیبانی ۲۴/۷      
-                                                                  </span>
+                                        پشتیبانی ۲۴/۷
+                                    </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         مشاوره اختصاصی
                                     </span>
@@ -396,7 +398,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                        ۱۰ لینک
+                                            ۱۰ لینک
                                         </span>
                                     </div>
                                     <div
@@ -658,7 +660,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -926,7 +928,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -975,7 +977,7 @@ const Pricing = () => {
                                             5
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
-                                        نامحدود
+                                            نامحدود
                                         </span>
                                         {/* <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
                                             3
@@ -1153,7 +1155,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -1169,7 +1171,7 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -1190,7 +1192,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -1206,7 +1208,7 @@ const Pricing = () => {
                                             </svg>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                        <svg
+                                            <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 width="24"
                                                 height="24"
@@ -1239,7 +1241,7 @@ const Pricing = () => {
                                             10
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                        نامحدود
+                                            نامحدود
                                         </span>
                                         {/* <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             5
@@ -1490,7 +1492,7 @@ const Pricing = () => {
                             </div>
                         </div>
                     </section>
-                    <MobilePricingFeatures/>
+                    <MobilePricingFeatures />
                 </div>
             </div>
         </section>

@@ -24,19 +24,19 @@ const Login = () => {
 
     const onSubmit = async (data: any) => {
         try {
-          const validatedData = LoginFormSchema.parse(data); // Validate input against schema
-          await login(validatedData);
+            const validatedData = LoginFormSchema.parse(data) // Validate input against schema
+            await login(validatedData)
         } catch (error) {
-          if (error instanceof z.ZodError) {
-            error.errors.forEach((err) => {
-              toast.error(err.message);
-            });
-          } else {
-            console.error('Validation failed with unknown error:', error);
-            toast.error('مشکلی در ورود وجود دارد');
-          }
+            if (error instanceof z.ZodError) {
+                error.errors.forEach((err) => {
+                    toast.error(err.message)
+                })
+            } else {
+                console.error("Validation failed with unknown error:", error)
+                toast.error("مشکلی در ورود وجود دارد")
+            }
         }
-      }
+    }
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()
@@ -58,7 +58,8 @@ const Login = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-همیارچت                            </span>
+                                همیارچت{" "}
+                            </span>
                         </div>
                     </Link>
                 </div>

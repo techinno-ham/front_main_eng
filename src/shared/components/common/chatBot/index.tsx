@@ -5,60 +5,62 @@ import { FC, useEffect, useRef, useState } from "react"
 import useAIChat from "./hooks/useAIChat"
 import CahtBotLoader from "../chatBotLoader"
 import { toast } from "sonner"
-import { v4 as uuidv4 } from 'uuid';
-
-
-
+import { v4 as uuidv4 } from "uuid"
 
 interface chatbotProps {
     chatBotActive: boolean
-    conversationId:string
-    botId:string
+    conversationId: string
+    botId: string
 }
 
-const ChatBot: FC<chatbotProps> = ({ chatBotActive,conversationId , botId }) => {
-    const [valueInput, setValueInput] = useState("");
-    const [conversationIdState,setConversationIdState]=useState(conversationId)
-    const {messages,addMessages,sendMessageToServer,resetChat,isLoading}= useAIChat(conversationIdState , botId);
-    const chatContainerRef = useRef<HTMLDivElement>(null);
-    
+const ChatBot: FC<chatbotProps> = ({
+    chatBotActive,
+    conversationId,
+    botId,
+}) => {
+    const [valueInput, setValueInput] = useState("")
+    const [conversationIdState, setConversationIdState] =
+        useState(conversationId)
+    const { messages, addMessages, sendMessageToServer, resetChat, isLoading } =
+        useAIChat(conversationIdState, botId)
+    const chatContainerRef = useRef<HTMLDivElement>(null)
 
-   const sendRequest = (_valueInput?: string) => {
-    const text = _valueInput || valueInput;
+    const sendRequest = (_valueInput?: string) => {
+        const text = _valueInput || valueInput
 
-    addMessages({
-        sender: "user",
-        type: "text",
-        error: false,
-        content: text,
-        id: `message-user-id-${messages.length}`,
-        time:Date.now()
-    })
-    setValueInput("");
-    sendMessageToServer(text);
-
-   };
-   const handleResetChat=()=>{
-    if(isLoading){
-        toast.error("چت بات در حال پاسخ دادن می باشد صبر کنید پاسخ گویی تمام شود سپس بازنشانی کنید.")
-        return
+        addMessages({
+            sender: "user",
+            type: "text",
+            error: false,
+            content: text,
+            id: `message-user-id-${messages.length}`,
+            time: Date.now(),
+        })
+        setValueInput("")
+        sendMessageToServer(text)
     }
-    const newUuid = uuidv4();
-    resetChat();
-    setConversationIdState(newUuid);
+    const handleResetChat = () => {
+        if (isLoading) {
+            toast.error(
+                "چت بات در حال پاسخ دادن می باشد صبر کنید پاسخ گویی تمام شود سپس بازنشانی کنید.",
+            )
+            return
+        }
+        const newUuid = uuidv4()
+        resetChat()
+        setConversationIdState(newUuid)
+    }
 
-   }
+    const scrollToBottom = () => {
+        chatContainerRef?.current?.scroll({
+            top: chatContainerRef.current.scrollHeight,
+            behavior: "smooth",
+        })
+    }
 
-   const scrollToBottom = () => {
-    chatContainerRef?.current?.scroll({
-      top: chatContainerRef.current.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
-useEffect(() => {
-    scrollToBottom();
-}, [messages]);
+    useEffect(() => {
+        scrollToBottom()
+    }, [messages])
     return (
         <>
             {!chatBotActive ? (
@@ -198,10 +200,7 @@ useEffect(() => {
                             <div className="w-full px-3">
                                 <div className="z-10 flex justify-between border-b py-1">
                                     <div className="flex items-center justify-center gap-3">
-                                    
-                                        <button
-                                          onClick={handleResetChat}
-                                        >
+                                        <button onClick={handleResetChat}>
                                             <Refresh
                                                 size={28}
                                                 color="#9ca3af"
@@ -215,173 +214,216 @@ useEffect(() => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-full overflow-auto scrollable-container" ref={chatContainerRef}>
+                            <div
+                                className="scrollable-container h-full overflow-auto"
+                                ref={chatContainerRef}
+                            >
                                 <div className="relative">
                                     <div className="h-full w-full overflow-y-auto">
                                         <div className="px-3 pt-4">
-                                        <div>
-                    {messages.map((message, index) => {
-                        if (message.sender === "AI") {
-                            return (
-                                <div key={index} className="mr-16 flex justify-end ">
-                                <div className="flex flex-col">
-                                <div className="max-w-prose overflow-auto  bg-[#f1f1f0] px-4 py-3 text-black rounded-[20px] rounded-bl-none">
-                                        <div className="flex flex-col items-start gap-4 break-words">
-                                            <div className="w-full break-words text-right text-inherit text-sm">
-                                                <p>{message.content}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="mb-5 mr-auto ml-2">
-                                    <span className="text-xs text-gray-500" dir="ltr">
-                            {new Intl.DateTimeFormat('en-US', {
-                                dateStyle: 'short',
-                                timeStyle: 'short',
-                            }).format(new Date(message.time))}
-                        </span>
+                                            <div>
+                                                {messages.map(
+                                                    (message, index) => {
+                                                        if (
+                                                            message.sender ===
+                                                            "AI"
+                                                        ) {
+                                                            return (
+                                                                <div
+                                                                    key={index}
+                                                                    className="mr-16 flex justify-end "
+                                                                >
+                                                                    <div className="flex flex-col">
+                                                                        <div className="max-w-prose overflow-auto  rounded-[20px] rounded-bl-none bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                            <div className="flex flex-col items-start gap-4 break-words">
+                                                                                <div className="w-full break-words text-right text-sm text-inherit">
+                                                                                    <p>
+                                                                                        {
+                                                                                            message.content
+                                                                                        }
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="mb-5 ml-2 mr-auto">
+                                                                            <span
+                                                                                className="text-xs text-gray-500"
+                                                                                dir="ltr"
+                                                                            >
+                                                                                {new Intl.DateTimeFormat(
+                                                                                    "en-US",
+                                                                                    {
+                                                                                        dateStyle:
+                                                                                            "short",
+                                                                                        timeStyle:
+                                                                                            "short",
+                                                                                    },
+                                                                                ).format(
+                                                                                    new Date(
+                                                                                        message.time,
+                                                                                    ),
+                                                                                )}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
 
-                                    </div>
-
-
-                                </div>
-                                    
-                                    {/* <div>
+                                                                    {/* <div>
                                     <span className="text-xs text-gray-500">
                                       {new Date(message.time).toLocaleTimeString()}  
                                     </span>
                                     </div> */}
-                                </div>
-                            );
-                        } else {
-                            return (
-                                <div key={index} className="ml-16 flex justify-start">
-                                <div className="flex flex-col"> 
-                                <div className="max-w-prose overflow-auto  bg-[#3b81f6] px-4 py-3 text-white rounded-[20px] rounded-br-none">
-                                        <div className="flex flex-col items-start gap-4 break-words">
-                                            <div className="w-full break-words text-right text-inherit text-sm">
-                                                <p>{message.content}</p>
+                                                                </div>
+                                                            )
+                                                        } else {
+                                                            return (
+                                                                <div
+                                                                    key={index}
+                                                                    className="ml-16 flex justify-start"
+                                                                >
+                                                                    <div className="flex flex-col">
+                                                                        <div className="max-w-prose overflow-auto  rounded-[20px] rounded-br-none bg-[#3b81f6] px-4 py-3 text-white">
+                                                                            <div className="flex flex-col items-start gap-4 break-words">
+                                                                                <div className="w-full break-words text-right text-sm text-inherit">
+                                                                                    <p>
+                                                                                        {
+                                                                                            message.content
+                                                                                        }
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="mb-5 ml-auto mr-2">
+                                                                            <span
+                                                                                className="text-xs text-gray-500"
+                                                                                dir="ltr"
+                                                                            >
+                                                                                {new Intl.DateTimeFormat(
+                                                                                    "en-US",
+                                                                                    {
+                                                                                        dateStyle:
+                                                                                            "short",
+                                                                                        timeStyle:
+                                                                                            "short",
+                                                                                    },
+                                                                                ).format(
+                                                                                    new Date(
+                                                                                        message.time,
+                                                                                    ),
+                                                                                )}
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            )
+                                                        }
+                                                    },
+                                                )}
+                                                {isLoading && (
+                                                    <>
+                                                        <div className="mr-16 flex justify-end">
+                                                            <div className="mb-5 max-w-prose overflow-auto  rounded-[20px] rounded-bl-none  bg-[#f1f1f0] px-2 text-black">
+                                                                <div className="flex flex-col items-start gap-4 break-words">
+                                                                    <CahtBotLoader />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </>
+                                                )}
                                             </div>
-                                        </div>
-                                </div>
-                                <div className="mb-5 ml-auto mr-2">
-                                    <span className="text-xs text-gray-500" dir="ltr">
-                            {new Intl.DateTimeFormat('en-US', {
-                                dateStyle: 'short',
-                                timeStyle: 'short',
-                            }).format(new Date(message.time))}
-                        </span>
-
-                                    </div>
-
-                                </div>
-                                    
-                                </div>
-                            );
-                        }
-                    })}
-                    {isLoading && (
-                        <>
-                        <div  className="mr-16 flex justify-end">
-                                    <div className="mb-5 max-w-prose overflow-auto  bg-[#f1f1f0] px-2  text-black rounded-[20px] rounded-bl-none">
-                                        <div className="flex flex-col items-start gap-4 break-words">
-                                          <CahtBotLoader/>
-                                        </div>
-                                    </div>
-                                </div>
-                        </>
-                    )}
-
-                     
-                </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div className="bg-inherit">
-                                    <div className="flex gap-2 overflow-x-auto p-3">
+                                <div className="flex gap-2 overflow-x-auto p-3">
                                     <button
-                                            className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
-                                            type="button"
-                                            aria-label="لبلب "
-                                            title="لبلب "
-                                            onClick={()=>sendRequest("چگونه چت بات بخرم ؟")}
-                                        >
-                                            {" "}
-                                            همیارچت چیست ؟
-                                        </button>
-                                        <button
-                                            className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
-                                            type="button"
-                                            aria-label="لبلب "
-                                            title="لبلب "
-                                            onClick={()=>sendRequest("چگونه چت بات بخرم ؟")}
-                                        >
-                                            {" "}
-                                            چگونه چت بات بخرم؟
-                                        </button>
-                                    </div>
-                                    <div className="flex border-t border-[#e4e4e7] px-4  py-3">
-                                        <div className="flex w-full items-center leading-none">
-                                            <input
-                                                onKeyDown={(e) => {
-                                                    if (isLoading) {
-                                                      e.preventDefault(); // Prevent the default behavior when loading
-                                                      return;
-                                                    }
-                                            
-                                                    if (e.key === 'Enter' && valueInput) {
-                                                      e.preventDefault(); // Prevents the form from submitting on Enter
-                                                      sendRequest(); // Sends the request
-                                                    }
-                                                  }}
-                                                className="mr-3 max-h-36 w-full  resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
-                                                placeholder={"پیام شما"}
-                                                aria-label="Write a Message"
-                                                title="Write a Message"
-                                                style={{
-                                                    height: "24px",
-                                                }}
-                                          
-                                                onChange={(e) => {
-                                                    setValueInput(e.target.value);
-                                                  }}
+                                        className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
+                                        type="button"
+                                        aria-label="لبلب "
+                                        title="لبلب "
+                                        onClick={() =>
+                                            sendRequest("چگونه چت بات بخرم ؟")
+                                        }
+                                    >
+                                        {" "}
+                                        همیارچت چیست ؟
+                                    </button>
+                                    <button
+                                        className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
+                                        type="button"
+                                        aria-label="لبلب "
+                                        title="لبلب "
+                                        onClick={() =>
+                                            sendRequest("چگونه چت بات بخرم ؟")
+                                        }
+                                    >
+                                        {" "}
+                                        چگونه چت بات بخرم؟
+                                    </button>
+                                </div>
+                                <div className="flex border-t border-[#e4e4e7] px-4  py-3">
+                                    <div className="flex w-full items-center leading-none">
+                                        <input
+                                            onKeyDown={(e) => {
+                                                if (isLoading) {
+                                                    e.preventDefault() // Prevent the default behavior when loading
+                                                    return
+                                                }
 
-                                                  value={valueInput}
-                                            />
-                                        </div>
-                                        <div className="flex items-end leading-none">
-                                            <button
-                                               onClick={()=>{sendRequest()}}
-                                               disabled={isLoading}
-                                            >
-                                                {isLoading ? (
-                                                    <>
-                                                     <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                                    </>
-                                                ):(
+                                                if (
+                                                    e.key === "Enter" &&
+                                                    valueInput
+                                                ) {
+                                                    e.preventDefault() // Prevents the form from submitting on Enter
+                                                    sendRequest() // Sends the request
+                                                }
+                                            }}
+                                            className="mr-3 max-h-36 w-full  resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
+                                            placeholder={"پیام شما"}
+                                            aria-label="Write a Message"
+                                            title="Write a Message"
+                                            style={{
+                                                height: "24px",
+                                            }}
+                                            onChange={(e) => {
+                                                setValueInput(e.target.value)
+                                            }}
+                                            value={valueInput}
+                                        />
+                                    </div>
+                                    <div className="flex items-end leading-none">
+                                        <button
+                                            onClick={() => {
+                                                sendRequest()
+                                            }}
+                                            disabled={isLoading}
+                                        >
+                                            {isLoading ? (
                                                 <>
-                                                 <Send/>
+                                                    <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                                 </>
-                                               )}
-                                               
-                                            </button>
-                                        </div>
+                                            ) : (
+                                                <>
+                                                    <Send />
+                                                </>
+                                            )}
+                                        </button>
                                     </div>
-                                    <div className="flex items-center justify-center bg-slate-100">
-                                        <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-3">
-                                            <p className="grow text-nowrap text-center text-xs ">
-                                                قدرت گرفته از
-                                                <a
-                                                    target="_blank"
-                                                    className="mr-1 font-semibold text-[#1277fd]"
-                                                    href="/"
-                                                >
-                                                    hamyar.chat
-                                                </a>
-                                            </p>
-                                        </div>
+                                </div>
+                                <div className="flex items-center justify-center bg-slate-100">
+                                    <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-3">
+                                        <p className="grow text-nowrap text-center text-xs ">
+                                            قدرت گرفته از
+                                            <a
+                                                target="_blank"
+                                                className="mr-1 font-semibold text-[#1277fd]"
+                                                href="/"
+                                            >
+                                                hamyar.chat
+                                            </a>
+                                        </p>
                                     </div>
-                                
+                                </div>
                             </div>
                         </div>
                     </div>

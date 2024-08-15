@@ -25,13 +25,12 @@ const TrustBrnadSections = () => {
         renderMode: "performance",
         slides: { perView: 8, spacing: 5 },
         breakpoints: {
-            '(max-width: 500px)': {
+            "(max-width: 500px)": {
                 loop: true,
-        mode: "free",
+                mode: "free",
                 slides: { perView: 3, spacing: 2 },
-
             },
-          },
+        },
         created(s) {
             s.moveToIdx(5, true, animation)
         },
@@ -43,7 +42,7 @@ const TrustBrnadSections = () => {
         },
     })
     return (
-        <div className="container-medium w-container container mx-auto  h-max overflow-hidden text-center mt-8 md:mt-0">
+        <div className="container-medium w-container container mx-auto  mt-8 h-max overflow-hidden text-center md:mt-0">
             {/* <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
               مشتریان
@@ -64,7 +63,7 @@ const TrustBrnadSections = () => {
                     maskImage:
                         "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)",
                 }}
-                className="navigation-wrapper md:mt-10 mt-2"
+                className="navigation-wrapper mt-2 md:mt-10"
             >
                 <div ref={sliderRef} className="keen-slider">
                     {brands?.length &&

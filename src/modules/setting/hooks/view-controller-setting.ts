@@ -1,7 +1,7 @@
 import { create } from "zustand"
 
 // Define a type for the tabs
-type SettingTab = 'General' | 'Model' | 'Apperence' | 'Security';
+type SettingTab = "General" | "Model" | "Apperence" | "Security"
 
 interface StoreViewControllerSetting {
     activeTab: SettingTab

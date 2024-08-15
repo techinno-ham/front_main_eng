@@ -15,12 +15,8 @@ const Integrations = () => {
                             <option>خصوصی</option>
                         </select>
 
-                        <p className="mt-2 text-sm text-zinc-500">
-                           لورم
-                        </p>
-                        <p className="mt-2 text-sm text-zinc-500">
-                         لورم
-                        </p>
+                        <p className="mt-2 text-sm text-zinc-500">لورم</p>
+                        <p className="mt-2 text-sm text-zinc-500">لورم</p>
                     </div>
                     <div className="pb-8">
                         <div>
@@ -87,4 +83,4 @@ const Integrations = () => {
         </>
     )
 }
-export default Integrations;
+export default Integrations

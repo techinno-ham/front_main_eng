@@ -6,7 +6,7 @@ interface ChatConfig {
     suggestedMessages: string[]
     inputPlaceholder: string
     footer: string
-    themeBot:string
+    themeBot: string
     bgUserMessage: string
     borderIcon: string
     chatButtonPosition: string
@@ -25,7 +25,7 @@ const useStoreChatConfig = create<StoreChatConfig>((set) => ({
         suggestedMessages: ["چگونه میتونم بات بسازم؟"],
         inputPlaceholder: "پیام شما ...",
         footer: "raya.chat",
-        themeBot:"light",
+        themeBot: "light",
         bgUserMessage: "#3b81f6",
         borderIcon: "#6495ed",
         chatButtonPosition: "start",

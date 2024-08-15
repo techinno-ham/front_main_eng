@@ -4,7 +4,7 @@ import { Metadata, NextPage } from "next"
 
 const FAQPage: NextPage = () => {
     return <FAQ />
-};
+}
 
 export const metadata: Metadata = {
     title: "سوالات متداول | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
@@ -18,4 +18,4 @@ export const metadata: Metadata = {
     },
 }
 
-export default FAQPage;
+export default FAQPage

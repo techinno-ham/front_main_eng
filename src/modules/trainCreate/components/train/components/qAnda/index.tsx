@@ -1,10 +1,9 @@
-
-import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew";
+import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 import { Trash } from "iconsax-react"
 import { useState } from "react"
 
 const QandA = () => {
-    const { qaList, addQAList } = useDateSourceNew();
+    const { qaList, addQAList } = useDateSourceNew()
 
     const handleAddQA = () => {
         addQAList([...qaList, { question: "", answer: "" }])

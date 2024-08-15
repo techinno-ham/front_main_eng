@@ -2,9 +2,8 @@
 import { FC, ReactNode } from "react"
 import Navbar from "./components/navbar"
 interface LayoutProps {
-    children: ReactNode; // This allows any valid React node to be passed as children
+    children: ReactNode // This allows any valid React node to be passed as children
 }
-
 
 const Layout: FC<LayoutProps> = (props) => {
     return (
@@ -18,4 +17,4 @@ const Layout: FC<LayoutProps> = (props) => {
         </>
     )
 }
-export default Layout;
+export default Layout

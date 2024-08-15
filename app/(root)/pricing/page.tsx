@@ -3,7 +3,7 @@ import { Metadata, NextPage } from "next"
 
 const PricingPage: NextPage = () => {
     return <Pricing />
-};
+}
 
 export const metadata: Metadata = {
     title: "قیمت‌ | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",

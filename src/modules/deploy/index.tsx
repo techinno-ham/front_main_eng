@@ -14,10 +14,10 @@ import service from "@/src/shared/services/service"
 import useStoreActive from "./hooks/activeStore"
 
 const Deploy = () => {
-    const viewController = useStoreViewControllerDeploy();
-    const pathname = usePathname();
-    const botId = pathname.split("/")[2];
-    const {setActive}=useStoreActive();
+    const viewController = useStoreViewControllerDeploy()
+    const pathname = usePathname()
+    const botId = pathname.split("/")[2]
+    const { setActive } = useStoreActive()
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -25,15 +25,17 @@ const Deploy = () => {
         Web: " استقرار وب",
         Share: "اشتراک گذاری",
         NPM: "پکیج جاوا اسکریپت",
-        Integrations:" استقرار شبکه های اجتماعی"
-    };
+        Integrations: " استقرار شبکه های اجتماعی",
+    }
 
     useEffect(() => {
         const fetchConfigs = async () => {
             setLoading(true)
             try {
                 const response = await service.getConfigs(botId)
-                setActive(response.data.security_configs.access_bot == "general")
+                setActive(
+                    response.data.security_configs.access_bot == "general",
+                )
             } catch (error: any) {
                 setError(error.message)
             } finally {
@@ -45,9 +47,9 @@ const Deploy = () => {
     const renderTabContent = () => {
         switch (viewController.activeTab) {
             case "Web":
-                return <Web/>
+                return <Web />
             case "Share":
-                return <Sahre/>
+                return <Sahre />
             case "NPM":
                 return <NPM />
             case "Integrations":
@@ -55,8 +57,7 @@ const Deploy = () => {
             default:
                 return null
         }
-    };
-
+    }
 
     if (loading)
         return (
@@ -70,8 +71,6 @@ const Deploy = () => {
             </>
         )
 
-
-  
     return (
         <>
             <div className="mx-auto mb-28 mt-[120px] w-[95%] md:mb-4 md:mt-[100px]">

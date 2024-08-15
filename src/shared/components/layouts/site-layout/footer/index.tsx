@@ -447,7 +447,7 @@ const Footer = () => {
                                                 : "unset",
                                     }}
                                 >
-                                محصول
+                                    محصول
                                 </h5>
                                 <svg
                                     style={{
@@ -492,20 +492,20 @@ const Footer = () => {
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                آموزش
-                                </Link>
+                                        آموزش
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                امکانات
-                                </Link>
+                                        امکانات
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                قیمت
-                                </Link>
+                                        قیمت
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -536,7 +536,7 @@ const Footer = () => {
                                                 : "unset",
                                     }}
                                 >
-                                منابع
+                                    منابع
                                 </h5>
                                 <svg
                                     style={{
@@ -581,21 +581,20 @@ const Footer = () => {
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                بلاگ
-                                </Link>
+                                        بلاگ
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                درباره ما
-                                </Link>
+                                        درباره ما
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
                                         سوالات متداول
                                     </Link>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -626,7 +625,7 @@ const Footer = () => {
                                                 : "unset",
                                     }}
                                 >
-                                راهنمایی و پشتیبانی
+                                    راهنمایی و پشتیبانی
                                 </h5>
                                 <svg
                                     style={{
@@ -671,33 +670,32 @@ const Footer = () => {
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                پشتیبانی تلگرام{" "}
-                                </Link>
+                                        پشتیبانی تلگرام{" "}
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                پشتیبانی واتساپ{" "}
-                                </Link>
+                                        پشتیبانی واتساپ{" "}
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                کانال تلگرام{" "}
-                                </Link>
+                                        کانال تلگرام{" "}
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                hamyarchat@gmail.com{" "}
-                                </Link>
+                                        hamyarchat@gmail.com{" "}
+                                    </Link>
                                     <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                0912123123
-                                </Link>
-                                    
+                                        0912123123
+                                    </Link>
                                 </div>
                             </div>
                         </div>

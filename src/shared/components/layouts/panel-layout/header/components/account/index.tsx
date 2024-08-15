@@ -39,7 +39,7 @@ const UserAccount = () => {
             console.log("here")
             const fetchUser = async () => {
                 try {
-                    const res = await Services.checkToken();
+                    const res = await Services.checkToken()
                     setUser(res.data)
                 } catch (error) {
                     console.error("Error fetching user:", error)
@@ -98,7 +98,11 @@ const UserAccount = () => {
                             <img
                                 ref={imgRef}
                                 className="h-10 w-10 cursor-pointer rounded-full p-1 ring-2 ring-gray-300"
-                                src={user.photoUrl ? user.photoUrl :"https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
+                                src={
+                                    user.photoUrl
+                                        ? user.photoUrl
+                                        : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                }
                                 alt="Bordered avatar"
                             />
                         </div>

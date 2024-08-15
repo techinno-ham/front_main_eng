@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-type TrainTab = 'File' | 'Text' | 'Website' | 'QandA';
+type TrainTab = "File" | "Text" | "Website" | "QandA"
 interface StoreViewControllerCreate {
     activeTab: TrainTab
     changeTab: (newTab: any) => void

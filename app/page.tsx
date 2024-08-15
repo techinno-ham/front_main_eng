@@ -28,5 +28,5 @@ export const metadata: Metadata = {
     // },
     icons: {
         icon: "/logo.svg", // /public path
-      },
+    },
 }

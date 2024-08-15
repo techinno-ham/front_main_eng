@@ -1,13 +1,12 @@
-
-import { create } from "zustand";
+import { create } from "zustand"
 
 interface AIChatState {
-    messages: any[];
-    isLoading: boolean;
-    setMessages: (message: any) => void; // Update the function signature to accept a single message
-    updateMessage: (id: string, newContent: string) => void;
-    setIsLoading: (isLoading: boolean) => void;
-    resetChat: () => void; // Add resetChat function signature
+    messages: any[]
+    isLoading: boolean
+    setMessages: (message: any) => void // Update the function signature to accept a single message
+    updateMessage: (id: string, newContent: string) => void
+    setIsLoading: (isLoading: boolean) => void
+    resetChat: () => void // Add resetChat function signature
 }
 
 const useAIChatStore = create<AIChatState>((set) => ({
@@ -18,9 +17,8 @@ const useAIChatStore = create<AIChatState>((set) => ({
             error: false,
             content: "سلام چطور می‌تونم کمکتون کنم؟",
             id: `message-user-id-0`,
-            time: Date.now(), 
-    
-        }
+            time: Date.now(),
+        },
     ],
     isLoading: false,
     setMessages: (newMessage) =>
@@ -28,15 +26,15 @@ const useAIChatStore = create<AIChatState>((set) => ({
             messages: [...state.messages, newMessage], // Add the new message to the previous messages array
         })),
     setIsLoading: (isLoading) => set({ isLoading }),
-    updateMessage: (id, newContent) => 
+    updateMessage: (id, newContent) =>
         set((state) => ({
             messages: state.messages.map((message) =>
                 message.id === id
                     ? { ...message, content: message.content + newContent }
-                    : message
+                    : message,
             ),
         })),
-    resetChat: () => 
+    resetChat: () =>
         set({
             messages: [
                 {
@@ -45,11 +43,11 @@ const useAIChatStore = create<AIChatState>((set) => ({
                     error: false,
                     content: "سلام چطور می‌تونم کمکتون کنم؟",
                     id: `message-id-0`,
-                    time: Date.now(), 
-                }
-            ],  // Clear all messages
-            isLoading: false,  // Reset the loading state
+                    time: Date.now(),
+                },
+            ], // Clear all messages
+            isLoading: false, // Reset the loading state
         }),
-}));
+}))
 
-export default useAIChatStore;
+export default useAIChatStore

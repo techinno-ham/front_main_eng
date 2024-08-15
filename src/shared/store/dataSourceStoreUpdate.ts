@@ -47,8 +47,8 @@ const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     isURLInitialized: false,
     isURLListChanged: false,
     isFileInitialized: false,
-    isUploadedChanged: false,  // Add default value
-    isFileChanged: false,      // Add default value
+    isUploadedChanged: false, // Add default value
+    isFileChanged: false, // Add default value
     textInputCharNumber: 0,
     qaList: [],
     urlList: [],
@@ -60,15 +60,18 @@ const useDataSourceStoreUpdate = create<DataSourceType>((set) => ({
     setUrlList: (urlList) => set({ urlList }),
     setFileList: (fileList) => set({ fileList }),
     setUploadedFile: (uploadedFile) => set({ uploadedFile }),
-    setTextInitialized: (initialized) => set({ isTextInitialized: initialized }),
+    setTextInitialized: (initialized) =>
+        set({ isTextInitialized: initialized }),
     setTextChanged: (initialized) => set({ isTextChanged: initialized }),
     setQAListChanged: (initialized) => set({ isQAListChanged: initialized }),
     setURLListChanged: (initialized) => set({ isURLListChanged: initialized }),
     setQAInitialized: (initialized) => set({ isQAInitialized: initialized }),
     setURLInitialized: (initialized) => set({ isURLInitialized: initialized }),
-    setFileInitialized: (initialized) => set({ isFileInitialized: initialized }),
-    setUploadedChanged: (initialized) => set({ isUploadedChanged: initialized }), // Add setter
-    setFileChanged: (initialized) => set({ isFileChanged: initialized }),         // Add setter
+    setFileInitialized: (initialized) =>
+        set({ isFileInitialized: initialized }),
+    setUploadedChanged: (initialized) =>
+        set({ isUploadedChanged: initialized }), // Add setter
+    setFileChanged: (initialized) => set({ isFileChanged: initialized }), // Add setter
 }))
 
 export default useDataSourceStoreUpdate

@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-type DeployTab = 'Web' | 'Share' | 'Integrations' |`NPM`;
+type DeployTab = "Web" | "Share" | "Integrations" | `NPM`
 interface StoreViewControllerDeploy {
     activeTab: DeployTab
     changeTab: (newTab: any) => void

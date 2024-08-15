@@ -5,9 +5,8 @@ import Navbar from "./components/navbar"
 import SourceCard from "./components/sourceCard"
 
 interface LayoutProps {
-    children: ReactNode; // This allows any valid React node to be passed as children
+    children: ReactNode // This allows any valid React node to be passed as children
 }
-
 
 const Layout: FC<LayoutProps> = (props) => {
     return (

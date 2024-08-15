@@ -1,12 +1,6 @@
 "use client"
 
-import {
-    Box,
-    Global,
-    DocumentCode,
-    Share,
-    Whatsapp,
-} from "iconsax-react"
+import { Box, Global, DocumentCode, Share, Whatsapp } from "iconsax-react"
 import TabLink from "./components/tablinks"
 
 const menuItems = [
@@ -39,7 +33,7 @@ const menuItems = [
 const Navbar = () => {
     return (
         <div>
-            <ul className="flex w-[100%] gap-x-[35px] overflow-auto scrollable-container-navbar md:gap-x-[70px]">
+            <ul className="scrollable-container-navbar flex w-[100%] gap-x-[35px] overflow-auto md:gap-x-[70px]">
                 {menuItems.map((item, index) => (
                     <li
                         key={index}

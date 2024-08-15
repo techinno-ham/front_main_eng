@@ -290,9 +290,7 @@ const AboutUs = () => {
                                     </Link>
                                     <Link
                                         target="_blank"
-                                        href={
-                                            "mailto:moeinnia@protonmail.com"
-                                        }
+                                        href={"mailto:moeinnia@protonmail.com"}
                                         className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white"
                                     >
                                         {/* <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
@@ -441,9 +439,7 @@ const AboutUs = () => {
                                     </Link>
                                     <Link
                                         target="_blank"
-                                        href={
-                                            "mailto:mahdiyarjfr@gmail.com"
-                                        }
+                                        href={"mailto:mahdiyarjfr@gmail.com"}
                                         className="group  flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-gray-100 text-gray-900 transition-all duration-500 hover:bg-blue-600 hover:text-white"
                                     >
                                         <svg

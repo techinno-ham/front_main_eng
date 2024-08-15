@@ -3,7 +3,7 @@ import { Metadata, NextPage } from "next"
 
 const BlogsPage: NextPage = () => {
     return <AllBlogs />
-};
+}
 
 export const metadata: Metadata = {
     title: "بلاگ‌ها | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
@@ -16,6 +16,5 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
-
 
 export default BlogsPage

@@ -43,36 +43,37 @@ const FAQ = () => {
         null,
     )
     return (
-        <section className="min-h-[900px] pt-10 pb-24">
+        <section className="min-h-[900px] pb-24 pt-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="w-full px-4">
-                        <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                            <span className="text-primary mb-2 block text-lg font-semibold">
+                <div className="w-full px-4">
+                    <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+                        <span className="text-primary mb-2 block text-lg font-semibold">
                             سوالات متداول
+                        </span>
+                        <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+                            پاسخ به
+                            <span
+                                style={{
+                                    textShadow:
+                                        "0 3px 8px rgba(77, 243, 255, 0.22)",
+                                    backgroundImage:
+                                        "linear-gradient(360deg, #5154ff, #559fff)",
+                                    backgroundClip: "text",
+                                    fontWeight: 700,
+                                    position: "relative",
+                                    color: "transparent",
+                                }}
+                            >
+                                &nbsp;سولات&nbsp;
                             </span>
-                            <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
-                            پاسخ به 
-                                <span
-                                    style={{
-                                        textShadow:
-                                            "0 3px 8px rgba(77, 243, 255, 0.22)",
-                                        backgroundImage:
-                                            "linear-gradient(360deg, #5154ff, #559fff)",
-                                        backgroundClip: "text",
-                                        fontWeight: 700,
-                                        position: "relative",
-                                        color: "transparent",
-                                    }}
-                                >
-                                    &nbsp;سولات&nbsp;
-                                </span>
                             شما
-                            </h2>
-                            <p className="text-body-color dark:text-dark-6 text-base">
-                            پاسخ سوالات متداول کاربران درباره همیارچت را اینجا بیابید.
+                        </h2>
+                        <p className="text-body-color dark:text-dark-6 text-base">
+                            پاسخ سوالات متداول کاربران درباره همیارچت را اینجا
+                            بیابید.
                         </p>
-                        </div>
                     </div>
+                </div>
 
                 <div
                     className="accordion-group"
@@ -101,7 +102,7 @@ const FAQ = () => {
                                     aria-controls="basic-collapse-one-with-arrow"
                                 >
                                     <h5
-                                    className="text-right"
+                                        className="text-right"
                                         style={{
                                             color:
                                                 activeAccordionId === indx
@@ -147,7 +148,7 @@ const FAQ = () => {
                                             activeAccordionId === indx ? 1 : 0,
                                     }}
                                 >
-                                    <p className="text-justify leading-6 text-gray-900 pointer-events-none">
+                                    <p className="pointer-events-none text-justify leading-6 text-gray-900">
                                         {qa.answer}
                                     </p>
                                 </div>

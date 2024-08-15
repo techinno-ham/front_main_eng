@@ -1,5 +1,5 @@
 import { create } from "zustand"
-type TabKey = 'General' | 'Model' | 'Apperence' | 'Security';
+type TabKey = "General" | "Model" | "Apperence" | "Security"
 
 interface StoreViewControllerSetting {
     activeTab: TabKey

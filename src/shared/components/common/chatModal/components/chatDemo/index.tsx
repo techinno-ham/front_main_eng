@@ -31,7 +31,8 @@ const ChatDemo = () => {
                             </div>
                             <div className="flex items-center">
                                 <h1 className="text-lg font-bold text-black ">
-                                همیارچت                                </h1>
+                                    همیارچت{" "}
+                                </h1>
                             </div>
                         </div>
                     </div>

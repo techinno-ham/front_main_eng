@@ -2,12 +2,11 @@
 import useDateSourceNew from "@/src/modules/trainCreate/hooks/useDataSourceNew"
 import { DocumentUpload, Trash } from "iconsax-react"
 import { useCallback, useState } from "react"
-import { useDropzone, FileRejection } from "react-dropzone";
-import { toast } from "sonner";
+import { useDropzone, FileRejection } from "react-dropzone"
+import { toast } from "sonner"
 
-
-const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
-const MAX_FILE_COUNT = 6;
+const MAX_FILE_SIZE = 10 * 1024 * 1024 // 10MB
+const MAX_FILE_COUNT = 6
 const UploadFlie = () => {
     const { fileList, addFileList } = useDateSourceNew()
     const onDrop = useCallback(
@@ -124,7 +123,6 @@ const UploadFlie = () => {
                             )}
                         </div>
                     </div>
-                  
                 </div>
             )}
         </>

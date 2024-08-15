@@ -6,12 +6,16 @@ import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
 interface chartDemoProps {
-    botData: any,
-    botId:any,
-    conversationId:any
+    botData: any
+    botId: any
+    conversationId: any
 }
 
-const ChartDemo: React.FC<chartDemoProps> = ({ botData,botId,conversationId }) => {
+const ChartDemo: React.FC<chartDemoProps> = ({
+    botData,
+    botId,
+    conversationId,
+}) => {
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
@@ -58,7 +62,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData,botId,conversationId }) =
 
     return (
         <>
-            <div className="mx-auto mt-10 flex max-w-5xl flex-col md:px-3 pb-12 md:mt-10">
+            <div className="mx-auto mt-10 flex max-w-5xl flex-col pb-12 md:mt-10 md:px-3">
                 <div className=" rounded-2xl bg-white shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
@@ -130,7 +134,11 @@ const ChartDemo: React.FC<chartDemoProps> = ({ botData,botId,conversationId }) =
                                 </div>
                             </div>
                             <div className="w-full p-2">
-                                <ChatBot chatBotActive={botActive} conversationId={conversationId} botId={botId} />
+                                <ChatBot
+                                    chatBotActive={botActive}
+                                    conversationId={conversationId}
+                                    botId={botId}
+                                />
                             </div>
                         </div>
                     </div>

@@ -15,7 +15,6 @@ const TrainForCreate = () => {
         QandA: "پرسش و پاسخ ها",
     }
 
-   
     const renderTabContent = () => {
         switch (viewController.activeTab) {
             case "File":
@@ -40,7 +39,6 @@ const TrainForCreate = () => {
                             {tabsInfo[viewController.activeTab]}
                         </span>
                         <div>{renderTabContent()}</div>
-                    
                     </div>
                 </Layout>
             </div>

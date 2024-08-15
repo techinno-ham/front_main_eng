@@ -10,7 +10,7 @@ const EmptyChat = () => {
                 height={200}
                 width={200}
                 loop={true}
-                style={{ height: "260px",width:"350px"}}
+                style={{ height: "260px", width: "350px" }}
                 autoPlay={true}
                 rendererSettings={{
                     preserveAspectRatio: "xMidYMid slice",
@@ -20,4 +20,4 @@ const EmptyChat = () => {
     )
 }
 
-export default EmptyChat;
+export default EmptyChat

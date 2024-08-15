@@ -25,26 +25,26 @@ const Register = () => {
 
     const onSubmit = async (data: any) => {
         try {
-          const validatedData = RegisterFormSchema.parse(data); // Validate input against schema
-          console.log(validatedData); // Valid data to proceed with registration
-          
-          // Call your registration function here
-          await registerAuth(validatedData);
+            const validatedData = RegisterFormSchema.parse(data) // Validate input against schema
+            console.log(validatedData) // Valid data to proceed with registration
+
+            // Call your registration function here
+            await registerAuth(validatedData)
         } catch (error) {
-          if (error instanceof z.ZodError) {
-            // Handle validation errors
-            console.log(error.errors);
-            // Example: Display errors using toast or other UI components
-            error.errors.forEach((err) => {
-              toast.error(err.message);
-            });
-          } else {
-            // Handle other errors (if any)
-            console.error('Validation failed with unknown error:', error);
-            toast.error('مشکلی در ثبت نام وجود دارد');
-          }
+            if (error instanceof z.ZodError) {
+                // Handle validation errors
+                console.log(error.errors)
+                // Example: Display errors using toast or other UI components
+                error.errors.forEach((err) => {
+                    toast.error(err.message)
+                })
+            } else {
+                // Handle other errors (if any)
+                console.error("Validation failed with unknown error:", error)
+                toast.error("مشکلی در ثبت نام وجود دارد")
+            }
         }
-      };
+    }
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()

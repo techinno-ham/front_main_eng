@@ -64,11 +64,11 @@ const Header = () => {
                 className={`sticky top-0 z-50 w-full 
                     transition-all
                     
-                    ${scroll ? "bg-[#0c1026] shadow-md border-blue-500 border-b-2" : "bg-white shadow-none border-gray-200 border-b"}
+                    ${scroll ? "border-b-2 border-blue-500 bg-[#0c1026] shadow-md" : "border-b border-gray-200 bg-white shadow-none"}
                     
                     `}
             >
-                <div className="flex flex-wrap items-center justify-between p-4 container relative mx-auto h-auto overflow-hidden  px-4   2xl:px-20">
+                <div className="container relative mx-auto flex h-auto flex-wrap items-center justify-between overflow-hidden p-4  px-4   2xl:px-20">
                     <Link href={"/"}>
                         <div className="flex items-center justify-center">
                             <Image
@@ -78,9 +78,10 @@ const Header = () => {
                                 alt="Logo"
                             />
                             <span
-                                className={`mr-2 text-xl md:text-2xl font-bold ${scroll && "text-[#fff]"}`}
+                                className={`mr-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
                             >
-همیارچت                            </span>
+                                همیارچت{" "}
+                            </span>
                         </div>
                     </Link>
 
@@ -105,7 +106,7 @@ const Header = () => {
                         </ul>
                     </div>
 
-                      <div className="flex gap-4 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+                    <div className="flex gap-4 space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
                         {isAuthenticated ? (
                             <>
                                 <button
@@ -124,25 +125,22 @@ const Header = () => {
                                 <button
                                     onClick={() => router.push("/auth/login")}
                                     type="button"
-                                    className="hidden md:block rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    className="hidden rounded-lg px-4  py-2 text-center text-sm font-medium text-white md:block"
                                     style={{
                                         backgroundColor: "rgb(29 78 216)",
                                     }}
                                 >
-                                     ورود
-                                     |
-                                    ثبت نام
+                                    ورود | ثبت نام
                                 </button>
                                 <button
                                     onClick={() => router.push("/auth/login")}
                                     type="button"
-                                    className="md:hidden rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    className="rounded-lg px-4  py-2 text-center text-sm font-medium text-white md:hidden"
                                     style={{
                                         backgroundColor: "rgb(29 78 216)",
                                     }}
                                 >
-                                     ورود
-                                     
+                                    ورود
                                 </button>
                                 {/* <button
                                     onClick={() =>
@@ -167,34 +165,32 @@ const Header = () => {
                         >
                             {isOpen ? <CloseCircle /> : <HambergerMenu />}
                         </button>
-                      </div>
-                      </div>
-                       <div>
-                    
+                    </div>
+                </div>
+                <div>
                     <div
-                        className={`absolute w-full items-center justify-between md:hidden navbar-menu ${isOpen ? "menu-open" : "menu-closing"}`}
+                        className={`navbar-menu absolute w-full items-center justify-between md:hidden ${isOpen ? "menu-open" : "menu-closing"}`}
                         id="navbar-sticky"
                     >
                         <ul
                             className={`flex-col   p-4 font-medium md:mt-0  md:space-x-8 md:border-0 rtl:space-x-reverse  ${scroll ? "bg-[#0c1026]" : "bg-white"}`}
                         >
-                    {links.map((link:any, index:any) => (
-                            <li key={index}>
-                                <div
-                                    
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        handleLinkClick(link.link)
-                                    }}
-                                    className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"} md:bg-transparent md:p-0`}
-                                >
-                                    {link.title}
-                                </div>
-                            </li>
-                        ))}
+                            {links.map((link: any, index: any) => (
+                                <li key={index}>
+                                    <div
+                                        onClick={(e) => {
+                                            e.preventDefault()
+                                            handleLinkClick(link.link)
+                                        }}
+                                        className={`block rounded px-3 py-2 ${scroll ? "text-white" : "text-black"} md:bg-transparent md:p-0`}
+                                    >
+                                        {link.title}
+                                    </div>
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                       </div>
+                </div>
             </nav>
         </>
     )

@@ -44,7 +44,7 @@ export const sidebarLinks = [
 const SideBar = () => {
     const pathname = usePathname()
     const pathSegments = pathname.split("/")
-    const router=useRouter()
+    const router = useRouter()
 
     return (
         <>
@@ -86,26 +86,26 @@ const SideBar = () => {
                         })}
                     </ul>
                     <div className="mt-5 flex items-center justify-center">
-                        <button className="create-btn flex gap-2" onClick={()=>{router.push("/partners")}}>
+                        <button
+                            className="create-btn flex gap-2"
+                            onClick={() => {
+                                router.push("/partners")
+                            }}
+                        >
                             <Send2 />
                             دعوت از دوستان
-                         </button>
+                        </button>
                     </div>
 
                     <div className="mt-auto flex items-center justify-center">
                         <div className="w-[80%] ">
-                            <hr className="w-full"/>
-                            <div className="flex justify-center items-center mt-2">
-                              <div className="bg-slate-400 rounded-xl p-2">
-                                <span>
-                                0.1.1 V
-                                </span>
-                               </div>
+                            <hr className="w-full" />
+                            <div className="mt-2 flex items-center justify-center">
+                                <div className="rounded-xl bg-slate-400 p-2">
+                                    <span>0.1.1 V</span>
+                                </div>
                             </div>
-                            
-
                         </div>
-
                     </div>
                 </div>
             </div>
