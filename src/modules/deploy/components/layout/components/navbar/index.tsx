@@ -4,26 +4,34 @@ import {
     Box,
     Global,
     DocumentCode,
+    Share,
+    Whatsapp,
 } from "iconsax-react"
 import TabLink from "./components/tablinks"
 
 const menuItems = [
     {
-        title: "اسکریپت",
-        store: "CDN",
+        title: " استقرار وب",
+        store: "Web",
         icon: <DocumentCode size={20} />,
         isActive: true,
     },
     {
-        title: "وب",
-        store: "Iframe",
-        icon: <Global size={20} />,
-        isActive: false,
+        title: "اشتراک گذازی",
+        store: "Share",
+        icon: <Share size={20} />,
+        isActive: true,
     },
     {
         title: "پکیج جاوا اسکریپت",
         store: "NPM",
         icon: <Box size={20} />,
+        isActive: false,
+    },
+    {
+        title: "اتصال به شبکه های اجتماعی",
+        store: "Integrations",
+        icon: <Whatsapp size={20} />,
         isActive: false,
     },
 ]

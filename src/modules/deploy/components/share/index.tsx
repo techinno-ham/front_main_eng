@@ -1,4 +1,4 @@
-const IframeExport = () => {
+const Sahre= () => {
     return (
         <>
             <div>
@@ -16,7 +16,7 @@ const IframeExport = () => {
                         </select>
 
                         <p className="mt-2 text-sm text-zinc-500">
-                           لورم
+                            لورم
                         </p>
                         <p className="mt-2 text-sm text-zinc-500">
                          لورم
@@ -87,4 +87,4 @@ const IframeExport = () => {
         </>
     )
 }
-export default IframeExport
+export default Sahre

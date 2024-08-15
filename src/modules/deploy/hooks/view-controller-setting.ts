@@ -1,6 +1,6 @@
 import { create } from "zustand"
 
-type DeployTab = 'CDN' | 'Iframe' | 'NPM';
+type DeployTab = 'Web' | 'Share' | 'Integrations' |`NPM`;
 interface StoreViewControllerDeploy {
     activeTab: DeployTab
     changeTab: (newTab: any) => void
@@ -11,7 +11,7 @@ interface StoreViewControllerDeploy {
 const useStoreViewControllerDeploy = create<StoreViewControllerDeploy>(
     (set) => ({
         isLoading: false,
-        activeTab: "CDN",
+        activeTab: "Web",
         setLoading: (loading) => set({ isLoading: loading }),
 
         changeTab: (newTab: any) =>
