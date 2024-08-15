@@ -17,7 +17,7 @@ const KnowledgeBaseGrid = () => {
         }
     }, [isInView])
     return (
-        <div className="grid w-[80%] grid-cols-2 gap-4 py-20" ref={mainRef}>
+        <div className="grid w-[80%] grid-cols-1 md:grid-cols-2 gap-4 py-20" ref={mainRef}>
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "+20%" },

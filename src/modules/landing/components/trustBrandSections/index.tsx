@@ -24,6 +24,14 @@ const TrustBrnadSections = () => {
         rtl: true,
         renderMode: "performance",
         slides: { perView: 8, spacing: 5 },
+        breakpoints: {
+            '(max-width: 500px)': {
+                loop: true,
+        mode: "free",
+                slides: { perView: 3, spacing: 2 },
+
+            },
+          },
         created(s) {
             s.moveToIdx(5, true, animation)
         },
