@@ -10,7 +10,8 @@ interface ChatConfig {
     bgUserMessage: string
     borderIcon: string
     chatButtonPosition: string
-    initMsgDelay: number
+    notificationMsgs:string
+    initNotifDelay: number
 }
 
 interface StoreChatConfig {
@@ -29,7 +30,8 @@ const useStoreChatConfig = create<StoreChatConfig>((set) => ({
         bgUserMessage: "#3b81f6",
         borderIcon: "#6495ed",
         chatButtonPosition: "start",
-        initMsgDelay: 20,
+        notificationMsgs:"👋 من اینجا هستم تا به شما کمک کنم.",
+        initNotifDelay: 2000,
     },
     updateChatConfig: (newConfig) =>
         set((state) => ({

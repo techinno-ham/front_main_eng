@@ -6,7 +6,7 @@ async function postData() {
 
         if (!token)
             token =
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJwbG90c2V0MSIsImJvdElkIjoicGxvdHNldDEiLCJpYXQiOjE3MTYwMTkyMDUsImV4cCI6MTcxNjEwMDIwNX0.NxFr4UwGyXZDFpHj-glHJtkU8dpnyqk5vVPv8sqLMDo"
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiYm90SWQiOiJjNDYzMDJhNC1jNmY5LTQ2YzYtOTJkZC04Y2NiZDhlOTlmMmUifSwiaWF0IjoxNzIzODg4NzE1LCJleHAiOjE3MjY0ODA3MTV9.DtB_sV1Cgc5g56dIrLWIEqu25zKGoYE1ahs7Q-LStZk"
 
         // Create the JSON payload
         var payload = {
@@ -14,7 +14,7 @@ async function postData() {
         }
 
         const response = await fetch(
-            "http://localhost:12000/widget/get-collection",
+            "http://localhost:12000/v1/widget/get-collection",
             {
                 method: "POST",
                 headers: {
@@ -24,7 +24,9 @@ async function postData() {
             },
         )
 
-        const data = await response.json()
+        const data = await response.json();
+
+        console.log(data,"testt")
 
         window.localStorage.setItem("chat-bot-token", data.collection)
     } catch (error) {

@@ -20,7 +20,7 @@ const Apperence = () => {
 
     const handleChangePosition = (e: any) => {
         let { name, value } = e.target
-        value = value == "راست" ? "start" : "left"
+        value = value == "راست" ? "right" : "left"
         console.log({ [name]: value })
         updateChatConfig({ [name]: value })
     }
@@ -46,7 +46,8 @@ const Apperence = () => {
                 user_msg_bg_color: chatConfig?.bgUserMessage,
                 bot_widget_border_color: chatConfig?.borderIcon,
                 bot_widget_position: chatConfig?.chatButtonPosition,
-                init_msg_delay: chatConfig?.initMsgDelay,
+                notification_msg_delay: chatConfig?.initNotifDelay,
+                notificationMsgs:chatConfig?.notificationMsgs,
                 bot_image: "https://test.png",
             }
             const response = await service.updateUiConfig(data.bot_id, formData)
@@ -72,7 +73,8 @@ const Apperence = () => {
                 bgUserMessage: data?.ui_configs?.user_msg_bg_color,
                 borderIcon: data?.ui_configs?.bot_widget_border_color,
                 chatButtonPosition: data?.ui_configs?.bot_widget_position,
-                initMsgDelay: data?.ui_configs?.init_msg_delay,
+                notificationMsgs:data?.ui_configs?.notificationMsgs,
+                initNotifDelay: data?.ui_configs?.notification_msg_delay,
             }
             updateChatConfig(loadConfig)
         }
@@ -318,7 +320,7 @@ const Apperence = () => {
                                 <select
                                     onChange={handleChangePosition}
                                     value={
-                                        chatConfig.chatButtonPosition == "start"
+                                        chatConfig.chatButtonPosition == "right"
                                             ? "راست"
                                             : "چپ"
                                     }
@@ -329,15 +331,30 @@ const Apperence = () => {
                                     <option>چپ</option>
                                 </select>
                             </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    پیام داخل نوتیفیکشن :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="notificationMsgs"
+                                        value={chatConfig.notificationMsgs}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="رایا گپ ..."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
                             <div className="mt-1 text-sm text-zinc-700">
                                 نمایش خودکار پیام های اولیه پس از پاپ آپ باز می
                                 شود :
                                 <input
                                     className=" border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring mt-1 flex h-9 w-48 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                     type="number"
-                                    name="initMsgDelay"
+                                    name="initNotifDelay"
                                     onChange={handleInputChange}
-                                    value={chatConfig.initMsgDelay}
+                                    value={chatConfig.initNotifDelay}
                                 />
                                 ثانیه (منفی برای غیرفعال کردن)
                             </div>
@@ -348,7 +365,7 @@ const Apperence = () => {
                                 className="mt-4 flex pb-12"
                                 style={{
                                     justifyContent:
-                                        chatConfig.chatButtonPosition,
+                                        chatConfig.chatButtonPosition =="right"?"start":"end",
                                 }}
                             >
                                 <div
