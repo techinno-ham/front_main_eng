@@ -11,12 +11,14 @@ interface chatbotProps {
     chatBotActive: boolean
     conversationId: string
     botId: string
+    botData:any
 }
 
 const ChatBot: FC<chatbotProps> = ({
     chatBotActive,
     conversationId,
     botId,
+    botData
 }) => {
     const [valueInput, setValueInput] = useState("")
     const [conversationIdState, setConversationIdState] =
@@ -24,6 +26,8 @@ const ChatBot: FC<chatbotProps> = ({
     const { messages, addMessages, sendMessageToServer, resetChat, isLoading } =
         useAIChat(conversationIdState, botId)
     const chatContainerRef = useRef<HTMLDivElement>(null)
+    const chatBotPermition=botData.status=="active";
+    const chatBotMode= botData.security_configs.status_bot=="enable";
 
     const sendRequest = (_valueInput?: string) => {
         const text = _valueInput || valueInput
@@ -37,7 +41,37 @@ const ChatBot: FC<chatbotProps> = ({
             time: Date.now(),
         })
         setValueInput("")
-        sendMessageToServer(text)
+        if(!chatBotPermition){
+            setTimeout(() => {
+                addMessages({
+                    sender: "AI",
+                    type: "text",
+                    error: true,
+                    content:
+                        "شما تمام اعتبارات خود را تمام کردید. می توانید اعتبار اضافی خریداری کنید یا طرح خود را ارتقا دهید",
+                    id: `message-id-${messages.length}`,
+                    time: Date.now(),
+                })
+                
+            }, 800);
+
+        } else if (!chatBotMode){
+            setTimeout(() => {
+                addMessages({
+                    sender: "AI",
+                    type: "text",
+                    error: true,
+                    content:
+                        "چت بات شما در حال حال حاظر غیر فعال می باشد . ",
+                    id: `message-id-${messages.length}`,
+                    time: Date.now(),
+                })
+                
+            }, 800);
+
+        }else{
+            sendMessageToServer(text)
+        }
     }
     const handleResetChat = () => {
         if (isLoading) {
@@ -234,7 +268,11 @@ const ChatBot: FC<chatbotProps> = ({
                                                                     className="mr-16 flex justify-end "
                                                                 >
                                                                     <div className="flex flex-col">
-                                                                        <div className="max-w-prose overflow-auto  rounded-[20px] rounded-bl-none bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                    <div
+  className={`max-w-prose overflow-auto rounded-[20px] rounded-bl-none ${
+    message.error ? 'bg-red-200 text-red-500 border border-red-500' : 'bg-[#f1f1f0] text-black'
+  } px-4 py-3`}
+>
                                                                             <div className="flex flex-col items-start gap-4 break-words">
                                                                                 <div className="w-full break-words text-right text-sm text-inherit">
                                                                                     <p>

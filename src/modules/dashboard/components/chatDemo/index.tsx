@@ -16,6 +16,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({
     botId,
     conversationId,
 }) => {
+    console.log(botData,"in progress")
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
@@ -135,6 +136,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({
                             </div>
                             <div className="w-full p-2">
                                 <ChatBot
+                                    botData={botData}
                                     chatBotActive={botActive}
                                     conversationId={conversationId}
                                     botId={botId}

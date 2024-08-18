@@ -1,5 +1,6 @@
 import useAIChatStore from "@/src/shared/store/AIChatStore"
 
+
 const useAIChat = (conversationId: string, botId: string) => {
     const {
         messages,
@@ -50,6 +51,7 @@ const useAIChat = (conversationId: string, botId: string) => {
                     content: "",
                     id: newMessageId,
                     time: Date.now(),
+                    
                 })
 
                 chunks.forEach((chunk: any, index: any) => {
