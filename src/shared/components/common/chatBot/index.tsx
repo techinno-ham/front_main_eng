@@ -341,6 +341,7 @@ const ChatBot: FC<chatbotProps> = ({
                                         type="button"
                                         aria-label="لبلب "
                                         title="لبلب "
+                                        disabled={isLoading}
                                         onClick={() =>
                                             sendRequest("چگونه چت بات بخرم ؟")
                                         }
@@ -353,6 +354,7 @@ const ChatBot: FC<chatbotProps> = ({
                                         type="button"
                                         aria-label="لبلب "
                                         title="لبلب "
+                                        disabled={isLoading}
                                         onClick={() =>
                                             sendRequest("چگونه چت بات بخرم ؟")
                                         }
