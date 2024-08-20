@@ -1,18 +1,58 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState,useCallback } from "react";
+import { useDropzone, FileRejection } from "react-dropzone";
 import ChatTemplate from "./components/chatTemplate"
 import useStoreChatConfig from "./hooks/config-mock-chat"
 import useStoreConfig from "../../hooks/loadConfig"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import CustomColorPicker from "./components/customColorPicker"
+import WidgetAnimation from "./components/widgetAnimation";
+
+
+const MAX_IMAGE_SIZE = 1 * 1024 * 1024; // 1MB
+const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/svg+xml"];
+
 
 const Apperence = () => {
     const { chatConfig, updateChatConfig } = useStoreChatConfig()
     const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false)
+    const [image, setImage] = useState<File | null>(null);
 
+
+    const onDrop = useCallback(
+        (acceptedFiles: File[], fileRejections: FileRejection[]) => {
+            if (acceptedFiles.length > 1) {
+                toast.error("شما بیش از یک عکس نمی توانید اپلود کنید.");
+                return;
+            }
+
+            const file = acceptedFiles[0];
+
+            if (!SUPPORTED_FORMATS.includes(file.type)) {
+                toast.error("فقط فایل‌های JPG، PNG و SVG پشتیبانی می‌شوند");
+                return;
+            }
+
+            if (file.size > MAX_IMAGE_SIZE) {
+                toast.error("حجم فایل نباید از ۱ مگابایت بیشتر باشد");
+                return;
+            }
+
+            setImage(file);
+        },
+        []
+    );
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+        accept: SUPPORTED_FORMATS.reduce(
+            (acc, format) => ({ ...acc, [format]: [] }),
+            {}
+        ),
+    });
     const handleInputChange = (e: any) => {
         const { name, value } = e.target
         updateChatConfig({ [name]: value })
@@ -34,9 +74,9 @@ const Apperence = () => {
         updateChatConfig({ [name]: value })
     }
     const onSubmit = async () => {
-        setIsLoading(true)
+        // setIsLoading(true)
         try {
-            const formData = {
+            const Data :any= {
                 greet_msgs: chatConfig?.botMessages,
                 action_btns: chatConfig?.suggestedMessages,
                 placeholder_msg: chatConfig?.inputPlaceholder,
@@ -44,12 +84,27 @@ const Apperence = () => {
                 bot_name: chatConfig?.displayName,
                 theme_bot: chatConfig?.themeBot,
                 user_msg_bg_color: chatConfig?.bgUserMessage,
-                bot_widget_border_color: chatConfig?.borderIcon,
+                bot_widget_border_color: chatConfig?.borderWidget,
                 bot_widget_position: chatConfig?.chatButtonPosition,
                 notification_msg_delay: chatConfig?.initNotifDelay,
                 notificationMsgs:chatConfig?.notificationMsgs,
-                bot_image: "https://test.png",
+                bot_image_border_color:chatConfig?.borderProfile,
+                bot_image:chatConfig?.imageProfle
             }
+            const formData = new FormData();
+
+              
+              for (const key in Data) {
+                 if (Array.isArray(Data[key])) {
+                   formData.append(key, JSON.stringify(Data[key])); 
+                } else {
+                formData.append(key, Data[key]);
+               }
+            }
+
+           if (image) {
+            formData.append("image", image);
+        }
             const response = await service.updateUiConfig(data.bot_id, formData)
             toast.success("تغیرات شما موفق آمیز ذخیره شد")
             setData(response.data)
@@ -71,14 +126,17 @@ const Apperence = () => {
                 displayName: data?.ui_configs?.bot_name,
                 themeBot: data?.ui_configs?.theme_bot,
                 bgUserMessage: data?.ui_configs?.user_msg_bg_color,
-                borderIcon: data?.ui_configs?.bot_widget_border_color,
+                borderWidget: data?.ui_configs?.bot_widget_border_color,
                 chatButtonPosition: data?.ui_configs?.bot_widget_position,
                 notificationMsgs:data?.ui_configs?.notificationMsgs,
                 initNotifDelay: data?.ui_configs?.notification_msg_delay,
+                borderProfile:data?.ui_configs?.bot_image_border_color,
+                imageProfle:data?.ui_configs?.bot_image
             }
             updateChatConfig(loadConfig)
         }
     }, [data])
+
 
     return (
         <>
@@ -243,22 +301,56 @@ const Apperence = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="pb-8">
+                                <label className="mb-1 block text-sm font-medium text-zinc-700">
+                                    {" "}
+                                    محل قرارگیری دکمه چت بات :
+                                </label>
+                                <select
+                                    onChange={handleChangePosition}
+                                    value={
+                                        chatConfig.chatButtonPosition == "right"
+                                            ? "راست"
+                                            : "چپ"
+                                    }
+                                    name="chatButtonPosition"
+                                    className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                                >
+                                    <option>راست</option>
+                                    <option>چپ</option>
+                                </select>
+                            </div>
 
-                            <div className="flex w-full flex-row items-center gap-4 py-3">
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    رنگ دکمه چت بات :{" "}
+                                </label>
+                                <div className="mt-2">
+                                    <div className="flex items-center">
+                                        <div>
+                                            <input
+                                                name="borderWidget"
+                                                type="color"
+                                                value={chatConfig.borderWidget}
+                                                onChange={handleInputChange}
+                                                className="block h-10 w-14 cursor-pointer rounded-lg border border-gray-200 bg-white p-1 disabled:pointer-events-none disabled:opacity-50"
+                                                title="Choose your color"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div className="flex w-full flex-row items-center gap-4 pb-8">
                                 <div className="flex flex-col gap-1">
                                     <span className="mb-1 block text-sm font-medium text-zinc-700">
-                                        عکس دکمه چت بات :{" "}
+                                        عکس پروفایل چت بات:{" "}
                                     </span>
-                                    <div className="flex flex-row items-center gap-2">
-                                        <input
-                                            id="bot_profile_picture"
-                                            accept="image/*"
-                                            className="hidden"
-                                            type="file"
-                                            name="bot_profile_picture"
-                                        />
+                                    <div {...getRootProps()} className="flex flex-row items-center gap-2">
+                                        <input {...getInputProps()} />
                                         <button
-                                            className="focus-visible:ring-ring inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-3 text-xs font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                                            className="focus-visible:ring-ring inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border border-zinc- bg-transparent px-3 text-xs font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 "
                                             type="button"
                                         >
                                             <svg
@@ -286,23 +378,33 @@ const Apperence = () => {
                                         </button>
                                     </div>
                                     <span className="mt-1 text-xs text-zinc-500">
-                                        Supports JPG, PNG, and SVG files up to
-                                        1MB
+                                    پشتیبانی از فایل‌های JPG، PNG و SVG تا حجم ۱ مگابایت
+
                                     </span>
                                 </div>
-                                <div className="h-14 w-14 rounded-full border border-zinc-300 bg-zinc-200"></div>
+                                <div className="h-16 w-16 rounded-full shadow-sm bg-zinc-200 border"  style={{
+                                    border:`1px solid ${chatConfig.borderProfile}`
+                                }}>
+                                    <img
+                                  alt="Profile"
+                                  className="h-full w-full rounded-full object-cover"
+                                  src={image ? URL.createObjectURL(image): chatConfig.imageProfle}
+                             
+                            />
+
+                                </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ دکمه چت بات :{" "}
+                                    رنگ پروفایل چت بات :{" "}
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
                                         <div>
                                             <input
-                                                name="borderIcon"
+                                                name="borderProfile"
                                                 type="color"
-                                                value={chatConfig.borderIcon}
+                                                value={chatConfig.borderProfile}
                                                 onChange={handleInputChange}
                                                 className="block h-10 w-14 cursor-pointer rounded-lg border border-gray-200 bg-white p-1 disabled:pointer-events-none disabled:opacity-50"
                                                 title="Choose your color"
@@ -311,26 +413,7 @@ const Apperence = () => {
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="pb-8">
-                                <label className="mb-1 block text-sm font-medium text-zinc-700">
-                                    {" "}
-                                    محل قرارگیری دکمه چت بات :
-                                </label>
-                                <select
-                                    onChange={handleChangePosition}
-                                    value={
-                                        chatConfig.chatButtonPosition == "right"
-                                            ? "راست"
-                                            : "چپ"
-                                    }
-                                    name="chatButtonPosition"
-                                    className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                                >
-                                    <option>راست</option>
-                                    <option>چپ</option>
-                                </select>
-                            </div>
+                     
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
                                     پیام داخل نوتیفیکشن :{" "}
@@ -347,8 +430,7 @@ const Apperence = () => {
                                 </div>
                             </div>
                             <div className="mt-1 text-sm text-zinc-700">
-                                نمایش خودکار پیام های اولیه پس از پاپ آپ باز می
-                                شود :
+                                زمان نمایش نوتیفیکشن بعد از نمایش چت بات:
                                 <input
                                     className=" border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring mt-1 flex h-9 w-48 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                     type="number"
@@ -356,10 +438,10 @@ const Apperence = () => {
                                     onChange={handleInputChange}
                                     value={chatConfig.initNotifDelay}
                                 />
-                                ثانیه (منفی برای غیرفعال کردن)
+                              میلی  ثانیه 
                             </div>
                         </div>
-                        <div className="w-2/2 mr-10 flex-1 lg:w-1/2">
+                        <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2">
                             <ChatTemplate config={chatConfig} />
                             <div
                                 className="mt-4 flex pb-12"
@@ -368,14 +450,22 @@ const Apperence = () => {
                                         chatConfig.chatButtonPosition =="right"?"start":"end",
                                 }}
                             >
-                                <div
-                                    className="full flex h-[55px] w-[55px] items-center justify-center rounded-full"
-                                    style={{
-                                        border: `3px solid ${chatConfig.borderIcon}`,
+                            <span
+                               className="botpenguin-launcher-image-12 bg-gradient-to-br
+                               from-cyan-500 to-blue-500"
+                                style={{
+                                  zIndex: 1,
+                                  padding: "5px",
+                                  position: "relative",
+                                  width:"fit-content",
+                                  height: "fit-content",
+                                  boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px 0px",
+                                      background: chatConfig.borderWidget ,
                                     }}
-                                >
-                                    <img src="/double-wink.svg" alt="" />
-                                </div>
+                                     >
+          
+                              <WidgetAnimation/>
+                                </span>
                             </div>
                         </div>
                     </div>

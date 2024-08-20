@@ -101,7 +101,7 @@ const UserAccount = () => {
                                 src={
                                     user.photoUrl
                                         ? user.photoUrl
-                                        : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                        : "http://84.46.250.91:9000/user-resources/defualtProfile%2Fprofile.svg"
                                 }
                                 alt="Bordered avatar"
                             />

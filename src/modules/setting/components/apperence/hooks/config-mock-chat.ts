@@ -8,10 +8,12 @@ interface ChatConfig {
     footer: string
     themeBot: string
     bgUserMessage: string
-    borderIcon: string
+    borderWidget: string
+    borderProfile:string
     chatButtonPosition: string
     notificationMsgs:string
     initNotifDelay: number
+    imageProfle:string
 }
 
 interface StoreChatConfig {
@@ -28,10 +30,12 @@ const useStoreChatConfig = create<StoreChatConfig>((set) => ({
         footer: "raya.chat",
         themeBot: "light",
         bgUserMessage: "#3b81f6",
-        borderIcon: "#6495ed",
+        borderWidget: "#6495ed",
+        borderProfile:"#000",
         chatButtonPosition: "start",
         notificationMsgs:"👋 من اینجا هستم تا به شما کمک کنم.",
         initNotifDelay: 2000,
+        imageProfle:"testtttt"
     },
     updateChatConfig: (newConfig) =>
         set((state) => ({

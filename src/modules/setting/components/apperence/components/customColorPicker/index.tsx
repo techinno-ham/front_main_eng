@@ -31,19 +31,7 @@ const CustomColorPicker = ({ name, value, onChange }) => {
                 position: "relative",
             }}
         >
-            <div
-                style={{
-                    width: "0px",
-                    height: "0px",
-                    borderStyle: "solid",
-                    borderWidth: "0px 10px 10px",
-                    borderColor: `transparent transparent ${selectedColor}`,
-                    position: "absolute",
-                    top: "-10px",
-                    left: "50%",
-                    marginLeft: "-10px",
-                }}
-            ></div>
+       
             <div
                 style={{
                     height: "110px",
