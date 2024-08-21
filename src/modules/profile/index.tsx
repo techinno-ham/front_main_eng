@@ -1,17 +1,69 @@
 "use client"
-import LoaderLottie from "@/src/shared/components/common/loader"
+import LoaderLottie from "@/src/shared/components/common/loader";
+import { useDropzone, FileRejection } from "react-dropzone";
 import service from "@/src/shared/services/service"
 import useUserStore from "@/src/shared/store/userStore"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
+
+const MAX_IMAGE_SIZE = 1 * 1024 * 1024; // 1MB
+const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/svg+xml"];
 const Profile = () => {
     const { register, handleSubmit, setValue, watch } = useForm()
     const { user, setUser } = useUserStore()
     const [isLoading, setIsLoading] = useState(true)
     const [isLoadingSumbit, setIsLoadingSumbit] = useState(false)
-    const [isFormDirty, setIsFormDirty] = useState(false)
+    const [isFormDirty, setIsFormDirty] = useState(false);
+    const [image, setImage] = useState<File | null>(null);
+
+    const onDrop = useCallback(
+        (acceptedFiles: File[], fileRejections: FileRejection[]) => {
+            const handleFileUpload = async () => {
+                if (acceptedFiles.length > 1) {
+                    toast.error("شما بیش از یک عکس نمی توانید اپلود کنید.");
+                    return;
+                }
+    
+                const file = acceptedFiles[0];
+    
+                if (!SUPPORTED_FORMATS.includes(file.type)) {
+                    toast.error("فقط فایل‌های JPG، PNG و SVG پشتیبانی می‌شوند");
+                    return;
+                }
+    
+                if (file.size > MAX_IMAGE_SIZE) {
+                    toast.error("حجم فایل نباید از ۱ مگابایت بیشتر باشد");
+                    return;
+                }
+    
+                setImage(file);
+                const formData = new FormData();
+                formData.append("image", file);
+    
+                try {
+                    const response = await service.updateUserImage(formData);
+                    toast.success("عکس پروفایل شما با موفقیت تغییر کرد");
+                    setUser(response.data);
+                } catch (error) {
+                    toast.error("آپلود عکس پروفایل با خطا مواجه شد");
+                    console.error("Image upload failed:", error);
+                }
+            };
+    
+            handleFileUpload();
+        },
+        []
+    );
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+        accept: SUPPORTED_FORMATS.reduce(
+            (acc, format) => ({ ...acc, [format]: [] }),
+            {}
+        ),
+    });
 
     const onSubmit = async (formData: any) => {
         setIsLoadingSumbit(true)
@@ -70,16 +122,46 @@ const Profile = () => {
         <>
             <div className="container mx-auto mb-40  mt-24 h-full px-4">
                 <div className="mt-6 rounded-2xl bg-white px-8 py-6 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] md:min-h-[450px]">
-                    <div className="flex w-full items-center justify-center">
-                        <img
+                    <div className="flex w-full items-center justify-center flex-col gap-3">
+                    <img
                             className="h-16 w-16 cursor-pointer rounded-full "
                             src={
-                                user.photoUrl
-                                    ? user.photoUrl
-                                    : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                image ? URL.createObjectURL(image):user.photoUrl
+                        
                             }
                             alt="Bordered avatar"
                         />
+                    <div {...getRootProps()} className="flex flex-row items-center gap-2">
+                                        <input {...getInputProps()} />
+                                        <button
+                                            className="focus-visible:ring-ring inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border border-zinc- bg-transparent px-3 text-xs font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 "
+                                            type="button"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                className="lucide lucide-upload ml-2 h-4 w-4"
+                                            >
+                                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                <polyline points="17 8 12 3 7 8"></polyline>
+                                                <line
+                                                    x1="12"
+                                                    x2="12"
+                                                    y1="3"
+                                                    y2="15"
+                                                ></line>
+                                            </svg>
+                                            تغییر عکس پروفایل
+                                        </button>
+                    </div>
+                       
                     </div>
                     <div className="mt-5 md:mt-2">
                         <div>

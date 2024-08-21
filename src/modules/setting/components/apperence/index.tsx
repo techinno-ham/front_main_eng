@@ -115,7 +115,6 @@ const Apperence = () => {
             setIsLoading(false)
         }
     }
-
     useEffect(() => {
         if (data) {
             const loadConfig = {

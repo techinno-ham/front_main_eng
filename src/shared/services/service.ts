@@ -84,6 +84,16 @@ class Services {
             )
         }
     }
+    updateUserImage = async (body: any) => {
+        try {
+            const response = await mainApi.post(API.UPDATE_PROFILE_IMAGE, body)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update profile failed",
+            )
+        }
+    }
     updateDataSource = async (body: any, botId: string) => {
         try {
             const response = await mainApi.post(
