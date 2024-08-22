@@ -5,6 +5,9 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import Services from "../../../../../../services/service"
 import useLogin from "@/src/modules/auth/hooks/login"
+import { PlanPricingName } from "@/src/shared/constanst/planPricing";
+import dayjs from "dayjs";
+
 
 export const sidebarLinks = [
     {
@@ -31,12 +34,14 @@ const UserAccount = () => {
 
     const menuRef = useRef<HTMLImageElement>(null)
     const imgRef = useRef<HTMLImageElement>(null)
-    const { user, setUser } = useUserStore()
-    const isUserEmpty = !user || Object.keys(user).length === 0
+    const { user, setUser,userPlanId } = useUserStore()
+    const isUserEmpty = !user || Object.keys(user).length === 0;
+
+    const [remainingDays, setRemainingDays] = useState<number | null>(null)
+
 
     useEffect(() => {
         if (isUserEmpty) {
-            console.log("here")
             const fetchUser = async () => {
                 try {
                     const res = await Services.checkToken()
@@ -52,7 +57,17 @@ const UserAccount = () => {
         } else {
             setLoading(false)
         }
-    }, [user])
+    }, [user]);
+
+
+    useEffect(() => {
+        if (userPlanId == "0" && user?.subscriptions?.[0]?.end_date) {
+            const endDate = dayjs(user.subscriptions[0].end_date)
+            const today = dayjs()
+            const daysLeft = endDate.diff(today, "day")
+            setRemainingDays(daysLeft)
+        }
+    }, [userPlanId, user]);
 
     const handleClickImage = () => {
         setOpen((prevStata) => !prevStata)
@@ -79,6 +94,7 @@ const UserAccount = () => {
             document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [])
+    console.log(user)
 
     return (
         <>
@@ -112,6 +128,7 @@ const UserAccount = () => {
                             ref={menuRef}
                             className="border-blue-gray-50 text-blue-gray-500 shadow-blue-gray-500/10 absolute left-1 top-16 z-10  min-w-[160px] flex-col gap-2 overflow-auto rounded-md border bg-white p-1 font-sans text-sm font-normal shadow-lg focus:outline-none"
                         >
+                          
                             <div className="px-4 py-3 ">
                                 <span className="block text-sm text-gray-900">
                                     {user?.name || "مهدیار"}
@@ -123,6 +140,33 @@ const UserAccount = () => {
                                     {user?.email || "hoshino@gmail.com"}
                                 </span>
                             </div>
+                            <div className="flex justify-center mb-1">
+                                <div className=" p-1 bg-blue-200 flex justify-center items-center rounded-md border border-blue-500">
+                                   <p className="text-[12px]">کاربر  {PlanPricingName[userPlanId]}</p>
+                                </div>
+
+                            </div>
+                            {remainingDays !== null && (
+                                        <div className="mb-3">
+                                            <p className="text-[12px] text-center text-gray-500">
+                                                {remainingDays} روز تا پایان
+                                              اعتبار حساب 
+                                            </p>
+                                            <div className="relative w-full h-2 bg-gray-200 rounded-full mt-1">
+                                                <div
+                                                    className="absolute top-0 left-0 h-full bg-green-500 rounded-full"
+                                                    style={{
+                                                        width: `${Math.max(
+                                                            ((30-remainingDays) /
+                                                                30) *
+                                                                100,
+                                                            0
+                                                        )}%`,
+                                                    }}
+                                                ></div>
+                                            </div>
+                                        </div>
+                                    )}
                             <hr className="border-blue-gray-50 " />
                             <ul className="py-1">
                                 {sidebarLinks.map((item) => {

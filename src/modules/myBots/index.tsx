@@ -15,6 +15,7 @@ import Modal from "@/src/shared/components/common/modal"
 import Image from "next/image"
 import useDebounce from "@/src/shared/hooks/Debounce"
 import Pagination from "./components/pagination"
+import useUser from "@/src/shared/hooks/user"
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
@@ -26,7 +27,10 @@ const MyBots = () => {
     const [totalPages, setTotalPages] = useState(1)
     const [totalBots, setTotalBots] = useState(0)
     const [searchText, setSearchText] = useState("")
-    const debouncedSearchText = useDebounce(searchText, 500)
+    const debouncedSearchText = useDebounce(searchText, 500);
+    const user= useUser();
+
+    
 
     useEffect(() => {
         const fetchBotList = async () => {
