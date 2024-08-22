@@ -79,7 +79,8 @@ const MyBots = () => {
             await service.deleteBot(botId)
             setMyBots((prevBots) =>
                 prevBots.filter((bot: any) => bot.bot_id !== botId),
-            )
+            );
+            setTotalBots((prevState)=>prevState - 1)
         } catch (error) {
             console.log(error)
         }
