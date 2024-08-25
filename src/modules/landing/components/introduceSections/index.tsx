@@ -116,7 +116,7 @@ const IntroduceSections = () => {
                                     type="text"
                                     className="input-url"
                                     onChange={handleInputChange}
-                                    placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..."
+                                    placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
                                 />
                             </div>
                             <div className="flex flex-col-reverse gap-2 md:flex-row md:gap-3">

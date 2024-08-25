@@ -39,13 +39,20 @@
         animation: gradient 3s linear infinite;
     }
 }
+@media (max-width: 768px) {
+    .webflow-style-input {
+        width: 95%;
+    }
+}
 
 .webflow-style-input input {
     flex-grow: 1;
-    color: white;
-    font-size: 1rem;
+    color: #000;
+    font-size: 1.1rem;
     line-height: 2.4rem;
     vertical-align: middle;
+    text-align: center; 
+    direction: ltr; 
     &::-webkit-input-placeholder {
         color: gray;
     }
