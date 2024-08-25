@@ -2,7 +2,7 @@ export const API = {
     CHECK_TOKEN: "/auth/auth-check",
     UPDATE_PROFILE: "/auth/update-user",
     UPDATE_PROFILE_IMAGE: "/auth/update-user/profileImage",
-    FETCH_LINKS: "/crawler/links",
+    FETCH_LINKS: "/crawler/linksDemo",
     CREATE_BOT: "/mybots/create",
     UPDATE_DATASOURCE: "/mybots/dataSource/update",
     UPDATE_GENERAL: "/mybots/configs/updateGeneral",

@@ -1,19 +1,18 @@
 "use client"
-import useSelectModal from "@/src/shared/components/common/selectModal/hooks/useSelectModal.ts"
-import useFetchLinks from "@/src/shared/hooks/fetchLinks"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { ClockLoader } from "react-spinners"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
 import { Calendar } from "iconsax-react"
 import "./style.css"
+import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
+import { serverAddData, serverChat } from "./actions"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
     const [loading, setLoading] = useState(false)
-    const SelectModal = useSelectModal()
+    const SelectModalChat = useChatModal()
 
     const validateInput = () => {
         // Check if input value is empty
@@ -46,10 +45,9 @@ const IntroduceSections = () => {
             setLoading(true)
             const response = await Services.fetchLink(inputValue)
             const linkArray = response.data
-            console.log(linkArray.length)
-            if (linkArray.length > 2) {
-                SelectModal.setUrls(linkArray)
-                SelectModal.onOpen()
+            if (linkArray.length > 0) {
+                await serverChat("whos is masoud farivar?")
+                SelectModalChat.onOpen()
             } else {
                 toast.error("لینک های سایت شما کافی نمی باشد.")
             }
