@@ -11,60 +11,63 @@ interface chartDemoProps {
     conversationId: any
 }
 
-const ChartDemo: React.FC<chartDemoProps> = ({
-    botData,
+const ChatBotContainer: React.FC<chartDemoProps> = ({
+    botData: initialBotData,
     botId,
     conversationId,
 }) => {
-    console.log(botData,"in progress")
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
         return formatDistanceToNow(date, { locale: faIR })
     }
-    const state = botData?.status == "active" ? true : false
-    const [botActive, setBotActive] = useState<boolean>(true)
 
-    // useEffect(() => {
-    //     let fetchIntervalId: string | number | NodeJS.Timeout | undefined
+    const [botData, setBotData] = useState(initialBotData)
+    const state = botData?.status === "inProgress" ? false : true
+    const [botActive, setBotActive] = useState<boolean>(state)
 
-    //     const fetchBotData = async () => {
-    //         try {
-    //             const response = await service.getBot(botData?.bot_id)
-    //             const status = response.data.status
-    //             if (status === "active" && !botActive) {
-    //                 toast.success("چت بات شما اکنون آماده می باشد.")
-    //                 toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
-    //                 setBotActive(true)
-    //                 clearInterval(fetchIntervalId)
-    //             } else if (status !== "active") {
-    //                 setBotActive(false)
-    //             }
-    //         } catch (error: any) {
-    //             console.error(error)
-    //         }
-    //     }
+    useEffect(() => {
+        let fetchIntervalId: string | number | NodeJS.Timeout | undefined
 
-    //     const checkBotStatus = async () => {
-    //         if (!botActive && !fetchIntervalId) {
-    //             await fetchBotData()
-    //             fetchIntervalId = setInterval(async () => {
-    //                 console.log("Polling bot status...")
-    //                 await fetchBotData()
-    //             }, 5000)
-    //         }
-    //     }
+        const fetchBotData = async () => {
+            try {
+                const response = await service.getBot(botData?.bot_id)
+                const status = response.data.status
+                if (status === "active" && !botActive) {
+                    toast.success("چت بات شما اکنون آماده می باشد.")
+                    toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
+                    setBotActive(true)
+                    clearInterval(fetchIntervalId)
+                } else if (status !== "active") {
+                    setBotActive(false)
+                }
+                
+                setBotData(response.data)
+            } catch (error: any) {
+                console.error(error)
+            }
+        }
 
-    //     checkBotStatus()
+        const checkBotStatus = async () => {
+            if (!botActive && !fetchIntervalId) {
+                await fetchBotData()
+                fetchIntervalId = setInterval(async () => {
+                    console.log("Polling bot status...")
+                    await fetchBotData()
+                }, 5000)
+            }
+        }
 
-    //     return () => {
-    //         clearInterval(fetchIntervalId)
-    //     }
-    // }, [botActive, botData])
+        checkBotStatus()
+
+        return () => {
+            clearInterval(fetchIntervalId)
+        }
+    }, [botActive, botData])
 
     return (
         <>
             <div className="mx-auto mt-10 flex max-w-5xl flex-col pb-12 md:mt-10 md:px-3">
-                <div className=" rounded-2xl bg-white shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
+                <div className="rounded-2xl bg-white shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
                             {botData?.name || "هوشینو بات"}
@@ -88,7 +91,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({
                                             وضعیت :
                                         </span>
                                         {botData?.security_configs
-                                            ?.status_bot == "enable" ? (
+                                            ?.status_bot === "enable" ? (
                                             <span className="text-sm font-semibold text-zinc-700">
                                                 <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
                                                 فعال
@@ -116,7 +119,7 @@ const ChartDemo: React.FC<chartDemoProps> = ({
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
                                         {botData?.security_configs
-                                            ?.access_bot == "private"
+                                            ?.access_bot === "private"
                                             ? "خصوصی"
                                             : "عمومی"}
                                     </span>
@@ -149,4 +152,5 @@ const ChartDemo: React.FC<chartDemoProps> = ({
         </>
     )
 }
-export default ChartDemo
+
+export default ChatBotContainer

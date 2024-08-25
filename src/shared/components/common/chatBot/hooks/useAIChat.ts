@@ -30,7 +30,7 @@ const useAIChat = (conversationId: string, botId: string) => {
                         input: {
                             conversation_id: conversationId, // Fixed conversation ID
                             init_question: message, // The message from the user
-                            collection_name: "plotset1", // Fixed collection name
+                            collection_name: botId, // Fixed collection name
                         },
                         config: {}, // Empty config object
                         kwargs: {}, // Empty kwargs object
