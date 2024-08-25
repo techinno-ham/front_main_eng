@@ -7,7 +7,7 @@ import { toast } from "sonner"
 import { Calendar } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
-import { serverAddData, serverChat } from "./actions"
+import { serverAddData } from "./actions"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -46,7 +46,7 @@ const IntroduceSections = () => {
             const response = await Services.fetchLink(inputValue)
             const linkArray = response.data
             if (linkArray.length > 0) {
-                await serverChat("whos is masoud farivar?")
+                await serverAddData(linkArray);
                 SelectModalChat.onOpen()
             } else {
                 toast.error("لینک های سایت شما کافی نمی باشد.")

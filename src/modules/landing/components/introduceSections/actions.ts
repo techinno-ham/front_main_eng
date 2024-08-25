@@ -14,6 +14,7 @@ export const serverChat = async ( userMessage:string ) => {
 
 
 export const serverAddData = async (linkArray: string[]) => {
+    console.log(linkArray)
     console.log("add data call")
     const promises = linkArray.map(async (link) => {
       const isAlreadyIndexed = await redis.sismember("indexed-urls", link);
