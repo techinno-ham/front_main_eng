@@ -16,7 +16,7 @@ const ChatDemo = ({
 }) => {
     const [valueInput, setValueInput] = useState("")
  
-    const { messages,  setIsLoading, isLoading,setMessages,updateMessage } =
+    const { messages,  setIsLoading, isLoading,setMessages,updateMessage,nameSpace } =
     useChatModal()
     const chatContainerRef = useRef<HTMLDivElement>(null)
     
@@ -36,7 +36,7 @@ const ChatDemo = ({
         setValueInput("")
         setIsLoading(true)
         try {
-            const stream = await serverChat(text);
+            const stream = await serverChat(text,nameSpace);
             const newMessageId = `message-id-AI-${messages.length}`
             setMessages({
                 sender: "AI",

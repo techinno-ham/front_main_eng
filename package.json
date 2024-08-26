@@ -20,6 +20,7 @@
         "eslint-config-prettier": "^9.1.0",
         "framer-motion": "^11.1.7",
         "iconsax-react": "^0.0.8",
+        "js-cookie": "^3.0.5",
         "keen-slider": "^6.8.6",
         "lottie-react": "^2.4.0",
         "lottie-web": "^5.12.2",
@@ -44,6 +45,7 @@
     },
     "devDependencies": {
         "@types/cookie": "^0.6.0",
+        "@types/js-cookie": "^3.0.6",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",

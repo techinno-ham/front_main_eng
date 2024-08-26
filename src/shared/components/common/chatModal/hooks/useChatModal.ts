@@ -2,12 +2,14 @@ import { create } from "zustand";
 
 interface ChatModaltore {
     isOpen: boolean | null;
+    nameSpace:string
     onOpen: () => void;
     onClose: () => void;
     onInit: () => void;
     messages: any[];
     isLoading: boolean;
     setMessages: (message: any) => void;
+    setNameSpace:(nameSpace:string)=>void
     updateMessage: (id: string, newContent: any) => void;
     setIsLoading: (isLoading: boolean) => void;
     resetChat: () => void;
@@ -15,6 +17,7 @@ interface ChatModaltore {
 
 const useChatModal = create<ChatModaltore>((set) => ({
     isOpen: null,
+    nameSpace:"",
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
     onInit: () => set({ isOpen: null }),
@@ -50,6 +53,7 @@ const useChatModal = create<ChatModaltore>((set) => ({
 
     // Method to set the loading state
     setIsLoading: (isLoading) => set({ isLoading }),
+    setNameSpace:(nameSpace)=>set({ nameSpace }),
 
     // Method to reset the chat
     resetChat: () =>

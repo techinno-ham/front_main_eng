@@ -2,20 +2,32 @@
 
 import { ragChat } from "@/src/infrastructures/lib/ragchat/rag-chat";
 import { redis } from "@/src/infrastructures/lib/ragchat/redis";
-import type { UpstashMessage } from "@upstash/rag-chat";
+import { openai, RAGChat } from "@upstash/rag-chat";
 import { createServerActionStream } from "@upstash/rag-chat/nextjs";
 
 
-export const serverChat = async ( userMessage:string ) => {
-  const { output } = await ragChat.chat(userMessage, { streaming: true });
+export const serverChat = async ( userMessage:string ,nameSpace:string) => {
+
+const ragChat = new RAGChat({
+    model: openai("gpt-4o"),
+    redis: redis,
+    sessionId: nameSpace,
+    namespace: nameSpace,
+});
+  const { output } = await ragChat.chat(userMessage, { streaming: true,sessionId:nameSpace });
   const stream = createServerActionStream(output);
   return stream;
 };
 
 
-export const serverAddData = async (linkArray: string[]) => {
+export const serverAddData = async (linkArray: string[],nameSpace:string) => {
     console.log(linkArray)
     console.log("add data call")
+    console.log(nameSpace)
+    const ragChat = new RAGChat({
+        model: openai("gpt-4o"),
+        redis: redis,
+    });
     const promises = linkArray.map(async (link) => {
       const isAlreadyIndexed = await redis.sismember("indexed-urls", link);
       console.log(isAlreadyIndexed)
@@ -24,6 +36,7 @@ export const serverAddData = async (linkArray: string[]) => {
           type: "html",
           source: link,
           config: { chunkOverlap: 50, chunkSize: 200 },
+          options: { namespace: nameSpace },
         });
         await redis.sadd("indexed-urls", link);
       }

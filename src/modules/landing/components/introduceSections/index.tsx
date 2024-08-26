@@ -8,6 +8,7 @@ import { Calendar } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
 import { serverAddData } from "./actions"
+import Cookies from "js-cookie";
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -28,7 +29,17 @@ const IntroduceSections = () => {
         }
         return true
     }
-
+    const getSessionId = () => {
+        // Retrieve the sessionId from the cookies, or generate one if it doesn't exist
+        let sessionId = Cookies.get("sessionId");
+    
+        if (!sessionId) {
+          sessionId = `${inputValue}--${crypto.randomUUID()}`.replace(/\//g, "");
+          Cookies.set("sessionId", sessionId, { path: "/" });
+        }
+    
+        return sessionId;
+      };
     const handleInputChange = (event: any) => {
         setInputValue(event.target.value)
     }
@@ -46,14 +57,18 @@ const IntroduceSections = () => {
             const response = await Services.fetchLink(inputValue)
             const linkArray = response.data
             if (linkArray.length > 0) {
-                await serverAddData(linkArray);
+                const sessionCookie =getSessionId()
+                const sessionId = ( inputValue + "--" + sessionCookie).replace(/\//g, "");
+                SelectModalChat.setNameSpace(sessionId)
+                await serverAddData(linkArray,sessionId);
                 SelectModalChat.onOpen()
             } else {
-                toast.error("لینک های سایت شما کافی نمی باشد.")
+                toast.error("اطلاعات مورد نظر کافی نمی باشد.")
             }
         } catch (error) {
             toast.error("بررسی سایت مشکل پیش امده است.")
         } finally {
+            setInputValue("")
             setLoading(false)
         }
     }
