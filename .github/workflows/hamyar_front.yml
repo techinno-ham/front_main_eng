@@ -10,7 +10,13 @@ jobs:
         runs-on: ubuntu-latest
 
         env:
-            CALLBACK_URL: ${{ secrets.NEXT_PUBLIC_BASE_API }}
+            NEXT_PUBLIC_BASE_API: ${{ secrets.NEXT_PUBLIC_BASE_API }}
+            UPSTASH_VECTOR_REST_URL: ${{ secrets.UPSTASH_VECTOR_REST_URL }}
+            UPSTASH_VECTOR_REST_TOKEN: ${{ secrets.UPSTASH_VECTOR_REST_TOKEN }}
+            OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+            UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+            UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+
 
         steps:
             - name: Checkout code
@@ -41,6 +47,11 @@ jobs:
                   tags: hamyarchat/front:latest
                   build-args: |
                       NEXT_PUBLIC_BASE_API=${{ secrets.NEXT_PUBLIC_BASE_API }}
+                      UPSTASH_VECTOR_REST_URL=${{ secrets.UPSTASH_VECTOR_REST_URL }}
+                      UPSTASH_VECTOR_REST_TOKEN=${{ secrets.UPSTASH_VECTOR_REST_TOKEN }}
+                      OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}
+                      UPSTASH_REDIS_REST_URL=${{ secrets.UPSTASH_REDIS_REST_URL }}
+                      UPSTASH_REDIS_REST_TOKEN=${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
 
             - name: Log out from Docker Hub
               run: docker logout

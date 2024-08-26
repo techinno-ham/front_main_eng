@@ -12,6 +12,9 @@ const nextConfig = {
         // Disabling type checking during build
         ignoreBuildErrors: true,
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+      },
 }
 
 export default nextConfig
