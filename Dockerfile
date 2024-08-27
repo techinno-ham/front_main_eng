@@ -39,10 +39,12 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN npm ci --production --no-optional --no-audit --force
+RUN npm i --force
 
 # Copy the rest of the application code
 COPY . .
+
+ENV NODE_ENV=production
 
 # Build the application
 RUN npm run build
@@ -74,6 +76,9 @@ ENV UPSTASH_VECTOR_REST_TOKEN=$UPSTASH_VECTOR_REST_TOKEN
 ENV OPENAI_API_KEY=$OPENAI_API_KEY
 ENV UPSTASH_REDIS_REST_URL=$UPSTASH_REDIS_REST_URL
 ENV UPSTASH_REDIS_REST_TOKEN=$UPSTASH_REDIS_REST_TOKEN
+
+
+ENV NODE_ENV=production
 
 # Expose the necessary port
 EXPOSE 3000
