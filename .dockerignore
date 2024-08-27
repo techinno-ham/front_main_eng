@@ -6,3 +6,6 @@ Dockerfile
 .git
 .gitignore
 *.md
+.env
+.env.production
+.env.development
