@@ -1,9 +1,22 @@
 "use server";
 
-import { ragChat } from "@/src/infrastructures/lib/ragchat/rag-chat";
 import { redis } from "@/src/infrastructures/lib/ragchat/redis";
 import { openai, RAGChat } from "@upstash/rag-chat";
 import { createServerActionStream } from "@upstash/rag-chat/nextjs";
+
+export const userLimitBotDemo=async ( userSession:string ) => {
+
+  const isAlreadyIndexed = await redis.sismember("indexed-user", userSession);
+  if(isAlreadyIndexed){
+    return true
+  }else{
+    return false
+  }
+}
+
+export const addUserLimitBotDemo=async ( userSession:string ) => {
+   await redis.sadd("indexed-user", userSession);
+}
 
 
 export const serverChat = async ( userMessage:string ,nameSpace:string) => {
@@ -29,9 +42,6 @@ export const serverAddData = async (linkArray: string[],nameSpace:string) => {
         redis: redis,
     });
     const promises = linkArray.map(async (link) => {
-      const isAlreadyIndexed = await redis.sismember("indexed-urls", link);
-      console.log(isAlreadyIndexed)
-      if (!isAlreadyIndexed) {
         await ragChat.context.add({
           type: "html",
           source: link,
@@ -39,7 +49,7 @@ export const serverAddData = async (linkArray: string[],nameSpace:string) => {
           options: { namespace: nameSpace },
         });
         await redis.sadd("indexed-urls", link);
-      }
+      
     });
   
     await Promise.all(promises);

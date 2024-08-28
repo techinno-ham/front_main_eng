@@ -7,7 +7,7 @@ import { toast } from "sonner"
 import { Calendar } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
-import { serverAddData } from "./actions"
+import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
 import Cookies from "js-cookie";
 
 const IntroduceSections = () => {
@@ -54,14 +54,22 @@ const IntroduceSections = () => {
 
         try {
             setLoading(true)
+            const sessionCookie =getSessionId()
+            const alreadyCreated=await userLimitBotDemo(sessionCookie);
+            if(alreadyCreated){
+                toast.error("میزان تعداد ساختن چت بات دمو شما به اتمام رسیده است.")
+                toast.info("برای استفاده از امکانات بیشتر وارد پنل کاربری شوید.")
+                return;
+            }
             const response = await Services.fetchLink(inputValue)
             const linkArray = response.data
             if (linkArray.length > 0) {
-                const sessionCookie =getSessionId()
                 const sessionId = ( inputValue + "--" + sessionCookie).replace(/\//g, "");
                 SelectModalChat.setNameSpace(sessionId)
+                SelectModalChat.setLinkCrawlered(linkArray)
                 await serverAddData(linkArray,sessionId);
                 SelectModalChat.onOpen()
+                await addUserLimitBotDemo(sessionCookie)
             } else {
                 toast.error("اطلاعات مورد نظر کافی نمی باشد.")
             }
@@ -128,6 +136,7 @@ const IntroduceSections = () => {
                                 <input
                                     type="text"
                                     className="input-url"
+                                    value={inputValue}
                                     onChange={handleInputChange}
                                     placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
                                 />

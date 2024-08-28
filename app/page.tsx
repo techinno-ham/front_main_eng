@@ -12,7 +12,6 @@ export default function Home() {
             <Header />
             <main>
                 <Landing />
-                <SelectModalCustom />
                 <SelectModalChat />
             </main>
             <Footer />
