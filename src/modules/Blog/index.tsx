@@ -93,7 +93,7 @@ const Blog = () => {
                     </div>
                 </main>
 
-                <aside
+                {/* <aside
                     aria-label="Related articles"
                     className="bg-gray-50 py-8 lg:py-24 dark:bg-gray-800"
                 >
@@ -192,7 +192,7 @@ const Blog = () => {
                             </article>
                         </div>
                     </div>
-                </aside>
+                </aside> */}
             </>
         </>
     )
