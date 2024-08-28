@@ -21,7 +21,7 @@ interface ChatModaltore {
 }
 
 const useChatModal = create<ChatModaltore>((set) => ({
-    isOpen: null,
+    isOpen: true,
     nameSpace: "",
     isDialogOpen: true, 
     linkCrawlered: [],

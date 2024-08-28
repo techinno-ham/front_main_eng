@@ -100,7 +100,7 @@ const ChatDemo = ({
     }, [messages])
     return (
         <>
-                    <div className="flex h-[80vh] max-h-[700px] max-w-[450px] flex-auto shrink-0 flex-col overflow-hidden rounded-xl border border-zinc-300  bg-zinc-100 relative">
+                    <div className="flex    flex-auto shrink-0 flex-col overflow-hidden rounded-xl border border-zinc-300  bg-zinc-100 relative h-full w-full">
                         <div className={`absolute h-full w-full bg-[#6b728080] z-50 flex justify-center items-center ${isDialogOpen ? "visible " : "invisible"}`}>
                         <div
                          onClick={(e) => e.stopPropagation()}
@@ -194,7 +194,7 @@ const ChatDemo = ({
                                     </div>
                                     <div className="flex items-center">
                                         <h1 className="text-lg font-bold text-black ">
-                                            همیار چت
+                                            همیار چت دمو
                                         </h1>
                                     </div>
                                 </div>
