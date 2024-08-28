@@ -12,7 +12,10 @@ export default async function middleware(req: NextRequest) {
     // Set sessionId cookie if it doesn't exist
     const sessionIdCookie = req.cookies.get("sessionId");
     if (!sessionIdCookie) {
-        res.cookies.set("sessionId", 'testi');
+
+        const sessionId = crypto.randomUUID(); 
+        console.log(sessionId)
+        res.cookies.set("sessionId", sessionId);
     }
 
     if (

@@ -2,27 +2,37 @@ import { create } from "zustand";
 
 interface ChatModaltore {
     isOpen: boolean | null;
-    nameSpace:string
+    nameSpace: string;
+    isDialogOpen: boolean;
+    linkCrawlered: string[];
     onOpen: () => void;
     onClose: () => void;
     onInit: () => void;
+    openDialog: () => void;  
+    closeDialog: () => void;
     messages: any[];
     isLoading: boolean;
     setMessages: (message: any) => void;
-    setNameSpace:(nameSpace:string)=>void
+    setLinkCrawlered: (linkCrawlered: string[]) => void;
+    setNameSpace: (nameSpace: string) => void;
     updateMessage: (id: string, newContent: any) => void;
     setIsLoading: (isLoading: boolean) => void;
     resetChat: () => void;
 }
 
 const useChatModal = create<ChatModaltore>((set) => ({
-    isOpen: null,
-    nameSpace:"",
+    isOpen: true,
+    nameSpace: "",
+    isDialogOpen: true, 
+    linkCrawlered: [],
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
     onInit: () => set({ isOpen: null }),
+    openDialog: () => set({ isDialogOpen: true }),
+    closeDialog: () => set({ isDialogOpen: false }),
 
-    // Initial state for chat-related properties
+    setLinkCrawlered: (linkCrawlered: string[]) => set({ linkCrawlered }),
+
     messages: [
         {
             sender: "AI",
@@ -35,13 +45,11 @@ const useChatModal = create<ChatModaltore>((set) => ({
     ],
     isLoading: false,
 
-    // Method to add a new message
     setMessages: (newMessage) =>
         set((state) => ({
             messages: [...state.messages, newMessage],
         })),
 
-    // Method to update a specific message by its ID
     updateMessage: (id, newContent) =>
         set((state) => ({
             messages: state.messages.map((message) =>
@@ -51,11 +59,10 @@ const useChatModal = create<ChatModaltore>((set) => ({
             ),
         })),
 
-    // Method to set the loading state
     setIsLoading: (isLoading) => set({ isLoading }),
-    setNameSpace:(nameSpace)=>set({ nameSpace }),
+    
+    setNameSpace: (nameSpace) => set({ nameSpace }),
 
-    // Method to reset the chat
     resetChat: () =>
         set({
             messages: [

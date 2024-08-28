@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     transform: scale(0);
-    z-index: 9999;
+    z-index: 99999999;
 }
 #modalContainer.one {
     transform: scaleY(0.01) scaleX(0);
@@ -32,8 +32,9 @@
     height: 100%;
 }
 #modalContainer .modal-background .modal {
-    width: 500px;
-    height: 680px;
+    background: rgba(0, 0, 0, 0.75);
+    width: 440px;
+    height: 660px;
     display: flex;
     border-radius: 18px;
     position: absolute;
