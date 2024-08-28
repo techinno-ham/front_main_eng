@@ -6,7 +6,7 @@ async function postData() {
 
         if (!token)
             token =
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiYm90SWQiOiJjNDYzMDJhNC1jNmY5LTQ2YzYtOTJkZC04Y2NiZDhlOTlmMmUifSwiaWF0IjoxNzIzODg4NzE1LCJleHAiOjE3MjY0ODA3MTV9.DtB_sV1Cgc5g56dIrLWIEqu25zKGoYE1ahs7Q-LStZk"
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOnsiYm90SWQiOiJjNjhhZjUxMC04YTU3LTRjMDMtYmVhOC0zYTJlMDQzY2UyMzkifSwiaWF0IjoxNzI0NTAyNTAyLCJleHAiOjE3MjcwOTQ1MDJ9.pSiO4ml8cH7yba83-T-RK_6JU1TnVSt5Y1biZPHNbyY"
 
         // Create the JSON payload
         var payload = {
@@ -38,18 +38,18 @@ async function postData() {
     }
 
     let container = document.createElement("div")
-    container.id = "plotsetCustomId"
+    container.id = "chatbotContainer"
     container.style.direction = "ltr"
     document.body.appendChild(container)
 
     var cssLink = document.createElement("link")
     cssLink.rel = "stylesheet"
-    cssLink.href = `${window.location.protocol}//${window.location.host}/scripts/main.1267c309.css`
+    cssLink.href = `${window.location.protocol}//${window.location.host}/scripts/main.3d20f9a1.css`
     document.head.appendChild(cssLink)
 
     // Load JS
     var jsScript = document.createElement("script")
-    jsScript.src = `${window.location.protocol}//${window.location.host}/scripts/main.b4c5a894.js`
+    jsScript.src = `${window.location.protocol}//${window.location.host}/scripts/main.5c4c6e25.js`
     document.body.appendChild(jsScript)
 }
 
