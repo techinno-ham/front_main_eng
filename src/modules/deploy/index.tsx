@@ -17,7 +17,7 @@ const Deploy = () => {
     const viewController = useStoreViewControllerDeploy()
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
-    const { setActive } = useStoreActive()
+    const { setActive,setBotHash } = useStoreActive()
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
@@ -33,6 +33,7 @@ const Deploy = () => {
             setLoading(true)
             try {
                 const response = await service.getConfigs(botId)
+                setBotHash(response.data.bot_id_hash)
                 setActive(
                     response.data.security_configs.access_bot == "general",
                 )

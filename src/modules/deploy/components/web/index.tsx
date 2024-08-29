@@ -8,21 +8,23 @@ const Web = () => {
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
 
-    const { active, isLoding, setLoading, setActive } = useStoreActive()
+    const { active, isLoding, setLoading, setActive,botHash } = useStoreActive();
+    const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN;
 
     const iframeCode = `<iframe
-    src="https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW"
+    src="https://www.hamyar.chat/chatbot-iframe/${botHash}"
     width="100%"
     style="height: 100%; min-height: 700px"
     frameborder="0"
     ></iframe>`
 
-    const scriptCode = `<iframe
-    src="https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW"
-    width="100%"
-    style="height: 100%; min-height: 700px"
-    frameborder="0"
-    ></iframe>`
+    const scriptCode = `<script
+    src="${baseCdnUrl}/widget/hamyarchat-embeded.js"
+    chat-hash="${botHash}"
+    id="myChatbotScript"
+    nonce="XUENAJFW"
+    defer></script>`;
+
 
     const handleCopyIframe = () => {
         navigator.clipboard
@@ -149,11 +151,11 @@ const Web = () => {
                                                 whiteSpace: "inherit",
                                             }}
                                         >
-                                            &lt;script
+                                               &lt;script
                                             {"\n"}
-                                            src="https://widget.galichat.com/gali-embeded.min.js"
-                                            {"\n"}
-                                            chat-hash="cbn3t7syn3tfmzx389skua"
+                                            src="{baseCdnUrl}/widget/hamyarchat-embeded.js"
+                                            {"\n"}chat-hash="{botHash}"
+                                            {"\n"}id="myChatbotScript"
                                             {"\n"}defer
                                             {"\n"}&gt;&lt;/script&gt;
                                         </code>

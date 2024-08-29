@@ -32,13 +32,6 @@ export default function RootLayout({
             >
                 <Toaster position="top-center" richColors />
                 {children}
-                {/* <Script
-                    src="/scripts/bot.js"
-                    id="myScript"
-                    nonce="XUENAJFW"
-                    defer
-                    data-token=""
-                /> */}
                 <script
                     src="http://84.46.250.91:9000/widget/hamyarchat-embeded.js"
                     id="myChatbotScript"
