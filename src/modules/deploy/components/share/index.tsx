@@ -5,11 +5,11 @@ import service from "@/src/shared/services/service"
 import { usePathname } from "next/navigation"
 
 const Sahre = () => {
-    const { active, isLoding, setLoading, setActive } = useStoreActive()
+    const { active, isLoding, setLoading, setActive,botHash } = useStoreActive()
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
 
-    const urlCode = `https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW`
+    const urlCode = `https://www.hamyar.chat/chatbot-iframe/${botHash}`
 
     const handleCopyUrl = () => {
         navigator.clipboard
@@ -81,7 +81,7 @@ const Sahre = () => {
                                                 whiteSpace: "inherit",
                                             }}
                                         >
-                                            https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW
+                                            https://www.hamyar.chat/chatbot-iframe/{botHash}
                                         </code>
                                     </pre>
                                 </div>

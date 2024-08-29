@@ -71,7 +71,7 @@ const Web = () => {
             <div>
                 {active ? (
                     <>
-                        <div className="flex flex-col gap-2 p-6 pt-0">
+                        <div className="flex flex-col gap-2 p-6 pt-0 ">
                             <div className="z-10 w-full">
                                 <div>
                                     <div className="mt-3">
@@ -107,7 +107,7 @@ const Web = () => {
                                         >
                                             &lt;iframe
                                             {"\n"}
-                                            src="https://www.chatbase.co/chatbot-iframe/1w8PDIhX6DoaODiIDOveW"
+                                            src="https://www.hamyar.chat/chatbot-iframe/{botHash}"
                                             {"\n"}width="100%"
                                             {"\n"}style="height: 100%;
                                             min-height: 700px"
@@ -118,7 +118,7 @@ const Web = () => {
                                 <div className="mt-3 flex justify-center">
                                     <button
                                         onClick={handleCopyIframe}
-                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100/70 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100/70 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 "
                                     >
                                         <Copy size="18" color="#000" />
                                         <span className="mr-1">
@@ -164,7 +164,7 @@ const Web = () => {
                                 <div className="mt-3 flex justify-center">
                                     <button
                                         onClick={handleCopyScript}
-                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100/70 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                                        className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-xl border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100/70 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 "
                                     >
                                         <Copy size="18" color="#000" />
                                         <span className="mr-1">
