@@ -19,8 +19,8 @@ const Web = () => {
     ></iframe>`
 
     const scriptCode = `<script
-    src="${baseCdnUrl}/widget/hamyarchat-embeded.js"
-    chat-hash="${botHash}"
+    src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embeded.js"
+    data-token="${botHash}"
     id="myChatbotScript"
     nonce="XUENAJFW"
     defer></script>`;
@@ -153,8 +153,8 @@ const Web = () => {
                                         >
                                                &lt;script
                                             {"\n"}
-                                            src="{baseCdnUrl}/widget/hamyarchat-embeded.js"
-                                            {"\n"}chat-hash="{botHash}"
+                                            src="{baseCdnUrl}/widget/v1.0.0/hamyarchat-embeded.js"
+                                            {"\n"}data-token="{botHash}"
                                             {"\n"}id="myChatbotScript"
                                             {"\n"}defer
                                             {"\n"}&gt;&lt;/script&gt;
