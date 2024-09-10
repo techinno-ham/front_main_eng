@@ -1,10 +1,11 @@
 import axios from "axios"
 import { parseCookies } from "nookies"
 
+const baseURL = process.env.NEXT_PUBLIC_BASE_API || "http://localhost:12000/v1";
 const mainApi = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_BASE_API,
-})
-console.log(process.env.NEXT_PUBLIC_BASE_API, "ss")
+    baseURL: baseURL,
+});
+console.log(baseURL, "ss");
 
 mainApi.interceptors.request.use(
     (config: any) => {
