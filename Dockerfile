@@ -25,8 +25,6 @@ ENV OPENAI_API_KEY=$OPENAI_API_KEY
 ENV UPSTASH_REDIS_REST_URL=$UPSTASH_REDIS_REST_URL
 ENV UPSTASH_REDIS_REST_TOKEN=$UPSTASH_REDIS_REST_TOKEN
 
-# Set NODE_ENV to production for optimized builds
-ENV NODE_ENV=production
 
 # Build the application
 RUN npm run build
