@@ -84,4 +84,4 @@ ENV NODE_ENV=production
 EXPOSE 3000
 
 # Use a more optimized command for production
-CMD ["npm", "run", "start"]
+CMD ["npx", "next", "start"]
