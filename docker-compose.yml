@@ -8,8 +8,7 @@ services:
     restart: unless-stopped
     expose:
       - "3000"  # Expose port for internal communication with Nginx
-    volumes:
-      - .:/app  # Mount the current directory to /app in the container, useful for development
+
 
   nginx:
     image: docker.arvancloud.ir/nginx:latest
