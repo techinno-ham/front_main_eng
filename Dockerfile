@@ -1,5 +1,5 @@
-# Stage 1: Builder
-FROM node:18-alpine as builder
+# Use the official Node.js image as the base image
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -9,20 +9,6 @@ RUN npm install --force
 
 # Copy the rest of the application code
 COPY . .
-
-# Set environment variable for building
-ENV NODE_ENV=production
-
-# Build the application
-RUN npm run build
-
-# Stage 2: Production
-FROM node:18-alpine as production
-
-WORKDIR /app
-
-# Copy only the built application and necessary files from the builder stage
-COPY --from=builder /app ./
 
 # Set environment variables
 ARG NEXT_PUBLIC_BASE_API
@@ -39,10 +25,14 @@ ENV OPENAI_API_KEY=$OPENAI_API_KEY
 ENV UPSTASH_REDIS_REST_URL=$UPSTASH_REDIS_REST_URL
 ENV UPSTASH_REDIS_REST_TOKEN=$UPSTASH_REDIS_REST_TOKEN
 
+# Set NODE_ENV to production for optimized builds
 ENV NODE_ENV=production
+
+# Build the application
+RUN npm run build
 
 # Expose the necessary port
 EXPOSE 3000
 
-# Use the production command
+# Use the production command to start the app
 CMD ["npm", "run", "start"]
