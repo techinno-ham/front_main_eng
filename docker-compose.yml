@@ -16,6 +16,8 @@ services:
     restart: unless-stopped
     expose:
       - "3000"  # Expose port for internal communication with Nginx
+    env_file:
+      - .env.production  # Specify your environment file
 
   nginx:
     image: docker.arvancloud.ir/nginx:latest
