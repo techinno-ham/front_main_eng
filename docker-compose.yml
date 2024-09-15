@@ -4,11 +4,18 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_BASE_API: ${NEXT_PUBLIC_BASE_API}
+        NEXT_PUBLIC_BASE_CDN: ${NEXT_PUBLIC_BASE_CDN}
+        UPSTASH_VECTOR_REST_URL: ${UPSTASH_VECTOR_REST_URL}
+        UPSTASH_VECTOR_REST_TOKEN: ${UPSTASH_VECTOR_REST_TOKEN}
+        OPENAI_API_KEY: ${OPENAI_API_KEY}
+        UPSTASH_REDIS_REST_URL: ${UPSTASH_REDIS_REST_URL}
+        UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_REDIS_REST_TOKEN}
     container_name: frontend-app
     restart: unless-stopped
     expose:
       - "3000"  # Expose port for internal communication with Nginx
-
 
   nginx:
     image: docker.arvancloud.ir/nginx:latest
