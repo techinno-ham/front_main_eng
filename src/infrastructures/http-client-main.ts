@@ -5,7 +5,6 @@ const baseURL = process.env.NEXT_PUBLIC_BASE_API || "https://hamyar.chat/api/v1"
 const mainApi = axios.create({
     baseURL: baseURL,
 });
-console.log(baseURL, "ss");
 
 mainApi.interceptors.request.use(
     (config: any) => {

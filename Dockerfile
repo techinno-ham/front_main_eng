@@ -1,5 +1,5 @@
 # Use the official Node.js image as the base image
-FROM docker.arvancloud.ir/node:latest
+FROM docker.arvancloud.ir/node:18-alpine
 
 WORKDIR /app
 
