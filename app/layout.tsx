@@ -33,7 +33,7 @@ export default function RootLayout({
                 <Toaster position="top-center" richColors />
                 {children}
        <script
-    src="http://84.46.250.91:9000/widget/v1.0.0/hamyarchat-embeded.js"
+    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embeded.js"
     data-token="ZWNkYWRkZTctY2U2ZS00M2ViLWJjNzktMjRkMDgxODhiZTc3LmVjOGJiNzRm"
     id="myChatbotScript"
     nonce="XUENAJFW"
