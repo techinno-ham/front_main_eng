@@ -6,6 +6,7 @@ import Script from "next/script"
 import { Toaster, toast } from "sonner"
 import { usePathname } from "next/navigation"
 import { GoogleTagManager } from "@next/third-parties/google"
+import NextTopLoader from "nextjs-toploader";
 
 const myFont = localFont({
     src: "../public/fonts/iranyekanwebbold.woff2",
@@ -30,14 +31,16 @@ export default function RootLayout({
             <body
                 className={`${myFont.className} ${isMyBotsPath && "bg-[#F6F8FB]"}`}
             >
+                
                 <Toaster position="top-center" richColors />
+                <NextTopLoader />
                 {children}
-       <script
+       {/* <script
     src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embeded.js"
     data-token="ZWNkYWRkZTctY2U2ZS00M2ViLWJjNzktMjRkMDgxODhiZTc3LmVjOGJiNzRm"
     id="myChatbotScript"
     nonce="XUENAJFW"
-    defer></script>
+    defer></script> */}
                 <noscript>
                     <iframe
                         src="https://www.googletagmanager.com/ns.html?id=GTM-T2X2G5KR"
