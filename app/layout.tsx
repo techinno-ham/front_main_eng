@@ -35,12 +35,12 @@ export default function RootLayout({
                 <Toaster position="top-center" richColors />
                 <NextTopLoader />
                 {children}
-       {/* <script
-    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embeded.js"
-    data-token="ZWNkYWRkZTctY2U2ZS00M2ViLWJjNzktMjRkMDgxODhiZTc3LmVjOGJiNzRm"
-    id="myChatbotScript"
-    nonce="XUENAJFW"
-    defer></script> */}
+                <script
+                    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embeded.js"
+                    hamyar-bot-token="ZDZlNGRmMjktOTAzOC00ZDhhLWEwODctMmZkODA5NzJmYjZmLmM0NWQ0ZTIx"
+                    id="hamyarChatbotScript"
+                     nonce="XUENAJFW"
+                 defer></script>
                 <noscript>
                     <iframe
                         src="https://www.googletagmanager.com/ns.html?id=GTM-T2X2G5KR"
