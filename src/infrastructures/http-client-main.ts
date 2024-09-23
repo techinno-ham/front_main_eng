@@ -1,7 +1,7 @@
 import axios from "axios"
 import { parseCookies } from "nookies"
 
-const baseURL = process.env.NEXT_PUBLIC_BASE_API || "https://hamyar.chat/api/v1";
+const baseURL = process.env.NEXT_PUBLIC_BASE_API || "http://localhost:12000/v1";
 const mainApi = axios.create({
     baseURL: baseURL,
 });

@@ -9,7 +9,7 @@ const Web = () => {
     const botId = pathname.split("/")[2]
 
     const { active, isLoding, setLoading, setActive,botHash } = useStoreActive();
-    const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN;
+    const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN || "https://hamyar.chat/cdn";
 
     const iframeCode = `<iframe
     src="https://www.hamyar.chat/chatbot-iframe/${botHash}"
@@ -19,9 +19,9 @@ const Web = () => {
     ></iframe>`
 
     const scriptCode = `<script
-    src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embeded.js"
-    data-token="${botHash}"
-    id="myChatbotScript"
+    src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
+    hamyar-bot-token="${botHash}"
+    id="hamyarChatbotScript"
     nonce="XUENAJFW"
     defer></script>`;
 
