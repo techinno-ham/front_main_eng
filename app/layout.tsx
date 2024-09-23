@@ -36,7 +36,7 @@ export default function RootLayout({
                 <NextTopLoader />
                 {children}
                 <script
-                    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embeded.js"
+                    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
                     hamyar-bot-token="ZDZlNGRmMjktOTAzOC00ZDhhLWEwODctMmZkODA5NzJmYjZmLmM0NWQ0ZTIx"
                     id="hamyarChatbotScript"
                      nonce="XUENAJFW"
