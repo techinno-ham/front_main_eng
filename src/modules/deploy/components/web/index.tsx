@@ -153,9 +153,9 @@ const Web = () => {
                                         >
                                                &lt;script
                                             {"\n"}
-                                            src="{baseCdnUrl}/widget/v1.0.0/hamyarchat-embeded.js"
-                                            {"\n"}data-token="{botHash}"
-                                            {"\n"}id="myChatbotScript"
+                                            src="{baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
+                                            {"\n"}hamyar-bot-token="{botHash}"
+                                            {"\n"}id="hamyarChatbotScript"
                                             {"\n"}defer
                                             {"\n"}&gt;&lt;/script&gt;
                                         </code>
