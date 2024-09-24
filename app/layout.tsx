@@ -40,6 +40,7 @@ export default function RootLayout({
                     hamyar-bot-token="ZDZlNGRmMjktOTAzOC00ZDhhLWEwODctMmZkODA5NzJmYjZmLmM0NWQ0ZTIx"
                     id="hamyarChatbotScript"
                      nonce="XUENAJFW"
+                     async
                  defer></script>
                 <noscript>
                     <iframe
