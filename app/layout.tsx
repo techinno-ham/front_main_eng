@@ -39,8 +39,8 @@ export default function RootLayout({
                     src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
                     hamyar-bot-token="ZDZlNGRmMjktOTAzOC00ZDhhLWEwODctMmZkODA5NzJmYjZmLmM0NWQ0ZTIx"
                     id="hamyarChatbotScript"
-                     nonce="XUENAJFW"
-                     async
+                    nonce="XUENAJFW"
+                    async
                  defer></script>
                 <noscript>
                     <iframe
