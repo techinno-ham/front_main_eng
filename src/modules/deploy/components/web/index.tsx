@@ -16,13 +16,13 @@ const Web = () => {
     width="100%"
     style="height: 100%; min-height: 700px"
     frameborder="0"
+    loading="lazy"
     ></iframe>`
 
     const scriptCode = `<script
     src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
     hamyar-bot-token="${botHash}"
     id="hamyarChatbotScript"
-    nonce="XUENAJFW"
     defer></script>`;
 
 
