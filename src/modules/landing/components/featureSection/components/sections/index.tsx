@@ -93,7 +93,7 @@ const Section = ({
                             initial="hidden"
                             animate={animController}
                             transition={{ duration: 1, delay: 1.2 }}
-                            className="text-darker-green-grey content mt-6 text-sm leading-[200%] text-zinc-400 md:text-lg"
+                            className="text-darker-green-grey text-justify content mt-6 text-sm leading-[200%] text-zinc-400 md:text-lg"
                         >
                             {desc}
                         </motion.p>
