@@ -122,26 +122,16 @@ const Header = () => {
                             </>
                         ) : (
                             <>
-                                <button
-                                    onClick={() => router.push("/auth/login")}
-                                    type="button"
-                                    className="hidden rounded-lg px-4  py-2 text-center text-sm font-medium text-white md:block"
-                                    style={{
-                                        backgroundColor: "rgb(29 78 216)",
-                                    }}
-                                >
-                                    ورود | ثبت نام
-                                </button>
-                                <button
-                                    onClick={() => router.push("/auth/login")}
-                                    type="button"
-                                    className="rounded-lg px-4  py-2 text-center text-sm font-medium text-white md:hidden"
-                                    style={{
-                                        backgroundColor: "rgb(29 78 216)",
-                                    }}
-                                >
-                                    ورود
-                                </button>
+                                <Link href="/auth/login" passHref>
+    <button className="hidden rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:block" style={{ backgroundColor: "rgb(29 78 216)" }}>
+        ورود | ثبت نام
+    </button>
+</Link>
+<Link href="/auth/login" passHref>
+    <button className="rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:hidden" style={{ backgroundColor: "rgb(29 78 216)" }}>
+        ورود
+    </button>
+</Link>
                                 {/* <button
                                     onClick={() =>
                                         router.push("/auth/register")

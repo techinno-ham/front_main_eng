@@ -5,6 +5,7 @@ import Image from "next/image"
 import "./style.css"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
+import Link from "next/link"
 
 const TryNow = () => {
     const mainRef = useRef(null)
@@ -63,10 +64,14 @@ const TryNow = () => {
                             </div>
                         </div>
                         <div className="flex w-full">
-                            <button className=" hover:white  rounded-[10px] bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2  focus-visible:outline-offset-2  focus-visible:outline-white">
-                                رایگان شروع کنید
-                                <span aria-hidden="true"></span>
-                            </button>
+                        <Link href="/auth/login" passHref>
+            <button
+                className="hover:white rounded-[10px] bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+                رایگان شروع کنید
+                <span aria-hidden="true"></span>
+            </button>
+        </Link>
                         </div>
                     </div>
                 </div>
