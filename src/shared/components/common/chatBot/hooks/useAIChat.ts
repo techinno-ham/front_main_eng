@@ -20,7 +20,7 @@ const useAIChat = (conversationId: string, botId: string) => {
 
         try {
             const response = await fetch(
-                "http://161.97.98.162:8000/hamyarchat/invoke",
+                "https://hamyar.chat/chat/hamyarchat/invoke",
                 {
                     method: "POST",
                     headers: {

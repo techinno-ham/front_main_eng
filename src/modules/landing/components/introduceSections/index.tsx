@@ -21,14 +21,27 @@ const IntroduceSections = () => {
             toast.error("آدرس وبسایت نمی‌تواند خالی باشد.")
             return false
         }
-        // Check if input value is a valid URL
-        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/
-        if (!urlPattern.test(inputValue)) {
+    
+        // Normalize the input to add "http://" or "https://" if missing
+        let normalizedInput = inputValue.trim()
+        
+        // Add "https://" if no protocol is present
+        if (!/^https?:\/\//i.test(normalizedInput)) {
+            normalizedInput = 'https://' + normalizedInput;
+        }
+    
+        // Regex for validating the normalized URL
+        const urlPattern = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(:[0-9]{1,5})?(\/.*)?$/;
+    
+        if (!urlPattern.test(normalizedInput)) {
             toast.error("آدرس وبسایت وارد شده معتبر نیست.")
             return false
         }
+    
+        // Further checks: DNS resolution or basic pinging of the URL could be done
         return true
     }
+    
     const getSessionId = () => {
         // Retrieve the sessionId from the cookies, or generate one if it doesn't exist
         let sessionId = Cookies.get("sessionId");
