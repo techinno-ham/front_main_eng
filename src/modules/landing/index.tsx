@@ -5,14 +5,14 @@ import FeaturesCards from "./components/featuresCards"
 import IntroduceSections from "./components/introduceSections"
 import PowerfulFeaturesSection from "./components/powerfulFeaturesSection"
 import SetupSection from "./components/setupSection"
-import TrustBrnadSections from "./components/trustBrandSections"
+import TrustBrandSections from "./components/trustBrandSections"
 
 const Landing = () => {
     return (
         <>
             <div>
                 <IntroduceSections />
-                <TrustBrnadSections />
+                <TrustBrandSections />
                 <CostSection />
                 <SetupSection />
                 <FeatureSection />
