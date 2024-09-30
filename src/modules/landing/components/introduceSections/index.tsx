@@ -9,6 +9,7 @@ import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
 import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
 import Cookies from "js-cookie";
+import UrlDemo from "../RiveChatbot"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -170,13 +171,14 @@ const IntroduceSections = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="mt-[25px] flex justify-center md:mt-[45px]">
-                            <Image
+                        <div className="mt-[25px] mx-auto flex justify-center items-center md:mt-[45px] h-[500px] w-[500px]">
+                            {/* <Image
                                 src="/images/phone.svg"
                                 height="400"
                                 width="600"
                                 alt="Logo"
-                            />
+                            /> */}
+                            <UrlDemo/>
                         </div>
                     </div>
                 </div>
