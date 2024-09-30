@@ -1,7 +1,10 @@
 "use client"
 import Image from "next/image"
 import "keen-slider/keen-slider.min.css"
-import { useKeenSlider } from "keen-slider/react"
+import { useKeenSlider } from "keen-slider/react";
+
+//import { Splide, SplideSlide } from '@splidejs/react-splide';
+//https://codepen.io/shoegaze-k/pen/QWXreKe
 
 let brands = [
     { link: "", image: "jabama.png" },
