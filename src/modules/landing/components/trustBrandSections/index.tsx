@@ -94,7 +94,7 @@ let brands = [
 
 const TrustBrandSections = () => {
     return (
-        <div className="container-medium w-container container mx-auto mt-8 h-max overflow-hidden text-center md:mt-0">
+        <div className="container-medium w-container container mx-auto mt-8 h-max text-center md:mt-0">
             {/* Uncomment and customize the section below if needed
             <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
@@ -106,10 +106,12 @@ const TrustBrandSections = () => {
                 </h3>
             </div>
             */}
-            <div className="navigation-wrapper mt-2 md:mt-10">
-                <Splide options={{ 
+            <div className="navigation-wrapper mt-2 md:mt-10 overflow-visible">
+                <Splide 
+                style={{overflow: "visible"}}
+                options={{ 
                     type: 'loop', 
-                    perPage: 5,
+                    perPage: 7,
                     perMove: 1, 
                     gap: '5px', 
                     direction: 'rtl', // Enable RTL
@@ -132,9 +134,10 @@ const TrustBrandSections = () => {
                     // },
                 }} aria-label="Brand Slider">
                     {brands?.map((brand, index) => (
-                        <SplideSlide key={index}>
-                            <div className="">
+                        <SplideSlide key={index} style={{overflow: "visible"}}>
+                            <div className="mx-auto overflow-visible">
                                 <Image
+                                    className="mx-auto"
                                     src={`/images/brands/${brand.image}`}
                                     height="70"
                                     width="100"
