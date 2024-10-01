@@ -24,7 +24,7 @@ const SetupSection = () => {
                 </div>
 
                 <div className="mx-auto mt-4 grid grid-cols-1 gap-4 md:grid-cols-3  md:gap-6 ">
-                    <div className="relative flex flex-col rounded-xl bg-zinc-100 bg-clip-border text-gray-700">
+                    <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
                         <div className="absolute left-4 top-3">
                             <Box2 size="32" color="#1d4ed8" />
                         </div>
@@ -39,25 +39,27 @@ const SetupSection = () => {
                                 لینک وب سایت یا فایل های خود یا متن ها خود را
                                 وارد میکنید.
                             </p>
+                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"></img>
                         </div>
                     </div>
-                    <div className="relative flex flex-col rounded-xl bg-[#1d4ed8] bg-clip-border text-gray-700">
+                    <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
                         <div className="absolute left-4 top-3">
-                            <ChemicalGlass size="32" color="#fff" />
+                            <ChemicalGlass size="32" color="#1d4ed8" />
                         </div>
                         <div className="p-6">
-                            <h5 className="block text-right text-xl font-semibold leading-snug tracking-normal text-white antialiased">
+                            <h5 className="block text-right text-xl font-semibold leading-snug tracking-normal text-gray-700 antialiased">
                                 مرحله 2
                             </h5>
-                            <p className="mb-1 mt-2 text-right font-semibold  text-white">
+                            <p className="mb-1 mt-2 text-right font-semibold  text-gray-900">
                                 آموزش چت بات
                             </p>
-                            <p className="text-right  text-sm text-gray-300">
-                                چت بات را با داده های خود آموزش دهید.
+                            <p className="text-right  text-sm text-zinc-500">
+                                چت بات را با داده های خود  داده های خود  داده های خودآموزش دهید.
                             </p>
+                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-2.png"></img>
                         </div>
                     </div>
-                    <div className="relative flex flex-col rounded-xl bg-zinc-100 bg-clip-border text-gray-700">
+                    <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
                         <div className="absolute left-4 top-3">
                             <Magicpen size="32" color="#1d4ed8" />
                         </div>
@@ -72,6 +74,7 @@ const SetupSection = () => {
                                 بدون هیچ دانشی از همیار چت در سایت و یا جاهای
                                 مختلفی استفاده کنید.
                             </p>
+                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-3.png"></img>
                         </div>
                     </div>
                 </div>
