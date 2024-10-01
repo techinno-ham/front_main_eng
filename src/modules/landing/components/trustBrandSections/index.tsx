@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
-import "keen-slider/keen-slider.min.css"
-import { useKeenSlider } from "keen-slider/react";
+//import "keen-slider/keen-slider.min.css"
+//import { useKeenSlider } from "keen-slider/react";
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';

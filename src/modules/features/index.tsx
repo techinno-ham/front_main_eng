@@ -1,18 +1,3 @@
-//https://pagedone.io/blocks/full-pages/about-us-page
-//https://www.freepik.com/free-vector/teamwork-concept-landing-page_5155714.htm#fromView=search&page=1&position=2&uuid=f77b3277-49b0-4378-81f7-8d9417bf6546
-"use client"
-
-import React, { useRef, useState } from "react"
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react"
-
-// Import Swiper styles
-import "swiper/css"
-import "swiper/css/effect-creative"
-import Link from "next/link"
-
-// import required modules
-
 const Features = () => {
     return (
         <>
