@@ -108,7 +108,7 @@ const IntroduceSections = () => {
 
     return (
         <>
-            <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
+            <div className="relative h-full md:h-[90vh] min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
                 <div className="absolute left-[90%] -top-[120px] -z-50 w-[300px]">
                     <Image
                         className="blur-2xl"
@@ -181,7 +181,7 @@ const IntroduceSections = () => {
                                             className="btn-demo"
                                             onClick={handleSubmit}
                                         >
-                                            ساختن بات دمو
+                                            ایجاد بات دمو
                                         </button>
                                     </div>
                                 </div>

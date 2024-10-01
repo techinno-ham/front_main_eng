@@ -69,13 +69,13 @@ html {
         @apply text-[#2563eb];
     }
     .intro_conteiner {
-        @apply container relative mx-auto h-auto overflow-hidden  px-4  text-center 2xl:px-20;
+        @apply container relative mx-auto my-auto h-auto overflow-hidden  px-4  text-center 2xl:px-20;
     }
     .input-url {
-        @apply w-[90%] rounded-[10px] border-none bg-[#d9d9d936] p-[10px] text-left text-[#ffff] placeholder-slate-100 placeholder:text-center focus:border-none focus:outline-none  md:w-1/2;
+        @apply w-[85%] rounded-[8px] border-none bg-[#d9d9d936] p-[10px] text-left text-[#ffff] placeholder-slate-100 placeholder:text-center focus:border-none focus:outline-none  md:w-1/2;
     }
     .btn-demo {
-        @apply cursor-pointer rounded-[10px] border-none bg-[#1d4ed8] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
+        @apply cursor-pointer rounded-[8px] border-none bg-[#1d4ed8] px-1.5 py-1.5 text-xs text-[#ffff] whitespace-nowrap shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1d4ed8];
     }
     .btn-meet {
         @apply flex cursor-pointer gap-3 rounded-[10px] border-none bg-[#1d4ed8b3] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]   hover:bg-[#1d4ed8];

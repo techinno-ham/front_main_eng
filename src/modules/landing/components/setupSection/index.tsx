@@ -10,7 +10,7 @@ import {
 const SetupSection = () => {
     return (
         <>
-            <div className="container relative mx-auto h-auto overflow-hidden  px-4  pt-[100px] text-center 2xl:px-20">
+            <div className="container relative mx-auto h-auto overflow-hidden  px-4  pt-[100px] pb-[50px] text-center 2xl:px-20">
                 <div className="my-10 md:mt-10">
                     <h2 className="text-3xl md:text-5xl">
                         چت بات بدون
