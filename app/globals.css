@@ -75,7 +75,7 @@ html {
         @apply w-[90%] rounded-[10px] border-none bg-[#d9d9d936] p-[10px] text-left text-[#ffff] placeholder-slate-100 placeholder:text-center focus:border-none focus:outline-none  md:w-1/2;
     }
     .btn-demo {
-        @apply animate-[pulse_1.5s_infinite] cursor-pointer rounded-[10px] border-none bg-[#1d4ed8] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
+        @apply cursor-pointer rounded-[10px] border-none bg-[#1d4ed8] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]  hover:animate-none hover:bg-[#1a76d2];
     }
     .btn-meet {
         @apply flex cursor-pointer gap-3 rounded-[10px] border-none bg-[#1d4ed8b3] px-5 py-2.5 text-base text-[#ffff]   shadow-[0_0_0_0_rgba(0,0,0,0.5)]   hover:bg-[#1d4ed8];

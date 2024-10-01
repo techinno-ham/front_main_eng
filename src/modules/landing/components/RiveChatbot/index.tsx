@@ -8,10 +8,10 @@ export const RiveChatbot = () => {
     // Be sure to specify the correct state machine (or animation) name
     // stateMachines: "Motion",
     // This is optional.Provides additional layout control.
-    // layout: new Layout({
-    //   fit: Fit.FitWidth, // Change to: rive.Fit.Contain, or Cover
-    //   alignment: Alignment.Center,
-    // }),
+    layout: new Layout({
+      fit: Fit.Cover, // Change to: rive.Fit.Contain, or Cover
+      alignment: Alignment.Center,
+    }),
     autoplay: true,
     stateMachines: "Chatbot State Machine",
   });
