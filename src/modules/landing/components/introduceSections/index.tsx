@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
-import { Calendar } from "iconsax-react"
+import { ArrowLeft2, Calendar, Magicpen } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
 import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
@@ -108,7 +108,7 @@ const IntroduceSections = () => {
 
     return (
         <>
-            <div className="relative h-full md:h-[90vh] min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
+            <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
                 <div className="absolute left-[90%] -top-[120px] -z-50 w-[300px]">
                     <Image
                         className="blur-2xl"
@@ -118,7 +118,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute right-[70%] -z-50 w-[1000px]">
+                <div className="left-blur absolute right-[80%] -top-[55%] -z-50 w-[1000px]">
                     <Image
                         className="blur-3xl"
                         src="/images/rightBlur.png"
@@ -131,7 +131,7 @@ const IntroduceSections = () => {
                 <div className="relative z-10 grid min-h-full w-full">
                     <div className="intro_conteiner">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="my-auto">
+                            <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
                                     <h1>
                                         <p className="text-center md:text-right text-4xl md:text-5xl">
@@ -159,35 +159,43 @@ const IntroduceSections = () => {
                                     </p>
                                 </div>
                                 <div className="mt-[32px] flex flex-col items-start justify-center gap-4">
-                                    
-                                    <div className="flex w-full gap-2 md:flex-row md:gap-3">
+                                <div 
+                                style={{
+                                    boxShadow: "rgba(142, 151, 158, 0.15) 0px 4px 19px",
+                                }}
+                                className="flex flex-row-reverse w-[80%] h-[70px] items-center space-x-2 rounded-2xl border border-gray-200 p-2">
+                                        <ArrowLeft2 size="20" color="#6b7280"/>
+                                        <input
+                                            className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"
+                                            type="text"
+                                            value={inputValue}
+                                            onChange={handleInputChange}
+                                            placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
+
+                                        />
+                                        <Magicpen size="30" color="#b811f5"/>
+                                    </div>
+                                    {/* <div className="flex w-full gap-2 md:flex-row md:gap-3">
                                     <div className="webflow-style-input">
                                         <input
                                             type="text"
-                                            className="input-url"
+                                            className="input-url border border-gray-500 grid grid-cols-[minmax(0,1fr)_85px] shadow-[0_4px_19px_rgba(142,151,158,0.15)]"
                                             value={inputValue}
                                             onChange={handleInputChange}
                                             placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
                                         />
                                     </div>
-                                        {/* <button
-                                            className="btn-meet"
-                                            onClick={handleMeetRequest}
-                                        >
-                                            <Calendar size="24" color="#fff" />
-                                            <span>درخواست جلسه</span>
-                                        </button> */}
                                         <button
                                             className="btn-demo"
                                             onClick={handleSubmit}
                                         >
                                             ایجاد بات دمو
                                         </button>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <div className="relative">
-                                <div className="mx-auto mt-[25px] flex h-[500px] w-[500px] items-center justify-center md:mt-[45px]">
+                                <div className="mx-auto mt-[25px] flex h-[450px] w-[450px] items-center justify-center md:mt-[32px]">
                                     {/* <Image
                                 src="/images/phone.svg"
                                 height="400"

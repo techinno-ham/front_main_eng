@@ -211,10 +211,10 @@ body.no-scroll {
 
 
 .splide__slide.is-active {
-    transform: scale(1.8); /* Scale up the active slide by 20% */
+    transform: scale(1); /* Scale up the active slide by 20% */
 }
 
 /* Optional: Reset scaling for other slides */
 .splide__slide:not(.is-active) {
-    transform: scale(0.7); /* Ensure inactive slides are not scaled */
+    transform: scale(1); /* Ensure inactive slides are not scaled */
 }

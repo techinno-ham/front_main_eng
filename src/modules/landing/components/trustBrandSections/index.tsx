@@ -2,9 +2,10 @@
 import Image from "next/image"
 //import "keen-slider/keen-slider.min.css"
 //import { useKeenSlider } from "keen-slider/react";
+import '@splidejs/react-splide/css';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 //https://codepen.io/shoegaze-k/pen/QWXreKe
 
 let brands = [
@@ -94,7 +95,7 @@ let brands = [
 
 const TrustBrandSections = () => {
     return (
-        <div className="container-medium w-container container mx-auto mt-8 h-max text-center md:mt-0">
+        <div className="container-medium w-container container mx-auto h-max text-center mt-8  md:mt-5">
             {/* Uncomment and customize the section below if needed
             <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
@@ -106,32 +107,43 @@ const TrustBrandSections = () => {
                 </h3>
             </div>
             */}
+            <p className="">دمو ساخته‌شده با موفقیت
+                 <strong>
+                    {" "}
+                    ۲۰۰+
+                    {" "}
+                 </strong> 
+                 سازمان برتر</p>
             <div className="navigation-wrapper mt-2 md:mt-10 overflow-visible">
                 <Splide 
                 style={{overflow: "visible"}}
+                extensions={ { AutoScroll } }
                 options={{ 
                     type: 'loop', 
                     perPage: 7,
-                    perMove: 1, 
+                    //perMove: 1, 
                     gap: '5px', 
                     direction: 'rtl', // Enable RTL
                     focus  : 'center',
                     drag   : 'free',
                     snap   : true,
-                    autoplay: true,  // Enable Autoplay
-                    interval: 2000,  // Autoplay interval (3 seconds)
+                    //interval: 2000,  // Autoplay interval (3 seconds)
                     pauseOnHover: true,  // Pause autoplay on hover
                     resetProgress: false,  // Disable reset of autoplay progress
                     pagination: false,  // Disable pagination
                     arrows: false,  // Disable arrows
                     lazyLoad: 'nearby',
                     cover   : true,
-                    // breakpoints: {
-                    //     500: {
-                    //         perPage: 3,
-                    //         gap: '2px',
-                    //     },
-                    // },
+                    autoScroll: {
+                        speed: 0.5,
+                    },
+                    //autoplay: true,  // Enable Autoplay
+                    breakpoints: {
+                        500: {
+                            perPage: 3,
+                            gap: '2px',
+                        },
+                    },
                 }} aria-label="Brand Slider">
                     {brands?.map((brand, index) => (
                         <SplideSlide key={index} style={{overflow: "visible"}}>
