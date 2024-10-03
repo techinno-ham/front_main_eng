@@ -154,7 +154,7 @@ const IntroduceSections = () => {
                                     </h1>
                                 </div>
                                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                                    <p className="mx-auto text-center md:text-right text-[13px] md:text-[16px]">
+                                    <p className="mx-auto text-center md:text-justify text-[12px] md:text-[16px]">
                                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                                     </p>
                                 </div>
@@ -163,7 +163,7 @@ const IntroduceSections = () => {
                                 style={{
                                     boxShadow: "rgba(142, 151, 158, 0.15) 0px 4px 19px",
                                 }}
-                                className="flex flex-row-reverse w-[80%] h-[70px] items-center space-x-2 rounded-2xl border border-gray-200 p-2">
+                                className="flex flex-row-reverse w-full md:w-[80%] h-[70px] items-center space-x-2 rounded-2xl border border-gray-200 p-2">
                                         <ArrowLeft2 size="20" color="#6b7280"/>
                                         <input
                                             className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"
