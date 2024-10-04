@@ -109,7 +109,7 @@ const IntroduceSections = () => {
     return (
         <>
             <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
-                <div className="absolute left-[90%] -top-[120px] -z-50 w-[300px]">
+                <div className="absolute -top-[120px] left-[90%] -z-50 w-[300px]">
                     <Image
                         className="blur-2xl"
                         src="/images/rightBlur.png"
@@ -118,7 +118,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute right-[80%] -top-[15%] md:-top-[55%] -z-50 w-[1000px]">
+                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] md:-top-[55%]">
                     <Image
                         className="blur-3xl"
                         src="/images/rightBlur.png"
@@ -130,17 +130,17 @@ const IntroduceSections = () => {
 
                 <div className="relative z-10 grid min-h-full w-full">
                     <div className="intro_conteiner">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
                                     <h1>
-                                        <p className="text-center md:text-right text-4xl md:text-5xl">
+                                        <p className="text-center text-4xl md:text-right md:text-5xl">
                                             <span className="gradient-h2 is-v2">
                                                 همیارچت
                                             </span>
                                             <span>، دستیار هوش مصنوعی </span>
                                         </p>
-                                        <p className="text-center md:text-right mt-3 text-xl md:mt-5 md:text-2xl">
+                                        <p className="mt-3 text-center text-xl md:mt-5 md:text-right md:text-2xl">
                                             <span>در خدمت </span>
                                             <span className="gradient-h2 is-v2">
                                                 رضایت{" "}
@@ -154,26 +154,43 @@ const IntroduceSections = () => {
                                     </h1>
                                 </div>
                                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                                    <p className="mx-auto text-center md:text-justify text-[12px] md:text-[16px]">
+                                    <p className="mx-auto text-center text-[12px] md:text-justify md:text-[16px]">
                                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                                     </p>
                                 </div>
                                 <div className="mt-[32px] flex flex-col items-start justify-center gap-4">
-                                <div 
-                                style={{
-                                    boxShadow: "rgba(142, 151, 158, 0.15) 0px 4px 19px",
-                                }}
-                                className="flex flex-row-reverse w-full md:w-[80%] h-[70px] items-center space-x-2 rounded-2xl border border-gray-200 p-2">
-                                        <ArrowLeft2 size="20" color="#6b7280"/>
+                                    <div
+                                        style={{
+                                            boxShadow:
+                                                "rgba(142, 151, 158, 0.15) 0px 4px 19px",
+                                        }}
+                                        className="flex h-[70px] w-full flex-row-reverse items-center space-x-2 rounded-2xl border border-gray-200 p-2 md:w-[80%]"
+                                    >
+                                        <ArrowLeft2 size="20" color="#6b7280" />
                                         <input
                                             className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"
                                             type="text"
                                             value={inputValue}
                                             onChange={handleInputChange}
                                             placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
-
                                         />
-                                        <Magicpen size="30" color="#b811f5"/>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            width="30"
+                                            className="text-[#b811f5]"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+                                            ></path>
+                                        </svg>
+                                        {/* <Magicpen size="30" color="#"/> */}
                                     </div>
                                     {/* <div className="flex w-full gap-2 md:flex-row md:gap-3">
                                     <div className="webflow-style-input">
@@ -195,7 +212,7 @@ const IntroduceSections = () => {
                                 </div>
                             </div>
                             <div className="relative">
-                                <div className="mx-auto mt-[25px] flex h-[300px] w-[300px] md:h-[450px] md:w-[450px] items-center justify-center md:mt-[32px]">
+                                <div className="mx-auto mt-[25px] flex h-[300px] w-[300px] items-center justify-center md:mt-[32px] md:h-[450px] md:w-[450px]">
                                     {/* <Image
                                 src="/images/phone.svg"
                                 height="400"
