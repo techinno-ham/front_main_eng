@@ -11,15 +11,23 @@ const OAuthContent = () => {
 
     useEffect(() => {
         const handleOAuth = () => {
-            const token = searchParams.get("token")
+            const token = searchParams.get("token");
+            const isNew=searchParams.get("isNew");
             if (token) {
                 try {
                     toast.success("ورود شما موفق آمیز بود.")
                     setCookie(null, "accessToken", token, {
                         maxAge: 1 * 24 * 60 * 60,
                         path: "/",
+                        secure: true, // Use this in production
+                        sameSite: "strict", // Prevent CSRF attacks
                     })
-                    router.push("/mybots")
+
+                    if(isNew){
+                        router.push("/auth/set-password")
+                    }else{
+                        router.push("/mybots")
+                    }
                 } catch (err) {
                     console.error(err)
                     // Handle error (e.g., token invalid or expired)
