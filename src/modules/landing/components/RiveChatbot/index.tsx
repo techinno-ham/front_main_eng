@@ -13,7 +13,9 @@ export const RiveChatbot = () => {
       alignment: Alignment.Center,
     }),
     autoplay: true,
-    stateMachines: "Chatbot State Machine",
+    //All Animations
+    //stateMachines: "Chatbot State Machine",
+    stateMachines: "Idle",
   });
 
   return <RiveComponent />;

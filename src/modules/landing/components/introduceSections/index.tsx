@@ -118,7 +118,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute right-[80%] -top-[55%] -z-50 w-[1000px]">
+                <div className="left-blur absolute right-[80%] -top-[15%] md:-top-[55%] -z-50 w-[1000px]">
                     <Image
                         className="blur-3xl"
                         src="/images/rightBlur.png"
@@ -195,7 +195,7 @@ const IntroduceSections = () => {
                                 </div>
                             </div>
                             <div className="relative">
-                                <div className="mx-auto mt-[25px] flex h-[450px] w-[450px] items-center justify-center md:mt-[32px]">
+                                <div className="mx-auto mt-[25px] flex h-[300px] w-[300px] md:h-[450px] md:w-[450px] items-center justify-center md:mt-[32px]">
                                     {/* <Image
                                 src="/images/phone.svg"
                                 height="400"
