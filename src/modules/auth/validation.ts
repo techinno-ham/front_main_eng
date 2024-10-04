@@ -17,3 +17,10 @@ export const LoginFormSchema = z.object({
         .string()
         .min(8, { message: "رمز عبور باید حداقل 8 کاراکتر باشد" }),
 })
+
+
+export const SetPasswordFormSchema = z.object({
+    password: z
+        .string()
+        .min(8, { message: "رمز عبور باید حداقل 8 کاراکتر باشد" }),
+})
