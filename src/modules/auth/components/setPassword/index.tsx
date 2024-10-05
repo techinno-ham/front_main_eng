@@ -11,8 +11,10 @@ import { Eye, EyeSlash, Lock1, Sms, User } from "iconsax-react"
 import { useForm } from "react-hook-form"
 import { SetPasswordFormSchema } from "../../validation"
 import { z } from "zod"
+import useSetPassword from "../../hooks/setPasaword"
 
 const SetPassword = () => {
+    const {isLoading,changePassword}=useSetPassword()
     const [showPassword, setShowPassword] = useState(false)
     const {
         register,
@@ -29,8 +31,8 @@ const SetPassword = () => {
         }
 
         try {
-           const validatedData = SetPasswordFormSchema.parse(data) 
-            // await login(validatedData)
+           SetPasswordFormSchema.parse(data) 
+            await changePassword(data)
         } catch (error) {
             if (error instanceof z.ZodError) {
                 error.errors.forEach((err) => {
@@ -141,7 +143,7 @@ const SetPassword = () => {
                                 type="submit"
                                 className="flex w-full justify-center gap-3 rounded-md bg-blue-600 px-4 py-2.5 text-sm font-semibold tracking-wider text-white hover:bg-blue-700 focus:outline-none"
                             >
-                                {false ? (
+                                {isLoading ? (
                                     <>
                                         <span className="mr-3">
                                             مقداری صبر کنید ...
@@ -149,7 +151,7 @@ const SetPassword = () => {
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>عوض کردن</>
+                                    <>                                تعیین رمز عبور </>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">
