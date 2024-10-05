@@ -108,7 +108,7 @@ const IntroduceSections = () => {
 
     return (
         <>
-            <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
+            <div className="relative h-full min-h-full md:h-[70vh] w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
                 <div className="absolute -top-[120px] left-[90%] -z-50 w-[300px]  opacity-60">
                     <Image
                         className="blur-2xl"
