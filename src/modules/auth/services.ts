@@ -23,6 +23,16 @@ class AuthService {
             throw new Error(error.response?.data?.message || "Login failed")
         }
     }
+
+    setPssword = async (newPassword: string) => {
+        try {
+            const response = await mainApi.post(LOGIN_REGISTER_API.SETPASSWORD, newPassword)
+            console.log(response)
+            return response
+        } catch (error: any) {
+            throw new Error(error.response?.data?.message || "Login failed")
+        }
+    }
 }
 
 export default new AuthService()
