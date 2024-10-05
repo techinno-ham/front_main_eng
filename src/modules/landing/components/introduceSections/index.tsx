@@ -166,13 +166,21 @@ const IntroduceSections = () => {
                                         }}
                                         className="flex h-[70px] w-full flex-row-reverse items-center space-x-2 rounded-2xl border border-gray-200 p-2 md:w-[80%]"
                                     >
-                                        <ArrowLeft2 size="20" color="#6b7280" />
+                                        <button
+                                          onClick={handleSubmit}
+                                          className="p-2"
+                                         >
+
+                                           <ArrowLeft2
+                                            size="28"
+                                            color={inputValue ? "#0000FF" : "#6b7280"}  />
+                                        </button>
                                         <input
                                             className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"
                                             type="text"
                                             value={inputValue}
                                             onChange={handleInputChange}
-                                            placeholder="... آدرس وبسایت مورد نظرتان وارد کنید"
+                                            placeholder="برای ساخت بات دمو آدرس وبسایت مورد نظرتان وارد کنید ..."
                                         />
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
