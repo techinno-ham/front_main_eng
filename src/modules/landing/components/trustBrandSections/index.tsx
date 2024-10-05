@@ -95,7 +95,7 @@ let brands = [
 
 const TrustBrandSections = () => {
     return (
-        <div className="container-medium w-container container mx-auto h-max text-center mt-8  md:mt-5">
+        <div className="container-medium w-container container mx-auto h-max text-center mt-8  md:mt-5 px-4 2xl:px-20">
             {/* Uncomment and customize the section below if needed
             <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
@@ -114,7 +114,11 @@ const TrustBrandSections = () => {
                     {" "}
                  </strong> 
                  سازمان برتر</p>
-            <div className="navigation-wrapper mt-2 md:mt-10 overflow-visible">
+            <div 
+            style={{
+                maskImage: "linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 105%)"
+            }}
+            className="navigation-wrapper mt-2 md:mt-10 overflow-visible">
                 <Splide 
                 style={{overflow: "visible"}}
                 extensions={ { AutoScroll } }

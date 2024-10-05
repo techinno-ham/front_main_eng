@@ -29,7 +29,11 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                style={{
+                                boxShadow:
+                                    "2px 5px 25px 0px rgba(108, 146, 242, .05)",
+                            }}
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">وب‌سایت</h3>
@@ -53,7 +57,11 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                style={{
+                                boxShadow:
+                                    "2px 5px 25px 0px rgba(108, 146, 242, .05)",
+                            }}
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">سؤالات متداول</h3>
@@ -77,7 +85,7 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">اسناد پی‌دی‌اف</h3>
@@ -101,7 +109,7 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">اسناد ورد</h3>
@@ -125,7 +133,7 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">گوگل درایو</h3>
@@ -149,7 +157,7 @@ const KnowledgeBaseGrid = () => {
                 initial="hidden"
                 animate={animController}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="flex items-center justify-between rounded-md border border-gray-300 p-4 shadow-md"
+                className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
                     <h3 className="text-lg ">سایر اسناد متنی</h3>
