@@ -12,7 +12,7 @@ const OAuthContent = () => {
     useEffect(() => {
         const handleOAuth = () => {
             const token = searchParams.get("token");
-            const isNew=searchParams.get("isNew");
+            const isNew=searchParams.get("isNew")=="true";
             if (token) {
                 try {
                     toast.success("ورود شما موفق آمیز بود.")
