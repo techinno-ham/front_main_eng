@@ -109,7 +109,7 @@ const IntroduceSections = () => {
     return (
         <>
             <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
-                <div className="absolute -top-[120px] left-[90%] -z-50 w-[300px]">
+                <div className="absolute -top-[120px] left-[90%] -z-50 w-[300px]  opacity-60">
                     <Image
                         className="blur-2xl"
                         src="/images/rightBlur.png"
@@ -118,9 +118,9 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] md:-top-[55%]">
+                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] md:-top-[55%]  opacity-60">
                     <Image
-                        className="blur-3xl"
+                        className="blur-3xl "
                         src="/images/rightBlur.png"
                         height="200"
                         width="500"
