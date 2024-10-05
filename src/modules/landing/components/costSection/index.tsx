@@ -4,7 +4,7 @@ const CostSection = () => {
     return (
         <>
             <div className="container relative mx-auto mt-12 h-auto overflow-hidden  px-4  pb-[50px] pt-[100px] text-center 2xl:px-20">
-                <div className=" rounded-[35px] border border-solid border-[#0446cb] bg-[#f2f4fa] px-5 py-20">
+                <div className=" rounded-[35px] border border-solid border-[#0446cb] bg-[#f2f4fa] px-12 py-20">
                     <div className="mb-10 ">
                         <h2 className="text-3xl md:text-5xl">
                             دستیار

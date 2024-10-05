@@ -13,6 +13,7 @@ const OAuthContent = () => {
         const handleOAuth = () => {
             const token = searchParams.get("token");
             const isNew=searchParams.get("isNew");
+            console.log(typeof isNew,"isNew type")
             if (token) {
                 try {
                     toast.success("ورود شما موفق آمیز بود.")
