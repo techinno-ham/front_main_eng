@@ -125,24 +125,24 @@
     display: flex;
 }
 .title-info-path {
-    color: #71717a;
+    color: #103aaf;
     flex: none;
-    font-family: Inter, sans-serif;
+    font-family: var(--font-yekan);
     font-size: 12px;
     font-weight: 500;
     line-height: 150%;
 }
 .description-info-path {
     height: 100%;
-    font-family: Inter, sans-serif;
+    font-family: var(--font-yekan);
     font-size: 12px;
     line-height: 150%;
     overflow: hidden;
 }
 .text-botpress-small {
-    color: #71717a;
+    color: #b1b5c1;
     flex: none;
-    font-family: Inter, sans-serif;
+    font-family: var(--font-yekan);
     font-size: 11px;
     font-weight: 500;
     line-height: 150%;
@@ -165,7 +165,7 @@
 }
 .number-downloads {
     color: #52525b;
-    font-family: Inter, sans-serif;
+    font-family: var(--font-yekan);
     font-size: 12px;
     line-height: 150%;
 }
@@ -174,7 +174,7 @@
     background-color: #f4f4f5;
     border-radius: 4px;
     padding: 4px 12px 5px;
-    font-family: Inter, sans-serif;
+    font-family: var(--font-yekan);
     font-size: 12px;
     line-height: 150%;
 }

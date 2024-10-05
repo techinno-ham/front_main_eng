@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
@@ -158,6 +159,38 @@ html {
             transform: scale(1);
         }
     }
+}
+
+h1 {
+  @apply font-kalame font-black; /* Apply Kalame font and black weight to h1 */
+}
+
+h2 {
+  @apply font-kalame font-extrabold; /* Apply Kalame font and extrabold weight to h2 */
+}
+
+h3 {
+  @apply font-kalame font-normal; /* Apply Kalame font and bold weight to h3 */
+}
+
+h4 {
+  @apply font-kalame font-normal; /* Apply Kalame font and semi-bold weight to h4 */
+}
+
+h5 {
+  @apply font-kalame font-normal; /* Apply Kalame font and semi-bold weight to h4 */
+}
+
+h6 {
+  @apply font-kalame font-normal; /* Apply Kalame font and semi-bold weight to h4 */
+}
+
+p {
+  @apply font-yekan; /* Use the font defined in Tailwind */
+}
+
+div {
+  @apply font-yekan; /* Use the font defined in Tailwind */
 }
 
 .itemsContainer {

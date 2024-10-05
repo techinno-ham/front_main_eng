@@ -134,13 +134,13 @@ const IntroduceSections = () => {
                             <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
                                     <h1>
-                                        <p className="text-center text-4xl md:text-right md:text-5xl">
+                                        <p className="font-kalame font-black text-center text-4xl md:text-right md:text-5xl">
                                             <span className="gradient-h2 is-v2">
                                                 همیارچت
                                             </span>
                                             <span>، دستیار هوش مصنوعی </span>
                                         </p>
-                                        <p className="mt-3 text-center text-xl md:mt-5 md:text-right md:text-2xl">
+                                        <p className="font-kalame font-semibold mt-3 text-center text-xl md:mt-5 md:text-right md:text-2xl">
                                             <span>در خدمت </span>
                                             <span className="gradient-h2 is-v2">
                                                 رضایت{" "}
@@ -154,7 +154,7 @@ const IntroduceSections = () => {
                                     </h1>
                                 </div>
                                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                                    <p className="mx-auto text-center text-[12px] md:text-justify md:text-[16px]">
+                                    <p className="font-yekan font-medium mx-auto text-center text-[12px] md:text-justify md:text-[16px]">
                                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                                     </p>
                                 </div>

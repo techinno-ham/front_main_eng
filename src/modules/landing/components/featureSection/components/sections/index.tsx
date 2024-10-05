@@ -67,7 +67,7 @@ const Section = ({
                                 animate={animController}
                                 transition={{ duration: 1, delay: 0 }}
                                 style={{ color: "#5470ff" }}
-                                className="md:text-md text-base leading-[150%]"
+                                className="font-kalame md:text-md text-base leading-[150%]"
                             >
                                 {sectionName}
                             </motion.p>
