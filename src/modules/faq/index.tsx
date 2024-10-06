@@ -40,7 +40,7 @@ let qaArray = [
 
 const FAQ = () => {
     let [activeAccordionId, setActiveAccordionId] = useState<number | null>(
-        null,
+        0,
     )
     return (
         <section className="min-h-[900px] pb-24 pt-10">
