@@ -1,3 +1,9 @@
+"use client"
+import Lottie from "lottie-react"
+import LearnLottie from "../../../public/lottie/features/learn.json"
+import ConfigLottie from "../../../public/lottie/features/config.json"
+import ChatLottie from "../../../public/lottie/features/chat.json"
+
 const Features = () => {
     return (
         <>
@@ -30,15 +36,14 @@ const Features = () => {
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                     <div className="video-box">
-    <video
-        src="/videos/1.mp4"  
-        className="max-lg:mx-auto"
-        autoPlay
-        loop
-        muted
-        playsInline
-        alt="About Us tailwind video"
-    />
+                    <Lottie
+                animationData={LearnLottie}
+                loop={true}
+                autoPlay={true}
+                rendererSettings={{
+                    preserveAspectRatio: "xMidYMid slice",
+                }}
+            />
 </div>
 
                         <div className="flex items-center lg:pl-[100px]">
@@ -92,15 +97,14 @@ const Features = () => {
                             </div>
                         </div>
                         <div className="video-box">
-    <video
-        src="/videos/2.mp4"  
-        className="max-lg:mx-auto"
-        autoPlay
-        loop
-        muted
-        playsInline
-        alt="About Us tailwind video"
-    />
+                        <Lottie
+                animationData={ConfigLottie}
+                loop={true}
+                autoPlay={true}
+                rendererSettings={{
+                    preserveAspectRatio: "xMidYMid slice",
+                }}
+            />
 </div>
                     </div>
                 </div>
@@ -109,15 +113,14 @@ const Features = () => {
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                     <div className="video-box">
-    <video
-        src="/videos/3.mp4"  
-        className="max-lg:mx-auto"
-        autoPlay
-        loop
-        muted
-        playsInline
-        alt="About Us tailwind video"
-    />
+                    <Lottie
+                animationData={ChatLottie}
+                loop={true}
+                autoPlay={true}
+                rendererSettings={{
+                    preserveAspectRatio: "xMidYMid slice",
+                }}
+            />
 </div>
 
                         <div className="flex items-center lg:pl-[100px]">

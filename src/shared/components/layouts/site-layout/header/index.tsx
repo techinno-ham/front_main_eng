@@ -37,7 +37,7 @@ const Header = () => {
     }
     const links: any = [
         {
-            link: "/#hamyar-features",
+            link: "/features",
             title: "امکانات",
         },
         {
