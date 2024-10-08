@@ -10,11 +10,11 @@ const Features = () => {
             <div className="w-full px-4 pt-10">
                 <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                     <span className="text-primary mb-2 block text-lg font-semibold">
-                        درباره ما
+                    ویژگی‌ها
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
-                        با تیم
-                        <span
+                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-xl md:text-[40px] ">
+                    امکانات
+                    <span
                             style={{
                                 textShadow:
                                     "0 3px 8px rgba(77, 243, 255, 0.22)",
@@ -26,13 +26,15 @@ const Features = () => {
                                 color: "transparent",
                             }}
                         >
-                            &nbsp;همیارچت&nbsp;
+                     
+                        
+                            &nbsp;پیشرفته&nbsp;
                         </span>
-                        آشنا شوید
+                       همیارچت
                     </h1>
                 </div>
             </div>
-            <section className="relative pb-14 lg:pb-24 md:h-[80dvh]">
+            <section className="relative pb-14 lg:pb-24 md:h-[60dvh]">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                     <div className="video-box">
@@ -48,27 +50,20 @@ const Features = () => {
 
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h2 className="font-manrope relative mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
-                                    آشنایی با ما{" "}
+                                <h2 className=" relative mb-9 text-xl lg:text-3xl
+                                font-bold text-black max-lg:text-center
+                                 ">
+                                آموزش چت‌بات با داده‌های سفارشی شما
                                 </h2>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    ما در همیارچت با افتخار اعلام می‌کنیم که یکی
-                                    از اولین استارتاپ ایرانی هستیم که در زمینه
-                                    ارائه دستیارهای هوش مصنوعی برای خدمات
-                                    مشتریان فعالیت می‌کند. هدف اصلی ما ایجاد
-                                    تجربه‌ای بهتر، سریع‌تر و کارآمدتر برای
-                                    مشتریان شماست. با بهره‌گیری از آخرین
-                                    تکنولوژی‌های هوش مصنوعی و پردازش زبان طبیعی،
-                                    ما به کسب‌وکارها کمک می‌کنیم تا ارتباط بهتری
-                                    با مشتریان خود برقرار کرده و نیازهای آنها را
-                                    به بهترین شکل ممکن پاسخ دهند.
+                                در همیارچت، ما امکان آموزش چت‌بات‌ها را با داده‌های سفارشی شما فراهم کرده‌ایم. این ویژگی به کسب‌وکارها این اجازه را می‌دهد که چت‌بات‌ها را بر اساس نیازها و محتوای خاص خود تنظیم کنند. با استفاده از داده‌های مرتبط، چت‌بات‌های ما می‌توانند به طور دقیق‌تری به سوالات مشتریان پاسخ دهند و تعاملاتی مؤثرتر و شخصی‌سازی‌شده‌تر ارائه دهند. هدف ما این است که با تقویت توانایی‌های چت‌بات‌های شما، تجربه مشتریان را بهبود ببخشیم و به شما در دستیابی به اهداف تجاری‌تان کمک کنیم.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="relative pb-14 lg:pb-24 md:h-[80dvh]">
+            <section className="relative pb-14 lg:pb-24 md:h-[60dvh]">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-9 ">
                         <div className="flex items-center lg:pr-24">
@@ -78,21 +73,12 @@ const Features = () => {
                                     alt="About Us tailwind page"
                                     className="mx-auto mb-9 block lg:hidden"
                                 />
-                                <h2 className="font-manrope mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
-                                    مأموریت و ارزش‌ها
+                                <h2 className=" mb-9 text-xl font-bold text-black max-lg:text-center lg:text-3xl">
+                                رابط کاربری کاملاً قابل سفارشی‌سازی
                                 </h2>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    مأموریت ما در همیارچت تسهیل فرآیند ارتباط با
-                                    مشتریان و ارتقاء سطح رضایتمندی آنهاست. ما بر
-                                    این باوریم که تکنولوژی باید در خدمت انسان
-                                    باشد و به همین دلیل همواره در تلاشیم تا
-                                    راه‌حل‌هایی ارائه دهیم که هم کاربرپسند و هم
-                                    مؤثر باشند. ارزش‌های ما شامل نوآوری،
-                                    مشتری‌مداری، کیفیت و شفافیت است. تیم ما
-                                    متعهد به ارائه بهترین خدمات و پشتیبانی به
-                                    مشتریان عزیزمان است و همیشه آماده‌ایم تا با
-                                    شما همکاری کنیم و نیازهای شما را برآورده
-                                    کنیم.
+                                    
+در همیارچت، ما به اهمیت تجربه کاربری توجه ویژه‌ای داریم. به همین دلیل، رابط کاربری چت‌بات‌های ما به‌طور کامل قابل سفارشی‌سازی است. شما می‌توانید طراحی، رنگ‌ها و ویژگی‌های مختلف را به دلخواه خود تنظیم کنید تا با هویت برند شما همخوانی داشته باشد. هدف ما این است که کاربران شما در هر تعامل احساس راحتی و هماهنگی کنند و بتوانند به راحتی به اطلاعات و خدمات مورد نیاز خود دسترسی پیدا کنند.
                                 </p>
                             </div>
                         </div>
@@ -109,7 +95,7 @@ const Features = () => {
                     </div>
                 </div>
             </section>
-            <section className="relative pb-14 lg:pb-24 md:h-[80dvh]">
+            <section className="relative pb-14 lg:pb-24 md:h-[60dvh]">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
                     <div className="grid grid-cols-1 gap-9 lg:grid-cols-2">
                     <div className="video-box">
@@ -125,20 +111,10 @@ const Features = () => {
 
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h2 className="font-manrope relative mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
-                                    آشنایی با ما{" "}
-                                </h2>
+                                <h2 className=" relative mb-9 text-xl font-bold text-black max-lg:text-center lg:text-3xl">
+                                پاسخ‌های خودکار به سوالات کاربران با هوش مصنوعی                                </h2>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    ما در همیارچت با افتخار اعلام می‌کنیم که یکی
-                                    از اولین استارتاپ ایرانی هستیم که در زمینه
-                                    ارائه دستیارهای هوش مصنوعی برای خدمات
-                                    مشتریان فعالیت می‌کند. هدف اصلی ما ایجاد
-                                    تجربه‌ای بهتر، سریع‌تر و کارآمدتر برای
-                                    مشتریان شماست. با بهره‌گیری از آخرین
-                                    تکنولوژی‌های هوش مصنوعی و پردازش زبان طبیعی،
-                                    ما به کسب‌وکارها کمک می‌کنیم تا ارتباط بهتری
-                                    با مشتریان خود برقرار کرده و نیازهای آنها را
-                                    به بهترین شکل ممکن پاسخ دهند.
+                                ما در همیارچت با افتخار ارائه‌دهنده سیستم‌هایی هستیم که قادر به ارائه پاسخ‌های کاملاً خودکار به سوالات کاربران هستند. این قابلیت به شما این امکان را می‌دهد که در هر زمان و مکان به مشتریان خود خدمات‌رسانی کنید و بار کاری تیم پشتیبانی را کاهش دهید. با تحلیل و پردازش دقیق سوالات کاربران، چت‌بات‌های ما می‌توانند به سرعت و به دقت به نیازهای آنان پاسخ دهند و تجربه‌ای سریع و رضایت‌بخش را برای آنها فراهم کنند.
                                 </p>
                             </div>
                         </div>
