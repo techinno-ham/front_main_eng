@@ -3,7 +3,7 @@ import { CloseCircle, HambergerMenu } from "iconsax-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import useUser from "@/src/shared/hooks/user"
 
 const Header = () => {

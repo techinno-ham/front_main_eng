@@ -2,7 +2,7 @@ import useDataSourceStoreNew from "@/src/shared/store/dataSourceStoreNew"
 import { useState } from "react"
 import { toast } from "sonner"
 import Services from "../../../shared/services/service"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 
 const useDateSourceNew = () => {
     const [isLoading, setLoading] = useState(false)

@@ -1,6 +1,6 @@
 "use client"
 import { Activity, DollarCircle, Login, SmsStar } from "iconsax-react"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 
 const Partners = () => {
     const router = useRouter()

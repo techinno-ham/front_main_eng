@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import { Suspense, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { toast } from "sonner"

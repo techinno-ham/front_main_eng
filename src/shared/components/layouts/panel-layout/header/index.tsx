@@ -2,9 +2,10 @@
 import { ArrowRight } from "iconsax-react"
 import Image from "next/image"
 import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import UserAccount from "./components/account"
 import useUserStore from "@/src/shared/store/userStore"
+import { useRouter } from 'nextjs-toploader/app';
 
 const HeaderPanel = () => {
     const pathname = usePathname()

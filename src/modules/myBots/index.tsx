@@ -1,7 +1,7 @@
 "use client"
 import { Danger, ElementPlus, SearchNormal1, Star } from "iconsax-react"
 import BotBox from "./components/botBox"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import TotalBots from "./components/totalBot"
 import PremiumBot from "./components/primiumBot"
 import { getBotList } from "./utils"

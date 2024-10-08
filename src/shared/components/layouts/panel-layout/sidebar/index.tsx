@@ -10,7 +10,7 @@ import {
     Setting2,
 } from "iconsax-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import { usePathname } from "next/navigation"
 
 export const sidebarLinks = [
