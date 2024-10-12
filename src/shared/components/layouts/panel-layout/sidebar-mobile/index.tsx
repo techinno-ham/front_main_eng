@@ -20,6 +20,11 @@ export const sidebarLinks = [
         label: "داشبورد",
     },
     {
+        icon: <Setting2 />,
+        route: "/panel/[id]/setting",
+        label: "تنظیمات",
+    },
+    {
         icon: <Book1 />,
         route: "/panel/[id]/train",
         label: "آموزش ربات",
@@ -33,12 +38,7 @@ export const sidebarLinks = [
         icon: <ProgrammingArrows />,
         route: "/panel/[id]/deploy",
         label: "خروجی",
-    },
-    {
-        icon: <Setting2 />,
-        route: "/panel/[id]/setting",
-        label: "تنظیمات",
-    },
+    }
 ]
 
 const SideBarMobile = () => {

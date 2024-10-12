@@ -63,7 +63,7 @@ const TotalRevenue = () => {
         },
     }
     return (
-        <div className="flex flex-1 flex-col  rounded-2xl bg-white p-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
+        <div className="flex flex-1 flex-col  rounded-2xl bg-white p-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] blur-[2px] pointer-events-none">
             <span className="text-lg font-semibold text-gray-900">
                 مجموع استفاده در ماه جاری
             </span>

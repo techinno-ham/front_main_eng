@@ -66,11 +66,11 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
 
     return (
         <>
-            <div className="mx-auto mt-10 flex max-w-5xl flex-col pb-12 md:mt-10 md:px-3">
+            <div className="mx-auto mt-10 flex flex-col pb-12 md:mt-10 md:px-3">
                 <div className="rounded-2xl bg-white shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
-                            {botData?.name || "هوشینو بات"}
+                            {botData?.name || "همیار بات"}
                         </span>
                     </div>
                     <div className="p-5">
