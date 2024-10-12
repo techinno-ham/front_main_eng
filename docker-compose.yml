@@ -30,5 +30,6 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ~/../etc/letsencrypt:/etc/letsencrypt
       - ./public/demo:/var/www/demo
+      - /var/log/nginx/:/var/log/nginx/
     depends_on:
       - frontend
