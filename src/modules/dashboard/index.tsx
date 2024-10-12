@@ -57,7 +57,8 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
     return (
         <>
             <div className="mx-auto mb-16 mt-[120px] w-[95%] md:mb-2 md:mt-[100px]">
-                <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+                <div className="relative">
+                {/* <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
                     <PieChart
                         title="تعداد کل پاسخ ها موفق"
                         value={684}
@@ -82,7 +83,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                         series={[75, 25]}
                         colors={["#FD8539", "#c4e8ef"]}
                     />
-                </div>
+                </div> */}
 
                 <div className="mt-8 grid  grid-cols-1 gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
                     <div>
@@ -91,6 +92,8 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
                     <div>
                         <TotalRevenue />
                     </div>
+                </div>
+                <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-8 py-4 rounded-2xl border border-blue-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">این بخش به زودی دردسترس خواهد بود</span>
                 </div>
 
                 <div id="chart-demo" ref={chartDemoRef}>

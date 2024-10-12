@@ -23,11 +23,11 @@ const ProgressBar = ({ title, percentage, color }: ProgressBarProps) => (
 
 const PropertyReferrals = () => {
     const propertyReferralsInfo = [
-        {
-            title: "سوشیال مدیا",
-            percentage: 64,
-            color: "#6C5DD3",
-        },
+        // {
+        //     title: "سوشیال مدیا",
+        //     percentage: 64,
+        //     color: "#6C5DD3",
+        // },
         {
             title: "امبدینگ",
             percentage: 40,
@@ -38,11 +38,11 @@ const PropertyReferrals = () => {
             percentage: 50,
             color: "#FFCE73",
         },
-        {
-            title: "اینستاگرام",
-            percentage: 80,
-            color: "#FFA2C0",
-        },
+        // {
+        //     title: "اینستاگرام",
+        //     percentage: 80,
+        //     color: "#FFA2C0",
+        // },
         {
             title: "غیره",
             percentage: 15,
