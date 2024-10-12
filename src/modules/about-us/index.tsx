@@ -593,14 +593,14 @@ const AboutUs = () => {
                 <div className="swiper-pagination"></div>
                 <div className="swiper-scrollbar"></div> */}
             </section>
-            <section className=" bg-gray-50 py-14 lg:py-24">
+            {/* <section className=" bg-gray-50 py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-16 rounded-full">
                         <h2 className="font-manrope text-center text-4xl font-bold text-gray-900">
                             بازخورد کاربران ما
                         </h2>
                     </div>
-                    {/* <Swiper
+                    <Swiper
                         slidesPerView={2}
                         spaceBetween={30}
                         className="mySwiper"
@@ -676,9 +676,9 @@ const AboutUs = () => {
                                 </div>
                             </div>
                         </SwiperSlide>
-                    </Swiper> */}
+                    </Swiper>
                 </div>
-            </section>
+            </section> */}
         </>
     )
 }
