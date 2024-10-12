@@ -257,6 +257,7 @@ const Footer = () => {
                             <button className="focus-visible:ring-ring col-span-4 inline-flex h-11 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-base font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 md:col-span-2 ">
                                 پشتیبانی
                             </button>
+                            <Link passHref href={"https://www.linkedin.com/company/hamyarchat"} target="_blank">
                             <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     width="24"
@@ -274,6 +275,7 @@ const Footer = () => {
                                     ></path>
                                 </svg>
                             </button>
+                            </Link>
                             <button className="focus-visible:ring-ring inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl border bg-transparent p-3 text-sm font-medium text-zinc-400 shadow-sm transition-colors hover:bg-blue-800/90 hover:text-white focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 md:col-span-1 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
