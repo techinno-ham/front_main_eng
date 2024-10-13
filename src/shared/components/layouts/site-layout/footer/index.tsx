@@ -408,17 +408,17 @@ const Footer = () => {
                                 کانال تلگرام{" "}
                             </Link>
                             <Link
-                                href={"mailto:hamyarchat@gmail.com"}
+                                href={"mailto:support@hamyar.chat"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                hamyarchat@gmail.com{" "}
+                                support@hamyar.chat{" "}
                             </Link>
-                            <Link
+                            {/* <Link
                                 href={"/"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 0912123123
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <div className="w-full flex-col gap-4 md:hidden">
