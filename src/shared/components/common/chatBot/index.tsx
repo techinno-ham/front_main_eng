@@ -217,7 +217,7 @@ const ChatBot: FC<chatbotProps> = ({
                                             <p className="pointer-events-none grow text-nowrap text-center  text-xs">
                                                 قدرت گرفته از
                                                 <a className="pointer-events-none mr-1 font-semibold text-[#1277fd]">
-                                                    raya.chat
+                                                hamyar.chat
                                                 </a>
                                             </p>
                                         </div>

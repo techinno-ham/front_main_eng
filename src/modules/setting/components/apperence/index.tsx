@@ -176,10 +176,12 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="Hi! What can I help you with?"
+                                        placeholder="سلام ! 
+امیدوارم که حالت خوب باشه"
                                         className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
-                                    <p className="mt-2 text-sm text-zinc-500">
+                                    <p className="mt-2 text-sm text-zinc-400">
+                                        <span className="text-red-400">{" "}*{" "}</span>
                                         هر پیام را در یک خط جدید وارد کنید.
                                     </p>
                                 </div>
@@ -200,10 +202,12 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="رایا چت چیست ؟"
+                                        placeholder="چطوری از قیمت ها مطلع بشم؟
+                                    چطور ثبتنام کنم؟"
                                         className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
-                                    <p className="mt-2 text-sm text-zinc-500">
+                                    <p className="mt-2 text-sm text-zinc-400">
+                                        <span className="text-red-400">{" "}*{" "}</span>
                                         هر پیام را در یک خط جدید وارد کنید.
                                     </p>
                                 </div>
@@ -218,7 +222,7 @@ const Apperence = () => {
                                         value={chatConfig.inputPlaceholder}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="سلام ...."
+                                        placeholder="مثال: سوال خود را وارد کنید..."
                                         type="text"
                                     />
                                 </div>
@@ -233,7 +237,7 @@ const Apperence = () => {
                                         value={chatConfig.footer}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="رایا گپ ..."
+                                        placeholder="example.com"
                                         type="text"
                                     />
                                 </div>
@@ -245,7 +249,7 @@ const Apperence = () => {
                                 <div className="mt-1">
                                     <input
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="هوشینو"
+                                        placeholder="همیاربات"
                                         type="text"
                                         value={chatConfig.displayName}
                                         name="displayName"
@@ -376,7 +380,8 @@ const Apperence = () => {
                                             آپلود عکس
                                         </button>
                                     </div>
-                                    <span className="mt-1 text-xs text-zinc-500">
+                                    <span className="mt-1 text-xs text-zinc-400">
+                                        <span className="text-red-400">{" "}*{" "}</span>
                                     پشتیبانی از فایل‌های JPG، PNG و SVG تا حجم ۱ مگابایت
 
                                     </span>
@@ -423,7 +428,7 @@ const Apperence = () => {
                                         value={chatConfig.notificationMsgs}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="رایا گپ ..."
+                                        placeholder="سلام!  هرسوالی دارید از من بپرسید"
                                         type="text"
                                     />
                                 </div>

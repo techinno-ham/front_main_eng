@@ -88,7 +88,7 @@ const QandA = () => {
                                 <span>سوال:</span>
                                 <textarea
                                     className="rounded-md border border-gray-300 p-2"
-                                    placeholder="مهدیار جعفری کیه؟"
+                                    placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
                                     value={qa.question}
                                     onChange={(e) =>
                                         handleInputChange(
@@ -103,7 +103,7 @@ const QandA = () => {
                                 <span>پاسخ :</span>
                                 <textarea
                                     className="rounded-md border border-gray-300 p-2"
-                                    placeholder="مهدیار جعفری یکی از بزرگ ترین برنامه نویس های جهان هست که ..."
+                                    placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
                                     value={qa.answer}
                                     onChange={(e) =>
                                         handleInputChange(

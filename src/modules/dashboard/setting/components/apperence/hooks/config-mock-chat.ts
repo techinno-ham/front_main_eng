@@ -16,11 +16,11 @@ interface StoreChatConfig {
 
 const useStoreChatConfig = create<StoreChatConfig>((set) => ({
     chatConfig: {
-        displayName: "raya chat",
+        displayName: "Hamyar chat",
         botMessages: ["سلام ! امروز چطور می‌توانم به شما کمک کنم؟ 😊"],
         suggestedMessages: ["چگونه میتونم بات بسازم؟"],
         inputPlaceholder: "پیام شما ...",
-        footer: "raya.chat",
+        footer: "hamyar.chat",
         bgUserMessage: "#3b81f6",
     },
     updateChatConfig: (newConfig) =>
