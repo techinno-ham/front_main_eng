@@ -4,13 +4,13 @@ const Blog = () => {
     return (
         <>
             <>
-                <main className="bg-white pb-16 pt-8 antialiased lg:pb-24 lg:pt-16 dark:bg-gray-900">
+                <main className="bg-white pb-16 pt-8 antialiased lg:pb-24 lg:pt-16 ">
                     <div className="mx-auto flex max-w-screen-xl justify-between px-4 ">
-                    <article className="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert mx-auto w-full max-w-2xl">
+                    <article className="format format-sm sm:format-base lg:format-lg format-blue mx-auto w-full max-w-2xl">
 
 <header className="not-format mb-4 lg:mb-6">
     <address className="mb-6 flex items-center not-italic">
-        <div className="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
+        <div className="mr-3 inline-flex items-center text-sm text-gray-900 ">
             <img
                 className="mr-4 h-16 w-16 p-2 rounded-full border-2 border-blue-500"
                 src="/logo.svg"
@@ -20,11 +20,11 @@ const Blog = () => {
                 <a
                     href="#"
                     rel="author"
-                    className="text-xl font-bold text-gray-900 dark:text-white"
+                    className="text-xl font-bold text-gray-900 "
                 >
                     تیم همیارچت
                 </a>
-                <p className="text-base text-gray-500 dark:text-gray-400">
+                <p className="text-base text-gray-500 ">
                     <time
                         dateTime="2024-08-28"
                         title="۲۸ مرداد ۱۴۰۳"
@@ -35,7 +35,7 @@ const Blog = () => {
             </div>
         </div>
     </address>
-    <h1 className="mb-4 text-3xl font-extrabold leading-10 text-blue-700 lg:mb-6 lg:text-4xl dark:text-white">
+    <h1 className="mb-4 text-3xl font-extrabold leading-10 text-blue-700 lg:mb-6 lg:text-4xl ">
         هوش مصنوعی در پشتیبانی مشتری: تهدید یا نجات‌دهنده
     </h1>
 </header>
@@ -49,7 +49,7 @@ const Blog = () => {
 </p>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         تکامل هوش مصنوعی در پشتیبانی مشتری
     </h2>
     <p className="text-gray-500">
@@ -64,7 +64,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         چالش‌ها و نگرانی‌های بالقوه در پذیرش هوش مصنوعی در سازمان
     </h2>
     <p className="text-gray-500">
@@ -79,7 +79,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         چالش‌ها و راه‌حل‌های دیگر
     </h2>
     <p className="text-gray-500">
@@ -94,7 +94,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         چت‌بات‌های هوش مصنوعی: انقلابی در تعاملات مشتری
     </h2>
     <p className="text-gray-500">
@@ -115,7 +115,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         تحلیل پیش‌بینی: شخصی‌سازی تجربه مشتری
     </h2>
     <p className="text-gray-500">
@@ -136,7 +136,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         توجیه تجاری برای هوش مصنوعی در پشتیبانی مشتری
     </h2>
     <p className="text-gray-500">
@@ -151,7 +151,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         تصورات نادرست خاص در مورد سازمان‌ها
     </h2>
     <p className="text-gray-500">
@@ -166,7 +166,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         پیاده‌سازی هوش مصنوعی در فرآیندهای خدمات مشتری شما
     </h2>
     <p className="text-gray-500">
@@ -181,7 +181,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         پیمایش چالش‌ها: ملاحظات اخلاقی و اعتماد مشتری
     </h2>
     <p className="text-gray-500">
@@ -199,7 +199,7 @@ const Blog = () => {
 </section>
 
 <section>
-    <h2 className="text-2xl font-bold  dark:text-blue-400 mb-4">
+    <h2 className="text-2xl font-bold  text-blue-400 mb-4">
         آینده هوش مصنوعی در خدمات و پشتیبانی مشتری
     </h2>
     <p className="text-gray-500">
@@ -234,7 +234,7 @@ const Blog = () => {
                     className="bg-gray-50 py-8 lg:py-24 dark:bg-gray-800"
                 >
                     <div className="mx-auto max-w-screen-xl px-4">
-                        <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
+                        <h2 className="mb-8 text-2xl font-bold text-gray-900 ">
                             مقالات مرتبط
                         </h2>
                         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -246,7 +246,7 @@ const Blog = () => {
                                         alt="Image 1"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">لورم ایپسوم</a>
                                 </h2>
                                 <p className="mb-4 text-gray-500 dark:text-gray-400">
@@ -268,7 +268,7 @@ const Blog = () => {
                                         alt="Image 2"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">نکات طراحی سازمانی</a>
                                 </h2>
                                 <p className="mb-4  text-gray-500 dark:text-gray-400">
@@ -290,7 +290,7 @@ const Blog = () => {
                                         alt="Image 3"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">ما با گوگل شریک شدیم</a>
                                 </h2>
                                 <p className="mb-4  text-gray-500 dark:text-gray-400">
@@ -312,7 +312,7 @@ const Blog = () => {
                                         alt="Image 4"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">پروژه اول ما با ری‌اکت</a>
                                 </h2>
                                 <p className="mb-4  text-gray-500 dark:text-gray-400">

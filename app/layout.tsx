@@ -59,7 +59,7 @@ export default function RootLayout({
             >
                 
                 <Toaster position="top-center" richColors />
-                <NextTopLoader />
+                <NextTopLoader showSpinner={false} />
                 {children}
                 <script
                     src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"

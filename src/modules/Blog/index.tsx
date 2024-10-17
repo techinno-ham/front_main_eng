@@ -4,12 +4,12 @@ const Blog = () => {
     return (
         <>
             <>
-                <main className="bg-white pb-16 pt-8 antialiased lg:pb-24 lg:pt-16 dark:bg-gray-900">
+                <main className="bg-white pb-16 pt-8 antialiased lg:pb-24 lg:pt-16 ">
                     <div className="mx-auto flex max-w-screen-xl justify-between px-4 ">
-                        <article className="format format-sm sm:format-base lg:format-lg format-blue dark:format-invert mx-auto w-full max-w-2xl">
+                        <article className="format format-sm sm:format-base lg:format-lg format-blue  mx-auto w-full max-w-2xl">
                             <header className="not-format mb-4 lg:mb-6">
                                 <address className="mb-6 flex items-center not-italic">
-                                    <div className="mr-3 inline-flex items-center text-sm text-gray-900 dark:text-white">
+                                    <div className="mr-3 inline-flex items-center text-sm text-gray-900 ">
                                         <img
                                             className="mr-4 h-16 w-16 rounded-full"
                                             src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
@@ -19,15 +19,15 @@ const Blog = () => {
                                             <a
                                                 href="#"
                                                 rel="author"
-                                                className="text-xl font-bold text-gray-900 dark:text-white"
+                                                className="text-xl font-bold text-gray-900 "
                                             >
                                                 جسی لئوس
                                             </a>
-                                            <p className="text-base text-gray-500 dark:text-gray-400">
+                                            <p className="text-base text-gray-500 ">
                                                 طراح گرافیک، مربی و مدیرعامل
                                                 فلو‌بایت
                                             </p>
-                                            <p className="text-base text-gray-500 dark:text-gray-400">
+                                            <p className="text-base text-gray-500 ">
                                                 <time
                                                     dateTime="2022-02-08"
                                                     title="February 8th, 2022"
@@ -38,7 +38,7 @@ const Blog = () => {
                                         </div>
                                     </div>
                                 </address>
-                                <h1 className="mb-4 text-3xl font-extrabold leading-10 text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                                <h1 className="mb-4 text-3xl font-extrabold leading-10 text-gray-900 lg:mb-6 lg:text-4xl ">
                                     لورم ایپسوم متن ساختگی
                                 </h1>
                             </header>
@@ -98,7 +98,7 @@ const Blog = () => {
                     className="bg-gray-50 py-8 lg:py-24 dark:bg-gray-800"
                 >
                     <div className="mx-auto max-w-screen-xl px-4">
-                        <h2 className="mb-8 text-2xl font-bold text-gray-900 dark:text-white">
+                        <h2 className="mb-8 text-2xl font-bold text-gray-900 ">
                             مقالات مرتبط
                         </h2>
                         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
@@ -110,10 +110,10 @@ const Blog = () => {
                                         alt="Image 1"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">لورم ایپسوم</a>
                                 </h2>
-                                <p className="mb-4 text-gray-500 dark:text-gray-400">
+                                <p className="mb-4 text-gray-500 ">
                                     لورم ایپسوم متن ساختگی با تولید سادگی
                                     نامفهوم.
                                 </p>
@@ -132,10 +132,10 @@ const Blog = () => {
                                         alt="Image 2"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">نکات طراحی سازمانی</a>
                                 </h2>
-                                <p className="mb-4  text-gray-500 dark:text-gray-400">
+                                <p className="mb-4  text-gray-500 ">
                                     لورم ایپسوم متن ساختگی با تولید سادگی
                                     نامفهوم.
                                 </p>
@@ -154,10 +154,10 @@ const Blog = () => {
                                         alt="Image 3"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">ما با گوگل شریک شدیم</a>
                                 </h2>
-                                <p className="mb-4  text-gray-500 dark:text-gray-400">
+                                <p className="mb-4  text-gray-500 ">
                                     لورم ایپسوم متن ساختگی با تولید سادگی
                                     نامفهوم.
                                 </p>
@@ -176,10 +176,10 @@ const Blog = () => {
                                         alt="Image 4"
                                     />
                                 </a>
-                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                                <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900 ">
                                     <a href="#">پروژه اول ما با ری‌اکت</a>
                                 </h2>
-                                <p className="mb-4  text-gray-500 dark:text-gray-400">
+                                <p className="mb-4  text-gray-500 ">
                                     لورم ایپسوم متن ساختگی با تولید سادگی
                                     نامفهوم.
                                 </p>
