@@ -13,7 +13,7 @@ const AboutUs = () => {
                     <span className="text-primary mb-2 block text-lg font-semibold">
                         درباره ما
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-medium leading-[1.208] sm:text-4xl md:text-[40px] ">
+                    <h1 className="text-dark mb-3 text-3xl font-medium leading-[1.208] sm:text-xl md:text-[40px] ">
                         با تیم
                         <span
                             style={{
@@ -45,7 +45,7 @@ const AboutUs = () => {
                         </div>
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h4 className=" relative mb-9 text-4xl font-medium text-black max-lg:text-center lg:text-5xl">
+                                <h4 className=" relative mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
                                     آشنایی با ما{" "}
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
@@ -75,7 +75,7 @@ const AboutUs = () => {
                                     alt="About Us tailwind page"
                                     className="mx-auto mb-9 block lg:hidden"
                                 />
-                                <h4 className=" mb-9 text-4xl font-medium text-black max-lg:text-center lg:text-5xl">
+                                <h4 className=" mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
                                     مأموریت و ارزش‌ها
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
@@ -105,7 +105,7 @@ const AboutUs = () => {
             </section>
             <section className="bg-white py-20">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <h4 className=" mb-14 text-center text-4xl font-medium text-gray-900">
+                    <h4 className=" mb-14 text-center text-xl lg:text-3xl font-medium text-gray-900">
                         نتایج ما
                     </h4>
                     <div className="flex flex-col gap-5 lg:flex-row lg:justify-between xl:gap-8">
@@ -164,7 +164,7 @@ const AboutUs = () => {
             <section className="py-14 lg:py-24 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-24">
-                        <h4 className=" mb-6 text-center text-4xl font-medium text-gray-900">
+                        <h4 className=" mb-6 text-center text-xl lg:text-3xl font-medium text-gray-900">
                             اعضای تیم
                         </h4>
                         {/* <p className="text-center text-lg text-gray-500">
@@ -596,7 +596,7 @@ const AboutUs = () => {
             {/* <section className=" bg-gray-50 py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-16 rounded-full">
-                        <h4 className=" text-center text-4xl font-medium text-gray-900">
+                        <h4 className=" text-center text-xl font-medium text-gray-900">
                             بازخورد کاربران ما
                         </h2>
                     </div>
