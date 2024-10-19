@@ -222,7 +222,7 @@ const PowerfulFeaturesSection = () => {
             className="section-large container relative mx-auto h-auto overflow-hidden  px-4 text-center 2xl:px-20"
         >
             <div className="mt-10 md:mt-4">
-                <h2 className="text-3xl md:text-5xl">
+                <h2 className="font-medium text-3xl md:text-5xl">
                     <span>ویژگی‌های برجسته </span>
                     <span className="gradient-h2 is-v2">همیارچت&nbsp;</span>
                 </h2>

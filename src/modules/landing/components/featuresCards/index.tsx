@@ -38,7 +38,7 @@ const FeaturesCards = () => {
                             transition={{ duration: 1, delay: 0 }}
                             className="title-section-footer"
                         >
-                            <h2 className="text-3xl md:text-5xl">
+                            <h2 className="font-medium text-3xl md:text-5xl">
                                 <span>پشتیبانی مشتریان در </span>
                                 {/* <span>مکالمات در </span> */}
                                 <span className="gradient-h2 is-v2">

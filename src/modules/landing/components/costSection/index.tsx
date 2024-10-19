@@ -6,7 +6,7 @@ const CostSection = () => {
             <div className="container relative mx-auto mt-12 h-auto overflow-hidden  px-4  pb-[50px] pt-[100px] text-center 2xl:px-20">
                 <div className=" rounded-[35px] border border-solid border-[#0446cb] bg-[#f2f4fa] px-4 py-10 md:px-14 md:py-20">
                     <div className="mb-10 ">
-                        <h2 className="text-3xl md:text-5xl">
+                        <h2 className="text-3xl font-medium md:text-5xl">
                             دستیار
                             <span className="gradient-h2 is-v2"> هوشمند </span>
                             برای

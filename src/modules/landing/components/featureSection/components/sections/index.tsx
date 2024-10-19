@@ -80,7 +80,7 @@ const Section = ({
                             initial="hidden"
                             animate={animController}
                             transition={{ duration: 1, delay: 0.6 }}
-                            className="mt-2 text-base font-bold leading-[150%] md:text-2xl "
+                            className="mt-2 text-base font-medium leading-[150%] md:text-2xl "
                         >
                             {title}
                         </motion.h2>

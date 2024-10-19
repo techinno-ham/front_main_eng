@@ -13,7 +13,7 @@ const AboutUs = () => {
                     <span className="text-primary mb-2 block text-lg font-semibold">
                         درباره ما
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+                    <h1 className="text-dark mb-3 text-3xl font-medium leading-[1.208] sm:text-4xl md:text-[40px] ">
                         با تیم
                         <span
                             style={{
@@ -45,9 +45,9 @@ const AboutUs = () => {
                         </div>
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h2 className="font-manrope relative mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
+                                <h4 className=" relative mb-9 text-4xl font-medium text-black max-lg:text-center lg:text-5xl">
                                     آشنایی با ما{" "}
-                                </h2>
+                                </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                     ما در همیارچت با افتخار اعلام می‌کنیم که یکی
                                     از اولین استارتاپ ایرانی هستیم که در زمینه
@@ -75,9 +75,9 @@ const AboutUs = () => {
                                     alt="About Us tailwind page"
                                     className="mx-auto mb-9 block lg:hidden"
                                 />
-                                <h2 className="font-manrope mb-9 text-4xl font-bold text-black max-lg:text-center lg:text-5xl">
+                                <h4 className=" mb-9 text-4xl font-medium text-black max-lg:text-center lg:text-5xl">
                                     مأموریت و ارزش‌ها
-                                </h2>
+                                </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                     مأموریت ما در همیارچت تسهیل فرآیند ارتباط با
                                     مشتریان و ارتقاء سطح رضایتمندی آنهاست. ما بر
@@ -105,13 +105,13 @@ const AboutUs = () => {
             </section>
             <section className="bg-white py-20">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <h2 className="font-manrope mb-14 text-center text-4xl font-bold text-gray-900">
+                    <h4 className=" mb-14 text-center text-4xl font-medium text-gray-900">
                         نتایج ما
-                    </h2>
+                    </h4>
                     <div className="flex flex-col gap-5 lg:flex-row lg:justify-between xl:gap-8">
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-blue-600">
+                                <div className="font-manrope text-2xl font-medium text-blue-600">
                                     ۲۴۰٪
                                 </div>
                                 <div className="flex-1">
@@ -127,7 +127,7 @@ const AboutUs = () => {
                         </div>
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-blue-600">
+                                <div className="font-manrope text-2xl font-medium text-blue-600">
                                     ۱۷۵+
                                 </div>
                                 <div className="flex-1">
@@ -143,7 +143,7 @@ const AboutUs = () => {
                         </div>
                         <div className="mx-auto w-full rounded-2xl bg-white p-6 shadow-md shadow-gray-100 max-lg:max-w-2xl lg:mx-0 lg:w-1/3">
                             <div className="flex gap-5">
-                                <div className="font-manrope text-2xl font-bold text-blue-600">
+                                <div className="font-manrope text-2xl font-medium text-blue-600">
                                     ۶۲۵+
                                 </div>
                                 <div className="flex-1">
@@ -164,9 +164,9 @@ const AboutUs = () => {
             <section className="py-14 lg:py-24 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-24">
-                        <h2 className="font-manrope mb-6 text-center text-4xl font-bold text-gray-900">
+                        <h4 className=" mb-6 text-center text-4xl font-medium text-gray-900">
                             اعضای تیم
-                        </h2>
+                        </h4>
                         {/* <p className="text-center text-lg text-gray-500">
                             ما همه مزایایی را فراهم می‌کنیم که می‌تواند تمام
                             پشتیبانی‌های مالی و بانکی شما را بدون هیچ مشکل دیگری
@@ -596,7 +596,7 @@ const AboutUs = () => {
             {/* <section className=" bg-gray-50 py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-16 rounded-full">
-                        <h2 className="font-manrope text-center text-4xl font-bold text-gray-900">
+                        <h4 className=" text-center text-4xl font-medium text-gray-900">
                             بازخورد کاربران ما
                         </h2>
                     </div>

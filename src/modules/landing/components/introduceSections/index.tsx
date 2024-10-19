@@ -108,7 +108,7 @@ const IntroduceSections = () => {
 
     return (
         <>
-            <div className="relative h-full min-h-full md:h-[70vh] w-full overflow-hidden bg-contain bg-no-repeat lg:bg-cover">
+            <div className="relative h-full min-h-full w-full overflow-hidden bg-contain bg-no-repeat md:h-[70vh] lg:bg-cover">
                 <div className="absolute -top-[120px] left-[90%] -z-50 w-[300px]  opacity-60">
                     <Image
                         className="blur-2xl"
@@ -118,7 +118,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] md:-top-[55%]  opacity-60">
+                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] opacity-60  md:-top-[55%]">
                     <Image
                         className="blur-3xl "
                         src="/images/rightBlur.png"
@@ -133,14 +133,13 @@ const IntroduceSections = () => {
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
-                                    <h1>
-                                        <p className="font-kalame font-black text-center text-4xl md:text-right md:text-5xl">
-                                            <span className="gradient-h2 is-v2">
-                                                همیارچت
-                                            </span>
-                                            <span>، دستیار هوش مصنوعی </span>
-                                        </p>
-                                        <p className="font-kalame font-semibold mt-3 text-center text-xl md:mt-5 md:text-right md:text-2xl">
+                                    <h1 className="text-center font-kalame text-4xl font-black md:text-right md:text-5xl">
+                                        <span className="gradient-h2 is-v2">
+                                            همیارچت
+                                        </span>
+                                        <span>، دستیار هوش مصنوعی</span>
+                                        <br />
+                                        <span className="mt-3 inline-block text-center font-kalame text-xl font-semibold md:mt-5 md:text-right md:text-2xl">
                                             <span>در خدمت </span>
                                             <span className="gradient-h2 is-v2">
                                                 رضایت{" "}
@@ -150,11 +149,11 @@ const IntroduceSections = () => {
                                                 پیشرفت{" "}
                                             </span>
                                             <span>کسب و کارها</span>
-                                        </p>
+                                        </span>
                                     </h1>
                                 </div>
                                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
-                                    <p className="font-yekan font-medium mx-auto text-center text-[12px] md:text-justify md:text-[16px]">
+                                    <p className="mx-auto text-center font-yekan text-[12px] font-medium md:text-justify md:text-[16px] md:!leading-9">
                                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                                     </p>
                                 </div>
@@ -167,13 +166,17 @@ const IntroduceSections = () => {
                                         className="flex h-[70px] w-full flex-row-reverse items-center space-x-2 rounded-2xl border border-gray-200 p-2 md:w-[80%]"
                                     >
                                         <button
-                                          onClick={handleSubmit}
-                                          className="p-2"
-                                         >
-
-                                           <ArrowLeft2
-                                            size="28"
-                                            color={inputValue ? "#0000FF" : "#6b7280"}  />
+                                            onClick={handleSubmit}
+                                            className="p-2"
+                                        >
+                                            <ArrowLeft2
+                                                size="28"
+                                                color={
+                                                    inputValue
+                                                        ? "#0000FF"
+                                                        : "#6b7280"
+                                                }
+                                            />
                                         </button>
                                         <input
                                             className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"

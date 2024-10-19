@@ -3,6 +3,7 @@
 import "./style.css"
 import PricingCard from "./PricingCard"
 import MobilePricingFeatures from "./components/Mobile/Table"
+import Link from "next/link"
 
 // const pricingTiers = [{
 //     name: "Basic",
@@ -148,9 +149,9 @@ const Pricing = () => {
                                             <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-white px-4 py-1 text-xs font-medium text-zinc-950 transition-colors duration-300 ease-in-out hover:bg-white hover:text-zinc-900 hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                                 ماهانه
                                             </button>
-                                            <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-zinc-100 px-4 py-1 text-xs font-medium text-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                                            {/* <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-zinc-100 px-4 py-1 text-xs font-medium text-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                                                 سالانه{" "}
-                                            </button>
+                                            </button> */}
                                         </div>
                                     </div>
                                     <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
@@ -163,7 +164,7 @@ const Pricing = () => {
                                                     رایگان برای همیشه
                                                 </span>
                                             </div>
-                                            <a href="/dashboard?next=/settings/plans">
+                                            <Link href={`/auth/login`}>
                                                 <button
                                                     className="
                                                 bg-white-gradient shadow-button 
@@ -179,7 +180,7 @@ const Pricing = () => {
                                                 >
                                                     شروع کنید
                                                 </button>
-                                            </a>
+                                            </Link>
                                         </div>
                                         <div className="flex flex-col items-center justify-center gap-2 rounded-xl px-3 py-2 xl:px-6">
                                             <span className="text-2xl font-medium ">
