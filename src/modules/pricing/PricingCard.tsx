@@ -41,7 +41,7 @@ const PricingCard = ({
                             <span className="pricing-header mb-3 block text-3xl font-bold">
                                 {type}
                             </span>
-                            <h2 className="text-dark mb-5 text-2xl">
+                            <h3 className="text-dark font-medium mb-5 text-2xl">
                                 {price}
                                 <span
                                     style={{
@@ -51,7 +51,7 @@ const PricingCard = ({
                                 >
                                     {subscription && "/"} {subscription}
                                 </span>
-                            </h2>
+                            </h3>
                             {/* <p 
                     style={{
                         color: "#637381"

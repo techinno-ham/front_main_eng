@@ -12,7 +12,7 @@ const Features = () => {
                     <span className="text-primary mb-2 block text-lg font-semibold">
                         ویژگی‌ها
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-xl md:text-[40px] ">
+                    <h1 className="text-dark mb-3 text-3xl font-medium leading-[1.208] sm:text-xl md:text-[40px] ">
                         امکانات
                         <span
                             style={{
@@ -48,13 +48,13 @@ const Features = () => {
 
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h2
-                                    className=" relative mb-9 text-xl font-bold
+                                <h4
+                                    className=" relative mb-9 text-xl font-medium
                                 text-black max-lg:text-center lg:text-3xl
                                  "
                                 >
                                     آموزش چت‌بات با داده‌های سفارشی شما
-                                </h2>
+                                </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                     در همیارچت، ما امکان آموزش چت‌بات‌ها را با
                                     داده‌های سفارشی شما فراهم کرده‌ایم. این
@@ -78,9 +78,9 @@ const Features = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-9 ">
                         <div className="flex items-center lg:pr-24">
                             <div className="data w-full">
-                                <h2 className=" mb-9 text-xl font-bold text-black max-lg:text-center lg:text-3xl">
+                                <h4 className=" mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
                                     رابط کاربری کاملاً قابل سفارشی‌سازی
-                                </h2>
+                                </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                     در همیارچت، ما به اهمیت تجربه کاربری توجه
                                     ویژه‌ای داریم. به همین دلیل، رابط کاربری
@@ -123,10 +123,10 @@ const Features = () => {
 
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
-                                <h2 className=" relative mb-9 text-xl font-bold text-black max-lg:text-center lg:text-3xl">
+                                <h4 className=" relative mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
                                     پاسخ‌های خودکار به سوالات کاربران با هوش
                                     مصنوعی{" "}
-                                </h2>
+                                </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
                                     ما در همیارچت با افتخار ارائه‌دهنده
                                     سیستم‌هایی هستیم که قادر به ارائه پاسخ‌های

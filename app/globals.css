@@ -166,7 +166,7 @@ h1 {
 }
 
 h2 {
-  @apply font-kalame font-extrabold; /* Apply Kalame font and extrabold weight to h2 */
+  @apply font-kalame font-bold; /* Apply Kalame font and extrabold weight to h2 */
 }
 
 h3 {
