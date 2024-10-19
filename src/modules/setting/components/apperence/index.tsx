@@ -74,7 +74,7 @@ const Apperence = () => {
         updateChatConfig({ [name]: value })
     }
     const onSubmit = async () => {
-        // setIsLoading(true)
+        setIsLoading(true)
         try {
             const Data :any= {
                 greet_msgs: chatConfig?.botMessages,

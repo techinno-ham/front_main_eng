@@ -381,7 +381,7 @@ const ChatBot: FC<chatbotProps> = ({
                                         title="لبلب "
                                         disabled={isLoading}
                                         onClick={() =>
-                                            sendRequest("چگونه چت بات بخرم ؟")
+                                            sendRequest("همیار چت چیست؟")
                                         }
                                     >
                                         {" "}

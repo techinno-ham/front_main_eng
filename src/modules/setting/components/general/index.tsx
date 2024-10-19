@@ -30,7 +30,19 @@ const General = () => {
         if (data) {
             setValue("name", data.name)
         }
-    }, [data, setValue])
+    }, [data, setValue]);
+
+
+    const handleCopyId = () => {
+        navigator.clipboard
+            .writeText(data?.bot_id)
+            .then(() => {
+                toast.success("کد مورد نظر شما کپی شد.")
+            })
+            .catch((err) => {
+                toast.error("کد مورد نظر شما کپی نشد.")
+            })
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -42,6 +54,7 @@ const General = () => {
                     <div className="mt-1 flex items-center gap-2 space-x-4">
                         <div className="font-semibold">{data?.bot_id}</div>
                         <button
+                        onClick={handleCopyId}
                             type="button"
                             className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
                         >
