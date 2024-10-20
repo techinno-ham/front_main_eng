@@ -161,7 +161,7 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-            <section className="py-14 lg:py-24 ">
+            {/* <section className="py-14 lg:py-24 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-24">
                         <h4 className=" mb-6 text-center text-xl lg:text-3xl font-medium text-gray-900">
@@ -592,7 +592,7 @@ const AboutUs = () => {
 
                 <div className="swiper-pagination"></div>
                 <div className="swiper-scrollbar"></div> */}
-            </section>
+            </section> */}
             {/* <section className=" bg-gray-50 py-14 lg:py-24">
                 <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mb-16 rounded-full">
