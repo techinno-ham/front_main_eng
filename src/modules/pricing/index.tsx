@@ -80,14 +80,14 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="استاندارد"
-                            price="۱،۰۰۰،۰۰۰"
-                            subscription="ماه"
+                            price = "۴۹۹"
+                            subscription="ماهانه"
                             description="مناسب برای کسب‌وکارهای متوسط و کاربران با نیازهای پیشرفته"
                             buttonText="انتخاب طرح استاندارد"
-                            beforeListText={"همه چیز در رایگان، به علاوه..."}
+                            beforeListText={"همه موارد در رایگان، به علاوه..."}
                             active={false}
                         >
-                            <List>۱۰۰۰ پیام و پاسخ</List>
+                            <List>۱٬۲۰۰ پیام و پاسخ</List>
                             <List>3 دستیار هوش مصنوعی</List>
                             <List>لینک‌های نامحدود</List>
                             <List>10,۰۰,۰۰۰ ذخیره کلمات / دستیار</List>
@@ -95,13 +95,14 @@ const Pricing = () => {
                         <PricingCard
                             order={4}
                             type="حرفه‌ای"
-                            price="۱،۰۰۰،۰۰۰"
-                            subscription="ماه"
+                            price="۱،۴۹۹"
+                            subscription="ماهانه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
-                            beforeListText={"همه چیز در استاندارد، به علاوه..."}
+                            beforeListText={"همه موارد در استاندارد، به علاوه..."}
                             active={true}
                         >
+                            <List>۴٬۵۰۰ پیام و پاسخ</List>
                             <List>ذخیره کلمات و آپلود فایل نامحدود😍</List>
                             <List>۱ کاربر</List>
                             <List>تمامی اجزای رابط کاربری</List>
@@ -113,11 +114,11 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="سازمانی"
-                            price="۱،۰۰۰،۰۰۰"
-                            subscription="ماه"
+                            price="تماس بگیرید"
+                            // subscription="ماهانه"
                             description="مناسب برای سازمان‌های بزرگ با نیازهای پیچیده، راه‌حل‌های سفارشی، و پشتیبانی اختصاصی."
                             buttonText="انتخاب طرح سازمانی"
-                            beforeListText={"همه چیز در حرفه‌ای، به علاوه..."}
+                            beforeListText={"همه موارد در حرفه‌ای، به علاوه..."}
                             active={false}
                         >
                             <List>۱ کاربر</List>
@@ -188,7 +189,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                ۴۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -203,7 +204,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                ۱،۴۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -218,7 +219,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                    ۱،۰۰۰،۰۰۰ تومان / ماه
+                                                تماس بگیرید
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
