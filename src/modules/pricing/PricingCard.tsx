@@ -43,11 +43,14 @@ const PricingCard = ({
                             </span>
                             <h3 className="text-dark font-medium mb-5 text-2xl">
                                 {price}
+                                {
+                                    subscription && <span className="mr-1 text-[12px] text-[#637381]">{" "}تومان</span>
+                                }
                                 <span
                                     style={{
                                         color: "#637381",
                                     }}
-                                    className="dark:text-dark-6 block text-base font-medium"
+                                    className="block text-base font-medium"
                                 >
                                     {subscription && "/"} {subscription}
                                 </span>
