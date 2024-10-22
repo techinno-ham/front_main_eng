@@ -47,8 +47,8 @@ const PricingCard = ({
                                 </span>
                                 <span className="text-zinc-400">
                                 {
-                                    subscription && <span className="mr-1 text-[12px]">{" "}هزار تومان
-                                    {subscription && "/"} {subscription}
+                                    subscription && <span className="mr-1 text-[12px]">
+                                    {subscription}
                                     </span>
                                 }
                                 </span>
@@ -88,7 +88,7 @@ const PricingCard = ({
                                 style={{
                                     color: "#637381",
                                 }}
-                                className="mb-9 mt-2 flex flex-col gap-[14px] pb-8"
+                                className="mt-2 flex flex-col gap-[14px] "
                             >
                                 {React.Children.map(children, (child) => (
                                     <div className="flex flex-row items-start gap-3">

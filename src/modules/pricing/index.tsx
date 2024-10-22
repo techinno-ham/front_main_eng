@@ -93,7 +93,7 @@ const Pricing = () => {
                             order={0}
                             type="پایه"
                             price="رایگان"
-                            subscription="همیشه"
+                            subscription=" برای همیشه "
                             description="مناسب برای کسب‌وکارهای کوچک و کاربران تازه‌کار با نیازهای ساده."
                             //beforeListText={"&nbsp;"}
                             buttonText="شروع کنید"
@@ -114,7 +114,7 @@ const Pricing = () => {
                             order={0}
                             type="استاندارد"
                             price="۴۹۹"
-                            subscription="ماهانه"
+                            subscription="هزار تومان/ ماهانه"
                             description="مناسب برای کسب‌وکارهای متوسط و کاربران با نیازهای پیشرفته"
                             buttonText="انتخاب طرح استاندارد"
                             beforeListText={"همه موارد در رایگان، به علاوه..."}
@@ -130,7 +130,7 @@ const Pricing = () => {
                             order={4}
                             type="حرفه‌ای"
                             price="۱،۴۹۹"
-                            subscription="ماهانه"
+                            subscription="هزار تومان/ ماهانه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
                             beforeListText={
