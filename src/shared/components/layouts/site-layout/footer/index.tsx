@@ -390,22 +390,27 @@ const Footer = () => {
                                 راهنمایی و پشتیبانی
                             </h5>
                             <Link
-                                href={"/"}
+                                href={"https://telegram.me/hamyarchat"}
+                                target="_blank"
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 پشتیبانی تلگرام{" "}
                             </Link>
                             <Link
-                                href={"/"}
+                                href={"https://wa.me/989397803429"}
+                                target="_blank"
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 پشتیبانی واتساپ{" "}
                             </Link>
                             <Link
                                 href={"/"}
-                                className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                style={{
+                                    direction: "ltr"
+                                }}
+                                className="flex justify-end text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700 "
                             >
-                                کانال تلگرام{" "}
+                                +98 939 780 3429{" "}
                             </Link>
                             <Link
                                 href={"mailto:support@hamyar.chat"}
@@ -669,22 +674,27 @@ const Footer = () => {
                             >
                                 <div className="flex flex-col gap-2">
                                     <Link
-                                        href={"/"}
+                                        href={"https://telegram.me/hamyarchat"}
+                                        target="_blank"
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
                                         پشتیبانی تلگرام{" "}
                                     </Link>
                                     <Link
-                                        href={"/"}
+                                        href={"https://wa.me/989397803429"}
+                                        target="_blank"
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
                                         پشتیبانی واتساپ{" "}
                                     </Link>
                                     <Link
                                         href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
+                                        style={{
+                                            direction: "ltr"
+                                        }}
+                                        className="flex justify-end text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        کانال تلگرام{" "}
+                                        +98 939 780 3429{" "}
                                     </Link>
                                     <Link
                                         href={"/"}
