@@ -19,6 +19,37 @@ import Link from "next/link"
 //       }
 // }]
 
+const CheckIcon = ()=><svg
+xmlns="http://www.w3.org/2000/svg"
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+stroke="#30a46c"
+stroke-width="3"
+stroke-linecap="round"
+stroke-linejoin="round"
+className="lucide lucide-check size-5"
+>
+<path d="M20 6 9 17l-5-5"></path>
+</svg>
+
+const CrossIcon=()=><svg
+xmlns="http://www.w3.org/2000/svg"
+width="24"
+height="24"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="2"
+stroke-linecap="round"
+stroke-linejoin="round"
+className="lucide lucide-x size-5"
+>
+<path d="M18 6 6 18"></path>
+<path d="m6 6 12 12"></path>
+</svg>
+
 const Pricing = () => {
     return (
         <section className="relative bg-white pb-12 pt-10 lg:pb-[90px]">
@@ -62,16 +93,18 @@ const Pricing = () => {
                             order={0}
                             type="پایه"
                             price="رایگان"
-                            //subscription="همیشه"
-                            description="مناسب برای کسب‌وکارهای کوچک و کاربران تازه‌کار."
+                            subscription="همیشه"
+                            description="مناسب برای کسب‌وکارهای کوچک و کاربران تازه‌کار با نیازهای ساده."
+                            //beforeListText={"&nbsp;"}
                             buttonText="شروع کنید"
                             active={false}
                             //use full for N count of users
                         >
-                            <List>۱۰۰ پیام و پاسخ</List>
+                            <List>دسترسی به مدل‌های زبانی سریع</List>
+                            <List>۱۰۰ پیام ماهانه</List>
                             <List>۱ دستیار هوش مصنوعی</List>
-                            <List>۱۰ لینک برای آموزش</List>
-                            <List>۴۰۰,۰۰۰ ذخیره کلمات / دستیار</List>
+                            <List>محدود به ۱۰ لینک برای آموزش</List>
+                            <List>۴۰۰,۰۰۰ ذخیره کاراکتر / دستیار</List>
                             <List>شخصی‌سازی رابط کاربری</List>
                             <List>استفاده در وبسایت</List>
                             <List>مشاهده تاریخچه چت</List>
@@ -80,17 +113,18 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="استاندارد"
-                            price = "۴۹۹"
+                            price="۴۹۹"
                             subscription="ماهانه"
                             description="مناسب برای کسب‌وکارهای متوسط و کاربران با نیازهای پیشرفته"
                             buttonText="انتخاب طرح استاندارد"
                             beforeListText={"همه موارد در رایگان، به علاوه..."}
                             active={false}
                         >
-                            <List>۱٬۲۰۰ پیام و پاسخ</List>
-                            <List>3 دستیار هوش مصنوعی</List>
+                            <List>۱٬۲۰۰ پیام ماهانه</List>
+                            <List>۳ دستیار هوش مصنوعی</List>
                             <List>لینک‌های نامحدود</List>
-                            <List>10,۰۰,۰۰۰ ذخیره کلمات / دستیار</List>
+                            <List> ۱۱٬۰۰۰٬۰۰۰ ذخیره کاراکتر / دستیار</List>
+                            <List>پشتیبانی ۲۴/۷</List>
                         </PricingCard>
                         <PricingCard
                             order={4}
@@ -99,17 +133,16 @@ const Pricing = () => {
                             subscription="ماهانه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
-                            beforeListText={"همه موارد در استاندارد، به علاوه..."}
+                            beforeListText={
+                                "همه موارد در استاندارد، به علاوه..."
+                            }
                             active={true}
                         >
-                            <List>۴٬۵۰۰ پیام و پاسخ</List>
-                            <List>ذخیره کلمات و آپلود فایل نامحدود😍</List>
-                            <List>۱ کاربر</List>
-                            <List>تمامی اجزای رابط کاربری</List>
-                            <List>دسترسی مادام‌العمر</List>
-                            <List>به‌روزرسانی‌های رایگان</List>
-                            <List>استفاده در ۱ (یک) پروژه</List>
-                            <List>پشتیبانی ۳ ماهه</List>
+                            <List>۴٬۵۰۰ پیام ماهانه</List>
+                            <List>۵ دستیار هوش مصنوعی</List>
+                            <List>ذخیره کاراکتر و آپلود فایل نامحدود😍</List>
+                            <List>درج دامنه یا لوگوی سفارشی شما</List>
+                            <List>مشاوره اختصاصی</List>
                         </PricingCard>
                         <PricingCard
                             order={0}
@@ -121,12 +154,13 @@ const Pricing = () => {
                             beforeListText={"همه موارد در حرفه‌ای، به علاوه..."}
                             active={false}
                         >
-                            <List>۱ کاربر</List>
-                            <List>تمامی اجزای رابط کاربری</List>
-                            <List>دسترسی مادام‌العمر</List>
-                            <List>به‌روزرسانی‌های رایگان</List>
-                            <List>استفاده در ۱ (یک) پروژه</List>
-                            <List>پشتیبانی ۳ ماهه</List>
+                            <List>دسترسی به مدل‌های زبانی پیشرفته</List>
+
+                            <List>پیام‌های نامحدود</List>
+                            <List>دستیارهای هوش مصنوعی نامحدود  </List>
+                            <List>درج دامنه یا لوگوی سفارشی شما</List>
+                            <List>حذف برند همیارچت</List>
+                            <List>مشاوره اختصاصی</List>
                         </PricingCard>
                     </div>
                 </div>
@@ -189,7 +223,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                ۴۹۹ هزار تومان / ماهانه
+                                                    ۴۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -204,7 +238,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                ۱،۴۹۹ هزار تومان / ماهانه
+                                                    ۱،۴۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -219,7 +253,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                تماس بگیرید
+                                                    تماس بگیرید
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -248,13 +282,12 @@ const Pricing = () => {
                                         </span>
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        پیام و پاسخ
-                                    </span>
+                                    پیام ماهانه                                    </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         دستیار هوش مصنوعی
                                     </span>
                                     <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-                                        ذخیره کلمات / دستیار
+                                        ذخیره کاراکتر / دستیار
                                     </span>
                                     {/* <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
                                         Team members
@@ -367,7 +400,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                            20
+                                        ۱۰۰
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             1
@@ -379,20 +412,7 @@ const Pricing = () => {
                                             1
                                         </span> */}
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -408,53 +428,13 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -462,89 +442,19 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         {/* <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span> */}
                                     </div>
                                     <div
@@ -552,70 +462,16 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -623,38 +479,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -662,37 +490,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                 </div>
@@ -705,10 +506,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                            2000
+                                        ۱٬۲۰۰
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                            2
+                                        ۳
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             11,000,000
@@ -717,20 +518,7 @@ const Pricing = () => {
                                             1
                                         </span> */}
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -746,52 +534,13 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -799,20 +548,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -820,70 +556,16 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -891,38 +573,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -930,37 +584,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-x size-5"
-                                            >
-                                                <path d="M18 6 6 18"></path>
-                                                <path d="m6 6 12 12"></path>
-                                            </svg>
+                                            <CrossIcon/>
                                         </span>
                                     </div>
                                 </div>
@@ -973,7 +600,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
-                                            10,000
+                                        ۴٬۵۰۰
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
                                             5
@@ -985,20 +612,7 @@ const Pricing = () => {
                                             3
                                         </span> */}
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1014,52 +628,13 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1067,20 +642,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1088,68 +650,16 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1157,36 +667,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                        <CrossIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1194,36 +678,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/20">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                 </div>
@@ -1236,11 +694,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                            40,000 + Unlimited with your OpenAI
-                                            key
+                                        نامحدود
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                                            10
+                                        نامحدود
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
                                             نامحدود
@@ -1249,20 +706,7 @@ const Pricing = () => {
                                             5
                                         </span> */}
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1278,52 +722,13 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1331,20 +736,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1352,68 +744,16 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1421,36 +761,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                     <div
@@ -1458,36 +772,10 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-950">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="24"
-                                                height="24"
-                                                viewBox="0 0 24 24"
-                                                fill="none"
-                                                stroke="#30a46c"
-                                                stroke-width="3"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                className="lucide lucide-check size-5"
-                                            >
-                                                <path d="M20 6 9 17l-5-5"></path>
-                                            </svg>
+                                            <CheckIcon/>
                                         </span>
                                     </div>
                                 </div>
