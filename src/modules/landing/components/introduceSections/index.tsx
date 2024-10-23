@@ -133,13 +133,20 @@ const IntroduceSections = () => {
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
-                                    <h1 className="text-center font-kalame text-4xl font-black md:text-right md:text-5xl">
-                                        <span className="gradient-h2 is-v2">
-                                            همیارچت
+                                    <h1 className="text-center !leading-[60px] font-kalame text-4xl font-bold md:text-right md:text-3xl text-slate-700">
+                                        <span className="gradient-h2 is-v2 text-6xl">
+                                            همیارچت 
                                         </span>
-                                        <span>، دستیار هوش مصنوعی</span>
+                                        <span>،{" "}ارائه‌دهنده دستیارهای شخصی‌سازی‌شده 
+                                        <span className="gradient-h2 is-v2">
+                                        {" "}
+                                            هوش مصنوعی
+                                            {" "}
+                                        </span>
+
+                                             برای کسب‌وکار شما</span>
                                         <br />
-                                        <span className="mt-3 inline-block text-center font-kalame text-xl font-semibold md:mt-5 md:text-right md:text-2xl">
+                                        {/* <span className="mt-3 inline-block text-center font-kalame text-xl font-semibold md:mt-5 md:text-right md:text-2xl">
                                             <span>در خدمت </span>
                                             <span className="gradient-h2 is-v2">
                                                 رضایت{" "}
@@ -149,7 +156,7 @@ const IntroduceSections = () => {
                                                 پیشرفت{" "}
                                             </span>
                                             <span>کسب و کارها</span>
-                                        </span>
+                                        </span> */}
                                     </h1>
                                 </div>
                                 <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">

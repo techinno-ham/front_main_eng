@@ -162,7 +162,7 @@ html {
 }
 
 h1 {
-  @apply font-kalame font-black; /* Apply Kalame font and black weight to h1 */
+  @apply font-kalame font-bold; /* Apply Kalame font and black weight to h1 */
 }
 
 h2 {
