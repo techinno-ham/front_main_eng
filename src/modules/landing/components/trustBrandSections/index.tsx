@@ -113,10 +113,10 @@ const TrustBrandSections = () => {
                             justifyContent: "center",
                             maxWidth: "72rem",
                             width: "100%",
-                            height: "2rem",
+                            height: "1.3rem",
                             borderRadius: "12.1rem",
                             background:
-                                "linear-gradient(91deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)",
+                                "linear-gradient(270deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)",
                             filter: "blur(60px)",
                             position: "absolute",
                             bottom: "1rem",
