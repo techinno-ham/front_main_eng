@@ -1,16 +1,15 @@
 import {
-    Activity,
     Box2,
     ChemicalGlass,
-    DollarCircle,
-    Login,
     Magicpen,
 } from "iconsax-react"
 
 const SetupSection = () => {
     return (
-        <>
-            <div className="container relative mx-auto h-auto overflow-hidden  px-4  pt-[100px] pb-[50px] text-center 2xl:px-20">
+        <section 
+        
+        className="vertical-mask-gradient bg-[url('https://assets-global.website-files.com/635c4eeb78332f7971255095/651bde55c70a6abcd28bad3e_circle-grid-bg_dots.webp')] bg-cover bg-center">
+            <div className="container relative mx-auto h-auto overflow-hidden  px-4  py-[100px] text-center 2xl:px-20">
                 <div className="my-10 md:mt-10">
                     <h2 className="text-3xl font-medium md:text-5xl">
                         چت بات بدون
@@ -79,7 +78,7 @@ const SetupSection = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 export default SetupSection

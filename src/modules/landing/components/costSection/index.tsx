@@ -2,7 +2,7 @@ import { DocumentText1, DollarCircle, Messages3, Timer1 } from "iconsax-react"
 
 const CostSection = () => {
     return (
-        <>
+        <section >
             <div className="container relative mx-auto mt-12 h-auto overflow-hidden  px-4  pb-[50px] pt-[100px] text-center 2xl:px-20">
                 <div className=" rounded-[35px] border border-solid border-[#0446cb] bg-[#f2f4fa] px-4 py-10 md:px-14 md:py-20">
                     <div className="mb-10 ">
@@ -98,7 +98,7 @@ const CostSection = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     )
 }
 export default CostSection

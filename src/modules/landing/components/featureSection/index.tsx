@@ -6,7 +6,7 @@ import Section from "./components/sections"
 const FeatureSection = () => {
     return (
         <div className="section-large container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
-            <div className="mt-[55px] text-center md:mt-[80px]">
+            <div className="mt-[24px] text-center ">
                 <h2 className="font-medium text-2xl leading-[150%] md:text-5xl">
                     {/* تمام آنچه برای ساخت <br />{" "}
                     <span className=" text-feature gradient-h2 is-v2">
