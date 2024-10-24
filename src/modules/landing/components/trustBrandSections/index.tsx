@@ -95,7 +95,7 @@ let brands = [
 
 const TrustBrandSections = () => {
     return (
-        <div className="container-medium w-container container mx-auto h-max text-center mt-8  md:mt-5 px-4 2xl:px-20">
+        <div className="relative container-medium w-container container mx-auto h-max text-center mt-8  md:mt-5 px-4 2xl:px-20">
             {/* Uncomment and customize the section below if needed
             <div className="mt-10 md:mt-4">
                 <h2 className="text-3xl md:text-5xl">
@@ -107,6 +107,23 @@ const TrustBrandSections = () => {
                 </h3>
             </div>
             */}
+            <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            maxWidth: "72rem",
+                            width: "100%",
+                            height: "2rem",
+                            borderRadius: "12.1rem",
+                            background:
+                                "linear-gradient(91deg, rgb(72 205 255) 0%, rgb(91 100 220) 100%)",
+                            filter: "blur(60px)",
+                            position: "absolute",
+                            bottom: "1rem",
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                        }}
+                    ></div>
             <p className="">دمو ساخته‌شده با موفقیت
                  <strong>
                     {" "}
