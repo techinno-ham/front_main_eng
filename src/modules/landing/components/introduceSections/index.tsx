@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
-import { ArrowLeft2, Calendar, Magicpen } from "iconsax-react"
+import { ArrowLeft2, Calendar, Call, Magicpen } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
 import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
@@ -231,11 +231,23 @@ const IntroduceSections = () => {
                                     </div> */}
                                 </div>
                                 <div className="flex flex-row">
-                                <button type="button" className="mt-5 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                                دستیار خود را بسازید(رایگان)
+                                <button type="button" className="mt-5 text-white bg-gradient-to-r 
+                                from-blue-500 via-blue-600 to-blue-700
+                                 hover:bg-gradient-to-br focus:ring-4 focus:outline-none
+                                  focus:ring-blue-300  shadow-lg
+                                   shadow-blue-500/50 
+                                   font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                                دستیار خود را بسازید
+                                <span className="notice-text mr-2 inline-block text-[10px] "> رایگان </span>
                                 </button>
-                                <button type="button" className="mt-5 text-blue-500 bg-transparent hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                                تماس بگیرید
+                                <button type="button" className="flex items-center justify-center mt-5
+                                 text-blue-500 bg-transparent hover:bg-gradient-to-br 
+                                 focus:ring-4 focus:outline-none focus:ring-blue-300
+                                  border 
+                                  shadow-lg shadow-blue-500/50 dark:shadow-lg
+                                   font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                                تماس با ما
+                                <span className="mr-1"><Call size="20" color="#3b82f6"/></span>
                                 </button>
                                 </div>
                             </div>
