@@ -132,19 +132,20 @@ const IntroduceSections = () => {
                     <div className="intro_conteiner">
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div className="my-auto pb-4">
-                                <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-9">
-                                    <h1 className="text-center !leading-[60px] font-kalame text-4xl font-bold md:text-right md:text-3xl text-slate-700">
+                                <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-4">
+                                    <h1 className="text-center font-kalame text-4xl font-bold !leading-[60px] text-slate-700 md:text-right md:text-3xl">
                                         <span className="gradient-h2 is-v2 text-6xl">
-                                            همیارچت 
+                                            همیارچت
                                         </span>
-                                        <span>،{" "}ارائه‌دهنده دستیارهای شخصی‌سازی‌شده 
-                                        <span className="gradient-h2 is-v2">
-                                        {" "}
-                                            هوش مصنوعی
-                                            {" "}
+                                        <span>
+                                            ، ارائه‌دهنده دستیارهای
+                                            شخصی‌سازی‌شده
+                                            <span className="gradient-h2 is-v2">
+                                                {" "}
+                                                هوش مصنوعی{" "}
+                                            </span>
+                                            برای کسب‌وکار شما
                                         </span>
-
-                                             برای کسب‌وکار شما</span>
                                         <br />
                                         {/* <span className="mt-3 inline-block text-center font-kalame text-xl font-semibold md:mt-5 md:text-right md:text-2xl">
                                             <span>در خدمت </span>
@@ -159,12 +160,13 @@ const IntroduceSections = () => {
                                         </span> */}
                                     </h1>
                                 </div>
-                                <div className="mt-6 text-base text-slate-400 md:mt-8 md:text-lg ">
+                                <div className="mt-3 text-base text-slate-400 md:mt-4 md:text-lg ">
                                     <p className="mx-auto text-center font-yekan text-[12px] font-medium md:text-justify md:text-[16px] md:!leading-9">
                                         {`با همیارچت، تجربه‌ای هوشمند و شخصی‌سازی شده برای ارتباطات آنلاین و خدمات مشتریان خود بسازید. پلتفرم قدرتمند ما به شما کمک می‌کند تا به سادگی و با کارایی بالا، ارتباطات بهینه‌تری با مشتریان خود برقرار کنید و همیشه در دسترس باشید.`}
                                     </p>
                                 </div>
-                                <div className="mt-[32px] flex flex-col items-start justify-center gap-4">
+                                
+                                <div className="mt-5 flex flex-col items-start justify-center gap-4">
                                     <div
                                         style={{
                                             boxShadow:
@@ -186,7 +188,7 @@ const IntroduceSections = () => {
                                             />
                                         </button>
                                         <input
-                                            className="w-full text-gray-700 placeholder-gray-500 focus:outline-none"
+                                            className="w-full text-gray-700 placeholder-gray-500 focus:outline-none placeholder:text-xs"
                                             type="text"
                                             value={inputValue}
                                             onChange={handleInputChange}
@@ -227,6 +229,14 @@ const IntroduceSections = () => {
                                             ایجاد بات دمو
                                         </button>
                                     </div> */}
+                                </div>
+                                <div className="flex flex-row">
+                                <button type="button" className="mt-5 text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                                دستیار خود را بسازید(رایگان)
+                                </button>
+                                <button type="button" className="mt-5 text-blue-500 bg-transparent hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                                تماس بگیرید
+                                </button>
                                 </div>
                             </div>
                             <div className="relative">
