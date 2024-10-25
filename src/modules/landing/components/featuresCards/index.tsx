@@ -120,10 +120,8 @@ const FeaturesCards = () => {
                                         <Link href={"/auth/register"}>
                                             <div className="flex items-center gap-1 text-[#6172fc]">
                                                 <span>ساخت چت بات رایگان</span>
-                                                <Link2
-                                                    size="30"
-                                                    color="#6172fc"
-                                                />
+                                                
+                                                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
                                             </div>
                                         </Link>
                                     </div>
@@ -193,11 +191,9 @@ const FeaturesCards = () => {
                                     <div className="button-section">
                                         <Link href={"/auth/register"}>
                                             <div className="flex items-center gap-1 text-[#6172fc]">
-                                                <span>ساخت چت بات رایگان</span>
-                                                <Link2
-                                                    size="30"
-                                                    color="#6172fc"
-                                                />
+                                                <span>ارتباط با همه، در همه‌جا</span>
+                                                
+                                                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
                                             </div>
                                         </Link>
                                     </div>
@@ -266,11 +262,9 @@ const FeaturesCards = () => {
                                     <div className="button-section">
                                         <Link href={"/auth/register"}>
                                             <div className="flex items-center gap-1 text-[#6172fc]">
-                                                <span>ساخت چت بات رایگان</span>
-                                                <Link2
-                                                    size="30"
-                                                    color="#6172fc"
-                                                />
+                                                <span>راه‌اندازی با یک کلیک</span>
+                                                
+                                                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
                                             </div>
                                         </Link>
                                     </div>

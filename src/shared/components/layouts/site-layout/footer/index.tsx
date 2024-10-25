@@ -248,7 +248,7 @@ const Footer = () => {
                                     </div>
                                 </Link>
                             </div>
-                            <p className="text-right font-medium leading-5 text-zinc-400">
+                            <p className="text-center md:text-right font-medium leading-5 text-zinc-400">
                                 دستیارهای شخصی‌سازی شده هوش مصنوعی
                                 <br />
                                 در خدمت رضایت مشتریان و پیشرفت کسب و کار شما
@@ -257,14 +257,14 @@ const Footer = () => {
                         <div className="grid w-full grid-cols-3 gap-4 md:w-auto md:grid-cols-5">
   
                             <button
-                                className="focus-visible:ring-ring 
-                            col-span-4 inline-flex h-11 items-center
+                                className="col-span-3 md:col-span-2 focus-visible:ring-ring 
+                             inline-flex h-11 items-center
                              justify-center whitespace-nowrap 
                              rounded-md bg-blue-100
                                text-base font-medium 
                               text-blue-900 shadow-sm 
                               transition-colors
-                               hover:bg-blue-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 md:col-span-2 "
+                               hover:bg-blue-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 "
                             >
                                                       <Link
                                                       className="w-full h-full flex items-center justify-center px-4 py-1"

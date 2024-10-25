@@ -10,6 +10,7 @@ import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChat
 import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
 import Cookies from "js-cookie"
 import RiveChatbot from "../RiveChatbot"
+import Link from "next/link"
 
 const IntroduceSections = () => {
     const [inputValue, setInputValue] = useState("")
@@ -133,8 +134,8 @@ const IntroduceSections = () => {
                         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <div className="my-auto pb-4">
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-4">
-                                    <h1 className="text-center font-kalame text-4xl font-bold !leading-[60px] text-slate-700 md:text-right md:text-3xl">
-                                        <span className="gradient-h2 is-v2 text-6xl">
+                                    <h1 className="text-center font-kalame text-1xl md:text-3xl font-bold !leading-[30px] md:!leading-[60px] text-slate-700 md:text-right ">
+                                        <span className="gradient-h2 is-v2 text-4xl md:text-6xl">
                                             همیارچت
                                         </span>
                                         <span>
@@ -192,7 +193,7 @@ const IntroduceSections = () => {
                                             type="text"
                                             value={inputValue}
                                             onChange={handleInputChange}
-                                            placeholder="برای ساخت بات دمو آدرس وبسایت مورد نظرتان وارد کنید ..."
+                                            placeholder="برای بات دمو، آدرس وب‌سایت را وارد کنید..."
                                         />
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -230,7 +231,11 @@ const IntroduceSections = () => {
                                         </button>
                                     </div> */}
                                 </div>
-                                <div className="flex flex-row">
+                                <div className="flex flex-row justify-around md:justify-start">
+                                <Link
+                                        href={"/mybots"}
+                                        
+                                    >
                                 <button type="button" className="mt-5 text-white bg-gradient-to-r 
                                 from-blue-500 via-blue-600 to-blue-700
                                  hover:bg-gradient-to-br focus:ring-4 focus:outline-none
@@ -240,6 +245,12 @@ const IntroduceSections = () => {
                                 دستیار خود را بسازید
                                 <span className="notice-text mr-2 inline-block text-[10px] "> رایگان </span>
                                 </button>
+                                </Link>
+                                <Link
+                                        href={"https://telegram.me/hamyarchat"}
+                                        target="_blank"
+
+                                    >
                                 <button type="button" className="flex items-center justify-center mt-5
                                  text-blue-500 bg-transparent hover:bg-gradient-to-br 
                                  focus:ring-4 focus:outline-none focus:ring-blue-300
@@ -249,6 +260,7 @@ const IntroduceSections = () => {
                                 تماس با ما
                                 <span className="mr-1"><Call size="20" color="#3b82f6"/></span>
                                 </button>
+                                </Link>
                                 </div>
                             </div>
                             <div className="relative">

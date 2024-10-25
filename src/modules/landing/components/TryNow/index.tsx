@@ -6,6 +6,7 @@ import "./style.css"
 import { motion, useAnimation, useInView } from "framer-motion"
 import { useEffect, useRef } from "react"
 import Link from "next/link"
+import { ArrowLeft, ArrowLeft2 } from "iconsax-react"
 
 const TryNow = () => {
     const mainRef = useRef(null)
@@ -64,14 +65,23 @@ const TryNow = () => {
                             </div>
                         </div>
                         <div className="flex w-full">
-                        <Link href="/auth/login" passHref>
-            <button
-                className="hover:white rounded-[10px] bg-gradient-to-tr from-[#1d4ed8] to-violet-950 p-3 font-semibold text-zinc-50 backdrop-blur-lg duration-700 hover:saturate-150 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-                رایگان شروع کنید
-                <span aria-hidden="true"></span>
-            </button>
-        </Link>
+                        
+        <Link
+                                        href={"/mybots"}
+                                        
+                                    >
+                                <button type="button" className="
+                                flex justify-start items-center
+                                mt-5 text-white bg-gradient-to-r 
+                                from-blue-500 via-blue-600 to-blue-700
+                                 hover:bg-gradient-to-br focus:ring-4 focus:outline-none
+                                  focus:ring-blue-300  shadow-lg
+                                   
+                                   font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                                رایگان شروع کنید
+                                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
+                                </button>
+                                </Link>
                         </div>
                     </div>
                 </div>
