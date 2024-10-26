@@ -255,7 +255,7 @@ const IntroduceSections = () => {
                                  text-blue-500 bg-transparent hover:bg-gradient-to-br 
                                  focus:ring-4 focus:outline-none focus:ring-blue-300
                                   border 
-                                  shadow-lg shadow-blue-500/50 dark:shadow-lg
+                                  shadow-lg 
                                    font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
                                 تماس با ما
                                 <span className="mr-1"><Call size="20" color="#3b82f6"/></span>
