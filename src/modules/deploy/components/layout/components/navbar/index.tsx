@@ -22,12 +22,12 @@ const menuItems = [
         icon: <Box size={20} />,
         isActive: false,
     },
-    {
-        title: "اتصال به شبکه های اجتماعی",
-        store: "Integrations",
-        icon: <Whatsapp size={20} />,
-        isActive: false,
-    },
+    // {
+    //     title: "اتصال به شبکه های اجتماعی",
+    //     store: "Integrations",
+    //     icon: <Whatsapp size={20} />,
+    //     isActive: false,
+    // },
 ]
 
 const Navbar = () => {

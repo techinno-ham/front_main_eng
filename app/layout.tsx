@@ -63,7 +63,7 @@ export default function RootLayout({
                 {children}
                 <script
                     src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
-                    hamyar-bot-token="ZDZlNGRmMjktOTAzOC00ZDhhLWEwODctMmZkODA5NzJmYjZmLmM0NWQ0ZTIx"
+                    hamyar-bot-token="ZTI4MmQyYjQtMzdmZi00YzgzLWJhODAtNTE0ZWQ5NGRhNTM5LmEwOTRiNjVm"
                     id="hamyarChatbotScript"
                     nonce="XUENAJFW"
                     async
