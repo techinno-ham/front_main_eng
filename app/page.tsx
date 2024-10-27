@@ -27,6 +27,8 @@ export const metadata: Metadata = {
         description: "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید. این پلتفرم هوشمند به شما کمک می‌کند تا به صورت خودکار و کارآمد، نیازهای مشتریان خود را برآورده کنید و کسب‌وکار خود را بهبود بخشید.",
         url: "https://hamyar.chat", // Replace with the actual URL of your website
         siteName: "همیارچت",
+        //@ts-ignore
+        logo: "https://hamyar.chat/logo.svg", // Adding 
         images: [
             {
                 url: "https://hamyar.chat/ogsocial.png", // Replace with the actual path to your image
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
             },
         ],
         locale: "fa_IR",
-        type: "website",
+        // type: "website",
     },
     twitter: {
         card: "summary_large_image",
