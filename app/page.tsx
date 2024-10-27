@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         siteName: "همیارچت",
         images: [
             {
-                url: "/ogsocial.png", // Replace with the actual path to your image
+                url: "https://hamyar.chat/ogsocial.png", // Replace with the actual path to your image
                 width: 1200, // Standard OG image width
                 height: 630, // Standard OG image height
                 alt: "همیارچت logo",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "همیارچت | ارائه‌دهنده دستیارهای شخصی‌سازی‌شده هوش مصنوعی",
         description: "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید.",
-        images: ["/ogsocial.png"], // Replace with your image URL
+        images: ["https://hamyar.chat/ogsocial.png"], // Replace with your image URL
     },
     icons: {
         icon: "/logo.svg", // Path to your favicon or logo
