@@ -12,7 +12,7 @@ const Features = () => {
                     <span className="text-primary mb-2 block text-lg font-semibold">
                         ویژگی‌ها
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-medium leading-[1.208] sm:text-xl md:text-[40px] ">
+                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-xl md:text-[40px] ">
                         امکانات
                         <span
                             style={{
