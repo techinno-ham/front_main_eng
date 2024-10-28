@@ -129,7 +129,7 @@ const Pricing = () => {
                         <PricingCard
                             order={4}
                             type="حرفه‌ای"
-                            price="۱،۴۹۹"
+                            price="۱٬۶۹۹"
                             subscription="هزار تومان/ ماهانه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
@@ -138,7 +138,7 @@ const Pricing = () => {
                             }
                             active={true}
                         >
-                            <List>۴٬۵۰۰ پیام ماهانه</List>
+                            <List>۴٬۲۰۰ پیام ماهانه</List>
                             <List>۵ دستیار هوش مصنوعی</List>
                             <List>ذخیره کاراکتر و آپلود فایل نامحدود😍</List>
                             <List>درج دامنه یا لوگوی سفارشی شما</List>
@@ -238,7 +238,7 @@ const Pricing = () => {
                                             </span>
                                             <div className="flex flex-col">
                                                 <span className="text-xs font-medium text-zinc-600">
-                                                    ۱،۴۹۹ هزار تومان / ماهانه
+                                                ۱٬۶۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
                                             <a href="/dashboard?next=/settings/plans">
@@ -600,7 +600,7 @@ const Pricing = () => {
                                         className="mt-16 flex w-full flex-col"
                                     >
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
-                                        ۴٬۵۰۰
+                                        ۴٬۲۰۰
                                         </span>
                                         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
                                             5

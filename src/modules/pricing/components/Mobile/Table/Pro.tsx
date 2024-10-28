@@ -7,7 +7,7 @@ const ProPricingMobile = () => {
             <div className="flex w-full flex-row items-center justify-between px-2">
                 <div className="flex flex-col items-start justify-center">
                     <span className="text-xl font-semibold">
-                    ۱،۴۹۹
+                    ۱٬۶۹۹
                     </span>
                     <span className="text-sm text-zinc-400">هزار تومان/ ماهانه</span>
                 </div>
@@ -31,7 +31,7 @@ const ProPricingMobile = () => {
                         <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
                         پیام ماهانه                        </span>
                         <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                        ۴٬۵۰۰
+                        ۴٬۲۰۰
                         </span>
                     </div>
                     <div className="flex w-full flex-row items-center justify-start gap-2">
