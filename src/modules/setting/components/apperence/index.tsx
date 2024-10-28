@@ -8,7 +8,8 @@ import useStoreConfig from "../../hooks/loadConfig"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import CustomColorPicker from "./components/customColorPicker"
-import WidgetAnimation from "./components/widgetAnimation";
+import Lottie from "lottie-react";
+import  {animationDataBot} from "./../../../../../public/lottie/widgetAnimations"
 
 
 const MAX_IMAGE_SIZE = 1 * 1024 * 1024; // 1MB
@@ -467,8 +468,27 @@ const Apperence = () => {
                                       background: chatConfig.borderWidget ,
                                     }}
                                      >
-          
-                              <WidgetAnimation/>
+                          {chatConfig.imageProfle ? (
+                            <>
+                                   <img
+          className="border rounded-full border-[#1277fd] w-12 h-12 m-auto"
+          src={chatConfig.imageProfle}
+        />
+                            </>
+                          ):(
+                            <>
+                              <Lottie
+          animationData={animationDataBot}
+          style={{ transform: "scale(1.3)", width: "55px", height: "55px" }}
+          loop={true}
+          autoPlay={true}
+          rendererSettings={{
+            preserveAspectRatio: "xMidYMid slice",
+          }}
+        />
+                            </>
+                          )}
+      
                                 </span>
                             </div>
                         </div>
