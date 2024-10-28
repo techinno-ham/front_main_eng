@@ -18,14 +18,35 @@ export default function Home() {
         </>
     )
 }
+
 export const metadata: Metadata = {
-    title: "همیارچت | دستیار هوش مصنوعی مکالمه‌ای برای خودکارسازی پشتیبانی مشتریان",
-    description:
-        "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید. این پلتفرم هوشمند به شما کمک می‌کند تا به صورت خودکار و کارآمد، نیازهای مشتریان خود را برآورده کنید و کسب‌وکار خود را بهبود بخشید.",
-    // openGraph: {
-    //   title: 'Blog',
-    // },
+    title: "همیارچت | ارائه‌دهنده دستیارهای شخصی‌سازی‌شده هوش مصنوعی",
+    description: "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید. این پلتفرم هوشمند به شما کمک می‌کند تا به صورت خودکار و کارآمد، نیازهای مشتریان خود را برآورده کنید و کسب‌وکار خود را بهبود بخشید.",
+    openGraph: {
+        title: "همیارچت | دستیار هوش مصنوعی مکالمه‌ای",
+        description: "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید. این پلتفرم هوشمند به شما کمک می‌کند تا به صورت خودکار و کارآمد، نیازهای مشتریان خود را برآورده کنید و کسب‌وکار خود را بهبود بخشید.",
+        url: "https://hamyar.chat", // Replace with the actual URL of your website
+        siteName: "همیارچت",
+        //@ts-ignore
+        logo: "https://hamyar.chat/logo.svg", // Adding 
+        images: [
+            {
+                url: "https://hamyar.chat/ogsocial.png", // Replace with the actual path to your image
+                width: 1200, // Standard OG image width
+                height: 630, // Standard OG image height
+                alt: "همیارچت logo",
+            },
+        ],
+        locale: "fa_IR",
+        // type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "همیارچت | ارائه‌دهنده دستیارهای شخصی‌سازی‌شده هوش مصنوعی",
+        description: "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید.",
+        images: ["https://hamyar.chat/ogsocial.png"], // Replace with your image URL
+    },
     icons: {
-        icon: "/logo.svg", // /public path
+        icon: "/logo.svg", // Path to your favicon or logo
     },
 }
