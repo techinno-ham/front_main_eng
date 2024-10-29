@@ -107,7 +107,7 @@ const UserAccount = () => {
                     <div className="flex items-center gap-2">
                         <div>
                             <span className="text-[13px] font-semibold">
-                                {user?.email || "hoshino@gmail.com"}
+                                {user?.email || ""}
                             </span>
                         </div>
                         <div onClick={handleClickImage}>

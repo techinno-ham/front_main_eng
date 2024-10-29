@@ -16,6 +16,7 @@ import Image from "next/image"
 import useDebounce from "@/src/shared/hooks/Debounce"
 import Pagination from "./components/pagination"
 import useUser from "@/src/shared/hooks/user"
+import useUserStore from "@/src/shared/store/userStore";
 
 const MyBots = () => {
     const [myBotsArry, setMyBots] = useState([])
@@ -28,7 +29,7 @@ const MyBots = () => {
     const [totalBots, setTotalBots] = useState(0)
     const [searchText, setSearchText] = useState("")
     const debouncedSearchText = useDebounce(searchText, 500);
-    const user= useUser();
+    const { user } = useUserStore()
 
     
 
@@ -106,7 +107,8 @@ const MyBots = () => {
                     <div>
                         <button
                             onClick={() => {
-                                if (myBotsArry.length < 2) {
+                                if (user?.email === "admin@hamyar.chat" ) return router.push("/createbot")
+                                if (myBotsArry.length < 2 && user?.email !== "admin@hamyar.chat") {
                                     router.push("/createbot")
                                 } else {
                                     toast.error(
