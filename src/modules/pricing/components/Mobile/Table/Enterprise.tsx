@@ -11,7 +11,7 @@ const EnterprisePricingMobile = () => {
                     </span>
                     
                 </div>
-                <a href="/dashboard?next=/settings/plans">
+                <a target="_blank" href="https://telegram.me/hamyarchat">
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-12 items-center justify-center whitespace-nowrap rounded-xl border py-3 text-base font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                     انتخاب طرح سازمانی
                     </button>

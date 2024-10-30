@@ -97,6 +97,7 @@ const Pricing = () => {
                             description="مناسب برای کسب‌وکارهای کوچک و کاربران تازه‌کار با نیازهای ساده."
                             //beforeListText={"&nbsp;"}
                             buttonText="شروع کنید"
+                            buttonLink="/mybots"
                             active={false}
                             //use full for N count of users
                         >
@@ -117,6 +118,7 @@ const Pricing = () => {
                             subscription="هزار تومان/ ماهانه"
                             description="مناسب برای کسب‌وکارهای متوسط و کاربران با نیازهای پیشرفته"
                             buttonText="انتخاب طرح استاندارد"
+                            buttonLink="https://telegram.me/hamyarchat"
                             beforeListText={"همه موارد در رایگان، به علاوه..."}
                             active={false}
                         >
@@ -133,6 +135,7 @@ const Pricing = () => {
                             subscription="هزار تومان/ ماهانه"
                             description="مناسب برای کسب‌وکارها و سازمان‌های بزرگ با نیاز به سفارشی‌سازی و تحلیل‌های دقیق."
                             buttonText="انتخاب طرح حرفه‌ای"
+                            buttonLink="https://telegram.me/hamyarchat"
                             beforeListText={
                                 "همه موارد در استاندارد، به علاوه..."
                             }
@@ -151,6 +154,7 @@ const Pricing = () => {
                             // subscription="ماهانه"
                             description="مناسب برای سازمان‌های بزرگ با نیازهای پیچیده، راه‌حل‌های سفارشی، و پشتیبانی اختصاصی."
                             buttonText="انتخاب طرح سازمانی"
+                            buttonLink="https://telegram.me/hamyarchat"
                             beforeListText={"همه موارد در حرفه‌ای، به علاوه..."}
                             active={false}
                         >
@@ -199,7 +203,7 @@ const Pricing = () => {
                                                     رایگان برای همیشه
                                                 </span>
                                             </div>
-                                            <Link href={`/auth/login`}>
+                                            <Link href={`/mybots`}>
                                                 <button
                                                     className="
                                                 bg-white-gradient shadow-button 
@@ -226,7 +230,7 @@ const Pricing = () => {
                                                     ۴۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
-                                            <a href="/dashboard?next=/settings/plans">
+                                            <a target="_blank" href="https://telegram.me/hamyarchat">
                                                 <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                                                     تماس بگیرید
                                                 </button>
@@ -241,7 +245,7 @@ const Pricing = () => {
                                                 ۱٬۶۹۹ هزار تومان / ماهانه
                                                 </span>
                                             </div>
-                                            <a href="/dashboard?next=/settings/plans">
+                                            <a target="_blank" href="https://telegram.me/hamyarchat">
                                                 <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                                                     تماس بگیرید
                                                 </button>
@@ -256,7 +260,7 @@ const Pricing = () => {
                                                     تماس بگیرید
                                                 </span>
                                             </div>
-                                            <a href="/dashboard?next=/settings/plans">
+                                            <a target="_blank" href="https://telegram.me/hamyarchat">
                                                 <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                                                     تماس بگیرید
                                                 </button>

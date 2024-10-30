@@ -13,6 +13,7 @@ const PricingCard = ({
     buttonText,
     active,
     beforeListText,
+    buttonLink,
 }: any) => {
     const dynamicShadowGenerator = (order: number) => {
         let fullString = `rgb(46 49 240 / 40%) 0px 0px 20px, rgb(46 88 240 / 30%) 0px 5px, rgb(46 158 240 / 20%) 0px 10px, rgb(46 91 240 / 10%) 0px 15px`
@@ -116,7 +117,7 @@ const PricingCard = ({
                         <div>
                             <hr className="mx-auto my-4 h-0.5 w-60 rounded border-0 bg-blue-100 md:my-10 " />
                             <a
-                                href="/#"
+                                href={`${buttonLink}`}
                                 className={` ${
                                     active
                                         ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
