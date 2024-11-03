@@ -70,16 +70,27 @@ const WebsiteLink = () => {
                     <input
                         type="text"
                         className=" w-[100%] rounded-md  border border-gray-300 p-2 md:w-[80%]"
-                        placeholder="https://plotset.com"
+                        placeholder="لطفاً یک آدرس وارد کنید، مانند https://example.com"
                         onChange={(e) => setInputUrl(e.target.value)}
                     />
                     <div className="w-full md:w-[20%]">
                         <button
                             onClick={handleFetchUrl}
                             disabled={isLoading}
-                            className="w-full rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
+                            className="w-full rounded-md bg-blue-600 px-3 py-2 text-sm text-white flex items-center justify-center"
                         >
-                            {isLoading ? "... صبر کنید" : "دریافت لینک ها"}
+                             {isLoading ? (
+                            <>
+                                <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                <span className="mr-2">
+                                    مقداری صبر کنید ...
+                                </span>
+                            </>
+                        ) : (
+                            <>
+                                <span>دریافت لینک ها</span>
+                            </>
+                        )}
                         </button>
                     </div>
                 </div>

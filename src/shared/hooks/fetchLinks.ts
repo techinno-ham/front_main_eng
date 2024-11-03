@@ -12,7 +12,7 @@ const useFetchLinks = () => {
             return res
         } catch (error) {
             console.log(error)
-            toast.error("نام کاربری یا رمز شما اشتباه می باشد.")
+            toast.error("مشکلی به وجود امده است ...")
         } finally {
             setIsLoading(false)
         }

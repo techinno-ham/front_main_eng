@@ -64,6 +64,21 @@ class Services {
         }
     }
 
+    fetchLinkDemo = async (url: string) => {
+        try {
+            const response = await mainApi.get(API.FETCH_LINKS_Demo, {
+                params: {
+                    url,
+                },
+            })
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "fetch links failed",
+            )
+        }
+    }
+
     cretaeBots = async (body: any) => {
         try {
             const response = await mainApi.post(API.CREATE_BOT, body)

@@ -84,7 +84,7 @@ const IntroduceSections = () => {
                 )
                 return
             }
-            const response = await Services.fetchLink(inputValue)
+            const response = await Services.fetchLinkDemo(inputValue)
             const linkArray = response.data
             if (linkArray.length > 0) {
                 const sessionId = (inputValue + "--" + sessionCookie).replace(
