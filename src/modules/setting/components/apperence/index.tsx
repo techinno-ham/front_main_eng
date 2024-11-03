@@ -327,7 +327,7 @@ const Apperence = () => {
 
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ دکمه چت بات :{" "}
+                                    رنگ پس‌زمینه دکمه چت بات :{" "}
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -387,13 +387,13 @@ const Apperence = () => {
 
                                     </span>
                                 </div>
-                                <div className="h-16 w-16 rounded-full shadow-sm bg-zinc-200 border"  style={{
+                                <div className="h-16 w-16 rounded-full shadow-sm bg-white border"  style={{
                                     border:`1px solid ${chatConfig.borderProfile}`
                                 }}>
                                     <img
                                   alt="Profile"
                                   className="h-full w-full rounded-full object-cover"
-                                  src={image ? URL.createObjectURL(image): chatConfig.imageProfle}
+                                  src={image ? URL.createObjectURL(image): chatConfig.imageProfle ? chatConfig.imageProfle :"/botface.svg"}
                              
                             />
 
@@ -401,7 +401,7 @@ const Apperence = () => {
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ پروفایل چت بات :{" "}
+                                    رنگ کاور پروفایل چت بات :{" "}
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
