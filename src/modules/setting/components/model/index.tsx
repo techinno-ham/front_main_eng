@@ -9,6 +9,10 @@ const Model = () => {
     const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false)
     const [creativity, setCreativity] = useState(0)
+    const [Instructions, setInstructions] = useState("");
+    const [selectedOption, setSelectedOption] = useState("دستورالعمل سفارشی");
+
+
 
     const onSubmit = async (dataForm: any) => {
         setIsLoading(true)
@@ -29,7 +33,17 @@ const Model = () => {
         } finally {
             setIsLoading(false)
         }
-    }
+    };
+
+    const handleChangeInstructions = (e: any) => {
+        const newText = e.target.value;
+        setSelectedOption("دستورالعمل سفارشی")
+        setInstructions(newText)
+    };
+
+    const handleChangeselectedOption = (event:any) => {
+        setSelectedOption(event.target.value);
+    };
     useEffect(() => {
         if (data) {
             setValue("model_name", data?.model_configs?.model_name)
@@ -75,6 +89,36 @@ const Model = () => {
                             gpt-3.5-turbo: 1 credit per response
                         </p>
                     </div>
+                    <div className="pb-8">
+                    <label className="mb-2 block text-sm font-medium text-zinc-700">
+                    دستورالعمل ها چت بات :
+                     </label>
+                     <select
+                            value={selectedOption}       // Set the selected value from state
+                            onChange={handleChangeselectedOption}
+                            className="block mb-2 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
+                        >
+                            <option>دستورالعمل سفارشی</option>
+                            <option>چت‌ بات هوش مصنوعی</option>
+                            <option>نماینده پشتیبانی مشتری</option>
+                            <option>نماینده فروش</option>
+                            <option>مدرس زبان</option>
+                            <option>مربی زندگی</option>
+
+                        </select>
+                   
+                <div className="h-full w-full">
+                    <textarea
+                        className="h-full w-full resize-none rounded-md border border-gray-300 p-4"
+                        placeholder="میتوانید اینجا بنویسید تا من یاد بگیرم ..."
+                        rows={12}
+                        onChange={handleChangeInstructions}
+                        value={Instructions}
+                    />
+                </div>
+                  
+                    </div>
+                    
                     <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
                             میزان خلاقیت :
@@ -96,6 +140,8 @@ const Model = () => {
                             <p className="text-xs text-zinc-700">خلاقیت</p>
                         </div>
                     </div>
+                    
+
                 </div>
                 <div className="flex justify-end  px-5 py-3">
                     <button
