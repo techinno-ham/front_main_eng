@@ -3,6 +3,7 @@ import useStoreConfig from "../../hooks/loadConfig"
 import { useEffect, useState } from "react"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import { roles } from "./store"
 
 const Model = () => {
     const { register, handleSubmit, setValue } = useForm()
@@ -20,6 +21,8 @@ const Model = () => {
             const formData = {
                 ...dataForm,
                 Temperature: creativity,
+                type_instructions:selectedOption,
+                Instructions:Instructions
             }
             const response = await service.updateModelConfig(
                 data.bot_id,
@@ -43,11 +46,17 @@ const Model = () => {
 
     const handleChangeselectedOption = (event:any) => {
         setSelectedOption(event.target.value);
+        const text= roles[event.target.value];
+        setInstructions(text)
+ 
     };
     useEffect(() => {
         if (data) {
+            console.log(data,"data")
             setValue("model_name", data?.model_configs?.model_name)
             setCreativity(data?.model_configs?.Temperature)
+            setSelectedOption(data?.model_configs?.type_instructions)
+            setInstructions(data?.model_configs?.Instructions)
         }
     }, [data, setValue])
 
@@ -114,6 +123,7 @@ const Model = () => {
                         rows={12}
                         onChange={handleChangeInstructions}
                         value={Instructions}
+                        dir="ltr" 
                     />
                 </div>
                   

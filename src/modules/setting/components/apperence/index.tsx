@@ -446,7 +446,7 @@ const Apperence = () => {
                               میلی  ثانیه 
                             </div>
                         </div>
-                        <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2">
+                        <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 sticky top-4">
                             <ChatTemplate config={chatConfig} />
                             <div
                                 className="mt-4 flex pb-12"
