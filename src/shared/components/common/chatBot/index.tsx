@@ -20,11 +20,14 @@ const ChatBot: FC<chatbotProps> = ({
     botId,
     botData
 }) => {
+    const Instructions=botData?.model_configs?.Instructions;
+    const Temperature=+botData?.model_configs?.Temperature;
+    const modelName=botData?.model_configs?.model_name;
     const [valueInput, setValueInput] = useState("")
     const [conversationIdState, setConversationIdState] =
         useState(conversationId)
     const { messages, addMessages, sendMessageToServer, resetChat, isLoading } =
-        useAIChat(conversationIdState, botId)
+        useAIChat(conversationIdState, botId, Instructions,Temperature,modelName)
     const chatContainerRef = useRef<HTMLDivElement>(null)
     const chatBotPermition=botData.status=="active";
     const chatBotMode= botData.security_configs.status_bot=="enable";

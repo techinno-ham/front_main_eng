@@ -1,7 +1,7 @@
 import useAIChatStore from "@/src/shared/store/AIChatStore"
 
 
-const useAIChat = (conversationId: string, botId: string) => {
+const useAIChat = (conversationId: string, botId: string,Instructions:string,Temperature:number,modelName:string) => {
     const {
         messages,
         setMessages,
@@ -28,9 +28,12 @@ const useAIChat = (conversationId: string, botId: string) => {
                     },
                     body: JSON.stringify({
                         input: {
-                            conversation_id: conversationId, 
-                            init_question: message, 
-                            collection_name: botId, 
+                             conversation_id: conversationId, 
+                             init_question: message, 
+                             collection_name: botId, 
+                             bot_description: Instructions,
+                             model_temprature: Temperature,
+                             model_type:modelName
                         },
                         config: {}, 
                         kwargs: {}, 

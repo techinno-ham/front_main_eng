@@ -66,7 +66,7 @@ const BotBox = (props: IBotBoxProps) => {
     return (
         <>
             <div className="cursor-pointer rounded-xl border border-solid border-gray-200 hover:border-[#5470ff]">
-                <div className="relative flex flex-col items-center">
+                <div className="relative flex flex-col items-center p-5">
                     <Link href={`/panel/${props.botsData.bot_id}`}>
                         <div className="absolute left-4 top-4">
                             <div className="flex h-9 w-9 items-center justify-center rounded-xl border bg-blue-600">
