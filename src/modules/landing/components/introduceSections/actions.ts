@@ -34,9 +34,7 @@ const ragChat = new RAGChat({
 
 
 export const serverAddData = async (linkArray: string[],nameSpace:string) => {
-    console.log(linkArray)
-    console.log("add data call")
-    console.log(nameSpace)
+
     const ragChat = new RAGChat({
         model: openai("gpt-4o"),
         redis: redis,

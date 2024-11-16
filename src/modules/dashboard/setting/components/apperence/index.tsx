@@ -9,7 +9,6 @@ const Apperence = () => {
 
     const handleInputChange = (e: any) => {
         const { name, value } = e.target
-        console.log({ [name]: value })
         updateChatConfig({ [name]: value })
     }
     const [borderIcon, SetBorderIcon] = useState("#6495ed")

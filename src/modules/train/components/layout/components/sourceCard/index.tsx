@@ -29,7 +29,6 @@ const SourceCard = () => {
         isUploadedChanged,
     } = useDateSourceUpdate()
     const { data } = useStoreLoadData()
-    console.log(data.bot.status)
 
     const QandACharCount = isQAListChanged
         ? qaList.reduce(

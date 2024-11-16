@@ -29,7 +29,6 @@ const Sahre = () => {
         let formData = {
             access_bot: "general",
         }
-        console.log(formData)
         try {
             const response = await service.updateSecurityConfig(botId, formData)
             toast.success("تغیرات شما موفق آمیز ذخیره شد")

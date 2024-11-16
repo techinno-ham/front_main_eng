@@ -17,7 +17,6 @@ class AuthService {
     login = async (user: any) => {
         try {
             const response = await mainApi.post(LOGIN_REGISTER_API.LOGIN, user)
-            console.log(response)
             return response
         } catch (error: any) {
             throw new Error(error.response?.data?.message || "Login failed")
@@ -27,7 +26,6 @@ class AuthService {
     setPssword = async (newPassword: string) => {
         try {
             const response = await mainApi.post(LOGIN_REGISTER_API.SETPASSWORD, newPassword)
-            console.log(response)
             return response
         } catch (error: any) {
             throw new Error(error.response?.data?.message || "Login failed")

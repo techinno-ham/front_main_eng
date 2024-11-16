@@ -53,10 +53,8 @@ const Web = () => {
         let formData = {
             access_bot: "general",
         }
-        console.log(formData)
         try {
             const response = await service.updateSecurityConfig(botId, formData)
-            console.log(response.data)
             toast.success("تغیرات شما موفق آمیز ذخیره شد")
             setActive(true)
         } catch (error) {

@@ -26,7 +26,6 @@ async function postData() {
 
         const data = await response.json();
 
-        console.log(data,"testt")
 
         window.localStorage.setItem("chat-bot-token", data.collection)
     } catch (error) {

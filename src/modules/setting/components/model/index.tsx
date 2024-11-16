@@ -52,7 +52,6 @@ const Model = () => {
     };
     useEffect(() => {
         if (data) {
-            console.log(data,"data")
             setValue("model_name", data?.model_configs?.model_name)
             setCreativity(data?.model_configs?.Temperature)
             setSelectedOption(data?.model_configs?.type_instructions)

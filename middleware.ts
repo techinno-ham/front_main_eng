@@ -14,7 +14,6 @@ export default async function middleware(req: NextRequest) {
     if (!sessionIdCookie) {
 
         const sessionId = crypto.randomUUID(); 
-        console.log(sessionId)
         res.cookies.set("sessionId", sessionId);
     }
 

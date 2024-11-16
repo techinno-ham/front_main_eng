@@ -94,7 +94,7 @@ const UserAccount = () => {
             document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [])
-    console.log(user)
+
 
     return (
         <>

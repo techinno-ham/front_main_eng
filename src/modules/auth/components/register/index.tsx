@@ -26,7 +26,6 @@ const Register = () => {
     const onSubmit = async (data: any) => {
         try {
             const validatedData = RegisterFormSchema.parse(data) // Validate input against schema
-            console.log(validatedData) // Valid data to proceed with registration
 
             // Call your registration function here
             await registerAuth(validatedData)

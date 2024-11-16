@@ -67,7 +67,6 @@ const Profile = () => {
 
     const onSubmit = async (formData: any) => {
         setIsLoadingSumbit(true)
-        console.log(formData)
         try {
             const response = await service.updateUser(formData)
             toast.success("تغیرات شما موفق آمیز ذخیره شد")

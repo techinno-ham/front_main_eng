@@ -17,7 +17,6 @@ const useSetPassword = () => {
         const res= await services.setPssword(newPassword);
           toast.success("تعیین رمز عبور شما موفقیت اموز بود .")
           router.push("/mybots")
-          console.log(res)
    
         } catch (err: any) {
             if (err.message === "Email already registered") {

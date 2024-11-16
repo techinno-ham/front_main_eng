@@ -33,7 +33,6 @@ const Setting = () => {
             try {
                 const response = await service.getConfigs(botId)
                 setData(response.data)
-                console.log(response)
             } catch (error: any) {
                 setError(error.message)
             } finally {

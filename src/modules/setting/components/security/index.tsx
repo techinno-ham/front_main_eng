@@ -16,13 +16,11 @@ const Security = () => {
             status_bot: formData.status_bot == true ? "disable" : "enable",
             access_bot: formData.access_bot == "خصوصی" ? "private" : "general",
         }
-        console.log(formData)
         try {
             const response = await service.updateSecurityConfig(
                 data.bot_id,
                 formData,
             )
-            console.log(response.data)
             toast.success("تغیرات شما موفق آمیز ذخیره شد")
             setData(response.data)
         } catch (error) {
