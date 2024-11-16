@@ -74,12 +74,26 @@ const BotBox = (props: IBotBoxProps) => {
                             </div>
                         </div>
                         <div>
+                            {props.botsData.ui_configs.bot_image ? (
+                                <>
+                                <Image
+                                width={190}
+                                height={120}
+                                alt="axs"
+                                src={props.botsData.ui_configs.bot_image}
+                            />
+                                </>
+                            ):(
+                                <>
                             <Image
                                 width={190}
                                 height={120}
                                 alt="axs"
-                                src={"/double-wink.svg"}
+                                src={"/botface.svg"}
                             />
+                                </>
+                            )}
+                       
                         </div>
                     </Link>
                     <div className="mt-3 w-full">
@@ -90,7 +104,7 @@ const BotBox = (props: IBotBoxProps) => {
                             <div className="flex flex-col">
                                 <div>
                                     <span className="text-[20px]">
-                                        {props.botsData?.name || "همیار بات"}
+                                        { props.botsData?.name || "همیار بات"}
                                     </span>
                                 </div>
                                 <div>
