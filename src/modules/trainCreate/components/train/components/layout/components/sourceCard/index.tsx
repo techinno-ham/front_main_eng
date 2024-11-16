@@ -21,15 +21,18 @@ const SourceCard = () => {
     const handleCrateBot = async (event: any) => {
         event.preventDefault()
         // Check if conditions are met
-        const totalCharCount = textInputCharNumber + QandACharCount
-        const hasMinimumFiles = fileList.length >= 2
-        const hasMinimumChars = totalCharCount >= 100
+        const totalCharCount = textInputCharNumber + QandACharCount;
+        const hasMinimumFiles = fileList.length >= 1;
+        const hasMinimumChars = totalCharCount >= 100;
 
-        if (!hasMinimumFiles || !hasMinimumChars) {
-            toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
+        if (hasMinimumChars || hasMinimumFiles ) {
+            await createBot()
+        }else{
+            toast.error("لطفاً حداقل 1 فایل یا 100 کاراکتر متن وارد کنید.")
             return
         }
-        await createBot()
+
+     
     }
 
     return (

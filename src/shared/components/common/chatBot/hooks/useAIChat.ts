@@ -28,12 +28,12 @@ const useAIChat = (conversationId: string, botId: string) => {
                     },
                     body: JSON.stringify({
                         input: {
-                            conversation_id: conversationId, // Fixed conversation ID
-                            init_question: message, // The message from the user
-                            collection_name: botId, // Fixed collection name
+                            conversation_id: conversationId, 
+                            init_question: message, 
+                            collection_name: botId, 
                         },
-                        config: {}, // Empty config object
-                        kwargs: {}, // Empty kwargs object
+                        config: {}, 
+                        kwargs: {}, 
                     }),
                 },
             )
