@@ -70,12 +70,15 @@ const Login = () => {
             </div>
             <div className="flex justify-center">
                 <div className="absolute top-[110px] z-10 flex max-w-md flex-col">
-                    <div className="h-56">
-                        <img
-                            src="/images/login-image.webp"
-                            className="w-full rounded-2xl object-cover"
-                            alt="login-image"
-                        />
+                    <div className="h-56 w-full">
+                    <Image
+    src="/images/login-image.webp"
+    alt="Login Image"
+    width={450}
+    height={315}
+    layout="responsive"
+    className="rounded-2xl object-cover"
+/>
                     </div>
                     <form
                         className="relative z-10 rounded-2xl  bg-white p-6 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]"
