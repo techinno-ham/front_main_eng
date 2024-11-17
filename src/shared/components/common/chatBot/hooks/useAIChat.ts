@@ -33,7 +33,7 @@ const useAIChat = (conversationId: string, botId: string,Instructions:string,Tem
                              collection_name: botId, 
                              bot_description: Instructions,
                              model_temprature: Temperature,
-                             model_type:modelName
+                             model_type:"gpt-4o-mini"
                         },
                         config: {}, 
                         kwargs: {}, 

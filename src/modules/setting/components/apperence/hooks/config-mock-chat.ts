@@ -14,6 +14,7 @@ interface ChatConfig {
     notificationMsgs:string
     initNotifDelay: number
     imageProfle:string
+    colorUserMessage:string
 }
 
 interface StoreChatConfig {
@@ -29,6 +30,7 @@ const useStoreChatConfig = create<StoreChatConfig>((set) => ({
         inputPlaceholder: "پیام شما ...",
         footer: "hamyar.chat",
         themeBot: "light",
+        colorUserMessage:"#fff",
         bgUserMessage: "#3b81f6",
         borderWidget: "#6495ed",
         borderProfile:"#000",

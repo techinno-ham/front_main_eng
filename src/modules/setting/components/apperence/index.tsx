@@ -70,9 +70,26 @@ const Apperence = () => {
         const value = e.target.value
         const themeBot = value === "حالت روز" ? "light" : "dark"
         updateChatConfig({ themeBot })
+    };
+
+    const getContrastColor = (hex:any) => {
+        // Remove the '#' if present
+        hex = hex.replace('#', '');
+    
+        // Parse the hex color to RGB
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+    
+        // Calculate the luminance using the formula
+        const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    
+        // Return either black or white based on the luminance
+        return luminance > 128 ? '#000000' : '#ffffff'; // Black if bright, white if dark
     }
     const handleBgChange = (name: any, value: any) => {
-        updateChatConfig({ [name]: value })
+        const contrastColor = getContrastColor(value);
+        updateChatConfig({ [name]: value ,"colorUserMessage":contrastColor })
     }
     const onSubmit = async () => {
         setIsLoading(true)
@@ -84,6 +101,7 @@ const Apperence = () => {
                 footer_msg: chatConfig?.footer,
                 bot_name: chatConfig?.displayName,
                 theme_bot: chatConfig?.themeBot,
+                user_msg_color:chatConfig?.colorUserMessage,
                 user_msg_bg_color: chatConfig?.bgUserMessage,
                 bot_widget_border_color: chatConfig?.borderWidget,
                 bot_widget_position: chatConfig?.chatButtonPosition,
@@ -125,6 +143,7 @@ const Apperence = () => {
                 footer: data?.ui_configs?.footer_msg,
                 displayName: data?.ui_configs?.bot_name,
                 themeBot: data?.ui_configs?.theme_bot,
+                colorUserMessage: data?.ui_configs?.user_msg_color,
                 bgUserMessage: data?.ui_configs?.user_msg_bg_color,
                 borderWidget: data?.ui_configs?.bot_widget_border_color,
                 chatButtonPosition: data?.ui_configs?.bot_widget_position,

@@ -66,7 +66,9 @@ const ChatTemplate = ({ config }: any) => {
                                             >
                                                 <div className="flex flex-col items-start gap-4 break-words">
                                                     <div className=" w-full break-words text-right text-inherit ">
-                                                        <p>سلام !</p>{" "}
+                                                        <p style={{
+                                                            color:config.colorUserMessage?config.colorUserMessage:"#fff"
+                                                        }}>سلام !</p>{" "}
                                                     </div>
                                                 </div>
                                             </div>
