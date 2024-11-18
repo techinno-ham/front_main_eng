@@ -34,7 +34,9 @@ const useLogin = () => {
                 secure: true, // Use this in production
                 sameSite: "strict",
             })
-            router.push("/mybots")
+            await new Promise((resolve) => setTimeout(resolve, 500)); // Add a slight delay if needed
+            await router.push("/mybots");
+           
         } catch (err: any) {
             console.log(err.message)
             if (err.message === "Email not found") {
