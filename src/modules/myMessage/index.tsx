@@ -54,7 +54,8 @@ const MyMessage = () => {
                     setConversations([])
                 } else {
                     setMessage(null)
-                    setConversations(response.data)
+                    const filteredData = response.data.filter((item:any) => item.records.length > 0);
+                    setConversations(filteredData)
                 }
             } catch (err) {
                 console.log(err)
