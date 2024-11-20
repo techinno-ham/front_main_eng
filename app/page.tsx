@@ -22,10 +22,17 @@ export default function Home() {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "همیارچت",
+                        "@type": "WebPage",
+                        "name": "همیارچت | ارائه‌دهنده دستیارهای شخصی‌سازی‌شده هوش مصنوعی",
                         "url": "https://hamyar.chat",
-                        "logo": "https://hamyar.chat/logo.svg",
+                        "description": "با همیارچت، پشتیبانی مشتریان خود را به سطحی جدید ببرید و با پاسخگویی سریع و دقیق، رضایت مشتریان را افزایش دهید.",
+                        "image": "https://hamyar.chat/logo.svg", // Add the large image URL
+                        "primaryImageOfPage": {
+                            "@type": "ImageObject",
+                            "url": "https://hamyar.chat/ogsocial.png", // URL to the large image
+                            "width": 1200,
+                            "height": 630,
+                        },
                     }),
                 }}
             />
