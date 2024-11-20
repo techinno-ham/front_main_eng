@@ -54,6 +54,7 @@ export default function RootLayout({
     return (
         <html lang="fa" dir="rtl">
             <GoogleTagManager gtmId="GTM-T2X2G5KR" />
+            <meta name="google-site-verification" content="3FbQ4PAZdyck6bvmlbuo4EwVvgNepkSC1-SuPA-R_HY" />
             <body
                 className={`${KalameFont.variable} ${YekanFont.variable} ${isMyBotsPath && "bg-[#F6F8FB]"}`}
             >
