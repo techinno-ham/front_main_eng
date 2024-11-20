@@ -57,7 +57,15 @@ export default function RootLayout({
             <body
                 className={`${KalameFont.variable} ${YekanFont.variable} ${isMyBotsPath && "bg-[#F6F8FB]"}`}
             >
-                
+                {/* WARNING: dont remove this code , necessary for google search console */}
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-T2X2G5KR"
+                        height="0"
+                        width="0"
+                        style={{ display: "none", visibility: "hidden" }}
+                    ></iframe>
+                </noscript>
                 <Toaster position="top-center" richColors />
                 <NextTopLoader showSpinner={false} />
                 {children}
@@ -68,14 +76,7 @@ export default function RootLayout({
                     nonce="XUENAJFW"
                     async
                  defer></script>
-                <noscript>
-                    <iframe
-                        src="https://www.googletagmanager.com/ns.html?id=GTM-T2X2G5KR"
-                        height="0"
-                        width="0"
-                        style={{ display: "none", visibility: "hidden" }}
-                    ></iframe>
-                </noscript>
+                
             </body>
         </html>
     )
