@@ -5,6 +5,7 @@ import Footer from "@/src/shared/components/layouts/site-layout/footer"
 import SelectModalCustom from "@/src/shared/components/common/selectModal"
 import { Metadata } from "next"
 import SelectModalChat from "@/src/shared/components/common/chatModal"
+import Script from "next/script"
 
 export default function Home() {
     return (
@@ -15,6 +16,19 @@ export default function Home() {
                 <SelectModalChat />
             </main>
             <Footer />
+            <Script
+                id="jsonld-custom-hamyar"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Organization",
+                        "name": "همیارچت",
+                        "url": "https://hamyar.chat",
+                        "logo": "https://hamyar.chat/logo.svg",
+                    }),
+                }}
+            />
         </>
     )
 }
@@ -47,6 +61,6 @@ export const metadata: Metadata = {
         images: ["https://hamyar.chat/ogsocial.png"], // Replace with your image URL
     },
     icons: {
-        icon: "/logo.svg", // Path to your favicon or logo
+        icon: "https://hamyar.chat/logo.svg", // Path to your favicon or logo
     },
 }
