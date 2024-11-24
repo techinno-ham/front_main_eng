@@ -4,7 +4,7 @@ import services from "../services"
 import { setCookie, destroyCookie } from "nookies"
 import { toast } from "sonner"
 import useUserStore from "@/src/shared/store/userStore"
-import { useRouter } from 'nextjs-toploader/app';
+import { useRouter } from 'next/navigation'
 
 const useLogin = () => {
     const [isLoading, setLoading] = useState(false)
