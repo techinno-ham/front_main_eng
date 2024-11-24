@@ -66,12 +66,14 @@ const MyMessage = () => {
         fetchHistoryList()
     }, [filter])
 
-    const handleDownload = async () => {
+    const handleDownload = async (botId : string) => {
         try {
             const response: any = await getHistoryMessages(
-                "b8d8154c-99e5-49ab-89ed-806088932781",
+                botId,
                 filter,
             )
+            console.log({response});
+            
 
             if (!response) {
                 throw new Error(
@@ -168,7 +170,7 @@ const MyMessage = () => {
                                         </div>
                                     </div>
                                     <button
-                                        onClick={handleDownload}
+                                        onClick={()=>handleDownload(botId)}
                                         className="flex items-center justify-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700"
                                     >
                                         <span>خروجی json</span>
