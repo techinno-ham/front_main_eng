@@ -306,9 +306,10 @@ const MyMessage = () => {
                                                                             <div className="flex items-center justify-start">
                                                                                 <div
                                                                                     className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
+
                                                                                 >
                                                                                     <img
-                                                                                        src={imageLink ?imageLink  :"/botface.svg"}
+                                                                                        src="/images/profile.png"
                                                                                         alt=""
                                                                                         className="h-8 w-8 rounded-full"
                                                                                     />
@@ -346,13 +347,12 @@ const MyMessage = () => {
                                                                                 </div>
                                                                                 <div
                                                                                     className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
-                                                                                    style={{
-                                                                                        border: `1.5px solid #3b82f6`,
-                                                                                    }}
+                                                                                  
                                                                                 >
-                                                                                    <img
-                                                                                        src="/double-wink.svg"
+                                                                                     <img
+                                                                                        src={imageLink ?imageLink  :"/botface.svg"}
                                                                                         alt=""
+                                                                                        className="h-8 w-8 rounded-full"
                                                                                     />
                                                                                 </div>
                                                                             </div>
