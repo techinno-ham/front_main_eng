@@ -9,13 +9,16 @@ import { faIR } from "date-fns/locale"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import EmptyChat from "@/src/shared/components/common/emptyChatLoader"
 import { usePathname } from "next/navigation"
+import service from "@/src/shared/services/service"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
     const [message, setMessage] = useState<string | null>(null)
     const pathname = usePathname()
-    const botId = pathname.split("/")[2]
+    const botId = pathname.split("/")[2];
+    const [imageLink, setImageLink] = useState("")
+
 
     const [filter, setFilter] = useState<
         "3_days" | "7_days" | "1_month" | "all"
@@ -66,13 +69,27 @@ const MyMessage = () => {
         fetchHistoryList()
     }, [filter])
 
+
+    useEffect(() => {
+        const fetchConfigs = async () => {
+            try {
+                const response = await service.getConfigs(botId);
+                setImageLink(response?.data?.ui_configs?.bot_image);
+            } catch (error: any) {
+                console.log(error)
+            } finally {
+
+            }
+        }
+        fetchConfigs()
+    }, [botId])
+
     const handleDownload = async (botId : string) => {
         try {
             const response: any = await getHistoryMessages(
                 botId,
                 filter,
             )
-            console.log({response});
             
 
             if (!response) {
@@ -289,12 +306,9 @@ const MyMessage = () => {
                                                                             <div className="flex items-center justify-start">
                                                                                 <div
                                                                                     className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
-                                                                                    style={{
-                                                                                        border: `1.5px solid #3b82f6`,
-                                                                                    }}
                                                                                 >
                                                                                     <img
-                                                                                        src="/images/profile.png"
+                                                                                        src={imageLink ?imageLink  :"/botface.svg"}
                                                                                         alt=""
                                                                                         className="h-8 w-8 rounded-full"
                                                                                     />
