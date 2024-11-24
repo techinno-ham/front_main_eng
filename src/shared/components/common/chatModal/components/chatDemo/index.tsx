@@ -345,11 +345,12 @@ const ChatDemo = ({
                                         title="لبلب "
                                         disabled={isLoading}
                                         onClick={() =>
-                                            sendRequest("چگونه چت بات بخرم ؟")
+                                            sendRequest("چه کاری میتونی انجام بدی؟")
+                        
                                         }
                                     >
                                         {" "}
-                                        چگونه چت بات بخرم؟
+                                        چه کاری میتونی انجام بدی؟
                                     </button>
                                 </div>
                                 <div className="flex border-t border-[#e4e4e7] px-4  py-3">
