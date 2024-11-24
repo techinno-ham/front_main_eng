@@ -35,7 +35,7 @@ const useLogin = () => {
                 sameSite: "strict",
             })
             await new Promise((resolve) => setTimeout(resolve, 500)); // Add a slight delay if needed
-            await router.push("/mybots");
+            window.location.href = "/mybots";
            
         } catch (err: any) {
             console.log(err.message)
