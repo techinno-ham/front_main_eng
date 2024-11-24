@@ -490,7 +490,7 @@ const Apperence = () => {
                           {chatConfig.imageProfle ? (
                             <>
                                    <img
-          className="border rounded-full border-[#1277fd] w-12 h-12 m-auto"
+          className="border rounded-full border-[#1277fd] !w-12 !h-12 m-auto"
           src={chatConfig.imageProfle}
         />
                             </>
