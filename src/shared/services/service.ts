@@ -39,6 +39,7 @@ class Services {
                     Authorization: `Bearer ${token}`,
                 },
             })
+            console.log({botCount: response.data});
             return response.data
         } catch (error: any) {
             // return false
