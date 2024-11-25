@@ -75,10 +75,10 @@ const SourceCard = () => {
             return
         }
 
-        if (!hasMinimumFiles || !hasMinimumChars) {
-            toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
-            return
-        }
+        // if (!hasMinimumFiles || !hasMinimumChars) {
+        //     toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
+        //     return
+        // }
 
         await updateDataSource(pathSegments[2])
     }

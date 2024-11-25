@@ -384,12 +384,11 @@ const ChatBot: FC<chatbotProps> = ({
                                         title="لبلب "
                                         disabled={isLoading}
                                         onClick={() =>
-                                            sendRequest("همیار چت چیست؟")
+                                            sendRequest("سلام اسمت چیه ؟ ")
                                         }
                                     >
                                         {" "}
-                                        همیارچت چیست ؟
-                                    </button>
+سلام اسمت چیه ؟                                   </button>
                                     <button
                                         className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
                                         type="button"
@@ -397,11 +396,11 @@ const ChatBot: FC<chatbotProps> = ({
                                         title="لبلب "
                                         disabled={isLoading}
                                         onClick={() =>
-                                            sendRequest("چگونه چت بات بخرم ؟")
+                                            sendRequest("چه کاری میتونی انجام بدی؟")
                                         }
                                     >
                                         {" "}
-                                        چگونه چت بات بخرم؟
+                                        چه کاری میتونی انجام بدی؟
                                     </button>
                                 </div>
                                 <div className="flex border-t border-[#e4e4e7] px-4  py-3">
