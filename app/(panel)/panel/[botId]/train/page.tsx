@@ -1,4 +1,3 @@
-import Dashboard from "@/src/modules/dashboard"
 import Train from "@/src/modules/train"
 import { Metadata, NextPage } from "next"
 

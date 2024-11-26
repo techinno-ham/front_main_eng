@@ -1,5 +1,6 @@
 "use client"
 import {
+    Activity,
     Add,
     Book1,
     Category2,
@@ -19,6 +20,7 @@ export const sidebarLinks = [
         route: "/panel/[id]",
         label: "داشبورد",
     },
+
     {
         icon: <Setting2 />,
         route: "/panel/[id]/setting",
@@ -33,6 +35,11 @@ export const sidebarLinks = [
         icon: <Messages1 />,
         route: "/panel/[id]/mymessage",
         label: "گفت و گو ها",
+    },
+    {
+        icon: <Activity />,
+        route: "/panel/[id]/analytics",
+        label: "آمار و داده",
     },
     {
         icon: <ProgrammingArrows />,

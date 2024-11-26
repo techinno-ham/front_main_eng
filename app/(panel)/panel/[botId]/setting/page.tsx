@@ -1,6 +1,4 @@
-import Dashboard from "@/src/modules/dashboard"
 import Setting from "@/src/modules/setting"
-import Train from "@/src/modules/train"
 import { Metadata, NextPage } from "next"
 
 const DashboardSettingPage: NextPage = () => {
