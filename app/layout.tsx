@@ -9,34 +9,7 @@ import { GoogleTagManager } from "@next/third-parties/google"
 import NextTopLoader from "nextjs-toploader";
 import { KalameFont, YekanFont } from "@/utils/customFonts"
 
-// const myFont = localFont({
-//     src: "../public/fonts/IRANYekanXFaNum-Medium.woff2",
-// })
 
-// const iranYekan = localFont({
-//     src: [
-//       {
-//         path: '../public/fonts/IRANYekanXFaNum-Regular.woff2',
-//         weight: '400',
-//         style: 'normal',
-//       },
-//       {
-//         path: './Roboto-Italic.woff2',
-//         weight: '400',
-//         style: 'italic',
-//       },
-//       {
-//         path: './Roboto-Bold.woff2',
-//         weight: '700',
-//         style: 'normal',
-//       },
-//       {
-//         path: './Roboto-BoldItalic.woff2',
-//         weight: '700',
-//         style: 'italic',
-//       },
-//     ],
-//   })
 
 export default function RootLayout({
     children,
@@ -44,7 +17,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     const pathname = usePathname()
-    const ChatBotScript =pathname.startsWith("/chatbot")
+    const ChatBotScript =!pathname.startsWith("/chatbot");
     const isMyBotsPath =
         pathname.startsWith("/mybots") ||
         pathname.startsWith("/panel") ||
@@ -53,7 +26,7 @@ export default function RootLayout({
         pathname.startsWith("/invite")
 
     return (
-        <html lang="fa" dir="rtl">
+        <html lang="fa" dir={ChatBotScript ? "rtl" : "ltr"}>
             <GoogleTagManager gtmId="GTM-T2X2G5KR" />
             {/* <meta name="google-site-verification" content="3FbQ4PAZdyck6bvmlbuo4EwVvgNepkSC1-SuPA-R_HY" /> */}
             <body
@@ -72,7 +45,7 @@ export default function RootLayout({
                 <NextTopLoader showSpinner={false} />
                 {children}
                 {
-                    !ChatBotScript && (
+                    ChatBotScript && (
                         <script
                         src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
                         hamyar-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
