@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
-import { ExportCurve } from "iconsax-react"
+import { ExportCurve, Magicpen } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
@@ -314,6 +314,7 @@ const MyMessage = () => {
                                                                                         className="h-8 w-8 rounded-full"
                                                                                     />
                                                                                 </div>
+                                                                                <div>
                                                                                 <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
                                                                                     <div className="flex flex-col items-start gap-4 break-words">
                                                                                         <div className=" w-full break-words text-right text-inherit ">
@@ -325,16 +326,24 @@ const MyMessage = () => {
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <span className="mt-2 truncate text-[12px] text-zinc-500">
+                                                                                <div className="mt-1 flex">
+                                                                                <span className=" truncate text-[12px] text-zinc-500 mr-auto">
                                                                                 {formatRelativeTimeChat(
                                                                                     record?.userMessageTime,
                                                                                 )}
                                                                             </span>
+
+                                                                                </div>
+
+                                                                                </div>
+                                                                                
+                                                                            </div>
+                                                                          
                                                                         </div>
                                                                         <div className="mb-3 mr-8 flex flex-col">
                                                                             <div className="flex items-center justify-end">
-                                                                                <div className=" max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                                <div>
+                                                                                     <div className="max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
                                                                                     <div className="flex flex-col items-start gap-4 break-words">
                                                                                         <div className=" w-full break-words text-right text-inherit ">
                                                                                             <p>
@@ -344,7 +353,33 @@ const MyMessage = () => {
                                                                                             </p>
                                                                                         </div>
                                                                                     </div>
+                                                                                    </div>
+                                                                                    <div className="mt-2 flex items-center justify-between">
+                                                                                    <div>
+                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed">
+                                                                                          اصلاح پاسخ
+                                                                                          <Magicpen size={14}/>
+                                                                                          </button>
+                                                                                        </div>
+                                                                                        <div className="flex items-center gap-2">
+                                                                                        <div className="border border-zinc-200 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:focus:ring-zinc-300 dark:text-zinc-50 mr-2 inline-flex items-center rounded-2xl px-2 py-1 align-baseline font-medium text-xs ring-1 ring-inset bg-violet-600 text-white ring-violet-600 hover:bg-violet-600" data-state="closed">
+                                                                                            0.648
+                                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" className="h-4 w-4 text-white"><title>Signal</title><path d="M8.37 2.24c-.04.13-.04.28-.04.6v7.86c0 .28 0 .42.06.53.04.1.12.17.22.22.1.05.24.05.52.05h.27c.56 0 .84 0 1.05-.1a1 1 0 0 0 .44-.45c.1-.21.1-.49.1-1.05V2.83c0-.3 0-.46-.03-.59a1 1 0 0 0-.7-.7c-.13-.04-.28-.04-.6-.04-.3 0-.46 0-.59.03a1 1 0 0 0-.7.71ZM4.67 5.83c0-.3 0-.46.03-.59a1 1 0 0 1 .7-.7c.14-.04.3-.04.6-.04.31 0 .47 0 .6.03a1 1 0 0 1 .7.71c.03.13.03.28.03.6v4.86c0 .28 0 .42-.05.53a.5.5 0 0 1-.22.22c-.1.05-.25.05-.53.05H5.47c-.28 0-.42 0-.53-.05a.5.5 0 0 1-.22-.22c-.05-.11-.05-.25-.05-.53V5.83ZM1 8.83c0-.3 0-.46.03-.59a1 1 0 0 1 .71-.7c.13-.04.28-.04.6-.04.3 0 .46 0 .59.03a1 1 0 0 1 .7.71c.04.13.04.28.04.6v1.86c0 .28 0 .42-.06.53a.5.5 0 0 1-.22.22c-.1.05-.24.05-.52.05H2.6c-.56 0-.84 0-1.05-.1a1 1 0 0 1-.44-.45C1 10.74 1 10.46 1 9.9V8.83Z" xmlns="http://www.w3.org/2000/svg" fill="currentColor"></path></svg>
+                                                                                            </div>
+                                                                                            <div className="h-4 w-[1px] bg-gray-600"></div>
+
+                                                                                    <span className="truncate text-[12px] text-zinc-500">
+                                                                                {formatRelativeTimeChat(
+                                                                                    record?.userMessageTime,
+                                                                                )}
+                                                                                    </span>
+
+                                                                                        </div>
+                
+                                                                                    </div>
+
                                                                                 </div>
+                                                                                
                                                                                 <div
                                                                                     className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
                                                                                   
@@ -356,11 +391,8 @@ const MyMessage = () => {
                                                                                     />
                                                                                 </div>
                                                                             </div>
-                                                                            <span className="mr-auto mt-2 truncate text-[12px] text-zinc-500">
-                                                                                {formatRelativeTimeChat(
-                                                                                    record?.userMessageTime,
-                                                                                )}
-                                                                            </span>
+                                                                          
+                                                                           
                                                                         </div>
                                                                     </>
                                                                 )
