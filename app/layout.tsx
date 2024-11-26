@@ -70,13 +70,7 @@ export default function RootLayout({
                 <Toaster position="top-center" richColors />
                 <NextTopLoader showSpinner={false} />
                 {children}
-                {/* <script
-                    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
-                    hamyar-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
-                    id="hamyarChatbotScript"
-                    nonce="XUENAJFW"
-                    async
-                 defer></script> */}
+              
                 
             </body>
         </html>
