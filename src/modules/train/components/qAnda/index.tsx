@@ -4,8 +4,7 @@ import useDateSourceUpdate from "../../hooks/useDataSourceUpdate"
 import useStoreLoadData from "../../hooks/loadDataSource"
 
 const QandA = () => {
-
-    const [searchTerm , setSearchTerm] = useState("")
+    const [searchTerm, setSearchTerm] = useState("")
 
     const {
         qaList,
@@ -52,7 +51,7 @@ const QandA = () => {
 
     return (
         <div className=" mt-4 flex justify-center">
-            <div className="h-[90%] w-[90%]">
+            <div className="h-[90%] w-[100%]">
                 <div className="mb-3 flex items-center justify-between">
                     {/* <button
                         className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
@@ -97,7 +96,7 @@ const QandA = () => {
                                 type="search"
                                 id="default-search"
                                 onChange={(e) => {
-                                    setSearchTerm(e.target.value);
+                                    setSearchTerm(e.target.value)
                                 }}
                                 className="block w-full rounded-lg border
                                  border-gray-300 bg-white px-4 py-[10px] ps-10 text-sm 
@@ -123,53 +122,62 @@ const QandA = () => {
                     </button>
                 </div>
                 <div className="custom-scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
-                {qaList
-    .filter(
-        (qa) =>
-            
-            (qa.question.includes(searchTerm) || qa.answer.includes(searchTerm))
-    )
-    .map((qa, index) => (
-        <div
-            key={index}
-            className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md"
-        >
-            <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
-                    <span>سوال:</span>
-                    <button
-                        className="p-2"
-                        onClick={() => handleDeleteQA(index)}
-                    >
-                        <Trash size="26" color="red" />
-                    </button>
-                </div>
+                    {qaList
+                        .filter(
+                            (qa) =>
+                                qa.question.includes(searchTerm) ||
+                                qa.answer.includes(searchTerm),
+                        )
+                        .map((qa, index) => (
+                            <div
+                                key={index}
+                                className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md"
+                            >
+                                <div className="flex flex-col gap-3">
+                                    <div className="flex h-[12px] items-center justify-between">
+                                        <span>سوال:</span>
+                                        <button
+                                            className="p-2"
+                                            onClick={() =>
+                                                handleDeleteQA(index)
+                                            }
+                                        >
+                                            <Trash size="20" color="red" />
+                                        </button>
+                                    </div>
 
-                <textarea
-                    className="rounded-md border border-gray-300 p-2"
-                    placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
-                    rows={1}
-                    value={qa.question}
-                    onChange={(e) =>
-                        handleInputChange(index, "question", e.target.value)
-                    }
-                />
-            </div>
-            <div className="flex flex-col gap-3">
-                <span>پاسخ :</span>
-                <textarea
-                    className="rounded-md border border-gray-300 p-2"
-                    placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
-                    value={qa.answer}
-                    rows={5}
-                    onChange={(e) =>
-                        handleInputChange(index, "answer", e.target.value)
-                    }
-                />
-            </div>
-        </div>
-    ))}
-
+                                    <textarea
+                                        className="rounded-md border border-gray-300 p-2"
+                                        placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
+                                        rows={1}
+                                        value={qa.question}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                index,
+                                                "question",
+                                                e.target.value,
+                                            )
+                                        }
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-3">
+                                    <span className="mt-2">پاسخ :</span>
+                                    <textarea
+                                        className="rounded-md border border-gray-300 p-2"
+                                        placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
+                                        value={qa.answer}
+                                        rows={5}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                index,
+                                                "answer",
+                                                e.target.value,
+                                            )
+                                        }
+                                    />
+                                </div>
+                            </div>
+                        ))}
                 </div>
             </div>
         </div>
