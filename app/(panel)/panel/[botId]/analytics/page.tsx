@@ -1,11 +1,11 @@
-import Deploy from "@/src/modules/deploy"
+import Analytics from "@/src/modules/analytics"
 import { Metadata, NextPage } from "next"
 
-const DashboardDeployPage: NextPage = () => {
+const AnalyticsPage: NextPage = () => {
     return (
         <>
             {" "}
-            <Deploy />
+            <Analytics botId={""} />
         </>
     )
 }
@@ -16,4 +16,4 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
-export default DashboardDeployPage
+export default AnalyticsPage

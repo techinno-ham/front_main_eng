@@ -1,6 +1,4 @@
-import Dashboard from "@/src/modules/dashboard"
 import MyMessage from "@/src/modules/myMessage"
-import Train from "@/src/modules/train"
 import { Metadata, NextPage } from "next"
 
 const DashboardMyMessagePage: NextPage = () => {
