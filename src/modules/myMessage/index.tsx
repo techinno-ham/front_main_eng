@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { getHistoryMessages } from "./utils"
-import { ExportCurve, Magicpen } from "iconsax-react"
+import { ExportCurve, Magicpen, Trash } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
@@ -10,14 +10,55 @@ import LoaderLottie from "@/src/shared/components/common/loader"
 import EmptyChat from "@/src/shared/components/common/emptyChatLoader"
 import { usePathname } from "next/navigation"
 import service from "@/src/shared/services/service"
+import Modal from "@/src/shared/components/common/modal"
+import { toast } from "sonner"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
+    const [openModal, setOpenModal] = useState(false);
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState("");
+    const [loading, setLoading] = useState(false)
+
+    
+    
     const [message, setMessage] = useState<string | null>(null)
     const pathname = usePathname()
     const botId = pathname.split("/")[2];
-    const [imageLink, setImageLink] = useState("")
+    const [imageLink, setImageLink] = useState("");
+
+
+
+    const handleOnCloseModal = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setOpenModal(false)
+    }
+
+    const handleReviseClick = (questionInput:string) => {
+        setQuestion(questionInput);
+        setOpenModal(true)
+    };
+
+    const handleRetrain = async (e: any) => {
+        e.stopPropagation()
+        e.preventDefault()
+        setLoading(true)
+        try {
+            
+                // await props.onDelete(props.botsData.bot_id)
+                setOpenModal(false)
+                toast.success("چت بات شما با موفقیت حذف شد")
+            
+        } catch (error) {
+            console.error("Error deleting bot:", error)
+            toast.success("چت بات شما با موفقیت حذف شد")
+
+        } finally {
+            setLoading(false)
+        }
+    }
 
 
     const [filter, setFilter] = useState<
@@ -154,6 +195,83 @@ const MyMessage = () => {
                         </>
                     ) : (
                         <>
+                          <Modal open={openModal} onClose={handleOnCloseModal}>
+                                    <div className="w-[450px] ">
+                                        <div className="flex flex-col gap-2">
+                                            <div className="text-center">
+                                                <Magicpen
+                                                    size={50}
+                                                    className="mx-auto text-purple-500"
+                                                />
+                                                <div className="mx-auto  w-96">
+                                                    <h3 className="text-xl font-black text-gray-800">
+                                                        اصلاح پاسخ
+                                                    </h3>
+                                                    <p className="mt-[8px] text-[14px] text-gray-500">
+                                                        این اقدام یک داده پرسش و پاسخ جدید به اطلاعات بات شما اضافه خواهد کرد . داده های پرسش و پاسخ می تواند به همیارچت کمک کند صریحا به سوالات جواب دهد .
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div
+                                className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md"
+                            >
+                                <div className="flex flex-col gap-3">
+                                        <span>سوال:</span>
+                                    <textarea
+                                        className="rounded-md border border-gray-300 p-2"
+                                        placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
+                                        rows={1}
+                                        value={question}
+                                        onChange={(e) =>
+                                            setQuestion( e.target.value)
+                                        }
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-3">
+                                    <span className="mt-2">پاسخ مورد انتظار :</span>
+                                    <textarea
+                                        className="rounded-md border border-gray-300 p-2"
+                                        placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
+                                        value={answer}
+                                        rows={5}
+                                        onChange={(e) =>
+                                           setAnswer(e.target.value)
+                                        }
+                                    />
+                                </div>
+                            </div>
+                                            <div className="flex justify-between gap-4 mt-2">
+                                                <button
+                                                    className="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                    onClick={handleOnCloseModal}
+                                                >
+                                                    لغو
+                                                </button>
+                                                <button
+                                                
+                                                    className="focus-visible:ring-ring inline-flex h-9  w-full items-center justify-center whitespace-nowrap rounded-md  px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors bg-blue-600 hover:bg-blue-700 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                    type="button"
+                                                    onClick={handleRetrain}
+                                                >
+                                                    {loading ? (
+                                                        <>
+                                                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                                            <span className="mr-3">
+                                                                صبر کنید ...
+                                                            </span>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <span>
+                                                                تایید و شروع آموزش
+                                                            </span>
+                                                        </>
+                                                    )}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Modal>
                             <div className="pl-6 pr-6">
                                 <label className="text-md mb-2 block font-medium text-zinc-700">
                                     {" "}
@@ -356,7 +474,7 @@ const MyMessage = () => {
                                                                                     </div>
                                                                                     <div className="mt-2 flex items-center justify-between">
                                                                                     <div>
-                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed">
+                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed" onClick={()=>{handleReviseClick(record?.userMessage)}}>
                                                                                           اصلاح پاسخ
                                                                                           <Magicpen size={14}/>
                                                                                           </button>
