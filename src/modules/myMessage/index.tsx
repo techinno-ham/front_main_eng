@@ -12,23 +12,20 @@ import { usePathname } from "next/navigation"
 import service from "@/src/shared/services/service"
 import Modal from "@/src/shared/components/common/modal"
 import { toast } from "sonner"
+import Markdown from "react-markdown"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
-    const [openModal, setOpenModal] = useState(false);
-    const [question, setQuestion] = useState("");
-    const [answer, setAnswer] = useState("");
+    const [openModal, setOpenModal] = useState(false)
+    const [question, setQuestion] = useState("")
+    const [answer, setAnswer] = useState("")
     const [loading, setLoading] = useState(false)
 
-    
-    
     const [message, setMessage] = useState<string | null>(null)
     const pathname = usePathname()
-    const botId = pathname.split("/")[2];
-    const [imageLink, setImageLink] = useState("");
-
-
+    const botId = pathname.split("/")[2]
+    const [imageLink, setImageLink] = useState("")
 
     const handleOnCloseModal = (e: React.MouseEvent) => {
         e.stopPropagation()
@@ -36,30 +33,26 @@ const MyMessage = () => {
         setOpenModal(false)
     }
 
-    const handleReviseClick = (questionInput:string) => {
-        setQuestion(questionInput);
+    const handleReviseClick = (questionInput: string) => {
+        setQuestion(questionInput)
         setOpenModal(true)
-    };
+    }
 
     const handleRetrain = async (e: any) => {
         e.stopPropagation()
         e.preventDefault()
         setLoading(true)
         try {
-            
-                // await props.onDelete(props.botsData.bot_id)
-                setOpenModal(false)
-                toast.success("چت بات شما با موفقیت حذف شد")
-            
+            // await props.onDelete(props.botsData.bot_id)
+            setOpenModal(false)
+            toast.success("چت بات شما با موفقیت حذف شد")
         } catch (error) {
             console.error("Error deleting bot:", error)
             toast.success("چت بات شما با موفقیت حذف شد")
-
         } finally {
             setLoading(false)
         }
     }
-
 
     const [filter, setFilter] = useState<
         "3_days" | "7_days" | "1_month" | "all"
@@ -98,7 +91,9 @@ const MyMessage = () => {
                     setConversations([])
                 } else {
                     setMessage(null)
-                    const filteredData = response.data.filter((item:any) => item.records.length > 0);
+                    const filteredData = response.data.filter(
+                        (item: any) => item.records.length > 0,
+                    )
                     setConversations(filteredData)
                 }
             } catch (err) {
@@ -110,28 +105,22 @@ const MyMessage = () => {
         fetchHistoryList()
     }, [filter])
 
-
     useEffect(() => {
         const fetchConfigs = async () => {
             try {
-                const response = await service.getConfigs(botId);
-                setImageLink(response?.data?.ui_configs?.bot_image);
+                const response = await service.getConfigs(botId)
+                setImageLink(response?.data?.ui_configs?.bot_image)
             } catch (error: any) {
                 console.log(error)
             } finally {
-
             }
         }
         fetchConfigs()
     }, [botId])
 
-    const handleDownload = async (botId : string) => {
+    const handleDownload = async (botId: string) => {
         try {
-            const response: any = await getHistoryMessages(
-                botId,
-                filter,
-            )
-            
+            const response: any = await getHistoryMessages(botId, filter)
 
             if (!response) {
                 throw new Error(
@@ -195,83 +184,94 @@ const MyMessage = () => {
                         </>
                     ) : (
                         <>
-                          <Modal open={openModal} onClose={handleOnCloseModal}>
-                                    <div className="w-[450px] ">
-                                        <div className="flex flex-col gap-2">
-                                            <div className="text-center">
-                                                <Magicpen
-                                                    size={50}
-                                                    className="mx-auto text-purple-500"
-                                                />
-                                                <div className="mx-auto  w-96">
-                                                    <h3 className="text-xl font-black text-gray-800">
-                                                        اصلاح پاسخ
-                                                    </h3>
-                                                    <p className="mt-[8px] text-[14px] text-gray-500">
-                                                        این اقدام یک داده پرسش و پاسخ جدید به اطلاعات بات شما اضافه خواهد کرد . داده های پرسش و پاسخ می تواند به همیارچت کمک کند صریحا به سوالات جواب دهد .
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div
-                                className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md"
+                            <Modal
+                                open={openModal}
+                                onClose={handleOnCloseModal}
                             >
-                                <div className="flex flex-col gap-3">
-                                        <span>سوال:</span>
-                                    <textarea
-                                        className="rounded-md border border-gray-300 p-2"
-                                        placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
-                                        rows={1}
-                                        value={question}
-                                        onChange={(e) =>
-                                            setQuestion( e.target.value)
-                                        }
-                                    />
-                                </div>
-                                <div className="flex flex-col gap-3">
-                                    <span className="mt-2">پاسخ مورد انتظار :</span>
-                                    <textarea
-                                        className="rounded-md border border-gray-300 p-2"
-                                        placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
-                                        value={answer}
-                                        rows={5}
-                                        onChange={(e) =>
-                                           setAnswer(e.target.value)
-                                        }
-                                    />
-                                </div>
-                            </div>
-                                            <div className="flex justify-between gap-4 mt-2">
-                                                <button
-                                                    className="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
-                                                    onClick={handleOnCloseModal}
-                                                >
-                                                    لغو
-                                                </button>
-                                                <button
-                                                
-                                                    className="focus-visible:ring-ring inline-flex h-9  w-full items-center justify-center whitespace-nowrap rounded-md  px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors bg-blue-600 hover:bg-blue-700 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
-                                                    type="button"
-                                                    onClick={handleRetrain}
-                                                >
-                                                    {loading ? (
-                                                        <>
-                                                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                                            <span className="mr-3">
-                                                                صبر کنید ...
-                                                            </span>
-                                                        </>
-                                                    ) : (
-                                                        <>
-                                                            <span>
-                                                                تایید و شروع آموزش
-                                                            </span>
-                                                        </>
-                                                    )}
-                                                </button>
+                                <div className="w-[450px] ">
+                                    <div className="flex flex-col gap-2">
+                                        <div className="text-center">
+                                            <Magicpen
+                                                size={50}
+                                                className="mx-auto text-purple-500"
+                                            />
+                                            <div className="mx-auto  w-96">
+                                                <h3 className="text-xl font-black text-gray-800">
+                                                    اصلاح پاسخ
+                                                </h3>
+                                                <p className="mt-[8px] text-[14px] text-gray-500">
+                                                    این اقدام یک داده پرسش و
+                                                    پاسخ جدید به اطلاعات بات شما
+                                                    اضافه خواهد کرد . داده های
+                                                    پرسش و پاسخ می تواند به
+                                                    همیارچت کمک کند صریحا به
+                                                    سوالات جواب دهد .
+                                                </p>
                                             </div>
                                         </div>
+                                        <div className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md">
+                                            <div className="flex flex-col gap-3">
+                                                <span>سوال:</span>
+                                                <textarea
+                                                    className="rounded-md border border-gray-300 p-2"
+                                                    placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
+                                                    rows={1}
+                                                    value={question}
+                                                    onChange={(e) =>
+                                                        setQuestion(
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                />
+                                            </div>
+                                            <div className="flex flex-col gap-3">
+                                                <span className="mt-2">
+                                                    پاسخ مورد انتظار :
+                                                </span>
+                                                <textarea
+                                                    className="rounded-md border border-gray-300 p-2"
+                                                    placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
+                                                    value={answer}
+                                                    rows={5}
+                                                    onChange={(e) =>
+                                                        setAnswer(
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                        <div className="mt-2 flex justify-between gap-4">
+                                            <button
+                                                className="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                onClick={handleOnCloseModal}
+                                            >
+                                                لغو
+                                            </button>
+                                            <button
+                                                className="focus-visible:ring-ring inline-flex h-9  w-full items-center justify-center whitespace-nowrap rounded-md  bg-blue-600 px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
+                                                type="button"
+                                                onClick={handleRetrain}
+                                            >
+                                                {loading ? (
+                                                    <>
+                                                        <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                                                        <span className="mr-3">
+                                                            صبر کنید ...
+                                                        </span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <span>
+                                                            تایید و شروع آموزش
+                                                        </span>
+                                                    </>
+                                                )}
+                                            </button>
+                                        </div>
                                     </div>
-                                </Modal>
+                                </div>
+                            </Modal>
                             <div className="pl-6 pr-6">
                                 <label className="text-md mb-2 block font-medium text-zinc-700">
                                     {" "}
@@ -305,7 +305,7 @@ const MyMessage = () => {
                                         </div>
                                     </div>
                                     <button
-                                        onClick={()=>handleDownload(botId)}
+                                        onClick={() => handleDownload(botId)}
                                         className="flex items-center justify-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700"
                                     >
                                         <span>خروجی json</span>
@@ -422,10 +422,7 @@ const MyMessage = () => {
                                                                     <>
                                                                         <div className="mb-3 ml-8 flex flex-col">
                                                                             <div className="flex items-center justify-start">
-                                                                                <div
-                                                                                    className="ml-2 flex h-9 w-9 items-center justify-center rounded-full"
-
-                                                                                >
+                                                                                <div className="ml-2 flex h-9 w-9 items-center justify-center rounded-full">
                                                                                     <img
                                                                                         src="/images/profile.png"
                                                                                         alt=""
@@ -433,86 +430,110 @@ const MyMessage = () => {
                                                                                     />
                                                                                 </div>
                                                                                 <div>
-                                                                                <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
-                                                                                    <div className="flex flex-col items-start gap-4 break-words">
-                                                                                        <div className=" w-full break-words text-right text-inherit ">
-                                                                                            <p>
-                                                                                                {
-                                                                                                    record?.userMessage
-                                                                                                }
-                                                                                            </p>{" "}
+                                                                                    <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
+                                                                                        <div className="flex flex-col items-start gap-4 break-words">
+                                                                                            <div className=" w-full break-words text-right text-inherit ">
+                                                                                                <p>
+                                                                                                    {
+                                                                                                        record?.userMessage
+                                                                                                    }
+                                                                                                </p>{" "}
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                    <div className="mt-1 flex">
+                                                                                        <span className=" mr-auto truncate text-[12px] text-zinc-500">
+                                                                                            {formatRelativeTimeChat(
+                                                                                                record?.userMessageTime,
+                                                                                            )}
+                                                                                        </span>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div className="mt-1 flex">
-                                                                                <span className=" truncate text-[12px] text-zinc-500 mr-auto">
-                                                                                {formatRelativeTimeChat(
-                                                                                    record?.userMessageTime,
-                                                                                )}
-                                                                            </span>
-
-                                                                                </div>
-
-                                                                                </div>
-                                                                                
                                                                             </div>
-                                                                          
                                                                         </div>
                                                                         <div className="mb-3 mr-8 flex flex-col">
                                                                             <div className="flex items-center justify-end">
                                                                                 <div>
-                                                                                     <div className="max-w-prose overflow-auto rounded-lg bg-white border px-4 py-3 text-black">
-                                                                                    <div className="flex flex-col items-start gap-4 break-words">
-                                                                                        <div className=" w-full break-words text-right text-inherit ">
-                                                                                            <p>
-                                                                                                {
-                                                                                                    record?.llmResponse
-                                                                                                }
-                                                                                            </p>
+                                                                                    <div className="max-w-prose overflow-auto rounded-lg border bg-white px-4 py-3 text-black">
+                                                                                        <div className="flex flex-col items-start gap-4 break-words">
+                                                                                            <div className=" w-full break-words text-right text-inherit ">
+                                                                                                <Markdown>
+                                                                                                    {record?.llmResponse ||
+                                                                                                        ""}
+                                                                                                </Markdown>
+                                                                                            </div>
                                                                                         </div>
-                                                                                    </div>
                                                                                     </div>
                                                                                     <div className="mt-2 flex items-center justify-between">
-                                                                                    <div>
-                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed" onClick={()=>{handleReviseClick(record?.userMessage)}}>
-                                                                                          اصلاح پاسخ
-                                                                                          <Magicpen size={14}
-                                                                                          className="text-purple-500"
-                                                                                          />
-                                                                                          </button>
+                                                                                        <div>
+                                                                                            <button
+                                                                                                className="focus-visible:ring-ring inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap rounded-xl border border-zinc-200 bg-white px-4 py-1 align-top text-xs font-medium text-zinc-500 shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                                                                                                type="button"
+                                                                                                aria-haspopup="dialog"
+                                                                                                aria-expanded="false"
+                                                                                                aria-controls="radix-:rs:"
+                                                                                                data-state="closed"
+                                                                                                onClick={() => {
+                                                                                                    handleReviseClick(
+                                                                                                        record?.userMessage,
+                                                                                                    )
+                                                                                                }}
+                                                                                            >
+                                                                                                اصلاح
+                                                                                                پاسخ
+                                                                                                <Magicpen
+                                                                                                    size={
+                                                                                                        14
+                                                                                                    }
+                                                                                                    className="text-purple-500"
+                                                                                                />
+                                                                                            </button>
                                                                                         </div>
                                                                                         <div className="flex items-center gap-2">
-                                                                                        <div className="border border-zinc-200 transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:focus:ring-zinc-300 dark:text-zinc-50 mr-2 inline-flex items-center rounded-2xl px-2 py-1 align-baseline font-medium text-xs ring-1 ring-inset bg-violet-600 text-white ring-violet-600 hover:bg-violet-600" data-state="closed">
-                                                                                            0.648
-                                                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" fill="none" className="h-4 w-4 text-white"><title>Signal</title><path d="M8.37 2.24c-.04.13-.04.28-.04.6v7.86c0 .28 0 .42.06.53.04.1.12.17.22.22.1.05.24.05.52.05h.27c.56 0 .84 0 1.05-.1a1 1 0 0 0 .44-.45c.1-.21.1-.49.1-1.05V2.83c0-.3 0-.46-.03-.59a1 1 0 0 0-.7-.7c-.13-.04-.28-.04-.6-.04-.3 0-.46 0-.59.03a1 1 0 0 0-.7.71ZM4.67 5.83c0-.3 0-.46.03-.59a1 1 0 0 1 .7-.7c.14-.04.3-.04.6-.04.31 0 .47 0 .6.03a1 1 0 0 1 .7.71c.03.13.03.28.03.6v4.86c0 .28 0 .42-.05.53a.5.5 0 0 1-.22.22c-.1.05-.25.05-.53.05H5.47c-.28 0-.42 0-.53-.05a.5.5 0 0 1-.22-.22c-.05-.11-.05-.25-.05-.53V5.83ZM1 8.83c0-.3 0-.46.03-.59a1 1 0 0 1 .71-.7c.13-.04.28-.04.6-.04.3 0 .46 0 .59.03a1 1 0 0 1 .7.71c.04.13.04.28.04.6v1.86c0 .28 0 .42-.06.53a.5.5 0 0 1-.22.22c-.1.05-.24.05-.52.05H2.6c-.56 0-.84 0-1.05-.1a1 1 0 0 1-.44-.45C1 10.74 1 10.46 1 9.9V8.83Z" xmlns="http://www.w3.org/2000/svg" fill="currentColor"></path></svg>
+                                                                                            <div
+                                                                                                className="mr-2 inline-flex items-center rounded-2xl border border-zinc-200 bg-violet-600 px-2 py-1 align-baseline text-xs font-medium text-white ring-1 ring-inset ring-violet-600 transition-colors hover:bg-violet-600 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:text-zinc-50 dark:focus:ring-zinc-300"
+                                                                                                data-state="closed"
+                                                                                            >
+                                                                                                0.648
+                                                                                                <svg
+                                                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                                                    viewBox="0 0 14 14"
+                                                                                                    fill="none"
+                                                                                                    className="h-4 w-4 text-white"
+                                                                                                >
+                                                                                                    <title>
+                                                                                                        Signal
+                                                                                                    </title>
+                                                                                                    <path
+                                                                                                        d="M8.37 2.24c-.04.13-.04.28-.04.6v7.86c0 .28 0 .42.06.53.04.1.12.17.22.22.1.05.24.05.52.05h.27c.56 0 .84 0 1.05-.1a1 1 0 0 0 .44-.45c.1-.21.1-.49.1-1.05V2.83c0-.3 0-.46-.03-.59a1 1 0 0 0-.7-.7c-.13-.04-.28-.04-.6-.04-.3 0-.46 0-.59.03a1 1 0 0 0-.7.71ZM4.67 5.83c0-.3 0-.46.03-.59a1 1 0 0 1 .7-.7c.14-.04.3-.04.6-.04.31 0 .47 0 .6.03a1 1 0 0 1 .7.71c.03.13.03.28.03.6v4.86c0 .28 0 .42-.05.53a.5.5 0 0 1-.22.22c-.1.05-.25.05-.53.05H5.47c-.28 0-.42 0-.53-.05a.5.5 0 0 1-.22-.22c-.05-.11-.05-.25-.05-.53V5.83ZM1 8.83c0-.3 0-.46.03-.59a1 1 0 0 1 .71-.7c.13-.04.28-.04.6-.04.3 0 .46 0 .59.03a1 1 0 0 1 .7.71c.04.13.04.28.04.6v1.86c0 .28 0 .42-.06.53a.5.5 0 0 1-.22.22c-.1.05-.24.05-.52.05H2.6c-.56 0-.84 0-1.05-.1a1 1 0 0 1-.44-.45C1 10.74 1 10.46 1 9.9V8.83Z"
+                                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                                        fill="currentColor"
+                                                                                                    ></path>
+                                                                                                </svg>
                                                                                             </div>
                                                                                             <div className="h-4 w-[1px] bg-gray-600"></div>
 
-                                                                                    <span className="truncate text-[12px] text-zinc-500">
-                                                                                {formatRelativeTimeChat(
-                                                                                    record?.userMessageTime,
-                                                                                )}
-                                                                                    </span>
-
+                                                                                            <span className="truncate text-[12px] text-zinc-500">
+                                                                                                {formatRelativeTimeChat(
+                                                                                                    record?.userMessageTime,
+                                                                                                )}
+                                                                                            </span>
                                                                                         </div>
-                
                                                                                     </div>
-
                                                                                 </div>
-                                                                                
-                                                                                <div
-                                                                                    className="mr-2 flex h-9 w-9 items-center justify-center rounded-full"
-                                                                                  
-                                                                                >
-                                                                                     <img
-                                                                                        src={imageLink ?imageLink  :"/botface.svg"}
+
+                                                                                <div className="mr-2 flex h-9 w-9 items-center justify-center rounded-full">
+                                                                                    <img
+                                                                                        src={
+                                                                                            imageLink
+                                                                                                ? imageLink
+                                                                                                : "/botface.svg"
+                                                                                        }
                                                                                         alt=""
                                                                                         className="h-8 w-8 rounded-full"
                                                                                     />
                                                                                 </div>
                                                                             </div>
-                                                                          
-                                                                           
                                                                         </div>
                                                                     </>
                                                                 )
