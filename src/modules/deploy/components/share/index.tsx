@@ -9,7 +9,7 @@ const Sahre = () => {
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
 
-    const urlCode = `https://www.hamyar.chat/chatbot-iframe?botRef=${botId}`
+    const urlCode = `https://www.hamyar.chat/chatbot?botRef=${botId}`
 
     const handleCopyUrl = () => {
         navigator.clipboard
@@ -80,7 +80,7 @@ const Sahre = () => {
                                                 whiteSpace: "inherit",
                                             }}
                                         >
-                                            https://www.hamyar.chat/chatbot-iframe?botRef={botId}
+                                            https://www.hamyar.chat/chatbot?botRef={botId}
                                         </code>
                                     </pre>
                                 </div>
