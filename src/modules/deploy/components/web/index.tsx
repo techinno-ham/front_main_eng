@@ -12,7 +12,7 @@ const Web = () => {
     const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN || "https://hamyar.chat/cdn";
 
     const iframeCode = `<iframe
-    src="https://www.hamyar.chat/chatbot?botRef=${botId}"
+    src="https://www.hamyar.chat/chatbot-iframe?botRef=${botId}"
     width="100%"
     style="height: 100%; min-height: 700px"
     frameborder="0"
@@ -105,7 +105,7 @@ const Web = () => {
                                         >
                                             &lt;iframe
                                             {"\n"}
-                                            src="https://www.hamyar.chat/chatbot?botRef={botId}"
+                                            src="https://www.hamyar.chat/chatbot-iframe?botRef={botId}"
                                             {"\n"}width="100%"
                                             {"\n"}style="height: 100%;
                                             min-height: 700px"
