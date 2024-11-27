@@ -117,7 +117,7 @@ const Model = () => {
                    
                 <div className="h-full w-full">
                     <textarea
-                        className="h-full w-full resize-none rounded-md border border-gray-300 p-4"
+                        className="panel_custom_scrollbar h-full w-full resize-none rounded-md border border-gray-300 p-4"
                         placeholder="میتوانید اینجا بنویسید تا من یاد بگیرم ..."
                         rows={12}
                         onChange={handleChangeInstructions}

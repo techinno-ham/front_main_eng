@@ -183,7 +183,7 @@ const ChatBot: FC<chatbotProps> = ({
                             </div>
                             <div className="bg-inherit">
                                 <form action="">
-                                    <div className="flex gap-2 overflow-x-auto p-3">
+                                    <div className="panel_custom_scrollbar flex gap-2 overflow-x-auto p-3">
                                         <button
                                             className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
                                             type="button"

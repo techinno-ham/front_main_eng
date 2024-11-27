@@ -121,7 +121,7 @@ const QandA = () => {
                         اضافه کردن +
                     </button>
                 </div>
-                <div className="custom-scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
+                <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
                     {qaList
                         .filter(
                             (qa) =>
@@ -147,7 +147,7 @@ const QandA = () => {
                                     </div>
 
                                     <textarea
-                                        className="rounded-md border border-gray-300 p-2"
+                                        className="panel_custom_scrollbar rounded-md border border-gray-300 p-2"
                                         placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
                                         rows={1}
                                         value={qa.question}
@@ -163,7 +163,7 @@ const QandA = () => {
                                 <div className="flex flex-col gap-3">
                                     <span className="mt-2">پاسخ :</span>
                                     <textarea
-                                        className="rounded-md border border-gray-300 p-2"
+                                        className="panel_custom_scrollbar rounded-md border border-gray-300 p-2"
                                         placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
                                         value={qa.answer}
                                         rows={5}

@@ -187,6 +187,7 @@ const Apperence = () => {
                                 <div className="mt-1">
                                     <textarea
                                         name="botMessages"
+                                        rows={5}
                                         value={chatConfig.botMessages.join(
                                             "\n",
                                         )}
@@ -198,7 +199,7 @@ const Apperence = () => {
                                         }
                                         placeholder="سلام ! 
 امیدوارم که حالت خوب باشه"
-                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-400">
                                         <span className="text-red-400">{" "}*{" "}</span>
@@ -213,6 +214,7 @@ const Apperence = () => {
                                 <div className="mt-1">
                                     <textarea
                                         name="suggestedMessages"
+                                        rows={5}
                                         value={chatConfig.suggestedMessages.join(
                                             "\n",
                                         )}
@@ -224,7 +226,7 @@ const Apperence = () => {
                                         }
                                         placeholder="چطوری از قیمت ها مطلع بشم؟
                                     چطور ثبتنام کنم؟"
-                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-400">
                                         <span className="text-red-400">{" "}*{" "}</span>

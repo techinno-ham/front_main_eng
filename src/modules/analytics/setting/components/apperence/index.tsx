@@ -59,7 +59,7 @@ const Apperence = () => {
                                             })
                                         }
                                         placeholder="Hi! What can I help you with?"
-                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-500">
                                         هر پیام را در یک خط جدید وارد کنید.
@@ -82,8 +82,8 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="رایا چت چیست ؟"
-                                        className="w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                        placeholder="همیارچت چیست ؟"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-500">
                                         هر پیام را در یک خط جدید وارد کنید.

@@ -81,7 +81,7 @@ const ChatTemplate = ({ config }: any) => {
                     <div className="bg-inherit">
                         <form action="">
                             <div
-                                className={`flex gap-2 overflow-x-auto p-3 ${isLight ? "bg-[#f1f5f8]" : "bg-[#2c2c2c]"}`}
+                                className={`chatdemo_scrollbar flex gap-2 overflow-x-auto px-3 py-1 ${isLight ? "bg-[#f1f5f8]" : "bg-[#2c2c2c]"}`}
                             >
                                 {config.suggestedMessages.map(
                                     (sgm: any, index: number) => {

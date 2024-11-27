@@ -68,7 +68,7 @@ const ChatTemplate = ({ config }: any) => {
                     </div>
                     <div className="bg-inherit">
                         <form action="">
-                            <div className="flex gap-2 overflow-x-auto p-3">
+                            <div className="panel_custom_scrollbar flex gap-2 overflow-x-auto p-3">
                                 {config.suggestedMessages.map(
                                     (sgm: any, index: number) => {
                                         return (
