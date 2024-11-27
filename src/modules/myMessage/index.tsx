@@ -338,7 +338,7 @@ const MyMessage = () => {
                                 ) : (
                                     <>
                                         <div className="w-full lg:max-w-xs xl:max-w-sm ">
-                                            <div className="mt-4 max-h-[38rem] overflow-auto rounded border ">
+                                            <div className="panel_custom_scrollbar mt-4 max-h-[38rem] overflow-auto rounded border ">
                                                 <ul className="w-full divide-y divide-zinc-200">
                                                     {conversations &&
                                                         conversations?.length &&
@@ -419,7 +419,7 @@ const MyMessage = () => {
                                                     بازه زمانی :{" "}
                                                     {dicTime[filter]}
                                                 </p>
-                                                <div className="mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-[#F0F8FF] px-3 py-5">
+                                                <div className="panel_custom_scrollbar mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-slate-200/20 px-3 py-5">
                                                     <div>
                                                         {conversations?.[
                                                             activeConversation
@@ -471,7 +471,7 @@ const MyMessage = () => {
                                                                         <div className="mb-3 mr-8 flex flex-col">
                                                                             <div className="flex items-center justify-end">
                                                                                 <div>
-                                                                                     <div className="max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
+                                                                                     <div className="max-w-prose overflow-auto rounded-lg bg-white border px-4 py-3 text-black">
                                                                                     <div className="flex flex-col items-start gap-4 break-words">
                                                                                         <div className=" w-full break-words text-right text-inherit ">
                                                                                             <p>
@@ -486,7 +486,9 @@ const MyMessage = () => {
                                                                                     <div>
                                                                                           <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900   rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed" onClick={()=>{handleReviseClick(record?.userMessage)}}>
                                                                                           اصلاح پاسخ
-                                                                                          <Magicpen size={14}/>
+                                                                                          <Magicpen size={14}
+                                                                                          className="text-purple-500"
+                                                                                          />
                                                                                           </button>
                                                                                         </div>
                                                                                         <div className="flex items-center gap-2">

@@ -94,7 +94,7 @@ const QandA = () => {
                         اضافه کردن +
                     </button>
                 </div>
-                <div className="custom-scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
+                <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
                 {qaList
                         .filter(
                             (qa) =>

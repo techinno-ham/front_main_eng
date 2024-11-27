@@ -145,7 +145,7 @@ const WebsiteLink = () => {
                         اضافه کردن +
                     </button>
                 </div>
-                <div className="mt-3 flex h-72 flex-col overflow-auto">
+                <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col overflow-auto">
                     {urlList.map((input, index) => (
                         <div
                             key={index}
