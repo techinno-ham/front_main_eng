@@ -29,7 +29,8 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
       - ~/../etc/letsencrypt:/etc/letsencrypt
-      - ./public/chatbot:/var/www/chatbot
+      # - ./public/chatbot:/var/www/chatbot
+      - ./public/chatbot:/usr/share/nginx/html/chatbot
       - /var/log/nginx/:/var/log/nginx/
     depends_on:
       - frontend
