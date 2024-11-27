@@ -17,7 +17,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     const pathname = usePathname()
-    const ChatBotScript =!pathname.startsWith("/chatbot");
+    const ChatBotScript =!pathname.startsWith("/test");
     const isMyBotsPath =
         pathname.startsWith("/mybots") ||
         pathname.startsWith("/panel") ||
