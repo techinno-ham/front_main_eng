@@ -13,6 +13,7 @@ import service from "@/src/shared/services/service"
 import Modal from "@/src/shared/components/common/modal"
 import { toast } from "sonner"
 import Markdown from "react-markdown"
+import Services from "../../shared/services/service"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
@@ -28,9 +29,10 @@ const MyMessage = () => {
     const [imageLink, setImageLink] = useState("")
 
     const handleOnCloseModal = (e: React.MouseEvent) => {
-        e.stopPropagation()
-        e.preventDefault()
-        setOpenModal(false)
+        e.stopPropagation();
+        e.preventDefault();
+        setOpenModal(false);
+        setAnswer("");
     }
 
     const handleReviseClick = (questionInput: string) => {
@@ -40,17 +42,28 @@ const MyMessage = () => {
 
     const handleRetrain = async (e: any) => {
         e.stopPropagation()
-        e.preventDefault()
+        e.preventDefault();
+
+        if (!question || !answer){
+            toast.error(" لطفاً سوال یا جواب را وارد کنید.");
+            return;
+        }
         setLoading(true)
         try {
-            // await props.onDelete(props.botsData.bot_id)
-            setOpenModal(false)
-            toast.success("چت بات شما با موفقیت حذف شد")
+                const qaUpdated=[{ question: question, answer: answer }];
+                const body={
+                    qANDa_input:qaUpdated
+                };
+                 await Services.updateDataSourceQa(body, botId);
+                  toast.success("بات شما با در حال آموزش مجدد می باشد.") 
+                  setOpenModal(false)
         } catch (error) {
-            console.error("Error deleting bot:", error)
-            toast.success("چت بات شما با موفقیت حذف شد")
+            console.error("Error deleting bot:", error);
+            toast.error("مشکلی پیش امده است ..");
+
         } finally {
             setLoading(false)
+            setAnswer("");
         }
     }
 

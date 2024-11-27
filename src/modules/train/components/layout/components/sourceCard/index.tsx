@@ -70,10 +70,10 @@ const SourceCard = () => {
             return
         }
 
-        if (data.bot.update_datasource >= 2) {
-            toast.error("تعداد درخواست های شما بیش از حد مجاز است .")
-            return
-        }
+        // if (data.bot.update_datasource >= 2) {
+        //     toast.error("تعداد درخواست های شما بیش از حد مجاز است .")
+        //     return
+        // }
 
         // if (!hasMinimumFiles || !hasMinimumChars) {
         //     toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
@@ -172,10 +172,10 @@ const SourceCard = () => {
                             <span className="font-bold">{allChar}</span>
                         </span>
                     </p>
-                    <div className="mt-4 text-sm text-red-600">
+                    {/* <div className="mt-4 text-sm text-red-600">
                         تعداد درخواست های آموزش مجدد:{" "}
                         {data.bot.update_datasource} / 2
-                    </div>
+                    </div> */}
 
                     <div className="mt-4 flex justify-center">
                         <button
