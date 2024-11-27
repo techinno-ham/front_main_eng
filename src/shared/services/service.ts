@@ -123,6 +123,19 @@ class Services {
             )
         }
     }
+    updateDataSourceQa = async (body: any, botId: string) => {
+        try {
+            const response = await mainApi.post(
+                `${API.UPDATE_DATASOURCE_QA}/${botId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update dataSourceQa failed",
+            )
+        }
+    }
     updateGeneralConfig = async (botId: string, body: any) => {
         try {
             const response = await mainApi.post(

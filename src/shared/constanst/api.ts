@@ -6,6 +6,8 @@ export const API = {
     FETCH_LINKS_Demo: "/crawler/linksDemo",
     CREATE_BOT: "/mybots/create",
     UPDATE_DATASOURCE: "/mybots/dataSource/update",
+    UPDATE_DATASOURCE_QA: "/mybots/dataSource/update/qa",
+
     UPDATE_GENERAL: "/mybots/configs/updateGeneral",
     UPDATE_MODEL: "/mybots/configs/updateModel",
     UPDATE_UI: "/mybots/configs/updateUi",

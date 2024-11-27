@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation"
 import service from "@/src/shared/services/service"
 import Modal from "@/src/shared/components/common/modal"
 import { toast } from "sonner"
+import Services from "../../shared/services/service"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
@@ -31,9 +32,10 @@ const MyMessage = () => {
 
 
     const handleOnCloseModal = (e: React.MouseEvent) => {
-        e.stopPropagation()
-        e.preventDefault()
-        setOpenModal(false)
+        e.stopPropagation();
+        e.preventDefault();
+        setOpenModal(false);
+        setAnswer("");
     }
 
     const handleReviseClick = (questionInput:string) => {
@@ -43,20 +45,28 @@ const MyMessage = () => {
 
     const handleRetrain = async (e: any) => {
         e.stopPropagation()
-        e.preventDefault()
+        e.preventDefault();
+
+        if (!question || !answer){
+            toast.error(" لطفاً سوال یا جواب را وارد کنید.");
+            return;
+        }
         setLoading(true)
         try {
-            
-                // await props.onDelete(props.botsData.bot_id)
-                setOpenModal(false)
-                toast.success("چت بات شما با موفقیت حذف شد")
-            
+                const qaUpdated=[{ question: question, answer: answer }];
+                const body={
+                    qANDa_input:qaUpdated
+                };
+                 await Services.updateDataSourceQa(body, botId);
+                  toast.success("بات شما با در حال آموزش مجدد می باشد.") 
+                  setOpenModal(false)
         } catch (error) {
-            console.error("Error deleting bot:", error)
-            toast.success("چت بات شما با موفقیت حذف شد")
+            console.error("Error deleting bot:", error);
+            toast.error("مشکلی پیش امده است ..");
 
         } finally {
             setLoading(false)
+            setAnswer("");
         }
     }
 
@@ -474,7 +484,7 @@ const MyMessage = () => {
                                                                                     </div>
                                                                                     <div className="mt-2 flex items-center justify-between">
                                                                                     <div>
-                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed" onClick={()=>{handleReviseClick(record?.userMessage)}}>
+                                                                                          <button className="inline-flex items-center justify-center gap-1 whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-80 border border-zinc-200 shadow-sm hover:text-zinc-900   rounded-xl disabled:bg-zinc-100/60 px-4 py-1 h-7 bg-white align-top font-medium text-xs hover:bg-zinc-100 text-zinc-500" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:rs:" data-state="closed" onClick={()=>{handleReviseClick(record?.userMessage)}}>
                                                                                           اصلاح پاسخ
                                                                                           <Magicpen size={14}/>
                                                                                           </button>
