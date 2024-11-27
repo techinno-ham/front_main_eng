@@ -102,7 +102,7 @@ const ChatBot: FC<chatbotProps> = ({
         <>
             {!chatBotActive ? (
                 <>
-                    <div className="relative flex h-[85vh] max-h-[824px] flex-auto shrink-0 flex-col overflow-hidden rounded-xl border  border-zinc-400  bg-zinc-100">
+                    <div className="relative flex h-[85vh] max-h-[824px] flex-auto shrink-0 flex-col overflow-hidden rounded-xl border  border-zinc-400  bg-zinc-100" >
                         <div className="absolute left-1/2 top-2/4 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +232,7 @@ const ChatBot: FC<chatbotProps> = ({
                 </>
             ) : (
                 <>
-                    <div className="flex h-[80vh] max-h-[700px] max-w-[450px] mx-auto flex-auto shrink-0 flex-col overflow-hidden rounded-xl border border-zinc-300  bg-zinc-100">
+                    <div className="flex h-[80vh] max-h-[700px] max-w-[450px] mx-auto flex-auto shrink-0 flex-col overflow-hidden rounded-xl border border-zinc-300  bg-zinc-100" style={{boxShadow:"0px 0px 9px 1px #4c4c9375"}}>
                         <div className="cb-light group flex h-full flex-auto shrink-0 flex-col overflow-hidden bg-white">
                             <div className="w-full px-3">
                                 <div className="z-10 flex justify-between border-b py-1">
