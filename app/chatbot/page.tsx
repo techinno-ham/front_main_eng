@@ -7,10 +7,12 @@ const ChatBotPage: NextPage = () => {
   const filePath = path.join(process.cwd(), "public", "chatbot", "index.html");
   const html = fs.readFileSync(filePath, "utf8");
 
+  const htmlFilePath = "/chatbot/index.html";
+
   return (
-    <div
-      dangerouslySetInnerHTML={{ __html: html }}
-      style={{ height: "100%", width: "100%" }}
+    <iframe
+      src={htmlFilePath}
+      style={{ height: "100vh", width: "100%", border: "none" }}
     />
   );
 };
