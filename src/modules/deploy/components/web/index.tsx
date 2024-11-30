@@ -105,7 +105,7 @@ const Web = () => {
                                         >
                                             &lt;iframe
                                             {"\n"}
-                                            src="https://www.hamyar.chat/bot?botRef={botId}"
+                                            src="https://www.hamyar.chat/chatbot?botRef={botId}"
                                             {"\n"}width="100%"
                                             {"\n"}style="height: 100%;
                                             min-height: 700px"
