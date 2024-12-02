@@ -109,9 +109,9 @@ const SideBar = () => {
                         <div className="w-[80%] ">
                             <hr className="w-full" />
                             <div className="mt-2 flex items-center justify-center">
-                                <div className="rounded-xl bg-slate-400 p-2">
+                                {/* <div className="rounded-xl bg-slate-400 p-2">
                                     <span>0.1.1 V</span>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
