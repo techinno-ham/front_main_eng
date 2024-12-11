@@ -10,10 +10,8 @@ const Model = () => {
     const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false)
     const [creativity, setCreativity] = useState(0)
-    const [Instructions, setInstructions] = useState("");
-    const [selectedOption, setSelectedOption] = useState("دستورالعمل سفارشی");
-
-
+    const [Instructions, setInstructions] = useState("")
+    const [selectedOption, setSelectedOption] = useState("دستورالعمل سفارشی")
 
     const onSubmit = async (dataForm: any) => {
         setIsLoading(true)
@@ -21,8 +19,8 @@ const Model = () => {
             const formData = {
                 ...dataForm,
                 Temperature: creativity,
-                type_instructions:selectedOption,
-                Instructions:Instructions
+                type_instructions: selectedOption,
+                Instructions: Instructions,
             }
             const response = await service.updateModelConfig(
                 data.bot_id,
@@ -36,20 +34,19 @@ const Model = () => {
         } finally {
             setIsLoading(false)
         }
-    };
+    }
 
     const handleChangeInstructions = (e: any) => {
-        const newText = e.target.value;
+        const newText = e.target.value
         setSelectedOption("دستورالعمل سفارشی")
         setInstructions(newText)
-    };
+    }
 
-    const handleChangeselectedOption = (event:any) => {
-        setSelectedOption(event.target.value);
-        const text= roles[event.target.value];
+    const handleChangeselectedOption = (event: any) => {
+        setSelectedOption(event.target.value)
+        const text = roles[event.target.value]
         setInstructions(text)
- 
-    };
+    }
     useEffect(() => {
         if (data) {
             setValue("model_name", data?.model_configs?.model_name)
@@ -98,36 +95,40 @@ const Model = () => {
                         </p>
                     </div>
                     <div className="pb-8">
-                    <label className="mb-2 block text-sm font-medium text-zinc-700">
-                    دستورالعمل ها چت بات :
-                     </label>
-                     <select
-                            value={selectedOption}       // Set the selected value from state
+                        <label className="mb-2 block text-sm font-medium text-zinc-700">
+                            دستورالعمل ها چت بات :
+                        </label>
+                        <select
+                            value={selectedOption} // Set the selected value from state
                             onChange={handleChangeselectedOption}
-                            className="block mb-2 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
+                            className="mb-2 block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
                         >
-                            <option>دستورالعمل سفارشی</option>
-                            <option>چت‌ بات هوش مصنوعی</option>
-                            <option>نماینده پشتیبانی مشتری</option>
-                            <option>نماینده فروش</option>
-                            <option>مدرس زبان</option>
-                            <option>مربی زندگی</option>
-
+                            <option>📜 دستورالعمل سفارشی</option>
+                            <option>🤖 چت‌ بات هوش مصنوعی</option>
+                            <option>✈️ راهنمای سفر</option>
+                            <option>👩‍💻 نماینده پشتیبانی مشتری</option>
+                            <option>💼 نماینده فروش</option>
+                            <option>📚 مدرس زبان</option>
+                            <option>🌟 مربی زندگی</option>
+                            <option>💰 مشاور مالی</option>
+                            <option>💻 توسعه‌دهنده نرم‌افزار</option>
+                            <option>🍳 آشپز حرفه‌ای</option>
+                            <option>🧠 روانشناس</option>
+                            <option>🏋️ مربی تناسب اندام</option>
                         </select>
-                   
-                <div className="h-full w-full">
-                    <textarea
-                        className="panel_custom_scrollbar h-full w-full resize-none rounded-md border border-gray-300 p-4"
-                        placeholder="میتوانید اینجا بنویسید تا من یاد بگیرم ..."
-                        rows={12}
-                        onChange={handleChangeInstructions}
-                        value={Instructions}
-                        dir="ltr" 
-                    />
-                </div>
-                  
+
+                        <div className="h-full w-full">
+                            <textarea
+                                className="panel_custom_scrollbar h-full w-full resize-none rounded-md border border-gray-300 p-4"
+                                placeholder="میتوانید اینجا بنویسید تا من یاد بگیرم ..."
+                                rows={12}
+                                onChange={handleChangeInstructions}
+                                value={Instructions}
+                                dir="ltr"
+                            />
+                        </div>
                     </div>
-                    
+
                     <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
                             میزان خلاقیت :
@@ -149,8 +150,6 @@ const Model = () => {
                             <p className="text-xs text-zinc-700">خلاقیت</p>
                         </div>
                     </div>
-                    
-
                 </div>
                 <div className="flex justify-end  px-5 py-3">
                     <button
