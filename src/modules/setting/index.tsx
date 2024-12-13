@@ -12,6 +12,8 @@ import General from "../setting/components/general"
 import Model from "../setting/components/model"
 import Apperence from "../setting/components/apperence"
 import Security from "../setting/components/security"
+import Leads from "./components/leads"
+import { Additem, TableDocument } from "iconsax-react"
 
 const Setting = () => {
     const viewController = useStoreViewControllerSetting()
@@ -26,6 +28,7 @@ const Setting = () => {
         Model: "هسته ",
         Apperence: "ظاهری",
         Security: "امنیت",
+        Leads:"فرم ها "
     }
     useEffect(() => {
         const fetchConfigs = async () => {
@@ -51,6 +54,8 @@ const Setting = () => {
                 return <Apperence />
             case "Security":
                 return <Security />
+            case "Leads":
+                 return <Leads />
             default:
                 return null
         }
@@ -72,9 +77,29 @@ const Setting = () => {
             <div className="mx-auto  mb-28 mt-[120px] w-[95%] md:mb-4 md:mt-[100px]">
                 <Layout>
                     <div className="mt-[15px]">
-                        <span className="text-xl text-gray-400 ">
+                        <div className="flex justify-between items-center">
+                           <span className="text-xl text-gray-400 ">
                             {tabsInfo[viewController.activeTab]}
-                        </span>
+                           </span>
+                           {viewController.activeTab === "Leads" && (
+                            <>
+                            <button
+                        className="rounded-md flex justify-center items-center gap-2 bg-blue-600 px-3 py-2 text-sm text-white"
+                        
+                    >
+                        <Additem
+
+ size="25"
+ color="white"
+/>
+                        فرم جدید 
+                           </button>
+                            </>
+                           )}
+                           
+                            
+                        </div>
+                  
                         <div>{renderTabContent()}</div>
                     </div>
                 </Layout>

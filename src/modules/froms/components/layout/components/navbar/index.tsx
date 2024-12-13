@@ -1,7 +1,7 @@
 "use client"
 
-import { Brush, Danger, DocumentText, Magicpen, Setting2 } from "iconsax-react"
-import TabLink from "./components/tablinks"
+import { Brush, Danger, DocumentText, Magicpen, Setting2, Share, UserSquare } from "iconsax-react";
+import TabLink from "./components/tablink";
 
 const menuItems = [
     {
@@ -10,24 +10,19 @@ const menuItems = [
         icon: <Setting2 size={20} />,
     },
     {
-        title: "هسته",
-        store: "Model",
-        icon: <Magicpen size={20} />,
-    },
-    {
         title: "ظاهری",
         store: "Apperence",
         icon: <Brush size={20} />,
     },
     {
-        title: "امنیت",
-        store: "Security",
-        icon: <Danger size={20} />,
+        title: "جواب ها",
+        store: "Answer",
+        icon: <UserSquare size={20} />,
     },
     {
-        title: "فرم ها",
-        store: "Leads",
-        icon: <DocumentText size={20} />,
+        title: "اشتراک گذاری ",
+        store: "Share",
+        icon: <Share size={20} />,
     },
 ]
 

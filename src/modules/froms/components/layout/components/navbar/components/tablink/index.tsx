@@ -1,7 +1,8 @@
-import useStoreViewControllerSetting from "@/src/modules/setting/hooks/view-controller-setting"
+import useStoreViewControllerForms from "@/src/modules/froms/hooks/view-controller-forms";
+
 
 const TabLink = ({ item, event }: any) => {
-    const StoreViewController = useStoreViewControllerSetting()
+    const StoreViewController = useStoreViewControllerForms()
 
     const handleClick = () => {
         StoreViewController.changeTab(item.store)
@@ -14,13 +15,6 @@ const TabLink = ({ item, event }: any) => {
             <div>{item.icon}</div>
 
             <span>{item.title}</span>
-          
-            {item.store === "Leads" && (
-            <>
-              <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300">آزمایشی</span>
-            </>
-        )} 
-
         </div>
     )
 }

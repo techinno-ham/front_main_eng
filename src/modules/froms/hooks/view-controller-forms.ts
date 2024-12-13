@@ -1,16 +1,16 @@
 import { create } from "zustand"
 
 // Define a type for the tabs
-type SettingTab = "General" | "Model" | "Apperence" | "Security" |"Leads"
+type SettingTab = "General" | "Apperence" | "Answer" | "Share" 
 
-interface StoreViewControllerSetting {
+interface StoreViewControllerForms {
     activeTab: SettingTab
     changeTab: (newTab: any) => void
     isLoading: boolean
     setLoading: (loading: boolean) => void
 }
 
-const useStoreViewControllerSetting = create<StoreViewControllerSetting>(
+const useStoreViewControllerForms = create<StoreViewControllerForms>(
     (set) => ({
         isLoading: false,
         activeTab: "General",
@@ -21,4 +21,4 @@ const useStoreViewControllerSetting = create<StoreViewControllerSetting>(
     }),
 )
 
-export default useStoreViewControllerSetting
+export default useStoreViewControllerForms;
