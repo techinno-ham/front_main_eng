@@ -188,6 +188,21 @@ class Services {
             )
         }
     }
+    createInitForms = async (botId: string) => {
+        try {
+            const response = await mainApi.post(
+                `${API.CREATE_INITFORMS}`,
+                {
+                    botId:botId
+                },
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "Created Forms Failed",
+            )
+        }
+    };
     myBoysList = async (params: any) => {
         try {
             const response = await mainApi.get(API.My_BOTS, {
