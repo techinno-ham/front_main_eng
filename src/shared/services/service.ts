@@ -226,6 +226,17 @@ class Services {
             )
         }
     }
+
+    deleteForm = async (formId: string) => {
+        try {
+            const response = await mainApi.delete(`${API.DELETE_FORMS}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "delete form failed",
+            )
+        }
+    }
     getBot = async (botId: string) => {
         try {
             const response = await mainApi.get(`${API.My_BOTS}/${botId}`)

@@ -19,6 +19,8 @@ export const API = {
     MY_CONFIGS_WITH_ID: "/mybots/configs",
 
     DELETE_BOTS: "/mybots/delete",
+    DELETE_FORMS: "/forms/delete",
+
     //History
 
     // reset password
