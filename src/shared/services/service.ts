@@ -290,6 +290,20 @@ class Services {
                 error.response?.data?.message || "get configs failed",
             )
         }
+    };
+
+
+    getFromData = async (formId: string) => {
+        try {
+            const response = await mainApi.get(
+                `${API.GETFROM_DATA}/${formId}`,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "get from data failed",
+            )
+        }
     }
     getHistoryMessages = async (botId: string, filter?: string) => {
         try {

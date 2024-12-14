@@ -22,6 +22,7 @@ export const API = {
     DELETE_FORMS: "/forms/delete",
     ACTIVE_FORM:"/forms/active",
     INACTIVE_FORM:"/forms/inactive",
+    GETFROM_DATA:"/forms",
 
     //History
 

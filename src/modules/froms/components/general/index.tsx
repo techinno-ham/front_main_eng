@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import useStoreFromsData from "../../hooks/loadFormData"
 
 const General = () => {
     const { register, handleSubmit, setValue } = useForm()
-    // const { data, setData } = useStoreConfig()
+    const { data, setData } = useStoreFromsData()
     const [isLoading, setIsLoading] = useState(false)
 
     // const onSubmit = async (formData: any) => {
@@ -25,37 +26,37 @@ const General = () => {
     //     }
     // }
 
-    // useEffect(() => {
-    //     if (data) {
-    //         setValue("name", data.name)
-    //     }
-    // }, [data, setValue]);
+    useEffect(() => {
+        if (data) {
+            setValue("name", data.forms_name)
+        }
+    }, [data, setValue]);
 
 
-    // const handleCopyId = () => {
-    //     navigator.clipboard
-    //         .writeText(data?.bot_id)
-    //         .then(() => {
-    //             toast.success("کد مورد نظر شما کپی شد.")
-    //         })
-    //         .catch((err) => {
-    //             toast.error("کد مورد نظر شما کپی نشد.")
-    //         })
-    // }
+    const handleCopyId = () => {
+        navigator.clipboard
+            .writeText(data?.forms_id)
+            .then(() => {
+                toast.success("کد مورد نظر شما کپی شد.")
+            })
+            .catch((err) => {
+                toast.error("کد مورد نظر شما کپی نشد.")
+            })
+    }
 
     return (
         <form >
             <div className="p-5">
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
-                        چت بات آیدی :
+                        فرم آیدی :
                     </label>
                     <div className="mt-1 flex items-center gap-2 space-x-4">
-                        <div className="font-semibold">"khbj"</div>
+                        <div className="font-semibold">{data?.forms_id}</div>
                         <button
-                        // onClick={handleCopyId}
+                        onClick={handleCopyId}
                             type="button"
-                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80  "
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -75,15 +76,10 @@ const General = () => {
                         </button>
                     </div>
                 </div>
-                <div className="pb-8">
-                    <label className="block text-sm font-medium text-zinc-700">
-                        تعداد کارکترها :
-                    </label>
-                    <div className="mt-1 font-semibold">15,380</div>
-                </div>
+    
                 <div>
                     <label className="block text-sm font-medium text-zinc-700">
-                        نام چت بات :
+                        نام فرم   :
                     </label>
                     <div className="mt-2 ">
                         <input

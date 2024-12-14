@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import FormTemplate from "./components/formTemplate"
 
 const Apperence = () => {
-    const { register, handleSubmit, setValue } = useForm()
+    const { register, handleSubmit, setValue } = useForm();
     // const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false)
 
@@ -44,74 +45,59 @@ const Apperence = () => {
     // }
 
     return (
-        <form >
-            <div className="p-5">
-                <div className="pb-8">
-                    <label className="block text-sm font-medium text-zinc-700">
-                        چت بات آیدی :
-                    </label>
-                    <div className="mt-1 flex items-center gap-2 space-x-4">
-                        <div className="font-semibold">"khbj"</div>
-                        <button
-                        // onClick={handleCopyId}
-                            type="button"
-                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z"
-                                ></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div className="pb-8">
-                    <label className="block text-sm font-medium text-zinc-700">
-                        تعداد کارکترها :
-                    </label>
-                    <div className="mt-1 font-semibold">15,380</div>
-                </div>
-                <div>
-                    <label className="block text-sm font-medium text-zinc-700">
-                        نام چت بات :
-                    </label>
-                    <div className="mt-2 ">
-                        <input
-                            {...register("name")}
-                            className=" w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
-                            id="inline-full-name"
-                            type="text"
-                            // defaultValue={name}
-                        />
-                    </div>
-                </div>
-            </div>
-            <div className="flex justify-end  px-5 py-3">
-                <button
-                    type="submit"
-                    className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
-                >
-                    {isLoading ? (
-                        <>
-                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                            <span className="ml-3"> بروزرسانی ...</span>
-                        </>
-                    ) : (
-                        <span>ذخیره</span>
-                    )}
-                </button>
-            </div>
-        </form>
+       <div>
+        <div className="p-5">
+          <h4 className="mb-8 text-sm text-zinc-600">
+                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود
+          </h4>
+          <div className="flex flex-col justify-between lg:flex-row">
+               <div className="w-2/2 flex-1 pb-5 lg:w-1/2">
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    عنوان  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="footer"
+                                        // value={chatConfig.footer}
+                                        // onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                توضیحات  :
+                                </label>
+                                <div className="mt-1">
+                                    <textarea
+                                        name="suggestedMessages"
+                                        rows={2}
+                                        // value={chatConfig.suggestedMessages.join(
+                                        //     "\n",
+                                        // )}
+                                        // onChange={(e) =>
+                                        //     updateChatConfig({
+                                        //         suggestedMessages:
+                                        //             e.target.value.split("\n"),
+                                        //     })
+                                        // }
+                                        placeholder="چطوری از قیمت ها مطلع بشم؟
+                                    چطور ثبتنام کنم؟"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                    />
+            
+                                </div>
+                            </div>
+               </div>
+               <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 sticky top-4">
+                <FormTemplate />
+               </div>
+          </div>
+        </div>
+       </div>
     )
 }
 

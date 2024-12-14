@@ -10,34 +10,36 @@ import General from "./components/general"
 import Apperence from "./components/apperence"
 import Answer from "./components/answer"
 import { Share } from "iconsax-react"
+import useStoreFromsData from "./hooks/loadFormData"
 
 const Forms = () => {
     const viewController = useStoreViewControllerForms()
     const pathname = usePathname()
-    const botId = pathname.split("/")[2]
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<string | null>(null)
+    const fromId = pathname.split("/")[5];
+    const [loading, setLoading] = useState<boolean>(true);
+    const { setData } = useStoreFromsData()
+    const [error, setError] = useState<string | null>(null);
 
     const tabsInfo = {
         General: "عمومی",
         Apperence: "ظاهری",
         Answer: "جواب ها",
         Share:"اشتراک گذاری "
-    }
-    // useEffect(() => {
-    //     const fetchConfigs = async () => {
-    //         setLoading(true)
-    //         try {
-    //             const response = await service.getConfigs(botId)
-    //             setData(response.data)
-    //         } catch (error: any) {
-    //             setError(error.message)
-    //         } finally {
-    //             setLoading(false)
-    //         }
-    //     }
-    //     fetchConfigs()
-    // }, [botId])
+    };
+    useEffect(() => {
+        const fetchConfigs = async () => {
+            setLoading(true)
+            try {
+                const response = await service.getFromData(fromId)
+                setData(response.data)
+            } catch (error: any) {
+                setError(error.message)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchConfigs()
+    }, [fromId])
     const renderTabContent = () => {
         switch (viewController.activeTab) {
             case "General":
