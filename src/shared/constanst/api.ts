@@ -20,6 +20,8 @@ export const API = {
 
     DELETE_BOTS: "/mybots/delete",
     DELETE_FORMS: "/forms/delete",
+    ACTIVE_FORM:"/forms/active",
+    INACTIVE_FORM:"/forms/inactive",
 
     //History
 

@@ -236,7 +236,29 @@ class Services {
                 error.response?.data?.message || "delete form failed",
             )
         }
-    }
+    };
+
+    activeForm = async (formId: string) => {
+        try {
+            const response = await mainApi.patch(`${API.ACTIVE_FORM}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "actived form failed",
+            )
+        }
+    };
+
+    inactiveForm = async (formId: string) => {
+        try {
+            const response = await mainApi.patch(`${API.INACTIVE_FORM}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "inactived form failed",
+            )
+        }
+    };
     getBot = async (botId: string) => {
         try {
             const response = await mainApi.get(`${API.My_BOTS}/${botId}`)

@@ -13,8 +13,7 @@ import { useRouter } from "nextjs-toploader/app"
 
 const Leads = () => {
     const [list, setList] = useState<any>(mockData);
-    const [isLoading, setIsLoading] = useState(false);
-    const { data, setData } = useStoreConfig();
+    const { data} = useStoreConfig();
     const pathname = usePathname();
     const router=useRouter();
 
@@ -40,9 +39,46 @@ const Leads = () => {
     const newPath = `${pathname}/form/${formId}`;
     router.push(newPath);
   };
-  const handleActiveForm=async ()=>{
-
+  const handleActiveForm=async (formId:string)=>{
+    const loadingToastId = toast.loading("در حال فعال سازی  فرم ...");
+    try {
+         await service.activeForm(formId); 
+        toast.success("فرم با موفقیت فعال شد");
+        setList((prevList: any) => 
+            prevList.map((form: any) => 
+              form.forms_id === formId 
+                ? { ...form, status: "active" } 
+                : { ...form, status: "inactive" } 
+            )
+          );
+    } catch (error) {
+        toast.error(`مشکلی در فعال کردن فرم وجود دارد`)
+    } finally {
+        toast.dismiss(loadingToastId);
+    }
   };
+
+  const handleInactiveForm=async (formId:string)=>{
+    const loadingToastId = toast.loading("در حال غیر فعال سازی  فرم ...");
+    try {
+         await service.inactiveForm(formId); 
+        toast.success("فرم با موفقیت غیر فعال شد");
+        setList((prevList: any) => 
+            prevList.map((form: any) => 
+              form.forms_id === formId 
+                ? { ...form, status: "inactive" } 
+                : form 
+            )
+          );
+    } catch (error) {
+        toast.error(`مشکلی در غیر فعال کردن فرم وجود دارد`)
+    } finally {
+        toast.dismiss(loadingToastId);
+    }
+  };
+
+
+
     useEffect(() => {
         if (data) {
             setList(data.forms)
@@ -55,8 +91,8 @@ const Leads = () => {
         
 
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
-    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
             <tr>
                 <th scope="col" className="px-6 py-3">
                      عنوان
@@ -76,8 +112,8 @@ const Leads = () => {
             {list.map((form:any)=>{ 
                 return(
 
-                 <tr  key={form.forms_id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                 <tr  key={form.forms_id} className="bg-white border-b ">
+                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                  {form.forms_name}
                  </th>
                  <td className="px-6 py-4">
@@ -87,14 +123,14 @@ const Leads = () => {
                  <td className="px-6 py-4">
                  {form.status === "active" ? (
         <>
-                  <span className="bg-green-100 flex justify-center items-center w-fit gap-1 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+                  <span className="bg-green-100 flex justify-center items-center w-fit gap-1 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">
                                             <span className="bg-green-500 rounded-full h-3 w-3  inline-block"></span>
                                             فعال
                                         </span>
         </>
     ) : (
         <>
-             <span className="bg-red-100 text-red-800 flex justify-center items-center w-fit gap-1 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
+             <span className="bg-red-100 text-red-800 flex justify-center items-center w-fit gap-1 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">
                                             <span className="bg-red-500 rounded-full h-3 w-3  inline-block"></span>
                                             غیر فعال
                                         </span>
@@ -104,14 +140,14 @@ const Leads = () => {
                  <td className="px-6 py-4">
                     <div className="flex">
             {form.status === "active" ?(<><div className="relative group">
-            <button className="border border-red-500 rounded p-1 flex items-center">
+            <button onClick={()=>{handleInactiveForm(form.forms_id)}} className="border border-red-500 rounded p-1 flex items-center">
                 <ToggleOffCircle size={20} color="red" />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
                غیر فعال کردن 
             </span>
                    </div></>):(<><div className="relative group">
-            <button className="border border-green-500 rounded p-1 flex items-center">
+            <button onClick={()=>{handleActiveForm(form.forms_id)}} className="border border-green-500 rounded p-1 flex items-center">
                 <ToggleOnCircle size={20} color="green" />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
