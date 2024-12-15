@@ -9,7 +9,7 @@ import { Send, Send2 } from "iconsax-react";
 const FormTemplate=({ config }: any )=>{
     return (
         <>
-        <form className="p-4 min-w-72 max-w-80 rounded-md border" action="">
+        <form className="p-4 min-w-72 max-w-80 rounded-md border shadow-[0_1px_8px_1px_#8080801f]" action="">
             <div>
                <div className="text-center mb-4">
                <h3 className="text-[24px] font-semibold">عنوان</h3>

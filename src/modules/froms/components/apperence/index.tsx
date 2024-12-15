@@ -5,6 +5,7 @@ import { toast } from "sonner"
 import FormTemplate from "./components/formTemplate"
 import useStoreFromsData from "../../hooks/loadFormData"
 import useStoreFormConfig from "./hooks/useFormData"
+import { Warning2 } from "iconsax-react"
 
 const Apperence = () => {
     const { register, handleSubmit, setValue } = useForm();
@@ -17,7 +18,12 @@ const Apperence = () => {
     const handleInputChange = (e: any) => {
         const { name, value } = e.target
         updateFormConfig({ [name]: value })
-    }
+    };
+
+    const handleChekBoxInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, type, checked, value } = e.target;
+        updateFormConfig({ [name]: type === "checkbox" ? checked : value });
+    };
 
     // const onSubmit = async (formData: any) => {
     //     setIsLoading(true)
@@ -46,13 +52,17 @@ const Apperence = () => {
     return (
        <div>
         <div className="p-5">
-          <h4 className="mb-8 text-sm text-zinc-600">
-                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود
+          <h4 className="bg-yellow-100 text-yellow-800 mb-8 text-xs font-medium  p-2 rounded-lg flex items-center gap-2">
+          <Warning2
+ size="20"
+ color="#FF8A65"
+/>
+                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود.
           </h4>
           <div className="flex flex-col justify-between lg:flex-row">
                <div className="w-2/2 flex-1 pb-5 lg:w-1/2">
-                   <div>
-                   <span>جزییات فرم  :</span>
+                   <div style={{borderBottom:"1px solid #8080801c"}}>
+                   <p className="pb-4 font-bold">جزییات فرم  :</p>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
                                     عنوان  :{" "}
@@ -86,18 +96,18 @@ const Apperence = () => {
                             </div>
                    </div>
 
-                   <div>
-                   <span>فیلد های فرم :</span>
+                   <div style={{borderBottom:"1px solid #8080801c"}}>
+                   <p className="pb-4 pt-4 font-bold">فیلد های فرم :</p>
                    <div className="pb-8">
-                        <div className="flex items-center gap-2">
-                            <label className=" text-lg font-medium text-zinc-700">
-                                ایمیل {" "}
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                نام {" "}
                             </label>
                             <label className="cursor-pointer/ inline-flex items-center">
                                 <input
-                                    name="email_active"
-                                    value={"true"}
-                                    onChange={handleInputChange}
+                                    name="name_active"
+                                    checked={fromConfig.name_active}
+                                    onChange={handleChekBoxInputChange}
                                     type="checkbox"
                                     className="peer sr-only"
                                 />
@@ -105,17 +115,129 @@ const Apperence = () => {
                             </label>
                         </div>
                     </div>
-                    <div className="pb-8">
+                    {fromConfig.name_active && (
+                        <>
+                          <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                       پیام داخل ورودی نام  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="name_placeholder"
+                                        value={fromConfig.name_placeholder}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                   <div className="pb-8 font-medium">
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                ایمیل {" "}
+                            </label>
+                            <label className="cursor-pointer/ inline-flex items-center">
+                                <input
+                                    name="email_active"
+                                    checked={fromConfig.email_active}
+                                    onChange={handleChekBoxInputChange}
+                                    type="checkbox"
+                                    className="peer sr-only"
+                                />
+                                <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            </label>
+                        </div>
+                    </div>
+                    {fromConfig.email_active && (
+                        <>
+                          <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
                                        پیام داخل ورودی ایمیل :{" "}
                                 </label>
                                 <div className="mt-1">
                                     <input
-                                        name="inputPlaceholder"
-                                        // value={chatConfig.inputPlaceholder}
-                                        // onChange={handleInputChange}
+                                        name="email_placeholder"
+                                        value={fromConfig.email_placeholder}
+                                        onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+<div className="pb-8">
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                شماره تماس {" "}
+                            </label>
+                            <label className="cursor-pointer/ inline-flex items-center">
+                                <input
+                                    name="phone_active"
+                                    checked={fromConfig.phone_active}
+                                    onChange={handleChekBoxInputChange}
+                                    type="checkbox"
+                                    className="peer sr-only"
+                                />
+                                <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            </label>
+                        </div>
+                    </div>
+                    {fromConfig.phone_active && (
+                        <>
+                          <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                       پیام داخل ورودی شماره تماس :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="phone_placeholder"
+                                        value={fromConfig.phone_placeholder}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                  
+                   </div>
+
+                   <div>
+                   <p className="pb-4 pt-4 font-bold">صفحه پایانی فرم :</p>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    پیام پایانی  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="message_end"
+                                        value={fromConfig.message_end}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                     مسیر پیام پایانی  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="message_url"
+                                        value={fromConfig.message_url}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
                                         type="text"
                                     />
                                 </div>
@@ -123,11 +245,26 @@ const Apperence = () => {
                    </div>
                            
                </div>
-               <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 sticky top-4">
+               <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 top-4 flex justify-center items-start" style={{borderRight:"1px solid #8080801c"}}>
                 <FormTemplate />
                </div>
           </div>
         </div>
+        <div className="flex justify-end  px-5 py-3">
+                <button
+                    type="submit"
+                    className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
+                >
+                    {isLoading ? (
+                        <>
+                            <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
+                            <span className="ml-3"> بروزرسانی ...</span>
+                        </>
+                    ) : (
+                        <span>ذخیره</span>
+                    )}
+                </button>
+            </div>
        </div>
     )
 }
