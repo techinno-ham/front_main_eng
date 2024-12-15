@@ -98,7 +98,7 @@ const Apperence = () => {
 
                    <div style={{borderBottom:"1px solid #8080801c"}}>
                    <p className="pb-4 pt-4 font-bold">فیلد های فرم :</p>
-                   <div className="pb-8">
+                   <div className={fromConfig.name_active ? "pb-4" : "pb-8"}>
                         <div className="flex items-center gap-2 justify-between">
                             <label className=" text-[16px] font-medium text-zinc-700">
                                 نام {" "}
@@ -134,7 +134,7 @@ const Apperence = () => {
                             </div>
                         </>
                     )}
-                   <div className="pb-8 font-medium">
+                   <div className={fromConfig.email_active ? "pb-4" : "pb-8"}>
                         <div className="flex items-center gap-2 justify-between">
                             <label className=" text-[16px] font-medium text-zinc-700">
                                 ایمیل {" "}
@@ -171,7 +171,7 @@ const Apperence = () => {
                         </>
                     )}
 
-<div className="pb-8">
+                        <div className={fromConfig.phone_active ? "pb-4" : "pb-8"}>
                         <div className="flex items-center gap-2 justify-between">
                             <label className=" text-[16px] font-medium text-zinc-700">
                                 شماره تماس {" "}
@@ -246,7 +246,7 @@ const Apperence = () => {
                            
                </div>
                <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 top-4 flex justify-center items-start" style={{borderRight:"1px solid #8080801c"}}>
-                <FormTemplate />
+                <FormTemplate  config={fromConfig}/>
                </div>
           </div>
         </div>
