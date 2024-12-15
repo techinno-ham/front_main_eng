@@ -5,30 +5,42 @@ import { toast } from "sonner"
 import useStoreFromsData from "../../hooks/loadFormData"
 
 const General = () => {
-    const { register, handleSubmit, setValue } = useForm()
-    const { data, setData } = useStoreFromsData()
-    const [isLoading, setIsLoading] = useState(false)
+    const { register, handleSubmit, setValue } = useForm();
+    const { data, setData } = useStoreFromsData();
+    const [isLoading, setIsLoading] = useState(false);
+    const [checkboxState,setCheckboxState]=useState("");
 
-    // const onSubmit = async (formData: any) => {
-    //     setIsLoading(true)
-    //     try {
-    //         const response = await service.updateGeneralConfig(
-    //             data.bot_id,
-    //             formData,
-    //         )
-    //         toast.success("تغیرات شما موفق آمیز ذخیره شد")
-    //         setData(response.data)
-    //     } catch (error) {
-    //         toast.error("در بروز رسانی مشکلی پیش امده است !")
-    //         console.error("Update failed:", error)
-    //     } finally {
-    //         setIsLoading(false)
-    //     }
-    // }
+    const onSubmit = async (formData: any) => {
+        setIsLoading(true)
+        try {
+            const response = await service.updateGeneralConfig(
+                data.bot_id,
+                formData,
+            )
+            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            setData(response.data)
+        } catch (error) {
+            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            console.error("Update failed:", error)
+        } finally {
+            setIsLoading(false)
+        }
+    };
+
+
 
     useEffect(() => {
+      
         if (data) {
-            setValue("name", data.forms_name)
+            if(data.showIf_message){
+                setCheckboxState("message")
+            }else{
+                setCheckboxState("humen")
+            }
+           
+            setValue("name", data.forms_name);
+            setValue("message_number", data.showIf_message_number);
+            
         }
     }, [data, setValue]);
 
@@ -42,10 +54,14 @@ const General = () => {
             .catch((err) => {
                 toast.error("کد مورد نظر شما کپی نشد.")
             })
-    }
+    };
+
+    const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCheckboxState(event.target.value);
+    };
 
     return (
-        <form >
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className="p-5">
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
@@ -77,7 +93,7 @@ const General = () => {
                     </div>
                 </div>
     
-                <div>
+                <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
                         نام فرم   :
                     </label>
@@ -91,8 +107,37 @@ const General = () => {
                         />
                     </div>
                 </div>
-            </div>
-            <div className="flex justify-end  px-5 py-3">
+                <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                 زمان نمایش فرم :{" "}
+                                </label>
+                                <div className="mt-3">
+                                   <div className="flex items-center mb-4">
+                                    <input   value="message" onChange={handleCheckboxChange} checked={checkboxState=="message"} type="radio"  name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                                    <label  className="ms-2 text-[13px]  text-gray-600 ">بعد از تعداد پیام مشخص </label>
+                                   </div>
+                                   {
+                                    checkboxState =="message" && (
+                                        <>
+                                           <div className="pb-6">
+                                   <input
+                                    {...register("message_number")}
+                                     className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                      type="number"
+                                       />
+                                   </div>
+                                        </>
+                                    )
+                                   }
+                                
+                                   <div className="flex  items-center mb-4">
+                                    <input   value="humen" onChange={handleCheckboxChange} checked={checkboxState=="humen"} type="radio" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                                    <label  className="ms-2 text-[13px]  text-gray-600 ">طبق دستور نیاز به گفتگو انسانی</label>
+                                   </div>
+                                </div>
+                </div>
+                </div>
+                 <div className="flex justify-end  px-5 py-3">
                 <button
                     type="submit"
                     className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
@@ -106,7 +151,7 @@ const General = () => {
                         <span>ذخیره</span>
                     )}
                 </button>
-            </div>
+                  </div>
         </form>
     )
 }
