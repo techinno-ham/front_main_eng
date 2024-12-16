@@ -18,6 +18,12 @@ export const API = {
     MY_CONFIGS_WITH_ID: "/mybots/configs",
 
     DELETE_BOTS: "/mybots/delete",
+
+    //Live Chat
+    SEND_OPERATOR_MESSAGE: "/live/message/operator",
+    FETCH_BOT_LIVE_CONVERSATIONS_IDS: "/live/conversation-ids",
+    FETCH_LIVE_CONVERSATION_HISTORY: "/live/history",
+
     //History
 
     // reset password

@@ -8,3 +8,30 @@ export async function getHistoryMessages(botId: string, filter: string) {
         console.log(err)
     }
 }
+
+export async function sendOperatorMessage(conversationId: string, message: string) {
+    try {
+        const response = await service.sendOperatorMessage({ conversationId, message });
+        return response?.data;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export async function fetchBotLiveConversations(botId: string) {
+    try {
+        const response = await service.fetchLiveConversationsByBotId(botId );
+        return response;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export async function fetchLiveConversationHistory(botId: string, conversationId: string) {
+    try {
+        const response = await service.fetchLiveConversationHistory({ botId, conversationId });
+        return response?.data;
+    } catch (err) {
+        console.log(err);
+    }
+}

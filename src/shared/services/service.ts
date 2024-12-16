@@ -255,6 +255,39 @@ class Services {
             )
         }
     }
+    sendOperatorMessage = async (body: { conversationId: string, message: string }) => {
+        try {
+            const response = await mainApi.post(API.SEND_OPERATOR_MESSAGE, body);
+            return response;
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "Failed to send operator message"
+            );
+        }
+    };
+    
+    fetchLiveConversationHistory = async (body: { botId: string, conversationId: string }) => {
+        try {
+            const response = await mainApi.post(API.FETCH_LIVE_CONVERSATION_HISTORY, body);
+            return response;
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "Failed to fetch conversation history"
+            );
+        }
+    };
+    fetchLiveConversationsByBotId = async (
+        botId: string, 
+      ) => {
+        try {
+          const response = await mainApi.post(API.FETCH_BOT_LIVE_CONVERSATIONS_IDS, { botId });
+          return response.data;  // Return the response data directly
+        } catch (error: any) {
+          throw new Error(
+            error.response?.data?.message || "Failed to fetch live conversations"
+          );
+        }
+      };
 }
 
 export default new Services()

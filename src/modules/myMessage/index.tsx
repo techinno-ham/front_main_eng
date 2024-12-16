@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { getHistoryMessages } from "./utils"
+import { getHistoryMessages, sendOperatorMessage } from "./utils"
 import { ExportCurve, Magicpen, Trash } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
@@ -14,10 +14,13 @@ import Modal from "@/src/shared/components/common/modal"
 import { toast } from "sonner"
 import Markdown from "react-markdown"
 import Services from "../../shared/services/service"
+import LiveChat from "./components/LiveChat"
+import { useLiveChat } from "@/src/shared/store/liveChatStore"
 
 const MyMessage = () => {
     const [conversations, setConversations] = useState<any[]>()
     const [activeConversation, setActiveConversation] = useState(0)
+    const [activeConversationId, setActiveConversationId] = useState("")
     const [openModal, setOpenModal] = useState(false)
     const [question, setQuestion] = useState("")
     const [answer, setAnswer] = useState("")
@@ -28,11 +31,29 @@ const MyMessage = () => {
     const botId = pathname.split("/")[2]
     const [imageLink, setImageLink] = useState("")
 
+    const [isLiveChat, setIsLiveCHat] = useState(false)
+    const [liveMessage, setLiveMessage] = useState("")
+    const [isSending, setIsSending] = useState(false)
+
+    const appendOperatorMessageToLiveChat = useLiveChat((state) => state.appendOperatorMessageToLiveChat)
+    const activeLiveChatConversationMap = useLiveChat((state) => state.activeLiveChatConversationMap)
+
+    useEffect(() => {
+        setActiveConversationId(
+            conversations?.[activeConversation]?.["conversationId"],
+        )
+        setIsLiveCHat(conversations?.[activeConversation]?.["isLiveRequested"])
+    }, [activeConversation, conversations])
+
+    const handleChange = (event: any) => {
+        setLiveMessage(event.target.value)
+    }
+
     const handleOnCloseModal = (e: React.MouseEvent) => {
-        e.stopPropagation();
-        e.preventDefault();
-        setOpenModal(false);
-        setAnswer("");
+        e.stopPropagation()
+        e.preventDefault()
+        setOpenModal(false)
+        setAnswer("")
     }
 
     const handleReviseClick = (questionInput: string) => {
@@ -42,34 +63,33 @@ const MyMessage = () => {
 
     const handleRetrain = async (e: any) => {
         e.stopPropagation()
-        e.preventDefault();
+        e.preventDefault()
 
-        if (!question || !answer){
-            toast.error(" لطفاً سوال یا جواب را وارد کنید.");
-            return;
+        if (!question || !answer) {
+            toast.error(" لطفاً سوال یا جواب را وارد کنید.")
+            return
         }
         setLoading(true)
         try {
-                const qaUpdated=[{ question: question, answer: answer }];
-                const body={
-                    qANDa_input:qaUpdated
-                };
-                 await Services.updateDataSourceQa(body, botId);
-                  toast.success("بات شما با در حال آموزش مجدد می باشد.") 
-                  setOpenModal(false)
+            const qaUpdated = [{ question: question, answer: answer }]
+            const body = {
+                qANDa_input: qaUpdated,
+            }
+            await Services.updateDataSourceQa(body, botId)
+            toast.success("بات شما با در حال آموزش مجدد می باشد.")
+            setOpenModal(false)
         } catch (error) {
-            console.error("Error deleting bot:", error);
-            toast.error("مشکلی پیش امده است ..");
-
+            console.error("Error deleting bot:", error)
+            toast.error("مشکلی پیش امده است ..")
         } finally {
             setLoading(false)
-            setAnswer("");
+            setAnswer("")
         }
     }
 
     const [filter, setFilter] = useState<
         "3_days" | "7_days" | "1_month" | "all"
-    >("all")
+    >("3_days")
     const [isLoading, setIsLoading] = useState(true)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
@@ -100,6 +120,8 @@ const MyMessage = () => {
             try {
                 const response: any = await getHistoryMessages(botId, filter)
                 if (response.data.message) {
+                    console.log({ abc: response.data.message })
+
                     setMessage(response.data.message)
                     setConversations([])
                 } else {
@@ -160,6 +182,34 @@ const MyMessage = () => {
                 "There was a problem with the fetch operation:",
                 error,
             )
+        }
+    }
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault() // Prevents default form submission behavior
+        if (!liveMessage.trim()) {
+            alert("Message cannot be empty!")
+            return
+        }
+
+        setIsSending(true)
+
+        try {
+            setLiveMessage("") // Clear the input on successful submission
+            let response = await sendOperatorMessage(
+                activeConversationId,
+                liveMessage,
+            )
+            console.log({ response })
+            appendOperatorMessageToLiveChat({
+                id: response?.messageId,
+                sender: "operator",
+                body: liveMessage, 
+                time: response?.sentAt,
+            })
+        } catch (error: any) {
+            alert(error.message) // Display an error message
+        } finally {
+            setIsSending(false)
         }
     }
     if (isLoading)
@@ -391,11 +441,15 @@ const MyMessage = () => {
                                                                     >
                                                                         <div className="flex justify-between space-x-3">
                                                                             <div className="min-w-0 flex-1 cursor-pointer">
+                                                                                
                                                                                 <p className="truncate text-sm text-zinc-500">
                                                                                     {`کاربر : ${lastMsgUser}`}
                                                                                 </p>
                                                                             </div>
                                                                             <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
+                                                                                {
+                                                                                    conversation["conversationId"] in activeLiveChatConversationMap ? <span>👨‍💻</span> : <span>🤖</span>
+                                                                                }
                                                                                 <span>
                                                                                     {formatRelativeTime(
                                                                                         lastTimeConversations,
@@ -422,8 +476,8 @@ const MyMessage = () => {
                                                     بازه زمانی :{" "}
                                                     {dicTime[filter]}
                                                 </p>
-                                                <div className="panel_custom_scrollbar mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-slate-200/20 px-3 py-5">
-                                                    <div>
+                                                <div className="panel_custom_scrollbar relative mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-slate-200/20 pt-5 ">
+                                                    <div className="px-3">
                                                         {conversations?.[
                                                             activeConversation
                                                         ]?.records?.map(
@@ -443,7 +497,7 @@ const MyMessage = () => {
                                                                                     />
                                                                                 </div>
                                                                                 <div>
-                                                                                    <div className=" max-w-prose overflow-auto rounded-lg bg-[#3b81f6] px-4  py-3 text-white ">
+                                                                                    <div className=" max-w-prose overflow-auto rounded-lg bg-blue-200 px-4  py-3 text-black ">
                                                                                         <div className="flex flex-col items-start gap-4 break-words">
                                                                                             <div className=" w-full break-words text-right text-inherit ">
                                                                                                 <p>
@@ -480,7 +534,7 @@ const MyMessage = () => {
                                                                                     <div className="mt-2 flex items-center justify-between">
                                                                                         <div>
                                                                                             <button
-                                                                                                className="focus-visible:ring-ring inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap rounded-xl border border-zinc-200 bg-white px-4 py-1 align-top text-xs font-medium text-zinc-500 shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-zinc-100/60 disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+                                                                                                className="focus-visible:ring-ring inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap rounded-xl border border-zinc-200 bg-white px-4 py-1 align-top text-xs font-medium text-zinc-500 shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80"
                                                                                                 type="button"
                                                                                                 aria-haspopup="dialog"
                                                                                                 aria-expanded="false"
@@ -552,7 +606,135 @@ const MyMessage = () => {
                                                                 )
                                                             },
                                                         )}
+                                                        {isLiveChat ? (
+                                                            <LiveChat
+                                                                botId={botId}
+                                                                activeConversationId={
+                                                                    activeConversationId
+                                                                }
+                                                                isLiveChat={
+                                                                    isLiveChat
+                                                                }
+                                                            />
+                                                        ) : (
+                                                            <></>
+                                                        )}
                                                     </div>
+
+                                                    {isLiveChat ? (
+                                                        <form
+                                                            onSubmit={
+                                                                handleSubmit
+                                                            }
+                                                            className="sticky bottom-0"
+                                                        >
+                                                            <label
+                                                                htmlFor="chat"
+                                                                className="sr-only"
+                                                            >
+                                                                پیام شما ...
+                                                            </label>
+                                                            <div className="flex items-center rounded-lg border-t border-gray-200 bg-white px-3 py-2">
+                                                                <button
+                                                                    disabled
+                                                                    type="button"
+                                                                    className="inline-flex 
+                                                                 justify-center rounded-lg p-2
+                                                                  text-gray-500
+                                                                   hover:bg-gray-100
+                                                                    hover:text-gray-900 
+                                                                    disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80 
+                                                                    "
+                                                                >
+                                                                    <svg
+                                                                        className="h-5 w-5"
+                                                                        aria-hidden="true"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none"
+                                                                        viewBox="0 0 20 18"
+                                                                    >
+                                                                        <path
+                                                                            fill="currentColor"
+                                                                            d="M13 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM7.565 7.423 4.5 14h11.518l-2.516-3.71L11 13 7.565 7.423Z"
+                                                                        />
+                                                                        <path
+                                                                            stroke="currentColor"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            stroke-width="2"
+                                                                            d="M18 1H2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1Z"
+                                                                        />
+                                                                        <path
+                                                                            stroke="currentColor"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            stroke-width="2"
+                                                                            d="M13 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM7.565 7.423 4.5 14h11.518l-2.516-3.71L11 13 7.565 7.423Z"
+                                                                        />
+                                                                    </svg>
+                                                                    <span className="sr-only">
+                                                                        Upload
+                                                                        image
+                                                                    </span>
+                                                                </button>
+                                                                <button
+                                                                    disabled
+                                                                    type="button"
+                                                                    className="pointer rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80 "
+                                                                >
+                                                                    <svg
+                                                                        className="h-5 w-5"
+                                                                        aria-hidden="true"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="none"
+                                                                        viewBox="0 0 20 20"
+                                                                    >
+                                                                        <path
+                                                                            stroke="currentColor"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            stroke-width="2"
+                                                                            d="M13.408 7.5h.01m-6.876 0h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM4.6 11a5.5 5.5 0 0 0 10.81 0H4.6Z"
+                                                                        />
+                                                                    </svg>
+                                                                    <span className="sr-only">
+                                                                        Add
+                                                                        emoji
+                                                                    </span>
+                                                                </button>
+                                                                <textarea
+                                                                    id="chat"
+                                                                    rows={1}
+                                                                    className="ml-4 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
+                                                                    placeholder="پیام شما ..."
+                                                                    value={
+                                                                        liveMessage
+                                                                    }
+                                                                    onChange={
+                                                                        handleChange
+                                                                    }
+                                                                ></textarea>
+                                                                <button
+                                                                    type="submit"
+                                                                    className="flex h-10 w-10 rotate-180 transform items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-blue-600 shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50"
+                                                                >
+                                                                    <svg
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="currentColor"
+                                                                        className="h-5 w-5 text-white"
+                                                                    >
+                                                                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                                                                    </svg>
+                                                                    <span className="sr-only">
+                                                                        Send
+                                                                    </span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    ) : (
+                                                        <></>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
