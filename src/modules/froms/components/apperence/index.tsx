@@ -21,26 +21,47 @@ const Apperence = () => {
     };
 
     const handleChekBoxInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, type, checked, value } = e.target;
-        updateFormConfig({ [name]: type === "checkbox" ? checked : value });
+        const { name, checked } = e.target;
+    
+        // Temporarily update the config to check if all switches will be off
+        const updatedConfig = { ...fromConfig, [name]: checked };
+    
+        // Check if at least one switch is still on
+        const isAtLeastOneActive = Object.keys(updatedConfig).some((key) => {
+            return key.includes("_active") && updatedConfig[key] === true;
+        });
+    
+        if (!isAtLeastOneActive) {
+            
+            toast.error("حداقل باید یکی از گزینه ها فعال باشد!");
+            return;
+        }
+    
+        // Update form config if valid
+        updateFormConfig({ [name]: checked });
     };
 
-    // const onSubmit = async (formData: any) => {
-    //     setIsLoading(true)
-    //     try {
-    //         const response = await service.updateGeneralConfig(
-    //             data.bot_id,
-    //             formData,
-    //         )
-    //         toast.success("تغیرات شما موفق آمیز ذخیره شد")
-    //         setData(response.data)
-    //     } catch (error) {
-    //         toast.error("در بروز رسانی مشکلی پیش امده است !")
-    //         console.error("Update failed:", error)
-    //     } finally {
-    //         setIsLoading(false)
-    //     }
-    // }
+    const onSubmit = async () => {
+
+        const dataFormUpdated={
+            configs:fromConfig
+        };
+        
+        setIsLoading(true)
+        try {
+            const response = await service.updateForm(
+                data.forms_id,
+                dataFormUpdated,
+            )
+            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            setData(response.data)
+        } catch (error) {
+            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            console.error("Update failed:", error)
+        } finally {
+            setIsLoading(false)
+        }
+    }
 
     useEffect(() => {
         if (data) {
@@ -252,7 +273,7 @@ const Apperence = () => {
         </div>
         <div className="flex justify-end  px-5 py-3">
                 <button
-                    type="submit"
+                   onClick={onSubmit}
                     className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
                 >
                     {isLoading ? (

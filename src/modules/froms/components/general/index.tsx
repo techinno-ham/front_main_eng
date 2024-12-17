@@ -11,14 +11,20 @@ const General = () => {
     const [checkboxState,setCheckboxState]=useState("");
 
     const onSubmit = async (formData: any) => {
+        const dataFormUpdated={
+            forms_name:formData?.name,
+            showIf_message_number:+formData?.message_number,
+            showIf_human:checkboxState == "humen",
+            showIf_message:checkboxState == "message"
+        };
         setIsLoading(true)
         try {
-            const response = await service.updateGeneralConfig(
-                data.bot_id,
-                formData,
+            const response = await service.updateForm(
+                data.forms_id,
+                dataFormUpdated,
             )
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
-            setData(response.data)
+            toast.success("تغیرات شما موفق آمیز ذخیره شد");
+            setData(response.data);
         } catch (error) {
             toast.error("در بروز رسانی مشکلی پیش امده است !")
             console.error("Update failed:", error)

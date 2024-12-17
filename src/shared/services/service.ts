@@ -148,6 +148,20 @@ class Services {
                 error.response?.data?.message || "update general failed",
             )
         }
+    };
+
+    updateForm= async (formId: string, body: any) => {
+        try {
+            const response = await mainApi.patch(
+                `${API.UPDATE_FORMS}/${formId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update forms failed",
+            )
+        }
     }
     updateModelConfig = async (botId: string, body: any) => {
         try {

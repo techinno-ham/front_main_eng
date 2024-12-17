@@ -20,6 +20,7 @@ export const API = {
 
     DELETE_BOTS: "/mybots/delete",
     DELETE_FORMS: "/forms/delete",
+    UPDATE_FORMS:"/forms/update",
     ACTIVE_FORM:"/forms/active",
     INACTIVE_FORM:"/forms/inactive",
     GETFROM_DATA:"/forms",
