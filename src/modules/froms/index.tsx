@@ -9,8 +9,8 @@ import Layout from "./components/layout"
 import General from "./components/general"
 import Apperence from "./components/apperence"
 import Answer from "./components/answer"
-import { Share } from "iconsax-react"
 import useStoreFromsData from "./hooks/loadFormData"
+import Share from "./components/share"
 
 const Forms = () => {
     const viewController = useStoreViewControllerForms()
