@@ -1,97 +1,112 @@
 import { useState, useEffect, useRef } from "react"
 
 import { useLiveChat } from "@/src/shared/store/liveChatStore"
-import { fetchBotLiveConversations, fetchLiveConversationHistory } from "../../../utils"
+import {
+    fetchBotLiveConversations,
+    fetchLiveConversationHistory,
+} from "../../../utils"
 
-function useLiveChatHook({ botId, activeConversationId , isLiveChat }: any) {
+function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
     const liveChatMessages = useLiveChat((state: any) => state.liveChatMessages)
     const addHistoryMessagesToState = useLiveChat(
         (state: any) => state.addHistoryMessagesToState,
     )
-    const clearLiveChatMessages = useLiveChat((state) => state.clearLiveChatMessages);
+    const clearLiveChatMessages = useLiveChat(
+        (state) => state.clearLiveChatMessages,
+    )
     const storeLiveConversationIdsBySessionId = useLiveChat(
-      (state) => state.storeLiveConversationIdsBySessionId
-    );
+        (state) => state.storeLiveConversationIdsBySessionId,
+    )
 
     const [isLiveActive, setIsLiveActive] = useState(false)
     const [shouldFetchMessages, setShouldFetchMessages] = useState(false)
-    const [isLiveChatLoading, setIsLiveChatLoading] = useState(false);
+    const [isLiveChatLoading, setIsLiveChatLoading] = useState(false)
     const intervalRef = useRef<any>(null) // Ref to store interval ID
     const longIntervalRes = useRef<any>(null)
 
     useEffect(() => {
-      const fetchLiveConversationsWithInterval = () => {
-          setIsLiveChatLoading(true); // Set loading to true
-          console.log(`[useLiveChatHook] Starting long-polling for botId: ${botId}`);
-          
-          longIntervalRes.current = setInterval(async () => {
-              try {
-                  console.log(`[useLiveChatHook] Fetching live conv ids for botId: ${botId}`);
-                  const {liveConversations : conversations} = await fetchBotLiveConversations(botId);
-                  console.log({conversations});
-                  
-                  // Assuming conversations is an array of objects with `conversationId`
-                  if (conversations && Array.isArray(conversations)) {
-                      storeLiveConversationIdsBySessionId(conversations);
-                      console.log("[useLiveChatHook] Live conv ids fetched:", conversations);
-                  } else {
-                      console.error("[useLiveChatHook] Invalid format for live conv ids");
-                  }
-              } catch (error) {
-                  console.error("[useLiveChatHook] Error fetching live conv ids:", error);
-              }
-          }, 5000); // Fetch every 5 seconds
-      };
+        const fetchLiveConversationsWithInterval = () => {
+            setIsLiveChatLoading(true) // Set loading to true
+            console.log(
+                `[useLiveChatHook] Starting long-polling for botId: ${botId}`,
+            )
 
-      
-          fetchLiveConversationsWithInterval();
-      
+            longIntervalRes.current = setInterval(async () => {
+                try {
+                    console.log(
+                        `[useLiveChatHook] Fetching live conv ids for botId: ${botId}`,
+                    )
+                    const { liveConversations: conversations } =
+                        await fetchBotLiveConversations(botId)
+                    console.log({ conversations })
 
-      // Cleanup function to stop long-polling if shouldFetchMessages becomes false
-      return () => {
-          if (longIntervalRes.current) {
-              console.log("[useLiveChatHook] Stopping long-polling...");
-              clearInterval(longIntervalRes.current); // Clear the interval to stop polling
-              longIntervalRes.current = null;
-          }
-      };
-  }, [shouldFetchMessages, botId, storeLiveConversationIdsBySessionId]); // Re-run the effect if these dependencies change
+                    // Assuming conversations is an array of objects with `conversationId`
+                    if (conversations && Array.isArray(conversations)) {
+                        storeLiveConversationIdsBySessionId(conversations)
+                        console.log(
+                            "[useLiveChatHook] Live conv ids fetched:",
+                            conversations,
+                        )
+                    } else {
+                        console.error(
+                            "[useLiveChatHook] Invalid format for live conv ids",
+                        )
+                    }
+                } catch (error) {
+                    console.error(
+                        "[useLiveChatHook] Error fetching live conv ids:",
+                        error,
+                    )
+                }
+            }, 5000) // Fetch every 5 seconds
+        }
 
-    useEffect(() => {
-      const loadInitialHistory = async () => {
-        setIsLiveChatLoading(true); // Set loading to true before starting the fetch
-          try {
-              console.log(
-                  `[useLiveChatHook] Loading initial history for conversationId: ${activeConversationId}`,
-              );
-              clearLiveChatMessages();
-              const result = await fetchLiveConversationHistory(
-                  botId,
-                  activeConversationId,
-              );
-              addHistoryMessagesToState(result?.messages);
-              console.log("[useLiveChatHook] Initial history loaded:", result);
-          } catch (error) {
-              console.error(
-                  "[useLiveChatHook] Error loading initial history:",
-                  error,
-              );
-          } finally {
-            setIsLiveChatLoading(false); // Set loading to false after fetching completes
-          }
-      };
+        fetchLiveConversationsWithInterval()
 
-      if (activeConversationId) {
-          loadInitialHistory();
-      }
-  }, [activeConversationId]);
+        // Cleanup function to stop long-polling if shouldFetchMessages becomes false
+        return () => {
+            if (longIntervalRes.current) {
+                console.log("[useLiveChatHook] Stopping long-polling...")
+                clearInterval(longIntervalRes.current) // Clear the interval to stop polling
+                longIntervalRes.current = null
+            }
+        }
+    }, [shouldFetchMessages, botId, storeLiveConversationIdsBySessionId]) // Re-run the effect if these dependencies change
 
     useEffect(() => {
+        const loadInitialHistory = async () => {
+            setIsLiveChatLoading(true) // Set loading to true before starting the fetch
+            try {
+                console.log(
+                    `[useLiveChatHook] Loading initial history for conversationId: ${activeConversationId}`,
+                )
+                clearLiveChatMessages()
+                const result = await fetchLiveConversationHistory(
+                    botId,
+                    activeConversationId,
+                )
+                addHistoryMessagesToState(result?.messages)
+                console.log("[useLiveChatHook] Initial history loaded:", result)
+            } catch (error) {
+                console.error(
+                    "[useLiveChatHook] Error loading initial history:",
+                    error,
+                )
+            } finally {
+                setIsLiveChatLoading(false) // Set loading to false after fetching completes
+            }
+        }
 
-      setIsLiveActive(isLiveChat);
+        if (activeConversationId) {
+            loadInitialHistory()
+        }
+    }, [activeConversationId])
 
-      console.log("[useLiveChatHook] isLiveActive updated:", isLiveChat);
-    }, [isLiveChat]);
+    useEffect(() => {
+        setIsLiveActive(isLiveChat)
+
+        console.log("[useLiveChatHook] isLiveActive updated:", isLiveChat)
+    }, [isLiveChat])
 
     useEffect(() => {
         if (isLiveActive && liveChatMessages.length !== 0) {
@@ -145,9 +160,9 @@ function useLiveChatHook({ botId, activeConversationId , isLiveChat }: any) {
         }
     }, [shouldFetchMessages]) // Only restart the interval when these dependencies change
 
-    return{
-      isLiveChatLoading
+    return {
+        isLiveChatLoading,
     }
-  }
+}
 
 export default useLiveChatHook

@@ -448,7 +448,7 @@ const MyMessage = () => {
                                                                             </div>
                                                                             <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
                                                                                 {
-                                                                                    conversation["conversationId"] in activeLiveChatConversationMap ? <span>👨‍💻</span> : <span>🤖</span>
+                                                                                    conversation["isLiveRequested"] || conversation["conversationId"] in activeLiveChatConversationMap ? <span>👨‍💻</span> : <span>🤖</span>
                                                                                 }
                                                                                 <span>
                                                                                     {formatRelativeTime(
