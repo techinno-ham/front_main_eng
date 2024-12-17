@@ -5,7 +5,7 @@ import { useState } from "react";
 import { mockData } from "./data";
 import { formatDistanceToNow } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
-import { Edit, Trash } from "iconsax-react";
+import { Edit, ExportCurve, Trash } from "iconsax-react";
 
 
 
@@ -41,7 +41,55 @@ const Mycontact=()=>{
                         مخاطبین
                         </h3>
                     </div>
-                    <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
+                      <div className="pl-6 pr-6">
+                      <label className="text-md mb-2 block  text-zinc-700">
+                                    {" "}
+                                    جستجوی مخاطب :
+                                                       </label>
+                                                       <div className="flex justify-between gap-3">
+                                                       <form className="w-full">
+                       
+                        <div className="relative">
+                            <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
+                                <svg
+                                    className="h-4 w-4 text-gray-500 dark:text-gray-400"
+                                    aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 20 20"
+                                >
+                                    <path
+                                        stroke="currentColor"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                                    />
+                                </svg>
+                            </div>
+                            <input
+                                type="search"
+                                id="default-search"
+                                className="block w-full rounded-lg border
+                                 border-gray-300 bg-white px-4 py-[10px] ps-10 text-sm 
+                                 text-gray-900 focus:border-blue-50
+                                  focus:ring-blue-500"
+                                placeholder="ایمیل یا شماره تلفن مخاطب را جستجو کنید ..."
+                                required
+                            />
+                        </div>
+                    </form>
+                                                      
+                                                        <button
+                                                            // onClick={() => handleDownload(botId)}
+                                                            className="flex items-center justify-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700"
+                                                        >
+                                                            <span>خروجی </span>
+                                                            <ExportCurve size="20" color="#FFff" />
+                                                        </button>
+                                                    </div>
+                      </div>
+                    <div className=" pl-6 pr-6 relative overflow-x-auto shadow-md sm:rounded-lg mt-6 pb-8">
                         <table className="w-full text-sm text-left rtl:text-right text-gray-500">
                             <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                                 <tr>
