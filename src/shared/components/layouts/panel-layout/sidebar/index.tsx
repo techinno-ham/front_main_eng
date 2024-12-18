@@ -2,13 +2,16 @@
 import {
     Activity,
     Add,
+    ArrowLeft,
     Book1,
     Category2,
+    DocumentText,
     LogoutCurve,
     Messages1,
     ProgrammingArrows,
     Send2,
     Setting2,
+    UserSquare,
 } from "iconsax-react"
 import Link from "next/link"
 import { useRouter } from 'nextjs-toploader/app';
@@ -46,6 +49,11 @@ export const sidebarLinks = [
         route: "/panel/[id]/deploy",
         label: "خروجی",
     },
+    {
+        icon: <UserSquare/>,
+        route: "/panel/[id]/contact",
+        label: "مخاطبین",
+    },
 
 ]
 
@@ -73,20 +81,36 @@ const SideBar = () => {
                             const linkRoute = item.route.replace(
                                 "[id]",
                                 pathSegments[2],
-                            )
-                            const isActive = pathname === linkRoute
+                            );
+                            const isActive = pathname === linkRoute;
+                            const inFormRoute=pathname.includes("form") && item.label =="تنظیمات";
+                            const isContacnt=item.label =="مخاطبین";
+
                             return (
                                 <li key={item.label} style={{ width: "80%" }}>
                                     <Link href={linkRoute}>
                                         <div
                                             className={`flex cursor-pointer items-center gap-3 rounded-md p-2.5 transition-all ${
-                                                isActive
+                                                isActive || inFormRoute
                                                     ? "bg-gray-200 shadow-[0_3px_0px_0px_rgba(30,144,255,0.9)]"
                                                     : "hover:bg-gray-100 hover:shadow-[0_3px_0px_0px_rgba(30,144,255,0.9)]"
                                             }`}
                                         >
                                             {item.icon}
                                             <span>{item.label}</span>
+                                               {isContacnt && (
+                                                <>
+                                                  <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">آزمایشی</span>        
+
+                                                </>
+                                               )}
+                                            {inFormRoute && (
+                                              <div className="flex items-center gap-1  text-sm ">
+                                                      <ArrowLeft size={16}/>
+                                                      <DocumentText size={16} className="mr-2" />
+                                                      <span className="mr-1"> فرم</span>
+                                              </div>
+)}
                                         </div>
                                     </Link>
                                 </li>

@@ -148,6 +148,20 @@ class Services {
                 error.response?.data?.message || "update general failed",
             )
         }
+    };
+
+    updateForm= async (formId: string, body: any) => {
+        try {
+            const response = await mainApi.patch(
+                `${API.UPDATE_FORMS}/${formId}`,
+                body,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "update forms failed",
+            )
+        }
     }
     updateModelConfig = async (botId: string, body: any) => {
         try {
@@ -188,6 +202,21 @@ class Services {
             )
         }
     }
+    createInitForms = async (botId: string) => {
+        try {
+            const response = await mainApi.post(
+                `${API.CREATE_INITFORMS}`,
+                {
+                    botId:botId
+                },
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "Created Forms Failed",
+            )
+        }
+    };
     myBoysList = async (params: any) => {
         try {
             const response = await mainApi.get(API.My_BOTS, {
@@ -211,6 +240,39 @@ class Services {
             )
         }
     }
+
+    deleteForm = async (formId: string) => {
+        try {
+            const response = await mainApi.delete(`${API.DELETE_FORMS}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "delete form failed",
+            )
+        }
+    };
+
+    activeForm = async (formId: string) => {
+        try {
+            const response = await mainApi.patch(`${API.ACTIVE_FORM}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "actived form failed",
+            )
+        }
+    };
+
+    inactiveForm = async (formId: string) => {
+        try {
+            const response = await mainApi.patch(`${API.INACTIVE_FORM}/${formId}`)
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "inactived form failed",
+            )
+        }
+    };
     getBot = async (botId: string) => {
         try {
             const response = await mainApi.get(`${API.My_BOTS}/${botId}`)
@@ -242,7 +304,46 @@ class Services {
                 error.response?.data?.message || "get configs failed",
             )
         }
+    };
+
+
+    getFromData = async (formId: string) => {
+        try {
+            const response = await mainApi.get(
+                `${API.GETFROM_DATA}/${formId}`,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "get from data failed",
+            )
+        }
     }
+
+     getContactsByBotId = async (formId: string, page: number = 1, limit: number = 10, name?: string, email?: string) => {
+        try {
+            // Construct the query parameters
+            const queryParams: any = {
+                page,
+                limit,
+                name,
+                email
+            };
+    
+            // Remove undefined or null properties from the queryParams
+            Object.keys(queryParams).forEach(key => queryParams[key] == null && delete queryParams[key]);
+    
+            // Make the API request with the query parameters
+            const response = await mainApi.get(`${API.GETCONTACT_DATA_BYBOTID}/${formId}`, {
+                params: queryParams,
+            });
+    
+            return response.data;  // Assuming response data has the structure you need
+        } catch (error: any) {
+            // Handle the error and throw a descriptive message
+            throw new Error(error.response?.data?.message || "Failed to fetch contacts.");
+        }
+    };
     getHistoryMessages = async (botId: string, filter?: string) => {
         try {
             const response = await mainApi.get(

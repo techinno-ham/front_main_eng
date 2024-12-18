@@ -196,6 +196,7 @@ const MyBots = () => {
                                 currentPage={currentPage}
                                 totalPages={totalPages}
                                 onPageChange={handlePageChange}
+                                title={"چت بات"}
                             />
                         </>
                     )}

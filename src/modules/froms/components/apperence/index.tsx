@@ -2,103 +2,278 @@ import React, { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
+import FormTemplate from "./components/formTemplate"
+import useStoreFromsData from "../../hooks/loadFormData"
+import useStoreFormConfig from "./hooks/useFormData"
+import { Warning2 } from "iconsax-react"
 
 const Apperence = () => {
-    const { register, handleSubmit, setValue } = useForm()
-    // const { data, setData } = useStoreConfig()
-    const [isLoading, setIsLoading] = useState(false)
-
-    // const onSubmit = async (formData: any) => {
-    //     setIsLoading(true)
-    //     try {
-    //         const response = await service.updateGeneralConfig(
-    //             data.bot_id,
-    //             formData,
-    //         )
-    //         toast.success("تغیرات شما موفق آمیز ذخیره شد")
-    //         setData(response.data)
-    //     } catch (error) {
-    //         toast.error("در بروز رسانی مشکلی پیش امده است !")
-    //         console.error("Update failed:", error)
-    //     } finally {
-    //         setIsLoading(false)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     if (data) {
-    //         setValue("name", data.name)
-    //     }
-    // }, [data, setValue]);
+    const { register, handleSubmit, setValue } = useForm();
+    const { data, setData } = useStoreFromsData();
+    const {fromConfig,updateFormConfig}=useStoreFormConfig();
+    const [isLoading, setIsLoading] = useState(false);
 
 
-    // const handleCopyId = () => {
-    //     navigator.clipboard
-    //         .writeText(data?.bot_id)
-    //         .then(() => {
-    //             toast.success("کد مورد نظر شما کپی شد.")
-    //         })
-    //         .catch((err) => {
-    //             toast.error("کد مورد نظر شما کپی نشد.")
-    //         })
-    // }
+
+    const handleInputChange = (e: any) => {
+        const { name, value } = e.target
+        updateFormConfig({ [name]: value })
+    };
+
+    const handleChekBoxInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, checked } = e.target;
+    
+        // Temporarily update the config to check if all switches will be off
+        const updatedConfig = { ...fromConfig, [name]: checked };
+    
+        // Check if at least one switch is still on
+        const isAtLeastOneActive = Object.keys(updatedConfig).some((key) => {
+            return key.includes("_active") && updatedConfig[key] === true;
+        });
+    
+        if (!isAtLeastOneActive) {
+            
+            toast.error("حداقل باید یکی از گزینه ها فعال باشد!");
+            return;
+        }
+    
+        // Update form config if valid
+        updateFormConfig({ [name]: checked });
+    };
+
+    const onSubmit = async () => {
+
+        const dataFormUpdated={
+            configs:fromConfig
+        };
+        
+        setIsLoading(true)
+        try {
+            const response = await service.updateForm(
+                data.forms_id,
+                dataFormUpdated,
+            )
+            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            setData(response.data)
+        } catch (error) {
+            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            console.error("Update failed:", error)
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
+    useEffect(() => {
+        if (data) {
+            updateFormConfig(data?.configs)
+        }
+    }, [data]);
+
 
     return (
-        <form >
-            <div className="p-5">
-                <div className="pb-8">
-                    <label className="block text-sm font-medium text-zinc-700">
-                        چت بات آیدی :
-                    </label>
-                    <div className="mt-1 flex items-center gap-2 space-x-4">
-                        <div className="font-semibold">"khbj"</div>
-                        <button
-                        // onClick={handleCopyId}
-                            type="button"
-                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke-width="1.5"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="h-5 w-5"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z"
-                                ></path>
-                            </svg>
-                        </button>
+       <div>
+        <div className="p-5">
+          <h4 className="bg-yellow-100 text-yellow-800 mb-8 text-xs font-medium  p-2 rounded-lg flex items-center gap-2">
+          <Warning2
+ size="20"
+ color="#FF8A65"
+/>
+                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود.
+          </h4>
+          <div className="flex flex-col justify-between lg:flex-row">
+               <div className="w-2/2 flex-1 pb-5 lg:w-1/2">
+                   <div style={{borderBottom:"1px solid #8080801c"}}>
+                   <p className="pb-4 font-bold">جزییات فرم  :</p>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    عنوان  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="title"
+                                        value={fromConfig.title}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                توضیحات  :
+                                </label>
+                                <div className="mt-1">
+                                    <textarea
+                                        name="description"
+                                        rows={2}
+                                        value={fromConfig.description}
+                                        onChange={handleInputChange}
+                                        placeholder="چطوری از قیمت ها مطلع بشم؟"
+                                        className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
+                                    />
+            
+                                </div>
+                            </div>
+                   </div>
+
+                   <div style={{borderBottom:"1px solid #8080801c"}}>
+                   <p className="pb-4 pt-4 font-bold">فیلد های فرم :</p>
+                   <div className={fromConfig.name_active ? "pb-4" : "pb-8"}>
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                نام {" "}
+                            </label>
+                            <label className="cursor-pointer/ inline-flex items-center">
+                                <input
+                                    name="name_active"
+                                    checked={fromConfig.name_active}
+                                    onChange={handleChekBoxInputChange}
+                                    type="checkbox"
+                                    className="peer sr-only"
+                                />
+                                <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div className="pb-8">
-                    <label className="block text-sm font-medium text-zinc-700">
-                        تعداد کارکترها :
-                    </label>
-                    <div className="mt-1 font-semibold">15,380</div>
-                </div>
-                <div>
-                    <label className="block text-sm font-medium text-zinc-700">
-                        نام چت بات :
-                    </label>
-                    <div className="mt-2 ">
-                        <input
-                            {...register("name")}
-                            className=" w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
-                            id="inline-full-name"
-                            type="text"
-                            // defaultValue={name}
-                        />
+                    {fromConfig.name_active && (
+                        <>
+                          <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                       پیام داخل ورودی نام  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="name_placeholder"
+                                        value={fromConfig.name_placeholder}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                   <div className={fromConfig.email_active ? "pb-4" : "pb-8"}>
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                ایمیل {" "}
+                            </label>
+                            <label className="cursor-pointer/ inline-flex items-center">
+                                <input
+                                    name="email_active"
+                                    checked={fromConfig.email_active}
+                                    onChange={handleChekBoxInputChange}
+                                    type="checkbox"
+                                    className="peer sr-only"
+                                />
+                                <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            </label>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div className="flex justify-end  px-5 py-3">
+                    {fromConfig.email_active && (
+                        <>
+                          <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                       پیام داخل ورودی ایمیل :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="email_placeholder"
+                                        value={fromConfig.email_placeholder}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                        <div className={fromConfig.phone_active ? "pb-4" : "pb-8"}>
+                        <div className="flex items-center gap-2 justify-between">
+                            <label className=" text-[16px] font-medium text-zinc-700">
+                                شماره تماس {" "}
+                            </label>
+                            <label className="cursor-pointer/ inline-flex items-center">
+                                <input
+                                    name="phone_active"
+                                    checked={fromConfig.phone_active}
+                                    onChange={handleChekBoxInputChange}
+                                    type="checkbox"
+                                    className="peer sr-only"
+                                />
+                                <div className="peer relative h-6 w-11 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rtl:peer-checked:after:-translate-x-full dark:border-gray-600 dark:bg-gray-700 dark:peer-focus:ring-blue-800"></div>
+                            </label>
+                        </div>
+                    </div>
+                    {fromConfig.phone_active && (
+                        <>
+                          <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                       پیام داخل ورودی شماره تماس :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="phone_placeholder"
+                                        value={fromConfig.phone_placeholder}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="سلام ...."
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </>
+                    )}
+                  
+                   </div>
+
+                   <div>
+                   <p className="pb-4 pt-4 font-bold">صفحه پایانی فرم :</p>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                    پیام پایانی  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="message_end"
+                                        value={fromConfig.message_end}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                            <div className="pb-8">
+                                <label className="block text-sm font-medium text-zinc-700">
+                                     مسیر پیام پایانی  :{" "}
+                                </label>
+                                <div className="mt-1">
+                                    <input
+                                        name="message_url"
+                                        value={fromConfig.message_url}
+                                        onChange={handleInputChange}
+                                        className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                        placeholder="example.com"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                   </div>
+                           
+               </div>
+               <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 top-4 flex justify-center items-start" style={{borderRight:"1px solid #8080801c"}}>
+                <FormTemplate  config={fromConfig}/>
+               </div>
+          </div>
+        </div>
+        <div className="flex justify-end  px-5 py-3">
                 <button
-                    type="submit"
+                   onClick={onSubmit}
                     className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
                 >
                     {isLoading ? (
@@ -111,7 +286,7 @@ const Apperence = () => {
                     )}
                 </button>
             </div>
-        </form>
+       </div>
     )
 }
 

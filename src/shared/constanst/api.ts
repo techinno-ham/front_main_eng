@@ -12,6 +12,7 @@ export const API = {
     UPDATE_MODEL: "/mybots/configs/updateModel",
     UPDATE_UI: "/mybots/configs/updateUi",
     UPDATE_SECURITY: "/mybots/configs/updateSecurity",
+    CREATE_INITFORMS: "/forms/create",
     My_BOTS: "/mybots/list",
     My_BOTS_COUNT: "/mybots/count",
     MY_DATASOURCE_WITH_ID: "/mybots/dataSource",
@@ -23,6 +24,15 @@ export const API = {
     SEND_OPERATOR_MESSAGE: "/live/message/operator",
     FETCH_BOT_LIVE_CONVERSATIONS_IDS: "/live/conversation-ids",
     FETCH_LIVE_CONVERSATION_HISTORY: "/live/history",
+
+    //Form apis
+    DELETE_FORMS: "/forms/delete",
+    UPDATE_FORMS:"/forms/update",
+    ACTIVE_FORM:"/forms/active",
+    INACTIVE_FORM:"/forms/inactive",
+    GETFROM_DATA:"/forms",
+    GETCONTACT_DATA_BYBOTID:"/forms/contacts",
+
 
     //History
 

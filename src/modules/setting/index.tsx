@@ -3,8 +3,9 @@ import dynamic from "next/dynamic"
 import Layout from "./components/layout"
 import useStoreViewControllerSetting from "./hooks/view-controller-setting"
 import ActiveTab from "@/src/shared/components/common/activeTab"
-import { useEffect, useState } from "react"
+import { use, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
+import { useRouter } from 'nextjs-toploader/app';
 import service from "@/src/shared/services/service"
 import useStoreConfig from "./hooks/loadConfig"
 import LoaderLottie from "@/src/shared/components/common/loader"
@@ -14,14 +15,37 @@ import Apperence from "../setting/components/apperence"
 import Security from "../setting/components/security"
 import Leads from "./components/leads"
 import { Additem, TableDocument } from "iconsax-react"
+import { toast } from "sonner"
 
 const Setting = () => {
     const viewController = useStoreViewControllerSetting()
-    const pathname = usePathname()
+    const pathname = usePathname();
+    const router=useRouter();
     const { setData } = useStoreConfig()
     const botId = pathname.split("/")[2]
     const [loading, setLoading] = useState<boolean>(true)
-    const [error, setError] = useState<string | null>(null)
+    const [error, setError] = useState<string | null>(null);
+
+
+
+    const handleCreateFrom = async() =>{
+
+        const loadingToastId = toast.loading("در حال ایجاد فرم ...");
+        try {
+            const result = await service.createInitForms(botId); 
+            toast.success("فرم با موفقیت ساخته شد");
+            const formId=result.data?.forms_id;
+            const newPath = `${pathname}/form/${formId}`;
+            router.push(newPath);
+            console.log("Form created successfully:", result);
+        } catch (error) {
+            toast.error(`مشکلی در ایجاد فرم وجود دارد`)
+            console.error("Error creating form:", error);
+        } finally {
+            toast.dismiss(loadingToastId);
+        }
+
+    };
 
     const tabsInfo = {
         General: "عمومی",
@@ -84,6 +108,7 @@ const Setting = () => {
                            {viewController.activeTab === "Leads" && (
                             <>
                             <button
+                            onClick={handleCreateFrom}
                         className="rounded-md flex justify-center items-center gap-2 bg-blue-600 px-3 py-2 text-sm text-white"
                         
                     >
