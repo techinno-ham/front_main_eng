@@ -8,6 +8,22 @@ export async function getHistoryMessages(botId: string, filter: string) {
         console.log(err)
     }
 }
+export async function downloadHistoryMessages(botId: string) {
+    try {
+        const response = await service.downloadHistoryMessages(botId)
+        return response
+    } catch (err) {
+        console.log(err)
+    }
+}
+export async function getBotConversationById(botId: string, filter: string) {
+    try {
+        const response = await service.getBotConversationById(botId, filter)
+        return response
+    } catch (err) {
+        console.log(err)
+    }
+}
 
 export async function sendOperatorMessage(conversationId: string, message: string) {
     try {

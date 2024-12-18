@@ -26,7 +26,6 @@ function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
 
     useEffect(() => {
         const fetchLiveConversationsWithInterval = () => {
-            setIsLiveChatLoading(true) // Set loading to true
             console.log(
                 `[useLiveChatHook] Starting long-polling for botId: ${botId}`,
             )

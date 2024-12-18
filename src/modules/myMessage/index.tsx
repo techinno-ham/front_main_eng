@@ -1,7 +1,12 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { getHistoryMessages, sendOperatorMessage } from "./utils"
+import {
+    downloadHistoryMessages,
+    getBotConversationById,
+    getHistoryMessages,
+    sendOperatorMessage,
+} from "./utils"
 import { ExportCurve, Magicpen, Trash } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
@@ -30,13 +35,19 @@ const MyMessage = () => {
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
     const [imageLink, setImageLink] = useState("")
+    const [AIChatRecords, setAIChatRecords] = useState([])
+    const [isLoadingAIChat, setIsLoadingAIChat] = useState(false)
 
     const [isLiveChat, setIsLiveCHat] = useState(false)
     const [liveMessage, setLiveMessage] = useState("")
     const [isSending, setIsSending] = useState(false)
 
-    const appendOperatorMessageToLiveChat = useLiveChat((state) => state.appendOperatorMessageToLiveChat)
-    const activeLiveChatConversationMap = useLiveChat((state) => state.activeLiveChatConversationMap)
+    const appendOperatorMessageToLiveChat = useLiveChat(
+        (state) => state.appendOperatorMessageToLiveChat,
+    )
+    const activeLiveChatConversationMap = useLiveChat(
+        (state) => state.activeLiveChatConversationMap,
+    )
 
     useEffect(() => {
         setActiveConversationId(
@@ -114,48 +125,9 @@ const MyMessage = () => {
         setFilter(event.target.value as "3_days" | "7_days" | "1_month" | "all")
     }
 
-    useEffect(() => {
-        const fetchHistoryList = async () => {
-            setIsLoading(true)
-            try {
-                const response: any = await getHistoryMessages(botId, filter)
-                if (response.data.message) {
-                    console.log({ abc: response.data.message })
-
-                    setMessage(response.data.message)
-                    setConversations([])
-                } else {
-                    setMessage(null)
-                    const filteredData = response.data.filter(
-                        (item: any) => item.records.length > 0,
-                    )
-                    setConversations(filteredData)
-                }
-            } catch (err) {
-                console.log(err)
-            } finally {
-                setIsLoading(false)
-            }
-        }
-        fetchHistoryList()
-    }, [filter])
-
-    useEffect(() => {
-        const fetchConfigs = async () => {
-            try {
-                const response = await service.getConfigs(botId)
-                setImageLink(response?.data?.ui_configs?.bot_image)
-            } catch (error: any) {
-                console.log(error)
-            } finally {
-            }
-        }
-        fetchConfigs()
-    }, [botId])
-
     const handleDownload = async (botId: string) => {
         try {
-            const response: any = await getHistoryMessages(botId, filter)
+            const response: any = await downloadHistoryMessages(botId)
 
             if (!response) {
                 throw new Error(
@@ -203,7 +175,7 @@ const MyMessage = () => {
             appendOperatorMessageToLiveChat({
                 id: response?.messageId,
                 sender: "operator",
-                body: liveMessage, 
+                body: liveMessage,
                 time: response?.sentAt,
             })
         } catch (error: any) {
@@ -212,6 +184,76 @@ const MyMessage = () => {
             setIsSending(false)
         }
     }
+    useEffect(() => {
+        const fetchHistoryList = async () => {
+            setIsLoading(true)
+            try {
+                const response: any = await getHistoryMessages(botId, filter)
+                if (response.data.message) {
+                    setMessage(response.data.message)
+                    setConversations([])
+                } else {
+                    setMessage(null)
+                    const filteredData = response.data.filter(
+                        (item: any) => item.records.length > 0,
+                    )
+                    setConversations(filteredData)
+                }
+            } catch (err) {
+                console.log(err)
+            } finally {
+                setIsLoading(false)
+            }
+        }
+        if (filter) {
+            fetchHistoryList()
+        }
+    }, [filter])
+
+    useEffect(() => {
+        const fetchConfigs = async () => {
+            try {
+                const response = await service.getConfigs(botId)
+                setImageLink(response?.data?.ui_configs?.bot_image)
+            } catch (error: any) {
+                console.log(error)
+            } finally {
+            }
+        }
+        fetchConfigs()
+    }, [botId])
+
+    useEffect(() => {
+        const getBotConversationHistoryById = async () => {
+            setIsLoadingAIChat(true)
+            setAIChatRecords([])
+            try {
+                const response: any = await getBotConversationById(
+                    botId,
+                    activeConversationId,
+                )
+                console.log({ abc: response })
+                // if (response.data.message) {
+
+                //     setMessage(response.data.message)
+                //     setConversations([])
+                // } else {
+                //     setMessage(null)
+                //     const filteredData = response.data.filter(
+                //         (item: any) => item.records.length > 0,
+                //     )
+                setAIChatRecords(response?.records)
+                // }
+            } catch (err) {
+                console.log(err)
+            } finally {
+                setIsLoadingAIChat(false)
+            }
+        }
+        if (activeConversationId && botId) {
+            getBotConversationHistoryById()
+        }
+    }, [activeConversationId])
     if (isLoading)
         return (
             <>
@@ -441,15 +483,26 @@ const MyMessage = () => {
                                                                     >
                                                                         <div className="flex justify-between space-x-3">
                                                                             <div className="min-w-0 flex-1 cursor-pointer">
-                                                                                
                                                                                 <p className="truncate text-sm text-zinc-500">
                                                                                     {`کاربر : ${lastMsgUser}`}
                                                                                 </p>
                                                                             </div>
                                                                             <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
-                                                                                {
-                                                                                    conversation["isLiveRequested"] || conversation["conversationId"] in activeLiveChatConversationMap ? <span>👨‍💻</span> : <span>🤖</span>
-                                                                                }
+                                                                                {conversation[
+                                                                                    "isLiveRequested"
+                                                                                ] ||
+                                                                                conversation[
+                                                                                    "conversationId"
+                                                                                ] in
+                                                                                    activeLiveChatConversationMap ? (
+                                                                                    <span>
+                                                                                        👨‍💻
+                                                                                    </span>
+                                                                                ) : (
+                                                                                    <span>
+                                                                                        🤖
+                                                                                    </span>
+                                                                                )}
                                                                                 <span>
                                                                                     {formatRelativeTime(
                                                                                         lastTimeConversations,
@@ -478,9 +531,7 @@ const MyMessage = () => {
                                                 </p>
                                                 <div className="panel_custom_scrollbar relative mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-slate-200/20 pt-5 ">
                                                     <div className="px-3">
-                                                        {conversations?.[
-                                                            activeConversation
-                                                        ]?.records?.map(
+                                                        {AIChatRecords.map(
                                                             (
                                                                 record: any,
                                                                 index: any,
@@ -534,7 +585,7 @@ const MyMessage = () => {
                                                                                     <div className="mt-2 flex items-center justify-between">
                                                                                         <div>
                                                                                             <button
-                                                                                                className="focus-visible:ring-ring inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap rounded-xl border border-zinc-200 bg-white px-4 py-1 align-top text-xs font-medium text-zinc-500 shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80"
+                                                                                                className="focus-visible:ring-ring disabled:bg-text-100/60 inline-flex h-7 items-center justify-center gap-1 whitespace-nowrap rounded-xl border border-zinc-200 bg-white px-4 py-1 align-top text-xs font-medium text-zinc-500 shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                                                                                                 type="button"
                                                                                                 aria-haspopup="dialog"
                                                                                                 aria-expanded="false"
@@ -606,6 +657,34 @@ const MyMessage = () => {
                                                                 )
                                                             },
                                                         )}
+                                                        {isLoadingAIChat ? (
+                                                            <div
+                                                                role="status"
+                                                                className="flex items-center justify-center align-middle"
+                                                            >
+                                                                <svg
+                                                                    aria-hidden="true"
+                                                                    className="inline h-8 w-8 animate-spin fill-sky-400 text-gray-200"
+                                                                    viewBox="0 0 100 101"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <path
+                                                                        d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                                                                        fill="currentColor"
+                                                                    />
+                                                                    <path
+                                                                        d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                                                                        fill="currentFill"
+                                                                    />
+                                                                </svg>
+                                                                <span className="sr-only">
+                                                                    Loading...
+                                                                </span>
+                                                            </div>
+                                                        ) : (
+                                                            <></>
+                                                        )}
                                                         {isLiveChat ? (
                                                             <LiveChat
                                                                 botId={botId}
@@ -638,12 +717,12 @@ const MyMessage = () => {
                                                                 <button
                                                                     disabled
                                                                     type="button"
-                                                                    className="inline-flex 
-                                                                 justify-center rounded-lg p-2
-                                                                  text-gray-500
-                                                                   hover:bg-gray-100
-                                                                    hover:text-gray-900 
-                                                                    disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80 
+                                                                    className="disabled:bg-text-100/60 
+                                                                 inline-flex justify-center rounded-lg
+                                                                  p-2
+                                                                   text-gray-500
+                                                                    hover:bg-gray-100 
+                                                                    hover:text-gray-900 disabled:pointer-events-none disabled:opacity-80 
                                                                     "
                                                                 >
                                                                     <svg
@@ -680,7 +759,7 @@ const MyMessage = () => {
                                                                 <button
                                                                     disabled
                                                                     type="button"
-                                                                    className="pointer rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 disabled:pointer-events-none disabled:bg-text-100/60 disabled:opacity-80 "
+                                                                    className="pointer disabled:bg-text-100/60 rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 disabled:pointer-events-none disabled:opacity-80 "
                                                                 >
                                                                     <svg
                                                                         className="h-5 w-5"

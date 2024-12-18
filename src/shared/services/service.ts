@@ -255,6 +255,31 @@ class Services {
             )
         }
     }
+    downloadHistoryMessages = async (botId: string, filter?: string) => {
+        try {
+            const response = await mainApi.get(
+                `/mybots/${botId}/conversations/download`,
+            )
+            return response
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "download history failed",
+            )
+        }
+    }
+    getBotConversationById = async (botId: string, conversationId: string) => {
+        try {
+            const response = await mainApi.get(
+                `/mybots/${botId}/conversations/${conversationId}`,
+            );
+            return response.data; // Return the response data directly
+        } catch (error: any) {
+            throw new Error(
+                error.response?.data?.message || "Failed to retrieve conversation"
+            );
+        }
+    };
+    
     sendOperatorMessage = async (body: { conversationId: string, message: string }) => {
         try {
             const response = await mainApi.post(API.SEND_OPERATOR_MESSAGE, body);
