@@ -105,8 +105,8 @@ const MyMessage = () => {
     }
 
     const [filter, setFilter] = useState<
-        "3_days" | "7_days" | "1_month" | "all"
-    >("3_days")
+        "1_days" | "3_days" | "7_days" | "1_month" | "all"
+    >("1_days")
     const [isLoading, setIsLoading] = useState(true)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
@@ -114,6 +114,7 @@ const MyMessage = () => {
     }
     const dicTime = {
         all: "بدون فیلتر",
+        "1_days": "1 روز گذشته",
         "3_days": "3 روز گذشته",
         "7_days": "7روز گذشته ",
         "1_month": "1 ماه قبل",
@@ -128,7 +129,14 @@ const MyMessage = () => {
     const handleFilterChange = (
         event: React.ChangeEvent<HTMLSelectElement>,
     ) => {
-        setFilter(event.target.value as "3_days" | "7_days" | "1_month" | "all")
+        setFilter(
+            event.target.value as
+                | "1_days"
+                | "3_days"
+                | "7_days"
+                | "1_month"
+                | "all",
+        )
     }
 
     const handleDownload = async (botId: string) => {
@@ -436,6 +444,9 @@ const MyMessage = () => {
                                                 <option value="all">
                                                     بدون فیلتر
                                                 </option>
+                                                <option value="1_days">
+                                                    1 روز گذشته
+                                                </option>
                                                 <option value="3_days">
                                                     3 روز گذشته
                                                 </option>
@@ -475,8 +486,8 @@ const MyMessage = () => {
                                             <div className="panel_custom_scrollbar mt-4 max-h-[38rem] overflow-auto rounded border ">
                                                 <ul className="w-full divide-y divide-zinc-200">
                                                     {conversations &&
-                                                        conversations?.length &&
-                                                        conversations?.map(
+                                                    conversations.length > 0 ? (
+                                                        conversations.map(
                                                             (
                                                                 conversation: any,
                                                                 index: any,
@@ -494,19 +505,19 @@ const MyMessage = () => {
                                                                         .records[
                                                                         lastRecordIndex
                                                                     ]
-                                                                        .userMessage
+                                                                        ?.userMessage
                                                                 const lastMsgBot =
                                                                     conversation
                                                                         .records[
                                                                         lastRecordIndex
                                                                     ]
-                                                                        .llmResponse
+                                                                        ?.llmResponse
                                                                 const lastTimeConversations =
                                                                     conversation
                                                                         .records[
                                                                         lastRecordIndex
                                                                     ]
-                                                                        .llmResponseTime
+                                                                        ?.llmResponseTime
 
                                                                 return (
                                                                     <li
@@ -514,11 +525,11 @@ const MyMessage = () => {
                                                                             index
                                                                         }
                                                                         className={`relative px-4 py-5 hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
-                                                                        onClick={() => {
+                                                                        onClick={() =>
                                                                             setActiveConversation(
                                                                                 index,
                                                                             )
-                                                                        }}
+                                                                        }
                                                                     >
                                                                         <div className="flex justify-between space-x-3">
                                                                             <div className="min-w-0 flex-1 cursor-pointer">
@@ -558,7 +569,14 @@ const MyMessage = () => {
                                                                     </li>
                                                                 )
                                                             },
-                                                        )}
+                                                        )
+                                                    ) : (
+                                                        <p className="text-center text-sm text-zinc-500">
+                                                            هیچ گفتگویی در این
+                                                            بازه زمانی وجود
+                                                            ندارد
+                                                        </p>
+                                                    )}
                                                 </ul>
                                             </div>
                                         </div>
