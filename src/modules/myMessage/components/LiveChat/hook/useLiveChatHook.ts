@@ -22,55 +22,57 @@ function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
     const [shouldFetchMessages, setShouldFetchMessages] = useState(false)
     const [isLiveChatLoading, setIsLiveChatLoading] = useState(false)
     const intervalRef = useRef<any>(null) // Ref to store interval ID
-    const longIntervalRes = useRef<any>(null)
+    //const longIntervalRes = useRef<any>(null)
 
-    useEffect(() => {
-        const fetchLiveConversationsWithInterval = () => {
-            console.log(
-                `[useLiveChatHook] Starting long-polling for botId: ${botId}`,
-            )
+    //WARNING: this code was for fetching active live conversations , but not 
+    // we are fetching all conves on interval
+    // useEffect(() => {
+    //     const fetchLiveConversationsWithInterval = () => {
+    //         console.log(
+    //             `[useLiveChatHook] Starting long-polling for botId: ${botId}`,
+    //         )
 
-            longIntervalRes.current = setInterval(async () => {
-                try {
-                    console.log(
-                        `[useLiveChatHook] Fetching live conv ids for botId: ${botId}`,
-                    )
-                    const { liveConversations: conversations } =
-                        await fetchBotLiveConversations(botId)
-                    console.log({ conversations })
+    //         longIntervalRes.current = setInterval(async () => {
+    //             try {
+    //                 console.log(
+    //                     `[useLiveChatHook] Fetching live conv ids for botId: ${botId}`,
+    //                 )
+    //                 const { liveConversations: conversations } =
+    //                     await fetchBotLiveConversations(botId)
+    //                 console.log({ conversations })
 
-                    // Assuming conversations is an array of objects with `conversationId`
-                    if (conversations && Array.isArray(conversations)) {
-                        storeLiveConversationIdsBySessionId(conversations)
-                        console.log(
-                            "[useLiveChatHook] Live conv ids fetched:",
-                            conversations,
-                        )
-                    } else {
-                        console.error(
-                            "[useLiveChatHook] Invalid format for live conv ids",
-                        )
-                    }
-                } catch (error) {
-                    console.error(
-                        "[useLiveChatHook] Error fetching live conv ids:",
-                        error,
-                    )
-                }
-            }, 5000) // Fetch every 5 seconds
-        }
+    //                 // Assuming conversations is an array of objects with `conversationId`
+    //                 if (conversations && Array.isArray(conversations)) {
+    //                     storeLiveConversationIdsBySessionId(conversations)
+    //                     console.log(
+    //                         "[useLiveChatHook] Live conv ids fetched:",
+    //                         conversations,
+    //                     )
+    //                 } else {
+    //                     console.error(
+    //                         "[useLiveChatHook] Invalid format for live conv ids",
+    //                     )
+    //                 }
+    //             } catch (error) {
+    //                 console.error(
+    //                     "[useLiveChatHook] Error fetching live conv ids:",
+    //                     error,
+    //                 )
+    //             }
+    //         }, 5000) // Fetch every 5 seconds
+    //     }
 
-        fetchLiveConversationsWithInterval()
+    //     fetchLiveConversationsWithInterval()
 
-        // Cleanup function to stop long-polling if shouldFetchMessages becomes false
-        return () => {
-            if (longIntervalRes.current) {
-                console.log("[useLiveChatHook] Stopping long-polling...")
-                clearInterval(longIntervalRes.current) // Clear the interval to stop polling
-                longIntervalRes.current = null
-            }
-        }
-    }, [shouldFetchMessages, botId, storeLiveConversationIdsBySessionId]) // Re-run the effect if these dependencies change
+    //     // Cleanup function to stop long-polling if shouldFetchMessages becomes false
+    //     return () => {
+    //         if (longIntervalRes.current) {
+    //             console.log("[useLiveChatHook] Stopping long-polling...")
+    //             clearInterval(longIntervalRes.current) // Clear the interval to stop polling
+    //             longIntervalRes.current = null
+    //         }
+    //     }
+    // }, [shouldFetchMessages, botId, storeLiveConversationIdsBySessionId]) // Re-run the effect if these dependencies change
 
     useEffect(() => {
         const loadInitialHistory = async () => {

@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import {
     downloadHistoryMessages,
     getBotConversationById,
@@ -37,11 +37,13 @@ const MyMessage = () => {
     const [imageLink, setImageLink] = useState("")
     const [AIChatRecords, setAIChatRecords] = useState([])
     const [isLoadingAIChat, setIsLoadingAIChat] = useState(false)
-
+    
     const [isLiveChat, setIsLiveCHat] = useState(false)
     const [liveMessage, setLiveMessage] = useState("")
     const [isSending, setIsSending] = useState(false)
-
+    const conversationIntervalId = useRef<any>(null);
+    const isInitialFetch = useRef(true);
+    
     const appendOperatorMessageToLiveChat = useLiveChat(
         (state) => state.appendOperatorMessageToLiveChat,
     )
@@ -184,31 +186,55 @@ const MyMessage = () => {
             setIsSending(false)
         }
     }
+    //FETCH CONVERSATION ON INTERVAL
     useEffect(() => {
         const fetchHistoryList = async () => {
-            setIsLoading(true)
+            console.log(
+                "CALLED INTERVAL CONVERSATION"
+            );
+            
+            if (isInitialFetch.current) {
+                setIsLoading(true); // Show loading only during the initial fetch
+            }
             try {
-                const response: any = await getHistoryMessages(botId, filter)
+                const response: any = await getHistoryMessages(botId, filter);
                 if (response.data.message) {
-                    setMessage(response.data.message)
-                    setConversations([])
+                    setMessage(response.data.message);
+                    setConversations([]);
                 } else {
-                    setMessage(null)
+                    setMessage(null);
                     const filteredData = response.data.filter(
                         (item: any) => item.records.length > 0,
-                    )
-                    setConversations(filteredData)
+                    );
+                    setConversations(filteredData);
                 }
             } catch (err) {
-                console.log(err)
+                console.error(err);
             } finally {
-                setIsLoading(false)
+                if (isInitialFetch.current) {
+                    setIsLoading(false); 
+                    isInitialFetch.current = false;
+                }
             }
-        }
+        };
+
         if (filter) {
-            fetchHistoryList()
+            
+            fetchHistoryList();
+
+            conversationIntervalId.current = window.setInterval(() => {
+                fetchHistoryList();
+            }, 5000);
         }
-    }, [filter])
+
+        // Cleanup function
+        return () => {
+            if (conversationIntervalId.current) {
+                clearInterval(conversationIntervalId.current);
+                conversationIntervalId.current = null; // Clear the reference
+            }
+        };
+    }, [filter, botId]);
 
     useEffect(() => {
         const fetchConfigs = async () => {
