@@ -319,6 +319,31 @@ class Services {
             )
         }
     }
+
+     getContactsByBotId = async (formId: string, page: number = 1, limit: number = 10, name?: string, email?: string) => {
+        try {
+            // Construct the query parameters
+            const queryParams: any = {
+                page,
+                limit,
+                name,
+                email
+            };
+    
+            // Remove undefined or null properties from the queryParams
+            Object.keys(queryParams).forEach(key => queryParams[key] == null && delete queryParams[key]);
+    
+            // Make the API request with the query parameters
+            const response = await mainApi.get(`${API.GETCONTACT_DATA_BYBOTID}/${formId}`, {
+                params: queryParams,
+            });
+    
+            return response.data;  // Assuming response data has the structure you need
+        } catch (error: any) {
+            // Handle the error and throw a descriptive message
+            throw new Error(error.response?.data?.message || "Failed to fetch contacts.");
+        }
+    };
     getHistoryMessages = async (botId: string, filter?: string) => {
         try {
             const response = await mainApi.get(

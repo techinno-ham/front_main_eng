@@ -5,6 +5,7 @@ import { ArrowLeft2, ArrowRight2 } from "iconsax-react"
 interface PaginationProps {
     currentPage: number
     totalPages: number
+    title:string
     onPageChange: (page: number) => void
 }
 
@@ -12,6 +13,7 @@ const Pagination: React.FC<PaginationProps> = ({
     currentPage,
     totalPages,
     onPageChange,
+    title
 }) => {
     return (
         <div className="flex items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
@@ -76,7 +78,7 @@ const Pagination: React.FC<PaginationProps> = ({
                         </span>{" "}
                         از{" "}
                         <span className="font-medium">{totalPages * 10}</span>{" "}
-                        چت بات
+                        {title}
                     </p>
                 </div>
             </div>

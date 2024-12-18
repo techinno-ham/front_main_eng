@@ -1,23 +1,61 @@
 "use client"
 
 import LoaderLottie from "@/src/shared/components/common/loader";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { mockData } from "./data";
 import { formatDistanceToNow } from "date-fns-jalali"
 import { faIR } from "date-fns/locale"
 import { Edit, ExportCurve, Trash } from "iconsax-react";
+import Pagination from "../myBots/components/pagination";
 
 
 
 const Mycontact=()=>{
       const [isLoading, setLoading] = useState(false);
+      const [currentPage, setCurrentPage] = useState(1);
+      const [totalPages, setTotalPages] = useState(1);
+      const [constactList, setContactList] = useState([]);
+      const isInitialLoad = useRef(true)
+
+
+
+
+        useEffect(() => {
+              const fetchContactList = async () => {
+                setLoading(true)
+                  try {
+                      const response: any = await getBotList({
+                          type: "website",
+                          itemsPerPage: 10,
+                          page: currentPage,
+                          search: debouncedSearchText,
+                      })
+                      setContactList(response.data.bots)
+                      setTotalPages(response.data.totalPages)
+                   
+                  } catch (err) {
+                      console.log(err)
+                  } finally {
+                    setLoading(false)
+                      
+                  }
+              }
+      
+              fetchContactList()
+          }, [ currentPage])
+
 
 
 
      const formatRelativeTime = (dateString: any) => {
               const date = new Date(dateString)
               return formatDistanceToNow(date, { locale: faIR })
-          }
+      };
+      const handlePageChange = (page: number) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page)
+        }
+    }
     
 
     if (isLoading)
@@ -111,7 +149,7 @@ const Mycontact=()=>{
                                 </tr>
                             </thead>
                             <tbody>
-                                {mockData.map((contact:any)=>{ 
+                                {constactList.map((contact:any)=>{ 
                                     return(
                     
                                      <tr  key={contact?.contact_id} className="bg-white border-b ">
@@ -156,6 +194,12 @@ const Mycontact=()=>{
                             </tbody>
                             
                         </table>
+                        <Pagination
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                onPageChange={handlePageChange}
+                                title={"مخاطب"}
+                            />
                     </div>
            </div>
          </div>
