@@ -110,7 +110,7 @@ function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
     }, [isLiveChat])
 
     useEffect(() => {
-        if (isLiveActive && liveChatMessages.length !== 0) {
+        if (isLiveActive) {
             setShouldFetchMessages(true)
             // console.log(
             //     "[useLiveChatHook] shouldFetchMessages set to true: Live chat is active and there are messages",
