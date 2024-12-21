@@ -320,30 +320,47 @@ class Services {
         }
     }
 
-     getContactsByBotId = async (formId: string, page: number = 1, limit: number = 10, name?: string, email?: string) => {
+    getContactsByBotId = async (formId: string, page: number = 1, limit: number = 10, search?: string) => {
         try {
-            // Construct the query parameters
             const queryParams: any = {
                 page,
                 limit,
-                name,
-                email
+                search, 
             };
     
-            // Remove undefined or null properties from the queryParams
+         
             Object.keys(queryParams).forEach(key => queryParams[key] == null && delete queryParams[key]);
     
-            // Make the API request with the query parameters
+          
             const response = await mainApi.get(`${API.GETCONTACT_DATA_BYBOTID}/${formId}`, {
                 params: queryParams,
             });
     
-            return response.data;  // Assuming response data has the structure you need
+            return response.data;  
         } catch (error: any) {
             // Handle the error and throw a descriptive message
             throw new Error(error.response?.data?.message || "Failed to fetch contacts.");
         }
     };
+
+    deleteContact = async (contactId: string) => {
+        try {
+          const response = await mainApi.delete(`${API.DELETE_CONTACT}/${contactId}`);
+          return response.data; 
+        } catch (error: any) {
+          throw new Error(error.response?.data?.message || "Failed to delete contact.");
+        }
+      };
+
+      updateContact = async (contactId: string, updateData: { name?: string; phone?: string; email?: string }) => {
+        try {
+          const response = await mainApi.patch(`${API.UPDATE_CONTACT}/${contactId}`, updateData);
+          return response.data;
+        } catch (error: any) {
+          throw new Error(error.response?.data?.message || "Failed to update contact.");
+        }
+      };
+      
     getHistoryMessages = async (botId: string, filter?: string) => {
         try {
             const response = await mainApi.get(

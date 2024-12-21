@@ -32,6 +32,8 @@ export const API = {
     INACTIVE_FORM:"/forms/inactive",
     GETFROM_DATA:"/forms",
     GETCONTACT_DATA_BYBOTID:"/forms/contacts",
+    DELETE_CONTACT:"/forms/contacts",
+    UPDATE_CONTACT:"/forms/contacts",
 
 
     //History
