@@ -78,16 +78,16 @@ function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
         const loadInitialHistory = async () => {
             setIsLiveChatLoading(true) // Set loading to true before starting the fetch
             try {
-                console.log(
-                    `[useLiveChatHook] Loading initial history for conversationId: ${activeConversationId}`,
-                )
+                // console.log(
+                //     `[useLiveChatHook] Loading initial history for conversationId: ${activeConversationId}`,
+                // )
                 clearLiveChatMessages()
                 const result = await fetchLiveConversationHistory(
                     botId,
                     activeConversationId,
                 )
                 addHistoryMessagesToState(result?.messages)
-                console.log("[useLiveChatHook] Initial history loaded:", result)
+                // console.log("[useLiveChatHook] Initial history loaded:", result)
             } catch (error) {
                 console.error(
                     "[useLiveChatHook] Error loading initial history:",
@@ -106,55 +106,55 @@ function useLiveChatHook({ botId, activeConversationId, isLiveChat }: any) {
     useEffect(() => {
         setIsLiveActive(isLiveChat)
 
-        console.log("[useLiveChatHook] isLiveActive updated:", isLiveChat)
+        // console.log("[useLiveChatHook] isLiveActive updated:", isLiveChat)
     }, [isLiveChat])
 
     useEffect(() => {
         if (isLiveActive && liveChatMessages.length !== 0) {
             setShouldFetchMessages(true)
-            console.log(
-                "[useLiveChatHook] shouldFetchMessages set to true: Live chat is active and there are messages",
-            )
+            // console.log(
+            //     "[useLiveChatHook] shouldFetchMessages set to true: Live chat is active and there are messages",
+            // )
         } else {
             setShouldFetchMessages(false)
-            console.log(
-                "[useLiveChatHook] shouldFetchMessages set to false: Live chat is inactive or there are no messages",
-            )
+            // console.log(
+            //     "[useLiveChatHook] shouldFetchMessages set to false: Live chat is inactive or there are no messages",
+            // )
         }
     }, [isLiveActive, liveChatMessages])
 
     useEffect(() => {
         if (shouldFetchMessages) {
-            console.log(
-                "[useLiveChatHook] Starting to fetch messages every 5 seconds...",
-            )
+            // console.log(
+            //     "[useLiveChatHook] Starting to fetch messages every 5 seconds...",
+            // )
 
             intervalRef.current = setInterval(async () => {
                 try {
-                    console.log(
-                        `[useLiveChatHook] Fetching messages for conversationId: ${activeConversationId}`,
-                    )
+                    // console.log(
+                    //     `[useLiveChatHook] Fetching messages for conversationId: ${activeConversationId}`,
+                    // )
                     const result = await fetchLiveConversationHistory(
                         botId,
                         activeConversationId,
                     )
                     addHistoryMessagesToState(result?.messages)
-                    console.log("[useLiveChatHook] Fetched messages:", result)
+                    // console.log("[useLiveChatHook] Fetched messages:", result)
                 } catch (error) {
                     console.error(
                         "[useLiveChatHook] Error fetching messages:",
                         error,
                     )
                 }
-            }, 5000) // 5-second interval
+            }, 3000) // 3-second interval
         }
 
         // Cleanup function for the interval
         return () => {
             if (intervalRef.current) {
-                console.log(
-                    "[useLiveChatHook] Stopping message fetch interval...",
-                )
+                // console.log(
+                //     "[useLiveChatHook] Stopping message fetch interval...",
+                // )
                 clearInterval(intervalRef.current)
                 intervalRef.current = null // Clear the reference
             }

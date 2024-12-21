@@ -185,7 +185,7 @@ const MyMessage = () => {
                 activeConversationId,
                 liveMessage,
             )
-            console.log({ response })
+            
             appendOperatorMessageToLiveChat({
                 id: response?.messageId,
                 sender: "operator",
@@ -524,47 +524,61 @@ const MyMessage = () => {
                                                                         key={
                                                                             index
                                                                         }
-                                                                        className={`relative px-4 py-5 hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
+                                                                        className={`relative  hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
                                                                         onClick={() =>
                                                                             setActiveConversation(
                                                                                 index,
                                                                             )
                                                                         }
                                                                     >
-                                                                        <div className="flex justify-between space-x-3">
-                                                                            <div className="min-w-0 flex-1 cursor-pointer">
-                                                                                <p className="truncate text-sm text-zinc-500">
-                                                                                    {`کاربر : ${lastMsgUser}`}
+                                                                        <div
+                                                                            className={`${
+                                                                                conversation[
+                                                                                    "isLiveRequested"
+                                                                                ]
+                                                                                    ? "border-r-2 border-blue-300"
+                                                                                    : ""
+                                                                            }`}
+                                                                        >
+                                                                            <div className="px-4 py-5">
+                                                                                <div
+                                                                                    className={`flex justify-between space-x-3`}
+                                                                                >
+                                                                                    <div className="min-w-0 flex-1 cursor-pointer">
+                                                                                        <p className="truncate text-sm text-zinc-500">
+                                                                                            {`کاربر : ${lastMsgUser}`}
+                                                                                        </p>
+                                                                                    </div>
+                                                                                    <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
+                                                                                        {conversation[
+                                                                                            "isLiveRequested"
+                                                                                        ] ||
+                                                                                        conversation[
+                                                                                            "conversationId"
+                                                                                        ] in
+                                                                                            activeLiveChatConversationMap ? (
+                                                                                            <span>
+                                                                                                👨‍💻
+                                                                                            </span>
+                                                                                        ) : (
+                                                                                            <span>
+                                                                                                🤖
+                                                                                            </span>
+                                                                                        )}
+                                                                                        <span>
+                                                                                            {formatRelativeTime(
+                                                                                                lastTimeConversations,
+                                                                                            )}{" "}
+                                                                                            پیش
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            <div className="mt-1 cursor-pointer">
+                                                                                <p className="line-clamp-2 text-sm text-black">
+                                                                                    {`ربات: ${lastMsgBot}`}
                                                                                 </p>
                                                                             </div>
-                                                                            <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
-                                                                                {conversation[
-                                                                                    "isLiveRequested"
-                                                                                ] ||
-                                                                                conversation[
-                                                                                    "conversationId"
-                                                                                ] in
-                                                                                    activeLiveChatConversationMap ? (
-                                                                                    <span>
-                                                                                        👨‍💻
-                                                                                    </span>
-                                                                                ) : (
-                                                                                    <span>
-                                                                                        🤖
-                                                                                    </span>
-                                                                                )}
-                                                                                <span>
-                                                                                    {formatRelativeTime(
-                                                                                        lastTimeConversations,
-                                                                                    )}{" "}
-                                                                                    پیش
-                                                                                </span>
                                                                             </div>
-                                                                        </div>
-                                                                        <div className="mt-1 cursor-pointer">
-                                                                            <p className="line-clamp-2 text-sm text-black">
-                                                                                {`ربات: ${lastMsgBot}`}
-                                                                            </p>
                                                                         </div>
                                                                     </li>
                                                                 )
