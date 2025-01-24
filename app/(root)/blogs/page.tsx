@@ -6,9 +6,9 @@ const BlogsPage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "بلاگ‌ها | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Blogs | HamyarChat - Conversational AI Assistant",
     description:
-        "با بلاگ‌های همیارچت، از آخرین اخبار و مقالات مرتبط با دستیار هوش مصنوعی مکالمه‌ای مطلع شوید. مطالب آموزشی، نکات و ترفندها، و مطالعات موردی به شما کمک می‌کنند تا به روز بمانید و از فناوری‌های نوین در کسب‌وکار خود بهره‌برداری کنید.",
+        "Stay updated with HamyarChat blogs, featuring the latest news and articles related to conversational AI assistants. Educational content, tips and tricks, and case studies help you stay informed and leverage cutting-edge technology for your business.",
     // openGraph: {
     //   title: 'Blogs',
     // },
@@ -16,5 +16,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default BlogsPage

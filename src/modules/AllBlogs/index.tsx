@@ -6,56 +6,56 @@ const AllBlogs = () => {
     return (
         <>
             <div className="mx-auto max-w-[85rem] px-4 pt-10 sm:px-6 lg:px-8">
-                <div className="w-full px-4">
-                    <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                        <span className="text-primary mb-2 block text-lg font-semibold">
-                            وبلاگ
-                        </span>
-                        <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
-                            آخرین
-                            <span
-                                style={{
-                                    textShadow:
-                                        "0 3px 8px rgba(77, 243, 255, 0.22)",
-                                    backgroundImage:
-                                        "linear-gradient(360deg, #5154ff, #559fff)",
-                                    backgroundClip: "text",
-                                    fontWeight: 700,
-                                    position: "relative",
-                                    color: "transparent",
-                                }}
-                            >
-                                &nbsp;اخبار&nbsp;
-                            </span>
-                            همیارچت
-                        </h2>
-                        <p className="text-body-color dark:text-dark-6 text-base">
-                            آخرین را در اینجا مطالعه کنید
-                        </p>
-                    </div>
-                </div>
-                <div className="grid gap-6 lg:grid-cols-2">
-                    
-                    <BlogCard
-                        title={
-                            "۸ مزایای شگفت‌انگیز دستیاران پشتیبانی مشتری مبتنی بر هوش مصنوعی"
-                        }
-                        subTitle={
-                            "موفقیت کسب‌وکار را با پشتیبانی هوش مصنوعی ارتقا دهید: حفظ مشتریان را افزایش دهید، شهرت را تقویت کنید، عملیات را گسترش دهید و هزینه‌ها را برای رشد بهینه کاهش دهید."
-                        }
-                        linkTo={"/blogs/1"}
-                        img={"/blog/image1.png"}
-                    />
-                    <BlogCard
-                        title={"هوش مصنوعی در پشتیبانی مشتری: تهدید یا ناجی"}
-                        subTitle={
-                            "سفر تحولی هوش مصنوعی در پشتیبانی مشتری را کشف کنید - چالش‌ها، پتانسیل‌ها و آینده پیش رو را بررسی کنید."
-                        }
-                        linkTo={"/blogs/2"}
-                        img={"/blog/image.png"}
-                    />
-                </div>
-            </div>
+    <div className="w-full px-4">
+        <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+            <span className="text-primary mb-2 block text-lg font-semibold">
+                Blog
+            </span>
+            <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+                Latest
+                <span
+                    style={{
+                        textShadow:
+                            "0 3px 8px rgba(77, 243, 255, 0.22)",
+                        backgroundImage:
+                            "linear-gradient(360deg, #5154ff, #559fff)",
+                        backgroundClip: "text",
+                        fontWeight: 700,
+                        position: "relative",
+                        color: "transparent",
+                    }}
+                >
+                    &nbsp;News&nbsp;
+                </span>
+                HamyarChat
+            </h2>
+            <p className="text-body-color dark:text-dark-6 text-base">
+                Read the latest here
+            </p>
+        </div>
+    </div>
+    <div className="grid gap-6 lg:grid-cols-2">
+        <BlogCard
+            title={
+                "8 Amazing Benefits of AI-Based Customer Support Assistants"
+            }
+            subTitle={
+                "Enhance business success with AI support: Boost customer retention, strengthen reputation, scale operations, and optimize costs for growth."
+            }
+            linkTo={"/blogs/1"}
+            img={"/blog/image1.png"}
+        />
+        <BlogCard
+            title={"AI in Customer Support: Threat or Savior?"}
+            subTitle={
+                "Explore the transformative journey of AI in customer support – examine the challenges, potentials, and the future ahead."
+            }
+            linkTo={"/blogs/2"}
+            img={"/blog/image.png"}
+        />
+    </div>
+</div>
+
         </>
     )
 }

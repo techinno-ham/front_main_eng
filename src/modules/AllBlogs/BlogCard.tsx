@@ -17,13 +17,13 @@ const BlogCard = ({ title, subTitle, linkTo, img }: any) => {
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <img
-                                className="size-[46px] rounded-full border-2 border-white"
-                                src="https://images.unsplash.com/photo-1669837401587-f9a4cfe3126e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
-                                alt="Image Description"
+                                className="size-[46px] rounded-full border-2 border-blue-500 bg-white p-1"
+                                src="/logo.svg"
+                                alt="Team HamyarChat"
                             />
                         </div>
                         <div className="ms-2.5 sm:ms-4">
-                            <h4 className="font-semibold text-white">تیم </h4>
+                            <h4 className="font-semibold text-white">Team HamyarChat</h4>
                             <p className="text-xs text-white/[.8]">
                                 May 30, 2021
                             </p>
