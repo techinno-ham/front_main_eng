@@ -25,9 +25,10 @@ const PricingCard = ({
         <>
             <div className="relative w-full px-4 pb-10 md:w-1/2 lg:w-1/4">
                 {active && (
-                    <span className="absolute -top-4 left-1/2 z-10 inline-flex h-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#38BDF8] px-4 text-sm font-semibold tracking-[0.2px] text-white">
-                        محبوب ترین
-                    </span>
+                   <span className="absolute -top-4 left-1/2 z-10 inline-flex h-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#38BDF8] px-4 text-sm font-semibold tracking-[0.2px] text-white">
+                   Most Popular
+               </span>
+               
                 )}
                 <div
                     style={{
@@ -48,7 +49,7 @@ const PricingCard = ({
                                 </span>
                                 <span className="text-zinc-400">
                                 {
-                                    subscription && <span className="mr-1 text-[12px]">
+                                    subscription && <span className="ml-1 text-[12px]">
                                     {subscription}
                                     </span>
                                 }
@@ -130,7 +131,7 @@ const PricingCard = ({
                     </div>
 
                     <div>
-                        <span className="absolute left-0 top-7">
+                        <span className="absolute right-0 top-7">
                             <svg
                                 width={77}
                                 height={172}
@@ -166,7 +167,7 @@ const PricingCard = ({
                                 </defs>
                             </svg>
                         </span>
-                        <span className="absolute left-4 top-4">
+                        <span className="absolute right-4 top-4">
                             <svg
                                 width={41}
                                 height={89}

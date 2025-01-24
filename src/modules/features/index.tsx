@@ -6,14 +6,14 @@ import ChatLottie from "../../../public/lottie/features/chat.json"
 
 const Features = () => {
     return (
-        <>
+        <main>
             <div className="w-full px-4 pt-10">
                 <div className="mx-auto mb-[60px] max-w-[510px] text-center">
                     <span className="text-primary mb-2 block text-lg font-semibold">
-                        ویژگی‌ها
+                        Features
                     </span>
                     <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-xl md:text-[40px] ">
-                        امکانات
+                        Advanced
                         <span
                             style={{
                                 textShadow:
@@ -26,9 +26,9 @@ const Features = () => {
                                 color: "transparent",
                             }}
                         >
-                            &nbsp;پیشرفته&nbsp;
+                            &nbsp;Features&nbsp;
                         </span>
-                        همیارچت
+                        of HamyarChat
                     </h1>
                 </div>
             </div>
@@ -50,23 +50,23 @@ const Features = () => {
                             <div className="data w-full">
                                 <h4
                                     className=" relative mb-9 text-xl font-medium
-                                text-black max-lg:text-center lg:text-3xl
-                                 "
+                            text-black max-lg:text-center lg:text-3xl
+                             "
                                 >
-                                    آموزش چت‌بات با داده‌های سفارشی شما
+                                    Training Chatbots with Your Custom Data
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    در همیارچت، ما امکان آموزش چت‌بات‌ها را با
-                                    داده‌های سفارشی شما فراهم کرده‌ایم. این
-                                    ویژگی به کسب‌وکارها این اجازه را می‌دهد که
-                                    چت‌بات‌ها را بر اساس نیازها و محتوای خاص خود
-                                    تنظیم کنند. با استفاده از داده‌های مرتبط،
-                                    چت‌بات‌های ما می‌توانند به طور دقیق‌تری به
-                                    سوالات مشتریان پاسخ دهند و تعاملاتی مؤثرتر و
-                                    شخصی‌سازی‌شده‌تر ارائه دهند. هدف ما این است
-                                    که با تقویت توانایی‌های چت‌بات‌های شما،
-                                    تجربه مشتریان را بهبود ببخشیم و به شما در
-                                    دستیابی به اهداف تجاری‌تان کمک کنیم.
+                                    At HamyarChat, we enable training chatbots
+                                    with your custom data. This feature allows
+                                    businesses to configure chatbots based on
+                                    their specific needs and content. By
+                                    utilizing relevant data, our chatbots can
+                                    provide more accurate responses to customer
+                                    inquiries and deliver more personalized and
+                                    effective interactions. Our goal is to
+                                    enhance your chatbot's capabilities to
+                                    improve customer experiences and help you
+                                    achieve your business goals.
                                 </p>
                             </div>
                         </div>
@@ -79,22 +79,22 @@ const Features = () => {
                         <div className="flex items-center lg:pr-24">
                             <div className="data w-full">
                                 <h4 className=" mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
-                                    رابط کاربری کاملاً قابل سفارشی‌سازی
+                                    Fully Customizable User Interface
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    در همیارچت، ما به اهمیت تجربه کاربری توجه
-                                    ویژه‌ای داریم. به همین دلیل، رابط کاربری
-                                    چت‌بات‌های ما به‌طور کامل قابل سفارشی‌سازی
-                                    است. شما می‌توانید طراحی، رنگ‌ها و ویژگی‌های
-                                    مختلف را به دلخواه خود تنظیم کنید تا با هویت
-                                    برند شما همخوانی داشته باشد. هدف ما این است
-                                    که کاربران شما در هر تعامل احساس راحتی و
-                                    هماهنگی کنند و بتوانند به راحتی به اطلاعات و
-                                    خدمات مورد نیاز خود دسترسی پیدا کنند.
+                                    At HamyarChat, we place great emphasis on
+                                    user experience. Therefore, our chatbot’s
+                                    user interface is fully customizable. You
+                                    can adjust the design, colors, and various
+                                    features to align with your brand identity.
+                                    Our goal is to ensure that your users feel
+                                    comfortable and in sync with each
+                                    interaction and can easily access the
+                                    information and services they need.
                                 </p>
                             </div>
                         </div>
-                        <div className="order-first lg:order-2 video-box">
+                        <div className="video-box order-first lg:order-2">
                             <Lottie
                                 animationData={ConfigLottie}
                                 loop={true}
@@ -124,27 +124,27 @@ const Features = () => {
                         <div className="flex items-center lg:pl-[100px]">
                             <div className="data w-full">
                                 <h4 className=" relative mb-9 text-xl font-medium text-black max-lg:text-center lg:text-3xl">
-                                    پاسخ‌های خودکار به سوالات کاربران با هوش
-                                    مصنوعی{" "}
+                                    AI-Powered Automatic Responses to User
+                                    Queries
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    ما در همیارچت با افتخار ارائه‌دهنده
-                                    سیستم‌هایی هستیم که قادر به ارائه پاسخ‌های
-                                    کاملاً خودکار به سوالات کاربران هستند. این
-                                    قابلیت به شما این امکان را می‌دهد که در هر
-                                    زمان و مکان به مشتریان خود خدمات‌رسانی کنید
-                                    و بار کاری تیم پشتیبانی را کاهش دهید. با
-                                    تحلیل و پردازش دقیق سوالات کاربران،
-                                    چت‌بات‌های ما می‌توانند به سرعت و به دقت به
-                                    نیازهای آنان پاسخ دهند و تجربه‌ای سریع و
-                                    رضایت‌بخش را برای آنها فراهم کنند.
+                                    At HamyarChat, we proudly offer systems
+                                    capable of providing fully automated
+                                    responses to user queries. This feature
+                                    enables you to assist your customers anytime
+                                    and anywhere while reducing the workload of
+                                    your support team. By analyzing and
+                                    processing user questions accurately, our
+                                    chatbots can quickly and accurately address
+                                    their needs, delivering a fast and
+                                    satisfying experience.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     )
 }
 

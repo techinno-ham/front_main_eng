@@ -5,9 +5,9 @@ const AboutUsPage: NextPage = () => {
     return <AboutUs />
 }
 export const metadata: Metadata = {
-    title: "درباره ما | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "About Us | HamyarChat - Conversational AI Assistant",
     description:
-        "در همیارچت، ما متعهد به بهبود تجربه مشتریان شما از طریق دستیار هوش مصنوعی مکالمه‌ای هستیم. پلتفرم ما با ارائه پاسخ‌های سریع و دقیق، به خودکارسازی پشتیبانی مشتریان کمک کرده و رضایت آن‌ها را افزایش می‌دهد. ما با بهره‌گیری از فناوری‌های پیشرفته، سعی در ارتقاء کسب‌وکار شما داریم.",
+        "At HamyarChat, we are committed to enhancing your customers' experience through a conversational AI assistant. Our platform helps automate customer support by providing quick and accurate responses, increasing customer satisfaction. With the use of advanced technologies, we strive to elevate your business.",
     // openGraph: {
     //   title: 'About Us',
     // },
@@ -15,5 +15,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default AboutUsPage

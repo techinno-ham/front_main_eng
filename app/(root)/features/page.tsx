@@ -5,9 +5,9 @@ const FeaturesPage: NextPage = () => {
     return <Features/>
 }
 export const metadata: Metadata = {
-    title: "امکانات | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Features | HamyarChat - Conversational AI Assistant",
     description:
-        "در همیارچت، ما متعهد به بهبود تجربه مشتریان شما از طریق دستیار هوش مصنوعی مکالمه‌ای هستیم. پلتفرم ما با ارائه پاسخ‌های سریع و دقیق، به خودکارسازی پشتیبانی مشتریان کمک کرده و رضایت آن‌ها را افزایش می‌دهد. ما با بهره‌گیری از فناوری‌های پیشرفته، سعی در ارتقاء کسب‌وکار شما داریم.",
+        "At HamyarChat, we are committed to enhancing your customer experience through a conversational AI assistant. Our platform helps automate customer support by providing fast and accurate responses, increasing customer satisfaction. Using advanced technologies, we aim to elevate your business.",
     // openGraph: {
     //   title: 'About Us',
     // },
@@ -15,5 +15,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default FeaturesPage

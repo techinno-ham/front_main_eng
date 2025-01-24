@@ -6,9 +6,9 @@ const PricingPage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "قیمت‌ | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Pricing | HamyarChat - Conversational AI Assistant",
     description:
-        "با همیارچت، راه‌حل‌های پشتیبانی مشتریان خود را با قیمت‌های مناسب و انعطاف‌پذیر دریافت کنید. ما بسته‌های مختلفی برای کسب‌وکارهای کوچک و بزرگ ارائه می‌دهیم تا بتوانید بهترین گزینه را برای نیازهای خود انتخاب کنید. ارتقاء تجربه مشتریان با هزینه‌ای مقرون به صرفه.",
+        "With HamyarChat, get customer support solutions at affordable and flexible prices. We offer various packages for both small and large businesses so you can choose the best option for your needs. Enhance customer experience at a cost-effective price.",
     // openGraph: {
     //   title: 'Pricing',
     // },
@@ -16,5 +16,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default PricingPage

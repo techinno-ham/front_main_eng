@@ -84,25 +84,25 @@ const MobilePricingFeatures = () => {
                                 "
                 >
                     <select
-                        id="countries"
-                        value={tier}
-                        onChange={handleSelectChange}
-                        className="
-                        border-b-1
-                     
-                        block w-full 
-                        rounded-md 
-                        border border-gray-300 bg-zinc-100
-                          p-2.5 text-lg font-medium text-gray-900
-                          focus:border-blue-500 focus:ring-blue-500"
-                    >
-                        <option value="free" selected>
-                            پایه
-                        </option>
-                        <option value="standard">استاندارد</option>
-                        <option value="pro">حرفه‌ای</option>
-                        <option value="enterprise">سازمانی</option>
-                    </select>
+    id="countries"
+    value={tier}
+    onChange={handleSelectChange}
+    className="
+        border-b-1
+        block w-full 
+        rounded-md 
+        border border-gray-300 bg-zinc-100
+        p-2.5 text-lg font-medium text-gray-900
+        focus:border-blue-500 focus:ring-blue-500"
+>
+    <option value="free" selected>
+        Basic
+    </option>
+    <option value="standard">Standard</option>
+    <option value="pro">Professional</option>
+    <option value="enterprise">Enterprise</option>
+</select>
+
                 </form>
 
                 {tier === "free" && <FreePricingMobile />}

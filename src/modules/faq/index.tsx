@@ -5,38 +5,39 @@ import { useState } from "react"
 
 let qaArray = [
     {
-        question: "همیارچت چیست؟",
-        answer: "همیارچت یک ابزار هوش مصنوعی پیشرفته است که به کسب‌وکارها امکان می‌دهد ربات‌های پاسخگوی خودکار بسازند. این ربات‌ها قادرند با سرعت و دقت به سوالات مشتریان پاسخ دهند و به این ترتیب، فرآیند پشتیبانی مشتریان را بهبود بخشیده و کارایی تیم پشتیبانی را افزایش دهند. ویژگی‌های کلیدی همیارچت عبارت‌اند از: پشتیبانی دائمی (۲۴/۷)، کاهش بار کاری تیم پشتیبانی، و بهبود تجربه کاربری با پاسخ‌های سریع و دقیق.",
+        question: "What is HamyarChat?",
+        answer: "HamyarChat is an advanced AI tool that allows businesses to create automated response bots. These bots are capable of answering customer questions quickly and accurately, thereby improving the customer support process and enhancing the efficiency of the support team. Key features of HamyarChat include 24/7 support, reducing the workload of the support team, and improving user experience with fast and precise responses.",
     },
     {
-        question: "هزینه و قیمت استفاده از همیارچت به چه شکل است؟",
-        answer: "همیارچت پلن‌های قیمتی متنوعی ارائه می‌دهد. با شروع از یک پلن رایگان که امکانات ابتدایی را شامل می‌شود، می‌توانید همیارچت را امتحان کنید و سپس با ارتقاء به پلن‌های پرداختی، به ویژگی‌های پیشرفته‌تری دسترسی پیدا کنید. این انعطاف‌پذیری در قیمت‌گذاری به شما کمک می‌کند به صورت مقرون‌به‌صرفه‌تری از مزایای چت‌بات‌های هوشمند بهره‌مند شوید.",
+        question: "What is the cost of using HamyarChat?",
+        answer: "HamyarChat offers a variety of pricing plans. Starting with a free plan that includes basic features, you can try HamyarChat and then upgrade to paid plans for access to more advanced features. This flexibility in pricing helps you benefit from smart chatbots in a more cost-effective way.",
     },
     {
-        question: "چه تعداد همیارچت می‌توانم بسازم؟",
-        answer: "تعداد همیارچت‌هایی که می‌توانید بسازید به پلن انتخابی شما بستگی دارد. در پلن‌های رایگان، ممکن است تعداد محدودی چت‌بات ایجاد کنید، در حالی که پلن‌های پرداختی امکان ایجاد تعداد بیشتری را فراهم می‌آورند. این انعطاف‌پذیری به شما کمک می‌کند تا همیارچت را به بهترین شکل با نیازهای کسب‌وکار خود تطبیق دهید.",
+        question: "How many HamyarChats can I create?",
+        answer: "The number of HamyarChats you can create depends on the plan you choose. In free plans, you may be able to create a limited number of chatbots, while paid plans allow you to create more. This flexibility helps you tailor HamyarChat to your business needs.",
     },
     {
-        question: "ویژگی‌های همیارچت چیست؟",
-        answer: "همیارچت با رابط کاربری ساده و کاربرپسند، امکان ایجاد و مدیریت چت‌بات‌ها بدون نیاز به برنامه‌نویسی را فراهم می‌آورد. ویژگی‌های اصلی شامل آموزش خودکار بر اساس داده‌های ورودی، پاسخگویی به زبان‌های مختلف، یکپارچه‌سازی آسان با پلتفرم‌های دیگر مانند تلگرام و ووکامرس، و قابلیت کراول کردن وب‌سایت برای جمع‌آوری داده‌ها است. این ویژگی‌ها همیارچت را به ابزاری قدرتمند برای بهبود تعامل با مشتری و افزایش کارایی تبدیل می‌کند.",
+        question: "What are the features of HamyarChat?",
+        answer: "HamyarChat provides a simple, user-friendly interface that allows you to create and manage chatbots without the need for programming. Key features include automatic training based on input data, multi-language support, easy integration with other platforms like Telegram and WooCommerce, and the ability to crawl websites for data collection. These features make HamyarChat a powerful tool for improving customer interaction and increasing efficiency.",
     },
     {
-        question: "چگونه می‌توان همیارچت را سفارشی‌سازی کرد؟",
-        answer: "همیارچت امکانات گسترده‌ای برای سفارشی‌سازی فراهم می‌آورد. شما می‌توانید ظاهر چت‌بات، پیام‌های خوشامدگویی، و الگوهای پاسخ‌دهی را تنظیم کنید. همچنین، می‌توانید ماژول‌های خاص صنعتی یا ادغام‌های API را اضافه کنید تا عملکرد چت‌بات خود را بهبود بخشید و آن را به نیازهای خاص خود تطبیق دهید.",
+        question: "How can I customize HamyarChat?",
+        answer: "HamyarChat offers extensive customization options. You can adjust the chatbot’s appearance, welcome messages, and response templates. Additionally, you can add industry-specific modules or API integrations to improve the chatbot’s functionality and tailor it to your specific needs.",
     },
     {
-        question: "آیا همیارچت رایگان است؟",
-        answer: "بله، همیارچت به شما این امکان را می‌دهد که با ثبت‌نام یک حساب کاربری رایگان، از امکانات ابتدایی پلتفرم بهره‌مند شوید. این حساب شامل دسترسی به ویژگی‌های پایه‌ای است که برای تست و بررسی همیارچت مناسب است. شما می‌توانید بدون هیچ هزینه‌ای همیارچت را امتحان کنید.",
+        question: "Is HamyarChat free?",
+        answer: "Yes, HamyarChat allows you to sign up for a free account and access the basic features of the platform. This account includes access to core features that are suitable for testing and exploring HamyarChat. You can try HamyarChat with no cost involved.",
     },
     {
-        question: "برای شروع باید چه کار کنم؟",
-        answer: "برای شروع، کافی است به وب‌سایت همیارچت مراجعه کنید و ثبت‌نام کنید. سپس می‌توانید همیارچت خود را بسازید و داده‌هایی که می‌خواهید همیارچت با آن‌ها آموزش ببیند، وارد کنید. این کار به همیارچت کمک می‌کند تا پاسخ‌های دقیق‌تر و مفیدتری به کاربران شما ارائه دهد. فرآیند بسیار ساده است و نیازی به دانش فنی پیچیده ندارد.",
+        question: "What should I do to get started?",
+        answer: "To get started, simply visit the HamyarChat website and sign up. Then, you can create your HamyarChat and input the data you want it to be trained on. This helps HamyarChat provide more accurate and useful responses to your users. The process is very simple and does not require complex technical knowledge.",
     },
     {
-        question: "چقدر طول می‌کشد تا همیارچت آموزش ببیند؟",
-        answer: "زمان آموزش همیارچت بسیار کم است و معمولاً در عرض چند ثانیه تا چند دقیقه انجام می‌شود، بسته به حجم داده‌هایی که برای آموزش استفاده می‌کنید. این سرعت بالا در آموزش به شما اجازه می‌دهد که به سرعت چت‌بات خود را به‌روزرسانی کنید و پاسخ‌های جدیدی را به کاربران ارائه دهید.",
+        question: "How long does it take to train HamyarChat?",
+        answer: "HamyarChat's training time is very short and usually takes just a few seconds to a few minutes, depending on the volume of data you use for training. This fast training speed allows you to quickly update your chatbot and provide new responses to users.",
     },
 ]
+
 
 const FAQ = () => {
     let [activeAccordionId, setActiveAccordionId] = useState<number | null>(
@@ -45,35 +46,32 @@ const FAQ = () => {
     return (
         <section className="min-h-[900px] pb-24 pt-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="w-full px-4">
-                    <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                        <span className="text-primary mb-2 block text-lg font-semibold">
-                            سوالات متداول
-                        </span>
-                        <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
-                            پاسخ به
-                            <span
-                                style={{
-                                    textShadow:
-                                        "0 3px 8px rgba(77, 243, 255, 0.22)",
-                                    backgroundImage:
-                                        "linear-gradient(360deg, #5154ff, #559fff)",
-                                    backgroundClip: "text",
-                                    fontWeight: 700,
-                                    position: "relative",
-                                    color: "transparent",
-                                }}
-                            >
-                                &nbsp;سولات&nbsp;
-                            </span>
-                            شما
-                        </h2>
-                        <p className="text-body-color dark:text-dark-6 text-base">
-                            پاسخ سوالات متداول کاربران درباره همیارچت را اینجا
-                            بیابید.
-                        </p>
-                    </div>
-                </div>
+            <div className="w-full px-4">
+    <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+        <span className="text-primary mb-2 block text-lg font-semibold">
+            Frequently Asked Questions
+        </span>
+        <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+            Answers to
+            <span
+                style={{
+                    textShadow: "0 3px 8px rgba(77, 243, 255, 0.22)",
+                    backgroundImage: "linear-gradient(360deg, #5154ff, #559fff)",
+                    backgroundClip: "text",
+                    fontWeight: 700,
+                    position: "relative",
+                    color: "transparent",
+                }}
+            >
+                &nbsp;Your Questions&nbsp;
+            </span>
+        </h2>
+        <p className="text-body-color dark:text-dark-6 text-base">
+            Find answers to frequently asked questions about HamyarChat here.
+        </p>
+    </div>
+</div>
+
 
                 <div
                     className="accordion-group"

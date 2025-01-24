@@ -7,9 +7,9 @@ const FAQPage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "سوالات متداول | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "FAQ | HamyarChat - Conversational AI Assistant",
     description:
-        "در بخش سوالات متداول همیارچت، پاسخ‌های جامع و دقیقی به پرسش‌های رایج کاربران را پیدا کنید. ما به شما کمک می‌کنیم تا با اطلاعات کامل و شفاف، از پلتفرم دستیار هوش مصنوعی مکالمه‌ای ما به بهترین شکل بهره‌برداری کنید.",
+        "In the FAQ section of HamyarChat, find comprehensive and accurate answers to the most common user questions. We help you make the best use of our conversational AI assistant platform with complete and clear information.",
     // openGraph: {
     //   title: 'FAQ',
     // },
@@ -17,5 +17,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default FAQPage
