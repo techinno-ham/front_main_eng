@@ -5,61 +5,57 @@ import Section from "./components/sections"
 
 const FeatureSection = () => {
     return (
-        <div className="section-large container relative mx-auto h-auto overflow-hidden  px-4  2xl:px-20">
-            <div className="mt-[24px] text-center ">
-                <h2 className="font-medium text-2xl leading-[150%] md:text-5xl">
-                    {/* تمام آنچه برای ساخت <br />{" "}
-                    <span className=" text-feature gradient-h2 is-v2">
-                        ربات‌های سفارشی
-                    </span>{" "}
-                    نیاز دارید. */}
-                    خلق دستیاران هوش مصنوعی
-                    {/* <br/> */} با <br />
-                    <span className=" text-feature gradient-h2 is-v2">
-                        سرعت و سهولت
-                    </span>{" "}
-                </h2>
-                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                    تمام ابزارها و منابع مورد نیاز برای چت‌ بات های سفارشی در
-                    پلتفرم همیارچت در دسترس شماست
-                </h3>
-            </div>
-            <div className="mt-[30px] md:mt-[60px]">
-                <Section
-                    sectionName="آموزش"
-                    title="
-             یک وبسایت یا سند را بارگذاری کنید تا ربات شما آموزش داده شود.
-              "
-                    desc="شما می‌توانید یک وبسایت یا سند را بارگذاری کنید تا ربات ما بتواند با محتوای آن آشنا شده و به‌طور مؤثرتر آموزش ببیند. این فرایند به ربات کمک می‌کند تا اطلاعات و الگوهای لازم را از منابع مختلف استخراج کرده و عملکرد بهتری را ارائه دهد. هدف ما فراهم آوردن ابزارهای کاربردی و بهینه‌سازی تکنولوژی‌های موجود برای پاسخگویی به نیازهای شماست.
-      "
-                    imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/657c74b7a8381409c81fcd56_zapIcon.svg"
-                >
-                    <KnowledgeBaseGrid />
-                </Section>
-
-                <Section
-                    sectionName="شخصی سازی"
-                    title="
-              دستیار هوش مصنوعی خود را به‌طور کامل سفارشی‌سازی کرده و تنظیمات رابط کاربری را مطابق با نیازهای خود تغییر دهید.
-              "
-                    desc="شما می‌توانید به طور کامل عملکرد دستیار هوش مصنوعی خود را سفارشی‌سازی کنید و تنظیمات رابط کاربری (UI) را بر اساس نیازهای خاص خود بهینه‌سازی کنید. با ابزارهای ارائه‌شده، می‌توانید قابلیت‌ها و ویژگی‌های دستیار را به گونه‌ای تنظیم کنید که بهترین تطابق را با نیازها و ترجیحات شما داشته باشد. این امکان به شما اجازه می‌دهد تا تجربه کاربری منحصر به فردی ایجاد کنید و بهره‌وری و کارایی دستیار هوش مصنوعی خود را به حداکثر برسانید."
-                    imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7184b737d36c33ca81413_LayoutIcon.svg"
-                    mask={true}
-                >
-                    <ItemsGrid />
-                </Section>
-                <Section
-                    sectionName="راه اندازی "
-                    title="
-              فرآیند راه‌اندازی سریع و آسان برای استفاده از امکانات جدید
-              "
-                    desc="به‌راحتی و به‌سرعت مراحل راه‌اندازی سیستم را طی کنید و از امکانات جدید بهره‌برداری کنید. دستورالعمل‌های ساده و راهنمای گام‌به‌گام ما به شما کمک می‌کند تا به سرعت به استفاده از ویژگی‌ها و ابزارهای جدید بپردازید. هدف ما این است که با ارائه یک فرآیند ساده و بی‌دردسر، شروع کار با سیستم را برای شما آسان کنیم و اطمینان حاصل کنیم که بتوانید از تمامی امکانات به بهترین نحو استفاده کنید."
-                    imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d71b1e1938080cef242fea_flowIcon.svg"
-                >
-                    <IntegrationGrid />
-                </Section>
-            </div>
+        <div className="section-large container relative mx-auto h-auto overflow-hidden px-4 2xl:px-20">
+        <div className="mt-[24px] text-center">
+            <h2 className="font-medium text-2xl leading-[150%] md:text-5xl">
+                Creating Artificial Assistants
+                <br />
+                <span className="text-feature gradient-h2 is-v2">
+                    with speed and ease
+                </span>
+            </h2>
+            <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
+                All the tools and resources needed for custom chatbots are available
+                on the HamyarChat platform.
+            </h3>
         </div>
+        <div className="mt-[30px] md:mt-[60px]">
+            <Section
+                sectionName="Training"
+                title="
+                    Upload a website or document to train your bot.
+                "
+                desc="You can upload a website or document for our bot to get familiar with the content and train more effectively. This process helps the bot extract necessary information and patterns from different sources, leading to better performance. Our goal is to provide practical tools and optimize existing technologies to meet your needs."
+                imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/657c74b7a8381409c81fcd56_zapIcon.svg"
+            >
+                <KnowledgeBaseGrid />
+            </Section>
+    
+            <Section
+                sectionName="Customization"
+                title="
+                    Fully customize your AI assistant and adjust the user interface settings to meet your needs.
+                "
+                desc="You can fully customize the functionality of your AI assistant and optimize the user interface (UI) settings based on your specific requirements. With the provided tools, you can adjust the capabilities and features of the assistant to match your needs and preferences. This allows you to create a unique user experience and maximize the productivity and efficiency of your AI assistant."
+                imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7184b737d36c33ca81413_LayoutIcon.svg"
+                mask={true}
+            >
+                <ItemsGrid />
+            </Section>
+    
+            <Section
+                sectionName="Setup"
+                title="
+                    Quick and easy setup process to access new features.
+                "
+                desc="Easily and quickly complete the system setup process and start benefiting from new features. Our simple instructions and step-by-step guide will help you quickly start using the new features and tools. Our goal is to provide a hassle-free process and make sure that you can use all the features to their fullest."
+                imgURL="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d71b1e1938080cef242fea_flowIcon.svg"
+            >
+                <IntegrationGrid />
+            </Section>
+        </div>
+    </div>
+    
     )
 }
 export default FeatureSection

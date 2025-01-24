@@ -30,18 +30,15 @@ const KnowledgeBaseGrid = () => {
                 animate={animController}
                 transition={{ duration: 1 }}
                 style={{
-                                boxShadow:
-                                    "2px 5px 25px 0px rgba(108, 146, 242, .05)",
-                            }}
+                    boxShadow: "2px 5px 25px 0px rgba(108, 146, 242, .05)",
+                }}
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">وب‌سایت</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">Website</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "
@@ -49,6 +46,7 @@ const KnowledgeBaseGrid = () => {
                     <Image src={"/logos/web4.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
+
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "-20%" },
@@ -58,18 +56,15 @@ const KnowledgeBaseGrid = () => {
                 animate={animController}
                 transition={{ duration: 1 }}
                 style={{
-                                boxShadow:
-                                    "2px 5px 25px 0px rgba(108, 146, 242, .05)",
-                            }}
+                    boxShadow: "2px 5px 25px 0px rgba(108, 146, 242, .05)",
+                }}
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">سؤالات متداول</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">FAQ</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "
@@ -77,6 +72,7 @@ const KnowledgeBaseGrid = () => {
                     <Image src={"/logos/qa.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
+
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "+20%" },
@@ -88,12 +84,10 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">اسناد پی‌دی‌اف</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">PDF Documents</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "
@@ -101,6 +95,7 @@ const KnowledgeBaseGrid = () => {
                     <Image src={"/logos/pdf.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
+
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "-20%" },
@@ -112,12 +107,10 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">اسناد ورد</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">Word Documents</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "
@@ -125,6 +118,7 @@ const KnowledgeBaseGrid = () => {
                     <Image src={"/logos/word.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
+
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "+20%" },
@@ -136,12 +130,10 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">گوگل درایو</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">Google Drive</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "
@@ -149,6 +141,7 @@ const KnowledgeBaseGrid = () => {
                     <Image src={"/logos/drive.png"} alt={""} layout="fill" />
                 </div>
             </motion.div>
+
             <motion.div
                 variants={{
                     hidden: { opacity: 0, x: "-20%" },
@@ -160,12 +153,10 @@ const KnowledgeBaseGrid = () => {
                 className="flex items-center justify-between rounded-md border border-blue-100 p-4 shadow-sm"
             >
                 <div>
-                    <h3 className="text-lg ">سایر اسناد متنی</h3>
-                    {/* <h5 className="text-gray-400">سلام سلام سلام سلام</h5> */}
+                    <h3 className="text-lg ">Other Text Documents</h3>
                 </div>
                 <div
                     style={{
-                        //background: "rgba(136, 70, 195, 0.1)",
                         position: "relative",
                     }}
                     className="flex h-[50px] w-[50px] items-center justify-center "

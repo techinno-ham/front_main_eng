@@ -2,21 +2,27 @@ import { DocumentText1, DollarCircle, Messages3, Timer1 } from "iconsax-react"
 
 const CostSection = () => {
     return (
-        <section >
-            <div className="container relative mx-auto mt-12 h-auto overflow-hidden  px-4  pb-[50px] pt-[100px] text-center 2xl:px-20">
-                <div className="rounded-[35px] border border-solid 
-                border-[#d7def3]
-                 bg-[#f2f4fa] px-4 py-10 md:px-14 md:py-20">
+        <section>
+            <div className="container relative mx-auto mt-12 h-auto overflow-hidden px-4 pb-[50px] pt-[100px] text-center 2xl:px-20">
+                <div
+                    className="rounded-[35px] border border-solid 
+    border-[#d7def3]
+    bg-[#f2f4fa] px-4 py-10 md:px-14 md:py-20"
+                >
                     <div className="mb-10 ">
                         <h2 className="text-3xl font-medium md:text-5xl">
-                            دستیار
-                            <span className="gradient-h2 is-v2"> هوشمند </span>
-                            برای
-                            <span className="gradient-h2 is-v2"> تحول </span>
-                            کسب‌وکار شما
+                            Assistant
+                            <span className="gradient-h2 is-v2"> Smart </span>
+                            for
+                            <span className="gradient-h2 is-v2">
+                                {" "}
+                                Transformation{" "}
+                            </span>
+                            of your business
                         </h2>
                         <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                            از مزایای بی‌نظیر دستیار هوش مصنوعی بهره‌مند شوید
+                            Take advantage of the unique benefits of an AI
+                            assistant
                         </h3>
                     </div>
                     <div className="mt-16 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
@@ -29,15 +35,15 @@ const CostSection = () => {
                         >
                             <DollarCircle size="28" color="#3b82f6" />
                             <h2 className="mb-2 mt-4 block text-5xl font-bold tracking-normal text-gray-900 antialiased">
-                                ۵۰٪-
+                                50%-
                             </h2>
                             <h5 className="mb-2 block text-xl font-normal leading-snug tracking-normal antialiased ">
-                                هزینه های پشتیبانی مشتری
+                                Customer Support Costs
                             </h5>
                             <h6 className="font mb-2 block text-base font-normal leading-relaxed tracking-normal text-zinc-400 antialiased">
                                 {" "}
-                                تا 50 درصد از هزینه های پشتیبانی مشتری خود را به
-                                ازای هر نماینده کاهش دهید.
+                                Reduce up to 50% of your customer support costs
+                                per agent.
                             </h6>
                         </div>
                         <div
@@ -49,15 +55,15 @@ const CostSection = () => {
                         >
                             <Timer1 size="28" color="#3b82f6" />
                             <h2 className="mb-2 mt-4 block text-5xl font-bold tracking-normal text-gray-900 antialiased">
-                                ۳x
+                                3x
                             </h2>
                             <h5 className="mb-2 block text-xl font-normal leading-snug tracking-normal antialiased ">
-                                پاسخ سریعتر
+                                Faster Response
                             </h5>
                             <h6 className="font mb-2 block text-base font-normal leading-relaxed tracking-normal text-zinc-400 antialiased">
                                 {" "}
-                                چت بات ما 3 برابر سریعتر از یک انسان پاسخ می
-                                دهد.
+                                Our chatbot responds 3 times faster than a
+                                human.
                             </h6>
                         </div>
                         <div
@@ -69,13 +75,14 @@ const CostSection = () => {
                         >
                             <DocumentText1 size="28" color="#3b82f6" />
                             <h2 className="mb-2 mt-4 block text-5xl font-bold tracking-normal text-gray-900 antialiased">
-                                ۱۰۰٪
+                                100%
                             </h2>
                             <h5 className="mb-2 block text-xl font-normal leading-snug tracking-normal antialiased ">
-                                دقت
+                                Accuracy
                             </h5>
                             <h6 className="font mb-2 block text-base font-normal leading-relaxed tracking-normal text-zinc-400 antialiased">
-                                چت بات ما در پاسخ به سوالات دقت ۱۰۰٪ دارد.
+                                Our chatbot has 100% accuracy in answering
+                                questions.
                             </h6>
                         </div>
                         <div
@@ -87,14 +94,14 @@ const CostSection = () => {
                         >
                             <Messages3 size="28" color="#3b82f6" />
                             <h2 className="mb-2 mt-4 block text-5xl font-bold tracking-normal text-gray-900 antialiased">
-                                ۲۴/۷
+                                24/7
                             </h2>
                             <h5 className="mb-2 block text-xl font-normal leading-snug tracking-normal antialiased ">
-                                دستیار پشتیبانی
+                                Support Assistant
                             </h5>
                             <h6 className="font mb-2 block text-base font-normal leading-relaxed tracking-normal text-zinc-400 antialiased">
-                                در مقایسه با پشتیبانی استاندارد، چت بات 24/7
-                                برای مشتریان شما در دسترس است.
+                                Compared to standard support, our chatbot is
+                                available 24/7 for your customers.
                             </h6>
                         </div>
                     </div>

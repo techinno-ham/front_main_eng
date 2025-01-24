@@ -44,47 +44,41 @@ const TryNow = () => {
                 className="content-cta"
             >
                 <div className="wrapper-section width-100pc">
-                    <div className="content-cta-main">
-                        <div className="head-section">
-                            <div className="title-section-footer">
-                                <h3 className="text-3xl md:text-4xl">
-                                    همین حالا دستیار هوش مصنوعی خود را بسازید !{" "}
-                                </h3>
-                            </div>
-                            <div className="description-section-main margin-top-5px">
-                                <p className="is-rtl-center-mb mt-3 text-[12px] text-zinc-400 md:text-[16px]">
-                                    به سادگی مکالمات خود را به فرصت‌های
-                                    <span className="notice-text"> طلایی </span>
-                                    فروش و مشتریان
-                                    <span className="notice-text">
-                                        {" "}
-                                        وفادار{" "}
-                                    </span>
-                                    تبدیل کنید.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex w-full">
-                        
-        <Link
-                                        href={"/mybots"}
-                                        
-                                    >
-                                <button type="button" className="
-                                flex justify-start items-center
-                                mt-5 text-white bg-gradient-to-r 
-                                from-blue-500 via-blue-600 to-blue-700
-                                 hover:bg-gradient-to-br focus:ring-4 focus:outline-none
-                                  focus:ring-blue-300  shadow-lg
-                                   
-                                   font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
-                                رایگان شروع کنید
-                                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
-                                </button>
-                                </Link>
-                        </div>
-                    </div>
-                </div>
+    <div className="content-cta-main">
+        <div className="head-section">
+            <div className="title-section-footer">
+                <h3 className="text-3xl md:text-4xl">
+                    Build your AI assistant now!
+                </h3>
+            </div>
+            <div className="description-section-main margin-top-5px">
+                <p className="is-rtl-center-mb mt-3 text-[12px] text-zinc-400 md:text-[16px]">
+                    Easily turn your conversations into golden
+                    <span className="notice-text"> sales </span> opportunities and
+                    <span className="notice-text">
+                        loyal {" "}
+                    </span> customers.
+                </p>
+            </div>
+        </div>
+        <div className="flex w-full">
+        
+        <Link href={"/mybots"}>
+            <button type="button" className="
+                flex justify-start items-center
+                mt-5 text-white bg-gradient-to-r 
+                from-blue-500 via-blue-600 to-blue-700
+                hover:bg-gradient-to-br focus:ring-4 focus:outline-none
+                focus:ring-blue-300  shadow-lg
+                font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                Start for Free
+                <span aria-hidden="true" className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1">→</span>
+            </button>
+        </Link>
+        </div>
+    </div>
+</div>
+
                 <img
                     src="https://assets-global.website-files.com/635c4eeb78332f7971255095/657783e439db29819f44192f_patter-botpress%202.svg"
                     loading="eager"

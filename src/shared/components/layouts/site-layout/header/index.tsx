@@ -3,7 +3,7 @@ import { CloseCircle, HambergerMenu } from "iconsax-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { useRouter } from 'nextjs-toploader/app';
+import { useRouter } from "nextjs-toploader/app"
 import useUser from "@/src/shared/hooks/user"
 
 const Header = () => {
@@ -38,23 +38,23 @@ const Header = () => {
     const links: any = [
         {
             link: "/features",
-            title: "امکانات",
+            title: "Features",
         },
         {
             link: "/pricing",
-            title: "قیمت",
+            title: "Pricing",
         },
         {
             link: "/faq",
-            title: "سوالات متداول",
+            title: "FAQ",
         },
         {
             link: "/blogs",
-            title: "بلاگ",
+            title: "Blog",
         },
         {
             link: "/about-us",
-            title: "درباره‌ی ما",
+            title: "About Us",
         },
     ]
 
@@ -71,17 +71,18 @@ const Header = () => {
                 <div className="container relative mx-auto flex h-auto flex-wrap items-center justify-between overflow-hidden p-4  px-4   2xl:px-20">
                     <Link href={"/"}>
                         <div className="flex items-center justify-center">
+                            <span
+                                className={`mr-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
+                            >
+                                HamyarChat{" "}
+                            </span>
+
                             <Image
                                 src="/logo.svg"
                                 height="60"
                                 width="60"
                                 alt="Logo"
                             />
-                            <span
-                                className={`mr-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
-                            >
-                                همیارچت{" "}
-                            </span>
                         </div>
                     </Link>
 
@@ -112,37 +113,36 @@ const Header = () => {
                                 <button
                                     onClick={() => router.push("/mybots")}
                                     type="button"
-                                    className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
+                                    className="rounded-lg px-4 py-2 text-center text-sm font-medium text-white"
                                     style={{
                                         backgroundColor: "rgb(29 78 216)",
                                     }}
                                 >
-                                    پنل کاربری
+                                    User Panel
                                 </button>
                             </>
                         ) : (
                             <>
                                 <Link href="/auth/login" passHref>
-    <button className="hidden rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:block" style={{ backgroundColor: "rgb(29 78 216)" }}>
-        ورود | ثبت نام
-    </button>
-</Link>
-<Link href="/auth/login" passHref>
-    <button className="rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:hidden" style={{ backgroundColor: "rgb(29 78 216)" }}>
-        ورود
-    </button>
-</Link>
-                                {/* <button
-                                    onClick={() =>
-                                        router.push("/auth/register")
-                                    }
-                                    type="button"
-                                    className="rounded-lg  px-4 py-2 text-center text-sm font-medium text-white"
-                                    style={{
-                                        backgroundColor: "rgb(29 78 216)",
-                                    }}
-                                >
-                                </button> */}
+                                    <button
+                                        className="hidden rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:block"
+                                        style={{
+                                            backgroundColor: "rgb(29 78 216)",
+                                        }}
+                                    >
+                                        Login | Sign Up
+                                    </button>
+                                </Link>
+                                <Link href="/auth/login" passHref>
+                                    <button
+                                        className="rounded-lg px-4 py-2 text-center text-sm font-medium text-white md:hidden"
+                                        style={{
+                                            backgroundColor: "rgb(29 78 216)",
+                                        }}
+                                    >
+                                        Login
+                                    </button>
+                                </Link>
                             </>
                         )}
 

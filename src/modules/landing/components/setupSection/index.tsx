@@ -1,79 +1,81 @@
-import {
-    Box2,
-    ChemicalGlass,
-    Magicpen,
-} from "iconsax-react"
+import { Box2, ChemicalGlass, Magicpen } from "iconsax-react"
 
 const SetupSection = () => {
     return (
-        <section 
-        
-        className="vertical-mask-gradient bg-[url('https://assets-global.website-files.com/635c4eeb78332f7971255095/651bde55c70a6abcd28bad3e_circle-grid-bg_dots.webp')] bg-cover bg-center">
-            <div className="container relative mx-auto h-auto overflow-hidden  px-4  py-[100px] text-center 2xl:px-20">
+        <section className="vertical-mask-gradient bg-[url('https://assets-global.website-files.com/635c4eeb78332f7971255095/651bde55c70a6abcd28bad3e_circle-grid-bg_dots.webp')] bg-cover bg-center">
+            <div className="container relative mx-auto h-auto overflow-hidden px-4 py-[100px] text-center 2xl:px-20">
                 <div className="my-10 md:mt-10">
                     <h2 className="text-3xl font-medium md:text-5xl">
-                        چت بات بدون
+                        Chatbot without
                         <span className="gradient-h2 is-v2">
-                            &nbsp;دانش برنامه نویسی
+                            &nbsp;Programming Knowledge
                         </span>
                     </h2>
                     <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                        راه اندازی فقط در کمتر از 2 دقیقه
+                        Set up in less than 2 minutes
                     </h3>
                 </div>
 
                 <div className="mx-auto mt-4 grid grid-cols-1 gap-4 md:grid-cols-3  md:gap-6 ">
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
-                        <div className="absolute left-4 top-3">
+                        <div className="absolute right-4 top-3">
                             <Box2 size="32" color="#1d4ed8" />
                         </div>
                         <div className="p-6">
-                            <h5 className="text-blue-gray-900 block text-right text-xl font-semibold leading-snug tracking-normal antialiased">
-                                مرحله 1
+                            <h5 className="text-blue-gray-900 block text-left text-xl font-semibold leading-snug tracking-normal antialiased">
+                                Step 1
                             </h5>
-                            <p className="mb-1 mt-2 text-right font-semibold  text-zinc-900">
-                                وارد کردن منابع داده چندگانه
+                            <p className="mb-1 mt-2 text-left font-semibold text-zinc-900">
+                                Enter multiple data sources
                             </p>
-                            <p className="text-right  text-sm text-zinc-500">
-                                لینک وب سایت یا فایل های خود یا متن ها خود را
-                                وارد میکنید.
+                            <p className="text-left text-sm text-zinc-500">
+                                Enter your website link, files, or text.
                             </p>
-                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"></img>
+                            <img
+                                className="mx-auto mt-4 w-full"
+                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"
+                            />
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
-                        <div className="absolute left-4 top-3">
+                        <div className="absolute right-4 top-3">
                             <ChemicalGlass size="32" color="#1d4ed8" />
                         </div>
                         <div className="p-6">
-                            <h5 className="block text-right text-xl font-semibold leading-snug tracking-normal text-gray-700 antialiased">
-                                مرحله 2
+                            <h5 className="block text-left text-xl font-semibold leading-snug tracking-normal text-gray-700 antialiased">
+                                Step 2
                             </h5>
-                            <p className="mb-1 mt-2 text-right font-semibold  text-gray-900">
-                                آموزش چت بات
+                            <p className="mb-1 mt-2 text-left font-semibold text-gray-900">
+                                Train the chatbot
                             </p>
-                            <p className="text-right  text-sm text-zinc-500">
-                                چت بات را با داده های خود  داده های خود  داده های خودآموزش دهید.
+                            <p className="text-left text-sm text-zinc-500">
+                                Train the chatbot with your data.
                             </p>
-                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-2.png"></img>
+                            <img
+                                className="mx-auto mt-4 w-full"
+                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-2.png"
+                            />
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
-                        <div className="absolute left-4 top-3">
+                        <div className="absolute right-4 top-3">
                             <Magicpen size="32" color="#1d4ed8" />
                         </div>
                         <div className="p-6">
-                            <h5 className="text-blue-gray-900 block text-right text-xl font-semibold leading-snug tracking-normal antialiased">
-                                مرحله 3
+                            <h5 className="text-blue-gray-900 block text-left text-xl font-semibold leading-snug tracking-normal antialiased">
+                                Step 3
                             </h5>
-                            <p className="mb-1 mt-2 text-right font-semibold  text-zinc-900">
-                                نصب و استفاده
+                            <p className="mb-1 mt-2 text-left font-semibold text-zinc-900">
+                                Install and use
                             </p>
-                            <p className="text-right  text-sm text-zinc-500">
-                                بدون هیچ دانشی از همیار چت در سایت و یا جاهای
-                                مختلفی استفاده کنید.
+                            <p className="text-left text-sm text-zinc-500">
+                                Use Hamyar Chat on your website or anywhere
+                                without any knowledge.
                             </p>
-                            <img className="mx-auto mt-4 w-full" src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-3.png"></img>
+                            <img
+                                className="mx-auto mt-4 w-full"
+                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-3.png"
+                            />
                         </div>
                     </div>
                 </div>
