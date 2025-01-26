@@ -10,8 +10,12 @@ const config: Config = {
     theme: {
         extend: {
             fontFamily: {
-                yekan: ["var(--font-yekan)"],
-                kalame: ["var(--font-kalame)"],
+                //Todo: yekan: ["var(--font-yekan)"],
+                yekan: ["var(--font-inter)", "sans-serif"],
+                //Todo: kalame: ["var(--font-kalame)"],
+                kalame: ["var(--font-lato)", "sans-serif"],
+                inter: ["var(--font-inter)", "sans-serif"],
+                oswald: ["var(--font-oswald)", "sans-serif"],
               },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

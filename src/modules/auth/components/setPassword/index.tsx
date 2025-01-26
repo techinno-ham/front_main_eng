@@ -23,10 +23,10 @@ const SetPassword = () => {
     } = useForm()
 
     const onSubmit = async (data: any) => {
-        //setp 1 (chekc password is same)
+        // Step 1 (check password is the same)
 
         if(data.password!==data.passwordAgain){
-           toast.error("مقدادیر رمز عبورها یکسان نمی باشد .")
+           toast.error("The password values do not match.")
             return
         }
 
@@ -40,12 +40,9 @@ const SetPassword = () => {
                 })
             } else {
                 console.error("Validation failed with unknown error:", error)
-                toast.error("مشکلی در در این مرحله وجود دارد")
+                toast.error("There is an issue at this stage.")
             }
         }
-
-
-    
     }
     const togglePasswordVisibility = () => setShowPassword(!showPassword)
 
@@ -64,13 +61,13 @@ const SetPassword = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیارچت{" "}
+                                HamyarChat{" "}
                             </span>
                         </div>
                     </Link>
                 </div>
                 <div className="text-sm text-white md:text-sm ">
-                    <span>ساختن چت بات هوشمند برای کسب و کار شما</span>
+                    <span>Create an intelligent chatbot for your business</span>
                 </div>
             </div>
             <div className="flex justify-center">
@@ -88,16 +85,14 @@ const SetPassword = () => {
                     >
                         <div className="mb-2">
                             <span className="text-3xl font-extrabold text-blue-600">
-                                تعیین رمز عبور
+                                Set Password
                             </span>
                         </div>
                         <div className="relative w-full">
                             <span className="text-sm text-gray-400">
-                                 رمز عبور خود را برای ورود به روش های دیگر تعیین کنید.
+                                Set your password for alternate login methods.
                             </span>
                         </div>
-
-                       
 
                         <div className="relative mt-8 w-full ">
                             <div className="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
@@ -106,9 +101,9 @@ const SetPassword = () => {
                             <input
                                 type={showPassword ? "text" : "password"}
                                 className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                placeholder="رمز عبور"
+                                placeholder="Password"
                                 {...register("password", {
-                                    required: "رمز عبور الزامی است",
+                                    required: "Password is required",
                                 })}
                             />
                             <button
@@ -131,9 +126,9 @@ const SetPassword = () => {
                             <input
                                 type={showPassword ? "text" : "password"}
                                 className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                placeholder=" تکرار رمز عبور"
+                                placeholder="Confirm Password"
                                 {...register("passwordAgain", {
-                                    required: "رمز عبور الزامی است",
+                                    required: "Password is required",
                                 })}
                             />
                         </div>
@@ -146,21 +141,21 @@ const SetPassword = () => {
                                 {isLoading ? (
                                     <>
                                         <span className="mr-3">
-                                            مقداری صبر کنید ...
+                                            Please wait ...
                                         </span>
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>                                تعیین رمز عبور </>
+                                    <>Set Password</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">
-                                آیا نیار به تعیین رمز عبورتان  ندارید ؟{" "}
+                                Don nott need to set your password?{" "}
                                 <Link
                                     href={"/mybots"}
                                     className=" whitespace-nowrapfont-semibold ml-1 text-blue-600 hover:underline"
                                 >
-                                    رد کردن مرحله
+                                    Skip this step
                                 </Link>
                             </p>
                         </div>

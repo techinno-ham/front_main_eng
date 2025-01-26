@@ -40,14 +40,14 @@ const Register = () => {
             } else {
                 // Handle other errors (if any)
                 console.error("Validation failed with unknown error:", error)
-                toast.error("مشکلی در ثبت نام وجود دارد")
+                toast.error("There is a problem with the registration.")
             }
         }
     }
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()
-       window.location.href = `https://hamyar.chat/api/v1/auth/google`
+        window.location.href = `https://hamyar.chat/api/v1/auth/google`
     }
 
     return (
@@ -65,26 +65,26 @@ const Register = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیارچت
+                                HamyarChat
                             </span>
                         </div>
                     </Link>
                 </div>
                 <div className="text-sm text-white md:text-sm ">
-                    <span>ساختن چت بات هوشمند برای کسب و کار شما</span>
+                    <span>Building a smart chatbot for your business</span>
                 </div>
             </div>
             <div className="flex justify-center">
                 <div className="absolute top-[110px] z-10 flex max-w-md flex-col">
                 <div className="h-56 w-full">
                     <Image
-    src="/images/login-image.webp"
-    alt="Login Image"
-    width={450}
-    height={315}
-    layout="responsive"
-    className="rounded-2xl object-cover"
-/>
+                        src="/images/login-image.webp"
+                        alt="Login Image"
+                        width={450}
+                        height={315}
+                        layout="responsive"
+                        className="rounded-2xl object-cover"
+                    />
                     </div>
                     <form
                         className="relative z-10 rounded-2xl  bg-white p-6 shadow-[0_2px_16px_-3px_rgba(6,81,237,0.3)]"
@@ -92,7 +92,7 @@ const Register = () => {
                     >
                         <div className="mb-10">
                             <span className="text-3xl font-extrabold text-blue-600">
-                                ثبت نام
+                                Register
                             </span>
                         </div>
                         <div className="relative flex w-full gap-9">
@@ -104,9 +104,9 @@ const Register = () => {
                                     type="text"
                                     id="simple-search"
                                     className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                    placeholder="نام "
+                                    placeholder="First Name"
                                     {...register("name", {
-                                        required: "نام الزامی است",
+                                        required: "First name is required",
                                     })}
                                 />
                             </div>
@@ -118,9 +118,9 @@ const Register = () => {
                                     type="text"
                                     id="simple-search"
                                     className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                    placeholder="نام خانوادگی"
+                                    placeholder="Last Name"
                                     {...register("lastName", {
-                                        required: "نام خانوادگی الزامی است",
+                                        required: "Last name is required",
                                     })}
                                 />
                             </div>
@@ -134,9 +134,9 @@ const Register = () => {
                                 type="text"
                                 id="simple-search"
                                 className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                placeholder="ایمیل یا نام کاربری"
+                                placeholder="Email or Username"
                                 {...register("email", {
-                                    required: "ایمیل الزامی است",
+                                    required: "Email is required",
                                 })}
                             />
                         </div>
@@ -148,9 +148,9 @@ const Register = () => {
                             <input
                                 type={showPassword ? "text" : "password"}
                                 className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                placeholder="رمز عبور"
+                                placeholder="Password"
                                 {...register("password", {
-                                    required: "رمز عبور الزامی است",
+                                    required: "Password is required",
                                 })}
                             />
                             <button
@@ -174,21 +174,21 @@ const Register = () => {
                                 {isLoading ? (
                                     <>
                                         <span className="mr-3">
-                                            مقداری صبر کنید ...
+                                            Please wait...
                                         </span>
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>ثبت نام همیارچت</>
+                                    <>Register with HamyarChat</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">
-                                آیا قبلا اکانت کاربری دارید ؟{" "}
+                                Already have an account?{" "}
                                 <Link
                                     href={"/auth/login"}
                                     className=" whitespace-nowrapfont-semibold ml-1 text-blue-600 hover:underline"
                                 >
-                                    ورود
+                                    Log in
                                 </Link>
                             </p>
                         </div>
@@ -240,23 +240,6 @@ const Register = () => {
                                         />
                                     </svg>
                                 </button>
-
-                                {/* <button
-                                    type="button"
-                                    className="border-none outline-none"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="30px"
-                                        fill="#007bff"
-                                        viewBox="0 0 167.657 167.657"
-                                    >
-                                        <path
-                                            d="M83.829.349C37.532.349 0 37.881 0 84.178c0 41.523 30.222 75.911 69.848 82.57v-65.081H49.626v-23.42h20.222V60.978c0-20.037 12.238-30.956 30.115-30.956 8.562 0 15.92.638 18.056.919v20.944l-12.399.006c-9.72 0-11.594 4.618-11.594 11.397v14.947h23.193l-3.025 23.42H94.026v65.653c41.476-5.048 73.631-40.312 73.631-83.154 0-46.273-37.532-83.805-83.828-83.805z"
-                                            data-original="#010002"
-                                        ></path>
-                                    </svg>
-                                </button> */}
                             </div>
                         </div>
                     </form>

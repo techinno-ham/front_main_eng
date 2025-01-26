@@ -19,7 +19,7 @@ const ForgetPassword = () => {
     } = useForm()
 
     const onSubmit = async (data: any) => {
-        toast.error("در حال حاظر سرویس مورد نظر در دسترس نمی باشد.")
+        toast.error("The requested service is currently unavailable.")
     }
 
     return (
@@ -37,13 +37,13 @@ const ForgetPassword = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                همیارچت{" "}
+                                HamyarChat{" "}
                             </span>
                         </div>
                     </Link>
                 </div>
                 <div className="text-sm text-white md:text-sm ">
-                    <span>ساختن چت بات هوشمند برای کسب و کار شما</span>
+                    <span>Build a smart chatbot for your business</span>
                 </div>
             </div>
             <div className="flex justify-center">
@@ -61,13 +61,12 @@ const ForgetPassword = () => {
                     >
                         <div className="mb-2">
                             <span className="text-3xl font-extrabold text-blue-600">
-                                فراموشی رمز عبور
+                                Forget Password
                             </span>
                         </div>
                         <div className="relative w-full">
                             <span className="text-sm text-gray-400">
-                                اگر رمز عبور خود را فراموش کرده اید، ایمیل خود
-                                را برای ما ارسال کنید.
+                                If you have forgotten your password, please send us your email.
                             </span>
                         </div>
 
@@ -79,9 +78,9 @@ const ForgetPassword = () => {
                                 type="text"
                                 id="simple-search"
                                 className=" mr-1  block w-full border-b   border-gray-300 p-2.5 ps-10 text-sm text-gray-800 outline-none focus:border-blue-500"
-                                placeholder="ایمیل"
+                                placeholder="Email"
                                 {...register("email", {
-                                    required: "ایمیل الزامی است",
+                                    required: "Email is required",
                                 })}
                             />
                         </div>
@@ -94,21 +93,21 @@ const ForgetPassword = () => {
                                 {false ? (
                                     <>
                                         <span className="mr-3">
-                                            مقداری صبر کنید ...
+                                            Please wait...
                                         </span>
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>ارسال</>
+                                    <>Submit</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">
-                                آیا رمز عبورتان را به یاد آوردید ؟{" "}
+                                Did you remember your password?{" "}
                                 <Link
                                     href={"/auth/login"}
                                     className=" whitespace-nowrapfont-semibold ml-1 text-blue-600 hover:underline"
                                 >
-                                    ورود
+                                    Login
                                 </Link>
                             </p>
                         </div>
