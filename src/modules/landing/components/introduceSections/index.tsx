@@ -119,7 +119,7 @@ const IntroduceSections = () => {
                         alt="Logo"
                     />
                 </div>
-                <div className="left-blur absolute -top-[15%] right-[80%] -z-50 w-[1000px] opacity-60  md:-top-[55%]">
+                <div className="left-blur absolute -top-[15%] right-[90%] -z-50 w-[400px] opacity-60  md:-top-[40%]">
                     <Image
                         className="blur-3xl "
                         src="/images/rightBlur.png"
@@ -241,7 +241,7 @@ const IntroduceSections = () => {
                 font-medium text-white shadow-lg shadow-blue-500/50 hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-blue-300"
                                         >
                                             Create Your Assistant
-                                            <span className="notice-text mr-2 inline-block text-[10px]">
+                                            <span className="notice-text ml-2 inline-block text-[10px]">
                                                 {" "}
                                                 Free{" "}
                                             </span>
@@ -261,7 +261,7 @@ const IntroduceSections = () => {
                 text-sm font-medium text-blue-500 shadow-lg hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-blue-300"
                                         >
                                             Contact Us
-                                            <span className="mr-1">
+                                            <span className="ml-1">
                                                 <Call
                                                     size="20"
                                                     color="#3b82f6"

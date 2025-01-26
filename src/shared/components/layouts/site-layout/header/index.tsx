@@ -71,18 +71,19 @@ const Header = () => {
                 <div className="container relative mx-auto flex h-auto flex-wrap items-center justify-between overflow-hidden p-4  px-4   2xl:px-20">
                     <Link href={"/"}>
                         <div className="flex items-center justify-center">
-                            <span
-                                className={`mr-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
-                            >
-                                HamyarChat{" "}
-                            </span>
-
-                            <Image
+                        <Image
                                 src="/logo.svg"
-                                height="60"
-                                width="60"
+                                height="50"
+                                width="50"
                                 alt="Logo"
                             />
+                            <span
+                                className={`ml-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
+                            >
+                                Hamyar{" "}
+                            </span>
+
+                            
                         </div>
                     </Link>
 
