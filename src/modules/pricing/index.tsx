@@ -108,7 +108,7 @@ const Pricing = () => {
                             <List>1 AI assistant</List>
                             <List>Limited to 10 training links</List>
                             <List>400,000 character storage per assistant</List>
-                            <List>Online chat with support operators</List>
+                            <List>🧑🏻‍💻 Online chat with support operators</List>
                             <List>
                                 Ability to design and display advanced forms
                             </List>
@@ -127,6 +127,7 @@ const Pricing = () => {
                             buttonLink="https://telegram.me/hamyarchat"
                             beforeListText={"Everything in Basic, plus..."}
                             active={false}
+                            priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
                         >
                             <List>1,200 messages per month</List>
                             <List>3 AI assistants</List>
@@ -146,6 +147,7 @@ const Pricing = () => {
                             buttonLink="https://telegram.me/hamyarchat"
                             beforeListText={"Everything in Standard, plus..."}
                             active={true}
+                            priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
                         >
                             <List>4,200 messages per month</List>
                             <List>5 AI assistants</List>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Services from "../../../../../src/shared/services/service"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import { toast } from "sonner"
-import { ArrowLeft2, Calendar, Call, Magicpen } from "iconsax-react"
+import { ArrowRight2, Calendar, Call, Magicpen } from "iconsax-react"
 import "./style.css"
 import useChatModal from "@/src/shared/components/common/chatModal/hooks/useChatModal"
 import { addUserLimitBotDemo, serverAddData, userLimitBotDemo } from "./actions"
@@ -177,7 +177,7 @@ const IntroduceSections = () => {
                                             onClick={handleSubmit}
                                             className="p-2"
                                         >
-                                            <ArrowLeft2
+                                            <ArrowRight2
                                                 size="28"
                                                 color={
                                                     inputValue
@@ -260,9 +260,9 @@ const IntroduceSections = () => {
                 text-center 
                 text-sm font-medium text-blue-500 shadow-lg hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-blue-300"
                                         >
-                                            Contact Us
+                                            Schedule a Meeting
                                             <span className="ml-1">
-                                                <Call
+                                                <Calendar
                                                     size="20"
                                                     color="#3b82f6"
                                                 />

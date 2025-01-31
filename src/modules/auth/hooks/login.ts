@@ -69,6 +69,7 @@ const useLogin = () => {
     }
 
     return {
+        user,
         login,
         isLoading,
         error,

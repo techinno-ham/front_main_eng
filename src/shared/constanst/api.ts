@@ -88,4 +88,8 @@ export const API = {
     NOTIFICATIONS: "/user/notifications",
     SEEN_NOTIFICATION: "/user/notifications/{id}/seen",
     SEEN_ALL_NOTIFICATIONS: "/user/notifications/all/seen",
+
+    //Stripe
+    STRAPI_CHECKOUT: "/stripe/checkout",
+    STRIPE_SESSION: "/stripe/session-details?session_id="
 }

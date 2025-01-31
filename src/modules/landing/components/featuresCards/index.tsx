@@ -105,7 +105,7 @@ const FeaturesCards = () => {
                                         <span>Create Free Chatbot</span>
                                         <span
                                             aria-hidden="true"
-                                            className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
+                                            className="mr-1 transform transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
                                         >
                                             →
                                         </span>
@@ -173,7 +173,7 @@ const FeaturesCards = () => {
                                         <span>Connect with everyone, everywhere</span>
                                         <span
                                             aria-hidden="true"
-                                            className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
+                                            className="mr-1 transform transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
                                         >
                                             →
                                         </span>
@@ -241,7 +241,7 @@ const FeaturesCards = () => {
                                         <span>One-click setup</span>
                                         <span
                                             aria-hidden="true"
-                                            className="mr-1 transform rotate-180 transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
+                                            className="mr-1 transform transition-all duration-500 ease-in-out group-hover/cta:translate-x-1"
                                         >
                                             →
                                         </span>

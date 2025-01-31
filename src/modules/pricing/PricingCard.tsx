@@ -1,7 +1,13 @@
 //https://uiverse.io/G4b413l/good-crab-75
 //https://tailwindcomponents.com/component/tailwind-pricing-tables
+"use client"
 
 import React from "react"
+import { loadStripe } from "@stripe/stripe-js"
+import mainApi from "@/src/infrastructures/http-client-main"
+import { API } from "@/src/shared/constanst/api"
+import useLogin from "../auth/hooks/login"
+import { useRouter } from "next/navigation"
 
 const PricingCard = ({
     order,
@@ -14,21 +20,53 @@ const PricingCard = ({
     active,
     beforeListText,
     buttonLink,
+    priceId,
 }: any) => {
+    const router = useRouter()
+    const { user } = useLogin()
+
     const dynamicShadowGenerator = (order: number) => {
         let fullString = `rgb(46 49 240 / 40%) 0px 0px 20px, rgb(46 88 240 / 30%) 0px 5px, rgb(46 158 240 / 20%) 0px 10px, rgb(46 91 240 / 10%) 0px 15px`
         let splittedString = fullString.split(",")
         let splicedArray = splittedString.slice(0, order)
         return splicedArray
     }
+
+    const handleSubmit = async (priceId: string) => {
+        const userId = user?.user_id
+        if (!userId) {
+            router.push("/auth/login")
+            return
+        }
+        const stripe = await loadStripe(
+            process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string,
+        )
+
+        if (!stripe) return
+
+        try {
+            const response = await mainApi.post(API.STRAPI_CHECKOUT, {
+                priceId,
+                userId,
+            })
+            const data = response.data
+            console.log({ data })
+
+            if (!data.ok) throw new Error("Something went wrong")
+
+            await stripe.redirectToCheckout({ sessionId: data.result.id })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <div className="relative w-full px-4 pb-10 md:w-1/2 lg:w-1/4">
                 {active && (
-                   <span className="absolute -top-4 left-1/2 z-10 inline-flex h-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#38BDF8] px-4 text-sm font-semibold tracking-[0.2px] text-white">
-                   Most Popular
-               </span>
-               
+                    <span className="absolute -top-4 left-1/2 z-10 inline-flex h-8 -translate-x-1/2 items-center justify-center rounded-full bg-[#38BDF8] px-4 text-sm font-semibold tracking-[0.2px] text-white">
+                        Most Popular
+                    </span>
                 )}
                 <div
                     style={{
@@ -43,16 +81,14 @@ const PricingCard = ({
                             <span className="pricing-header mb-3 block text-3xl font-bold">
                                 {type}
                             </span>
-                            <h3 className="text-dark font-medium mb-5 text-2xl">
-                                <span className="tracking-wider">
-                                {price}
-                                </span>
+                            <h3 className="text-dark mb-5 text-2xl font-medium">
+                                <span className="tracking-wider">{price}</span>
                                 <span className="text-zinc-400">
-                                {
-                                    subscription && <span className="ml-1 text-[12px]">
-                                    {subscription}
-                                    </span>
-                                }
+                                    {subscription && (
+                                        <span className="ml-1 text-[12px]">
+                                            {subscription}
+                                        </span>
+                                    )}
                                 </span>
                                 {/* <span
                                     style={{
@@ -117,16 +153,25 @@ const PricingCard = ({
                         </div>
                         <div>
                             <hr className="mx-auto my-4 h-0.5 w-60 rounded border-0 bg-blue-100 md:my-10 " />
-                            <a
-                                href={`${buttonLink}`}
-                                className={` ${
-                                    active
-                                        ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
-                                        : "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
-                                } `}
-                            >
-                                {buttonText}
-                            </a>
+                            {priceId ? (
+                                <button
+                                    onClick={() => handleSubmit(priceId)}
+                                    className={`${
+                                        active
+                                            ? "border-stroke hover:border-primary hover:bg-primary dark:border-dark-3 block w-full rounded-md border bg-blue-700 p-3 text-center text-base font-medium text-white transition hover:text-white"
+                                            : "border-primary bg-primary block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
+                                    }`}
+                                >
+                                    {buttonText}
+                                </button>
+                            ) : (
+                                <a
+                                    href={buttonLink}
+                                    className="block w-full rounded-md border p-3 text-center text-base font-medium text-blue-700 transition hover:bg-blue-700 hover:text-white"
+                                >
+                                    {buttonText}
+                                </a>
+                            )}
                         </div>
                     </div>
 

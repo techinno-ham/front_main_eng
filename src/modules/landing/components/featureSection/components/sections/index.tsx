@@ -60,7 +60,7 @@ const Section = ({
                         <div className="h-auto w-full">
                             <motion.p
                                 variants={{
-                                    hidden: { opacity: 0, x: "-20%" },
+                                    hidden: { opacity: 0, x: "+20%" },
                                     visible: { opacity: 1, x: 0 },
                                 }}
                                 initial="hidden"
@@ -74,7 +74,7 @@ const Section = ({
                         </div>
                         <motion.h2
                             variants={{
-                                hidden: { opacity: 0, x: "-20%" },
+                                hidden: { opacity: 0, x: "+20%" },
                                 visible: { opacity: 1, x: 0 },
                             }}
                             initial="hidden"
@@ -87,7 +87,7 @@ const Section = ({
 
                         <motion.p
                             variants={{
-                                hidden: { opacity: 0, x: "-20%" },
+                                hidden: { opacity: 0, x: "+20%" },
                                 visible: { opacity: 1, x: 0 },
                             }}
                             initial="hidden"
