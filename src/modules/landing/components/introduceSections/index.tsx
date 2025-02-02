@@ -136,7 +136,7 @@ const IntroduceSections = () => {
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-4">
                                     <h1 className="text-1xl text-center font-kalame font-bold !leading-[30px] text-slate-700 md:text-left md:text-3xl md:!leading-[60px] ">
                                         <span className="gradient-h2 is-v2 text-4xl md:text-6xl">
-                                            HamyarChat
+                                            HamyarAI
                                         </span>
                                         <span>
                                             , provider of personalized

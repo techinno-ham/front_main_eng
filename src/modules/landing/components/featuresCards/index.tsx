@@ -92,7 +92,7 @@ const FeaturesCards = () => {
                                         </p>
                                     </div>
                                     <div className="description-section-main">
-                                        <p className="mt-2 text-right text-sm font-normal text-zinc-400">
+                                        <p className="mt-2 text-left text-sm font-normal text-zinc-400">
                                             Use insights from analytics, misunderstanding, and sentiment analysis to
                                             continuously improve your chatbot.
                                         </p>
@@ -160,7 +160,7 @@ const FeaturesCards = () => {
                                         </p>
                                     </div>
                                     <div className="description-section-main">
-                                        <p className="mt-2 text-right text-sm font-normal text-zinc-400">
+                                        <p className="mt-2 text-left text-sm font-normal text-zinc-400">
                                             Our engine automatically translates into over 100 languages, so you can
                                             deploy your chatbot globally without language barriers.
                                         </p>
@@ -228,7 +228,7 @@ const FeaturesCards = () => {
                                         </p>
                                     </div>
                                     <div className="description-section-main">
-                                        <p className="mt-2 text-right text-sm font-normal text-zinc-400">
+                                        <p className="mt-2 text-left text-sm font-normal text-zinc-400">
                                             Do not stop at one channel. Set up on all our channels with one click to
                                             communicate with users wherever they are.
                                         </p>
