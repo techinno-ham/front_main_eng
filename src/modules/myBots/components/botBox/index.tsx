@@ -48,7 +48,7 @@ const BotBox = (props: IBotBoxProps) => {
             if (props.onDelete && props.botsData.bot_id) {
                 await props.onDelete(props.botsData.bot_id)
                 setOpen(false)
-                toast.success("چت بات شما با موفقیت حذف شد")
+                toast.success("Your chatbot has been successfully deleted")
             }
         } catch (error) {
             console.error("Error deleting bot:", error)
@@ -60,7 +60,7 @@ const BotBox = (props: IBotBoxProps) => {
     const handleCopyBot = (e: React.MouseEvent) => {
         e.stopPropagation()
         e.preventDefault()
-        toast.error("در حال حاظر کپی کردن چت بات مورد نظر امکان پذیر نمی باشد.")
+        toast.error("Currently, copying the selected chatbot is not possible.")
     }
 
     return (
@@ -104,20 +104,20 @@ const BotBox = (props: IBotBoxProps) => {
                             <div className="flex flex-col">
                                 <div>
                                     <span className="text-[20px]">
-                                        { props.botsData?.name || "همیار بات"}
+                                        { props.botsData?.name || "Helper Bot"}
                                     </span>
                                 </div>
                                 <div>
                                     <span className="text-[10px] text-[gray]">
-                                        آخرین بروزرسانی :
+                                        Last update :
                                         {props.botsData?.updated_at
                                             ? formatRelativeTime(
                                                   props.botsData.updated_at,
                                               )
-                                            : " مدتی قبل"}
+                                            : "Some time ago"}
                                     </span>
                                     <span className="block text-[10px] text-[gray]">
-                                        چت بات آیدی :{props.botsData?.bot_id}
+                                        Chatbot ID :{props.botsData?.bot_id}
                                     </span>
                                 </div>
                             </div>
@@ -142,13 +142,12 @@ const BotBox = (props: IBotBoxProps) => {
                                                 />
                                                 <div className="mx-auto  w-60">
                                                     <h3 className="text-lg font-black text-gray-800">
-                                                        حذف کردن چت بات
+                                                        Delete Chatbot
                                                     </h3>
                                                     <p className="mt-[8px] text-[12px] text-gray-500">
-                                                        آیا مطمئن هستید که می
-                                                        خواهید ربات چت خود را
-                                                        حذف کنید؟ این عمل قابل
-                                                        برگشت نیست.
+                                                        Are you sure you want to
+                                                        delete your chatbot? This action
+                                                        is irreversible.
                                                     </p>
                                                 </div>
                                             </div>
@@ -157,7 +156,7 @@ const BotBox = (props: IBotBoxProps) => {
                                                     className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                                                     onClick={handleOnCloseModal}
                                                 >
-                                                    لغو
+                                                    Cancel
                                                 </button>
                                                 <button
                                                     style={{
@@ -171,13 +170,13 @@ const BotBox = (props: IBotBoxProps) => {
                                                         <>
                                                             <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                                             <span className="mr-3">
-                                                                صبر کنید ...
+                                                                Please wait...
                                                             </span>
                                                         </>
                                                     ) : (
                                                         <>
                                                             <span>
-                                                                حذف کردن
+                                                                Delete
                                                             </span>
                                                         </>
                                                     )}

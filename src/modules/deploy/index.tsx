@@ -4,7 +4,7 @@ import Layout from "./components/layout"
 import ActiveTab from "@/src/shared/components/common/activeTab"
 import useStoreViewControllerDeploy from "./hooks/view-controller-setting"
 import Web from "./components/web"
-import Sahre from "./components/share"
+import Share from "./components/share"
 import NPM from "./components/npm"
 import Integrations from "./components/integrations"
 import LoaderLottie from "@/src/shared/components/common/loader"
@@ -17,15 +17,15 @@ const Deploy = () => {
     const viewController = useStoreViewControllerDeploy()
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
-    const { setActive,setBotHash } = useStoreActive()
+    const { setActive, setBotHash } = useStoreActive()
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null)
 
     const tabsInfo = {
-        Web: " استقرار وب",
-        Share: "اشتراک گذاری",
-        NPM: "پکیج جاوا اسکریپت",
-        Integrations: " استقرار شبکه های اجتماعی",
+        Web: "Web Deployment",
+        Share: "Sharing",
+        NPM: "JavaScript Package",
+        Integrations: "Social Media Deployment",
     }
 
     useEffect(() => {
@@ -45,12 +45,13 @@ const Deploy = () => {
         }
         fetchConfigs()
     }, [botId])
+
     const renderTabContent = () => {
         switch (viewController.activeTab) {
             case "Web":
                 return <Web />
             case "Share":
-                return <Sahre />
+                return <Share />
             case "NPM":
                 return <NPM />
             case "Integrations":
@@ -63,9 +64,9 @@ const Deploy = () => {
     if (loading)
         return (
             <>
-                <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
+                <div className="mx-auto flex h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading data...</span>
                         <LoaderLottie />
                     </div>
                 </div>

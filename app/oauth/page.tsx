@@ -6,44 +6,45 @@ import { toast } from "sonner"
 import { setCookie } from "nookies"
 
 const OAuthContent = () => {
-    const router = useRouter()
-    const searchParams = useSearchParams()
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         const handleOAuth = () => {
             const token = searchParams.get("token");
-            const isNew=searchParams.get("isNeedChangePass")=="true";
+            const isNew = searchParams.get("isNeedChangePass") === "true";
+            
             if (token) {
                 try {
-                    toast.success("ورود شما موفق آمیز بود.")
+                    toast.success("Your login was successful.");
                     setCookie(null, "accessToken", token, {
                         maxAge: 1 * 24 * 60 * 60,
                         path: "/",
                         secure: true, // Use this in production
                         sameSite: "strict", // Prevent CSRF attacks
-                    })
+                    });
 
-                    if(isNew){
-                        router.push("/auth/set-password")
-                    }else{
-                        router.push("/mybots")
+                    if (isNew) {
+                        router.push("/auth/set-password");
+                    } else {
+                        router.push("/mybots");
                     }
                 } catch (err) {
-                    console.error(err)
+                    console.error(err);
                     // Handle error (e.g., token invalid or expired)
                 }
             } else {
-                router.push("/auth/login")
-                console.error("Token not found in query parameters.")
+                router.push("/auth/login");
+                console.error("Token not found in query parameters.");
                 // Handle case where token is not present in URL (shouldn't happen ideally)
             }
-        }
+        };
 
-        handleOAuth()
-    }, [router, searchParams])
+        handleOAuth();
+    }, [router, searchParams]);
 
-    return <div>در حال انتقال به پنل کاربری ...</div>
-}
+    return <div>Redirecting to the user panel...</div>;
+};
 
 const OAuthPage = () => {
     return (

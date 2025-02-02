@@ -11,10 +11,10 @@ const Share = () => {
         navigator.clipboard
             .writeText(urlCode)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("Your code has been copied.")
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Your code could not be copied.")
             })
     }
     const handleVisit = () => {
@@ -34,9 +34,7 @@ const Share = () => {
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
-                                                برای اشتراک گذاری فرم  خود
-                                                میتوانید از این آدرس استفاده
-                                                کنید.
+                                                To share your form, you can use this address.
                                             </p>
                                         </div>
                                     </div>

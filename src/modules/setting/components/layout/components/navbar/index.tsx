@@ -5,27 +5,27 @@ import TabLink from "./components/tablinks"
 
 const menuItems = [
     {
-        title: "عمومی",
+        title: "General",   // Changed to English
         store: "General",
         icon: <Setting2 size={20} />,
     },
     {
-        title: "هسته",
+        title: "Model",   // Changed to English
         store: "Model",
         icon: <Magicpen size={20} />,
     },
     {
-        title: "ظاهری",
+        title: "Appearance",  // Changed to English
         store: "Apperence",
         icon: <Brush size={20} />,
     },
     {
-        title: "امنیت",
+        title: "Security",   // Changed to English
         store: "Security",
         icon: <Danger size={20} />,
     },
     {
-        title: "فرم ها",
+        title: "Forms",   // Changed to English
         store: "Leads",
         icon: <DocumentText size={20} />,
     },
@@ -34,7 +34,7 @@ const menuItems = [
 const Navbar = () => {
     return (
         <div>
-            <ul className="flex w-[100%] gap-x-[35px] overflow-auto md:gap-x-[70px]">
+            <ul className="flex w-[100%] gap-x-[35px] overflow-auto ">
                 {menuItems.map((item, index) => {
                     return (
                         <li key={index}>

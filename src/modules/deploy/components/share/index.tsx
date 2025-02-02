@@ -4,8 +4,8 @@ import useStoreActive from "../../hooks/activeStore"
 import service from "@/src/shared/services/service"
 import { usePathname } from "next/navigation"
 
-const Sahre = () => {
-    const { active, isLoding, setLoading, setActive,botHash } = useStoreActive()
+const Share = () => {
+    const { active, isLoding, setLoading, setActive, botHash } = useStoreActive()
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
 
@@ -15,15 +15,17 @@ const Sahre = () => {
         navigator.clipboard
             .writeText(urlCode)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("The URL has been copied successfully.")
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Failed to copy the URL.")
             })
     }
+
     const handleVisit = () => {
         window.open(urlCode, "_blank")
     }
+
     const handlePublic = async () => {
         setLoading(true)
         let formData = {
@@ -31,10 +33,10 @@ const Sahre = () => {
         }
         try {
             const response = await service.updateSecurityConfig(botId, formData)
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes have been saved successfully.")
             setActive(true)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was an issue updating!")
             console.error("Update failed:", error)
         } finally {
             setLoading(false)
@@ -55,9 +57,7 @@ const Sahre = () => {
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
-                                                برای اشتراک گذاری ربات چت خود
-                                                میتوانید از این آدرس استفاده
-                                                کنید.
+                                                To share your chatbot, you can use this URL.
                                             </p>
                                         </div>
                                     </div>
@@ -109,10 +109,7 @@ const Sahre = () => {
                             <div className="w-full items-center justify-between gap-5">
                                 <div>
                                     <span className="font-medium text-zinc-950">
-                                        {" "}
-                                        میزان دسترسی چت بات شما خصوصی است، برای
-                                        استقرار و اشتراک گذاری چت بات ، میزان
-                                        دسترسی را به عمومی تغییر دهید.
+                                        Your chatbot&apos;s access is private, to deploy and share the chatbot, change the access to public.
                                     </span>
                                 </div>
                                 <div className="mt-5 flex flex-row justify-end">
@@ -124,12 +121,11 @@ const Sahre = () => {
                                             <>
                                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                                 <span className="ml-3">
-                                                    {" "}
-                                                    بروزرسانی ...
+                                                    Updating...
                                                 </span>
                                             </>
                                         ) : (
-                                            <span>عمومی کردن</span>
+                                            <span>Make Public</span>
                                         )}
                                     </button>
                                 </div>
@@ -141,4 +137,5 @@ const Sahre = () => {
         </>
     )
 }
-export default Sahre
+
+export default Share

@@ -15,14 +15,14 @@ const UploadFlie = () => {
             let newFiles = []
 
             if (fileList.length + acceptedFiles.length > MAX_FILE_COUNT) {
-                toast.error("شما نمی توانید بیش از 6 فایل آپلود کنید")
+                toast.error("You cannot upload more than 6 files")
                 return
             }
 
             for (let file of acceptedFiles) {
                 totalSize += file.size
                 if (totalSize > MAX_FILE_SIZE) {
-                    toast.error("مجموع حجم فایل های شما بیشتر از 10 MB میباشد")
+                    toast.error("The total size of your files exceeds 10 MB")
                     return
                 }
                 newFiles.push(file)
@@ -62,12 +62,12 @@ const UploadFlie = () => {
                         <div className="flex flex-col items-center">
                             <DocumentUpload size="32" color="#000" />
                             {isDragActive ? (
-                                <p>فایل ها را اینجا رها کنید...</p>
+                                <p>Drop the files here...</p>
                             ) : (
                                 <div className="mt-4 text-center">
                                     <p>
-                                        فایل‌ها را اینجا بکشید و رها کنید یا
-                                        کلیک کنید آن ها را انتخاب کنید...
+                                        Drag and drop the files here or click to
+                                        select them...
                                     </p>
                                     <p className="text-xs text-gray-500">
                                         Supported File Types: .pdf, .doc, .docx,
@@ -80,8 +80,8 @@ const UploadFlie = () => {
                 </div>
                 <div className="mt-2 text-center text-xs text-gray-500">
                     <span>
-                        اگر یک PDF آپلود می کنید، مطمئن شوید که می توانید متن را
-                        انتخاب یا برجسته کنید.
+                        If you are uploading a PDF, ensure you can select or
+                        highlight the text.
                     </span>
                 </div>
             </form>
@@ -90,7 +90,7 @@ const UploadFlie = () => {
                     <div className="my-6 flex items-center">
                         <hr className="w-full border-t border-zinc-300" />
                         <span className="whitespace-nowrap px-2 text-zinc-600">
-                            فایل های پیوست شده
+                            Attached Files
                         </span>
                         <hr className="w-full border-t border-zinc-300" />
                     </div>

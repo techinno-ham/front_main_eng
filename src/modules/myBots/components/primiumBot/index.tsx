@@ -34,8 +34,8 @@ const PremiumBot = (props: any) => {
                                         <span className="text-[19px] text-[#ED8307] md:text-[24px]">
                                             {props.totalPerimium}
                                         </span>
-                                        <span className="mr-2 text-[19px] text-[#ED8307] md:text-[24px]">
-                                            چت بات پیشرفته
+                                        <span className="ml-2 text-[19px] text-[#ED8307] md:text-[24px]">
+                                            Advanced Chat Bot
                                         </span>
                                     </span>
                                     <span
@@ -44,10 +44,10 @@ const PremiumBot = (props: any) => {
                                             color: "gray",
                                         }}
                                     >
-                                        اگر میخواهید این عدد را بیشتر کنید{" "}
+                                        If you want to increase this number{" "}
                                         <Link href={"/pricing"}>
                                             <span className="cursor-pointer text-[#0771ED]">
-                                                کاربری پرو
+                                                Pro User
                                             </span>
                                         </Link>
                                     </span>
@@ -62,7 +62,7 @@ const PremiumBot = (props: any) => {
                                 }}
                             >
                                 <span className="text-[16px] text-[#ED8307] md:text-[20px]">
-                                    پرو
+                                    Pro
                                 </span>
                             </div>
                         </div>

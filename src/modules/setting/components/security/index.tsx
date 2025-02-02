@@ -14,17 +14,17 @@ const Security = () => {
         formData = {
             ...formData,
             status_bot: formData.status_bot == true ? "disable" : "enable",
-            access_bot: formData.access_bot == "خصوصی" ? "private" : "general",
+            access_bot: formData.access_bot == "private" ? "private" : "general",
         }
         try {
             const response = await service.updateSecurityConfig(
                 data.bot_id,
                 formData,
             )
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes were successfully saved")
             setData(response.data)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("An issue occurred during the update!")
             console.error("Update failed:", error)
         } finally {
             setIsLoading(false)
@@ -36,8 +36,8 @@ const Security = () => {
             setValue(
                 "access_bot",
                 data?.security_configs?.access_bot == "private"
-                    ? "خصوصی"
-                    : "عمومی",
+                    ? "private"
+                    : "public",
             )
             setValue(
                 "status_bot",
@@ -57,33 +57,28 @@ const Security = () => {
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="mb-1 block text-sm font-medium text-zinc-700">
-                            میزان دسترسی :
+                            Access Level:
                         </label>
                         <select
                             {...register("access_bot")}
                             id="countries"
                             className="block w-1/2 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 md:w-1/4"
                         >
-                            <option>عمومی</option>
-                            <option>خصوصی</option>
+                            <option>public</option>
+                            <option>private</option>
                         </select>
 
                         <p className="mt-2 text-sm text-zinc-500">
-                            &#39;خصوصی&#39;: هیچ کس نمی‌تواند به چت‌بات شما
-                            دسترسی داشته باشد، به جز شما (حساب کاربری شما)
+                            'private': No one can access your chatbot except you (your user account)
                         </p>
                         <p className="mt-2 text-sm text-zinc-500">
-                            &#39;عمومی&#39;: دیگران می‌توانند با چت‌بات شما
-                            گفتگو کنند اگر لینک را برایشان ارسال کنید. همچنین
-                            می‌توانید آن را در وب‌سایت خود تعبیه کنید تا
-                            بازدیدکنندگان وب‌سایت شما بتوانند از آن استفاده
-                            کنند.
+                            'public': Others can interact with your chatbot if you send them the link. You can also embed it on your website so that your website visitors can use it.
                         </p>
                     </div>
                     <div className="pb-8">
                         <div>
                             <label className="block pb-2 text-sm font-medium text-zinc-700">
-                                غیر فعال کردن چت بات :{" "}
+                                Disable Chatbot:
                             </label>
                             <label className="cursor-pointer/ inline-flex items-center">
                                 <input
@@ -98,37 +93,34 @@ const Security = () => {
                     <div>
                         <div className="flex justify-between">
                             <label className="block text-sm font-medium text-zinc-700">
-                                محدودیت نرخ درخواست :{" "}
+                                Rate Limiting:
                             </label>
                             <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80">
-                                ریست کردن
+                                Reset
                             </button>
                         </div>
                         <p className="mt-2 text-sm text-zinc-500">
-                            محدود کردن تعداد پیام‌های ارسال شده از یک دستگاه در
-                            آیفریم و حباب چت (این محدودیت برای شما در
-                                hamyar.chat اعمال نمی‌شود، فقط در وب‌سایت شما برای
-                            کاربران شما به منظور جلوگیری از سوءاستفاده).
+                            Limiting the number of messages sent from a device in the iFrame and chat bubble (this limit is not applied to you on hamyar.chat, only on your website for your users to prevent abuse).
                         </p>
                         <div className="mt-1 text-sm text-zinc-700">
-                            محدود به تنها{" "}
+                            Limited to only{" "}
                             <input
                                 {...register("rate_limit_msg")}
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
                                 name="rate_limit_msg"
                             />{" "}
-                            پیام هر{" "}
+                            messages every{" "}
                             <input
                                 {...register("rate_limit_time")}
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
                                 name="rate_limit_time"
                             />{" "}
-                            ثانیه.
+                            seconds.
                         </div>
                         <div className="my-4 text-sm text-zinc-700">
-                            نشان دادن پیامی که محدودیت پر می شود:
+                            Show a message when the limit is reached:
                             <input
                                 {...register("rate_limit_msg_show")}
                                 className=" mt-2 block w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
@@ -143,10 +135,10 @@ const Security = () => {
                         {isLoading ? (
                             <>
                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                <span className="ml-3"> بروزرسانی ...</span>
+                                <span className="ml-3"> Updating ...</span>
                             </>
                         ) : (
-                            <span>ذخیره</span>
+                            <span>Save</span>
                         )}
                     </button>
                 </div>

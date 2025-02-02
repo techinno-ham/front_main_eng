@@ -16,10 +16,10 @@ const General = () => {
                 data.bot_id,
                 formData,
             )
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes have been successfully saved.")
             setData(response.data)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was an issue updating!")
             console.error("Update failed:", error)
         } finally {
             setIsLoading(false)
@@ -37,10 +37,10 @@ const General = () => {
         navigator.clipboard
             .writeText(data?.bot_id)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("Your code has been copied.")
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Your code could not be copied.")
             })
     }
 
@@ -49,12 +49,12 @@ const General = () => {
             <div className="p-5">
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
-                        چت بات آیدی :
+                        Chatbot ID:
                     </label>
                     <div className="mt-1 flex items-center gap-2 space-x-4">
                         <div className="font-semibold">{data?.bot_id}</div>
                         <button
-                        onClick={handleCopyId}
+                            onClick={handleCopyId}
                             type="button"
                             className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:border-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
                         >
@@ -78,13 +78,13 @@ const General = () => {
                 </div>
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
-                        تعداد کارکترها :
+                        Character Count:
                     </label>
                     <div className="mt-1 font-semibold">15,380</div>
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-zinc-700">
-                        نام چت بات :
+                        Chatbot Name:
                     </label>
                     <div className="mt-2 ">
                         <input
@@ -105,10 +105,10 @@ const General = () => {
                     {isLoading ? (
                         <>
                             <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                            <span className="ml-3"> بروزرسانی ...</span>
+                            <span className="ml-3">Updating...</span>
                         </>
                     ) : (
-                        <span>ذخیره</span>
+                        <span>Save</span>
                     )}
                 </button>
             </div>

@@ -24,27 +24,27 @@ const ProgressBar = ({ title, percentage, color }: ProgressBarProps) => (
 const PropertyReferrals = () => {
     const propertyReferralsInfo = [
         // {
-        //     title: "سوشیال مدیا",
+        //     title: "Social Media",
         //     percentage: 64,
         //     color: "#6C5DD3",
         // },
         {
-            title: "امبدینگ",
+            title: "Embedding",
             percentage: 40,
             color: "#7FBA7A",
         },
         {
-            title: "وبسایت",
+            title: "Website",
             percentage: 50,
             color: "#FFCE73",
         },
         // {
-        //     title: "اینستاگرام",
+        //     title: "Instagram",
         //     percentage: 80,
         //     color: "#FFA2C0",
         // },
         {
-            title: "غیره",
+            title: "Other",
             percentage: 15,
             color: "#F45252",
         },
@@ -52,7 +52,7 @@ const PropertyReferrals = () => {
     return (
         <div className="flex  h-full w-full flex-col  rounded-2xl bg-white p-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] blur-[2px] pointer-events-none">
             <span className="text-xl font-semibold text-gray-900">
-                استفاده در محیط های مختلف
+                Usage in Different Environments
             </span>
 
             <div className="my-5 flex flex-col gap-4">

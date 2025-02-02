@@ -21,38 +21,38 @@ export const sidebarLinks = [
     {
         icon: <Category2 />,
         route: "/panel/[id]",
-        label: "داشبورد",
+        label: "Dashboard",
     },
 
     {
         icon: <Setting2 />,
         route: "/panel/[id]/setting",
-        label: "تنظیمات",
+        label: "Settings",
     },
     {
         icon: <Book1 />,
         route: "/panel/[id]/train",
-        label: "آموزش ربات",
+        label: "Bot Training",
     },
     {
         icon: <Messages1 />,
         route: "/panel/[id]/mymessage",
-        label: "گفت و گو ها",
+        label: "Conversations",
     },
     {
         icon: <Activity />,
         route: "/panel/[id]/analytics",
-        label: "آمار و داده",
+        label: "Analytics",
     },
     {
         icon: <ProgrammingArrows />,
         route: "/panel/[id]/deploy",
-        label: "خروجی",
+        label: "Output",
     },
     {
         icon: <UserSquare/>,
         route: "/panel/[id]/contact",
-        label: "مخاطبین",
+        label: "Contacts",
     },
 
 ]
@@ -83,8 +83,8 @@ const SideBar = () => {
                                 pathSegments[2],
                             );
                             const isActive = pathname === linkRoute;
-                            const inFormRoute=pathname.includes("form") && item.label =="تنظیمات";
-                            const isContacnt=item.label =="مخاطبین";
+                            const inFormRoute=pathname.includes("form") && item.label =="Settings";
+                            const isContact=item.label =="Contacts";
 
                             return (
                                 <li key={item.label} style={{ width: "80%" }}>
@@ -98,9 +98,9 @@ const SideBar = () => {
                                         >
                                             {item.icon}
                                             <span>{item.label}</span>
-                                               {isContacnt && (
+                                               {isContact && (
                                                 <>
-                                                  <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">آزمایشی</span>        
+                                                  <span className="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">Experimental</span>        
 
                                                 </>
                                                )}
@@ -108,7 +108,7 @@ const SideBar = () => {
                                               <div className="flex items-center gap-1  text-sm ">
                                                       <ArrowLeft size={16}/>
                                                       <DocumentText size={16} className="mr-2" />
-                                                      <span className="mr-1"> فرم</span>
+                                                      <span className="mr-1"> Form</span>
                                               </div>
 )}
                                         </div>
@@ -125,7 +125,7 @@ const SideBar = () => {
                             }}
                         >
                             <Send2 />
-                            دعوت از دوستان
+                            Invite Friends
                         </button>
                     </div>
 

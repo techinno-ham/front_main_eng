@@ -35,11 +35,11 @@ const WebsiteLink = () => {
     const handleFetchUrl = async (event: any) => {
         event.preventDefault()
         if (!inputUrl) {
-            toast.error("لطفا لینک مورد نظر خود را وارد کنید ...")
+            toast.error("Please enter your desired link...")
             return
         }
         if (!isValidUrl(inputUrl)) {
-            toast.error("لینک وارد شده معتبر نمی‌باشد.")
+            toast.error("The entered link is not valid.")
             return
         }
         const res = await fetchLink(inputUrl)
@@ -49,7 +49,7 @@ const WebsiteLink = () => {
         const remainingLinks = MAX_LINK_COUNT - urlList.length
         if (res?.data.length > remainingLinks) {
             toast.error(
-                `شما نمی توانید بیش از 40 لینک اضافه کنید. فقط ${remainingLinks} لینک اضافه شد.`,
+                `You cannot add more than 40 links. Only ${remainingLinks} links were added.`,
             )
             addUrlList([...urlList, ...res?.data.slice(0, remainingLinks)])
             return
@@ -62,7 +62,7 @@ const WebsiteLink = () => {
             addURLListChanged(true)
         }
         if (urlList.length >= MAX_LINK_COUNT) {
-            toast.error("شما نمی توانید بیش از 40 لینک اضافه کنید")
+            toast.error("You cannot add more than 40 links")
             return
         }
         addUrlList([...urlList, ""])
@@ -113,21 +113,20 @@ const WebsiteLink = () => {
                             disabled={isLoading}
                             className="w-full rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
                         >
-                            {isLoading ? "... صبر کنید" : "دریافت لینک ها"}
+                            {isLoading ? "Please wait..." : "Fetch Links"}
                         </button>
                     </div>
                 </div>
                 <div>
                     <span className="text-sm text-zinc-600">
-                        با این کار تمام پیوندهایی که با URL شروع می شوند (بدون
-                        شامل فایل های موجود در وب سایت) می خزند.
+                        This will crawl all links starting with the URL (excluding files on the website).
                     </span>
                 </div>
 
                 <div className="my-6 flex items-center">
                     <hr className="w-full border-t border-zinc-300" />
                     <span className="whitespace-nowrap px-2 text-zinc-600">
-                        لینک‌های موجود
+                        Existing Links
                     </span>
                     <hr className="w-full border-t border-zinc-300" />
                 </div>
@@ -136,13 +135,13 @@ const WebsiteLink = () => {
                         className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
                         onClick={handleDeleteAllInputs}
                     >
-                        حذف کردن همه
+                        Delete All
                     </button>
                     <button
                         className="rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
                         onClick={handleAddInput}
                     >
-                        اضافه کردن +
+                        Add +
                     </button>
                 </div>
                 <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col overflow-auto">

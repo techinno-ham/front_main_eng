@@ -23,17 +23,16 @@ const Web = () => {
     src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
     hamyar-bot-token="${botHash}"
     id="hamyarChatbotScript"
-    defer></script>`;
-
+    defer></script>`
 
     const handleCopyIframe = () => {
         navigator.clipboard
             .writeText(iframeCode)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("The code has been copied successfully.")
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Failed to copy the code.")
             })
     }
 
@@ -41,10 +40,10 @@ const Web = () => {
         navigator.clipboard
             .writeText(scriptCode)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("The code has been copied successfully.")
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Failed to copy the code.")
             })
     }
 
@@ -55,15 +54,16 @@ const Web = () => {
         }
         try {
             const response = await service.updateSecurityConfig(botId, formData)
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes have been saved successfully.")
             setActive(true)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was an issue updating!")
             console.error("Update failed:", error)
         } finally {
             setLoading(false)
         }
     }
+
     return (
         <>
             <div>
@@ -78,9 +78,7 @@ const Web = () => {
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
-                                                برای افزودن ربات چت در هر جایی
-                                                از وب سایت خود، این iframe را به
-                                                کد html خود اضافه کنید.
+                                                To add the chatbot to any part of your website, add this iframe to your HTML code.
                                             </p>
                                         </div>
                                     </div>
@@ -105,10 +103,10 @@ const Web = () => {
                                         >
                                             &lt;iframe
                                             {"\n"}
-                                            src="https://www.hamyar.chat/chatbot?botRef={botId}"
-                                            {"\n"}width="100%"
-                                            {"\n"}style="height: 100%;
-                                            min-height: 700px"
+                                            src=&quot;https://www.hamyar.chat/chatbot?botRef={botId}&quot;
+                                            {"\n"}width=&quot;100%&quot;
+                                            {"\n"}style=&quot;height: 100%;
+                                            min-height: &quot;700px&quot;
                                             {"\n"}&gt;&lt;/iframe&gt;
                                         </code>
                                     </pre>
@@ -126,9 +124,7 @@ const Web = () => {
                                 </div>
                                 <div className="mt-8">
                                     <p className=" text-sm text-zinc-500">
-                                        برای افزودن یک حباب چت در سمت راست پایین
-                                        وب سایت خود، این تگ اسکریپت را به html
-                                        خود اضافه کنید.
+                                        To add a chat bubble to the bottom right of your website, add this script tag to your HTML.
                                     </p>
                                 </div>
                                 <div
@@ -151,9 +147,9 @@ const Web = () => {
                                         >
                                                &lt;script
                                             {"\n"}
-                                            src="{baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
-                                            {"\n"}hamyar-bot-token="{botHash}"
-                                            {"\n"}id="hamyarChatbotScript"
+                                            src=&quot;{baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js&quot;
+                                            {"\n"}hamyar-bot-token=&quot;{botHash}&quot;
+                                            {"\n"}id=&quot;hamyarChatbotScript&quot;
                                             {"\n"}defer
                                             {"\n"}&gt;&lt;/script&gt;
                                         </code>
@@ -179,10 +175,7 @@ const Web = () => {
                             <div className="w-full items-center justify-between gap-5">
                                 <div>
                                     <span className="font-medium text-zinc-950">
-                                        {" "}
-                                        میزان دسترسی چت بات شما خصوصی است، برای
-                                        استقرار و اشتراک گذاری چت بات ، میزان
-                                        دسترسی را به عمومی تغییر دهید.
+                                        Your chatbot&apos;s access is private, to deploy and share the chatbot, change the access to public.
                                     </span>
                                 </div>
                                 <div className="mt-5 flex flex-row justify-end">
@@ -195,11 +188,11 @@ const Web = () => {
                                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                                 <span className="ml-3">
                                                     {" "}
-                                                    بروزرسانی ...
+                                                    Updating...
                                                 </span>
                                             </>
                                         ) : (
-                                            <span>عمومی کردن</span>
+                                            <span>Make Public</span>
                                         )}
                                     </button>
                                 </div>

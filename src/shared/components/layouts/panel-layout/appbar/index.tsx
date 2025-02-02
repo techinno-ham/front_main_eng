@@ -13,27 +13,27 @@ export const sidebarLinks = [
     {
         icon: <Category2 />,
         route: "/panel/[id]",
-        label: "داشبورد",
+        label: "Dashboard",
     },
     {
         icon: <Book1 />,
         route: "/panel/[id]/train",
-        label: "آموزش ربات",
+        label: "Robot Training",
     },
     {
         icon: <Messages1 />,
         route: "/panel/[id]/mymessage",
-        label: "گفت و گو ها",
+        label: "Conversations",
     },
     {
         icon: <ProgrammingArrows />,
         route: "/panel/[id]/deploy",
-        label: "خروجی",
+        label: "Output",
     },
     {
         icon: <Setting2 />,
         route: "/panel/[id]/setting",
-        label: "تنظیمات",
+        label: "Settings",
     },
 ]
 

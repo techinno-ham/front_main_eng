@@ -33,8 +33,8 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                 const response = await service.getBot(botData?.bot_id)
                 const status = response.data.status
                 if (status === "active" && !botActive) {
-                    toast.success("چت بات شما اکنون آماده می باشد.")
-                    toast.success("چت بات شما اکنون آماده استفاده و پاسخگویی می باشد.")
+                    toast.success("Your chatbot is now ready.")
+                    toast.success("Your chatbot is now active and ready to respond.")
                     setBotActive(true)
                     clearInterval(fetchIntervalId)
                 } else if (status !== "active") {
@@ -70,7 +70,7 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                 <div className="rounded-2xl bg-white shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                     <div className="border-b p-4">
                         <span className="text-xl font-semibold leading-6 text-zinc-900">
-                            {"مشخصلات چت بات"}
+                            {"Chatbot Details"}
                         </span>
                     </div>
                     <div className="p-5">
@@ -79,7 +79,7 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                             <img src="/arrow-hamyar.svg" className="absolute z-50  left-0 transform rotate-[192deg] hidden md:block   md:w-[100px] md:h-[100px] lg:w-80 lg:h-80 "></img>
                                 <div>
                                     <span className="text-zinc-5 block text-sm font-medium">
-                                        چت بات آیدی :
+                                        Chatbot ID :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
                                         {botData?.bot_id ||
@@ -89,24 +89,24 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                                 <div className="flex gap-32">
                                     <div>
                                         <span className="text-zinc-5 block text-sm font-medium">
-                                            وضعیت :
+                                            Status :
                                         </span>
                                         {botData?.security_configs
                                             ?.status_bot === "enable" ? (
                                             <span className="text-sm font-semibold text-zinc-700">
                                                 <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-green-500"></span>{" "}
-                                                فعال
+                                                Active
                                             </span>
                                         ) : (
                                             <span className="text-sm font-semibold text-zinc-700">
                                                 <span className="mr-1 inline-block h-[10px] w-[10px] rounded-full bg-red-500"></span>{" "}
-                                                غیر فعال
+                                                Inactive
                                             </span>
                                         )}
                                     </div>
                                     <div>
                                         <span className="text-zinc-5 block text-sm font-medium">
-                                            مدل :
+                                            Model :
                                         </span>
                                         <span className="text-sm font-semibold text-zinc-700">
                                             {botData?.model_configs
@@ -116,25 +116,25 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                                 </div>
                                 <div>
                                     <span className="text-zinc-5 block text-sm font-medium">
-                                        دسترسی :
+                                        Access :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
                                         {botData?.security_configs
                                             ?.access_bot === "private"
-                                            ? "خصوصی"
-                                            : "عمومی"}
+                                            ? "Private"
+                                            : "Public"}
                                     </span>
                                 </div>
                                 <div>
                                     <span className="text-zinc-5 block text-sm font-medium">
-                                        آخرین آموزش :
+                                        Last Training :
                                     </span>
                                     <span className="text-sm font-semibold text-zinc-700">
                                         {botData?.updated_at
                                             ? formatRelativeTime(
                                                   botData.updated_at,
                                               )
-                                            : " مدتی قبل"}
+                                            : " A while ago"}
                                     </span>
                                 </div>
                             </div>

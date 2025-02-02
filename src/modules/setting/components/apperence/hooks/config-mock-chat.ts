@@ -25,9 +25,9 @@ interface StoreChatConfig {
 const useStoreChatConfig = create<StoreChatConfig>((set) => ({
     chatConfig: {
         displayName: "Hamyar chat",
-        botMessages: ["سلام ! امروز چطور می‌توانم به شما کمک کنم؟ 😊"],
-        suggestedMessages: ["چگونه میتونم بات بسازم؟"],
-        inputPlaceholder: "پیام شما ...",
+        botMessages: ["Hello! How can I assist you today? 😊"],
+        suggestedMessages: ["How can I create a bot?"], 
+        inputPlaceholder: "Your message ...", 
         footer: "hamyar.chat",
         themeBot: "light",
         colorUserMessage:"#fff",
@@ -35,7 +35,7 @@ const useStoreChatConfig = create<StoreChatConfig>((set) => ({
         borderWidget: "#6495ed",
         borderProfile:"#000",
         chatButtonPosition: "start",
-        notificationMsgs:"👋 من اینجا هستم تا به شما کمک کنم.",
+        notificationMsgs:"👋 I am here to help you.", 
         initNotifDelay: 2000,
         imageProfle:"testtttt"
     },

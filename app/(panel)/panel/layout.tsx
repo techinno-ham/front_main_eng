@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <>
             <div className="flex">
                 <SideBar />
-                <div className=" w-full  md:mr-[300px] md:w-calc-100vw-minus-280px">
+                <div className=" w-full  md:ml-[300px] md:w-calc-100vw-minus-280px">
                     <SideBarMobile />
                     {children}
                 </div>
@@ -19,10 +19,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     )
 }
 export const metadata: Metadata = {
-    title: "پنل کاربری | همیارچت",
-    description: "مدیریت تنظیمات و اطلاعات کاربری در پنل کاربری همیارچت.",
+    title: "User Panel | HamyarChat",
+    description: "Manage settings and user information in the HamyarChat user panel.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 export default Layout

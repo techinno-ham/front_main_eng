@@ -5,10 +5,10 @@ const Model = () => {
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
-                            مدل :{" "}
+                            Model:{" "}
                             <div className="mb-1 ml-1 inline-flex items-center rounded-md border border-transparent bg-violet-100 px-2.5 py-0.5 text-xs font-semibold text-blue-500 transition-colors hover:bg-violet-100/80 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 ">
                                 {" "}
-                                gpt-4o فعال می باشد.
+                                gpt-4o is active.
                             </div>
                         </label>
                         <select
@@ -21,7 +21,7 @@ const Model = () => {
                             <option>gpt-3.5-turbo</option>
                         </select>
                         <p className="mt-2 text-sm font-semibold text-zinc-700">
-                            gpt-4o پیشرفته‌ترین مدل OpenAI فعال است.
+                            gpt-4o is the most advanced OpenAI model active.
                         </p>
                         <p className="mt-2 text-sm text-zinc-500">
                             gpt-4o: 1 credit per response
@@ -38,7 +38,7 @@ const Model = () => {
                     </div>
                     <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
-                            میزان خلاقیت :
+                            Creativity Level:
                         </label>
                         <p className="text-sm">0</p>
                         <input
@@ -50,14 +50,14 @@ const Model = () => {
                             className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 "
                         />
                         <div className="flex justify-between">
-                            <p className="text-xs text-zinc-700">ثابت بودن</p>
-                            <p className="text-xs text-zinc-700">خلاقیت</p>
+                            <p className="text-xs text-zinc-700">Fixed</p>
+                            <p className="text-xs text-zinc-700">Creativity</p>
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-end  px-5 py-3">
                     <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                        Save
                     </button>
                 </div>
             </div>

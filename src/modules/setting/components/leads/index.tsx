@@ -23,13 +23,13 @@ const Leads = () => {
     };
 
   const handleDeleteForm=async (formId:string)=>{
-    const loadingToastId = toast.loading("در حال حذف  فرم ...");
+    const loadingToastId = toast.loading("Deleting form ...");
     try {
         const result = await service.deleteForm(formId); 
-        toast.success("فرم با موفقیت حذف شد");
+        toast.success("Form deleted successfully");
         setList((prevList:any) => prevList.filter((form:any) => form.forms_id !== formId));
     } catch (error) {
-        toast.error(`مشکلی در حدف فرم وجود دارد`)
+        toast.error(`There was an issue deleting the form`)
     } finally {
         toast.dismiss(loadingToastId);
     }
@@ -40,10 +40,10 @@ const Leads = () => {
     router.push(newPath);
   };
   const handleActiveForm=async (formId:string)=>{
-    const loadingToastId = toast.loading("در حال فعال سازی  فرم ...");
+    const loadingToastId = toast.loading("Activating form ...");
     try {
          await service.activeForm(formId); 
-        toast.success("فرم با موفقیت فعال شد");
+        toast.success("Form activated successfully");
         setList((prevList: any) => 
             prevList.map((form: any) => 
               form.forms_id === formId 
@@ -52,17 +52,17 @@ const Leads = () => {
             )
           );
     } catch (error) {
-        toast.error(`مشکلی در فعال کردن فرم وجود دارد`)
+        toast.error(`There was an issue activating the form`)
     } finally {
         toast.dismiss(loadingToastId);
     }
   };
 
   const handleInactiveForm=async (formId:string)=>{
-    const loadingToastId = toast.loading("در حال غیر فعال سازی  فرم ...");
+    const loadingToastId = toast.loading("Deactivating form ...");
     try {
          await service.inactiveForm(formId); 
-        toast.success("فرم با موفقیت غیر فعال شد");
+        toast.success("Form deactivated successfully");
         setList((prevList: any) => 
             prevList.map((form: any) => 
               form.forms_id === formId 
@@ -71,7 +71,7 @@ const Leads = () => {
             )
           );
     } catch (error) {
-        toast.error(`مشکلی در غیر فعال کردن فرم وجود دارد`)
+        toast.error(`There was an issue deactivating the form`)
     } finally {
         toast.dismiss(loadingToastId);
     }
@@ -95,16 +95,16 @@ const Leads = () => {
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
             <tr>
                 <th scope="col" className="px-6 py-3">
-                     عنوان
+                     Title
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    تاریخ ایجاد
+                    Creation Date
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    وضعیت بر روی بات
+                    Status on Bot
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    عملیات ها
+                    Actions
                 </th>
             </tr>
         </thead>
@@ -125,14 +125,14 @@ const Leads = () => {
         <>
                   <span className="bg-green-100 flex justify-center items-center w-fit gap-1 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">
                                             <span className="bg-green-500 rounded-full h-3 w-3  inline-block"></span>
-                                            فعال
+                                            Active
                                         </span>
         </>
     ) : (
         <>
              <span className="bg-red-100 text-red-800 flex justify-center items-center w-fit gap-1 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full ">
                                             <span className="bg-red-500 rounded-full h-3 w-3  inline-block"></span>
-                                            غیر فعال
+                                            Inactive
                                         </span>
         </>
     )}
@@ -144,14 +144,14 @@ const Leads = () => {
                 <ToggleOffCircle size={20} color="red" />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
-               غیر فعال کردن 
+               Deactivate
             </span>
                    </div></>):(<><div className="relative group">
             <button onClick={()=>{handleActiveForm(form.forms_id)}} className="border border-green-500 rounded p-1 flex items-center">
                 <ToggleOnCircle size={20} color="green" />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
-                فعال کردن
+                Activate
             </span>
                    </div></>)}
                     
@@ -160,7 +160,7 @@ const Leads = () => {
                 <Edit size={20} />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
-                ویرایش
+                Edit
             </span>
         </div>
         <div className="relative group">
@@ -168,7 +168,7 @@ const Leads = () => {
                 <Trash size={20} color="red" />
             </button>
             <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden group-hover:block bg-gray-700 text-white text-xs rounded px-2 py-1">
-                حذف
+                Delete
             </span>
         </div>
                           

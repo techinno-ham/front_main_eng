@@ -31,8 +31,6 @@ const MyBots = () => {
     const debouncedSearchText = useDebounce(searchText, 500);
     const { user } = useUserStore()
 
-    
-
     useEffect(() => {
         const fetchBotList = async () => {
             setIsLoading(true)
@@ -97,11 +95,10 @@ const MyBots = () => {
                 <div className="flex w-full items-center justify-between">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">
-                            چت بات های من
+                            My Chatbots
                         </p>
                         <p className="text-[10px]  text-slate-500 md:mt-1 md:text-sm">
-                            در اینجا، می توانید بات های خود را ببینید و بات های
-                            جدید بسازید.
+                            Here you can view your bots and create new ones.
                         </p>
                     </div>
                     <div>
@@ -112,7 +109,7 @@ const MyBots = () => {
                                     router.push("/createbot")
                                 } else {
                                     toast.error(
-                                        "شما بیش از 2 بات نمیتوانید بسازید...",
+                                        "You cannot create more than 2 bots...",
                                     )
                                     handleLimitModal()
                                 }
@@ -122,7 +119,7 @@ const MyBots = () => {
                         >
                             <div className="flex gap-2">
                                 <ElementPlus size="18" color="#FFf" />
-                                <span> چت بات جدید</span>
+                                <span> New Chatbot</span>
                             </div>
                         </button>
                     </div>
@@ -148,7 +145,7 @@ const MyBots = () => {
                                 <input
                                     className="w-full border-none placeholder-gray-300 focus:outline-none"
                                     type="text"
-                                    placeholder="جستوجو کردن ..."
+                                    placeholder="Search ..."
                                     onChange={(e) =>
                                         setSearchText(
                                             e.target.value.toLowerCase(),
@@ -163,7 +160,7 @@ const MyBots = () => {
                         <>
                             <div className="top-2/3 z-[1000] flex h-full  translate-y-full items-center  justify-center ">
                                 <span className="mr-3">
-                                    مقداری صبر کنید ...
+                                    Please wait...
                                 </span>
                                 <LoaderLottie />
                             </div>
@@ -183,9 +180,8 @@ const MyBots = () => {
                         <div className="flex h-full flex-col items-center justify-center text-center">
                             <EmptyBot />
                             <span>
-                                شما میتوانید برای ساختن آن روی دکمه ی &quot;چت
-                                بات جدید&quot; بزنید و اولین چت بات خود را 
-                                بسازید.
+                                You can click the &quot;New Chatbot&quot; button to create
+                                your first chatbot.
                             </span>
                         </div>
                     )}
@@ -196,7 +192,7 @@ const MyBots = () => {
                                 currentPage={currentPage}
                                 totalPages={totalPages}
                                 onPageChange={handlePageChange}
-                                title={"چت بات"}
+                                title={"Chatbot"}
                             />
                         </>
                     )}
@@ -212,7 +208,7 @@ const MyBots = () => {
                                     alt="Logo"
                                 />
                                 <span className={`mr-2 text-2xl font-bold `}>
-                                    همیارچت{" "}
+                                    HamyarChat{" "}
                                 </span>
                             </div>
                         </div>
@@ -221,12 +217,10 @@ const MyBots = () => {
                         </div>
                         <div className="text-center">
                             <p className="text-red-500">
-                                {" "}
-                                حد استفاده به پایان رسیده است.
+                                Your usage limit has been reached.
                             </p>
                             <span className="text-[12px] text-gray-400">
-                                پلن خود را ارتقا دهید تا استفاده بیشتری داشته
-                                باشید
+                                Upgrade your plan to get more usage.
                             </span>
                         </div>
                         <div className="mt-8 flex flex-col">
@@ -237,7 +231,7 @@ const MyBots = () => {
                                 >
                                     <div className="flex gap-2">
                                         <Star size="18" color="#FFf" />
-                                        <span> ارتقا حساب </span>
+                                        <span> Upgrade Account </span>
                                     </div>
                                 </button>
                             </div>
@@ -248,5 +242,6 @@ const MyBots = () => {
         </>
     )
 }
+
 
 export default MyBots

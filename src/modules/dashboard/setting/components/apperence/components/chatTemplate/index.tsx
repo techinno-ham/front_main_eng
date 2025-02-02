@@ -56,7 +56,7 @@ const ChatTemplate = ({ config }: any) => {
                                             >
                                                 <div className="flex flex-col items-start gap-4 break-words">
                                                     <div className=" w-full break-words text-right text-inherit ">
-                                                        <p>سلام !</p>{" "}
+                                                        <p>Hello!</p>{" "}
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,8 +76,8 @@ const ChatTemplate = ({ config }: any) => {
                                                 key={index}
                                                 className="focus-visible:ring-ring inline-flex h-8 items-center justify-center whitespace-nowrap rounded-md bg-zinc-900 px-3 text-sm font-normal text-zinc-50 shadow-none transition-colors hover:bg-zinc-800/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 group-[.cb-dark]:bg-zinc-800 group-[.cb-light]:bg-zinc-200/50 group-[.cb-dark]:text-white group-[.cb-light]:text-black group-[.cb-dark]:hover:bg-zinc-700 group-[.cb-light]:hover:bg-zinc-200 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90"
                                                 type="button"
-                                                aria-label="لبلب "
-                                                title="لبلب "
+                                                aria-label="Label"
+                                                title="Label"
                                             >
                                                 {sgm}{" "}
                                             </button>
@@ -108,7 +108,7 @@ const ChatTemplate = ({ config }: any) => {
                             <div className="flex items-center justify-center">
                                 <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-1">
                                     <p className="grow text-nowrap text-center text-xs ">
-                                        قدرت گرفته از
+                                        Powered by
                                         <a
                                             target="_blank"
                                             className="mr-1 font-semibold text-[#1277fd]"

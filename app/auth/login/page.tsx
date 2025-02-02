@@ -5,9 +5,9 @@ const LoginPage: NextPage = () => {
     return <Login />
 }
 export const metadata: Metadata = {
-    title: "ورود | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Login | HamyarChat - AI Conversational Assistant",
     description:
-        "به حساب کاربری خود در همیارچت وارد شوید و از امکانات دستیار هوش مصنوعی مکالمه‌ای ما بهره‌مند شوید. اگر هنوز حساب کاربری ندارید، می‌توانید به راحتی ثبت‌نام کنید و از خدمات ما استفاده کنید.",
+        "Log into your HamyarChat account and take advantage of our AI conversational assistant features. If you don't have an account yet, you can easily sign up and use our services.",
     // openGraph: {
     //   title: 'Login',
     // },
@@ -15,5 +15,6 @@ export const metadata: Metadata = {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default LoginPage

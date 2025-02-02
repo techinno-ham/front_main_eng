@@ -5,7 +5,7 @@ import { toast } from "sonner"
 
 const Invite = () => {
     const sendEmail = async (data: any) => {
-        toast.error("در حال حاظر سرویس مورد نظر در دسترس نمی باشد.")
+        toast.error("The service is currently unavailable.")
     }
     return (
         <>
@@ -14,12 +14,11 @@ const Invite = () => {
                     <InviteFriends />
                     <div className="text-center">
                         <p className="mb-3 text-3xl md:text-5xl">
-                            دوستانت را دعوت کن !
+                            Invite Your Friends!
                         </p>
                         <span className="text-sm text-gray-500">
-                            می توانید افراد را به همیارچت دعوت کنید تا دوستانتان
-                            بتوانند از وب سایت ما استفاده کنند. نمودارهای خود را
-                            ایجاد کرده و داده های آنها را به نمودار تبدیل کنید.
+                            You can invite people to HamyarChat so your friends can
+                            use our website, create their charts, and convert their data into charts.
                         </span>
                     </div>
                     <div className="mt-8  flex flex-col items-center justify-center gap-4">
@@ -37,7 +36,7 @@ const Invite = () => {
                             >
                                 <div className=" flex items-center justify-center gap-2">
                                     <SmsStar size="25" color="#FFf" />
-                                    <span> ارسال ایمیل</span>
+                                    <span> Send Email</span>
                                 </div>
                             </button>
                         </div>
@@ -47,4 +46,5 @@ const Invite = () => {
         </>
     )
 }
+
 export default Invite

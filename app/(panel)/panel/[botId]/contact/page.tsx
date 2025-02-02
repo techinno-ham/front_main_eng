@@ -11,10 +11,11 @@ const DashboardConatctPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "مخاطبین دستیار هوش مصنوعی | همیارچت",
-    description: " مخاطبین  دستیار هوش مصنوعی در همیارچت .",
+    title: "AI Assistant Contacts | HamyarChat",
+    description: "AI Assistant contacts in HamyarChat.",
     icons: {
         icon: "/logo.svg", 
     },
 }
+
 export default DashboardConatctPage;

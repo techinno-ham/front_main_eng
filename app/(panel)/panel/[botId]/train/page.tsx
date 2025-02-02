@@ -10,8 +10,8 @@ const DashboardTrainPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "آموزش دستیار هوش مصنوعی | همیارچت",
-    description: "آموزش و بهینه‌سازی دستیار هوش مصنوعی در همیارچت.",
+    title: "AI Assistant Tutorial | HamyarChat",
+    description: "Training and optimizing the AI assistant in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },

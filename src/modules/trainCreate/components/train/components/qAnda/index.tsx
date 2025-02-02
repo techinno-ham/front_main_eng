@@ -36,7 +36,7 @@ const QandA = () => {
                             })
                         }}
                     >
-                        حذف کردن همه
+                        Delete All
                     </button> */}
 
                     <form className="w-[80%]">
@@ -75,7 +75,7 @@ const QandA = () => {
                                  border-gray-300 bg-white px-4 py-[10px] ps-10 text-sm 
                                  text-gray-900 focus:border-blue-50
                                   focus:ring-blue-500"
-                                placeholder="جستجو در پرسش و پاسخ‌ها ..."
+                                placeholder="Search in Q&A..."
                                 required
                             />
                             {/* <button
@@ -91,7 +91,7 @@ const QandA = () => {
                         className="rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
                         onClick={handleAddQA}
                     >
-                        اضافه کردن +
+                        Add +
                     </button>
                 </div>
                 <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col gap-3 overflow-auto px-2 md:h-[50vh]">
@@ -108,7 +108,7 @@ const QandA = () => {
                             >
                                 <div className="flex flex-col gap-3">
                                     <div className="flex h-[12px] items-center justify-between">
-                                        <span>سوال:</span>
+                                        <span>Question:</span>
                                         <button
                                             className="p-2"
                                             onClick={() =>
@@ -121,7 +121,7 @@ const QandA = () => {
 
                                     <textarea
                                         className="rounded-md border border-gray-300 p-2"
-                                        placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
+                                        placeholder="Example: How can I check prices?"
                                         rows={1}
                                         value={qa.question}
                                         onChange={(e) =>
@@ -134,10 +134,10 @@ const QandA = () => {
                                     />
                                 </div>
                                 <div className="flex flex-col gap-3">
-                                    <span className="mt-2">پاسخ :</span>
+                                    <span className="mt-2">Answer:</span>
                                     <textarea
                                         className="rounded-md border border-gray-300 p-2"
-                                        placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
+                                        placeholder="You can check the pricing page to get the latest price status."
                                         value={qa.answer}
                                         rows={5}
                                         onChange={(e) =>

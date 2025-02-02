@@ -83,7 +83,7 @@ const MyMessage = () => {
         e.preventDefault()
 
         if (!question || !answer) {
-            toast.error(" لطفاً سوال یا جواب را وارد کنید.")
+            toast.error("Please enter a question or answer.")
             return
         }
         setLoading(true)
@@ -93,11 +93,11 @@ const MyMessage = () => {
                 qANDa_input: qaUpdated,
             }
             await Services.updateDataSourceQa(body, botId)
-            toast.success("بات شما با در حال آموزش مجدد می باشد.")
+            toast.success("Your bot is being retrained.")
             setOpenModal(false)
         } catch (error) {
             console.error("Error deleting bot:", error)
-            toast.error("مشکلی پیش امده است ..")
+            toast.error("Something went wrong..")
         } finally {
             setLoading(false)
             setAnswer("")
@@ -113,15 +113,15 @@ const MyMessage = () => {
         return formatDistanceToNow(date, { locale: faIR })
     }
     const dicTime = {
-        all: "بدون فیلتر",
-        "1_days": "1 روز گذشته",
-        "3_days": "3 روز گذشته",
-        "7_days": "7روز گذشته ",
-        "1_month": "1 ماه قبل",
+        all: "No filter",
+        "1_days": "1 day ago",
+        "3_days": "3 days ago",
+        "7_days": "7 days ago",
+        "1_month": "1 month ago",
     }
     const formatRelativeTimeChat = (dateString: any) => {
         const date = new Date(dateString)
-        const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", {
+        const formattedDate = format(date, "d MMMM 'at' HH:mm", {
             locale: faIR,
         })
         return formattedDate
@@ -185,7 +185,7 @@ const MyMessage = () => {
                 activeConversationId,
                 liveMessage,
             )
-            
+
             appendOperatorMessageToLiveChat({
                 id: response?.messageId,
                 sender: "operator",
@@ -306,7 +306,7 @@ const MyMessage = () => {
             <>
                 <div className="mx-auto flex h-[90vh] w-[95%] items-center justify-center md:mt-[90px] ">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading data...</span>
                         <LoaderLottie />
                     </div>
                 </div>
@@ -319,17 +319,18 @@ const MyMessage = () => {
                 <div className=" relative w-[100%] rounded-2xl bg-white  shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] ">
                     <div className="flex flex-col space-y-1.5 p-6">
                         <h3 className="text-2xl font-semibold leading-none tracking-tight">
-                            تاریخچه گفت و گو ها
+                            Conversation History
                         </h3>
                     </div>
+
                     {message == "Your bot has never had a conversation" ? (
                         <>
                             <div className="flex min-h-[38rem] w-full flex-col items-center justify-center gap-4 text-center text-gray-500">
                                 <EmptyChat />
                                 <div>
                                     <p>
-                                        در حال حاظر چت بات شما دارای تاریخچه گفت
-                                        و گو نمی باشد.
+                                        Currently, your chatbot does not have
+                                        any conversation history.
                                     </p>
                                 </div>
                             </div>
@@ -349,24 +350,24 @@ const MyMessage = () => {
                                             />
                                             <div className="mx-auto  w-96">
                                                 <h3 className="text-xl font-black text-gray-800">
-                                                    اصلاح پاسخ
+                                                    Edit Answer
                                                 </h3>
                                                 <p className="mt-[8px] text-[14px] text-gray-500">
-                                                    این اقدام یک داده پرسش و
-                                                    پاسخ جدید به اطلاعات بات شما
-                                                    اضافه خواهد کرد . داده های
-                                                    پرسش و پاسخ می تواند به
-                                                    همیارچت کمک کند صریحا به
-                                                    سوالات جواب دهد .
+                                                    This action will add a new
+                                                    question and answer data to
+                                                    your bot&apos;s information. The
+                                                    question and answer data can
+                                                    help the chatbot respond
+                                                    directly to questions.
                                                 </p>
                                             </div>
                                         </div>
                                         <div className="mt-4 rounded-lg bg-slate-200/20 p-4 shadow-md">
                                             <div className="flex flex-col gap-3">
-                                                <span>سوال:</span>
+                                                <span>Question:</span>
                                                 <textarea
                                                     className="rounded-md border border-gray-300 p-2"
-                                                    placeholder="مثال: چطوری از قیمت ها مطلع بشم؟"
+                                                    placeholder="Example: How can I find out about prices?"
                                                     rows={1}
                                                     value={question}
                                                     onChange={(e) =>
@@ -378,11 +379,11 @@ const MyMessage = () => {
                                             </div>
                                             <div className="flex flex-col gap-3">
                                                 <span className="mt-2">
-                                                    پاسخ مورد انتظار :
+                                                    Expected Answer:
                                                 </span>
                                                 <textarea
                                                     className="rounded-md border border-gray-300 p-2"
-                                                    placeholder="با مراجعه به صفحه قیمتگزاری میتونید از آخرین وضعیت قیمت مطلع شوید"
+                                                    placeholder="By visiting the pricing page, you can get the latest price information."
                                                     value={answer}
                                                     rows={5}
                                                     onChange={(e) =>
@@ -398,7 +399,7 @@ const MyMessage = () => {
                                                 className="focus-visible:ring-ring inline-flex h-9 w-full items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-4 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none  focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                                                 onClick={handleOnCloseModal}
                                             >
-                                                لغو
+                                                Cancel
                                             </button>
                                             <button
                                                 className="focus-visible:ring-ring inline-flex h-9  w-full items-center justify-center whitespace-nowrap rounded-md  bg-blue-600 px-4 py-1 text-sm font-medium text-zinc-50 shadow-sm transition-colors hover:bg-blue-700 focus-visible:outline-none    focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
@@ -409,13 +410,14 @@ const MyMessage = () => {
                                                     <>
                                                         <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                                         <span className="mr-3">
-                                                            صبر کنید ...
+                                                            Please wait...
                                                         </span>
                                                     </>
                                                 ) : (
                                                     <>
                                                         <span>
-                                                            تایید و شروع آموزش
+                                                            Confirm and Start
+                                                            Training
                                                         </span>
                                                     </>
                                                 )}
@@ -426,10 +428,10 @@ const MyMessage = () => {
                             </Modal>
                             <div className="pl-6 pr-6">
                                 <label className="text-md mb-2 block font-medium text-zinc-700">
-                                    {" "}
-                                    فیلتر :
+                                    Filter:
                                     <span className="mr-1 text-[12px] text-gray-600">
-                                        (بر اساس زمان شروع گفت و گو)
+                                        (Based on the start time of the
+                                        conversation)
                                     </span>
                                 </label>
                                 <div className="flex justify-between">
@@ -442,19 +444,19 @@ const MyMessage = () => {
                                                 className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                             >
                                                 <option value="all">
-                                                    بدون فیلتر
+                                                    No filter
                                                 </option>
                                                 <option value="1_days">
-                                                    1 روز گذشته
+                                                    1 day ago
                                                 </option>
                                                 <option value="3_days">
-                                                    3 روز گذشته
+                                                    3 days ago
                                                 </option>
                                                 <option value="7_days">
-                                                    7 روز گذشته
+                                                    7 days ago
                                                 </option>
                                                 <option value="1_month">
-                                                    1 ماه گذشته
+                                                    1 month ago
                                                 </option>
                                             </select>
                                         </div>
@@ -463,11 +465,12 @@ const MyMessage = () => {
                                         onClick={() => handleDownload(botId)}
                                         className="flex items-center justify-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-sm text-white hover:bg-blue-700"
                                     >
-                                        <span>خروجی json</span>
+                                        <span>Download JSON</span>
                                         <ExportCurve size="20" color="#FFff" />
                                     </button>
                                 </div>
                             </div>
+
                             <div className="flex w-full flex-col  gap-3 pl-6 pr-6 lg:flex-row">
                                 {message ==
                                 "Your bot has conversations, but none within the selected filter" ? (
@@ -475,8 +478,8 @@ const MyMessage = () => {
                                         <EmptyChat />
                                         <div>
                                             <p>
-                                                در این بازه زمانی انتخاب شده
-                                                تاریخچه ای وجود ندارد.
+                                                There is no history in the
+                                                selected time range.
                                             </p>
                                         </div>
                                     </div>
@@ -524,7 +527,7 @@ const MyMessage = () => {
                                                                         key={
                                                                             index
                                                                         }
-                                                                        className={`relative  hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
+                                                                        className={`relative hover:bg-zinc-100 ${isActive ? "bg-zinc-100" : "bg-white"}`}
                                                                         onClick={() =>
                                                                             setActiveConversation(
                                                                                 index,
@@ -546,7 +549,7 @@ const MyMessage = () => {
                                                                                 >
                                                                                     <div className="min-w-0 flex-1 cursor-pointer">
                                                                                         <p className="truncate text-sm text-zinc-500">
-                                                                                            {`کاربر : ${lastMsgUser}`}
+                                                                                            {`User: ${lastMsgUser}`}
                                                                                         </p>
                                                                                     </div>
                                                                                     <div className="shrink-0 cursor-pointer whitespace-nowrap text-sm text-zinc-500">
@@ -569,15 +572,15 @@ const MyMessage = () => {
                                                                                             {formatRelativeTime(
                                                                                                 lastTimeConversations,
                                                                                             )}{" "}
-                                                                                            پیش
+                                                                                            ago
                                                                                         </span>
                                                                                     </div>
                                                                                 </div>
-                                                                            <div className="mt-1 cursor-pointer">
-                                                                                <p className="line-clamp-2 text-sm text-black">
-                                                                                    {`ربات: ${lastMsgBot}`}
-                                                                                </p>
-                                                                            </div>
+                                                                                <div className="mt-1 cursor-pointer">
+                                                                                    <p className="line-clamp-2 text-sm text-black">
+                                                                                        {`Bot: ${lastMsgBot}`}
+                                                                                    </p>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </li>
@@ -586,20 +589,22 @@ const MyMessage = () => {
                                                         )
                                                     ) : (
                                                         <p className="text-center text-sm text-zinc-500">
-                                                            هیچ گفتگویی در این
-                                                            بازه زمانی وجود
-                                                            ندارد
+                                                            There are no
+                                                            conversations in
+                                                            this time range
                                                         </p>
                                                     )}
                                                 </ul>
                                             </div>
                                         </div>
+
                                         <div className="flex grow items-center justify-center ">
                                             <div className="w-full">
                                                 <p className="my-2 ml-1 text-sm font-bold lg:mt-3">
-                                                    بازه زمانی :{" "}
+                                                    Time range:{" "}
                                                     {dicTime[filter]}
                                                 </p>
+
                                                 <div className="panel_custom_scrollbar relative mb-4 flex  h-[38rem]  w-full flex-col justify-between overflow-auto rounded-lg border border-zinc-200 bg-slate-200/20 pt-5 ">
                                                     <div className="px-3">
                                                         {AIChatRecords.map(
@@ -668,8 +673,8 @@ const MyMessage = () => {
                                                                                                     )
                                                                                                 }}
                                                                                             >
-                                                                                                اصلاح
-                                                                                                پاسخ
+                                                                                                Revise
+                                                                                                Answer
                                                                                                 <Magicpen
                                                                                                     size={
                                                                                                         14
@@ -782,19 +787,19 @@ const MyMessage = () => {
                                                                 htmlFor="chat"
                                                                 className="sr-only"
                                                             >
-                                                                پیام شما ...
+                                                                Your message ...
                                                             </label>
                                                             <div className="flex items-center rounded-lg border-t border-gray-200 bg-white px-3 py-2">
                                                                 <button
                                                                     disabled
                                                                     type="button"
                                                                     className="disabled:bg-text-100/60 
-                                                                 inline-flex justify-center rounded-lg
-                                                                  p-2
-                                                                   text-gray-500
-                                                                    hover:bg-gray-100 
-                                                                    hover:text-gray-900 disabled:pointer-events-none disabled:opacity-80 
-                                                                    "
+                 inline-flex justify-center rounded-lg
+                  p-2
+                   text-gray-500
+                    hover:bg-gray-100 
+                    hover:text-gray-900 disabled:pointer-events-none disabled:opacity-80 
+                    "
                                                                 >
                                                                     <svg
                                                                         className="h-5 w-5"
@@ -856,7 +861,7 @@ const MyMessage = () => {
                                                                     id="chat"
                                                                     rows={1}
                                                                     className="ml-4 block w-full rounded-lg border border-gray-300 bg-white p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
-                                                                    placeholder="پیام شما ..."
+                                                                    placeholder="Your message ..."
                                                                     value={
                                                                         liveMessage
                                                                     }

@@ -8,24 +8,23 @@ import useUserStore from "@/src/shared/store/userStore"
 import { useRouter } from 'nextjs-toploader/app';
 
 const HeaderPanel = () => {
-    const pathname = usePathname()
-    const router = useRouter()
+    const pathname = usePathname();
+    const router = useRouter();
 
-    const useBackPanel =
-        pathname.includes("panel") || pathname.includes("createbot")
+    const useBackPanel = pathname.includes("panel") || pathname.includes("createbot");
 
     return (
         <>
             <nav
                 className={`fixed top-0 z-20 w-full bg-white shadow-[0_4px_48.3px_-14px_rgba(0,0,0,0.15)]`}
             >
-                <div className=" flex w-full flex-wrap items-center justify-between p-4">
+                <div className="flex w-full flex-wrap items-center justify-between p-4">
                     <div className="flex items-center justify-center">
                         {useBackPanel && (
                             <div className="flex">
                                 <button
                                     onClick={() => {
-                                        router.push("/mybots")
+                                        router.push("/mybots");
                                     }}
                                 >
                                     <ArrowRight />
@@ -43,10 +42,8 @@ const HeaderPanel = () => {
                         </Link>
 
                         <Link href={"/"}>
-                            <span
-                                className={`mr-2 text-xl font-bold md:text-2xl `}
-                            >
-                                همیارچت{" "}
+                            <span className={`mr-2 text-xl font-bold md:text-2xl`}>
+                                Hamyar
                             </span>
                         </Link>
                     </div>
@@ -57,6 +54,7 @@ const HeaderPanel = () => {
                 </div>
             </nav>
         </>
-    )
-}
+    );
+};
+
 export default HeaderPanel

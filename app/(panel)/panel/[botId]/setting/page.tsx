@@ -10,11 +10,12 @@ const DashboardSettingPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "تنظیمات دستیار هوش مصنوعی | همیارچت",
-    description: "مدیریت و پیکربندی تنظیمات دستیار هوش مصنوعی در همیارچت.",
+    title: "Assistant Settings | HamyarChat",
+    description: "Manage and configure the artificial intelligence assistant settings in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 
 export default DashboardSettingPage

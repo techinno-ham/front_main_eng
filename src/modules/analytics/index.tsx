@@ -47,7 +47,7 @@ const Analytics: React.FC<AnalyticsProps> = ({ botId }) => {
             <>
                 <div className="fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2 md:left-[44%]">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading information...</span>
                         <LoaderLottie />
                     </div>
                 </div>
@@ -60,25 +60,25 @@ const Analytics: React.FC<AnalyticsProps> = ({ botId }) => {
                 <div className="relative">
                 <div className="mt-16 grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
                     <PieChart
-                        title="تعداد کل پاسخ ها موفق"
+                        title="Total Successful Responses"
                         value={684}
                         series={[75, 25]}
                         colors={["#2ED480", "#c4e8ef"]}
                     />
                     <PieChart
-                        title="تعداد اشتباهات"
+                        title="Total Errors"
                         value={550}
                         series={[60, 40]}
                         colors={["#F45252", "#c4e8ef"]}
                     />
                     <PieChart
-                        title="تعداد کال شدن api"
+                        title="Total API Calls"
                         value={5684}
                         series={[75, 25]}
                         colors={["#275be8", "#c4e8ef"]}
                     />
                     <PieChart
-                        title="تعداد درخواست پشتیبان"
+                        title="Total Support Requests"
                         value={555}
                         series={[75, 25]}
                         colors={["#FD8539", "#c4e8ef"]}
@@ -93,7 +93,7 @@ const Analytics: React.FC<AnalyticsProps> = ({ botId }) => {
                         <TotalRevenue />
                     </div>
                 </div>
-                <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-8 py-4 rounded-2xl border border-blue-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">این بخش به زودی دردسترس خواهد بود</span>
+                <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-8 py-4 rounded-2xl border border-blue-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">This section will be available soon</span>
                 </div>
 
             </div>

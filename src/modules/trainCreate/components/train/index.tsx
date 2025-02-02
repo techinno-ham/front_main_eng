@@ -6,13 +6,14 @@ import FileUpload from "./components/upload"
 import TextInput from "./components/text"
 import WebsiteLink from "./components/websiteLink"
 import QAnda from "./components/qAnda"
+
 const TrainForCreate = () => {
     const viewController = useStoreViewControllerCreate()
     const tabsInfo = {
-        File: "فایل ها",
-        Text: "متن ",
-        Website: "لینک ها",
-        QandA: "پرسش و پاسخ ها",
+        File: "Files",
+        Text: "Text",
+        Website: "Links",
+        QandA: "Questions and Answers",
     }
 
     const renderTabContent = () => {

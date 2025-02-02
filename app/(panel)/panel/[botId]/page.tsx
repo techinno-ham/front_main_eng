@@ -12,8 +12,8 @@ const DashboardPage: NextPage = ({ params }: any) => {
     )
 }
 export const metadata: Metadata = {
-    title: "داشبورد دستیار هوش مصنوعی | همیارچت",
-    description: "مشاهده و مدیریت داشبورد دستیار هوش مصنوعی در همیارچت.",
+    title: "AI Assistant Dashboard | HamyarChat",
+    description: "View and manage the AI assistant dashboard in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },

@@ -1,6 +1,6 @@
-export const PlanPricingName:any={
-    "0":"پایه",
-    "1":"اسناندارد",
-    "2":"حرفه ای",
-    "3":"سازمانی"
+export const PlanPricingName: any = {
+    "0": "Basic",
+    "1": "Standard",
+    "2": "Professional",
+    "3": "Enterprise"
 }

@@ -9,8 +9,8 @@ interface FormConfigData {
     email_placeholder: string
     phone_active: boolean
     phone_placeholder: string
-    message_end:string
-    message_url:string
+    message_end: string
+    message_url: string
 }
 
 interface StoreFormConfig {
@@ -20,16 +20,16 @@ interface StoreFormConfig {
 
 const useStoreFormConfig = create<StoreFormConfig>((set) => ({
     fromConfig: {
-        title: "عنوان",
-        description: "توضیحات",
+        title: "Title",
+        description: "Description",
         name_active: true,
-        name_placeholder: "مثال: نام خود را وارد کنید...",
+        name_placeholder: "Example: Enter your name...",
         email_active: true,
-        email_placeholder: "مثال: ایمیل خود را وارد کنید...",
+        email_placeholder: "Example: Enter your email...",
         phone_active: true,
-        phone_placeholder: "091211111111",
-        message_end:"موفق امیز بود",
-        message_url:""
+        phone_placeholder: "+44 7911 123456",
+        message_end: "Successful",
+        message_url: ""
     },
     updateFormConfig: (newConfig) =>
         set((state) => ({

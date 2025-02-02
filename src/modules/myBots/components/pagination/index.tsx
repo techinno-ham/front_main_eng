@@ -23,14 +23,14 @@ const Pagination: React.FC<PaginationProps> = ({
                     disabled={currentPage === 1}
                     className="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
-                    صفحه ی قبل
+                    Previous Page
                 </button>
                 <button
                     onClick={() => onPageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
                     className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
-                    صفحه ی بعد
+                    Next Page
                 </button>
             </div>
             <div className="mt-2 hidden flex-col gap-3 sm:flex sm:flex-1 sm:items-center sm:justify-between">
@@ -68,15 +68,15 @@ const Pagination: React.FC<PaginationProps> = ({
                 </div>
                 <div>
                     <p className="text-sm text-gray-700">
-                        نمایش{" "}
+                        Displaying{" "}
                         <span className="font-medium">
                             {(currentPage - 1) * 10 + 1}
                         </span>{" "}
-                        تا{" "}
+                        to{" "}
                         <span className="font-medium">
                             {Math.min(currentPage * 10, totalPages * 10)}
                         </span>{" "}
-                        از{" "}
+                        of{" "}
                         <span className="font-medium">{totalPages * 10}</span>{" "}
                         {title}
                     </p>

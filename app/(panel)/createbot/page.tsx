@@ -11,10 +11,11 @@ const CreateBotsPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "ایجاد دستیار | همیارچت",
-    description: "ساخت و پیکربندی یک دستیار جدید در همیارچت.",
+    title: "Create Assistant | HamyarChat",
+    description: "Create and configure a new assistant in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 export default CreateBotsPage

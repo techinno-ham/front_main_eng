@@ -10,10 +10,11 @@ const ProfilePage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "پروفایل | همیارچت",
-    description: "مدیریت پروفایل کاربری در همیارچت.",
+    title: "Profile | HamyarChat",
+    description: "User profile management in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 export default ProfilePage

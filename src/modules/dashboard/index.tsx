@@ -47,7 +47,7 @@ const Dashboard: React.FC<DashboardProps> = ({ botId }) => {
             <>
                 <div className="fixed left-1/2 top-1/2 z-[1000] -translate-x-1/2 -translate-y-1/2 md:left-[44%]">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading data...</span>
                         <LoaderLottie />
                     </div>
                 </div>

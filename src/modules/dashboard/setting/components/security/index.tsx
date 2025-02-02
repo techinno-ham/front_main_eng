@@ -5,32 +5,27 @@ const Security = () => {
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="mb-1 block text-sm font-medium text-zinc-700">
-                            میزان دسترسی :
+                            Access Level:
                         </label>
                         <select
                             id="countries"
                             className="block w-1/2 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 md:w-1/4"
                         >
-                            <option>عمومی</option>
-                            <option>خصوصی</option>
+                            <option>Public</option>
+                            <option>Private</option>
                         </select>
 
                         <p className="mt-2 text-sm text-zinc-500">
-                            &#39;خصوصی&#39;: هیچ کس نمی‌تواند به چت‌بات شما
-                            دسترسی داشته باشد، به جز شما (حساب کاربری شما)
+                            &apos;Private&apos;: No one can access your chatbot except for you (your account).
                         </p>
                         <p className="mt-2 text-sm text-zinc-500">
-                            &#39;عمومی&#39;: دیگران می‌توانند با چت‌بات شما
-                            گفتگو کنند اگر لینک را برایشان ارسال کنید. همچنین
-                            می‌توانید آن را در وب‌سایت خود تعبیه کنید تا
-                            بازدیدکنندگان وب‌سایت شما بتوانند از آن استفاده
-                            کنند.
+                            &apos;Public&apos;: Others can chat with your chatbot if you share the link with them. You can also embed it on your website so that visitors can use it.
                         </p>
                     </div>
                     <div className="pb-8">
                         <div>
                             <label className="block pb-2 text-sm font-medium text-zinc-700">
-                                غیر فعال کردن چت بات{" "}
+                                Disable Chatbot
                             </label>
                             <input
                                 type="checkbox"
@@ -43,49 +38,46 @@ const Security = () => {
                     <div>
                         <div className="flex justify-between">
                             <label className="block text-sm font-medium text-zinc-700">
-                                محدودیت نرخ درخواست :{" "}
+                                Request Rate Limiting:
                             </label>
                             <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80">
-                                ریست کردن
+                                Reset
                             </button>
                         </div>
                         <p className="mt-2 text-sm text-zinc-500">
-                            محدود کردن تعداد پیام‌های ارسال شده از یک دستگاه در
-                            آیفریم و حباب چت (این محدودیت برای شما در
-                                hamyar.chat اعمال نمی‌شود، فقط در وب‌سایت شما برای
-                            کاربران شما به منظور جلوگیری از سوءاستفاده).
+                            Limit the number of messages sent from a device in an iframe and chat bubble (this limit does not apply to you in hamyar.chat, only on your website for your users to prevent abuse).
                         </p>
                         <div className="mt-1 text-sm text-zinc-700">
-                            محدود به تنها{" "}
+                            Limit to only{" "}
                             <input
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
                                 value="20"
                                 name="ip_limit"
                             />{" "}
-                            پیام هر{" "}
+                            messages every{" "}
                             <input
                                 className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                 type="number"
                                 value="240"
                                 name="ip_limit_timeframe"
                             />{" "}
-                            ثانیه.
+                            seconds.
                         </div>
                         <div className="my-4 text-sm text-zinc-700">
-                            نشان دادن پیامی که محدودیت پر می شود:
+                            Show message when limit is reached:
                             <input
                                 className=" mt-2 block w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                                 id="inline-full-name"
                                 type="text"
-                                value="تعداد درخواست شما زیاد تر از استاندارد بات می باشد."
+                                value="Your request count exceeds the bot's standard."
                             />
                         </div>
                     </div>
                 </div>
                 <div className="flex justify-end  px-5 py-3">
                     <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                        Save
                     </button>
                 </div>
             </div>

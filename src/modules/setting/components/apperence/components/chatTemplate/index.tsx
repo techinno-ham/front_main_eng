@@ -68,7 +68,7 @@ const ChatTemplate = ({ config }: any) => {
                                                     <div className=" w-full break-words text-right text-inherit ">
                                                         <p style={{
                                                             color:config.colorUserMessage?config.colorUserMessage:"#fff"
-                                                        }}>سلام !</p>{" "}
+                                                        }}>Hello!</p>{" "} {/* Translation of "سلام !" */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,9 +111,9 @@ const ChatTemplate = ({ config }: any) => {
                                         required
                                         className="mr-3 max-h-36 w-full cursor-not-allowed resize-none bg-transparent pr-3 leading-[24px] focus:outline-none focus:ring-0 focus-visible:ring-0 group-[.cb-dark]:text-white group-[.cb-light]:text-black"
                                         disabled
-                                        placeholder={config.inputPlaceholder}
-                                        aria-label="Write a Message"
-                                        title="Write a Message"
+                                        placeholder={config.inputPlaceholder} // This is the placeholder for input (in English)
+                                        aria-label="Write a Message" // This is a label for accessibility (in English)
+                                        title="Write a Message" // Tooltip for the input box (in English)
                                         style={{
                                             height: "24px",
                                         }}
@@ -130,7 +130,7 @@ const ChatTemplate = ({ config }: any) => {
                             <div className="flex items-center justify-center">
                                 <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-1">
                                     <p className="grow text-nowrap text-center text-xs ">
-                                        قدرت گرفته از
+                                        Powered by {/* Translation of "قدرت گرفته از" */}
                                         <a
                                             target="_blank"
                                             className="mr-1 font-semibold text-[#1277fd]"
@@ -145,7 +145,7 @@ const ChatTemplate = ({ config }: any) => {
                                         className="h-4   w-[1px] shrink-0 bg-zinc-400"
                                     ></div>
                                     <div className="grow overflow-hidden text-left text-[11px] group-[.cb-dark]:text-[#b4b4b5] group-[.cb-light]:text-[#3f3f46]">
-                                        <p>{config.footer}</p>
+                                        <p>{config.footer}</p> {/* Footer content */}
                                     </div>
                                 </div>
                             </div>

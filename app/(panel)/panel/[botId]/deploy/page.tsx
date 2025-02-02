@@ -10,10 +10,11 @@ const DashboardDeployPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "استقرار دستیار هوش مصنوعی | همیارچت",
-    description: "استقرار و مدیریت دستیار هوش مصنوعی در همیارچت.",
+    title: "AI Assistant Deployment | HamyarChat",
+    description: "Deploy and manage your AI assistant in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 export default DashboardDeployPage

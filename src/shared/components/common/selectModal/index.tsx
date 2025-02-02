@@ -33,7 +33,7 @@ const SelectModalCustom = () => {
     }
     const handleSubmit = () => {
         if (selectedUrls.length < 3) {
-            toast.error("لطفا حداقل سه لینک را انتخاب کنید.")
+            toast.error("Please select at least three links.") // Translation of "لطفا حداقل سه لینک را انتخاب کنید."
             return
         }
 
@@ -70,7 +70,7 @@ const SelectModalCustom = () => {
                             </button>
                         </div>
                         <div className="titleHeader">
-                            <span>انتخاب صفحات</span>
+                            <span>Select Pages</span> {/* Translation of "انتخاب صفحات" */}
                         </div>
                         <div style={{ marginTop: "auto" }}>
                             <hr className="custom-hr" />
@@ -85,7 +85,7 @@ const SelectModalCustom = () => {
                             color: "gray",
                         }}
                     >
-                        صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟
+                        Select the pages you want to review the data for? {/* Translation of "صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟" */}
                     </span>
                     <div className="body">
                         {SelectModal.urls.map((url, index) => (
@@ -108,7 +108,7 @@ const SelectModalCustom = () => {
                     </div>
                     <div className="footer">
                         <button className="sumbitBtn" onClick={handleSubmit}>
-                            بررسی اطلاعات
+                            Review Data 
                         </button>
                     </div>
                 </div>

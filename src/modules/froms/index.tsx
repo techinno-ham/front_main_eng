@@ -21,10 +21,10 @@ const Forms = () => {
     const [error, setError] = useState<string | null>(null);
 
     const tabsInfo = {
-        General: "عمومی",
-        Apperence: "ظاهری",
-        Answer: "جواب ها",
-        Share:"اشتراک گذاری "
+        General: "General",
+        Apperence: "Appearance",
+        Answer: "Answers",
+        Share: "Share"
     };
     useEffect(() => {
         const fetchConfigs = async () => {
@@ -60,7 +60,7 @@ const Forms = () => {
             <>
                 <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading data ...</span>
                         <LoaderLottie />
                     </div>
                 </div>

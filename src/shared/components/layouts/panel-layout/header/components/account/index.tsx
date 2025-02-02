@@ -13,17 +13,17 @@ export const sidebarLinks = [
     {
         icon: <Profile />,
         route: "/profile",
-        label: "پروفایل",
+        label: "Profile",
     },
     {
         icon: <I3Dcube />,
         route: "/mybots",
-        label: " بات های من",
+        label: "My Bots",
     },
     {
         icon: <Send2 />,
         route: "/invite",
-        label: "دعوت دوستان",
+        label: "Invite Friends",
     },
 ]
 
@@ -34,7 +34,7 @@ const UserAccount = () => {
 
     const menuRef = useRef<HTMLImageElement>(null)
     const imgRef = useRef<HTMLImageElement>(null)
-    const { user, setUser,userPlanId } = useUserStore()
+    const { user, setUser, userPlanId } = useUserStore()
     const isUserEmpty = !user || Object.keys(user).length === 0;
 
     const [remainingDays, setRemainingDays] = useState<number | null>(null)
@@ -126,14 +126,21 @@ const UserAccount = () => {
                     {open && (
                         <div
                             ref={menuRef}
-                            className="border-blue-gray-50 text-blue-gray-500 shadow-blue-gray-500/10 absolute left-1 top-16 z-10  min-w-[160px] flex-col gap-2 overflow-auto rounded-md border bg-white p-1 font-sans text-sm font-normal shadow-lg focus:outline-none"
+                            className="border-blue-gray-50
+                            text-blue-gray-500 shadow-blue-gray-500/10
+                             absolute right-1 top-16 z-10
+                               min-w-[160px]
+                                flex-col gap-2 overflow-auto 
+                                rounded-md border bg-white p-1
+                                 font-sans text-sm font-normal
+                                  shadow-lg focus:outline-none"
                         >
                           
                             <div className="px-4 py-3 ">
                                 <span className="block text-sm text-gray-900">
-                                    {user?.name || "مهدیار"}
+                                    {user?.name || "Mahdyar"}
                                     <span className="ml-1">
-                                        {user?.lastName || "جعفری"}
+                                        {user?.lastName || "Jafari"}
                                     </span>
                                 </span>
                                 <span className="block text-sm  text-gray-500">
@@ -142,15 +149,14 @@ const UserAccount = () => {
                             </div>
                             <div className="flex justify-center mb-1">
                                 <div className=" p-1 bg-blue-200 flex justify-center items-center rounded-md border border-blue-500">
-                                   <p className="text-[12px]">کاربر  {PlanPricingName[userPlanId]}</p>
+                                   <p className="text-[12px]">User  {PlanPricingName[userPlanId]}</p>
                                 </div>
 
                             </div>
                             {remainingDays !== null && (
                                         <div className="mb-3">
                                             <p className="text-[12px] text-center text-gray-500">
-                                                {remainingDays} روز تا پایان
-                                              اعتبار حساب 
+                                                {remainingDays} days until account validity expires
                                             </p>
                                             <div className="relative w-full h-2 bg-gray-200 rounded-full mt-1">
                                                 <div
@@ -190,7 +196,7 @@ const UserAccount = () => {
                                     role="menuitem"
                                 />
                                 <li
-                                    key={"خروج"}
+                                    key={"Logout"}
                                     style={{ width: "100%" }}
                                     onClick={logout}
                                 >
@@ -198,7 +204,7 @@ const UserAccount = () => {
                                         <LogoutCurve className="text-red-600" />
                                         <span className=" text-red-600">
                                             {" "}
-                                            خروج
+                                            Logout
                                         </span>
                                     </div>
                                 </li>

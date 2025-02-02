@@ -8,14 +8,14 @@ const General = () => {
     const { register, handleSubmit, setValue } = useForm();
     const { data, setData } = useStoreFromsData();
     const [isLoading, setIsLoading] = useState(false);
-    const [checkboxState,setCheckboxState]=useState("");
+    const [checkboxState, setCheckboxState] = useState("");
 
     const onSubmit = async (formData: any) => {
-        const dataFormUpdated={
-            forms_name:formData?.name,
-            showIf_message_number:+formData?.message_number,
-            showIf_human:checkboxState == "humen",
-            showIf_message:checkboxState == "message"
+        const dataFormUpdated = {
+            forms_name: formData?.name,
+            showIf_message_number: +formData?.message_number,
+            showIf_human: checkboxState == "human",
+            showIf_message: checkboxState == "message"
         };
         setIsLoading(true)
         try {
@@ -23,42 +23,37 @@ const General = () => {
                 data.forms_id,
                 dataFormUpdated,
             )
-            toast.success("تغیرات شما موفق آمیز ذخیره شد");
+            toast.success("Your changes have been saved successfully.");
             setData(response.data);
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was an issue updating.");
             console.error("Update failed:", error)
         } finally {
             setIsLoading(false)
         }
     };
 
-
-
     useEffect(() => {
-      
         if (data) {
-            if(data.showIf_message){
+            if (data.showIf_message) {
                 setCheckboxState("message")
-            }else{
-                setCheckboxState("humen")
+            } else {
+                setCheckboxState("human")
             }
-           
+
             setValue("name", data.forms_name);
             setValue("message_number", data.showIf_message_number);
-            
         }
     }, [data, setValue]);
-
 
     const handleCopyId = () => {
         navigator.clipboard
             .writeText(data?.forms_id)
             .then(() => {
-                toast.success("کد مورد نظر شما کپی شد.")
+                toast.success("Your code has been copied.");
             })
             .catch((err) => {
-                toast.error("کد مورد نظر شما کپی نشد.")
+                toast.error("Your code could not be copied.");
             })
     };
 
@@ -71,14 +66,14 @@ const General = () => {
             <div className="p-5">
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
-                        فرم آیدی :
+                        Form ID:
                     </label>
                     <div className="mt-1 flex items-center gap-2 space-x-4">
                         <div className="font-semibold">{data?.forms_id}</div>
                         <button
-                        onClick={handleCopyId}
+                            onClick={handleCopyId}
                             type="button"
-                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80  "
+                            className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md border border-zinc-200 bg-transparent px-2 py-1 text-sm font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -98,52 +93,52 @@ const General = () => {
                         </button>
                     </div>
                 </div>
-    
+
                 <div className="pb-8">
                     <label className="block text-sm font-medium text-zinc-700">
-                        نام فرم   :
+                        Form Name:
                     </label>
                     <div className="mt-2 ">
                         <input
                             {...register("name")}
-                            className=" w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
+                            className="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 px-4 py-2 leading-tight text-gray-700 focus:border-blue-600 focus:bg-white focus:outline-none"
                             id="inline-full-name"
                             type="text"
-                            // defaultValue={name}
                         />
                     </div>
                 </div>
+
                 <div className="pb-8">
-                                <label className="block text-sm font-medium text-zinc-700">
-                                 زمان نمایش فرم :{" "}
-                                </label>
-                                <div className="mt-3">
-                                   <div className="flex items-center mb-4">
-                                    <input   value="message" onChange={handleCheckboxChange} checked={checkboxState=="message"} type="radio"  name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label  className="ms-2 text-[13px]  text-gray-600 ">بعد از تعداد پیام مشخص </label>
-                                   </div>
-                                   {
-                                    checkboxState =="message" && (
-                                        <>
-                                           <div className="pb-6">
-                                   <input
-                                    {...register("message_number")}
-                                     className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                      type="number"
-                                       />
-                                   </div>
-                                        </>
-                                    )
-                                   }
-                                
-                                   <div className="flex  items-center mb-4">
-                                    <input   value="humen" onChange={handleCheckboxChange} checked={checkboxState=="humen"} type="radio" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                                    <label  className="ms-2 text-[13px]  text-gray-600 ">طبق دستور نیاز به گفتگو انسانی</label>
-                                   </div>
-                                </div>
+                    <label className="block text-sm font-medium text-zinc-700">
+                        Form Display Time:
+                    </label>
+                    <div className="mt-3">
+                        <div className="flex items-center mb-4">
+                            <input value="message" onChange={handleCheckboxChange} checked={checkboxState == "message"} type="radio" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                            <label className="ms-2 text-[13px] text-gray-600">After a specific number of messages</label>
+                        </div>
+                        {
+                            checkboxState == "message" && (
+                                <>
+                                    <div className="pb-6">
+                                        <input
+                                            {...register("message_number")}
+                                            className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring inline h-8 w-20 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
+                                            type="number"
+                                        />
+                                    </div>
+                                </>
+                            )
+                        }
+
+                        <div className="flex items-center mb-4">
+                            <input value="human" onChange={handleCheckboxChange} checked={checkboxState == "human"} type="radio" name="default-radio" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                            <label className="ms-2 text-[13px] text-gray-600">According to the need for human conversation</label>
+                        </div>
+                    </div>
                 </div>
-                </div>
-                 <div className="flex justify-end  px-5 py-3">
+            </div>
+            <div className="flex justify-end px-5 py-3">
                 <button
                     type="submit"
                     className="flex items-center gap-2 rounded-md bg-blue-600 px-4 py-2 text-sm text-white"
@@ -151,13 +146,13 @@ const General = () => {
                     {isLoading ? (
                         <>
                             <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                            <span className="ml-3"> بروزرسانی ...</span>
+                            <span className="ml-3">Updating ...</span>
                         </>
                     ) : (
-                        <span>ذخیره</span>
+                        <span>Save</span>
                     )}
                 </button>
-                  </div>
+            </div>
         </form>
     )
 }

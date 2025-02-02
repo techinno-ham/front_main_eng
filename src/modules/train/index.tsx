@@ -53,11 +53,11 @@ const Train = () => {
         fetchDataSource()
     }, [botId])
     const tabsInfo = {
-        File: "فایل ها",
-        Text: "متن ",
-        Website: "لینک ها",
-        QandA: "پرسش و پاسخ ها",
-    }
+        File: "Files",
+        Text: "Text",
+        Website: "Links",
+        QandA: "Questions and Answers",
+    };
 
     const renderTabContent = () => {
         switch (viewController.activeTab) {
@@ -76,14 +76,15 @@ const Train = () => {
 
     if (loading)
         return (
-            <>
-                <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
-                    <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
-                        <LoaderLottie />
-                    </div>
-                </div>
-            </>
+<>
+    <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
+        <div className="flex items-center gap-3">
+            <span>Loading data...</span>
+            <LoaderLottie />
+        </div>
+    </div>
+</>
+
         )
 
     return (

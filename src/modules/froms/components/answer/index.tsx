@@ -8,22 +8,13 @@ const Answer = () => {
     const { register, handleSubmit, setValue } = useForm()
     const [isLoading, setIsLoading] = useState(false)
 
-
-
     return (
-        
-         
-                <div className="flex justify-center items-center h-[250px]">
-                    <div className="flex flex-col justify-center items-center gap-2">
-                       <DirectInbox size={45} color="gray"/>
-                      <p className="font-medium text-2xl">بدون جواب</p>
-                    </div>
-                    
-                </div>
-     
-
-          
-      
+        <div className="flex justify-center items-center h-[250px]">
+            <div className="flex flex-col justify-center items-center gap-2">
+                <DirectInbox size={45} color="gray"/>
+                <p className="font-medium text-2xl">No Answer</p>
+            </div>
+        </div>
     )
 }
 

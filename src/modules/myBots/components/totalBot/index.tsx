@@ -31,8 +31,8 @@ const TotalBots = (props: any) => {
                                         <span className="text-[24px] text-[#0771ED]">
                                             {props.totalNumber}
                                         </span>
-                                        <span className="mr-2  text-[19px] text-[#0771ED] md:text-[24px]">
-                                            چت بات پایه
+                                        <span className="ml-2  text-[19px] text-[#0771ED] md:text-[24px]">
+                                            Basic Chat Bot
                                         </span>
                                     </span>
                                     <span
@@ -41,11 +41,10 @@ const TotalBots = (props: any) => {
                                             color: "gray",
                                         }}
                                     >
-                                        اگر میخواهید این عدد را بیشتر کنید از
-                                        محدودیت باشد.{" "}
+                                        If you want to increase this number beyond the limit, please{" "}
                                         <Link href={"/pricing"}>
                                             <span className="cursor-pointer text-[#0771ED]">
-                                                کاربری پرو
+                                                Pro User
                                             </span>
                                         </Link>
                                     </span>
@@ -64,7 +63,7 @@ const TotalBots = (props: any) => {
                                         color: "#0771ED",
                                     }}
                                 >
-                                    کل
+                                    Total
                                 </span>
                             </div>
                         </div>

@@ -65,12 +65,12 @@ const TotalRevenue = () => {
     return (
         <div className="flex flex-1 flex-col  rounded-2xl bg-white p-4 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)] blur-[2px] pointer-events-none">
             <span className="text-lg font-semibold text-gray-900">
-                مجموع استفاده در ماه جاری
+                Total usage for the current month
             </span>
 
             <div className="my-5 flex flex-row flex-wrap gap-4">
                 <span className="text-2xl font-bold text-gray-900">
-                    2356 بار
+                    2356 times
                 </span>
                 <div className="flex flex-row items-center gap-1">
                     <ArrowCircleUp2
@@ -79,7 +79,7 @@ const TotalRevenue = () => {
                     <div className="flex flex-col">
                         <span className="text-sm text-blue-600">0.8%</span>
                         <span className="text-xs text-gray-500">
-                            بیشتر از ماه پیش
+                            More than last month
                         </span>
                     </div>
                 </div>

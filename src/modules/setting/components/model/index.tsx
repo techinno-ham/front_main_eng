@@ -11,7 +11,7 @@ const Model = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [creativity, setCreativity] = useState(0)
     const [Instructions, setInstructions] = useState("")
-    const [selectedOption, setSelectedOption] = useState("دستورالعمل سفارشی")
+    const [selectedOption, setSelectedOption] = useState("Custom Instruction")
 
     const onSubmit = async (dataForm: any) => {
         setIsLoading(true)
@@ -26,10 +26,10 @@ const Model = () => {
                 data.bot_id,
                 formData,
             )
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes were successfully saved")
             setData(response.data)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was a problem updating!")
             console.error("Update failed:", error)
         } finally {
             setIsLoading(false)
@@ -38,7 +38,7 @@ const Model = () => {
 
     const handleChangeInstructions = (e: any) => {
         const newText = e.target.value
-        setSelectedOption("دستورالعمل سفارشی")
+        setSelectedOption("Custom Instruction")
         setInstructions(newText)
     }
 
@@ -62,10 +62,10 @@ const Model = () => {
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
-                            مدل :{" "}
+                            Model:{" "}
                             <div className="mb-1 ml-1 inline-flex items-center rounded-md border border-transparent bg-violet-100 px-2.5 py-0.5 text-xs font-semibold text-blue-500 transition-colors hover:bg-violet-100/80 focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 ">
                                 {" "}
-                                gpt-4o فعال می باشد.
+                                gpt-4o is active.
                             </div>
                         </label>
                         <select
@@ -79,7 +79,7 @@ const Model = () => {
                             <option>GPT-3.5Turbo</option>
                         </select>
                         <p className="mt-2 text-sm font-semibold text-zinc-700">
-                            gpt-4o پیشرفته‌ترین مدل OpenAI فعال است.
+                            gpt-4o is the most advanced OpenAI model.
                         </p>
                         <p className="mt-2 text-sm text-zinc-500">
                             gpt-4o: 1 credit per response
@@ -96,46 +96,46 @@ const Model = () => {
                     </div>
                     <div className="pb-8">
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
-                            دستورالعمل ها چت بات :
+                            Chatbot Instructions:
                         </label>
                         <select
                             value={selectedOption} // Set the selected value from state
                             onChange={handleChangeselectedOption}
                             className="mb-2 block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
                         >
-                            <option value="دستورالعمل سفارشی">
-                                📜 دستورالعمل سفارشی
+                            <option value="Custom Instruction">
+                                📜 Custom Instruction
                             </option>
-                            <option value="چت‌ بات هوش مصنوعی">
-                                🤖 چت‌ بات هوش مصنوعی
+                            <option value="AI Chatbot">
+                                🤖 AI Chatbot
                             </option>
-                            <option value="راهنمای سفر">✈️ راهنمای سفر</option>
-                            <option value="نماینده پشتیبانی مشتری">
-                                👩‍💻 نماینده پشتیبانی مشتری
+                            <option value="Travel Guide">✈️ Travel Guide</option>
+                            <option value="Customer Support Representative">
+                                👩‍💻 Customer Support Representative
                             </option>
-                            <option value="نماینده فروش">
-                                💼 نماینده فروش
+                            <option value="Sales Representative">
+                                💼 Sales Representative
                             </option>
-                            <option value="مدرس زبان">📚 مدرس زبان</option>
-                            <option value="مربی زندگی">🌟 مربی زندگی</option>
-                            <option value="مشاور مالی">💰 مشاور مالی</option>
+                            <option value="Language Teacher">📚 Language Teacher</option>
+                            <option value="Life Coach">🌟 Life Coach</option>
+                            <option value="Financial Advisor">💰 Financial Advisor</option>
                             
-                            <option value="توسعه‌دهنده نرم‌افزار">
-                                💻 توسعه‌دهنده نرم‌افزار
+                            <option value="Software Developer">
+                                💻 Software Developer
                             </option>
-                            <option value="آشپز حرفه‌ای">
-                                🍳 آشپز حرفه‌ای
+                            <option value="Professional Chef">
+                                🍳 Professional Chef
                             </option>
-                            <option value="روانشناس">🧠 روانشناس</option>
-                            <option value="مربی تناسب اندام">
-                                🏋️ مربی تناسب اندام
+                            <option value="Psychologist">🧠 Psychologist</option>
+                            <option value="Fitness Coach">
+                                🏋️ Fitness Coach
                             </option>
                         </select>
 
                         <div className="h-full w-full">
                             <textarea
                                 className="panel_custom_scrollbar h-full w-full resize-none rounded-md border border-gray-300 p-4"
-                                placeholder="میتوانید اینجا بنویسید تا من یاد بگیرم ..."
+                                placeholder="You can write here for me to learn..."
                                 rows={12}
                                 onChange={handleChangeInstructions}
                                 value={Instructions}
@@ -146,7 +146,7 @@ const Model = () => {
 
                     <div>
                         <label className="mb-2 block text-sm font-medium text-zinc-700">
-                            میزان خلاقیت :
+                            Creativity Level:
                         </label>
                         <p className="text-sm">{creativity}</p>
                         <input
@@ -161,8 +161,8 @@ const Model = () => {
                             className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-gray-200 "
                         />
                         <div className="flex justify-between">
-                            <p className="text-xs text-zinc-700">ثابت بودن</p>
-                            <p className="text-xs text-zinc-700">خلاقیت</p>
+                            <p className="text-xs text-zinc-700">Fixed</p>
+                            <p className="text-xs text-zinc-700">Creativity</p>
                         </div>
                     </div>
                 </div>
@@ -174,10 +174,10 @@ const Model = () => {
                         {isLoading ? (
                             <>
                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                <span className="ml-3"> بروزرسانی ...</span>
+                                <span className="ml-3"> Updating ...</span>
                             </>
                         ) : (
-                            <span>ذخیره</span>
+                            <span>Save</span>
                         )}
                     </button>
                 </div>

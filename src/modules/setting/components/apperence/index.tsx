@@ -1,59 +1,57 @@
 "use client"
 
-import { useEffect, useState,useCallback } from "react";
-import { useDropzone, FileRejection } from "react-dropzone";
+import { useEffect, useState, useCallback } from "react"
+import { useDropzone, FileRejection } from "react-dropzone"
 import ChatTemplate from "./components/chatTemplate"
 import useStoreChatConfig from "./hooks/config-mock-chat"
 import useStoreConfig from "../../hooks/loadConfig"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import CustomColorPicker from "./components/customColorPicker"
-import Lottie from "lottie-react";
-import  {animationDataBot} from "./../../../../../public/lottie/widgetAnimations"
+import Lottie from "lottie-react"
+import { animationDataBot } from "./../../../../../public/lottie/widgetAnimations"
 
-
-const MAX_IMAGE_SIZE = 1 * 1024 * 1024; // 1MB
-const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/svg+xml"];
-
+const MAX_IMAGE_SIZE = 1 * 1024 * 1024 // 1MB
+const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/svg+xml"]
 
 const Apperence = () => {
     const { chatConfig, updateChatConfig } = useStoreChatConfig()
     const { data, setData } = useStoreConfig()
     const [isLoading, setIsLoading] = useState(false)
-    const [image, setImage] = useState<File | null>(null);
-
+    const [image, setImage] = useState<File | null>(null)
 
     const onDrop = useCallback(
         (acceptedFiles: File[], fileRejections: FileRejection[]) => {
             if (acceptedFiles.length > 1) {
-                toast.error("شما بیش از یک عکس نمی توانید اپلود کنید.");
-                return;
+                toast.error("You can only upload one image.")
+                return
             }
 
-            const file = acceptedFiles[0];
+            const file = acceptedFiles[0]
 
             if (!SUPPORTED_FORMATS.includes(file.type)) {
-                toast.error("فقط فایل‌های JPG، PNG و SVG پشتیبانی می‌شوند");
-                return;
+                toast.error("Only JPG, PNG, and SVG files are supported.")
+                return
             }
 
             if (file.size > MAX_IMAGE_SIZE) {
-                toast.error("حجم فایل نباید از ۱ مگابایت بیشتر باشد");
-                return;
+                toast.error("The file size must not exceed 1MB.")
+                return
             }
 
-            setImage(file);
+            setImage(file)
         },
-        []
-    );
+        [],
+    )
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({
         onDrop,
         accept: SUPPORTED_FORMATS.reduce(
             (acc, format) => ({ ...acc, [format]: [] }),
-            {}
+            {},
         ),
-    });
+    })
+
     const handleInputChange = (e: any) => {
         const { name, value } = e.target
         updateChatConfig({ [name]: value })
@@ -61,79 +59,81 @@ const Apperence = () => {
 
     const handleChangePosition = (e: any) => {
         let { name, value } = e.target
-        value = value == "راست" ? "right" : "left"
+        value = value == "right" ? "right" : "left"
         console.log({ [name]: value })
         updateChatConfig({ [name]: value })
     }
 
     const handleThemeChange = (e: any) => {
         const value = e.target.value
-        const themeBot = value === "حالت روز" ? "light" : "dark"
+        const themeBot = value === "Day mode" ? "light" : "dark"
         updateChatConfig({ themeBot })
-    };
+    }
 
-    const getContrastColor = (hex:any) => {
+    const getContrastColor = (hex: any) => {
         // Remove the '#' if present
-        hex = hex.replace('#', '');
-    
+        hex = hex.replace("#", "")
+
         // Parse the hex color to RGB
-        const r = parseInt(hex.substr(0, 2), 16);
-        const g = parseInt(hex.substr(2, 2), 16);
-        const b = parseInt(hex.substr(4, 2), 16);
-    
+        const r = parseInt(hex.substr(0, 2), 16)
+        const g = parseInt(hex.substr(2, 2), 16)
+        const b = parseInt(hex.substr(4, 2), 16)
+
         // Calculate the luminance using the formula
-        const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    
+        const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b
+
         // Return either black or white based on the luminance
-        return luminance > 128 ? '#000000' : '#ffffff'; // Black if bright, white if dark
+        return luminance > 128 ? "#000000" : "#ffffff" // Black if bright, white if dark
     }
+
     const handleBgChange = (name: any, value: any) => {
-        const contrastColor = getContrastColor(value);
-        updateChatConfig({ [name]: value ,"colorUserMessage":contrastColor })
+        const contrastColor = getContrastColor(value)
+        updateChatConfig({ [name]: value, colorUserMessage: contrastColor })
     }
+
     const onSubmit = async () => {
         setIsLoading(true)
         try {
-            const Data :any= {
+            const Data: any = {
                 greet_msgs: chatConfig?.botMessages,
                 action_btns: chatConfig?.suggestedMessages,
                 placeholder_msg: chatConfig?.inputPlaceholder,
                 footer_msg: chatConfig?.footer,
                 bot_name: chatConfig?.displayName,
                 theme_bot: chatConfig?.themeBot,
-                user_msg_color:chatConfig?.colorUserMessage,
+                user_msg_color: chatConfig?.colorUserMessage,
                 user_msg_bg_color: chatConfig?.bgUserMessage,
                 bot_widget_border_color: chatConfig?.borderWidget,
                 bot_widget_position: chatConfig?.chatButtonPosition,
                 notification_msg_delay: chatConfig?.initNotifDelay,
-                notificationMsgs:chatConfig?.notificationMsgs,
-                bot_image_border_color:chatConfig?.borderProfile,
-                bot_image:chatConfig?.imageProfle
+                notificationMsgs: chatConfig?.notificationMsgs,
+                bot_image_border_color: chatConfig?.borderProfile,
+                bot_image: chatConfig?.imageProfle,
             }
-            const formData = new FormData();
+            const formData = new FormData()
 
-              
-              for (const key in Data) {
-                 if (Array.isArray(Data[key])) {
-                   formData.append(key, JSON.stringify(Data[key])); 
+            for (const key in Data) {
+                if (Array.isArray(Data[key])) {
+                    formData.append(key, JSON.stringify(Data[key]))
                 } else {
-                formData.append(key, Data[key]);
-               }
+                    formData.append(key, Data[key])
+                }
             }
 
-           if (image) {
-            formData.append("image", image);
-        }
+            if (image) {
+                formData.append("image", image)
+            }
             const response = await service.updateUiConfig(data.bot_id, formData)
-            toast.success("تغیرات شما موفق آمیز ذخیره شد")
+            toast.success("Your changes have been saved successfully")
             setData(response.data)
         } catch (error) {
-            toast.error("در بروز رسانی مشکلی پیش امده است !")
+            toast.error("There was an issue updating!")
             console.error("Update failed:", error)
         } finally {
             setIsLoading(false)
         }
     }
+
     useEffect(() => {
         if (data) {
             const loadConfig = {
@@ -147,41 +147,41 @@ const Apperence = () => {
                 bgUserMessage: data?.ui_configs?.user_msg_bg_color,
                 borderWidget: data?.ui_configs?.bot_widget_border_color,
                 chatButtonPosition: data?.ui_configs?.bot_widget_position,
-                notificationMsgs:data?.ui_configs?.notificationMsgs,
+                notificationMsgs: data?.ui_configs?.notificationMsgs,
                 initNotifDelay: data?.ui_configs?.notification_msg_delay,
-                borderProfile:data?.ui_configs?.bot_image_border_color,
-                imageProfle:data?.ui_configs?.bot_image
+                borderProfile: data?.ui_configs?.bot_image_border_color,
+                imageProfle: data?.ui_configs?.bot_image,
             }
             updateChatConfig(loadConfig)
         }
     }, [data])
-
 
     return (
         <>
             <div>
                 <div className="p-5">
                     <h4 className="mb-8 text-sm text-zinc-600">
-                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود
+                        Attention: This will be applied when embedded on a
+                        website
                     </h4>
-                    <div className=" flex flex-col justify-between lg:flex-row ">
+                    <div className="flex flex-col justify-between lg:flex-row ">
                         <div className="w-2/2 flex-1 pb-5 lg:w-1/2">
                             <div className="pb-8">
                                 <div className="flex justify-between">
                                     <label className="block text-sm font-medium text-zinc-700">
-                                        پیام های شروع :
+                                        Start Messages:
                                     </label>
                                     <button
                                         className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80"
                                         onClick={() =>
                                             updateChatConfig({
                                                 botMessages: [
-                                                    "سلام! در چه زمینه ای می توانم به شما کمک کنم؟",
+                                                    "Hello! How can I assist you?",
                                                 ],
                                             })
                                         }
                                     >
-                                        بازنشانی
+                                        Reset
                                     </button>
                                 </div>
                                 <div className="mt-1">
@@ -197,19 +197,22 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="سلام ! 
-امیدوارم که حالت خوب باشه"
+                                        placeholder="Hello! 
+I hope you're doing well."
                                         className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-400">
-                                        <span className="text-red-400">{" "}*{" "}</span>
-                                        هر پیام را در یک خط جدید وارد کنید.
+                                        <span className="text-red-400">
+                                            {" "}
+                                            *{" "}
+                                        </span>
+                                        Enter each message on a new line.
                                     </p>
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    پیام های پیشنهادی :
+                                    Suggested Messages:
                                 </label>
                                 <div className="mt-1">
                                     <textarea
@@ -224,19 +227,22 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="چطوری از قیمت ها مطلع بشم؟
-                                    چطور ثبتنام کنم؟"
+                                        placeholder="How can I find out about prices?
+How do I register?"
                                         className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-400">
-                                        <span className="text-red-400">{" "}*{" "}</span>
-                                        هر پیام را در یک خط جدید وارد کنید.
+                                        <span className="text-red-400">
+                                            {" "}
+                                            *{" "}
+                                        </span>
+                                        Enter each message on a new line.
                                     </p>
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    پیام داخل ورودی :{" "}
+                                    Input Placeholder:
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -244,14 +250,14 @@ const Apperence = () => {
                                         value={chatConfig.inputPlaceholder}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="مثال: سوال خود را وارد کنید..."
+                                        placeholder="Example: Enter your question..."
                                         type="text"
                                     />
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    فوتر :{" "}
+                                    Footer:
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -266,12 +272,12 @@ const Apperence = () => {
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    نام نمایش بات :{" "}
+                                    Display Name of Bot:
                                 </label>
                                 <div className="mt-1">
                                     <input
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="همیاربات"
+                                        placeholder="HamyarBot"
                                         type="text"
                                         value={chatConfig.displayName}
                                         name="displayName"
@@ -282,7 +288,7 @@ const Apperence = () => {
 
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    تم پیش فرض :{" "}
+                                    Default Theme:
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -291,18 +297,17 @@ const Apperence = () => {
                                                 value={
                                                     chatConfig.themeBot ===
                                                     "light"
-                                                        ? "حالت روز"
-                                                        : "حالت شب"
+                                                        ? "Day mode"
+                                                        : "Night mode"
                                                 }
                                                 onChange={handleThemeChange}
-                                                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 "
+                                                className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                             >
-                                                <option value="حالت روز">
-                                                    {" "}
-                                                    حالت روز
+                                                <option value="Day mode">
+                                                    Day mode
                                                 </option>
-                                                <option value="حالت شب">
-                                                    حالت شب
+                                                <option value="Night mode">
+                                                    Night mode
                                                 </option>
                                             </select>
                                         </div>
@@ -312,7 +317,7 @@ const Apperence = () => {
 
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ پیام کاربر :{" "}
+                                    User Message Color:
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -328,27 +333,26 @@ const Apperence = () => {
                             </div>
                             <div className="pb-8">
                                 <label className="mb-1 block text-sm font-medium text-zinc-700">
-                                    {" "}
-                                    محل قرارگیری دکمه چت بات :
+                                    Chat Button Position:
                                 </label>
                                 <select
                                     onChange={handleChangePosition}
                                     value={
                                         chatConfig.chatButtonPosition == "right"
-                                            ? "راست"
-                                            : "چپ"
+                                            ? "Right"
+                                            : "Left"
                                     }
                                     name="chatButtonPosition"
                                     className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                 >
-                                    <option>راست</option>
-                                    <option>چپ</option>
+                                    <option>Right</option>
+                                    <option>Left</option>
                                 </select>
                             </div>
 
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ پس‌زمینه دکمه چت بات :{" "}
+                                    Chat Button Background Color:
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -366,16 +370,18 @@ const Apperence = () => {
                                 </div>
                             </div>
 
-                            
                             <div className="flex w-full flex-row items-center gap-4 pb-8">
                                 <div className="flex flex-col gap-1">
                                     <span className="mb-1 block text-sm font-medium text-zinc-700">
-                                        عکس پروفایل چت بات:{" "}
+                                        Chat Bot Profile Picture:
                                     </span>
-                                    <div {...getRootProps()} className="flex flex-row items-center gap-2">
+                                    <div
+                                        {...getRootProps()}
+                                        className="flex flex-row items-center gap-2"
+                                    >
                                         <input {...getInputProps()} />
                                         <button
-                                            className="focus-visible:ring-ring inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border border-zinc- bg-transparent px-3 text-xs font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 "
+                                            className="focus-visible:ring-ring border-zinc- inline-flex h-7 items-center justify-center whitespace-nowrap rounded-md border bg-transparent px-3 text-xs font-medium shadow-sm transition-colors hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 "
                                             type="button"
                                         >
                                             <svg
@@ -399,30 +405,40 @@ const Apperence = () => {
                                                     y2="15"
                                                 ></line>
                                             </svg>
-                                            آپلود عکس
+                                            Upload Image
                                         </button>
                                     </div>
                                     <span className="mt-1 text-xs text-zinc-400">
-                                        <span className="text-red-400">{" "}*{" "}</span>
-                                    پشتیبانی از فایل‌های JPG، PNG و SVG تا حجم ۱ مگابایت
-
+                                        <span className="text-red-400">
+                                            {" "}
+                                            *{" "}
+                                        </span>
+                                        Supported file formats: JPG, PNG, and
+                                        SVG up to 1 MB in size.
                                     </span>
                                 </div>
-                                <div className="h-16 w-16 rounded-full shadow-sm bg-white border"  style={{
-                                    border:`1px solid ${chatConfig.borderProfile}`
-                                }}>
+                                <div
+                                    className="h-16 w-16 rounded-full border bg-white shadow-sm"
+                                    style={{
+                                        border: `1px solid ${chatConfig.borderProfile}`,
+                                    }}
+                                >
                                     <img
-                                  alt="Profile"
-                                  className="h-full w-full rounded-full object-cover"
-                                  src={image ? URL.createObjectURL(image): chatConfig.imageProfle ? chatConfig.imageProfle :"/botface.svg"}
-                             
-                            />
-
+                                        alt="Profile"
+                                        className="h-full w-full rounded-full object-cover"
+                                        src={
+                                            image
+                                                ? URL.createObjectURL(image)
+                                                : chatConfig.imageProfle
+                                                  ? chatConfig.imageProfle
+                                                  : "/botface.svg"
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ کاور پروفایل چت بات :{" "}
+                                    Chat Bot Profile Cover Color:
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -439,10 +455,10 @@ const Apperence = () => {
                                     </div>
                                 </div>
                             </div>
-                     
+
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    پیام داخل نوتیفیکشن :{" "}
+                                    Notification Message:
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -450,13 +466,14 @@ const Apperence = () => {
                                         value={chatConfig.notificationMsgs}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="سلام!  هرسوالی دارید از من بپرسید"
+                                        placeholder="Hello! Ask me anything."
                                         type="text"
                                     />
                                 </div>
                             </div>
                             <div className="mt-1 text-sm text-zinc-700">
-                                زمان نمایش نوتیفیکشن بعد از نمایش چت بات:
+                                Notification Display Time After Chat Bot
+                                Appears:
                                 <input
                                     className=" border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring mt-1 flex h-9 w-48 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                     type="number"
@@ -464,52 +481,58 @@ const Apperence = () => {
                                     onChange={handleInputChange}
                                     value={chatConfig.initNotifDelay}
                                 />
-                              میلی  ثانیه 
+                                milliseconds
                             </div>
                         </div>
-                        <div className="w-2/2 md:mr-10 flex-1 lg:w-1/2 sticky top-4">
+                        <div className="w-2/2 sticky top-4 flex-1 md:ml-10 lg:w-1/2">
                             <ChatTemplate config={chatConfig} />
                             <div
                                 className="mt-4 flex pb-12"
                                 style={{
                                     justifyContent:
-                                        chatConfig.chatButtonPosition =="right"?"start":"end",
+                                        chatConfig.chatButtonPosition == "right"
+                                            ? "start"
+                                            : "end",
                                 }}
                             >
-                            <span
-                               className="botpenguin-launcher-image-12 bg-gradient-to-br
-                               from-cyan-500 to-blue-500"
-                                style={{
-                                  zIndex: 1,
-                                  padding: "5px",
-                                  position: "relative",
-                                  width:"fit-content",
-                                  height: "fit-content",
-                                  boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px 0px",
-                                      background: chatConfig.borderWidget ,
+                                <span
+                                    className="botpenguin-launcher-image-12 bg-gradient-to-br from-cyan-500 to-blue-500"
+                                    style={{
+                                        zIndex: 1,
+                                        padding: "5px",
+                                        position: "relative",
+                                        width: "fit-content",
+                                        height: "fit-content",
+                                        boxShadow:
+                                            "rgba(0, 0, 0, 0.2) 0px 4px 8px 0px",
+                                        background: chatConfig.borderWidget,
                                     }}
-                                     >
-                          {chatConfig.imageProfle ? (
-                            <>
-                                   <img
-          className="border rounded-full border-[#1277fd] !w-12 !h-12 m-auto"
-          src={chatConfig.imageProfle}
-        />
-                            </>
-                          ):(
-                            <>
-                              <Lottie
-          animationData={animationDataBot}
-          style={{ transform: "scale(1.3)", width: "55px", height: "55px" }}
-          loop={true}
-          autoPlay={true}
-          rendererSettings={{
-            preserveAspectRatio: "xMidYMid slice",
-          }}
-        />
-                            </>
-                          )}
-      
+                                >
+                                    {chatConfig.imageProfle ? (
+                                        <>
+                                            <img
+                                                className="m-auto !h-12 !w-12 rounded-full border border-[#1277fd]"
+                                                src={chatConfig.imageProfle}
+                                            />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Lottie
+                                                animationData={animationDataBot}
+                                                style={{
+                                                    transform: "scale(1.3)",
+                                                    width: "55px",
+                                                    height: "55px",
+                                                }}
+                                                loop={true}
+                                                autoPlay={true}
+                                                rendererSettings={{
+                                                    preserveAspectRatio:
+                                                        "xMidYMid slice",
+                                                }}
+                                            />
+                                        </>
+                                    )}
                                 </span>
                             </div>
                         </div>
@@ -524,10 +547,10 @@ const Apperence = () => {
                         {isLoading ? (
                             <>
                                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
-                                <span className="ml-3"> بروزرسانی ...</span>
+                                <span className="ml-3">Updating...</span>
                             </>
                         ) : (
-                            <span>ذخیره</span>
+                            <span>Save</span>
                         )}
                     </button>
                 </div>

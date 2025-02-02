@@ -19,11 +19,11 @@ const WebsiteLink = () => {
     const handleFetchUrl = async (event: any) => {
         event.preventDefault()
         if (!inputUrl) {
-            toast.error("لطفا لینک مورد نظر خود را وارد کنید ...")
+            toast.error("Please enter your desired link...")
             return
         }
         if (!isValidUrl(inputUrl)) {
-            toast.error("لینک وارد شده معتبر نمی‌باشد.")
+            toast.error("The entered link is not valid.")
             return
         }
         const res = await fetchLink(inputUrl)
@@ -31,7 +31,7 @@ const WebsiteLink = () => {
 
         if (res?.data.length > remainingLinks) {
             toast.error(
-                `شما نمی توانید بیش از 40 لینک اضافه کنید. فقط ${remainingLinks} لینک اضافه شد.`,
+                `You cannot add more than 40 links. Only ${remainingLinks} links were added.`,
             )
             addUrlList([...urlList, ...res?.data.slice(0, remainingLinks)])
             return
@@ -41,7 +41,7 @@ const WebsiteLink = () => {
 
     const handleAddInput = () => {
         if (urlList.length >= MAX_LINK_COUNT) {
-            toast.error("شما نمی توانید بیش از 40 لینک اضافه کنید")
+            toast.error("You cannot add more than 40 links")
             return
         }
         addUrlList([...urlList, ""])
@@ -70,7 +70,7 @@ const WebsiteLink = () => {
                     <input
                         type="text"
                         className=" w-[100%] rounded-md  border border-gray-300 p-2 md:w-[80%]"
-                        placeholder="لطفاً یک آدرس وارد کنید، مانند https://example.com"
+                        placeholder="Please enter a URL, like https://example.com"
                         onChange={(e) => setInputUrl(e.target.value)}
                     />
                     <div className="w-full md:w-[20%]">
@@ -83,12 +83,12 @@ const WebsiteLink = () => {
                             <>
                                 <div className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                 <span className="mr-2">
-                                    مقداری صبر کنید ...
+                                    Please wait a moment ...
                                 </span>
                             </>
                         ) : (
                             <>
-                                <span>دریافت لینک ها</span>
+                                <span>Get Links</span>
                             </>
                         )}
                         </button>
@@ -96,15 +96,14 @@ const WebsiteLink = () => {
                 </div>
                 <div>
                     <span className="text-sm text-zinc-600">
-                        با این کار تمام پیوندهایی که با URL شروع می شوند (بدون
-                        شامل فایل های موجود در وب سایت) می خزند.
+                        This will crawl all links starting with a URL (excluding files present on the website).
                     </span>
                 </div>
 
                 <div className="my-6 flex items-center">
                     <hr className="w-full border-t border-zinc-300" />
                     <span className="whitespace-nowrap px-2 text-zinc-600">
-                        لینک‌های موجود
+                        Existing Links
                     </span>
                     <hr className="w-full border-t border-zinc-300" />
                 </div>
@@ -113,13 +112,13 @@ const WebsiteLink = () => {
                         className="rounded-md border border-red-500 px-3 py-2 text-sm text-red-500 hover:bg-red-100"
                         onClick={handleDeleteAllInputs}
                     >
-                        حذف کردن همه
+                        Delete All
                     </button>
                     <button
                         className="rounded-md bg-blue-600 px-3 py-2 text-sm text-white"
                         onClick={handleAddInput}
                     >
-                        اضافه کردن +
+                        Add +
                     </button>
                 </div>
                 <div className="panel_custom_scrollbar mt-3 flex h-72 flex-col overflow-auto">

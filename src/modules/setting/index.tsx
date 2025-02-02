@@ -26,20 +26,18 @@ const Setting = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [error, setError] = useState<string | null>(null);
 
-
-
     const handleCreateFrom = async() =>{
 
-        const loadingToastId = toast.loading("در حال ایجاد فرم ...");
+        const loadingToastId = toast.loading("Creating form ...");
         try {
             const result = await service.createInitForms(botId); 
-            toast.success("فرم با موفقیت ساخته شد");
+            toast.success("Form created successfully");
             const formId=result.data?.forms_id;
             const newPath = `${pathname}/form/${formId}`;
             router.push(newPath);
             console.log("Form created successfully:", result);
         } catch (error) {
-            toast.error(`مشکلی در ایجاد فرم وجود دارد`)
+            toast.error(`There was an issue creating the form`)
             console.error("Error creating form:", error);
         } finally {
             toast.dismiss(loadingToastId);
@@ -48,11 +46,11 @@ const Setting = () => {
     };
 
     const tabsInfo = {
-        General: "عمومی",
-        Model: "هسته ",
-        Apperence: "ظاهری",
-        Security: "امنیت",
-        Leads:"فرم ها "
+        General: "General",
+        Model: "Core",
+        Apperence: "Appearance",
+        Security: "Security",
+        Leads:"Forms"
     }
     useEffect(() => {
         const fetchConfigs = async () => {
@@ -90,7 +88,7 @@ const Setting = () => {
             <>
                 <div className="mx-auto flex  h-screen w-[95%] items-center justify-center">
                     <div className="flex items-center gap-3">
-                        <span>در حال بارگزاری اطلاعات ...</span>
+                        <span>Loading data ...</span>
                         <LoaderLottie />
                     </div>
                 </div>
@@ -113,11 +111,10 @@ const Setting = () => {
                         
                     >
                         <Additem
-
- size="25"
- color="white"
-/>
-                        فرم جدید 
+                            size="25"
+                            color="white"
+                        />
+                        New form 
                            </button>
                             </>
                            )}

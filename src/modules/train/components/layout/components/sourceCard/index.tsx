@@ -65,18 +65,18 @@ const SourceCard = () => {
 
         if (data.bot.status == "notActive") {
             toast.error(
-                "چت بات شما در حال آموزش می باشد و امکان آموزش مجدد وجود ندارد .",
+                "Your chatbot is currently being trained and cannot be retrained.",
             )
             return
         }
 
         // if (data.bot.update_datasource >= 2) {
-        //     toast.error("تعداد درخواست های شما بیش از حد مجاز است .")
+        //     toast.error("Your request limit has been exceeded.")
         //     return
         // }
 
         // if (!hasMinimumFiles || !hasMinimumChars) {
-        //     toast.error("لطفاً حداقل 2 فایل یا 100 کاراکتر متن وارد کنید.")
+        //     toast.error("Please upload at least 2 files or enter 100 characters of text.")
         //     return
         // }
 
@@ -88,61 +88,61 @@ const SourceCard = () => {
             <div className="mt-18  h-fit w-full  rounded-2xl bg-white p-2 shadow-[0_23px_40px_-20px_rgba(0,0,0,0.08)]">
                 <div className="p-4">
                     <div className="text-center text-xl font-semibold lg:mb-2">
-                        منابع اطلاعات
+                        Information Sources
                     </div>
                     <div className="mb-4 flex flex-col space-y-2">
                         {!isTextChanged
                             ? data?.text_input.length > 0 && (
                                   <div className="text-sm text-zinc-700">
                                       {" "}
-                                      {data?.text_input.length} عدد کارکتر متن{" "}
+                                      {data?.text_input.length} text characters{" "}
                                   </div>
                               )
                             : text.length > 0 && (
                                   <>
                                       <div className="text-sm text-zinc-700">
-                                          {text.length} عدد کارکتر متن{" "}
+                                          {text.length} text characters{" "}
                                       </div>
                                   </>
                               )}
                         {!isURLListChanged
                             ? data?.urls.length > 0 && (
                                   <div className="text-sm text-zinc-700">
-                                      {data?.urls.length} عدد لینک‌
+                                      {data?.urls.length} links
                                   </div>
                               )
                             : urlList.length > 0 && (
                                   <>
                                       <div className="text-sm text-zinc-700">
-                                          {urlList.length} عدد لینک‌
+                                          {urlList.length} links
                                       </div>
                                   </>
                               )}
                         {(fileList.length > 0 || uploadedFileCount > 0) && (
                             <div className="text-sm text-zinc-700">
-                                {fileList.length + uploadedFileCount} عدد فایل
+                                {fileList.length + uploadedFileCount} files
                             </div>
                         )}
                         {!isQAListChanged
                             ? data?.qANDa_input.length > 0 && (
                                   <div className="text-sm text-zinc-700">
                                       {" "}
-                                      {data?.qANDa_input.length} عدد پرسش و پاسخ
-                                      ({QandACharCount} کارکتر)
+                                      {data?.qANDa_input.length} Q&A items (
+                                      {QandACharCount} characters)
                                   </div>
                               )
                             : qaList.length > 0 && (
                                   <>
                                       <div className="text-sm text-zinc-700">
                                           {" "}
-                                          {qaList.length} عدد پرسش و پاسخ (
-                                          {QandACharCount} کارکتر)
+                                          {qaList.length} Q&A items (
+                                          {QandACharCount} characters)
                                       </div>
                                   </>
                               )}
                     </div>
                     <div className="text-sm ">
-                        مجموع حجم فایل‌ها: {totalSizeMB} MB
+                        Total file size: {totalSizeMB} MB
                     </div>
                     <div className="mt-1 h-2.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 ">
                         <div
@@ -154,8 +154,7 @@ const SourceCard = () => {
                     </div>
                     <p className="mt-2 flex flex-col text-sm">
                         <span className="font-semibold">
-                            {" "}
-                            مجموع تعداد لینک های استفاده شده:
+                            Total number of used links:
                         </span>
                         <span className="flex justify-center gap-1">
                             <span className=" text-zinc-500"> 40 / </span>
@@ -164,8 +163,7 @@ const SourceCard = () => {
                     </p>
                     <p className="flex flex-col text-sm">
                         <span className="font-semibold">
-                            {" "}
-                            مجموع کارکترهای استفاده شده:
+                            Total number of used characters:
                         </span>
                         <span className="flex justify-center gap-1">
                             <span className=" text-zinc-500"> 200,000 / </span>
@@ -173,7 +171,7 @@ const SourceCard = () => {
                         </span>
                     </p>
                     {/* <div className="mt-4 text-sm text-red-600">
-                        تعداد درخواست های آموزش مجدد:{" "}
+                        Retraining request count:{" "}
                         {data.bot.update_datasource} / 2
                     </div> */}
 
@@ -204,12 +202,12 @@ const SourceCard = () => {
                                 <>
                                     <div className="h-6 w-6 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     <span className="mr-3">
-                                        مقداری صبر کنید ...
+                                        Please wait...
                                     </span>
                                 </>
                             ) : (
                                 <>
-                                    <span>آموزش مجدد چت بات</span>
+                                    <span>Retrain Chatbot</span>
                                 </>
                             )}
                         </button>

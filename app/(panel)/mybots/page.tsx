@@ -5,10 +5,11 @@ const MyBotsPage: NextPage = () => {
     return <MyBots />
 }
 export const metadata: Metadata = {
-    title: "دستیارهای من | همیارچت",
-    description: "مدیریت و پیکربندی دستیارهای خود در همیارچت.",
+    title: "My Assistants | HamyarChat",
+    description: "Manage and configure your assistants in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },
 }
+
 export default MyBotsPage

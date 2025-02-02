@@ -15,7 +15,7 @@ const Apperence = () => {
     const [chatButtonPosition, setChatButtonPosition] = useState("start")
 
     const handlePositionChange = (event: any) => {
-        const position = event.target.value === "راست" ? "start" : "end"
+        const position = event.target.value === "right" ? "start" : "end"
         setChatButtonPosition(position)
     }
 
@@ -24,26 +24,26 @@ const Apperence = () => {
             <div>
                 <div className="p-5">
                     <h4 className="mb-8 text-sm text-zinc-600">
-                        توجه: زمانی که در یک وب سایت تعبیه شده است اعمال می شود
+                        Note: It will be applied when embedded on a website.
                     </h4>
                     <div className=" flex flex-col justify-between lg:flex-row ">
                         <div className="w-2/2 flex-1 pb-5 lg:w-1/2">
                             <div className="pb-8">
                                 <div className="flex justify-between">
                                     <label className="block text-sm font-medium text-zinc-700">
-                                        پیام های شروع :
+                                        Start Messages:
                                     </label>
                                     <button
                                         className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md bg-zinc-100 px-4 py-1 text-sm font-medium text-zinc-900 shadow-sm transition-colors hover:bg-zinc-200/90 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80"
                                         onClick={() =>
                                             updateChatConfig({
                                                 botMessages: [
-                                                    "سلام! در چه زمینه ای می توانم به شما کمک کنم؟",
+                                                    "Hello! How can I assist you today?",
                                                 ],
                                             })
                                         }
                                     >
-                                        بازنشانی
+                                        Reset
                                     </button>
                                 </div>
                                 <div className="mt-1">
@@ -62,13 +62,13 @@ const Apperence = () => {
                                         className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-500">
-                                        هر پیام را در یک خط جدید وارد کنید.
+                                        Enter each message on a new line.
                                     </p>
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    پیام های پیشنهادی :
+                                    Suggested Messages:
                                 </label>
                                 <div className="mt-1">
                                     <textarea
@@ -82,17 +82,17 @@ const Apperence = () => {
                                                     e.target.value.split("\n"),
                                             })
                                         }
-                                        placeholder="رایا چت چیست ؟"
+                                        placeholder="What is Raya Chat?"
                                         className="panel_custom_scrollbar w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white p-1 px-3 text-zinc-900 placeholder:text-zinc-400 focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 sm:text-sm"
                                     />
                                     <p className="mt-2 text-sm text-zinc-500">
-                                        هر پیام را در یک خط جدید وارد کنید.
+                                        Enter each message on a new line.
                                     </p>
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    پیام داخل ورودی :{" "}
+                                    Input Placeholder Message:{" "}
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -100,14 +100,14 @@ const Apperence = () => {
                                         value={chatConfig.inputPlaceholder}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="سلام ...."
+                                        placeholder="Hello ...."
                                         type="text"
                                     />
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    فوتر :{" "}
+                                    Footer:{" "}
                                 </label>
                                 <div className="mt-1">
                                     <input
@@ -115,19 +115,19 @@ const Apperence = () => {
                                         value={chatConfig.footer}
                                         onChange={handleInputChange}
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="رایا گپ ..."
+                                        placeholder="Raya Chat ..."
                                         type="text"
                                     />
                                 </div>
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    نام نمایش بات :{" "}
+                                    Bot Display Name:{" "}
                                 </label>
                                 <div className="mt-1">
                                     <input
                                         className="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
-                                        placeholder="هوشینو"
+                                        placeholder="Hoshino"
                                         type="text"
                                         value={chatConfig.displayName}
                                         name="displayName"
@@ -138,7 +138,7 @@ const Apperence = () => {
 
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ پیام کاربر :{" "}
+                                    User Message Color:{" "}
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -158,7 +158,7 @@ const Apperence = () => {
                             <div className="flex w-full flex-row items-center gap-4 py-3">
                                 <div className="flex flex-col gap-1">
                                     <span className="mb-1 block text-sm font-medium text-zinc-700">
-                                        عکس دکمه چت بات :{" "}
+                                        Chat Bot Button Image:{" "}
                                     </span>
                                     <div className="flex flex-row items-center gap-2">
                                         <input
@@ -193,7 +193,7 @@ const Apperence = () => {
                                                     y2="15"
                                                 ></line>
                                             </svg>
-                                            آپلود عکس
+                                            Upload Image
                                         </button>
                                     </div>
                                     <span className="mt-1 text-xs text-zinc-500">
@@ -205,7 +205,7 @@ const Apperence = () => {
                             </div>
                             <div className="pb-8">
                                 <label className="block text-sm font-medium text-zinc-700">
-                                    رنگ دکمه چت بات :{" "}
+                                    Chat Bot Button Color:{" "}
                                 </label>
                                 <div className="mt-2">
                                     <div className="flex items-center">
@@ -229,27 +229,25 @@ const Apperence = () => {
 
                             <div className="pb-8">
                                 <label className="mb-1 block text-sm font-medium text-zinc-700">
-                                    {" "}
-                                    محل قرارگیری دکمه چت بات :
+                                    Chat Bot Button Position:
                                 </label>
                                 <select
                                     onChange={handlePositionChange}
                                     id="countries"
                                     className="block w-1/4 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
                                 >
-                                    <option>راست</option>
-                                    <option>چپ</option>
+                                    <option>Right</option>
+                                    <option>Left</option>
                                 </select>
                             </div>
                             <div className="mt-1 text-sm text-zinc-700">
-                                نمایش خودکار پیام های اولیه پس از پاپ آپ باز می
-                                شود :
+                                Auto-display initial messages after pop-up opens:
                                 <input
                                     className=" border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring mt-1 flex h-9 w-48 rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus:border-violet-500 focus:outline-none focus:ring-4 focus:ring-violet-500/10 disabled:cursor-not-allowed disabled:opacity-50"
                                     type="number"
                                     name="auto_open_chat_window_after"
                                 />
-                                ثانیه (منفی برای غیرفعال کردن)
+                                seconds (negative to disable)
                             </div>
                         </div>
                         <div className="w-2/2 mr-10 flex-1 lg:w-1/2">
@@ -273,7 +271,7 @@ const Apperence = () => {
 
                 <div className="flex justify-end  px-5 py-3">
                     <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                        Save
                     </button>
                 </div>
             </div>
