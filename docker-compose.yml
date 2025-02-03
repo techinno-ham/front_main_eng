@@ -12,12 +12,13 @@ services:
         OPENAI_API_KEY: ${OPENAI_API_KEY}
         UPSTASH_REDIS_REST_URL: ${UPSTASH_REDIS_REST_URL}
         UPSTASH_REDIS_REST_TOKEN: ${UPSTASH_REDIS_REST_TOKEN}
-    container_name: frontend-app
+        NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+    container_name: frontend-app-eng
     restart: unless-stopped
     expose:
       - "3000"  # Expose port for internal communication with Nginx
     ports:
-      - "3000:3000"  # Map container's port 3000 to host's port 3000
+      - "5000:3000"  # Map container's port 3000 to host's port 3000
     env_file:
       - .env.production  # Specify your environment file
 
