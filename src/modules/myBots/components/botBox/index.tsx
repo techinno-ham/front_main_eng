@@ -5,7 +5,7 @@ import { DocumentCopy, Global, Trash } from "iconsax-react"
 import Modal from "@/src/shared/components/common/modal"
 import { useState } from "react"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import { toast } from "sonner"
 
 interface IBotBoxProps {
@@ -27,7 +27,7 @@ const BotBox = (props: IBotBoxProps) => {
     const [loading, setLoading] = useState(false)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     }
 
     const handleTrashClick = (e: React.MouseEvent) => {

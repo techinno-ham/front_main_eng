@@ -1,7 +1,7 @@
 import { useLiveChat } from "@/src/shared/store/liveChatStore"
 import { useEffect, useState } from "react"
 import { format } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import useLiveChatHook from "./hook/useLiveChatHook"
 
 type LiveChatProps = {
@@ -13,7 +13,7 @@ type LiveChatProps = {
 const formatRelativeTimeChat = (dateString: any) => {
     const date = new Date(dateString)
     const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", {
-        locale: faIR,
+        locale: enUS,
     })
     return formattedDate
 }

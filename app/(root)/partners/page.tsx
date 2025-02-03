@@ -6,9 +6,9 @@ const PrtnersPage: NextPage = () => {
     return <Partners />
 }
 export const metadata: Metadata = {
-    title: "دعوت دوستان  | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Invite Friends | HamyarChat - Conversational AI Assistant",
     description:
-        "در همیارچت، ما متعهد به بهبود تجربه مشتریان شما از طریق دستیار هوش مصنوعی مکالمه‌ای هستیم. پلتفرم ما با ارائه پاسخ‌های سریع و دقیق، به خودکارسازی پشتیبانی مشتریان کمک کرده و رضایت آن‌ها را افزایش می‌دهد. ما با بهره‌گیری از فناوری‌های پیشرفته، سعی در ارتقاء کسب‌وکار شما داریم.",
+        "At HamyarChat, we are committed to enhancing your customers' experience through a conversational AI assistant. Our platform provides fast and accurate responses, helping to automate customer support and increase their satisfaction. By leveraging advanced technologies, we aim to elevate your business.",
     // openGraph: {
     //   title: 'About Us',
     // },

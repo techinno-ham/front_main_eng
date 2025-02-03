@@ -1,7 +1,7 @@
 import ChatBot from "@/src/shared/components/common/chatBot"
 import service from "@/src/shared/services/service"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
@@ -18,7 +18,7 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
 }) => {
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     }
 
     const [botData, setBotData] = useState(initialBotData)

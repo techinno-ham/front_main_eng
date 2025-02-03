@@ -10,7 +10,7 @@ import {
 import { ExportCurve, Magicpen, Trash } from "iconsax-react"
 import { formatDistanceToNow } from "date-fns-jalali"
 import { format } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import LoaderLottie from "@/src/shared/components/common/loader"
 import EmptyChat from "@/src/shared/components/common/emptyChatLoader"
 import { usePathname } from "next/navigation"
@@ -110,7 +110,7 @@ const MyMessage = () => {
     const [isLoading, setIsLoading] = useState(true)
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     }
     const dicTime = {
         all: "No filter",
@@ -122,7 +122,7 @@ const MyMessage = () => {
     const formatRelativeTimeChat = (dateString: any) => {
         const date = new Date(dateString)
         const formattedDate = format(date, "d MMMM 'at' HH:mm", {
-            locale: faIR,
+            locale: enUS,
         })
         return formattedDate
     }

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import { Edit, ExportCurve, Trash, UserSquare } from "iconsax-react"
 import Pagination from "../myBots/components/pagination"
 import service from "@/src/shared/services/service"
@@ -113,7 +113,7 @@ const Mycontact = () => {
     
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     }
     const handlePageChange = (page: number) => {
         if (page >= 1 && page <= totalPages) {

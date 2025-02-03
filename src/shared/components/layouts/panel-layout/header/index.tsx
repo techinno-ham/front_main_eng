@@ -1,5 +1,5 @@
 "use client"
-import { ArrowRight } from "iconsax-react"
+import { ArrowLeft, ArrowRight } from "iconsax-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -27,7 +27,7 @@ const HeaderPanel = () => {
                                         router.push("/mybots");
                                     }}
                                 >
-                                    <ArrowRight />
+                                    <ArrowLeft />
                                 </button>
                             </div>
                         )}
@@ -37,7 +37,7 @@ const HeaderPanel = () => {
                                 height="40"
                                 width="40"
                                 alt="Logo"
-                                className="md:w-15 md:h-15 mr-2 h-12 w-12 md:mr-5"
+                                className="md:w-15 md:h-15 mr-2 h-12 w-12 md:ml-5"
                             />
                         </Link>
 

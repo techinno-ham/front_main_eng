@@ -10,8 +10,8 @@ const AnalyticsPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "استقرار دستیار هوش مصنوعی | همیارچت",
-    description: "استقرار و مدیریت دستیار هوش مصنوعی در همیارچت.",
+    title: "Deploy AI Assistant | HamyarChat",
+    description: "Deployment and management of AI assistant in HamyarChat.",
     icons: {
         icon: "/logo.svg", // /public path
     },

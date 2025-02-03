@@ -1,7 +1,7 @@
 import ChatBot from "@/src/shared/components/common/chatBot"
 import service from "@/src/shared/services/service"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import { useEffect, useState } from "react"
 import { toast } from "sonner"
 
@@ -18,7 +18,7 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
 }) => {
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     }
 
     const [botData, setBotData] = useState(initialBotData)
@@ -76,7 +76,7 @@ const ChatBotContainer: React.FC<chartDemoProps> = ({
                     <div className="p-5">
                         <div className="flex flex-col space-y-2 md:flex-row md:justify-between md:space-x-2 md:space-y-0">
                             <div className="flex w-full flex-col gap-4 relative">
-                            <img src="/arrow-hamyar.svg" className="absolute z-50  left-0 transform rotate-[192deg] hidden md:block   md:w-[100px] md:h-[100px] lg:w-80 lg:h-80 "></img>
+                            {/* <img src="/arrow-hamyar.svg" className="absolute z-50  left-0 transform rotate-[192deg] rotate-y-[180deg] hidden md:block   md:w-[100px] md:h-[100px] lg:w-80 lg:h-80 "></img> */}
                                 <div>
                                     <span className="text-zinc-5 block text-sm font-medium">
                                         Chatbot ID :

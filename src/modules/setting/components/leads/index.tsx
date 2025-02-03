@@ -4,7 +4,7 @@ import useStoreConfig from "../../hooks/loadConfig"
 import service from "@/src/shared/services/service"
 import { toast } from "sonner"
 import { formatDistanceToNow } from "date-fns-jalali"
-import { faIR } from "date-fns/locale"
+import { enUS } from "date-fns/locale"
 import { mockData } from "./data"
 import { DocumentCopy, Edit, ToggleOffCircle, ToggleOnCircle, Trash } from "iconsax-react"
 import { usePathname } from "next/navigation"
@@ -19,7 +19,7 @@ const Leads = () => {
 
     const formatRelativeTime = (dateString: any) => {
         const date = new Date(dateString)
-        return formatDistanceToNow(date, { locale: faIR })
+        return formatDistanceToNow(date, { locale: enUS })
     };
 
   const handleDeleteForm=async (formId:string)=>{

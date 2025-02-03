@@ -62,7 +62,8 @@ const Apperence = () => {
 
     useEffect(() => {
         if (data) {
-            updateFormConfig(data?.configs);
+            //Todo : activate server
+            //updateFormConfig(data?.configs);
         }
     }, [data]);
 
