@@ -1,7 +1,8 @@
 import AboutUs from "@/src/modules/about-us"
+import BillingSuccessPage from "@/src/modules/billing"
 import Partners from "@/src/modules/partners"
 import { Metadata, NextPage } from "next"
-import BillingSuccessPage from "./components"
+
 
 const BillingPage: NextPage = () => {
     return <BillingSuccessPage/>
