@@ -1,11 +1,13 @@
-import AboutUs from "@/src/modules/about-us"
 import BillingSuccessPage from "@/src/modules/billing"
-import Partners from "@/src/modules/partners"
 import { Metadata, NextPage } from "next"
-
+import { Suspense } from "react"
 
 const BillingPage: NextPage = () => {
-    return <BillingSuccessPage/>
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <BillingSuccessPage />
+        </Suspense>
+    )
 }
 export const metadata: Metadata = {
     title: "Invite Friends | HamyarChat - Conversational AI Assistant",
