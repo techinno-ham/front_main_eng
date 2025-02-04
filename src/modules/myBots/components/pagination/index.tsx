@@ -45,7 +45,8 @@ const Pagination: React.FC<PaginationProps> = ({
                             className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-offset-0"
                         >
                             <span className="sr-only">Previous</span>
-                            <ArrowRight2 size="25" color="gray" />
+                            <ArrowLeft2 size="25" color="gray" />
+                            
                         </button>
                         {Array.from({ length: totalPages }, (_, i) => (
                             <button
@@ -62,7 +63,7 @@ const Pagination: React.FC<PaginationProps> = ({
                             className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-offset-0"
                         >
                             <span className="sr-only">Next</span>
-                            <ArrowLeft2 size="25" color="gray" />
+                            <ArrowRight2 size="25" color="gray" />
                         </button>
                     </nav>
                 </div>

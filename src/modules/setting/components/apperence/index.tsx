@@ -160,7 +160,7 @@ const Apperence = () => {
         <>
             <div>
                 <div className="p-5">
-                    <h4 className="mb-8 text-sm text-zinc-600">
+                    <h4 className="bg-yellow-100 text-yellow-800 mb-8 text-xs font-medium  p-2 rounded-lg flex items-center gap-2">
                         Attention: This will be applied when embedded on a
                         website
                     </h4>

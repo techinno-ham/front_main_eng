@@ -47,7 +47,7 @@ const ChatTemplate = ({ config }: any) => {
                                                             className={`mb-3 max-w-prose overflow-auto rounded-lg ${isLight ? "bg-white" : "bg-black"} px-4 py-3 ${isLight ? "text-black" : "text-white"}`}
                                                         >
                                                             <div className="flex flex-col items-start gap-4 break-words">
-                                                                <div className=" w-full break-words text-right text-inherit ">
+                                                                <div className=" w-full break-words text-left text-inherit ">
                                                                     <p>{msg}</p>
                                                                 </div>
                                                             </div>
@@ -56,7 +56,7 @@ const ChatTemplate = ({ config }: any) => {
                                                 )
                                             },
                                         )}
-                                        <div className="ml-8 flex justify-start">
+                                        <div className="ml-8 flex justify-end">
                                             <div
                                                 className="mb-3 max-w-prose overflow-auto rounded-lg px-4 py-3  text-white"
                                                 style={{
@@ -64,8 +64,8 @@ const ChatTemplate = ({ config }: any) => {
                                                         config.bgUserMessage,
                                                 }}
                                             >
-                                                <div className="flex flex-col items-start gap-4 break-words">
-                                                    <div className=" w-full break-words text-right text-inherit ">
+                                                <div className="flex flex-col items-end gap-4 break-words">
+                                                    <div className=" w-full break-words text-left text-inherit ">
                                                         <p style={{
                                                             color:config.colorUserMessage?config.colorUserMessage:"#fff"
                                                         }}>Hello!</p>{" "} {/* Translation of "سلام !" */}

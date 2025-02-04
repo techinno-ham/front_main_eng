@@ -155,7 +155,7 @@ const ChatBot: FC<chatbotProps> = ({
                                             <div className="mr-8 flex justify-end">
                                                 <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
                                                     <div className="flex flex-col items-start gap-4 break-words">
-                                                        <div className=" pointer-events-none w-full break-words text-right text-inherit ">
+                                                        <div className=" pointer-events-none w-full break-words text-left text-inherit ">
                                                             <p>
                                                                 Hello! How can I assist you today? 😊
                                                             </p>
@@ -167,7 +167,7 @@ const ChatBot: FC<chatbotProps> = ({
                                             {/* <div className="ml-8 flex justify-start">
                                                 <div className="mb-3 max-w-prose overflow-auto rounded-lg px-4 py-3  text-white bg-[#3b81f6] ">
                                                         <div className="flex flex-col items-start gap-4 break-words">
-                                                        <div className=" w-full break-words text-right text-inherit ">
+                                                        <div className=" w-full break-words text-left text-inherit ">
             
             <p>Hello!</p>                                                                    </div>
                                                         </div>
@@ -270,7 +270,7 @@ const ChatBot: FC<chatbotProps> = ({
                                             return (
                                                 <div
                                                     key={index}
-                                                    className="mr-16 flex justify-end "
+                                                    className="mr-16 flex justify-start "
                                                 >
                                                     <div className="flex flex-col">
                                                         <div
@@ -281,7 +281,7 @@ const ChatBot: FC<chatbotProps> = ({
                                                             } px-4 py-3`}
                                                         >
                                                             <div className="flex flex-col items-start gap-4 break-words">
-                                                                <div className="w-full break-words text-right text-sm text-inherit">
+                                                                <div className="w-full break-words text-left text-sm text-inherit">
                                                                     <p>
                                                                         {
                                                                             message.content
@@ -317,12 +317,12 @@ const ChatBot: FC<chatbotProps> = ({
                                             return (
                                                 <div
                                                     key={index}
-                                                    className="ml-16 flex justify-start"
+                                                    className="ml-16 flex justify-end"
                                                 >
                                                     <div className="flex flex-col">
                                                         <div className="max-w-prose overflow-auto  rounded-[20px] rounded-br-none bg-[#3b81f6] px-4 py-3 text-white">
                                                             <div className="flex flex-col items-start gap-4 break-words">
-                                                                <div className="w-full break-words text-right text-sm text-inherit">
+                                                                <div className="w-full break-words text-left text-sm text-inherit">
                                                                     <p>
                                                                         {
                                                                             message.content
@@ -359,7 +359,7 @@ const ChatBot: FC<chatbotProps> = ({
                                 )}
                                 {isLoading && (
                                     <>
-                                        <div className="mr-16 flex justify-end">
+                                        <div className="mr-16 flex justify-start">
                                             <div className="mb-5 max-w-prose overflow-auto  rounded-[20px] rounded-bl-none  bg-[#f1f1f0] px-2 text-black">
                                                 <div className="flex flex-col items-start gap-4 break-words">
                                                     <CahtBotLoader />
