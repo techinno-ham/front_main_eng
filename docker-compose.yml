@@ -18,7 +18,7 @@ services:
     expose:
       - "3000"  # Expose port for internal communication with Nginx
     ports:
-      - "5000:3000"  # Map container's port 3000 to host's port 3000
+      - "3000:3000"  # Map container's port 3000 to host's port 3000
     env_file:
       - .env.production  # Specify your environment file
 
