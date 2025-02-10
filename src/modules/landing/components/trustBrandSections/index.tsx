@@ -4,20 +4,17 @@ import Image from "next/image"
 //import { useKeenSlider } from "keen-slider/react";
 import "@splidejs/react-splide/css"
 
+//@ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll"
 //https://codepen.io/shoegaze-k/pen/QWXreKe
 
 let brands = [
-    { link: "", image: "jabama.png" },
-    { link: "", image: "digipay.png" },
-    { link: "", image: "basalam.png" },
-    { link: "", image: "snappmarket.png" },
-    { link: "", image: "banksaman.png" },
-    { link: "", image: "shatel.png" },
-    { link: "", image: "ofoghkorosh.png" },
-    { link: "", image: "rahshahrsazi.png" },
-    { link: "", image: "raja.png" },
+    { link: "", image: "remail.png" },
+    { link: "", image: "nily.png" },
+    { link: "", image: "chemframe.png" },
+    // { link: "", image: "ms3d.png" },
+    { link: "", image: "soshial.png" },
 ]
 
 // const TrustBrandSections = () => {
@@ -96,17 +93,6 @@ let brands = [
 const TrustBrandSections = () => {
     return (
         <div className="container-medium w-container container relative mx-auto mt-8 h-max px-4  text-center md:mt-5 2xl:px-20">
-            {/* Uncomment and customize the section below if needed
-            <div className="mt-10 md:mt-4">
-                <h2 className="text-3xl md:text-5xl">
-                    مشتریان و
-                    <span className="gradient-h2 is-v2"> همکاران ما </span>
-                </h2>
-                <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                    لیست شرکت‌ها و کسب‌وکارهایی که به خدمات هوش مصنوعی ما اعتماد کرده‌اند.
-                </h3>
-            </div>
-            */}
             <div
                 style={{
                     display: "flex",
@@ -179,7 +165,7 @@ const TrustBrandSections = () => {
                                     className="mx-auto"
                                     src={`/images/brands/${brand.image}`}
                                     height="70"
-                                    width="100"
+                                    width="150"
                                     alt="Logo"
                                 />
                             </div>

@@ -120,7 +120,7 @@ const Pricing = () => {
                         <PricingCard
                             order={0}
                             type="Standard"
-                            price="20"
+                            price="19"
                             subscription="$ / Monthly"
                             description="Suitable for medium-sized businesses and users with advanced needs."
                             buttonText="Choose Standard Plan"
@@ -140,7 +140,7 @@ const Pricing = () => {
                         <PricingCard
                             order={4}
                             type="Professional"
-                            price="40"
+                            price="69"
                             subscription="$ / Monthly"
                             description="Suitable for businesses and large organizations needing customization and detailed analytics."
                             buttonText="Choose Professional Plan"
