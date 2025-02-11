@@ -78,7 +78,7 @@ const PricingCard = ({
                 >
                     <div className="flex h-full flex-col justify-between">
                         <div>
-                            <span className="pricing-header mb-3 block text-3xl font-bold">
+                            <span className="pricing-header mb-3 block text-3xl !font-normal">
                                 {type}
                             </span>
                             <h3 className="text-dark mb-5 text-2xl font-medium">
@@ -104,7 +104,7 @@ const PricingCard = ({
                         color: "#637381"
                     }}
                     className="text-sm border-strokedark:border-dark-3 dark:text-dark-6 mb-8 border-b pb-8">
-                        {"مناسب برای 100 کاربر"}
+                        
                     </p> */}
                             <p
                                 style={{

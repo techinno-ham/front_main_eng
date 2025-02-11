@@ -47,7 +47,7 @@ const Register = () => {
 
     const handleGoogleLogin = (event: any) => {
         event.preventDefault()
-        window.location.href = `https://hamyar.chat/api/v1/auth/google`
+        window.location.href = `https://chatsys.co/api/v1/auth/google`
     }
 
     return (

@@ -5,7 +5,7 @@ const General = () => {
                 <div className="p-5">
                     <div className="pb-8">
                         <label className="block text-sm font-medium text-zinc-700">
-                            چت بات آیدی :{" "}
+                         Agent ID:{" "}
                         </label>
                         <div className="mt-1 flex items-center gap-2 space-x-4">
                             <div className="font-semibold">
@@ -32,13 +32,13 @@ const General = () => {
                     </div>
                     <div className="pb-8">
                         <label className="block text-sm font-medium text-zinc-700">
-                            تعداد کارکترها :
+                            Character Count:
                         </label>
                         <div className="mt-1 font-semibold">15,380</div>
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-zinc-700">
-                            نام چت بات :
+                            Chatbot Name:
                         </label>
                         <div className="mt-2 ">
                             <input
@@ -50,9 +50,9 @@ const General = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-end  px-5 py-3">
+                <div className="flex justify-end px-5 py-3">
                     <button className="rounded-md bg-blue-600 px-4 py-2 text-sm text-white">
-                        ذخیره
+                        Save
                     </button>
                 </div>
             </div>

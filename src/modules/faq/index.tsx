@@ -6,19 +6,19 @@ import { useState } from "react"
 let qaArray = [
     {
         question: "What is Chatsys?",
-        answer: "Chatsys is an advanced AI tool that allows businesses to create automated response bots. These bots are capable of answering customer questions quickly and accurately, thereby improving the customer support process and enhancing the efficiency of the support team. Key features of Chatsys include 24/7 support, reducing the workload of the support team, and improving user experience with fast and precise responses.",
+        answer: "Chatsys is an advanced AI tool that allows businesses to create AI Agents. These bots are capable of answering customer questions quickly and accurately, thereby improving the customer support process and enhancing the efficiency of the support team. Key features of Chatsys include 24/7 support, reducing the workload of the support team, and improving user experience with fast and precise responses.",
     },
     {
         question: "What is the cost of using Chatsys?",
-        answer: "Chatsys offers a variety of pricing plans. Starting with a free plan that includes basic features, you can try Chatsys and then upgrade to paid plans for access to more advanced features. This flexibility in pricing helps you benefit from smart chatbots in a more cost-effective way.",
+        answer: "Chatsys offers a variety of pricing plans. Starting with a free plan that includes basic features, you can try Chatsys and then upgrade to paid plans for access to more advanced features. This flexibility in pricing helps you benefit from smart AI Agents in a more cost-effective way.",
     },
     {
-        question: "How many Chatsyss can I create?",
-        answer: "The number of Chatsyss you can create depends on the plan you choose. In free plans, you may be able to create a limited number of chatbots, while paid plans allow you to create more. This flexibility helps you tailor Chatsys to your business needs.",
+        question: "How many Chatsys AI Agents can I create?",
+        answer: "The number of Chatsyss you can create depends on the plan you choose. In free plans, you may be able to create a limited number of AI Agents, while paid plans allow you to create more. This flexibility helps you tailor Chatsys to your business needs.",
     },
     {
         question: "What are the features of Chatsys?",
-        answer: "Chatsys provides a simple, user-friendly interface that allows you to create and manage chatbots without the need for programming. Key features include automatic training based on input data, multi-language support, easy integration with other platforms like Telegram and WooCommerce, and the ability to crawl websites for data collection. These features make Chatsys a powerful tool for improving customer interaction and increasing efficiency.",
+        answer: "Chatsys provides a simple, user-friendly interface that allows you to create and manage AI Agents without the need for programming. Key features include automatic training based on input data, multi-language support, easy integration with other platforms like Telegram and WooCommerce, and the ability to crawl websites for data collection. These features make Chatsys a powerful tool for improving customer interaction and increasing efficiency.",
     },
     {
         question: "How can I customize Chatsys?",
@@ -47,11 +47,11 @@ const FAQ = () => {
         <section className="min-h-[900px] pb-24 pt-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="w-full px-4">
-    <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+    <div className="mx-auto mb-[60px] max-w-[700px] text-center">
         <span className="text-primary mb-2 block text-lg font-semibold">
             Frequently Asked Questions
         </span>
-        <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
+        <h2 className="text-dark mb-3 text-3xl font-bold   sm:text-4xl md:text-[40px] ">
             Answers to
             <span
                 style={{

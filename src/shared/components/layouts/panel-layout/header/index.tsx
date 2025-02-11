@@ -43,7 +43,7 @@ const HeaderPanel = () => {
 
                         <Link href={"/"}>
                             <span className={`mr-2 text-xl font-bold md:text-2xl`}>
-                                Hamyar
+                            Chatsys
                             </span>
                         </Link>
                     </div>

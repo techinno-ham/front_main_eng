@@ -5,19 +5,7 @@ import PricingCard from "./PricingCard"
 import MobilePricingFeatures from "./components/Mobile/Table"
 import Link from "next/link"
 
-// const pricingTiers = [{
-//     name: "Basic",
-//     monthlyPrice: "Free forever",
-//     yearlyPrice: "Contact us",
-//     features: {
-//         تنظیمات: {
-//           پیام_و_پاسخ: true,
-//           دستیار_هوش_مصنوعی: true,
-//           ذخیره_کلمات_دستیار: true,
-//           استفاده_در_وبسایت: true
-//         }
-//       }
-// }]
+
 
 const CheckIcon = () => (
     <svg
@@ -60,12 +48,12 @@ const Pricing = () => {
             <div className="container mx-auto">
                 <div className="flex flex-wrap">
                     <div className="w-full px-4">
-                        <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+                        <div className="mx-auto mb-[60px] max-w-[700px] text-center">
                             <span className="text-primary mb-2 block text-lg font-semibold">
                                 Pricing Table
                             </span>
-                            <h2 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-4xl md:text-[40px] ">
-                                Prices for
+                            <h2 className="text-dark mb-3 text-3xl font-bold   sm:text-4xl md:text-[40px] ">
+                                {/* Prices for
                                 <span
                                     style={{
                                         textShadow:
@@ -79,13 +67,11 @@ const Pricing = () => {
                                     }}
                                 >
                                     &nbsp;the Latest&nbsp;
-                                </span>
-                                Services
+                                </span> */}
+                                Simple Pricing, Scalable Plans
                             </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
-                                The information provided includes details about
-                                each service and its associated costs so that
-                                you can make the best decision for your needs.
+                            Service details and costs to help you make the best choice.
                             </p>
                         </div>
                     </div>
@@ -124,13 +110,13 @@ const Pricing = () => {
                             subscription="$ / Monthly"
                             description="Suitable for medium-sized businesses and users with advanced needs."
                             buttonText="Choose Standard Plan"
-                            buttonLink="https://telegram.me/Chatsys"
+                            buttonLink="https://telegram.me/chatsysco"
                             beforeListText={"Everything in Basic, plus..."}
                             active={false}
                             priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
                         >
                             <List>1,200 messages per month</List>
-                            <List>3 AI assistants</List>
+                            <List>3 AI Agents</List>
                             <List>Unlimited training links</List>
                             <List>
                                 11,000,000 character storage per assistant
@@ -144,13 +130,13 @@ const Pricing = () => {
                             subscription="$ / Monthly"
                             description="Suitable for businesses and large organizations needing customization and detailed analytics."
                             buttonText="Choose Professional Plan"
-                            buttonLink="https://telegram.me/Chatsys"
+                            buttonLink="https://telegram.me/chatsysco"
                             beforeListText={"Everything in Standard, plus..."}
                             active={true}
                             priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
                         >
                             <List>4,200 messages per month</List>
-                            <List>5 AI assistants</List>
+                            <List>5 AI Agents</List>
                             <List>
                                 Unlimited character storage and file uploads 😍
                             </List>
@@ -163,7 +149,7 @@ const Pricing = () => {
                             price="Contact Us"
                             description="Suitable for large organizations with complex needs, custom solutions, and dedicated support."
                             buttonText="Choose Enterprise Plan"
-                            buttonLink="https://telegram.me/Chatsys"
+                            buttonLink="https://telegram.me/chatsysco"
                             beforeListText={
                                 "Everything in Professional, plus..."
                             }
@@ -171,7 +157,7 @@ const Pricing = () => {
                         >
                             <List>Access to advanced language models</List>
                             <List>Unlimited messages</List>
-                            <List>Unlimited AI assistants</List>
+                            <List>Unlimited AI Agents</List>
                             <List>Custom domain or logo insertion</List>
                             <List>Remove Chatsys branding</List>
                             <List>Dedicated consulting</List>
@@ -237,12 +223,12 @@ const Pricing = () => {
                 </span>
                 <div className="flex flex-col">
                     <span className="text-xs font-medium text-zinc-600">
-                        499 Thousand Tomans / Monthly
+                        19 $/ Monthly
                     </span>
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/Chatsys"
+                    href="https://telegram.me/chatsysco"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us
@@ -255,12 +241,12 @@ const Pricing = () => {
                 </span>
                 <div className="flex flex-col">
                     <span className="text-xs font-medium text-zinc-600">
-                        1,699 Thousand Tomans / Monthly
+                        69 $/ Monthly
                     </span>
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/Chatsys"
+                    href="https://telegram.me/chatsysco"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us
@@ -278,7 +264,7 @@ const Pricing = () => {
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/Chatsys"
+                    href="https://telegram.me/chatsysco"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us

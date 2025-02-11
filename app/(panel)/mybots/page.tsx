@@ -5,8 +5,8 @@ const MyBotsPage: NextPage = () => {
     return <MyBots />
 }
 export const metadata: Metadata = {
-    title: "My Assistants | Chatsys",
-    description: "Manage and configure your assistants in Chatsys.",
+    title: "My Agents | Chatsys",
+    description: "Manage and configure your Agents in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

@@ -45,7 +45,7 @@ const Blog = () => {
           It is easy to think of AI as a modern concept, but its story began in 1964 with the development of MITs natural language processing program, ELIZA. While simple by todays machine learning standards, ELIZA represented a proof of concept for a machine that could respond and interact naturally.
         </p>
         <p className="text-gray-500">
-          Fast forward to the 1980s, when interactive voice response systems were being developed, using voice responses to answer simple questions and guide customers to the appropriate representatives. Chatbots appeared as the internet became saturated, making the need for dynamic, 24/7 systems to handle customer service permanent. Voice recognition pushed this initiative forward, enabling users to interact via voice input rather than pressing touch buttons.
+          Fast forward to the 1980s, when interactive voice response systems were being developed, using voice responses to answer simple questions and guide customers to the appropriate representatives. AI Agents appeared as the internet became saturated, making the need for dynamic, 24/7 systems to handle customer service permanent. Voice recognition pushed this initiative forward, enabling users to interact via voice input rather than pressing touch buttons.
         </p>
         <p className="text-gray-500">
           With the advent of machine learning (ML), computer-generated responses no longer required rule-based systems; they could intelligently evolve to meet the needs of diverse customer bases. Responses became smoother, more responsive, and more varied, especially when generative AI emerged in the late 2010s. With data collection becoming commonplace, ML algorithms had no shortage of learning from new data. The stage was set for ML applications, and customer service became an obvious sector of focus.
@@ -84,19 +84,19 @@ const Blog = () => {
 
       <section>
         <h2 className="text-2xl font-bold text-blue-400 mb-4">
-          AI Chatbots: A Revolution in Customer Interactions
+          AI AI Agents: A Revolution in Customer Interactions
         </h2>
         <p className="text-gray-500">
-          While still relatively new, chatbots are already providing AI-powered customer experiences that are making waves and setting trends.
+          While still relatively new, AI Agents are already providing AI-powered customer experiences that are making waves and setting trends.
         </p>
         <p className="text-gray-500">
           They can stay awake 24/7 and respond in multiple languages, meaning borders and time zones are no longer a challenge for global coverage. They can do this while still responding naturally, making customer interactions more visual and engaging.
         </p>
         <p className="text-gray-500">
-          Machine learning can also activate predictive analytics in customer service, which can provide chatbots with contextual information about a customer, their recurring issues, and how to resolve them. Through text cues in customer responses, they can even begin to understand which expert to direct the customer to.
+          Machine learning can also activate predictive analytics in customer service, which can provide AI Agents with contextual information about a customer, their recurring issues, and how to resolve them. Through text cues in customer responses, they can even begin to understand which expert to direct the customer to.
         </p>
         <p className="text-gray-500">
-          The risks associated with AI chatbots in business mainly revolve around input manipulation and vulnerabilities in the AI learning model. Techniques like input injection, breaking limits, SQL injection, and vulnerabilities in your AIs API or source code could disrupt chatbot performance and potentially leak data.
+          The risks associated with AI AI Agents in business mainly revolve around input manipulation and vulnerabilities in the AI learning model. Techniques like input injection, breaking limits, SQL injection, and vulnerabilities in your AIs API or source code could disrupt chatbot performance and potentially leak data.
         </p>
         <p className="text-gray-500">
           To mitigate such issues, limit the length of text users can input, filter customer responses to replace potentially harmful words, use anti-malware solutions designed to protect against such attacks, use parameterized queries to ensure customer messages are always treated as data, not executable commands, and stay up-to-date with security best practices.

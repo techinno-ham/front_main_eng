@@ -16,9 +16,9 @@ const ChatBotPage: NextPage = () => {
 };
 
 export const metadata: Metadata = {
-  title: "همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+  title: "Chatsys - Conversational AI Assistant",
   description:
-      "به حساب کاربری خود در همیارچت وارد شوید و از امکانات دستیار هوش مصنوعی مکالمه‌ای ما بهره‌مند شوید. اگر هنوز حساب کاربری ندارید، می‌توانید به راحتی ثبت‌نام کنید و از خدمات ما استفاده کنید.",
+      "Log in to your Chatsys account and take advantage of our conversational AI assistant. If you don't have an account yet, you can easily sign up and start using our services.",
  
   icons: {
       icon: "/logo.svg", 

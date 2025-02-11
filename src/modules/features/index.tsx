@@ -8,12 +8,13 @@ const Features = () => {
     return (
         <main>
             <div className="w-full px-4 pt-10">
-                <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+                <div className="mx-auto mb-[60px] max-w-[700px] text-center">
                     <span className="text-primary mb-2 block text-lg font-semibold">
                         Features
                     </span>
-                    <h1 className="text-dark mb-3 text-3xl font-bold leading-[1.208] sm:text-xl md:text-[40px] ">
-                        Advanced
+                    <h1 className="text-dark mb-3 text-3xl font-bold   sm:text-xl md:text-[40px] ">
+                        
+                        Chatsys
                         <span
                             style={{
                                 textShadow:
@@ -26,9 +27,9 @@ const Features = () => {
                                 color: "transparent",
                             }}
                         >
-                            &nbsp;Features&nbsp;
+                            &nbsp;Advanced&nbsp;
                         </span>
-                        of Chatsys
+                        Features
                     </h1>
                 </div>
             </div>
@@ -53,14 +54,14 @@ const Features = () => {
                             text-black max-lg:text-center lg:text-3xl
                              "
                                 >
-                                    Training Chatbots with Your Custom Data
+                                    Training AI Agents with Your Custom Data
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    Chatsys enables training chatbots
+                                    Chatsys enables training AI Agents
                                     with your custom data. This feature allows
-                                    businesses to configure chatbots based on
+                                    businesses to configure AI Agents based on
                                     their specific needs and content. By
-                                    utilizing relevant data, our chatbots can
+                                    utilizing relevant data, our AI Agents can
                                     provide more accurate responses to customer
                                     inquiries and deliver more personalized and
                                     effective interactions. Our goal is to
@@ -135,7 +136,7 @@ const Features = () => {
                                     and anywhere while reducing the workload of
                                     your support team. By analyzing and
                                     processing user questions accurately, our
-                                    chatbots can quickly and accurately address
+                                    AI Agents can quickly and accurately address
                                     their needs, delivering a fast and
                                     satisfying experience.
                                 </p>

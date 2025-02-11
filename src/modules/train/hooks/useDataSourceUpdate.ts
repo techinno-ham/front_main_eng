@@ -113,7 +113,7 @@ const useDateSourceUpdate = () => {
 
             const response = await Services.updateDataSource(formData, botId)
             router.push(`/panel/${response.data.bot_id}`)
-            toast.success("بات شما با در حال آموزش مجدد می باشد.")
+            toast.success("Your bot is being retrained.") // Reset all state variables
             setTimeout(() => {
                 window.scrollTo({
                     top: document.getElementById("chart-demo")?.offsetTop || 0,
@@ -123,7 +123,7 @@ const useDateSourceUpdate = () => {
             return response
         } catch (err: any) {
             console.log(err)
-            toast.error("مشکلی پیش امده است ..")
+            toast.error("An issue has occurred..")
         } finally {
             setLoading(false)
         }

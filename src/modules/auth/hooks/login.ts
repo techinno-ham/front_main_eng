@@ -19,7 +19,7 @@ const useLogin = () => {
         try {
             const res = await services.login(user)
             setUser(res.data)
-            toast.success("Your login was successful.") // Translation of "ورود شما موفق آمیز بود."
+            toast.success("Your login was successful.") 
 
             setCookie(null, "accessToken", res.data.accessToken, {
                 maxAge: 1 * 24 * 60 * 60,
@@ -40,11 +40,11 @@ const useLogin = () => {
         } catch (err: any) {
             console.log(err.message)
             if (err.message === "Email not found") {
-                toast.error("Your email has not been registered yet.") // Translation of "ایمیل شما قبلا ثبت نشده است"
+                toast.error("Your email has not been registered yet.") 
             } else if (err.message === "Incorrect password") {
-                toast.error("Your password is incorrect.") // Translation of "رمز عبور شما اشتباه می باشد"
+                toast.error("Your password is incorrect.") 
             } else {
-                toast.error("There is an issue with logging in.") // Translation of "مشکلی در ورود وجود دارد"
+                toast.error("There is an issue with logging in.") 
             }
             setError(err.message)
         } finally {
@@ -53,18 +53,18 @@ const useLogin = () => {
     }
     const logout = async () => {
         try {
-            router.replace("/auth/login") // Wait for navigation to complete
+            router.replace("/auth/login") 
             destroyCookie(null, "accessToken")
             destroyCookie(null, "refreshToken")
 
-            toast.success("You have logged out successfully.") // Translation of "شما با موفقیت خارج شدید."
+            toast.success("You have logged out successfully.") 
             setTimeout(() => {
                 setUser({})
             }, 2000)
             setIsAuthenticated(false)
         } catch (error) {
             console.error("Logout error:", error)
-            toast.error("An error occurred while logging out.") // Translation of "خطایی در خروج رخ داده است."
+            toast.error("An error occurred while logging out.") 
         }
     }
 

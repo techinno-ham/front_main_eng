@@ -56,7 +56,7 @@ const ChatTemplate = ({ config }: any) => {
                                             >
                                                 <div className="flex flex-col items-start gap-4 break-words">
                                                     <div className=" w-full break-words text-right text-inherit ">
-                                                        <p>Hello!</p> {/* Translation of "سلام !" */}
+                                                        <p>Hello!</p> 
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,13 +108,13 @@ const ChatTemplate = ({ config }: any) => {
                             <div className="flex items-center justify-center">
                                 <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-1">
                                     <p className="grow text-nowrap text-center text-xs ">
-                                        Powered by {/* Translation of "قدرت گرفته از" */}
+                                        Powered by 
                                         <a
                                             target="_blank"
                                             className="mr-1 font-semibold text-[#1277fd]"
                                             href="/"
                                         >
-                                            hamyar.chat
+                                            chatsys.co
                                         </a>
                                     </p>
                                     <div

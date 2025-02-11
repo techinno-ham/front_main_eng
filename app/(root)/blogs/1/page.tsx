@@ -6,20 +6,20 @@ const BlogsPage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "مزایای شگفت‌انگیز دستیاران پشتیبانی مشتری مبتنی بر هوش مصنوعی | همیارچت",
-    description: `فکر می‌کنید دستیاران پشتیبانی مشتری تنها برای کمک به مشتریان شما هستند؟ دوباره فکر کنید.
+    title: "Amazing Benefits of AI-Based Customer Support Assistants | Chatsys",
+    description: `Do you think customer support assistants are just for helping your customers? Think again.
 
-علاوه بر کمک به مشتریان، این دستیاران مبتنی بر هوش مصنوعی که به طور فزاینده‌ای محبوب شده‌اند، می‌توانند به شیوه‌های مختلفی به کسب و کار شما کمک کنند، از کاهش هزینه‌ها گرفته تا افزایش فروش.`,
+In addition to assisting customers, these AI-powered assistants, which have become increasingly popular, can help your business in many ways, from reducing costs to increasing sales.`,
     openGraph: {
-        title: "مزایای شگفت‌انگیز دستیاران پشتیبانی مشتری مبتنی بر هوش مصنوعی | همیارچت",
-        description: `فکر می‌کنید دستیاران پشتیبانی مشتری تنها برای کمک به مشتریان شما هستند؟ دوباره فکر کنید.
+        title: "Amazing Benefits of AI-Based Customer Support Assistants | Chatsys",
+        description: `Do you think customer support assistants are just for helping your customers? Think again.
 
-علاوه بر کمک به مشتریان، این دستیاران مبتنی بر هوش مصنوعی که به طور فزاینده‌ای محبوب شده‌اند، می‌توانند به شیوه‌های مختلفی به کسب و کار شما کمک کنند، از کاهش هزینه‌ها گرفته تا افزایش فروش.`,
-        url: "https://hamyar.chat/blogs/1", // Replace with the actual URL
+In addition to assisting customers, these AI-powered assistants, which have become increasingly popular, can help your business in many ways, from reducing costs to increasing sales.`,
+        url: "https://chatsys.co/blogs/1", // Replace with the actual URL
         images: [
             {
-                url: "https://hamyar.chat/blog/image1.png", // Replace with the image URL
-                alt: "دستیاران پشتیبانی مشتری مبتنی بر هوش مصنوعی",
+                url: "https://chatsys.co/blog/image1.png", // Replace with the image URL
+                alt: "AI-Based Customer Support Assistants",
             },
         ],
         type: "article", // You can adjust this based on your content type

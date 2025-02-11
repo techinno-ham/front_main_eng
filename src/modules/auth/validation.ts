@@ -1,26 +1,25 @@
 import { z } from "zod"
 
 export const RegisterFormSchema = z.object({
-    name: z.string().min(2, { message: "نام باید حداقل 2 کاراکتر باشد" }),
+    name: z.string().min(2, { message: "Name must be at least 2 characters long" }),
     lastName: z
         .string()
-        .min(2, { message: "نام خانوادگی باید حداقل 2 کاراکتر باشد" }),
-    email: z.string().email({ message: "ایمیل معتبر نیست" }),
+        .min(2, { message: "Last name must be at least 2 characters long" }),
+    email: z.string().email({ message: "Invalid email address" }),
     password: z
         .string()
-        .min(8, { message: "رمز عبور باید حداقل 8 کاراکتر باشد" }),
+        .min(8, { message: "Password must be at least 8 characters long" }),
 })
 
 export const LoginFormSchema = z.object({
-    email: z.string().email({ message: "ایمیل معتبر نیست" }),
+    email: z.string().email({ message: "Invalid email address" }),
     password: z
         .string()
-        .min(8, { message: "رمز عبور باید حداقل 8 کاراکتر باشد" }),
+        .min(8, { message: "Password must be at least 8 characters long" }),
 })
-
 
 export const SetPasswordFormSchema = z.object({
     password: z
         .string()
-        .min(8, { message: "رمز عبور باید حداقل 8 کاراکتر باشد" }),
+        .min(8, { message: "Password must be at least 8 characters long" }),
 })

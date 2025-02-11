@@ -1,7 +1,6 @@
 import useAIChatStore from "@/src/shared/store/AIChatStore"
 
-
-const useAIChat = (conversationId: string, botId: string,Instructions:string,Temperature:number,modelName:string) => {
+const useAIChat = (conversationId: string, botId: string, Instructions: string, Temperature: number, modelName: string) => {
     const {
         messages,
         setMessages,
@@ -20,7 +19,7 @@ const useAIChat = (conversationId: string, botId: string,Instructions:string,Tem
 
         try {
             const response = await fetch(
-                "https://hamyar.chat/chat/hamyarchat/invoke",
+                "https://chatsys.co/chat/hamyarchat/invoke",
                 {
                     method: "POST",
                     headers: {
@@ -33,7 +32,7 @@ const useAIChat = (conversationId: string, botId: string,Instructions:string,Tem
                              collection_name: botId, 
                              bot_description: Instructions,
                              model_temprature: Temperature,
-                             model_type:"gpt-4o-mini"
+                             model_type: "gpt-4o-mini"
                         },
                         config: {}, 
                         kwargs: {}, 
@@ -69,7 +68,7 @@ const useAIChat = (conversationId: string, botId: string,Instructions:string,Tem
                     type: "text",
                     error: true,
                     content:
-                        "در حال حاضر با مشکلات فنی روبرو هستم. 😕 لطفا بعدا دوباره امتحان کنید یا یک چت زنده با تیم ما شروع کنید. 🛠️",
+                        "I am currently facing technical issues. 😕 Please try again later or start a live chat with our team. 🛠️",
                     id: `message-id-${messages.length}`,
                     time: Date.now(),
                 })
@@ -81,7 +80,7 @@ const useAIChat = (conversationId: string, botId: string,Instructions:string,Tem
                 type: "text",
                 error: true,
                 content:
-                    "در حال حاضر با مشکلات فنی روبرو هستم. 😕 لطفا بعدا دوباره امتحان کنید یا یک چت زنده با تیم ما شروع کنید. 🛠️",
+                    "I am currently facing technical issues. 😕 Please try again later or start a live chat with our team. 🛠️",
                 id: `message-id-${messages.length}`,
                 time: Date.now(),
             })

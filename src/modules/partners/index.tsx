@@ -41,7 +41,7 @@ const Partners = () => {
                 <div className="relative z-10 grid min-h-full w-full">
                     <div className="container relative mx-auto h-auto overflow-hidden px-4  pb-16 pt-20  text-center  md:pb-36 md:pt-28 2xl:px-20">
                         <h3 className="text-blue-gray-900 block text-3xl  font-bold leading-snug tracking-normal antialiased">
-                            Join us and get discounts with Hamyar Chat.
+                            Join us and get discounts with Chatsys.
                         </h3>
                         <p className="mt-7 block  text-xl font-medium leading-relaxed text-gray-600 antialiased md:px-32 lg:px-52">
                             Our AI assistant is customizable for any business <br /> in just 3 minutes!
@@ -350,10 +350,10 @@ const Partners = () => {
                             Step 2
                         </h5>
                         <p className="mb-1 mt-2 text-right font-semibold text-zinc-900">
-                            Introduce Hamyar Chat
+                            Introduce Chatsys
                         </p>
                         <p className="text-right text-sm text-zinc-500">
-                            Add unique Hamyar Chat referral links to your blog posts, social media, or other promotional content. This way, any traffic you send will be tracked and reviewed.
+                            Add unique Chatsys referral links to your blog posts, social media, or other promotional content. This way, any traffic you send will be tracked and reviewed.
                         </p>
                     </div>
                 </div>
@@ -369,7 +369,7 @@ const Partners = () => {
                             Receive Discounts
                         </p>
                         <p className="text-right text-sm text-zinc-500">
-                            When a registration is completed through the Hamyar Chat referral link, a 30% discount is applied to the subscription fee every month as long as the subscription continues. You can check all your discounts in the dashboard.
+                            When a registration is completed through the Chatsys referral link, a 30% discount is applied to the subscription fee every month as long as the subscription continues. You can check all your discounts in the dashboard.
                         </p>
                     </div>
                 </div>

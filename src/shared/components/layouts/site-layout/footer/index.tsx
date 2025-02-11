@@ -27,16 +27,15 @@ const Footer = () => {
                                         <span
                                             className={`ml-2 text-2xl font-bold `}
                                         >
-                                            Hamyar
+                                            Chatsys
                                         </span>
                                     </div>
                                 </Link>
                             </div>
                             <p className="text-center font-medium leading-5 text-zinc-400 md:text-left">
-                                Personalized AI Assistants
+                            AI Agents, Tailored for You: 
                                 <br />
-                                At your service for customer satisfaction and
-                                business growth
+                                Driving Customer Satisfaction and Accelerating Business Growth.
                             </p>
                         </div>
                         <div className="grid w-full grid-cols-3 gap-4 md:w-auto md:grid-cols-5">
@@ -274,7 +273,7 @@ const Footer = () => {
                                         
                             </Link>
                             <Link
-                                href={"mailto:support@hamyar.chat"}
+                                href={"mailto:support"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 chatsysco@gmail.com
@@ -572,8 +571,8 @@ const Footer = () => {
                     <section className="container mx-auto px-4 2xl:px-20 ">
                         <div className="flex justify-center">
                             <span className=" text-center text-sm text-zinc-400 md:text-start">
-                                <span className="font-bold ">1403</span>
-                                <span className="mr-2">
+                                <span className="font-bold ">2025</span>
+                                <span className="ml-2">
                                     All material and intellectual property
                                     rights of this website belong to Chatsys.
                                 </span>

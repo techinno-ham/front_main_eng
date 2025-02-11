@@ -6,9 +6,9 @@ const AffiliatePage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "بلاگ‌ها | همیارچت - دستیار هوش مصنوعی مکالمه‌ای",
+    title: "Blogs | Chatsys - Conversational AI Assistant",
     description:
-        "با بلاگ‌های همیارچت، از آخرین اخبار و مقالات مرتبط با دستیار هوش مصنوعی مکالمه‌ای مطلع شوید. مطالب آموزشی، نکات و ترفندها، و مطالعات موردی به شما کمک می‌کنند تا به روز بمانید و از فناوری‌های نوین در کسب‌وکار خود بهره‌برداری کنید.",
+        "With Chatsys blogs, stay updated with the latest news and articles related to conversational AI assistants. Educational content, tips and tricks, and case studies will help you stay up-to-date and leverage modern technologies in your business.",
     // openGraph: {
     //   title: 'Blogs',
     // },

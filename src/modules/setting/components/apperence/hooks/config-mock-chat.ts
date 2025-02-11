@@ -24,11 +24,11 @@ interface StoreChatConfig {
 
 const useStoreChatConfig = create<StoreChatConfig>((set) => ({
     chatConfig: {
-        displayName: "Hamyar chat",
+        displayName: "Chatsys",
         botMessages: ["Hello! How can I assist you today? 😊"],
         suggestedMessages: ["How can I create a bot?"], 
         inputPlaceholder: "Your message ...", 
-        footer: "hamyar.chat",
+        footer: "chatsys.co",
         themeBot: "light",
         colorUserMessage:"#fff",
         bgUserMessage: "#3b81f6",

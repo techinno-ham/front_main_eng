@@ -95,7 +95,7 @@ const MyBots = () => {
                 <div className="flex w-full items-center justify-between">
                     <div className="w-[60%]">
                         <p className="text-[28px]  md:text-3xl">
-                            My Chatbots
+                            My AI Agents
                         </p>
                         <p className="text-[10px]  text-slate-500 md:mt-1 md:text-sm">
                             Here you can view your bots and create new ones.
@@ -104,8 +104,8 @@ const MyBots = () => {
                     <div>
                         <button
                             onClick={() => {
-                                if (user?.email === "admin@hamyar.chat" ) return router.push("/createbot")
-                                if (myBotsArry.length < 2 && user?.email !== "admin@hamyar.chat") {
+                                if (user?.email === "admin@chatsys.co" ) return router.push("/createbot")
+                                if (myBotsArry.length < 2 && user?.email !== "admin@chatsys.co") {
                                     router.push("/createbot")
                                 } else {
                                     toast.error(

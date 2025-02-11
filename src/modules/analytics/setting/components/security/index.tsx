@@ -45,7 +45,7 @@ const Security = () => {
                             </button>
                         </div>
                         <p className="mt-2 text-sm text-zinc-500">
-                            Limit the number of messages sent from a device in the iframe and chat bubble (this limit does not apply to you in hamyar.chat, only on your website for your users to prevent abuse).
+                            Limit the number of messages sent from a device in the iframe and chat bubble (this limit does not apply to you in chatsys.co, only on your website for your users to prevent abuse).
                         </p>
                         <div className="mt-1 text-sm text-zinc-700">
                             Limit to only{" "}

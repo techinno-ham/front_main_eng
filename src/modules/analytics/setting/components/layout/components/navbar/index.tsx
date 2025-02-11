@@ -5,22 +5,22 @@ import TabLink from "./components/tablinks"
 
 const menuItems = [
     {
-        title: "عمومی",
+        title: "General",
         store: "General",
         icon: <Setting2 size={20} />,
     },
     {
-        title: "هسته",
+        title: "Core",
         store: "Model",
         icon: <Magicpen size={20} />,
     },
     {
-        title: "ظاهری",
+        title: "Appearance",
         store: "Apperence",
         icon: <Brush size={20} />,
     },
     {
-        title: "امنیت",
+        title: "Security",
         store: "Security",
         icon: <Danger size={20} />,
     },

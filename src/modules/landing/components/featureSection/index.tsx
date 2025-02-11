@@ -8,14 +8,14 @@ const FeatureSection = () => {
         <div className="section-large container relative mx-auto h-auto overflow-hidden px-4 2xl:px-20">
         <div className="mt-[24px] text-center">
             <h2 className="font-medium text-2xl leading-[150%] md:text-5xl">
-                Creating Artificial Assistants
+                Creating Artificial Agents
                 <br />
                 <span className="text-feature gradient-h2 is-v2">
                     with speed and ease
                 </span>
             </h2>
             <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                All the tools and resources needed for custom chatbots are available
+                All the tools and resources needed for custom AI Agents are available
                 on the Chatsys platform.
             </h3>
         </div>

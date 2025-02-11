@@ -8,10 +8,10 @@ const Setting = () => {
     const viewController = useStoreViewControllerSetting()
 
     const tabsInfo = {
-        General: "عمومی",
-        Model: "هسته ",
-        Apperence: "ظاهری",
-        Security: "امنیت",
+        General: "General",
+        Model: "Core",
+        Apperence: "Appearance",
+        Security: "Security",
     }
 
     const tabs = [

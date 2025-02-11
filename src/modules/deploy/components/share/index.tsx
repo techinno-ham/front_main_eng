@@ -9,7 +9,7 @@ const Share = () => {
     const pathname = usePathname()
     const botId = pathname.split("/")[2]
 
-    const urlCode = `https://www.hamyar.chat/chatbot?botRef=${botId}`
+    const urlCode = `https://www.chatsys.co/chatbot?botRef=${botId}`
 
     const handleCopyUrl = () => {
         navigator.clipboard
@@ -53,7 +53,7 @@ const Share = () => {
                                 <div>
                                     <div className="mt-3">
                                         <span className="w-full font-medium">
-                                            www.hamyar.chat
+                                            www.chatsys.co
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
@@ -80,7 +80,7 @@ const Share = () => {
                                                 whiteSpace: "inherit",
                                             }}
                                         >
-                                            https://www.hamyar.chat/chatbot?botRef={botId}
+                                            https://www.chatsys.co/chatbot?botRef={botId}
                                         </code>
                                     </pre>
                                 </div>

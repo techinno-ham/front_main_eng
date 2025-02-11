@@ -4,8 +4,9 @@ import { Metadata, NextPage } from "next"
 const ForgetPasswordPage: NextPage = () => {
     return <ForgetPassword />
 }
+
 export const metadata: Metadata = {
-    title: "همیارچت  | فراموشی رمز عبور  ",
+    title: "Chatsys | Forgot Password",
     icons: {
         icon: "/logo.svg", // /public path
     },

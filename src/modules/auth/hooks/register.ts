@@ -18,7 +18,7 @@ const useRegister = () => {
         try {
         const res= await services.register(user)
           setUser(res.data)
-            toast.success("ثبت نام  شما موفق آمیز بود.")
+            toast.success("Your registration was successful.")
             setCookie(null, "accessToken", res.data.accessToken, {
                 maxAge: 1 * 24 * 60 * 60,
                 path: "/",
@@ -35,9 +35,9 @@ const useRegister = () => {
             router.push("/mybots")
         } catch (err: any) {
             if (err.message === "Email already registered") {
-                toast.error("ایمیل شما قبلا ثبت شده است")
+                toast.error("Your email is already registered.")
             } else {
-                toast.error("مشکلی در ثبت نام وجود دارد")
+                toast.error("There was an issue with registration.")
             }
         } finally {
             setLoading(false)

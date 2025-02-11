@@ -58,7 +58,7 @@ const useDateSourceNew = () => {
             const response = await Services.cretaeBots(formData)
             // console.log(response)
             router.push(`/panel/${response.data.bot_id}`)
-            toast.success("بات شما با در حال آموزش  می باشد.") // Reset all state variables
+            toast.success("Your bot is currently being trained.") // Reset all state variables
             setTimeout(() => {
                 window.scrollTo({
                     top: document.getElementById("chart-demo")?.offsetTop || 0,
@@ -74,7 +74,7 @@ const useDateSourceNew = () => {
             // return response
         } catch (err: any) {
             console.log(err)
-            toast.error("مشکلی پیش امده است ..")
+            toast.error("An issue has occurred..")
         } finally {
             setLoading(false)
         }

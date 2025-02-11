@@ -15,14 +15,14 @@ const useSetPassword = () => {
         setError(null)
         try {
         const res= await services.setPssword(newPassword);
-          toast.success("تعیین رمز عبور شما موفقیت اموز بود .")
+          toast.success("Your password has been successfully set.")
           router.push("/mybots")
    
         } catch (err: any) {
             if (err.message === "Email already registered") {
-                toast.error("ایمیل شما قبلا ثبت شده است")
+                toast.error("Your email is already registered.")
             } else {
-                toast.error("مشکلی در این مرحله وجود دارد .")
+                toast.error("There was an issue at this stage.")
             }
         } finally {
             setLoading(false)

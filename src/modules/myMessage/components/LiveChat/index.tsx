@@ -12,7 +12,7 @@ type LiveChatProps = {
 
 const formatRelativeTimeChat = (dateString: any) => {
     const date = new Date(dateString)
-    const formattedDate = format(date, "d MMMM 'ساعت' HH:mm", {
+    const formattedDate = format(date, "d MMMM 'Hour' HH:mm", {
         locale: enUS,
     })
     return formattedDate
@@ -40,7 +40,7 @@ const LiveChat: React.FC<LiveChatProps> = ({
                     <div className="my-4 flex items-center justify-center">
                         <div className="h-[1px] flex-grow bg-blue-300"></div>
                         <span className="whitespace-nowrap px-4 text-sm font-medium text-blue-400">
-                            مکالمه با پشتیبانی
+                            Chat with Support
                         </span>
                         <div className="h-[1px] flex-grow bg-blue-300"></div>
                     </div>

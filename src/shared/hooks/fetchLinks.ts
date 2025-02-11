@@ -12,7 +12,7 @@ const useFetchLinks = () => {
             return res
         } catch (error) {
             console.log(error)
-            toast.error("مشکلی به وجود امده است ...")
+            toast.error("An error occurred...")
         } finally {
             setIsLoading(false)
         }

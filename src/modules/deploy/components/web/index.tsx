@@ -9,10 +9,10 @@ const Web = () => {
     const botId = pathname.split("/")[2]
 
     const { active, isLoding, setLoading, setActive,botHash } = useStoreActive();
-    const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN || "https://hamyar.chat/cdn";
+    const baseCdnUrl = process.env.NEXT_PUBLIC_BASE_CDN || "https://chatsys.co/cdn";
 
     const iframeCode = `<iframe
-    src="https://www.hamyar.chat/bot?botRef=${botId}"
+    src="https://www.chatsys.co/bot?botRef=${botId}"
     width="100%"
     style="height: 100%; min-height: 700px"
     frameborder="0"
@@ -74,7 +74,7 @@ const Web = () => {
                                 <div>
                                     <div className="mt-3">
                                         <span className="w-full font-medium">
-                                            www.hamyar.chat
+                                            www.chatsys.co
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
@@ -103,7 +103,7 @@ const Web = () => {
                                         >
                                             &lt;iframe
                                             {"\n"}
-                                            src=&quot;https://www.hamyar.chat/chatbot?botRef={botId}&quot;
+                                            src=&quot;https://www.chatsys.co/chatbot?botRef={botId}&quot;
                                             {"\n"}width=&quot;100%&quot;
                                             {"\n"}style=&quot;height: 100%;
                                             min-height: &quot;700px&quot;

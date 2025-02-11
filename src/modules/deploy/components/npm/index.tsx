@@ -43,7 +43,7 @@ const NPM = () => {
                         <p className="mt-2 text-sm text-zinc-500">
                             Limit the number of messages sent from a device in
                             an iframe and chat bubble (this restriction does not
-                            apply to you in hamyar.chat, only on your website for
+                            apply to you in chatsys.co, only on your website for
                             your users to prevent abuse).
                         </p>
                         <div className="mt-1 text-sm text-zinc-700">

@@ -51,7 +51,7 @@ const FeaturesCards = () => {
                     className="description-section-main margin-top-24px max-w-85"
                 >
                     <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                        Train your chatbots once and use them in various environments like websites at scale.
+                        Train your AI Agents once and use them in various environments like websites at scale.
                     </h3>
                 </motion.div>
             </div>

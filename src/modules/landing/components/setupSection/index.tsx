@@ -69,7 +69,7 @@ const SetupSection = () => {
                                 Install and use
                             </p>
                             <p className="text-left text-sm text-zinc-500">
-                                Use Hamyar Chat on your website or anywhere
+                                Use Chatsys on your website or anywhere
                                 without any knowledge.
                             </p>
                             <img

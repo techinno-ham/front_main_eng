@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: "/private/",
             },
         ],
-        sitemap: "https://hamyar.chat/sitemap.xml",
+        sitemap: "https://chatsys.co/sitemap.xml",
     }
 }

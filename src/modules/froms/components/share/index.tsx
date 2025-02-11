@@ -5,7 +5,7 @@ import useStoreFromsData from "../../hooks/loadFormData";
 
 const Share = () => {
     const { data, setData } = useStoreFromsData();
-    const urlCode = `https://www.hamyar.chat/form?formRef=${data.forms_id}`
+    const urlCode = `https://www.chatsys.co/form?formRef=${data.forms_id}`
 
     const handleCopyUrl = () => {
         navigator.clipboard
@@ -30,7 +30,7 @@ const Share = () => {
                                 <div>
                                     <div className="mt-3">
                                         <span className="w-full font-medium">
-                                            www.hamyar.chat
+                                            www.chatsys.co
                                         </span>
                                         <div className="mt-2">
                                             <p className="text-sm text-zinc-500 ">
@@ -57,7 +57,7 @@ const Share = () => {
                                                 whiteSpace: "inherit",
                                             }}
                                         >
-                                            https://www.hamyar.chat/form?formRef={data.forms_id}
+                                            https://www.chatsys.co/form?formRef={data.forms_id}
                                         </code>
                                     </pre>
                                 </div>

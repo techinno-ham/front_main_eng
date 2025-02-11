@@ -337,7 +337,7 @@ useEffect(() => {
                     className="mr-1 font-semibold text-[#1277fd]"
                     href="/"
                 >
-                    hamyar.chat
+                    chatsys.co
                 </a>
             </p>
         </div>

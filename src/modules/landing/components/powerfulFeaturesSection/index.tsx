@@ -102,7 +102,7 @@ const PowerfulFeaturesSection = () => {
         </h2>
         <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
             The advanced features of the Chatsys platform allow you to fully
-            customize chatbots according to your needs.
+            customize AI Agents according to your needs.
         </h3>
     </div>
     <div className="mt-[40px] flex justify-around">

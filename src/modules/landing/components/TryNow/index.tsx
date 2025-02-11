@@ -54,8 +54,7 @@ const TryNow = () => {
                         <div className="head-section">
                             <div className="title-section-footer">
                                 <h3 className="text-3xl md:text-4xl">
-                                    2 minutes to your first AI-powered assistant
-                                    with Hamyar
+                                Your AI Agent, Ready in 2 Minutes!
                                 </h3>
                             </div>
                             <div className="description-section-main margin-top-5px">

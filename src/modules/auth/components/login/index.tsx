@@ -40,7 +40,7 @@ const Login = () => {
 
     const handleGoogleLogin = (event) => {
         event.preventDefault();
-        window.location.href = `https://hamyar.chat/api/v1/auth/google`;
+        window.location.href = `https://chatsys.co/api/v1/auth/google`;
     };
 
     return (
@@ -64,7 +64,7 @@ const Login = () => {
                     </Link>
                 </div>
                 <div className="text-sm text-white md:text-sm ">
-                    <span>Build intelligent chatbots for your business</span>
+                    <span>Build intelligent AI Agents for your business</span>
                 </div>
             </div>
             <div className="flex justify-center">
