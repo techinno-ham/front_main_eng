@@ -241,8 +241,16 @@ const IntroduceSections = () => {
                                     </Link>
                                 </div>
                             </div>
-                            <div className="md:mx-10 md:my-auto md:pb-8">
-                                <RiveChatbot />
+                            <div className="relative">
+                                <div className="mx-auto mt-[25px] flex h-[300px] w-[300px] items-center justify-center md:mt-[32px] md:h-[450px] md:w-[450px]">
+                                    {/* <Image
+                                src="/images/phone.svg"
+                                height="400"
+                                width="600"
+                                alt="Logo"
+                            /> */}
+                                    <RiveChatbot />
+                                </div>
                             </div>
                         </div>
                     </div>
