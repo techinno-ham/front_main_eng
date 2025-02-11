@@ -11,8 +11,8 @@ const DashboardConatctPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "AI Assistant Contacts | HamyarChat",
-    description: "AI Assistant contacts in HamyarChat.",
+    title: "AI Assistant Contacts | Chatsys",
+    description: "AI Assistant contacts in Chatsys.",
     icons: {
         icon: "/logo.svg", 
     },

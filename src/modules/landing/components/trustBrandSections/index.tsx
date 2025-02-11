@@ -13,7 +13,7 @@ let brands = [
     { link: "", image: "remail.png" },
     { link: "", image: "nily.png" },
     { link: "", image: "chemframe.png" },
-    // { link: "", image: "ms3d.png" },
+    { link: "", image: "ms3d.png" },
     { link: "", image: "soshial.png" },
 ]
 
@@ -161,13 +161,15 @@ const TrustBrandSections = () => {
                             style={{ overflow: "visible" }}
                         >
                             <div className="mx-auto overflow-visible">
-                                <Image
-                                    className="mx-auto"
-                                    src={`/images/brands/${brand.image}`}
-                                    height="70"
-                                    width="150"
-                                    alt="Logo"
-                                />
+                            <div className="relative w-28 h-20">
+  <Image
+    className="mx-auto grayscale"
+    src={`/images/brands/${brand.image}`}
+    fill
+    objectFit="contain"
+    alt="Logo"
+/>
+</div>
                             </div>
                         </SplideSlide>
                     ))}

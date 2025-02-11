@@ -80,7 +80,7 @@ const Header = () => {
                             <span
                                 className={`ml-2 text-xl font-bold md:text-2xl ${scroll && "text-[#fff]"}`}
                             >
-                                Hamyar{" "}
+                                Chatsys{" "}
                             </span>
 
                             

@@ -10,8 +10,8 @@ const DashboardSettingPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "AI Assistant Form Settings | HamyarChat",
-    description: "Management and configuration of AI assistant settings in HamyarChat.",
+    title: "AI Assistant Form Settings | Chatsys",
+    description: "Management and configuration of AI assistant settings in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

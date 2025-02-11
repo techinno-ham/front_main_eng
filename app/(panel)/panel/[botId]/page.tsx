@@ -12,8 +12,8 @@ const DashboardPage: NextPage = ({ params }: any) => {
     )
 }
 export const metadata: Metadata = {
-    title: "AI Assistant Dashboard | HamyarChat",
-    description: "View and manage the AI assistant dashboard in HamyarChat.",
+    title: "AI Assistant Dashboard | Chatsys",
+    description: "View and manage the AI assistant dashboard in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

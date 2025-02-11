@@ -23,7 +23,7 @@ let cards = [
     },
     {
         title: "White Label",
-        subTitle: "Remove the Hamyarchat brand and use a custom domain.",
+        subTitle: "Remove the Chatsys brand and use a custom domain.",
         Icon: (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" width="30" className="text-blue-500">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"></path>
@@ -98,10 +98,10 @@ const PowerfulFeaturesSection = () => {
     <div className="mt-10 md:mt-4">
         <h2 className="font-medium text-3xl md:text-5xl">
             <span>Outstanding Features </span>
-            <span className="gradient-h2 is-v2">HamyarChat&nbsp;</span>
+            <span className="gradient-h2 is-v2">Chatsys&nbsp;</span>
         </h2>
         <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-            The advanced features of the HamyarChat platform allow you to fully
+            The advanced features of the Chatsys platform allow you to fully
             customize chatbots according to your needs.
         </h3>
     </div>

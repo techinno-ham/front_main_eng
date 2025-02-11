@@ -16,7 +16,7 @@ const FeatureSection = () => {
             </h2>
             <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
                 All the tools and resources needed for custom chatbots are available
-                on the HamyarChat platform.
+                on the Chatsys platform.
             </h3>
         </div>
         <div className="mt-[30px] md:mt-[60px]">

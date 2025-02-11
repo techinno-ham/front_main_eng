@@ -28,7 +28,7 @@ const Features = () => {
                         >
                             &nbsp;Features&nbsp;
                         </span>
-                        of HamyarChat
+                        of Chatsys
                     </h1>
                 </div>
             </div>
@@ -56,7 +56,7 @@ const Features = () => {
                                     Training Chatbots with Your Custom Data
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    At HamyarChat, we enable training chatbots
+                                    Chatsys enables training chatbots
                                     with your custom data. This feature allows
                                     businesses to configure chatbots based on
                                     their specific needs and content. By
@@ -64,7 +64,7 @@ const Features = () => {
                                     provide more accurate responses to customer
                                     inquiries and deliver more personalized and
                                     effective interactions. Our goal is to
-                                    enhance your chatbot's capabilities to
+                                    enhance your chatbot&apos;s capabilities to
                                     improve customer experiences and help you
                                     achieve your business goals.
                                 </p>
@@ -82,7 +82,7 @@ const Features = () => {
                                     Fully Customizable User Interface
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    At HamyarChat, we place great emphasis on
+                                    Chatsys places great emphasis on
                                     user experience. Therefore, our chatbot’s
                                     user interface is fully customizable. You
                                     can adjust the design, colors, and various
@@ -128,7 +128,7 @@ const Features = () => {
                                     Queries
                                 </h4>
                                 <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                                    At HamyarChat, we proudly offer systems
+                                    Chatsys proudly offers systems
                                     capable of providing fully automated
                                     responses to user queries. This feature
                                     enables you to assist your customers anytime

@@ -186,7 +186,7 @@ h6 {
 }
 
 p {
-  @apply font-yekan; /* Use the font defined in Tailwind */
+  @apply font-yekan font-normal; /* Use the font defined in Tailwind */
 }
 
 div {

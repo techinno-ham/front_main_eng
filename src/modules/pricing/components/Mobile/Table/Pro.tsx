@@ -11,7 +11,7 @@ const ProPricingMobile = () => {
             </span>
             <span className="text-sm text-zinc-400">thousand Toman / per month</span>
         </div>
-        <a target="_blank" href="https://telegram.me/hamyarchat">
+        <a target="_blank" href="https://telegram.me/Chatsys">
             <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-12 items-center justify-center whitespace-nowrap rounded-xl border py-3 text-base font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                 Select Professional Plan
             </button>
@@ -158,7 +158,7 @@ const ProPricingMobile = () => {
             </span>
             <div className="flex w-full flex-row items-center justify-start gap-2">
                 <span className="w-3/4 border-b border-b-zinc-200/50 py-5 text-sm font-medium text-zinc-900">
-                    Remove HamyarChat Logo
+                    Remove Chatsys Logo
                 </span>
                 <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/20">
                     <CrossSVG />

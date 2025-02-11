@@ -17,7 +17,7 @@ const Invite = () => {
                             Invite Your Friends!
                         </p>
                         <span className="text-sm text-gray-500">
-                            You can invite people to HamyarChat so your friends can
+                            You can invite people to Chatsys so your friends can
                             use our website, create their charts, and convert their data into charts.
                         </span>
                     </div>

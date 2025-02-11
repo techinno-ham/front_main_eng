@@ -7,9 +7,9 @@ const FAQPage: NextPage = () => {
 }
 
 export const metadata: Metadata = {
-    title: "FAQ | HamyarChat - Conversational AI Assistant",
+    title: "FAQ | Chatsys - Conversational AI Assistant",
     description:
-        "In the FAQ section of HamyarChat, find comprehensive and accurate answers to the most common user questions. We help you make the best use of our conversational AI assistant platform with complete and clear information.",
+        "In the FAQ section of Chatsys, find comprehensive and accurate answers to the most common user questions. We help you make the best use of our conversational AI assistant platform with complete and clear information.",
     // openGraph: {
     //   title: 'FAQ',
     // },

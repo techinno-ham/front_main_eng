@@ -10,8 +10,8 @@ const DashboardDeployPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "AI Assistant Deployment | HamyarChat",
-    description: "Deploy and manage your AI assistant in HamyarChat.",
+    title: "AI Assistant Deployment | Chatsys",
+    description: "Deploy and manage your AI assistant in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

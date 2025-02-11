@@ -10,8 +10,8 @@ const InvitePage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "Invite Friends | HamyarChat",
-    description: "Invite friends and colleagues to HamyarChat.",
+    title: "Invite Friends | Chatsys",
+    description: "Invite friends and colleagues to Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

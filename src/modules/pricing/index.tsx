@@ -124,7 +124,7 @@ const Pricing = () => {
                             subscription="$ / Monthly"
                             description="Suitable for medium-sized businesses and users with advanced needs."
                             buttonText="Choose Standard Plan"
-                            buttonLink="https://telegram.me/hamyarchat"
+                            buttonLink="https://telegram.me/Chatsys"
                             beforeListText={"Everything in Basic, plus..."}
                             active={false}
                             priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
@@ -144,7 +144,7 @@ const Pricing = () => {
                             subscription="$ / Monthly"
                             description="Suitable for businesses and large organizations needing customization and detailed analytics."
                             buttonText="Choose Professional Plan"
-                            buttonLink="https://telegram.me/hamyarchat"
+                            buttonLink="https://telegram.me/Chatsys"
                             beforeListText={"Everything in Standard, plus..."}
                             active={true}
                             priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
@@ -163,7 +163,7 @@ const Pricing = () => {
                             price="Contact Us"
                             description="Suitable for large organizations with complex needs, custom solutions, and dedicated support."
                             buttonText="Choose Enterprise Plan"
-                            buttonLink="https://telegram.me/hamyarchat"
+                            buttonLink="https://telegram.me/Chatsys"
                             beforeListText={
                                 "Everything in Professional, plus..."
                             }
@@ -173,7 +173,7 @@ const Pricing = () => {
                             <List>Unlimited messages</List>
                             <List>Unlimited AI assistants</List>
                             <List>Custom domain or logo insertion</List>
-                            <List>Remove HamyarChat branding</List>
+                            <List>Remove Chatsys branding</List>
                             <List>Dedicated consulting</List>
                         </PricingCard>
                     </div>
@@ -242,7 +242,7 @@ const Pricing = () => {
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/hamyarchat"
+                    href="https://telegram.me/Chatsys"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us
@@ -260,7 +260,7 @@ const Pricing = () => {
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/hamyarchat"
+                    href="https://telegram.me/Chatsys"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border bg-blue-700 px-4 py-2 text-sm font-medium text-white transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us
@@ -278,7 +278,7 @@ const Pricing = () => {
                 </div>
                 <a
                     target="_blank"
-                    href="https://telegram.me/hamyarchat"
+                    href="https://telegram.me/Chatsys"
                 >
                     <button className="bg-white-gradient shadow-button hover:shadow-button-hover hover:bg-white-gradient-hover active:bg-white-gradient-hover disabled:hover:shadow-button disabled:hover:bg-white-gradient inline-flex h-auto w-full items-center justify-center whitespace-nowrap rounded-xl border px-4 py-2 text-sm font-medium text-zinc-950 transition-all duration-100 ease-in-out hover:border-zinc-500 active:border-zinc-400 active:opacity-70 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:border-zinc-200 disabled:hover:text-zinc-950">
                         Contact Us
@@ -395,7 +395,7 @@ const Pricing = () => {
             </span>
         </span>
         <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
-            Remove HamyarChat Logo
+            Remove Chatsys Logo
         </span>
         <span className="flex h-16 w-full items-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-900">
             Your Custom Domain or Logo

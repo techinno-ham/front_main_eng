@@ -10,9 +10,9 @@ const BillingPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "Invite Friends | HamyarChat - Conversational AI Assistant",
+    title: "Invite Friends | Chatsys - Conversational AI Assistant",
     description:
-        "At HamyarChat, we are committed to enhancing your customers' experience through a conversational AI assistant. Our platform provides fast and accurate responses, helping to automate customer support and increase their satisfaction. By leveraging advanced technologies, we aim to elevate your business.",
+        "At Chatsys, we are committed to enhancing your customers' experience through a conversational AI assistant. Our platform provides fast and accurate responses, helping to automate customer support and increase their satisfaction. By leveraging advanced technologies, we aim to elevate your business.",
     // openGraph: {
     //   title: 'About Us',
     // },

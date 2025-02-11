@@ -19,11 +19,11 @@ const BlogCard = ({ title, subTitle, linkTo, img }: any) => {
                             <img
                                 className="size-[46px] rounded-full border-2 border-blue-500 bg-white p-1"
                                 src="/logo.svg"
-                                alt="Team HamyarChat"
+                                alt="Team Chatsys"
                             />
                         </div>
                         <div className="ms-2.5 sm:ms-4">
-                            <h4 className="font-semibold text-white">Team HamyarChat</h4>
+                            <h4 className="font-semibold text-white">Team Chatsys</h4>
                             <p className="text-xs text-white/[.8]">
                                 May 30, 2021
                             </p>

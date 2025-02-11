@@ -11,8 +11,8 @@ const CreateBotsPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "Create Assistant | HamyarChat",
-    description: "Create and configure a new assistant in HamyarChat.",
+    title: "Create Assistant | Chatsys",
+    description: "Create and configure a new assistant in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

@@ -58,7 +58,7 @@ const Login = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                HamyarChat
+                                Chatsys
                             </span>
                         </div>
                     </Link>
@@ -153,7 +153,7 @@ const Login = () => {
                                         <div className="h-5 w-5 animate-spin rounded-full border-2 border-white border-t-blue-600"></div>
                                     </>
                                 ) : (
-                                    <>Login to HamyarChat</>
+                                    <>Login to Chatsys</>
                                 )}
                             </button>
                             <p className="mt-6 text-center text-sm">

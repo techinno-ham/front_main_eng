@@ -150,7 +150,7 @@ const ItemsGrid = () => {
                 A sales chatbot designed to assist customers...
             </div>
             <div className="text-botpress-small">
-                HamyarChat
+                Chatsys
             </div>
         </div>
 
@@ -197,7 +197,7 @@ const ItemsGrid = () => {
                 A template designed to help schedule health appointments...
             </div>
             <div className="text-botpress-small">
-                HamyarChat
+                Chatsys
             </div>
         </div>
     </div>
@@ -231,7 +231,7 @@ const ItemsGrid = () => {
                 A banking chatbot that provides services to customers...
             </div>
             <div className="text-botpress-small">
-                HamyarChat
+                Chatsys
             </div>
         </div>
     </div>

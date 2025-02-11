@@ -10,8 +10,8 @@ const ProfilePage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "Profile | HamyarChat",
-    description: "User profile management in HamyarChat.",
+    title: "Profile | Chatsys",
+    description: "User profile management in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

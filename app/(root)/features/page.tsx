@@ -5,9 +5,9 @@ const FeaturesPage: NextPage = () => {
     return <Features/>
 }
 export const metadata: Metadata = {
-    title: "Features | HamyarChat - Conversational AI Assistant",
+    title: "Features | Chatsys - Conversational AI Assistant",
     description:
-        "At HamyarChat, we are committed to enhancing your customer experience through a conversational AI assistant. Our platform helps automate customer support by providing fast and accurate responses, increasing customer satisfaction. Using advanced technologies, we aim to elevate your business.",
+        "At Chatsys, we are committed to enhancing your customer experience through a conversational AI assistant. Our platform helps automate customer support by providing fast and accurate responses, increasing customer satisfaction. Using advanced technologies, we aim to elevate your business.",
     // openGraph: {
     //   title: 'About Us',
     // },

@@ -10,8 +10,8 @@ const DashboardTrainPage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "AI Assistant Tutorial | HamyarChat",
-    description: "Training and optimizing the AI assistant in HamyarChat.",
+    title: "AI Assistant Tutorial | Chatsys",
+    description: "Training and optimizing the AI assistant in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

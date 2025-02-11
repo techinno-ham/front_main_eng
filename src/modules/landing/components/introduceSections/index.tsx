@@ -63,7 +63,7 @@ const IntroduceSections = () => {
         setInputValue(event.target.value)
     }
     const handleMeetRequest = () => {
-        window.open("https://calendly.com/hamyarchat/hamyarchat-demo", "_blank")
+        window.open("https://calendly.com/Chatsys/Chatsys-demo", "_blank")
     }
 
     const handleSubmit = async () => {
@@ -136,7 +136,7 @@ const IntroduceSections = () => {
                                 <div className="mt-7 flex flex-col items-center justify-center text-center md:mt-4">
                                     <h1 className="text-1xl text-center font-kalame font-bold !leading-[30px] text-slate-700 md:text-left md:text-3xl md:!leading-[60px] ">
                                         <span className="gradient-h2 is-v2 text-4xl md:text-6xl">
-                                            HamyarAI
+                                            Chatsys AI
                                         </span>
                                         <span>
                                             , provider of personalized
@@ -161,7 +161,7 @@ const IntroduceSections = () => {
                                 </div>
                                 <div className="mt-3 text-base text-slate-400 md:mt-4 md:text-lg ">
                                     <p className="mx-auto text-center font-yekan text-[12px] font-medium md:text-justify md:text-[16px] md:!leading-9">
-                                        {`With HamyarChat, create a smart and personalized experience for your online communications and customer services. Our powerful platform helps you establish optimized and efficient communication with your customers effortlessly and ensures you are always accessible.`}
+                                        {`With Chatsys, create a smart and personalized experience for your online communications and customer services. Our powerful platform helps you establish optimized and efficient communication with your customers effortlessly and ensures you are always accessible.`}
                                     </p>
                                 </div>
 
@@ -248,27 +248,31 @@ const IntroduceSections = () => {
                                         </button>
                                     </Link>
                                     <Link
-                                        href={"https://telegram.me/hamyarchat"}
-                                        target="_blank"
-                                    >
-                                        <button
-                                            type="button"
-                                            className="mb-2 me-2 mt-5 flex
-                items-center justify-center rounded-lg 
-                border bg-transparent px-5
-                py-2.5 
-                text-center 
-                text-sm font-medium text-blue-500 shadow-lg hover:bg-gradient-to-br focus:outline-none focus:ring-4 focus:ring-blue-300"
-                                        >
-                                            Schedule a Meeting
-                                            <span className="ml-1">
-                                                <Calendar
-                                                    size="20"
-                                                    color="#3b82f6"
-                                                />
-                                            </span>
-                                        </button>
-                                    </Link>
+    href={"https://calendly.com/chatsysco/30min"}
+    target="_blank"
+>
+    <button
+        type="button"
+        className="mb-2 me-2 mt-5 flex
+        items-center justify-center rounded-lg 
+        border bg-transparent px-5
+        py-2.5 
+        text-center 
+        text-sm font-medium 
+         shadow-lg hover:bg-gradient-to-br
+          focus:outline-none focus:ring-4
+           focus:ring-blue-300"
+    >
+        Schedule a Meeting
+        <span className="ml-1">
+            <Calendar
+                size="20"
+                color="#3b82f6"
+            />
+        </span>
+    </button>
+</Link>
+
                                 </div>
                             </div>
                             <div className="relative">

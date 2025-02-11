@@ -27,7 +27,7 @@ const AllBlogs = () => {
                 >
                     &nbsp;News&nbsp;
                 </span>
-                HamyarChat
+                Chatsys
             </h2>
             <p className="text-body-color dark:text-dark-6 text-base">
                 Read the latest here

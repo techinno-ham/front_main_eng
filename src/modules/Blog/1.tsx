@@ -15,7 +15,7 @@ const Blog1 = () => {
                         <img
                             className="mr-4 h-16 w-16 p-2 rounded-full border-2 border-blue-500"
                             src="/logo.svg"
-                            alt="Team HamyarChat"
+                            alt="Team Chatsys"
                         />
                         <div className="mr-3">
                             
@@ -25,7 +25,7 @@ const Blog1 = () => {
                                 className="text-xl font-bold text-gray-900 "
                             >
                                 
-                                Team HamyarChat
+                                Team Chatsys
                             </a>
                             <p className="text-base text-gray-500 ">
                                 

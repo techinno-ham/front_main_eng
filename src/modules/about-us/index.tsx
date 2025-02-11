@@ -27,7 +27,7 @@ const AboutUs = () => {
                 color: "transparent",
             }}
         >
-            &nbsp;HamyarChat&nbsp;
+            &nbsp;Chatsys&nbsp;
         </span>
         Team
     </h1>
@@ -50,7 +50,7 @@ const AboutUs = () => {
                         Get to Know Us
                     </h4>
                     <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                        At HamyarChat, we proudly announce that we are one of the first Iranian startups in the field of providing AI assistants for customer service. Our main goal is to create a better, faster, and more efficient experience for your customers. By utilizing the latest AI technologies and natural language processing, we help businesses establish better communication with their customers and address their needs in the best possible way.
+                        At Chatsys, we proudly announce that we are one of the first Iranian startups in the field of providing AI assistants for customer service. Our main goal is to create a better, faster, and more efficient experience for your customers. By utilizing the latest AI technologies and natural language processing, we help businesses establish better communication with their customers and address their needs in the best possible way.
                     </p>
                 </div>
             </div>
@@ -72,7 +72,7 @@ const AboutUs = () => {
                         Mission & Values
                     </h4>
                     <p className="mx-auto max-w-2xl text-justify text-xl font-normal leading-8 text-gray-500 max-lg:text-center">
-                        Our mission at HamyarChat is to facilitate communication with customers and enhance their satisfaction. We believe that technology should serve humanity, which is why we are always striving to provide solutions that are both user-friendly and effective. Our values include innovation, customer orientation, quality, and transparency. Our team is committed to providing the best services and support to our valued customers and is always ready to collaborate and meet your needs.
+                        Our mission at Chatsys is to facilitate communication with customers and enhance their satisfaction. We believe that technology should serve humanity, which is why we are always striving to provide solutions that are both user-friendly and effective. Our values include innovation, customer orientation, quality, and transparency. Our team is committed to providing the best services and support to our valued customers and is always ready to collaborate and meet your needs.
                     </p>
                 </div>
             </div>

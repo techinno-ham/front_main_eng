@@ -5,36 +5,36 @@ import { useState } from "react"
 
 let qaArray = [
     {
-        question: "What is HamyarChat?",
-        answer: "HamyarChat is an advanced AI tool that allows businesses to create automated response bots. These bots are capable of answering customer questions quickly and accurately, thereby improving the customer support process and enhancing the efficiency of the support team. Key features of HamyarChat include 24/7 support, reducing the workload of the support team, and improving user experience with fast and precise responses.",
+        question: "What is Chatsys?",
+        answer: "Chatsys is an advanced AI tool that allows businesses to create automated response bots. These bots are capable of answering customer questions quickly and accurately, thereby improving the customer support process and enhancing the efficiency of the support team. Key features of Chatsys include 24/7 support, reducing the workload of the support team, and improving user experience with fast and precise responses.",
     },
     {
-        question: "What is the cost of using HamyarChat?",
-        answer: "HamyarChat offers a variety of pricing plans. Starting with a free plan that includes basic features, you can try HamyarChat and then upgrade to paid plans for access to more advanced features. This flexibility in pricing helps you benefit from smart chatbots in a more cost-effective way.",
+        question: "What is the cost of using Chatsys?",
+        answer: "Chatsys offers a variety of pricing plans. Starting with a free plan that includes basic features, you can try Chatsys and then upgrade to paid plans for access to more advanced features. This flexibility in pricing helps you benefit from smart chatbots in a more cost-effective way.",
     },
     {
-        question: "How many HamyarChats can I create?",
-        answer: "The number of HamyarChats you can create depends on the plan you choose. In free plans, you may be able to create a limited number of chatbots, while paid plans allow you to create more. This flexibility helps you tailor HamyarChat to your business needs.",
+        question: "How many Chatsyss can I create?",
+        answer: "The number of Chatsyss you can create depends on the plan you choose. In free plans, you may be able to create a limited number of chatbots, while paid plans allow you to create more. This flexibility helps you tailor Chatsys to your business needs.",
     },
     {
-        question: "What are the features of HamyarChat?",
-        answer: "HamyarChat provides a simple, user-friendly interface that allows you to create and manage chatbots without the need for programming. Key features include automatic training based on input data, multi-language support, easy integration with other platforms like Telegram and WooCommerce, and the ability to crawl websites for data collection. These features make HamyarChat a powerful tool for improving customer interaction and increasing efficiency.",
+        question: "What are the features of Chatsys?",
+        answer: "Chatsys provides a simple, user-friendly interface that allows you to create and manage chatbots without the need for programming. Key features include automatic training based on input data, multi-language support, easy integration with other platforms like Telegram and WooCommerce, and the ability to crawl websites for data collection. These features make Chatsys a powerful tool for improving customer interaction and increasing efficiency.",
     },
     {
-        question: "How can I customize HamyarChat?",
-        answer: "HamyarChat offers extensive customization options. You can adjust the chatbot’s appearance, welcome messages, and response templates. Additionally, you can add industry-specific modules or API integrations to improve the chatbot’s functionality and tailor it to your specific needs.",
+        question: "How can I customize Chatsys?",
+        answer: "Chatsys offers extensive customization options. You can adjust the chatbot’s appearance, welcome messages, and response templates. Additionally, you can add industry-specific modules or API integrations to improve the chatbot’s functionality and tailor it to your specific needs.",
     },
     {
-        question: "Is HamyarChat free?",
-        answer: "Yes, HamyarChat allows you to sign up for a free account and access the basic features of the platform. This account includes access to core features that are suitable for testing and exploring HamyarChat. You can try HamyarChat with no cost involved.",
+        question: "Is Chatsys free?",
+        answer: "Yes, Chatsys allows you to sign up for a free account and access the basic features of the platform. This account includes access to core features that are suitable for testing and exploring Chatsys. You can try Chatsys with no cost involved.",
     },
     {
         question: "What should I do to get started?",
-        answer: "To get started, simply visit the HamyarChat website and sign up. Then, you can create your HamyarChat and input the data you want it to be trained on. This helps HamyarChat provide more accurate and useful responses to your users. The process is very simple and does not require complex technical knowledge.",
+        answer: "To get started, simply visit the Chatsys website and sign up. Then, you can create your Chatsys and input the data you want it to be trained on. This helps Chatsys provide more accurate and useful responses to your users. The process is very simple and does not require complex technical knowledge.",
     },
     {
-        question: "How long does it take to train HamyarChat?",
-        answer: "HamyarChat's training time is very short and usually takes just a few seconds to a few minutes, depending on the volume of data you use for training. This fast training speed allows you to quickly update your chatbot and provide new responses to users.",
+        question: "How long does it take to train Chatsys?",
+        answer: "Chatsys's training time is very short and usually takes just a few seconds to a few minutes, depending on the volume of data you use for training. This fast training speed allows you to quickly update your chatbot and provide new responses to users.",
     },
 ]
 
@@ -67,7 +67,7 @@ const FAQ = () => {
             </span>
         </h2>
         <p className="text-body-color dark:text-dark-6 text-base">
-            Find answers to frequently asked questions about HamyarChat here.
+            Find answers to frequently asked questions about Chatsys here.
         </p>
     </div>
 </div>

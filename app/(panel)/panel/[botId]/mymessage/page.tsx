@@ -10,9 +10,9 @@ const DashboardMyMessagePage: NextPage = () => {
     )
 }
 export const metadata: Metadata = {
-    title: "Message History | HamyarChat",
+    title: "Message History | Chatsys",
     description:
-        "View and review the message history of the AI assistant in HamyarChat.",
+        "View and review the message history of the AI assistant in Chatsys.",
     icons: {
         icon: "/logo.svg", // /public path
     },

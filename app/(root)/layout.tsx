@@ -11,7 +11,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             <Footer />
 
             <script
-                    src="https://hamyar.chat/cdn/widget/v1.0.0/hamyarchat-embedded.js"
+                    src="https://hamyar.chat/cdn/widget/v1.0.0/Chatsys-embedded.js"
                     hamyar-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
                     id="hamyarChatbotScript"
                     nonce="XUENAJFW"

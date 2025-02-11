@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import "./style.css"
 import Image from "next/image"
 import Link from "next/link"
-import { Call } from "iconsax-react"
+import { Calendar, Call } from "iconsax-react"
 
 const Footer = () => {
     let [activeAccordionId, setActiveAccordionId] = useState<number | null>(
@@ -52,7 +52,7 @@ const Footer = () => {
                             >
                                 <Link
                                     className="flex h-full w-full items-center justify-center px-4 py-1"
-                                    href={"https://telegram.me/hamyarchat"}
+                                    href={"https://telegram.me/chatsysco"}
                                     target="_blank"
                                 >
                                     Support
@@ -61,10 +61,37 @@ const Footer = () => {
                                     </span>
                                 </Link>
                             </button>
-                            <Link
+                            <button
+                                className="focus-visible:ring-ring col-span-3 inline-flex 
+                             h-11 items-center justify-center
+                             whitespace-nowrap rounded-md 
+                              text-base
+                               font-medium border text-blue-900
+                              shadow-sm transition-colors 
+                               focus-visible:outline-none 
+                               focus-visible:ring-1
+                                disabled:pointer-events-none
+                                 disabled:opacity-80 md:col-span-2 "
+                            >
+                                <Link
+                                    className="flex h-full w-full items-center justify-center px-4 py-1"
+                                    href={"https://telegram.me/chatsysco"}
+                                    target="_blank"
+                                >
+                                    Schedule a Meeting
+                                    <span className="ml-1">
+                                        <Calendar
+                                                        size="20"
+                                                        color="#1e3b8a"
+                                                    />
+                                    </span>
+                                </Link>
+                            </button>
+                            
+                            {/* <Link
                                 passHref
                                 href={
-                                    "https://www.linkedin.com/company/hamyarchat"
+                                    "https://www.linkedin.com/company/Chatsys"
                                 }
                                 target="_blank"
                             >
@@ -144,7 +171,7 @@ const Footer = () => {
                                 </button>
                             </Link>
                             <Link
-                                href={"https://telegram.me/hamyarchat"}
+                                href={"https://telegram.me/Chatsys"}
                                 target="_blank"
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
@@ -175,7 +202,7 @@ const Footer = () => {
                                         ></path>
                                     </svg>
                                 </button>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                     <div className="hidden md:flex md:gap-10 lg:gap-24 xl:gap-32">
@@ -230,33 +257,27 @@ const Footer = () => {
                                 Help & Support
                             </h5>
                             <Link
-                                href={"https://telegram.me/hamyarchat"}
+                                href={"https://telegram.me/chatsysco"}
                                 target="_blank"
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
                                 Telegram Support
                             </Link>
                             <Link
-                                href={"https://wa.me/989397803429"}
-                                target="_blank"
-                                className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                            >
-                                WhatsApp Support
-                            </Link>
-                            <Link
-                                href={"tel:+989397803429"}
+                                href={"https://calendly.com/chatsysco/30min"}
                                 style={{
                                     direction: "ltr",
                                 }}
-                                className="flex justify-end text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700 "
+                                className="flex text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700 "
                             >
-                                +98 939 780 3429
+                                Schedule a Meeting
+                                        
                             </Link>
                             <Link
                                 href={"mailto:support@hamyar.chat"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                support@hamyar.chat
+                                chatsysco@gmail.com
                             </Link>
                         </div>
                     </div>
@@ -511,39 +532,17 @@ const Footer = () => {
                             >
                                 <div className="flex flex-col gap-2">
                                     <Link
-                                        href={"https://telegram.me/hamyarchat"}
+                                        href={"https://telegram.me/chatsysco"}
                                         target="_blank"
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
                                         Telegram Support
                                     </Link>
                                     <Link
-                                        href={"https://wa.me/989397803429"}
-                                        target="_blank"
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        WhatsApp Support
-                                    </Link>
-                                    <Link
-                                        href={"tel:+989397803429"}
-                                        style={{
-                                            direction: "ltr",
-                                        }}
-                                        className="flex justify-end text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        +98 939 780 3429
-                                    </Link>
-                                    <Link
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        hamyarchat@gmail.com
-                                    </Link>
-                                    <Link
-                                        href={"/"}
-                                        className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
-                                    >
-                                        0912123123
+                                        chatsysco@gmail.com
                                     </Link>
                                 </div>
                             </div>
@@ -576,7 +575,7 @@ const Footer = () => {
                                 <span className="font-bold ">1403</span>
                                 <span className="mr-2">
                                     All material and intellectual property
-                                    rights of this website belong to HamyarChat.
+                                    rights of this website belong to Chatsys.
                                 </span>
                             </span>
                         </div>

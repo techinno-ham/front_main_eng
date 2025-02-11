@@ -11,10 +11,10 @@ const Blog = () => {
           <div className="mr-3 inline-flex items-center text-sm text-gray-900 ">
             <img className="mr-4 h-16 w-16 p-2 rounded-full border-2 border-blue-500"
               src="/logo.svg"
-              alt="HamyarChat Team" />
+              alt="Chatsys Team" />
             <div className="mr-3">
               <a href="#" rel="author" className="text-xl font-bold text-gray-900 ">
-                HamyarChat Team
+                Chatsys Team
               </a>
               <p className="text-base text-gray-500 ">
                 <time dateTime="2024-08-28" title="August 28, 2024">

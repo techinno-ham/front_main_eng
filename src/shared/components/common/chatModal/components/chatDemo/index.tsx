@@ -116,7 +116,7 @@ useEffect(() => {
                         alt="Logo"
                     />
                     <span className={`mr-2 text-2xl font-bold`}>
-                        HamyarChat
+                        Chatsys
                     </span>
                 </div>
             </div>

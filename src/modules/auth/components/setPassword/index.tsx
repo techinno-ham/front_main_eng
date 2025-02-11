@@ -61,7 +61,7 @@ const SetPassword = () => {
                             <span
                                 className={`mr-2 text-4xl font-bold text-[#fff]`}
                             >
-                                HamyarChat{" "}
+                                Chatsys{" "}
                             </span>
                         </div>
                     </Link>

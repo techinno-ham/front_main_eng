@@ -19,8 +19,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     )
 }
 export const metadata: Metadata = {
-    title: "User Panel | HamyarChat",
-    description: "Manage settings and user information in the HamyarChat user panel.",
+    title: "User Panel | Chatsys",
+    description: "Manage settings and user information in the Chatsys user panel.",
     icons: {
         icon: "/logo.svg", // /public path
     },
