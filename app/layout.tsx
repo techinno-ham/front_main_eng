@@ -82,9 +82,9 @@ export default function RootLayout({
                 {children}
                 {ChatBotScript && (
                     <script
-                        src="https://hamyar.chat/cdn/widget/v1.0.0/Chatsys-embedded.js"
-                        hamyar-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
-                        id="hamyarChatbotScript"
+                        src="https://chatsys.co/cdn/chatsys-widget/v1.0.0/chatsys-embedded.js"
+                        chatsys-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
+                        id="chatsysChatbotScript"
                         nonce="XUENAJFW"
                         async
                         defer
