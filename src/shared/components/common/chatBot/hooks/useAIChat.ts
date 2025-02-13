@@ -19,7 +19,7 @@ const useAIChat = (conversationId: string, botId: string, Instructions: string, 
 
         try {
             const response = await fetch(
-                "https://chatsys.co/chat/hamyarchat/invoke",
+                "https://chatsys.co/chat/chatsys/invoke",
                 {
                     method: "POST",
                     headers: {

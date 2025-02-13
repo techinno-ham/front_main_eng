@@ -21,8 +21,8 @@ const Web = () => {
 
     const scriptCode = `<script
     src="${baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js"
-    hamyar-bot-token="${botHash}"
-    id="hamyarChatbotScript"
+    chatsys-bot-token="${botHash}"
+    id="chatsysChatbotScript"
     defer></script>`
 
     const handleCopyIframe = () => {
@@ -147,9 +147,9 @@ const Web = () => {
                                         >
                                                &lt;script
                                             {"\n"}
-                                            src=&quot;{baseCdnUrl}/widget/v1.0.0/hamyarchat-embedded.js&quot;
-                                            {"\n"}hamyar-bot-token=&quot;{botHash}&quot;
-                                            {"\n"}id=&quot;hamyarChatbotScript&quot;
+                                            src=&quot;{baseCdnUrl}/chatsys-widget/v1.0.0/chatsys-embedded.js&quot;
+                                            {"\n"}chatsys-bot-token=&quot;{botHash}&quot;
+                                            {"\n"}id=&quot;chatsysChatbotScript&quot;
                                             {"\n"}defer
                                             {"\n"}&gt;&lt;/script&gt;
                                         </code>

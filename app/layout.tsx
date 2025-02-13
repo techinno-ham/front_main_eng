@@ -83,7 +83,7 @@ export default function RootLayout({
                 {ChatBotScript && (
                     <script
                         src="https://chatsys.co/cdn/chatsys-widget/v1.0.0/chatsys-embedded.js"
-                        chatsys-bot-token="OGNkYzE2ZmYtYzhmMi00MTVmLWFiNjMtYWI3YWE0NGQ5N2VjLjE3NDNmZmZk"
+                        chatsys-bot-token="Mzg5NjEyZTctMDAyNy00MDY1LTgzMDgtYTRhMDUzNTk2MzhhLjAyYjgyNDNk"
                         id="chatsysChatbotScript"
                         nonce="XUENAJFW"
                         async
