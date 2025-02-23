@@ -57,7 +57,7 @@ export default function RootLayout({
 
     return (
         <html lang="fa" dir={ChatBotScript ? "ltr" : "ltr"}>
-            <GoogleTagManager gtmId="GTM-T2X2G5KR" />
+            <GoogleTagManager gtmId="GTM-NTL9RRBF" />
             {/* <meta name="google-site-verification" content="3FbQ4PAZdyck6bvmlbuo4EwVvgNepkSC1-SuPA-R_HY" /> */}
             <body
                 className={`${KalameFont.variable} 
