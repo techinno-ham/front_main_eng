@@ -32,7 +32,7 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Enter your website link, files, or text.
                             </p>
-                            <div className="flex h-[200px] w-full items-center justify-center">
+                            <div className="flex h-[170px] w-full items-center justify-center">
                                 <img
                                     className="mx-auto mt-4 w-full"
                                     src="/images/setup/1.png"
@@ -54,7 +54,7 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Train the chatbot with your data.
                             </p>
-                            <div className="flex h-[200px] w-full items-center justify-center">
+                            <div className="flex h-[170px] w-full items-center justify-center">
                                 <img
                                     className="mx-auto mt-4 w-full"
                                     src="/images/setup/2.png"
@@ -77,7 +77,7 @@ const SetupSection = () => {
                                 Use Chatsys on your website or anywhere without
                                 any knowledge.
                             </p>
-                            <div className="flex h-[200px] w-full items-center justify-center">
+                            <div className="flex h-[170px] w-full items-center justify-center">
                                 <img
                                     className="mx-auto mt-4 w-full"
                                     src="/images/setup/3.jpg"
