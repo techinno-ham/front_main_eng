@@ -9,20 +9,14 @@ const CostSection = () => {
     border-[#d7def3]
     bg-[#f2f4fa] px-4 py-10 md:px-14 md:py-20"
                 >
-                    <div className="mb-10 ">
+                    <div className="mb-10">
                         <h2 className="text-3xl font-medium md:text-5xl">
-                            Assistant
-                            <span className="gradient-h2 is-v2"> Smart </span>
-                            for
-                            <span className="gradient-h2 is-v2">
-                                {" "}
-                                Transformation{" "}
-                            </span>
-                            of your business
+                            Transform Your Business with
+                            <span className="gradient-h2 is-v2">{" "}AI Agents</span>
                         </h2>
                         <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                            Take advantage of the unique benefits of an AI
-                            assistant
+                            Unlock smarter workflows and growth with intelligent
+                            AI Agents.
                         </h3>
                     </div>
                     <div className="mt-16 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-4">

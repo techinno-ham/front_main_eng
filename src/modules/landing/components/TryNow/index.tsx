@@ -66,7 +66,7 @@ const TryNow = () => {
                                     </span>{" "}
                                     opportunities and
                                     <span className="notice-text">
-                                        loyal{" "}
+                                    {" "}loyal{" "}
                                     </span>{" "}
                                     customers.
                                 </p>

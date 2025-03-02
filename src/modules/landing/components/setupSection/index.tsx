@@ -6,13 +6,14 @@ const SetupSection = () => {
             <div className="container relative mx-auto h-auto overflow-hidden px-4 py-[100px] text-center 2xl:px-20">
                 <div className="my-10 md:mt-10">
                     <h2 className="text-3xl font-medium md:text-5xl">
-                        Chatbot without
+                        Create AI Agents
                         <span className="gradient-h2 is-v2">
-                            &nbsp;Programming Knowledge
+                            {" "}Without Coding
                         </span>
                     </h2>
                     <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
-                        Set up in less than 2 minutes
+                        Set up in under 2 minutes—no programming knowledge
+                        needed.
                     </h3>
                 </div>
 
@@ -31,10 +32,12 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Enter your website link, files, or text.
                             </p>
-                            <img
-                                className="mx-auto mt-4 w-full"
-                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-1.png"
-                            />
+                            <div className="flex h-[200px] w-full items-center justify-center">
+                                <img
+                                    className="mx-auto mt-4 w-full"
+                                    src="/images/setup/1.png"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
@@ -51,10 +54,12 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Train the chatbot with your data.
                             </p>
-                            <img
-                                className="mx-auto mt-4 w-full"
-                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-2.png"
-                            />
+                            <div className="flex h-[200px] w-full items-center justify-center">
+                                <img
+                                    className="mx-auto mt-4 w-full"
+                                    src="/images/setup/2.png"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
@@ -69,13 +74,15 @@ const SetupSection = () => {
                                 Install and use
                             </p>
                             <p className="text-left text-sm text-zinc-500">
-                                Use Chatsys on your website or anywhere
-                                without any knowledge.
+                                Use Chatsys on your website or anywhere without
+                                any knowledge.
                             </p>
-                            <img
-                                className="mx-auto mt-4 w-full"
-                                src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/gali/step-3.png"
-                            />
+                            <div className="flex h-[200px] w-full items-center justify-center">
+                                <img
+                                    className="mx-auto mt-4 w-full"
+                                    src="/images/setup/3.jpg"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
