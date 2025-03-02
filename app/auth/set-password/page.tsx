@@ -1,20 +1,14 @@
-import Login from "@/src/modules/auth/components/login"
-import Register from "@/src/modules/auth/components/register"
+import SetPassword from "@/src/modules/auth/components/setPassword"
 import { Metadata, NextPage } from "next"
 
-const RegisterPage: NextPage = () => {
-    return <Register />
+const SetPasswordPage: NextPage = () => {
+    return <SetPassword />
 }
 export const metadata: Metadata = {
-    title: "Sign Up | Chatsys - Conversational AI Agent",
-    description:
-        "Sign up on Chatsys and get access to our conversational AI Agent. By creating an account, you can take advantage of our advanced features to improve your customer support.",
-    // openGraph: {
-    //   title: 'Register',
-    // },
+    title: "Chatsys | Set Password",
     icons: {
-        icon: "/logo.svg", // /public path
+        icon: "/logo.svg", 
     },
 }
 
-export default RegisterPage
+export default SetPasswordPage
