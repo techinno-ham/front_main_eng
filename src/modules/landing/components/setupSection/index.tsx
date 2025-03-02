@@ -8,7 +8,8 @@ const SetupSection = () => {
                     <h2 className="text-3xl font-medium md:text-5xl">
                         Create AI Agents
                         <span className="gradient-h2 is-v2">
-                            {" "}Without Coding
+                            {" "}
+                            Without Coding
                         </span>
                     </h2>
                     <h3 className="mt-1 text-[12px] md:mt-3 md:text-[16px]">
@@ -32,12 +33,12 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Enter your website link, files, or text.
                             </p>
-                            <div className="flex h-[120px] w-full items-center justify-center">
-                                <img
-                                    className="mx-auto mt-4 w-full"
-                                    src="/images/setup/1.png"
-                                />
-                            </div>
+                        </div>
+                        <div className="px-6">
+                            <img
+                                className="mx-auto mt-4 w-full"
+                                src="/images/setup/1.png"
+                            />
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
@@ -54,12 +55,12 @@ const SetupSection = () => {
                             <p className="text-left text-sm text-zinc-500">
                                 Train the chatbot with your data.
                             </p>
-                            <div className="flex h-[120px] w-full items-center justify-center">
-                                <img
-                                    className="mx-auto mt-4 w-full"
-                                    src="/images/setup/2.png"
-                                />
-                            </div>
+                        </div>
+                        <div className="px-6">
+                            <img
+                                className="mx-auto mt-8 w-full"
+                                src="/images/setup/2.png"
+                            />
                         </div>
                     </div>
                     <div className="relative flex flex-col rounded-xl bg-gray-50 bg-clip-border text-gray-700">
@@ -77,12 +78,12 @@ const SetupSection = () => {
                                 Use Chatsys on your website or anywhere without
                                 any knowledge.
                             </p>
-                            <div className="flex h-[120px] w-full items-center justify-center">
-                                <img
-                                    className="mx-auto mt-4 w-full"
-                                    src="/images/setup/3.jpg"
-                                />
-                            </div>
+                        </div>
+                        <div className="px-6">
+                            <img
+                                className="mx-auto mt-4 w-full"
+                                src="/images/setup/3.jpg"
+                            />
                         </div>
                     </div>
                 </div>
