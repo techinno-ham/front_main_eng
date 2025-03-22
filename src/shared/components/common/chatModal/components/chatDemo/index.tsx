@@ -334,7 +334,7 @@ useEffect(() => {
                 Powered by
                 <a
                     target="_blank"
-                    className="mr-1 font-semibold text-[#1277fd]"
+                    className="ml-1 font-semibold text-[#1277fd]"
                     href="/"
                 >
                     chatsys.co

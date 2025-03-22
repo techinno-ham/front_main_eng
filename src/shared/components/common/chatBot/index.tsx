@@ -217,7 +217,7 @@ const ChatBot: FC<chatbotProps> = ({
                                     <div className="flex items-center justify-center gap-3 px-4 pb-3 pt-1">
                                         <p className="pointer-events-none grow text-nowrap text-center  text-xs">
                                             Powered by
-                                            <a className="pointer-events-none mr-1 font-semibold text-[#1277fd]">
+                                            <a className="pointer-events-none ml-1 font-semibold text-[#1277fd]">
                                                 chatsys.co
                                             </a>
                                         </p>
@@ -455,7 +455,7 @@ const ChatBot: FC<chatbotProps> = ({
                             Powered by
                             <a
                                 target="_blank"
-                                className="mr-1 font-semibold text-[#1277fd]"
+                                className="ml-1 font-semibold text-[#1277fd]"
                                 href="/"
                             >
                                 chatsys.co
