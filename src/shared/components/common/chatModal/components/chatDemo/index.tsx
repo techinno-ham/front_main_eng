@@ -9,6 +9,7 @@ import useChatModal from "../../hooks/useChatModal"
 import CahtBotLoader from "../../../chatBotLoader"
 import { serverChat } from "@/src/modules/landing/components/introduceSections/actions"
 import Image from "next/image";
+import Markdown from "react-markdown";
 
 
 
@@ -197,7 +198,8 @@ useEffect(() => {
                                         >
                                             <div className="flex flex-col items-start gap-4 break-words">
                                                 <div className="w-full break-words text-right text-sm text-inherit">
-                                                    <p>{message.content}</p>
+                                                    <Markdown className={""}>{message.content}</Markdown>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

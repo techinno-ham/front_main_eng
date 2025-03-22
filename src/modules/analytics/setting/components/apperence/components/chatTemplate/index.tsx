@@ -1,5 +1,6 @@
 "use client"
 import { CloseCircle, Refresh, Send } from "iconsax-react"
+import Markdown from "react-markdown"
 
 const ChatTemplate = ({ config }: any) => {
     return (
@@ -38,7 +39,7 @@ const ChatTemplate = ({ config }: any) => {
                                                         <div className="mb-3 max-w-prose overflow-auto rounded-lg bg-[#f1f1f0] px-4 py-3 text-black">
                                                             <div className="flex flex-col items-start gap-4 break-words">
                                                                 <div className=" w-full break-words text-right text-inherit ">
-                                                                    <p>{msg}</p>
+                                                                <Markdown className={""}>{msg}</Markdown>
                                                                 </div>
                                                             </div>
                                                         </div>

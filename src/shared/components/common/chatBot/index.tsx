@@ -6,6 +6,7 @@ import useAIChat from "./hooks/useAIChat"
 import CahtBotLoader from "../chatBotLoader"
 import { toast } from "sonner"
 import { v4 as uuidv4 } from "uuid"
+import Markdown from "react-markdown"
 
 interface chatbotProps {
     chatBotActive: boolean
@@ -282,11 +283,7 @@ const ChatBot: FC<chatbotProps> = ({
                                                         >
                                                             <div className="flex flex-col items-start gap-4 break-words">
                                                                 <div className="w-full break-words text-left text-sm text-inherit">
-                                                                    <p>
-                                                                        {
-                                                                            message.content
-                                                                        }
-                                                                    </p>
+                                                                    <Markdown className={""}>{message.content}</Markdown>
                                                                 </div>
                                                             </div>
                                                         </div>
