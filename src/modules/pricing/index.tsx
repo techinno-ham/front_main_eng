@@ -135,7 +135,7 @@ const Pricing = () => {
                             active={true}
                             priceId={"price_1R5Pi1Dz0ulydfrQ5DBXGXvw"}
                         >
-                            <List>12,000 messages per month</List>
+                            <List>8,000 messages per month</List>
                             <List>5 AI Agents</List>
                             <List>
                                 Unlimited character storage and file uploads 😍
@@ -614,7 +614,7 @@ const Pricing = () => {
         className="mt-16 flex w-full flex-col"
     >
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
-            12,000
+            8,000
         </span>
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
             5
