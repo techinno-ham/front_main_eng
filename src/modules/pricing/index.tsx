@@ -113,9 +113,9 @@ const Pricing = () => {
                             buttonLink="https://telegram.me/chatsysco"
                             beforeListText={"Everything in Basic, plus..."}
                             active={false}
-                            priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
+                            priceId={"price_1R5PhaDz0ulydfrQQsYENg8U"}
                         >
-                            <List>1,200 messages per month</List>
+                            <List>2,000 messages per month</List>
                             <List>3 AI Agents</List>
                             <List>Unlimited training links</List>
                             <List>
@@ -133,9 +133,9 @@ const Pricing = () => {
                             buttonLink="https://telegram.me/chatsysco"
                             beforeListText={"Everything in Standard, plus..."}
                             active={true}
-                            priceId={"price_1Qmhhb02L9pKqcxp75Syyp7d"}
+                            priceId={"price_1R5Pi1Dz0ulydfrQ5DBXGXvw"}
                         >
-                            <List>4,200 messages per month</List>
+                            <List>12,000 messages per month</List>
                             <List>5 AI Agents</List>
                             <List>
                                 Unlimited character storage and file uploads 😍
@@ -184,9 +184,9 @@ const Pricing = () => {
                 <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-white px-4 py-1 text-xs font-medium text-zinc-950 transition-colors duration-300 ease-in-out hover:bg-white hover:text-zinc-900 hover:opacity-85 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                     Monthly
                 </button>
-                {/* <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-zinc-100 px-4 py-1 text-xs font-medium text-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
+                <button className="focus-visible:ring-ring inline-flex h-9 items-center justify-center whitespace-nowrap rounded-full bg-zinc-100 px-4 py-1 text-xs font-medium text-zinc-500 transition-colors duration-300 ease-in-out hover:bg-zinc-100 hover:text-zinc-900 focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:text-zinc-600 disabled:opacity-80 lg:px-5 xl:px-7 dark:hover:bg-zinc-800 dark:hover:text-zinc-50">
                     Yearly{" "}
-                </button> */}
+                </button>
             </div>
         </div>
         <div className="col-span-7 grid grid-cols-4 gap-4 focus-visible:outline-none focus-visible:ring-0 data-[state=inactive]:hidden">
@@ -519,7 +519,7 @@ const Pricing = () => {
         className="mt-16 flex w-full flex-col"
     >
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-            1,200
+            2,000
         </span>
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
             3
@@ -614,7 +614,7 @@ const Pricing = () => {
         className="mt-16 flex w-full flex-col"
     >
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
-            4,200
+            12,000
         </span>
         <span className="flex h-16 w-full items-center justify-center border-b border-b-zinc-200/50 bg-zinc-50 text-sm font-medium text-zinc-500/90">
             5

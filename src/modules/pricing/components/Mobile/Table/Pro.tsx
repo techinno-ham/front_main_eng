@@ -32,7 +32,7 @@ const ProPricingMobile = () => {
                     Monthly Messages
                 </span>
                 <span className="flex h-16 w-1/4 items-center justify-end border-b border-b-zinc-200/50 text-sm font-medium text-zinc-500/90">
-                    4,200
+                    12,000
                 </span>
             </div>
             <div className="flex w-full flex-row items-center justify-start gap-2">
