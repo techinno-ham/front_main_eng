@@ -21,6 +21,8 @@ const PricingCard = ({
     beforeListText,
     buttonLink,
     priceId,
+    isPay,
+    isYearly,
 }: any) => {
     const router = useRouter()
     const { user } = useLogin()
@@ -82,7 +84,7 @@ const PricingCard = ({
                                 {type}
                             </span>
                             <h3 className="text-dark mb-5 text-2xl font-medium">
-                                <span className="tracking-wider">{price}</span>
+                                <span className="tracking-wider">{isYearly && type!="Basic" && type!="Enterprise"? price["monthlyPrice"] : price}</span>
                                 <span className="text-zinc-400">
                                     {subscription && (
                                         <span className="ml-1 text-[12px]">
@@ -90,14 +92,15 @@ const PricingCard = ({
                                         </span>
                                     )}
                                 </span>
-                                {/* <span
-                                    style={{
-                                        color: "#637381",
-                                    }}
-                                    className="block text-base font-medium"
-                                >
-                                    {subscription && "/"} {subscription}
-                                </span> */}
+                                <div className="text-sm text-gray-500 mt-1">
+                      {isYearly && isPay? (
+                        <span>
+                          US${price["yearlyPrice"] }/year <s className="opacity-75">US${price["normalMonthlyPrice"]}/year</s>
+                        </span>
+                      ) : (
+                        <span>Billed monthly</span>
+                      )}
+                    </div>
                             </h3>
                             {/* <p 
                     style={{

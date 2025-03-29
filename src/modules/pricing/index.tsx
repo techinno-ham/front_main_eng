@@ -1,9 +1,14 @@
-//https://tailgrids.com/components/pricing-tables
-//https://tailgrids.com/pricing
+"use client"
+
+
+
 import "./style.css"
 import PricingCard from "./PricingCard"
 import MobilePricingFeatures from "./components/Mobile/Table"
 import Link from "next/link"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Confetti from "react-dom-confetti";
 
 
 
@@ -43,6 +48,16 @@ const CrossIcon = () => (
 )
 
 const Pricing = () => {
+    const [isYearly, setIsYearly] = useState(false);
+    const calculatePrice = (monthlyPrice: any) => {
+        if (monthlyPrice === "Free") return "Free";
+        const yearlyPrice = monthlyPrice * 12;
+        return isYearly ? {
+            normalMonthlyPrice: yearlyPrice.toFixed(0),
+            monthlyPrice: ((yearlyPrice * 0.8) / 12 ).toFixed(0),
+            yearlyPrice: (yearlyPrice * 0.8).toFixed(0),
+        }: monthlyPrice;
+    };
     return (
         <section className="relative bg-white pb-12 pt-10 lg:pb-[90px]">
             <div className="container mx-auto">
@@ -53,26 +68,57 @@ const Pricing = () => {
                                 Pricing Table
                             </span>
                             <h2 className="text-dark mb-3 text-3xl font-bold   sm:text-4xl md:text-[40px] ">
-                                {/* Prices for
-                                <span
-                                    style={{
-                                        textShadow:
-                                            "0 3px 8px rgba(77, 243, 255, 0.22)",
-                                        backgroundImage:
-                                            "linear-gradient(360deg, #5154ff, #559fff)",
-                                        backgroundClip: "text",
-                                        fontWeight: 700,
-                                        position: "relative",
-                                        color: "transparent",
-                                    }}
-                                >
-                                    &nbsp;the Latest&nbsp;
-                                </span> */}
                                 Simple Pricing, Scalable Plans
                             </h2>
                             <p className="text-body-color dark:text-dark-6 text-base">
                             Service details and costs to help you make the best choice.
                             </p>
+                            <div className="flex flex-col items-center justify-center gap-3 mt-8">
+                                <div className="relative flex h-10 w-[201px] bg-zinc-100 rounded-full p-1">
+                                    
+                                    {/* Animated Background */}
+                                    <motion.div
+                                        className="absolute top-1 left-1 h-8 w-24 rounded-full bg-white shadow-md"
+                                        initial={{ x: 0 }}
+                                        animate={{ x: isYearly ? "100%" : "0%" }}
+                                        transition={{ type: "spring", stiffness: 250, damping: 20 }}
+                                    />
+                                    
+                                    <button
+                                        onClick={() => setIsYearly(false)}
+                                        className={`relative z-10 flex-1 text-sm font-medium transition-colors ${
+                                            !isYearly ? "text-zinc-950" : "text-zinc-500"
+                                        }`}
+                                    >
+                                        Monthly
+                                    </button>
+                                    <button
+                                        onClick={() => setIsYearly(true)}
+                                        className={`relative z-10 flex-1 text-sm font-medium transition-colors ${
+                                            isYearly ? "text-zinc-950" : "text-zinc-500"
+                                        }`}
+                                    >
+                                        Yearly
+                                    </button>
+                                    
+                                        <motion.span
+                                            className="absolute -top-4 right-0 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-md"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            transition={{ duration: 0.3 }}
+                                        >
+                                           - 20%
+                                        </motion.span>
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div className="flex justify-center">
+                                <Confetti
+                                active={isYearly}
+                               config={{ elementCount: 200, spread: 150 }}
+                                 />
+          </div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +127,8 @@ const Pricing = () => {
                     <div className="mx-4 flex flex-wrap">
                         <PricingCard
                             order={0}
+                            isPay={false}
+                            isYearly={isYearly}
                             type="Basic"
                             price="Free"
                             subscription="Forever"
@@ -105,8 +153,10 @@ const Pricing = () => {
                         </PricingCard>
                         <PricingCard
                             order={0}
+                            isPay={true}
+                            isYearly={isYearly}
                             type="Standard"
-                            price="19"
+                            price={calculatePrice(19)}
                             subscription="$ / Monthly"
                             description="Suitable for medium-sized businesses and users with advanced needs."
                             buttonText="Choose Standard Plan"
@@ -125,8 +175,10 @@ const Pricing = () => {
                         </PricingCard>
                         <PricingCard
                             order={4}
+                            isPay={true}
+                            isYearly={isYearly}
                             type="Professional"
-                            price="69"
+                            price={calculatePrice(69)}
                             subscription="$ / Monthly"
                             description="Suitable for businesses and large organizations needing customization and detailed analytics."
                             buttonText="Choose Professional Plan"
@@ -145,6 +197,8 @@ const Pricing = () => {
                         </PricingCard>
                         <PricingCard
                             order={0}
+                            isPay={false}
+                            isYearly={isYearly}
                             type="Enterprise"
                             price="Contact Us"
                             description="Suitable for large organizations with complex needs, custom solutions, and dedicated support."
