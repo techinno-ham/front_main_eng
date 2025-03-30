@@ -159,7 +159,7 @@ const TermsPage: NextPage = () => {
                                 Questions about the Terms of Service?
                             </p>
                             <a
-                                href="mailto:chatsysco@gmail.com"
+                                href="mailto:hello@chatsys.co"
                                 className="inline-flex items-center text-blue-600 hover:text-blue-500"
                             >
                                 <svg
@@ -175,7 +175,7 @@ const TermsPage: NextPage = () => {
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                     />
                                 </svg>
-                                chatsysco@gmail.com
+                                hello@chatsys.co
                             </a>
                         </div>
                     </section>

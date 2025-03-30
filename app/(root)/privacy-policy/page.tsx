@@ -251,10 +251,10 @@ const PrivacyPage: NextPage = () => {
                                     />
                                 </svg>
                                 <a
-                                    href="mailto:chatsysco@gmail.com"
+                                    href="mailto:hello@chatsys.co"
                                     className="hover:underline"
                                 >
-                                    chatsysco@gmail.com
+                                    hello@chatsys.co
                                 </a>
                             </div>
                         </div>

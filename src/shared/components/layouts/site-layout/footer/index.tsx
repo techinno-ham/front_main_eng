@@ -37,7 +37,11 @@ const Footer = () => {
                                 <br />
                                 Driving Customer Satisfaction and Accelerating Business Growth.
                             </p>
+                            <p>
+                            hello@chatsys.co
+                        </p>
                         </div>
+                        
                         <div className="grid w-full grid-cols-3 gap-4 md:w-auto md:grid-cols-5">
                             <button
                                 className="focus-visible:ring-ring col-span-3 inline-flex 
@@ -276,7 +280,7 @@ const Footer = () => {
                                 href={"mailto:support"}
                                 className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                             >
-                                chatsysco@gmail.com
+                                hello@chatsys.co
                             </Link>
                         </div>
                     </div>
@@ -541,7 +545,7 @@ const Footer = () => {
                                         href={"/"}
                                         className="text-sm font-medium text-zinc-400 transition-colors duration-200 ease-in-out hover:text-zinc-700"
                                     >
-                                        chatsysco@gmail.com
+                                        hello@chatsys.co
                                     </Link>
                                 </div>
                             </div>

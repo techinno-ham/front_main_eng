@@ -91,14 +91,24 @@ const PricingCard = ({
                                             {subscription}
                                         </span>
                                     )}
+                                    {subscription && isYearly && isPay && (
+                                        <span className="ml-7 text-[12px]">
+                                            <span
+                                            className="inline-flex items-center border text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-zinc-950 focus:ring-offset-2 dark:border-zinc-800 dark:focus:ring-zinc-300 border-transparent bg-zinc-900 shadow hover:bg-zinc-900/80 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/80 select-none rounded-3xl border-none bg-gradient-to-r from-[#FA4941] to-[#FA7FA1] px-2 py-1 font-medium !text-white"
+                                            
+                                        >
+                                           - 25%
+                                        </span>
+                                        </span>
+                                    )}
                                 </span>
                                 <div className="text-sm text-gray-500 mt-1">
                       {isYearly && isPay? (
-                        <span>
-                          US${price["yearlyPrice"] }/year <s className="opacity-75">US${price["normalMonthlyPrice"]}/year</s>
+                        <span className="text-slate-400">
+                          ${price["yearlyPrice"] } billed annually
                         </span>
                       ) : (
-                        <span>Billed monthly</span>
+                        <span></span>
                       )}
                     </div>
                             </h3>
